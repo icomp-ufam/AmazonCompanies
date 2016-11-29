@@ -80,8 +80,6 @@ if (Yii::$app->user->getIsGuest()){
   </div>
   <br>
   <h4>A tabela abaixo só deverá aparecer após os filtros acima serem acionados</h4>
- 
-	
 	<br>
 	
 
