@@ -1,9 +1,8 @@
 -- phpMyAdmin SQL Dump
 -- version 4.5.4.1deb2ubuntu2
--- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Tempo de geração: 30/11/2016 às 17:58
+-- Tempo de geração: 30/11/2016 às 19:56
 -- Versão do servidor: 5.7.16-0ubuntu0.16.04.1
 -- Versão do PHP: 7.0.8-0ubuntu0.16.04.3
 
@@ -19,6 +18,8 @@ SET time_zone = "+00:00";
 --
 -- Banco de dados: `amazonCompanies`
 --
+CREATE DATABASE IF NOT EXISTS `amazonCompanies` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
+USE `amazonCompanies`;
 
 -- --------------------------------------------------------
 
