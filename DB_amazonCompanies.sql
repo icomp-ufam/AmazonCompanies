@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Tempo de geração: 30/11/2016 às 08:41
+-- Tempo de geração: 30/11/2016 às 17:58
 -- Versão do servidor: 5.7.16-0ubuntu0.16.04.1
 -- Versão do PHP: 7.0.8-0ubuntu0.16.04.3
 
@@ -19,8 +19,6 @@ SET time_zone = "+00:00";
 --
 -- Banco de dados: `amazonCompanies`
 --
-CREATE DATABASE IF NOT EXISTS `amazonCompanies` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
-USE `amazonCompanies`;
 
 -- --------------------------------------------------------
 
@@ -87,6 +85,7 @@ CREATE TABLE `empresa` (
   `idEmpresa` int(11) NOT NULL,
   `nome` varchar(45) NOT NULL,
   `analise` text,
+  `fonte` varchar(45) NOT NULL,
   `Tipo_Empresa_idTipo_Empresa` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -94,27 +93,27 @@ CREATE TABLE `empresa` (
 -- Fazendo dump de dados para tabela `empresa`
 --
 
-INSERT INTO `empresa` (`idEmpresa`, `nome`, `analise`, `Tipo_Empresa_idTipo_Empresa`) VALUES
-(1, 'Moto Honda da Amazônia LTDA', NULL, 2),
-(2, 'Teewa', 'Isto aqui é um teste!', 1),
-(3, 'Microsoft Windows', 'Este é um sistema operacional que muitos usam, mas eu ainda prefiro Linux.', 3);
+INSERT INTO `empresa` (`idEmpresa`, `nome`, `analise`, `fonte`, `Tipo_Empresa_idTipo_Empresa`) VALUES
+(1, 'Moto Honda da Amazônia LTDA', NULL, '', 2),
+(2, 'Teewa', 'Isto aqui é um teste!', '', 1),
+(3, 'Microsoft Windows', 'Este é um sistema operacional que muitos usam, mas eu ainda prefiro Linux.', '', 3);
 
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `empresa_has_usuario`
+-- Estrutura para tabela `empresaHasUsuario`
 --
 
-CREATE TABLE `empresa_has_usuario` (
+CREATE TABLE `empresaHasUsuario` (
   `Empresa_idEmpresa` int(11) NOT NULL,
   `Usuario_idUsuario` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Fazendo dump de dados para tabela `empresa_has_usuario`
+-- Fazendo dump de dados para tabela `empresaHasUsuario`
 --
 
-INSERT INTO `empresa_has_usuario` (`Empresa_idEmpresa`, `Usuario_idUsuario`) VALUES
+INSERT INTO `empresaHasUsuario` (`Empresa_idEmpresa`, `Usuario_idUsuario`) VALUES
 (1, 4);
 
 -- --------------------------------------------------------
@@ -127,7 +126,7 @@ CREATE TABLE `indice` (
   `idIndice` int(11) NOT NULL,
   `formula` varchar(45) NOT NULL,
   `nome` varchar(45) NOT NULL,
-  `Tipo_Indice_idTipo_Indice` int(11) NOT NULL
+  `idTipo_Indice` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -275,9 +274,9 @@ ALTER TABLE `empresa`
   ADD KEY `fk_Empresa_Tipo_Empresa1_idx` (`Tipo_Empresa_idTipo_Empresa`);
 
 --
--- Índices de tabela `empresa_has_usuario`
+-- Índices de tabela `empresaHasUsuario`
 --
-ALTER TABLE `empresa_has_usuario`
+ALTER TABLE `empresaHasUsuario`
   ADD PRIMARY KEY (`Empresa_idEmpresa`,`Usuario_idUsuario`),
   ADD KEY `fk_Empresa_has_Usuario_Usuario1_idx` (`Usuario_idUsuario`),
   ADD KEY `fk_Empresa_has_Usuario_Empresa1_idx` (`Empresa_idEmpresa`);
@@ -286,8 +285,8 @@ ALTER TABLE `empresa_has_usuario`
 -- Índices de tabela `indice`
 --
 ALTER TABLE `indice`
-  ADD PRIMARY KEY (`idIndice`,`Tipo_Indice_idTipo_Indice`),
-  ADD KEY `fk_Índice_Tipo_Índice1_idx` (`Tipo_Indice_idTipo_Indice`);
+  ADD PRIMARY KEY (`idIndice`) USING BTREE,
+  ADD KEY `fk_Índice_Tipo_Índice1_idx` (`idTipo_Indice`);
 
 --
 -- Índices de tabela `notificacao`
@@ -409,9 +408,9 @@ ALTER TABLE `empresa`
   ADD CONSTRAINT `fk_Empresa_Tipo_Empresa1` FOREIGN KEY (`Tipo_Empresa_idTipo_Empresa`) REFERENCES `tipo_empresa` (`idTipo_Empresa`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
--- Restrições para tabelas `empresa_has_usuario`
+-- Restrições para tabelas `empresaHasUsuario`
 --
-ALTER TABLE `empresa_has_usuario`
+ALTER TABLE `empresaHasUsuario`
   ADD CONSTRAINT `fk_Empresa_has_Usuario_Empresa1` FOREIGN KEY (`Empresa_idEmpresa`) REFERENCES `empresa` (`idEmpresa`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   ADD CONSTRAINT `fk_Empresa_has_Usuario_Usuario1` FOREIGN KEY (`Usuario_idUsuario`) REFERENCES `usuario` (`idUsuario`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
@@ -419,7 +418,7 @@ ALTER TABLE `empresa_has_usuario`
 -- Restrições para tabelas `indice`
 --
 ALTER TABLE `indice`
-  ADD CONSTRAINT `fk_Índice_Tipo_Índice1` FOREIGN KEY (`Tipo_Indice_idTipo_Indice`) REFERENCES `tipo_indice` (`idTipo_indice`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+  ADD CONSTRAINT `fk_Índice_Tipo_Índice1` FOREIGN KEY (`idTipo_Indice`) REFERENCES `tipo_indice` (`idTipo_indice`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
 -- Restrições para tabelas `notificacao`
