@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Tempo de geração: 29/11/2016 às 15:34
+-- Tempo de geração: 29/11/2016 às 22:50
 -- Versão do servidor: 5.7.16-0ubuntu0.16.04.1
 -- Versão do PHP: 7.0.8-0ubuntu0.16.04.3
 
@@ -28,7 +28,6 @@ USE `amazonCompanies`;
 -- Estrutura para tabela `agregado`
 --
 
-DROP TABLE IF EXISTS `agregado`;
 CREATE TABLE `agregado` (
   `idAgregado` int(11) NOT NULL,
   `nome` varchar(45) NOT NULL,
@@ -43,7 +42,6 @@ CREATE TABLE `agregado` (
 -- Estrutura para tabela `comentario`
 --
 
-DROP TABLE IF EXISTS `comentario`;
 CREATE TABLE `comentario` (
   `idComentario` int(11) NOT NULL,
   `conteudo` varchar(45) NOT NULL,
@@ -58,7 +56,6 @@ CREATE TABLE `comentario` (
 -- Estrutura para tabela `conta`
 --
 
-DROP TABLE IF EXISTS `conta`;
 CREATE TABLE `conta` (
   `idConta` int(11) NOT NULL,
   `nome` varchar(45) NOT NULL,
@@ -72,7 +69,6 @@ CREATE TABLE `conta` (
 -- Estrutura para tabela `demonstracao`
 --
 
-DROP TABLE IF EXISTS `demonstracao`;
 CREATE TABLE `demonstracao` (
   `idDemonstracao` int(11) NOT NULL,
   `nome` varchar(45) NOT NULL,
@@ -87,7 +83,6 @@ CREATE TABLE `demonstracao` (
 -- Estrutura para tabela `empresa`
 --
 
-DROP TABLE IF EXISTS `empresa`;
 CREATE TABLE `empresa` (
   `idEmpresa` int(11) NOT NULL,
   `nome` varchar(45) NOT NULL,
@@ -110,7 +105,6 @@ INSERT INTO `empresa` (`idEmpresa`, `nome`, `analise`, `Tipo_Empresa_idTipo_Empr
 -- Estrutura para tabela `empresa_has_usuario`
 --
 
-DROP TABLE IF EXISTS `empresa_has_usuario`;
 CREATE TABLE `empresa_has_usuario` (
   `Empresa_idEmpresa` int(11) NOT NULL,
   `Usuario_idUsuario` int(11) NOT NULL
@@ -129,7 +123,6 @@ INSERT INTO `empresa_has_usuario` (`Empresa_idEmpresa`, `Usuario_idUsuario`) VAL
 -- Estrutura para tabela `indice`
 --
 
-DROP TABLE IF EXISTS `indice`;
 CREATE TABLE `indice` (
   `idIndice` int(11) NOT NULL,
   `formula` varchar(45) NOT NULL,
@@ -143,12 +136,11 @@ CREATE TABLE `indice` (
 -- Estrutura para tabela `notificacao`
 --
 
-DROP TABLE IF EXISTS `notificacao`;
 CREATE TABLE `notificacao` (
   `idNotificacao` int(11) NOT NULL,
+  `Usuario_idUsuario` int(11) NOT NULL,
   `status` int(11) NOT NULL,
   `conteudo` text NOT NULL,
-  `Usuario_idUsuario` int(11) NOT NULL,
   `tipo` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -156,8 +148,8 @@ CREATE TABLE `notificacao` (
 -- Fazendo dump de dados para tabela `notificacao`
 --
 
-INSERT INTO `notificacao` (`idNotificacao`, `status`, `conteudo`, `Usuario_idUsuario`, `tipo`) VALUES
-(1, 0, 'Você foi uma menina má!', 2, 1);
+INSERT INTO `notificacao` (`idNotificacao`, `Usuario_idUsuario`, `status`, `conteudo`, `tipo`) VALUES
+(1, 2, 0, 'Você foi uma menina má!', 1);
 
 -- --------------------------------------------------------
 
@@ -165,7 +157,6 @@ INSERT INTO `notificacao` (`idNotificacao`, `status`, `conteudo`, `Usuario_idUsu
 -- Estrutura para tabela `tipo_demonstracao`
 --
 
-DROP TABLE IF EXISTS `tipo_demonstracao`;
 CREATE TABLE `tipo_demonstracao` (
   `idTipo_Demonstracao` int(11) NOT NULL,
   `nome` varchar(45) NOT NULL
@@ -177,7 +168,6 @@ CREATE TABLE `tipo_demonstracao` (
 -- Estrutura para tabela `tipo_empresa`
 --
 
-DROP TABLE IF EXISTS `tipo_empresa`;
 CREATE TABLE `tipo_empresa` (
   `idTipo_Empresa` int(11) NOT NULL,
   `nome` varchar(45) NOT NULL
@@ -198,7 +188,6 @@ INSERT INTO `tipo_empresa` (`idTipo_Empresa`, `nome`) VALUES
 -- Estrutura para tabela `tipo_indice`
 --
 
-DROP TABLE IF EXISTS `tipo_indice`;
 CREATE TABLE `tipo_indice` (
   `idTipo_indice` int(11) NOT NULL,
   `nome` varchar(45) NOT NULL
@@ -223,7 +212,6 @@ INSERT INTO `tipo_indice` (`idTipo_indice`, `nome`) VALUES
 -- Estrutura para tabela `usuario`
 --
 
-DROP TABLE IF EXISTS `usuario`;
 CREATE TABLE `usuario` (
   `idUsuario` int(11) NOT NULL,
   `nome` varchar(45) NOT NULL,
@@ -283,7 +271,7 @@ ALTER TABLE `demonstracao`
 -- Índices de tabela `empresa`
 --
 ALTER TABLE `empresa`
-  ADD PRIMARY KEY (`idEmpresa`,`Tipo_Empresa_idTipo_Empresa`),
+  ADD PRIMARY KEY (`idEmpresa`),
   ADD KEY `fk_Empresa_Tipo_Empresa1_idx` (`Tipo_Empresa_idTipo_Empresa`);
 
 --
@@ -318,7 +306,7 @@ ALTER TABLE `tipo_demonstracao`
 -- Índices de tabela `tipo_empresa`
 --
 ALTER TABLE `tipo_empresa`
-  ADD PRIMARY KEY (`idTipo_Empresa`);
+  ADD PRIMARY KEY (`idTipo_Empresa`,`nome`);
 
 --
 -- Índices de tabela `tipo_indice`
@@ -332,6 +320,55 @@ ALTER TABLE `tipo_indice`
 ALTER TABLE `usuario`
   ADD PRIMARY KEY (`idUsuario`);
 
+--
+-- AUTO_INCREMENT de tabelas apagadas
+--
+
+--
+-- AUTO_INCREMENT de tabela `agregado`
+--
+ALTER TABLE `agregado`
+  MODIFY `idAgregado` int(11) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT de tabela `comentario`
+--
+ALTER TABLE `comentario`
+  MODIFY `idComentario` int(11) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT de tabela `conta`
+--
+ALTER TABLE `conta`
+  MODIFY `idConta` int(11) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT de tabela `demonstracao`
+--
+ALTER TABLE `demonstracao`
+  MODIFY `idDemonstracao` int(11) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT de tabela `empresa`
+--
+ALTER TABLE `empresa`
+  MODIFY `idEmpresa` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+--
+-- AUTO_INCREMENT de tabela `indice`
+--
+ALTER TABLE `indice`
+  MODIFY `idIndice` int(11) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT de tabela `notificacao`
+--
+ALTER TABLE `notificacao`
+  MODIFY `idNotificacao` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+--
+-- AUTO_INCREMENT de tabela `tipo_demonstracao`
+--
+ALTER TABLE `tipo_demonstracao`
+  MODIFY `idTipo_Demonstracao` int(11) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT de tabela `usuario`
+--
+ALTER TABLE `usuario`
+  MODIFY `idUsuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 --
 -- Restrições para dumps de tabelas
 --
