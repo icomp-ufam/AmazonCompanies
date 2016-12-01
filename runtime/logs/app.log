@@ -9933,3 +9933,1672 @@ $_SERVER = [
     'REQUEST_TIME_FLOAT' => 1479839800.903
     'REQUEST_TIME' => 1479839800
 ]
+2016-12-01 18:55:35 [127.0.0.1][1][uem3nabj7m8tcq11ro1b7qqtm3][error][yii\base\UnknownPropertyException] yii\base\UnknownPropertyException: Getting unknown property: app\models\User::username in /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/Object.php:138
+Stack trace:
+#0 /var/www/html/AmazonCompanies/views/site/index.php(23): yii\base\Object->__get('username')
+#1 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/View.php(326): require('/var/www/html/A...')
+#2 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/View.php(248): yii\base\View->renderPhpFile('/var/www/html/A...', Array)
+#3 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/View.php(150): yii\base\View->renderFile('/var/www/html/A...', Array, Object(app\controllers\SiteController))
+#4 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/Controller.php(378): yii\base\View->render('index', Array, Object(app\controllers\SiteController))
+#5 /var/www/html/AmazonCompanies/controllers/SiteController.php(63): yii\base\Controller->render('index')
+#6 [internal function]: app\controllers\SiteController->actionIndex()
+#7 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/InlineAction.php(55): call_user_func_array(Array, Array)
+#8 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/Controller.php(154): yii\base\InlineAction->runWithParams(Array)
+#9 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/Module.php(454): yii\base\Controller->runAction('', Array)
+#10 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/web/Application.php(100): yii\base\Module->runAction('', Array)
+#11 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#12 /var/www/html/AmazonCompanies/web/index.php(12): yii\base\Application->run()
+#13 {main}
+2016-12-01 18:55:35 [127.0.0.1][1][uem3nabj7m8tcq11ro1b7qqtm3][info][application] $_COOKIE = [
+    '_csrf' => 'e8e32186ea26e646547382a0fe0329680df2fc2aeb980951a4f6e5f8e6f61153a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"vUyOr7gpBUbk6k3vzkn3bz4rx6K8qiWR\";}'
+    'PHPSESSID' => 'uem3nabj7m8tcq11ro1b7qqtm3'
+    '_identity' => '1de54a1149b80de6528a96989c1654bdfc80c1563a5eee0bba83377ee513af81a:2:{i:0;s:9:\"_identity\";i:1;s:16:\"[1,null,2592000]\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__id' => 1
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'localhost'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:50.0) Gecko/20100101 Firefox/50.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.5'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_REFERER' => 'http://localhost/AmazonCompanies/web/index.php?r=site%2Flogin'
+    'HTTP_COOKIE' => '_csrf=e8e32186ea26e646547382a0fe0329680df2fc2aeb980951a4f6e5f8e6f61153a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22vUyOr7gpBUbk6k3vzkn3bz4rx6K8qiWR%22%3B%7D; PHPSESSID=uem3nabj7m8tcq11ro1b7qqtm3; _identity=1de54a1149b80de6528a96989c1654bdfc80c1563a5eee0bba83377ee513af81a%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_identity%22%3Bi%3A1%3Bs%3A16%3A%22%5B1%2Cnull%2C2592000%5D%22%3B%7D'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.18 (Ubuntu) Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.18 (Ubuntu)'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => '/var/www/html'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/var/www/html'
+    'SERVER_ADMIN' => 'webmaster@localhost'
+    'SCRIPT_FILENAME' => '/var/www/html/AmazonCompanies/web/index.php'
+    'REMOTE_PORT' => '57842'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/AmazonCompanies/web/index.php'
+    'SCRIPT_NAME' => '/AmazonCompanies/web/index.php'
+    'PHP_SELF' => '/AmazonCompanies/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1480618535.366
+    'REQUEST_TIME' => 1480618535
+]
+2016-12-01 18:56:28 [127.0.0.1][1][uem3nabj7m8tcq11ro1b7qqtm3][error][yii\base\UnknownPropertyException] yii\base\UnknownPropertyException: Getting unknown property: app\models\User::username in /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/Object.php:138
+Stack trace:
+#0 /var/www/html/AmazonCompanies/views/layouts/main.php(172): yii\base\Object->__get('username')
+#1 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/View.php(326): require('/var/www/html/A...')
+#2 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/View.php(248): yii\base\View->renderPhpFile('/var/www/html/A...', Array)
+#3 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/Controller.php(393): yii\base\View->renderFile('/var/www/html/A...', Array, Object(app\controllers\SiteController))
+#4 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/Controller.php(379): yii\base\Controller->renderContent('\n<head>\n  <meta...')
+#5 /var/www/html/AmazonCompanies/controllers/SiteController.php(63): yii\base\Controller->render('index')
+#6 [internal function]: app\controllers\SiteController->actionIndex()
+#7 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/InlineAction.php(55): call_user_func_array(Array, Array)
+#8 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/Controller.php(154): yii\base\InlineAction->runWithParams(Array)
+#9 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/Module.php(454): yii\base\Controller->runAction('', Array)
+#10 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/web/Application.php(100): yii\base\Module->runAction('', Array)
+#11 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#12 /var/www/html/AmazonCompanies/web/index.php(12): yii\base\Application->run()
+#13 {main}
+2016-12-01 18:56:28 [127.0.0.1][1][uem3nabj7m8tcq11ro1b7qqtm3][info][application] $_COOKIE = [
+    '_csrf' => 'e8e32186ea26e646547382a0fe0329680df2fc2aeb980951a4f6e5f8e6f61153a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"vUyOr7gpBUbk6k3vzkn3bz4rx6K8qiWR\";}'
+    'PHPSESSID' => 'uem3nabj7m8tcq11ro1b7qqtm3'
+    '_identity' => '1de54a1149b80de6528a96989c1654bdfc80c1563a5eee0bba83377ee513af81a:2:{i:0;s:9:\"_identity\";i:1;s:16:\"[1,null,2592000]\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__id' => 1
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'localhost'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:50.0) Gecko/20100101 Firefox/50.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.5'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_REFERER' => 'http://localhost/AmazonCompanies/web/index.php?r=site%2Flogin'
+    'HTTP_COOKIE' => '_csrf=e8e32186ea26e646547382a0fe0329680df2fc2aeb980951a4f6e5f8e6f61153a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22vUyOr7gpBUbk6k3vzkn3bz4rx6K8qiWR%22%3B%7D; PHPSESSID=uem3nabj7m8tcq11ro1b7qqtm3; _identity=1de54a1149b80de6528a96989c1654bdfc80c1563a5eee0bba83377ee513af81a%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_identity%22%3Bi%3A1%3Bs%3A16%3A%22%5B1%2Cnull%2C2592000%5D%22%3B%7D'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.18 (Ubuntu) Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.18 (Ubuntu)'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => '/var/www/html'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/var/www/html'
+    'SERVER_ADMIN' => 'webmaster@localhost'
+    'SCRIPT_FILENAME' => '/var/www/html/AmazonCompanies/web/index.php'
+    'REMOTE_PORT' => '57844'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/AmazonCompanies/web/index.php'
+    'SCRIPT_NAME' => '/AmazonCompanies/web/index.php'
+    'PHP_SELF' => '/AmazonCompanies/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1480618588.507
+    'REQUEST_TIME' => 1480618588
+]
+2016-12-01 18:56:33 [127.0.0.1][1][uem3nabj7m8tcq11ro1b7qqtm3][error][yii\base\UnknownPropertyException] yii\base\UnknownPropertyException: Getting unknown property: app\models\User::username in /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/Object.php:138
+Stack trace:
+#0 /var/www/html/AmazonCompanies/views/layouts/main.php(172): yii\base\Object->__get('username')
+#1 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/View.php(326): require('/var/www/html/A...')
+#2 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/View.php(248): yii\base\View->renderPhpFile('/var/www/html/A...', Array)
+#3 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/Controller.php(393): yii\base\View->renderFile('/var/www/html/A...', Array, Object(app\controllers\SiteController))
+#4 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/Controller.php(379): yii\base\Controller->renderContent('\n<head>\n  <meta...')
+#5 /var/www/html/AmazonCompanies/controllers/SiteController.php(63): yii\base\Controller->render('index')
+#6 [internal function]: app\controllers\SiteController->actionIndex()
+#7 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/InlineAction.php(55): call_user_func_array(Array, Array)
+#8 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/Controller.php(154): yii\base\InlineAction->runWithParams(Array)
+#9 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/Module.php(454): yii\base\Controller->runAction('', Array)
+#10 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/web/Application.php(100): yii\base\Module->runAction('', Array)
+#11 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#12 /var/www/html/AmazonCompanies/web/index.php(12): yii\base\Application->run()
+#13 {main}
+2016-12-01 18:56:33 [127.0.0.1][1][uem3nabj7m8tcq11ro1b7qqtm3][info][application] $_COOKIE = [
+    '_csrf' => 'e8e32186ea26e646547382a0fe0329680df2fc2aeb980951a4f6e5f8e6f61153a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"vUyOr7gpBUbk6k3vzkn3bz4rx6K8qiWR\";}'
+    'PHPSESSID' => 'uem3nabj7m8tcq11ro1b7qqtm3'
+    '_identity' => '1de54a1149b80de6528a96989c1654bdfc80c1563a5eee0bba83377ee513af81a:2:{i:0;s:9:\"_identity\";i:1;s:16:\"[1,null,2592000]\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__id' => 1
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'localhost'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:50.0) Gecko/20100101 Firefox/50.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.5'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_COOKIE' => '_csrf=e8e32186ea26e646547382a0fe0329680df2fc2aeb980951a4f6e5f8e6f61153a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22vUyOr7gpBUbk6k3vzkn3bz4rx6K8qiWR%22%3B%7D; PHPSESSID=uem3nabj7m8tcq11ro1b7qqtm3; _identity=1de54a1149b80de6528a96989c1654bdfc80c1563a5eee0bba83377ee513af81a%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_identity%22%3Bi%3A1%3Bs%3A16%3A%22%5B1%2Cnull%2C2592000%5D%22%3B%7D'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.18 (Ubuntu) Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.18 (Ubuntu)'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => '/var/www/html'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/var/www/html'
+    'SERVER_ADMIN' => 'webmaster@localhost'
+    'SCRIPT_FILENAME' => '/var/www/html/AmazonCompanies/web/index.php'
+    'REMOTE_PORT' => '57846'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/AmazonCompanies/web/'
+    'SCRIPT_NAME' => '/AmazonCompanies/web/index.php'
+    'PHP_SELF' => '/AmazonCompanies/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1480618593.031
+    'REQUEST_TIME' => 1480618593
+]
+2016-12-01 18:56:34 [127.0.0.1][1][uem3nabj7m8tcq11ro1b7qqtm3][error][yii\base\UnknownPropertyException] yii\base\UnknownPropertyException: Getting unknown property: app\models\User::username in /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/Object.php:138
+Stack trace:
+#0 /var/www/html/AmazonCompanies/views/layouts/main.php(172): yii\base\Object->__get('username')
+#1 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/View.php(326): require('/var/www/html/A...')
+#2 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/View.php(248): yii\base\View->renderPhpFile('/var/www/html/A...', Array)
+#3 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/Controller.php(393): yii\base\View->renderFile('/var/www/html/A...', Array, Object(app\controllers\SiteController))
+#4 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/Controller.php(379): yii\base\Controller->renderContent('\n<head>\n  <meta...')
+#5 /var/www/html/AmazonCompanies/controllers/SiteController.php(63): yii\base\Controller->render('index')
+#6 [internal function]: app\controllers\SiteController->actionIndex()
+#7 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/InlineAction.php(55): call_user_func_array(Array, Array)
+#8 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/Controller.php(154): yii\base\InlineAction->runWithParams(Array)
+#9 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/Module.php(454): yii\base\Controller->runAction('', Array)
+#10 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/web/Application.php(100): yii\base\Module->runAction('', Array)
+#11 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#12 /var/www/html/AmazonCompanies/web/index.php(12): yii\base\Application->run()
+#13 {main}
+2016-12-01 18:56:34 [127.0.0.1][1][uem3nabj7m8tcq11ro1b7qqtm3][info][application] $_COOKIE = [
+    '_csrf' => 'e8e32186ea26e646547382a0fe0329680df2fc2aeb980951a4f6e5f8e6f61153a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"vUyOr7gpBUbk6k3vzkn3bz4rx6K8qiWR\";}'
+    'PHPSESSID' => 'uem3nabj7m8tcq11ro1b7qqtm3'
+    '_identity' => '1de54a1149b80de6528a96989c1654bdfc80c1563a5eee0bba83377ee513af81a:2:{i:0;s:9:\"_identity\";i:1;s:16:\"[1,null,2592000]\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__id' => 1
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'localhost'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:50.0) Gecko/20100101 Firefox/50.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.5'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_COOKIE' => '_csrf=e8e32186ea26e646547382a0fe0329680df2fc2aeb980951a4f6e5f8e6f61153a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22vUyOr7gpBUbk6k3vzkn3bz4rx6K8qiWR%22%3B%7D; PHPSESSID=uem3nabj7m8tcq11ro1b7qqtm3; _identity=1de54a1149b80de6528a96989c1654bdfc80c1563a5eee0bba83377ee513af81a%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_identity%22%3Bi%3A1%3Bs%3A16%3A%22%5B1%2Cnull%2C2592000%5D%22%3B%7D'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.18 (Ubuntu) Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.18 (Ubuntu)'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => '/var/www/html'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/var/www/html'
+    'SERVER_ADMIN' => 'webmaster@localhost'
+    'SCRIPT_FILENAME' => '/var/www/html/AmazonCompanies/web/index.php'
+    'REMOTE_PORT' => '57850'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/AmazonCompanies/web/'
+    'SCRIPT_NAME' => '/AmazonCompanies/web/index.php'
+    'PHP_SELF' => '/AmazonCompanies/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1480618594.072
+    'REQUEST_TIME' => 1480618594
+]
+2016-12-01 18:56:34 [127.0.0.1][1][uem3nabj7m8tcq11ro1b7qqtm3][error][yii\base\UnknownPropertyException] yii\base\UnknownPropertyException: Getting unknown property: app\models\User::username in /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/Object.php:138
+Stack trace:
+#0 /var/www/html/AmazonCompanies/views/layouts/main.php(172): yii\base\Object->__get('username')
+#1 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/View.php(326): require('/var/www/html/A...')
+#2 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/View.php(248): yii\base\View->renderPhpFile('/var/www/html/A...', Array)
+#3 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/Controller.php(393): yii\base\View->renderFile('/var/www/html/A...', Array, Object(app\controllers\SiteController))
+#4 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/Controller.php(379): yii\base\Controller->renderContent('\n<head>\n  <meta...')
+#5 /var/www/html/AmazonCompanies/controllers/SiteController.php(63): yii\base\Controller->render('index')
+#6 [internal function]: app\controllers\SiteController->actionIndex()
+#7 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/InlineAction.php(55): call_user_func_array(Array, Array)
+#8 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/Controller.php(154): yii\base\InlineAction->runWithParams(Array)
+#9 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/Module.php(454): yii\base\Controller->runAction('', Array)
+#10 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/web/Application.php(100): yii\base\Module->runAction('', Array)
+#11 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#12 /var/www/html/AmazonCompanies/web/index.php(12): yii\base\Application->run()
+#13 {main}
+2016-12-01 18:56:34 [127.0.0.1][1][uem3nabj7m8tcq11ro1b7qqtm3][info][application] $_COOKIE = [
+    '_csrf' => 'e8e32186ea26e646547382a0fe0329680df2fc2aeb980951a4f6e5f8e6f61153a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"vUyOr7gpBUbk6k3vzkn3bz4rx6K8qiWR\";}'
+    'PHPSESSID' => 'uem3nabj7m8tcq11ro1b7qqtm3'
+    '_identity' => '1de54a1149b80de6528a96989c1654bdfc80c1563a5eee0bba83377ee513af81a:2:{i:0;s:9:\"_identity\";i:1;s:16:\"[1,null,2592000]\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__id' => 1
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'localhost'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:50.0) Gecko/20100101 Firefox/50.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.5'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_COOKIE' => '_csrf=e8e32186ea26e646547382a0fe0329680df2fc2aeb980951a4f6e5f8e6f61153a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22vUyOr7gpBUbk6k3vzkn3bz4rx6K8qiWR%22%3B%7D; PHPSESSID=uem3nabj7m8tcq11ro1b7qqtm3; _identity=1de54a1149b80de6528a96989c1654bdfc80c1563a5eee0bba83377ee513af81a%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_identity%22%3Bi%3A1%3Bs%3A16%3A%22%5B1%2Cnull%2C2592000%5D%22%3B%7D'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.18 (Ubuntu) Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.18 (Ubuntu)'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => '/var/www/html'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/var/www/html'
+    'SERVER_ADMIN' => 'webmaster@localhost'
+    'SCRIPT_FILENAME' => '/var/www/html/AmazonCompanies/web/index.php'
+    'REMOTE_PORT' => '57852'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/AmazonCompanies/web/'
+    'SCRIPT_NAME' => '/AmazonCompanies/web/index.php'
+    'PHP_SELF' => '/AmazonCompanies/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1480618594.615
+    'REQUEST_TIME' => 1480618594
+]
+2016-12-01 18:56:34 [127.0.0.1][1][uem3nabj7m8tcq11ro1b7qqtm3][error][yii\base\UnknownPropertyException] yii\base\UnknownPropertyException: Getting unknown property: app\models\User::username in /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/Object.php:138
+Stack trace:
+#0 /var/www/html/AmazonCompanies/views/layouts/main.php(172): yii\base\Object->__get('username')
+#1 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/View.php(326): require('/var/www/html/A...')
+#2 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/View.php(248): yii\base\View->renderPhpFile('/var/www/html/A...', Array)
+#3 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/Controller.php(393): yii\base\View->renderFile('/var/www/html/A...', Array, Object(app\controllers\SiteController))
+#4 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/Controller.php(379): yii\base\Controller->renderContent('\n<head>\n  <meta...')
+#5 /var/www/html/AmazonCompanies/controllers/SiteController.php(63): yii\base\Controller->render('index')
+#6 [internal function]: app\controllers\SiteController->actionIndex()
+#7 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/InlineAction.php(55): call_user_func_array(Array, Array)
+#8 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/Controller.php(154): yii\base\InlineAction->runWithParams(Array)
+#9 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/Module.php(454): yii\base\Controller->runAction('', Array)
+#10 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/web/Application.php(100): yii\base\Module->runAction('', Array)
+#11 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#12 /var/www/html/AmazonCompanies/web/index.php(12): yii\base\Application->run()
+#13 {main}
+2016-12-01 18:56:34 [127.0.0.1][1][uem3nabj7m8tcq11ro1b7qqtm3][info][application] $_COOKIE = [
+    '_csrf' => 'e8e32186ea26e646547382a0fe0329680df2fc2aeb980951a4f6e5f8e6f61153a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"vUyOr7gpBUbk6k3vzkn3bz4rx6K8qiWR\";}'
+    'PHPSESSID' => 'uem3nabj7m8tcq11ro1b7qqtm3'
+    '_identity' => '1de54a1149b80de6528a96989c1654bdfc80c1563a5eee0bba83377ee513af81a:2:{i:0;s:9:\"_identity\";i:1;s:16:\"[1,null,2592000]\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__id' => 1
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'localhost'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:50.0) Gecko/20100101 Firefox/50.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.5'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_COOKIE' => '_csrf=e8e32186ea26e646547382a0fe0329680df2fc2aeb980951a4f6e5f8e6f61153a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22vUyOr7gpBUbk6k3vzkn3bz4rx6K8qiWR%22%3B%7D; PHPSESSID=uem3nabj7m8tcq11ro1b7qqtm3; _identity=1de54a1149b80de6528a96989c1654bdfc80c1563a5eee0bba83377ee513af81a%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_identity%22%3Bi%3A1%3Bs%3A16%3A%22%5B1%2Cnull%2C2592000%5D%22%3B%7D'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.18 (Ubuntu) Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.18 (Ubuntu)'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => '/var/www/html'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/var/www/html'
+    'SERVER_ADMIN' => 'webmaster@localhost'
+    'SCRIPT_FILENAME' => '/var/www/html/AmazonCompanies/web/index.php'
+    'REMOTE_PORT' => '57854'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/AmazonCompanies/web/'
+    'SCRIPT_NAME' => '/AmazonCompanies/web/index.php'
+    'PHP_SELF' => '/AmazonCompanies/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1480618594.943
+    'REQUEST_TIME' => 1480618594
+]
+2016-12-01 18:58:57 [127.0.0.1][1][lqfvh9rihudnf67ob5gm3mi6g7][error][yii\base\UnknownPropertyException] yii\base\UnknownPropertyException: Getting unknown property: app\models\User::username in /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/Object.php:138
+Stack trace:
+#0 /var/www/html/AmazonCompanies/views/layouts/main.php(172): yii\base\Object->__get('username')
+#1 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/View.php(326): require('/var/www/html/A...')
+#2 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/View.php(248): yii\base\View->renderPhpFile('/var/www/html/A...', Array)
+#3 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/Controller.php(393): yii\base\View->renderFile('/var/www/html/A...', Array, Object(app\controllers\SiteController))
+#4 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/Controller.php(379): yii\base\Controller->renderContent('\n<head>\n  <meta...')
+#5 /var/www/html/AmazonCompanies/controllers/SiteController.php(63): yii\base\Controller->render('index')
+#6 [internal function]: app\controllers\SiteController->actionIndex()
+#7 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/InlineAction.php(55): call_user_func_array(Array, Array)
+#8 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/Controller.php(154): yii\base\InlineAction->runWithParams(Array)
+#9 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/Module.php(454): yii\base\Controller->runAction('', Array)
+#10 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/web/Application.php(100): yii\base\Module->runAction('', Array)
+#11 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#12 /var/www/html/AmazonCompanies/web/index.php(12): yii\base\Application->run()
+#13 {main}
+2016-12-01 18:58:57 [127.0.0.1][1][lqfvh9rihudnf67ob5gm3mi6g7][info][application] $_COOKIE = [
+    '_csrf' => 'e8e32186ea26e646547382a0fe0329680df2fc2aeb980951a4f6e5f8e6f61153a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"vUyOr7gpBUbk6k3vzkn3bz4rx6K8qiWR\";}'
+    'PHPSESSID' => 'lqfvh9rihudnf67ob5gm3mi6g7'
+    '_identity' => '1de54a1149b80de6528a96989c1654bdfc80c1563a5eee0bba83377ee513af81a:2:{i:0;s:9:\"_identity\";i:1;s:16:\"[1,null,2592000]\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__id' => 1
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'localhost'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:50.0) Gecko/20100101 Firefox/50.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.5'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_COOKIE' => '_csrf=e8e32186ea26e646547382a0fe0329680df2fc2aeb980951a4f6e5f8e6f61153a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22vUyOr7gpBUbk6k3vzkn3bz4rx6K8qiWR%22%3B%7D; PHPSESSID=lqfvh9rihudnf67ob5gm3mi6g7; _identity=1de54a1149b80de6528a96989c1654bdfc80c1563a5eee0bba83377ee513af81a%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_identity%22%3Bi%3A1%3Bs%3A16%3A%22%5B1%2Cnull%2C2592000%5D%22%3B%7D'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.18 (Ubuntu) Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.18 (Ubuntu)'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => '/var/www/html'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/var/www/html'
+    'SERVER_ADMIN' => 'webmaster@localhost'
+    'SCRIPT_FILENAME' => '/var/www/html/AmazonCompanies/web/index.php'
+    'REMOTE_PORT' => '57864'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/AmazonCompanies/web/'
+    'SCRIPT_NAME' => '/AmazonCompanies/web/index.php'
+    'PHP_SELF' => '/AmazonCompanies/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1480618737.862
+    'REQUEST_TIME' => 1480618737
+]
+2016-12-01 19:05:47 [127.0.0.1][1][lqfvh9rihudnf67ob5gm3mi6g7][error][yii\base\UnknownPropertyException] yii\base\UnknownPropertyException: Getting unknown property: app\models\User::username in /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/Object.php:138
+Stack trace:
+#0 /var/www/html/AmazonCompanies/views/layouts/main.php(172): yii\base\Object->__get('username')
+#1 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/View.php(326): require('/var/www/html/A...')
+#2 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/View.php(248): yii\base\View->renderPhpFile('/var/www/html/A...', Array)
+#3 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/Controller.php(393): yii\base\View->renderFile('/var/www/html/A...', Array, Object(app\controllers\SiteController))
+#4 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/Controller.php(379): yii\base\Controller->renderContent('\n<head>\n  <meta...')
+#5 /var/www/html/AmazonCompanies/controllers/SiteController.php(63): yii\base\Controller->render('index')
+#6 [internal function]: app\controllers\SiteController->actionIndex()
+#7 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/InlineAction.php(55): call_user_func_array(Array, Array)
+#8 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/Controller.php(154): yii\base\InlineAction->runWithParams(Array)
+#9 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/Module.php(454): yii\base\Controller->runAction('', Array)
+#10 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/web/Application.php(100): yii\base\Module->runAction('', Array)
+#11 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#12 /var/www/html/AmazonCompanies/web/index.php(12): yii\base\Application->run()
+#13 {main}
+2016-12-01 19:05:47 [127.0.0.1][1][lqfvh9rihudnf67ob5gm3mi6g7][info][application] $_COOKIE = [
+    '_csrf' => 'e8e32186ea26e646547382a0fe0329680df2fc2aeb980951a4f6e5f8e6f61153a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"vUyOr7gpBUbk6k3vzkn3bz4rx6K8qiWR\";}'
+    'PHPSESSID' => 'lqfvh9rihudnf67ob5gm3mi6g7'
+    '_identity' => '1de54a1149b80de6528a96989c1654bdfc80c1563a5eee0bba83377ee513af81a:2:{i:0;s:9:\"_identity\";i:1;s:16:\"[1,null,2592000]\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__id' => 1
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'localhost'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:50.0) Gecko/20100101 Firefox/50.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.5'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_COOKIE' => '_csrf=e8e32186ea26e646547382a0fe0329680df2fc2aeb980951a4f6e5f8e6f61153a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22vUyOr7gpBUbk6k3vzkn3bz4rx6K8qiWR%22%3B%7D; PHPSESSID=lqfvh9rihudnf67ob5gm3mi6g7; _identity=1de54a1149b80de6528a96989c1654bdfc80c1563a5eee0bba83377ee513af81a%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_identity%22%3Bi%3A1%3Bs%3A16%3A%22%5B1%2Cnull%2C2592000%5D%22%3B%7D'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.18 (Ubuntu) Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.18 (Ubuntu)'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => '/var/www/html'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/var/www/html'
+    'SERVER_ADMIN' => 'webmaster@localhost'
+    'SCRIPT_FILENAME' => '/var/www/html/AmazonCompanies/web/index.php'
+    'REMOTE_PORT' => '57868'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/AmazonCompanies/web/'
+    'SCRIPT_NAME' => '/AmazonCompanies/web/index.php'
+    'PHP_SELF' => '/AmazonCompanies/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1480619147.246
+    'REQUEST_TIME' => 1480619147
+]
+2016-12-01 19:05:47 [127.0.0.1][1][lqfvh9rihudnf67ob5gm3mi6g7][error][yii\base\UnknownPropertyException] yii\base\UnknownPropertyException: Getting unknown property: app\models\User::username in /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/Object.php:138
+Stack trace:
+#0 /var/www/html/AmazonCompanies/views/layouts/main.php(172): yii\base\Object->__get('username')
+#1 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/View.php(326): require('/var/www/html/A...')
+#2 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/View.php(248): yii\base\View->renderPhpFile('/var/www/html/A...', Array)
+#3 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/Controller.php(393): yii\base\View->renderFile('/var/www/html/A...', Array, Object(app\controllers\SiteController))
+#4 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/Controller.php(379): yii\base\Controller->renderContent('\n<head>\n  <meta...')
+#5 /var/www/html/AmazonCompanies/controllers/SiteController.php(63): yii\base\Controller->render('index')
+#6 [internal function]: app\controllers\SiteController->actionIndex()
+#7 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/InlineAction.php(55): call_user_func_array(Array, Array)
+#8 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/Controller.php(154): yii\base\InlineAction->runWithParams(Array)
+#9 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/Module.php(454): yii\base\Controller->runAction('', Array)
+#10 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/web/Application.php(100): yii\base\Module->runAction('', Array)
+#11 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#12 /var/www/html/AmazonCompanies/web/index.php(12): yii\base\Application->run()
+#13 {main}
+2016-12-01 19:05:47 [127.0.0.1][1][lqfvh9rihudnf67ob5gm3mi6g7][info][application] $_COOKIE = [
+    '_csrf' => 'e8e32186ea26e646547382a0fe0329680df2fc2aeb980951a4f6e5f8e6f61153a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"vUyOr7gpBUbk6k3vzkn3bz4rx6K8qiWR\";}'
+    'PHPSESSID' => 'lqfvh9rihudnf67ob5gm3mi6g7'
+    '_identity' => '1de54a1149b80de6528a96989c1654bdfc80c1563a5eee0bba83377ee513af81a:2:{i:0;s:9:\"_identity\";i:1;s:16:\"[1,null,2592000]\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__id' => 1
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'localhost'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:50.0) Gecko/20100101 Firefox/50.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.5'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_COOKIE' => '_csrf=e8e32186ea26e646547382a0fe0329680df2fc2aeb980951a4f6e5f8e6f61153a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22vUyOr7gpBUbk6k3vzkn3bz4rx6K8qiWR%22%3B%7D; PHPSESSID=lqfvh9rihudnf67ob5gm3mi6g7; _identity=1de54a1149b80de6528a96989c1654bdfc80c1563a5eee0bba83377ee513af81a%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_identity%22%3Bi%3A1%3Bs%3A16%3A%22%5B1%2Cnull%2C2592000%5D%22%3B%7D'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.18 (Ubuntu) Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.18 (Ubuntu)'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => '/var/www/html'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/var/www/html'
+    'SERVER_ADMIN' => 'webmaster@localhost'
+    'SCRIPT_FILENAME' => '/var/www/html/AmazonCompanies/web/index.php'
+    'REMOTE_PORT' => '57870'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/AmazonCompanies/web/'
+    'SCRIPT_NAME' => '/AmazonCompanies/web/index.php'
+    'PHP_SELF' => '/AmazonCompanies/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1480619147.879
+    'REQUEST_TIME' => 1480619147
+]
+2016-12-01 19:05:48 [127.0.0.1][1][lqfvh9rihudnf67ob5gm3mi6g7][error][yii\base\UnknownPropertyException] yii\base\UnknownPropertyException: Getting unknown property: app\models\User::username in /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/Object.php:138
+Stack trace:
+#0 /var/www/html/AmazonCompanies/views/layouts/main.php(172): yii\base\Object->__get('username')
+#1 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/View.php(326): require('/var/www/html/A...')
+#2 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/View.php(248): yii\base\View->renderPhpFile('/var/www/html/A...', Array)
+#3 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/Controller.php(393): yii\base\View->renderFile('/var/www/html/A...', Array, Object(app\controllers\SiteController))
+#4 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/Controller.php(379): yii\base\Controller->renderContent('\n<head>\n  <meta...')
+#5 /var/www/html/AmazonCompanies/controllers/SiteController.php(63): yii\base\Controller->render('index')
+#6 [internal function]: app\controllers\SiteController->actionIndex()
+#7 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/InlineAction.php(55): call_user_func_array(Array, Array)
+#8 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/Controller.php(154): yii\base\InlineAction->runWithParams(Array)
+#9 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/Module.php(454): yii\base\Controller->runAction('', Array)
+#10 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/web/Application.php(100): yii\base\Module->runAction('', Array)
+#11 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#12 /var/www/html/AmazonCompanies/web/index.php(12): yii\base\Application->run()
+#13 {main}
+2016-12-01 19:05:48 [127.0.0.1][1][lqfvh9rihudnf67ob5gm3mi6g7][info][application] $_COOKIE = [
+    '_csrf' => 'e8e32186ea26e646547382a0fe0329680df2fc2aeb980951a4f6e5f8e6f61153a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"vUyOr7gpBUbk6k3vzkn3bz4rx6K8qiWR\";}'
+    'PHPSESSID' => 'lqfvh9rihudnf67ob5gm3mi6g7'
+    '_identity' => '1de54a1149b80de6528a96989c1654bdfc80c1563a5eee0bba83377ee513af81a:2:{i:0;s:9:\"_identity\";i:1;s:16:\"[1,null,2592000]\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__id' => 1
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'localhost'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:50.0) Gecko/20100101 Firefox/50.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.5'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_COOKIE' => '_csrf=e8e32186ea26e646547382a0fe0329680df2fc2aeb980951a4f6e5f8e6f61153a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22vUyOr7gpBUbk6k3vzkn3bz4rx6K8qiWR%22%3B%7D; PHPSESSID=lqfvh9rihudnf67ob5gm3mi6g7; _identity=1de54a1149b80de6528a96989c1654bdfc80c1563a5eee0bba83377ee513af81a%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_identity%22%3Bi%3A1%3Bs%3A16%3A%22%5B1%2Cnull%2C2592000%5D%22%3B%7D'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.18 (Ubuntu) Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.18 (Ubuntu)'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => '/var/www/html'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/var/www/html'
+    'SERVER_ADMIN' => 'webmaster@localhost'
+    'SCRIPT_FILENAME' => '/var/www/html/AmazonCompanies/web/index.php'
+    'REMOTE_PORT' => '57872'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/AmazonCompanies/web/'
+    'SCRIPT_NAME' => '/AmazonCompanies/web/index.php'
+    'PHP_SELF' => '/AmazonCompanies/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1480619148.074
+    'REQUEST_TIME' => 1480619148
+]
+2016-12-01 19:05:48 [127.0.0.1][1][lqfvh9rihudnf67ob5gm3mi6g7][error][yii\base\UnknownPropertyException] yii\base\UnknownPropertyException: Getting unknown property: app\models\User::username in /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/Object.php:138
+Stack trace:
+#0 /var/www/html/AmazonCompanies/views/layouts/main.php(172): yii\base\Object->__get('username')
+#1 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/View.php(326): require('/var/www/html/A...')
+#2 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/View.php(248): yii\base\View->renderPhpFile('/var/www/html/A...', Array)
+#3 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/Controller.php(393): yii\base\View->renderFile('/var/www/html/A...', Array, Object(app\controllers\SiteController))
+#4 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/Controller.php(379): yii\base\Controller->renderContent('\n<head>\n  <meta...')
+#5 /var/www/html/AmazonCompanies/controllers/SiteController.php(63): yii\base\Controller->render('index')
+#6 [internal function]: app\controllers\SiteController->actionIndex()
+#7 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/InlineAction.php(55): call_user_func_array(Array, Array)
+#8 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/Controller.php(154): yii\base\InlineAction->runWithParams(Array)
+#9 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/Module.php(454): yii\base\Controller->runAction('', Array)
+#10 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/web/Application.php(100): yii\base\Module->runAction('', Array)
+#11 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#12 /var/www/html/AmazonCompanies/web/index.php(12): yii\base\Application->run()
+#13 {main}
+2016-12-01 19:05:48 [127.0.0.1][1][lqfvh9rihudnf67ob5gm3mi6g7][info][application] $_COOKIE = [
+    '_csrf' => 'e8e32186ea26e646547382a0fe0329680df2fc2aeb980951a4f6e5f8e6f61153a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"vUyOr7gpBUbk6k3vzkn3bz4rx6K8qiWR\";}'
+    'PHPSESSID' => 'lqfvh9rihudnf67ob5gm3mi6g7'
+    '_identity' => '1de54a1149b80de6528a96989c1654bdfc80c1563a5eee0bba83377ee513af81a:2:{i:0;s:9:\"_identity\";i:1;s:16:\"[1,null,2592000]\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__id' => 1
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'localhost'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:50.0) Gecko/20100101 Firefox/50.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.5'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_COOKIE' => '_csrf=e8e32186ea26e646547382a0fe0329680df2fc2aeb980951a4f6e5f8e6f61153a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22vUyOr7gpBUbk6k3vzkn3bz4rx6K8qiWR%22%3B%7D; PHPSESSID=lqfvh9rihudnf67ob5gm3mi6g7; _identity=1de54a1149b80de6528a96989c1654bdfc80c1563a5eee0bba83377ee513af81a%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_identity%22%3Bi%3A1%3Bs%3A16%3A%22%5B1%2Cnull%2C2592000%5D%22%3B%7D'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.18 (Ubuntu) Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.18 (Ubuntu)'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => '/var/www/html'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/var/www/html'
+    'SERVER_ADMIN' => 'webmaster@localhost'
+    'SCRIPT_FILENAME' => '/var/www/html/AmazonCompanies/web/index.php'
+    'REMOTE_PORT' => '57874'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/AmazonCompanies/web/'
+    'SCRIPT_NAME' => '/AmazonCompanies/web/index.php'
+    'PHP_SELF' => '/AmazonCompanies/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1480619148.249
+    'REQUEST_TIME' => 1480619148
+]
+2016-12-01 19:05:48 [127.0.0.1][1][lqfvh9rihudnf67ob5gm3mi6g7][error][yii\base\UnknownPropertyException] yii\base\UnknownPropertyException: Getting unknown property: app\models\User::username in /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/Object.php:138
+Stack trace:
+#0 /var/www/html/AmazonCompanies/views/layouts/main.php(172): yii\base\Object->__get('username')
+#1 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/View.php(326): require('/var/www/html/A...')
+#2 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/View.php(248): yii\base\View->renderPhpFile('/var/www/html/A...', Array)
+#3 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/Controller.php(393): yii\base\View->renderFile('/var/www/html/A...', Array, Object(app\controllers\SiteController))
+#4 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/Controller.php(379): yii\base\Controller->renderContent('\n<head>\n  <meta...')
+#5 /var/www/html/AmazonCompanies/controllers/SiteController.php(63): yii\base\Controller->render('index')
+#6 [internal function]: app\controllers\SiteController->actionIndex()
+#7 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/InlineAction.php(55): call_user_func_array(Array, Array)
+#8 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/Controller.php(154): yii\base\InlineAction->runWithParams(Array)
+#9 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/Module.php(454): yii\base\Controller->runAction('', Array)
+#10 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/web/Application.php(100): yii\base\Module->runAction('', Array)
+#11 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#12 /var/www/html/AmazonCompanies/web/index.php(12): yii\base\Application->run()
+#13 {main}
+2016-12-01 19:05:48 [127.0.0.1][1][lqfvh9rihudnf67ob5gm3mi6g7][info][application] $_COOKIE = [
+    '_csrf' => 'e8e32186ea26e646547382a0fe0329680df2fc2aeb980951a4f6e5f8e6f61153a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"vUyOr7gpBUbk6k3vzkn3bz4rx6K8qiWR\";}'
+    'PHPSESSID' => 'lqfvh9rihudnf67ob5gm3mi6g7'
+    '_identity' => '1de54a1149b80de6528a96989c1654bdfc80c1563a5eee0bba83377ee513af81a:2:{i:0;s:9:\"_identity\";i:1;s:16:\"[1,null,2592000]\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__id' => 1
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'localhost'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:50.0) Gecko/20100101 Firefox/50.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.5'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_COOKIE' => '_csrf=e8e32186ea26e646547382a0fe0329680df2fc2aeb980951a4f6e5f8e6f61153a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22vUyOr7gpBUbk6k3vzkn3bz4rx6K8qiWR%22%3B%7D; PHPSESSID=lqfvh9rihudnf67ob5gm3mi6g7; _identity=1de54a1149b80de6528a96989c1654bdfc80c1563a5eee0bba83377ee513af81a%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_identity%22%3Bi%3A1%3Bs%3A16%3A%22%5B1%2Cnull%2C2592000%5D%22%3B%7D'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.18 (Ubuntu) Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.18 (Ubuntu)'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => '/var/www/html'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/var/www/html'
+    'SERVER_ADMIN' => 'webmaster@localhost'
+    'SCRIPT_FILENAME' => '/var/www/html/AmazonCompanies/web/index.php'
+    'REMOTE_PORT' => '57876'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/AmazonCompanies/web/'
+    'SCRIPT_NAME' => '/AmazonCompanies/web/index.php'
+    'PHP_SELF' => '/AmazonCompanies/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1480619148.415
+    'REQUEST_TIME' => 1480619148
+]
+2016-12-01 19:05:48 [127.0.0.1][1][lqfvh9rihudnf67ob5gm3mi6g7][error][yii\base\UnknownPropertyException] yii\base\UnknownPropertyException: Getting unknown property: app\models\User::username in /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/Object.php:138
+Stack trace:
+#0 /var/www/html/AmazonCompanies/views/layouts/main.php(172): yii\base\Object->__get('username')
+#1 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/View.php(326): require('/var/www/html/A...')
+#2 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/View.php(248): yii\base\View->renderPhpFile('/var/www/html/A...', Array)
+#3 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/Controller.php(393): yii\base\View->renderFile('/var/www/html/A...', Array, Object(app\controllers\SiteController))
+#4 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/Controller.php(379): yii\base\Controller->renderContent('\n<head>\n  <meta...')
+#5 /var/www/html/AmazonCompanies/controllers/SiteController.php(63): yii\base\Controller->render('index')
+#6 [internal function]: app\controllers\SiteController->actionIndex()
+#7 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/InlineAction.php(55): call_user_func_array(Array, Array)
+#8 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/Controller.php(154): yii\base\InlineAction->runWithParams(Array)
+#9 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/Module.php(454): yii\base\Controller->runAction('', Array)
+#10 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/web/Application.php(100): yii\base\Module->runAction('', Array)
+#11 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#12 /var/www/html/AmazonCompanies/web/index.php(12): yii\base\Application->run()
+#13 {main}
+2016-12-01 19:05:48 [127.0.0.1][1][lqfvh9rihudnf67ob5gm3mi6g7][info][application] $_COOKIE = [
+    '_csrf' => 'e8e32186ea26e646547382a0fe0329680df2fc2aeb980951a4f6e5f8e6f61153a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"vUyOr7gpBUbk6k3vzkn3bz4rx6K8qiWR\";}'
+    'PHPSESSID' => 'lqfvh9rihudnf67ob5gm3mi6g7'
+    '_identity' => '1de54a1149b80de6528a96989c1654bdfc80c1563a5eee0bba83377ee513af81a:2:{i:0;s:9:\"_identity\";i:1;s:16:\"[1,null,2592000]\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__id' => 1
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'localhost'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:50.0) Gecko/20100101 Firefox/50.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.5'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_COOKIE' => '_csrf=e8e32186ea26e646547382a0fe0329680df2fc2aeb980951a4f6e5f8e6f61153a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22vUyOr7gpBUbk6k3vzkn3bz4rx6K8qiWR%22%3B%7D; PHPSESSID=lqfvh9rihudnf67ob5gm3mi6g7; _identity=1de54a1149b80de6528a96989c1654bdfc80c1563a5eee0bba83377ee513af81a%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_identity%22%3Bi%3A1%3Bs%3A16%3A%22%5B1%2Cnull%2C2592000%5D%22%3B%7D'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.18 (Ubuntu) Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.18 (Ubuntu)'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => '/var/www/html'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/var/www/html'
+    'SERVER_ADMIN' => 'webmaster@localhost'
+    'SCRIPT_FILENAME' => '/var/www/html/AmazonCompanies/web/index.php'
+    'REMOTE_PORT' => '57878'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/AmazonCompanies/web/'
+    'SCRIPT_NAME' => '/AmazonCompanies/web/index.php'
+    'PHP_SELF' => '/AmazonCompanies/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1480619148.579
+    'REQUEST_TIME' => 1480619148
+]
+2016-12-01 19:05:49 [127.0.0.1][1][lqfvh9rihudnf67ob5gm3mi6g7][error][yii\base\UnknownPropertyException] yii\base\UnknownPropertyException: Getting unknown property: app\models\User::username in /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/Object.php:138
+Stack trace:
+#0 /var/www/html/AmazonCompanies/views/layouts/main.php(172): yii\base\Object->__get('username')
+#1 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/View.php(326): require('/var/www/html/A...')
+#2 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/View.php(248): yii\base\View->renderPhpFile('/var/www/html/A...', Array)
+#3 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/Controller.php(393): yii\base\View->renderFile('/var/www/html/A...', Array, Object(app\controllers\SiteController))
+#4 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/Controller.php(379): yii\base\Controller->renderContent('\n<head>\n  <meta...')
+#5 /var/www/html/AmazonCompanies/controllers/SiteController.php(63): yii\base\Controller->render('index')
+#6 [internal function]: app\controllers\SiteController->actionIndex()
+#7 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/InlineAction.php(55): call_user_func_array(Array, Array)
+#8 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/Controller.php(154): yii\base\InlineAction->runWithParams(Array)
+#9 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/Module.php(454): yii\base\Controller->runAction('', Array)
+#10 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/web/Application.php(100): yii\base\Module->runAction('', Array)
+#11 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#12 /var/www/html/AmazonCompanies/web/index.php(12): yii\base\Application->run()
+#13 {main}
+2016-12-01 19:05:49 [127.0.0.1][1][lqfvh9rihudnf67ob5gm3mi6g7][info][application] $_COOKIE = [
+    '_csrf' => 'e8e32186ea26e646547382a0fe0329680df2fc2aeb980951a4f6e5f8e6f61153a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"vUyOr7gpBUbk6k3vzkn3bz4rx6K8qiWR\";}'
+    'PHPSESSID' => 'lqfvh9rihudnf67ob5gm3mi6g7'
+    '_identity' => '1de54a1149b80de6528a96989c1654bdfc80c1563a5eee0bba83377ee513af81a:2:{i:0;s:9:\"_identity\";i:1;s:16:\"[1,null,2592000]\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__id' => 1
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'localhost'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:50.0) Gecko/20100101 Firefox/50.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.5'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_COOKIE' => '_csrf=e8e32186ea26e646547382a0fe0329680df2fc2aeb980951a4f6e5f8e6f61153a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22vUyOr7gpBUbk6k3vzkn3bz4rx6K8qiWR%22%3B%7D; PHPSESSID=lqfvh9rihudnf67ob5gm3mi6g7; _identity=1de54a1149b80de6528a96989c1654bdfc80c1563a5eee0bba83377ee513af81a%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_identity%22%3Bi%3A1%3Bs%3A16%3A%22%5B1%2Cnull%2C2592000%5D%22%3B%7D'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.18 (Ubuntu) Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.18 (Ubuntu)'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => '/var/www/html'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/var/www/html'
+    'SERVER_ADMIN' => 'webmaster@localhost'
+    'SCRIPT_FILENAME' => '/var/www/html/AmazonCompanies/web/index.php'
+    'REMOTE_PORT' => '57880'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/AmazonCompanies/web/'
+    'SCRIPT_NAME' => '/AmazonCompanies/web/index.php'
+    'PHP_SELF' => '/AmazonCompanies/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1480619149.855
+    'REQUEST_TIME' => 1480619149
+]
+2016-12-01 19:05:50 [127.0.0.1][1][lqfvh9rihudnf67ob5gm3mi6g7][error][yii\base\UnknownPropertyException] yii\base\UnknownPropertyException: Getting unknown property: app\models\User::username in /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/Object.php:138
+Stack trace:
+#0 /var/www/html/AmazonCompanies/views/layouts/main.php(172): yii\base\Object->__get('username')
+#1 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/View.php(326): require('/var/www/html/A...')
+#2 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/View.php(248): yii\base\View->renderPhpFile('/var/www/html/A...', Array)
+#3 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/Controller.php(393): yii\base\View->renderFile('/var/www/html/A...', Array, Object(app\controllers\SiteController))
+#4 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/Controller.php(379): yii\base\Controller->renderContent('\n<head>\n  <meta...')
+#5 /var/www/html/AmazonCompanies/controllers/SiteController.php(63): yii\base\Controller->render('index')
+#6 [internal function]: app\controllers\SiteController->actionIndex()
+#7 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/InlineAction.php(55): call_user_func_array(Array, Array)
+#8 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/Controller.php(154): yii\base\InlineAction->runWithParams(Array)
+#9 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/Module.php(454): yii\base\Controller->runAction('', Array)
+#10 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/web/Application.php(100): yii\base\Module->runAction('', Array)
+#11 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#12 /var/www/html/AmazonCompanies/web/index.php(12): yii\base\Application->run()
+#13 {main}
+2016-12-01 19:05:50 [127.0.0.1][1][lqfvh9rihudnf67ob5gm3mi6g7][info][application] $_COOKIE = [
+    '_csrf' => 'e8e32186ea26e646547382a0fe0329680df2fc2aeb980951a4f6e5f8e6f61153a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"vUyOr7gpBUbk6k3vzkn3bz4rx6K8qiWR\";}'
+    'PHPSESSID' => 'lqfvh9rihudnf67ob5gm3mi6g7'
+    '_identity' => '1de54a1149b80de6528a96989c1654bdfc80c1563a5eee0bba83377ee513af81a:2:{i:0;s:9:\"_identity\";i:1;s:16:\"[1,null,2592000]\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__id' => 1
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'localhost'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:50.0) Gecko/20100101 Firefox/50.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.5'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_COOKIE' => '_csrf=e8e32186ea26e646547382a0fe0329680df2fc2aeb980951a4f6e5f8e6f61153a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22vUyOr7gpBUbk6k3vzkn3bz4rx6K8qiWR%22%3B%7D; PHPSESSID=lqfvh9rihudnf67ob5gm3mi6g7; _identity=1de54a1149b80de6528a96989c1654bdfc80c1563a5eee0bba83377ee513af81a%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_identity%22%3Bi%3A1%3Bs%3A16%3A%22%5B1%2Cnull%2C2592000%5D%22%3B%7D'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.18 (Ubuntu) Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.18 (Ubuntu)'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => '/var/www/html'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/var/www/html'
+    'SERVER_ADMIN' => 'webmaster@localhost'
+    'SCRIPT_FILENAME' => '/var/www/html/AmazonCompanies/web/index.php'
+    'REMOTE_PORT' => '57882'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/AmazonCompanies/web/'
+    'SCRIPT_NAME' => '/AmazonCompanies/web/index.php'
+    'PHP_SELF' => '/AmazonCompanies/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1480619150.015
+    'REQUEST_TIME' => 1480619150
+]
+2016-12-01 19:05:50 [127.0.0.1][1][lqfvh9rihudnf67ob5gm3mi6g7][error][yii\base\UnknownPropertyException] yii\base\UnknownPropertyException: Getting unknown property: app\models\User::username in /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/Object.php:138
+Stack trace:
+#0 /var/www/html/AmazonCompanies/views/layouts/main.php(172): yii\base\Object->__get('username')
+#1 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/View.php(326): require('/var/www/html/A...')
+#2 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/View.php(248): yii\base\View->renderPhpFile('/var/www/html/A...', Array)
+#3 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/Controller.php(393): yii\base\View->renderFile('/var/www/html/A...', Array, Object(app\controllers\SiteController))
+#4 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/Controller.php(379): yii\base\Controller->renderContent('\n<head>\n  <meta...')
+#5 /var/www/html/AmazonCompanies/controllers/SiteController.php(63): yii\base\Controller->render('index')
+#6 [internal function]: app\controllers\SiteController->actionIndex()
+#7 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/InlineAction.php(55): call_user_func_array(Array, Array)
+#8 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/Controller.php(154): yii\base\InlineAction->runWithParams(Array)
+#9 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/Module.php(454): yii\base\Controller->runAction('', Array)
+#10 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/web/Application.php(100): yii\base\Module->runAction('', Array)
+#11 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#12 /var/www/html/AmazonCompanies/web/index.php(12): yii\base\Application->run()
+#13 {main}
+2016-12-01 19:05:50 [127.0.0.1][1][lqfvh9rihudnf67ob5gm3mi6g7][info][application] $_COOKIE = [
+    '_csrf' => 'e8e32186ea26e646547382a0fe0329680df2fc2aeb980951a4f6e5f8e6f61153a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"vUyOr7gpBUbk6k3vzkn3bz4rx6K8qiWR\";}'
+    'PHPSESSID' => 'lqfvh9rihudnf67ob5gm3mi6g7'
+    '_identity' => '1de54a1149b80de6528a96989c1654bdfc80c1563a5eee0bba83377ee513af81a:2:{i:0;s:9:\"_identity\";i:1;s:16:\"[1,null,2592000]\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__id' => 1
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'localhost'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:50.0) Gecko/20100101 Firefox/50.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.5'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_COOKIE' => '_csrf=e8e32186ea26e646547382a0fe0329680df2fc2aeb980951a4f6e5f8e6f61153a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22vUyOr7gpBUbk6k3vzkn3bz4rx6K8qiWR%22%3B%7D; PHPSESSID=lqfvh9rihudnf67ob5gm3mi6g7; _identity=1de54a1149b80de6528a96989c1654bdfc80c1563a5eee0bba83377ee513af81a%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_identity%22%3Bi%3A1%3Bs%3A16%3A%22%5B1%2Cnull%2C2592000%5D%22%3B%7D'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.18 (Ubuntu) Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.18 (Ubuntu)'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => '/var/www/html'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/var/www/html'
+    'SERVER_ADMIN' => 'webmaster@localhost'
+    'SCRIPT_FILENAME' => '/var/www/html/AmazonCompanies/web/index.php'
+    'REMOTE_PORT' => '57884'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/AmazonCompanies/web/'
+    'SCRIPT_NAME' => '/AmazonCompanies/web/index.php'
+    'PHP_SELF' => '/AmazonCompanies/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1480619150.188
+    'REQUEST_TIME' => 1480619150
+]
+2016-12-01 19:05:50 [127.0.0.1][1][lqfvh9rihudnf67ob5gm3mi6g7][error][yii\base\UnknownPropertyException] yii\base\UnknownPropertyException: Getting unknown property: app\models\User::username in /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/Object.php:138
+Stack trace:
+#0 /var/www/html/AmazonCompanies/views/layouts/main.php(172): yii\base\Object->__get('username')
+#1 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/View.php(326): require('/var/www/html/A...')
+#2 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/View.php(248): yii\base\View->renderPhpFile('/var/www/html/A...', Array)
+#3 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/Controller.php(393): yii\base\View->renderFile('/var/www/html/A...', Array, Object(app\controllers\SiteController))
+#4 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/Controller.php(379): yii\base\Controller->renderContent('\n<head>\n  <meta...')
+#5 /var/www/html/AmazonCompanies/controllers/SiteController.php(63): yii\base\Controller->render('index')
+#6 [internal function]: app\controllers\SiteController->actionIndex()
+#7 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/InlineAction.php(55): call_user_func_array(Array, Array)
+#8 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/Controller.php(154): yii\base\InlineAction->runWithParams(Array)
+#9 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/Module.php(454): yii\base\Controller->runAction('', Array)
+#10 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/web/Application.php(100): yii\base\Module->runAction('', Array)
+#11 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#12 /var/www/html/AmazonCompanies/web/index.php(12): yii\base\Application->run()
+#13 {main}
+2016-12-01 19:05:50 [127.0.0.1][1][lqfvh9rihudnf67ob5gm3mi6g7][info][application] $_COOKIE = [
+    '_csrf' => 'e8e32186ea26e646547382a0fe0329680df2fc2aeb980951a4f6e5f8e6f61153a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"vUyOr7gpBUbk6k3vzkn3bz4rx6K8qiWR\";}'
+    'PHPSESSID' => 'lqfvh9rihudnf67ob5gm3mi6g7'
+    '_identity' => '1de54a1149b80de6528a96989c1654bdfc80c1563a5eee0bba83377ee513af81a:2:{i:0;s:9:\"_identity\";i:1;s:16:\"[1,null,2592000]\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__id' => 1
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'localhost'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:50.0) Gecko/20100101 Firefox/50.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.5'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_COOKIE' => '_csrf=e8e32186ea26e646547382a0fe0329680df2fc2aeb980951a4f6e5f8e6f61153a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22vUyOr7gpBUbk6k3vzkn3bz4rx6K8qiWR%22%3B%7D; PHPSESSID=lqfvh9rihudnf67ob5gm3mi6g7; _identity=1de54a1149b80de6528a96989c1654bdfc80c1563a5eee0bba83377ee513af81a%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_identity%22%3Bi%3A1%3Bs%3A16%3A%22%5B1%2Cnull%2C2592000%5D%22%3B%7D'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.18 (Ubuntu) Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.18 (Ubuntu)'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => '/var/www/html'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/var/www/html'
+    'SERVER_ADMIN' => 'webmaster@localhost'
+    'SCRIPT_FILENAME' => '/var/www/html/AmazonCompanies/web/index.php'
+    'REMOTE_PORT' => '57886'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/AmazonCompanies/web/'
+    'SCRIPT_NAME' => '/AmazonCompanies/web/index.php'
+    'PHP_SELF' => '/AmazonCompanies/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1480619150.365
+    'REQUEST_TIME' => 1480619150
+]
+2016-12-01 19:05:50 [127.0.0.1][1][lqfvh9rihudnf67ob5gm3mi6g7][error][yii\base\UnknownPropertyException] yii\base\UnknownPropertyException: Getting unknown property: app\models\User::username in /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/Object.php:138
+Stack trace:
+#0 /var/www/html/AmazonCompanies/views/layouts/main.php(172): yii\base\Object->__get('username')
+#1 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/View.php(326): require('/var/www/html/A...')
+#2 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/View.php(248): yii\base\View->renderPhpFile('/var/www/html/A...', Array)
+#3 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/Controller.php(393): yii\base\View->renderFile('/var/www/html/A...', Array, Object(app\controllers\SiteController))
+#4 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/Controller.php(379): yii\base\Controller->renderContent('\n<head>\n  <meta...')
+#5 /var/www/html/AmazonCompanies/controllers/SiteController.php(63): yii\base\Controller->render('index')
+#6 [internal function]: app\controllers\SiteController->actionIndex()
+#7 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/InlineAction.php(55): call_user_func_array(Array, Array)
+#8 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/Controller.php(154): yii\base\InlineAction->runWithParams(Array)
+#9 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/Module.php(454): yii\base\Controller->runAction('', Array)
+#10 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/web/Application.php(100): yii\base\Module->runAction('', Array)
+#11 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#12 /var/www/html/AmazonCompanies/web/index.php(12): yii\base\Application->run()
+#13 {main}
+2016-12-01 19:05:50 [127.0.0.1][1][lqfvh9rihudnf67ob5gm3mi6g7][info][application] $_COOKIE = [
+    '_csrf' => 'e8e32186ea26e646547382a0fe0329680df2fc2aeb980951a4f6e5f8e6f61153a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"vUyOr7gpBUbk6k3vzkn3bz4rx6K8qiWR\";}'
+    'PHPSESSID' => 'lqfvh9rihudnf67ob5gm3mi6g7'
+    '_identity' => '1de54a1149b80de6528a96989c1654bdfc80c1563a5eee0bba83377ee513af81a:2:{i:0;s:9:\"_identity\";i:1;s:16:\"[1,null,2592000]\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__id' => 1
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'localhost'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:50.0) Gecko/20100101 Firefox/50.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.5'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_COOKIE' => '_csrf=e8e32186ea26e646547382a0fe0329680df2fc2aeb980951a4f6e5f8e6f61153a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22vUyOr7gpBUbk6k3vzkn3bz4rx6K8qiWR%22%3B%7D; PHPSESSID=lqfvh9rihudnf67ob5gm3mi6g7; _identity=1de54a1149b80de6528a96989c1654bdfc80c1563a5eee0bba83377ee513af81a%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_identity%22%3Bi%3A1%3Bs%3A16%3A%22%5B1%2Cnull%2C2592000%5D%22%3B%7D'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.18 (Ubuntu) Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.18 (Ubuntu)'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => '/var/www/html'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/var/www/html'
+    'SERVER_ADMIN' => 'webmaster@localhost'
+    'SCRIPT_FILENAME' => '/var/www/html/AmazonCompanies/web/index.php'
+    'REMOTE_PORT' => '57888'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/AmazonCompanies/web/'
+    'SCRIPT_NAME' => '/AmazonCompanies/web/index.php'
+    'PHP_SELF' => '/AmazonCompanies/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1480619150.526
+    'REQUEST_TIME' => 1480619150
+]
+2016-12-01 19:05:50 [127.0.0.1][1][lqfvh9rihudnf67ob5gm3mi6g7][error][yii\base\UnknownPropertyException] yii\base\UnknownPropertyException: Getting unknown property: app\models\User::username in /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/Object.php:138
+Stack trace:
+#0 /var/www/html/AmazonCompanies/views/layouts/main.php(172): yii\base\Object->__get('username')
+#1 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/View.php(326): require('/var/www/html/A...')
+#2 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/View.php(248): yii\base\View->renderPhpFile('/var/www/html/A...', Array)
+#3 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/Controller.php(393): yii\base\View->renderFile('/var/www/html/A...', Array, Object(app\controllers\SiteController))
+#4 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/Controller.php(379): yii\base\Controller->renderContent('\n<head>\n  <meta...')
+#5 /var/www/html/AmazonCompanies/controllers/SiteController.php(63): yii\base\Controller->render('index')
+#6 [internal function]: app\controllers\SiteController->actionIndex()
+#7 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/InlineAction.php(55): call_user_func_array(Array, Array)
+#8 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/Controller.php(154): yii\base\InlineAction->runWithParams(Array)
+#9 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/Module.php(454): yii\base\Controller->runAction('', Array)
+#10 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/web/Application.php(100): yii\base\Module->runAction('', Array)
+#11 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#12 /var/www/html/AmazonCompanies/web/index.php(12): yii\base\Application->run()
+#13 {main}
+2016-12-01 19:05:50 [127.0.0.1][1][lqfvh9rihudnf67ob5gm3mi6g7][info][application] $_COOKIE = [
+    '_csrf' => 'e8e32186ea26e646547382a0fe0329680df2fc2aeb980951a4f6e5f8e6f61153a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"vUyOr7gpBUbk6k3vzkn3bz4rx6K8qiWR\";}'
+    'PHPSESSID' => 'lqfvh9rihudnf67ob5gm3mi6g7'
+    '_identity' => '1de54a1149b80de6528a96989c1654bdfc80c1563a5eee0bba83377ee513af81a:2:{i:0;s:9:\"_identity\";i:1;s:16:\"[1,null,2592000]\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__id' => 1
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'localhost'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:50.0) Gecko/20100101 Firefox/50.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.5'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_COOKIE' => '_csrf=e8e32186ea26e646547382a0fe0329680df2fc2aeb980951a4f6e5f8e6f61153a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22vUyOr7gpBUbk6k3vzkn3bz4rx6K8qiWR%22%3B%7D; PHPSESSID=lqfvh9rihudnf67ob5gm3mi6g7; _identity=1de54a1149b80de6528a96989c1654bdfc80c1563a5eee0bba83377ee513af81a%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_identity%22%3Bi%3A1%3Bs%3A16%3A%22%5B1%2Cnull%2C2592000%5D%22%3B%7D'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.18 (Ubuntu) Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.18 (Ubuntu)'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => '/var/www/html'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/var/www/html'
+    'SERVER_ADMIN' => 'webmaster@localhost'
+    'SCRIPT_FILENAME' => '/var/www/html/AmazonCompanies/web/index.php'
+    'REMOTE_PORT' => '57890'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/AmazonCompanies/web/'
+    'SCRIPT_NAME' => '/AmazonCompanies/web/index.php'
+    'PHP_SELF' => '/AmazonCompanies/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1480619150.698
+    'REQUEST_TIME' => 1480619150
+]
+2016-12-01 19:05:50 [127.0.0.1][1][lqfvh9rihudnf67ob5gm3mi6g7][error][yii\base\UnknownPropertyException] yii\base\UnknownPropertyException: Getting unknown property: app\models\User::username in /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/Object.php:138
+Stack trace:
+#0 /var/www/html/AmazonCompanies/views/layouts/main.php(172): yii\base\Object->__get('username')
+#1 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/View.php(326): require('/var/www/html/A...')
+#2 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/View.php(248): yii\base\View->renderPhpFile('/var/www/html/A...', Array)
+#3 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/Controller.php(393): yii\base\View->renderFile('/var/www/html/A...', Array, Object(app\controllers\SiteController))
+#4 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/Controller.php(379): yii\base\Controller->renderContent('\n<head>\n  <meta...')
+#5 /var/www/html/AmazonCompanies/controllers/SiteController.php(63): yii\base\Controller->render('index')
+#6 [internal function]: app\controllers\SiteController->actionIndex()
+#7 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/InlineAction.php(55): call_user_func_array(Array, Array)
+#8 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/Controller.php(154): yii\base\InlineAction->runWithParams(Array)
+#9 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/Module.php(454): yii\base\Controller->runAction('', Array)
+#10 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/web/Application.php(100): yii\base\Module->runAction('', Array)
+#11 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#12 /var/www/html/AmazonCompanies/web/index.php(12): yii\base\Application->run()
+#13 {main}
+2016-12-01 19:05:50 [127.0.0.1][1][lqfvh9rihudnf67ob5gm3mi6g7][info][application] $_COOKIE = [
+    '_csrf' => 'e8e32186ea26e646547382a0fe0329680df2fc2aeb980951a4f6e5f8e6f61153a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"vUyOr7gpBUbk6k3vzkn3bz4rx6K8qiWR\";}'
+    'PHPSESSID' => 'lqfvh9rihudnf67ob5gm3mi6g7'
+    '_identity' => '1de54a1149b80de6528a96989c1654bdfc80c1563a5eee0bba83377ee513af81a:2:{i:0;s:9:\"_identity\";i:1;s:16:\"[1,null,2592000]\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__id' => 1
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'localhost'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:50.0) Gecko/20100101 Firefox/50.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.5'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_COOKIE' => '_csrf=e8e32186ea26e646547382a0fe0329680df2fc2aeb980951a4f6e5f8e6f61153a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22vUyOr7gpBUbk6k3vzkn3bz4rx6K8qiWR%22%3B%7D; PHPSESSID=lqfvh9rihudnf67ob5gm3mi6g7; _identity=1de54a1149b80de6528a96989c1654bdfc80c1563a5eee0bba83377ee513af81a%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_identity%22%3Bi%3A1%3Bs%3A16%3A%22%5B1%2Cnull%2C2592000%5D%22%3B%7D'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.18 (Ubuntu) Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.18 (Ubuntu)'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => '/var/www/html'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/var/www/html'
+    'SERVER_ADMIN' => 'webmaster@localhost'
+    'SCRIPT_FILENAME' => '/var/www/html/AmazonCompanies/web/index.php'
+    'REMOTE_PORT' => '57892'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/AmazonCompanies/web/'
+    'SCRIPT_NAME' => '/AmazonCompanies/web/index.php'
+    'PHP_SELF' => '/AmazonCompanies/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1480619150.866
+    'REQUEST_TIME' => 1480619150
+]
+2016-12-01 19:05:55 [127.0.0.1][1][lqfvh9rihudnf67ob5gm3mi6g7][error][yii\base\UnknownPropertyException] yii\base\UnknownPropertyException: Getting unknown property: app\models\User::username in /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/Object.php:138
+Stack trace:
+#0 /var/www/html/AmazonCompanies/views/layouts/main.php(172): yii\base\Object->__get('username')
+#1 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/View.php(326): require('/var/www/html/A...')
+#2 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/View.php(248): yii\base\View->renderPhpFile('/var/www/html/A...', Array)
+#3 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/Controller.php(393): yii\base\View->renderFile('/var/www/html/A...', Array, Object(app\controllers\SiteController))
+#4 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/Controller.php(379): yii\base\Controller->renderContent('\n<head>\n  <meta...')
+#5 /var/www/html/AmazonCompanies/controllers/SiteController.php(63): yii\base\Controller->render('index')
+#6 [internal function]: app\controllers\SiteController->actionIndex()
+#7 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/InlineAction.php(55): call_user_func_array(Array, Array)
+#8 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/Controller.php(154): yii\base\InlineAction->runWithParams(Array)
+#9 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/Module.php(454): yii\base\Controller->runAction('', Array)
+#10 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/web/Application.php(100): yii\base\Module->runAction('', Array)
+#11 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#12 /var/www/html/AmazonCompanies/web/index.php(12): yii\base\Application->run()
+#13 {main}
+2016-12-01 19:05:55 [127.0.0.1][1][lqfvh9rihudnf67ob5gm3mi6g7][info][application] $_COOKIE = [
+    '_csrf' => 'e8e32186ea26e646547382a0fe0329680df2fc2aeb980951a4f6e5f8e6f61153a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"vUyOr7gpBUbk6k3vzkn3bz4rx6K8qiWR\";}'
+    'PHPSESSID' => 'lqfvh9rihudnf67ob5gm3mi6g7'
+    '_identity' => '1de54a1149b80de6528a96989c1654bdfc80c1563a5eee0bba83377ee513af81a:2:{i:0;s:9:\"_identity\";i:1;s:16:\"[1,null,2592000]\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__id' => 1
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'localhost'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:50.0) Gecko/20100101 Firefox/50.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.5'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_COOKIE' => '_csrf=e8e32186ea26e646547382a0fe0329680df2fc2aeb980951a4f6e5f8e6f61153a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22vUyOr7gpBUbk6k3vzkn3bz4rx6K8qiWR%22%3B%7D; PHPSESSID=lqfvh9rihudnf67ob5gm3mi6g7; _identity=1de54a1149b80de6528a96989c1654bdfc80c1563a5eee0bba83377ee513af81a%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_identity%22%3Bi%3A1%3Bs%3A16%3A%22%5B1%2Cnull%2C2592000%5D%22%3B%7D'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.18 (Ubuntu) Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.18 (Ubuntu)'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => '/var/www/html'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/var/www/html'
+    'SERVER_ADMIN' => 'webmaster@localhost'
+    'SCRIPT_FILENAME' => '/var/www/html/AmazonCompanies/web/index.php'
+    'REMOTE_PORT' => '57894'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/AmazonCompanies/web/'
+    'SCRIPT_NAME' => '/AmazonCompanies/web/index.php'
+    'PHP_SELF' => '/AmazonCompanies/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1480619155.622
+    'REQUEST_TIME' => 1480619155
+]
+2016-12-01 19:05:56 [127.0.0.1][1][lqfvh9rihudnf67ob5gm3mi6g7][error][yii\base\UnknownPropertyException] yii\base\UnknownPropertyException: Getting unknown property: app\models\User::username in /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/Object.php:138
+Stack trace:
+#0 /var/www/html/AmazonCompanies/views/layouts/main.php(172): yii\base\Object->__get('username')
+#1 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/View.php(326): require('/var/www/html/A...')
+#2 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/View.php(248): yii\base\View->renderPhpFile('/var/www/html/A...', Array)
+#3 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/Controller.php(393): yii\base\View->renderFile('/var/www/html/A...', Array, Object(app\controllers\SiteController))
+#4 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/Controller.php(379): yii\base\Controller->renderContent('\n<head>\n  <meta...')
+#5 /var/www/html/AmazonCompanies/controllers/SiteController.php(63): yii\base\Controller->render('index')
+#6 [internal function]: app\controllers\SiteController->actionIndex()
+#7 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/InlineAction.php(55): call_user_func_array(Array, Array)
+#8 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/Controller.php(154): yii\base\InlineAction->runWithParams(Array)
+#9 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/Module.php(454): yii\base\Controller->runAction('', Array)
+#10 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/web/Application.php(100): yii\base\Module->runAction('', Array)
+#11 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#12 /var/www/html/AmazonCompanies/web/index.php(12): yii\base\Application->run()
+#13 {main}
+2016-12-01 19:05:56 [127.0.0.1][1][lqfvh9rihudnf67ob5gm3mi6g7][info][application] $_COOKIE = [
+    '_csrf' => 'e8e32186ea26e646547382a0fe0329680df2fc2aeb980951a4f6e5f8e6f61153a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"vUyOr7gpBUbk6k3vzkn3bz4rx6K8qiWR\";}'
+    'PHPSESSID' => 'lqfvh9rihudnf67ob5gm3mi6g7'
+    '_identity' => '1de54a1149b80de6528a96989c1654bdfc80c1563a5eee0bba83377ee513af81a:2:{i:0;s:9:\"_identity\";i:1;s:16:\"[1,null,2592000]\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__id' => 1
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'localhost'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:50.0) Gecko/20100101 Firefox/50.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.5'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_COOKIE' => '_csrf=e8e32186ea26e646547382a0fe0329680df2fc2aeb980951a4f6e5f8e6f61153a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22vUyOr7gpBUbk6k3vzkn3bz4rx6K8qiWR%22%3B%7D; PHPSESSID=lqfvh9rihudnf67ob5gm3mi6g7; _identity=1de54a1149b80de6528a96989c1654bdfc80c1563a5eee0bba83377ee513af81a%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_identity%22%3Bi%3A1%3Bs%3A16%3A%22%5B1%2Cnull%2C2592000%5D%22%3B%7D'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.18 (Ubuntu) Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.18 (Ubuntu)'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => '/var/www/html'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/var/www/html'
+    'SERVER_ADMIN' => 'webmaster@localhost'
+    'SCRIPT_FILENAME' => '/var/www/html/AmazonCompanies/web/index.php'
+    'REMOTE_PORT' => '57896'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/AmazonCompanies/web/'
+    'SCRIPT_NAME' => '/AmazonCompanies/web/index.php'
+    'PHP_SELF' => '/AmazonCompanies/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1480619156.33
+    'REQUEST_TIME' => 1480619156
+]
+2016-12-01 19:05:56 [127.0.0.1][1][lqfvh9rihudnf67ob5gm3mi6g7][error][yii\base\UnknownPropertyException] yii\base\UnknownPropertyException: Getting unknown property: app\models\User::username in /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/Object.php:138
+Stack trace:
+#0 /var/www/html/AmazonCompanies/views/layouts/main.php(172): yii\base\Object->__get('username')
+#1 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/View.php(326): require('/var/www/html/A...')
+#2 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/View.php(248): yii\base\View->renderPhpFile('/var/www/html/A...', Array)
+#3 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/Controller.php(393): yii\base\View->renderFile('/var/www/html/A...', Array, Object(app\controllers\SiteController))
+#4 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/Controller.php(379): yii\base\Controller->renderContent('\n<head>\n  <meta...')
+#5 /var/www/html/AmazonCompanies/controllers/SiteController.php(63): yii\base\Controller->render('index')
+#6 [internal function]: app\controllers\SiteController->actionIndex()
+#7 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/InlineAction.php(55): call_user_func_array(Array, Array)
+#8 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/Controller.php(154): yii\base\InlineAction->runWithParams(Array)
+#9 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/Module.php(454): yii\base\Controller->runAction('', Array)
+#10 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/web/Application.php(100): yii\base\Module->runAction('', Array)
+#11 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#12 /var/www/html/AmazonCompanies/web/index.php(12): yii\base\Application->run()
+#13 {main}
+2016-12-01 19:05:56 [127.0.0.1][1][lqfvh9rihudnf67ob5gm3mi6g7][info][application] $_COOKIE = [
+    '_csrf' => 'e8e32186ea26e646547382a0fe0329680df2fc2aeb980951a4f6e5f8e6f61153a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"vUyOr7gpBUbk6k3vzkn3bz4rx6K8qiWR\";}'
+    'PHPSESSID' => 'lqfvh9rihudnf67ob5gm3mi6g7'
+    '_identity' => '1de54a1149b80de6528a96989c1654bdfc80c1563a5eee0bba83377ee513af81a:2:{i:0;s:9:\"_identity\";i:1;s:16:\"[1,null,2592000]\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__id' => 1
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'localhost'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:50.0) Gecko/20100101 Firefox/50.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.5'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_COOKIE' => '_csrf=e8e32186ea26e646547382a0fe0329680df2fc2aeb980951a4f6e5f8e6f61153a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22vUyOr7gpBUbk6k3vzkn3bz4rx6K8qiWR%22%3B%7D; PHPSESSID=lqfvh9rihudnf67ob5gm3mi6g7; _identity=1de54a1149b80de6528a96989c1654bdfc80c1563a5eee0bba83377ee513af81a%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_identity%22%3Bi%3A1%3Bs%3A16%3A%22%5B1%2Cnull%2C2592000%5D%22%3B%7D'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.18 (Ubuntu) Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.18 (Ubuntu)'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => '/var/www/html'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/var/www/html'
+    'SERVER_ADMIN' => 'webmaster@localhost'
+    'SCRIPT_FILENAME' => '/var/www/html/AmazonCompanies/web/index.php'
+    'REMOTE_PORT' => '57898'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/AmazonCompanies/web/'
+    'SCRIPT_NAME' => '/AmazonCompanies/web/index.php'
+    'PHP_SELF' => '/AmazonCompanies/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1480619156.606
+    'REQUEST_TIME' => 1480619156
+]
+2016-12-01 19:05:56 [127.0.0.1][1][lqfvh9rihudnf67ob5gm3mi6g7][error][yii\base\UnknownPropertyException] yii\base\UnknownPropertyException: Getting unknown property: app\models\User::username in /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/Object.php:138
+Stack trace:
+#0 /var/www/html/AmazonCompanies/views/layouts/main.php(172): yii\base\Object->__get('username')
+#1 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/View.php(326): require('/var/www/html/A...')
+#2 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/View.php(248): yii\base\View->renderPhpFile('/var/www/html/A...', Array)
+#3 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/Controller.php(393): yii\base\View->renderFile('/var/www/html/A...', Array, Object(app\controllers\SiteController))
+#4 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/Controller.php(379): yii\base\Controller->renderContent('\n<head>\n  <meta...')
+#5 /var/www/html/AmazonCompanies/controllers/SiteController.php(63): yii\base\Controller->render('index')
+#6 [internal function]: app\controllers\SiteController->actionIndex()
+#7 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/InlineAction.php(55): call_user_func_array(Array, Array)
+#8 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/Controller.php(154): yii\base\InlineAction->runWithParams(Array)
+#9 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/Module.php(454): yii\base\Controller->runAction('', Array)
+#10 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/web/Application.php(100): yii\base\Module->runAction('', Array)
+#11 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#12 /var/www/html/AmazonCompanies/web/index.php(12): yii\base\Application->run()
+#13 {main}
+2016-12-01 19:05:56 [127.0.0.1][1][lqfvh9rihudnf67ob5gm3mi6g7][info][application] $_COOKIE = [
+    '_csrf' => 'e8e32186ea26e646547382a0fe0329680df2fc2aeb980951a4f6e5f8e6f61153a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"vUyOr7gpBUbk6k3vzkn3bz4rx6K8qiWR\";}'
+    'PHPSESSID' => 'lqfvh9rihudnf67ob5gm3mi6g7'
+    '_identity' => '1de54a1149b80de6528a96989c1654bdfc80c1563a5eee0bba83377ee513af81a:2:{i:0;s:9:\"_identity\";i:1;s:16:\"[1,null,2592000]\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__id' => 1
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'localhost'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:50.0) Gecko/20100101 Firefox/50.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.5'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_COOKIE' => '_csrf=e8e32186ea26e646547382a0fe0329680df2fc2aeb980951a4f6e5f8e6f61153a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22vUyOr7gpBUbk6k3vzkn3bz4rx6K8qiWR%22%3B%7D; PHPSESSID=lqfvh9rihudnf67ob5gm3mi6g7; _identity=1de54a1149b80de6528a96989c1654bdfc80c1563a5eee0bba83377ee513af81a%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_identity%22%3Bi%3A1%3Bs%3A16%3A%22%5B1%2Cnull%2C2592000%5D%22%3B%7D'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.18 (Ubuntu) Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.18 (Ubuntu)'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => '/var/www/html'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/var/www/html'
+    'SERVER_ADMIN' => 'webmaster@localhost'
+    'SCRIPT_FILENAME' => '/var/www/html/AmazonCompanies/web/index.php'
+    'REMOTE_PORT' => '57900'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/AmazonCompanies/web/'
+    'SCRIPT_NAME' => '/AmazonCompanies/web/index.php'
+    'PHP_SELF' => '/AmazonCompanies/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1480619156.764
+    'REQUEST_TIME' => 1480619156
+]
+2016-12-01 19:05:56 [127.0.0.1][1][lqfvh9rihudnf67ob5gm3mi6g7][error][yii\base\UnknownPropertyException] yii\base\UnknownPropertyException: Getting unknown property: app\models\User::username in /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/Object.php:138
+Stack trace:
+#0 /var/www/html/AmazonCompanies/views/layouts/main.php(172): yii\base\Object->__get('username')
+#1 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/View.php(326): require('/var/www/html/A...')
+#2 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/View.php(248): yii\base\View->renderPhpFile('/var/www/html/A...', Array)
+#3 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/Controller.php(393): yii\base\View->renderFile('/var/www/html/A...', Array, Object(app\controllers\SiteController))
+#4 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/Controller.php(379): yii\base\Controller->renderContent('\n<head>\n  <meta...')
+#5 /var/www/html/AmazonCompanies/controllers/SiteController.php(63): yii\base\Controller->render('index')
+#6 [internal function]: app\controllers\SiteController->actionIndex()
+#7 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/InlineAction.php(55): call_user_func_array(Array, Array)
+#8 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/Controller.php(154): yii\base\InlineAction->runWithParams(Array)
+#9 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/Module.php(454): yii\base\Controller->runAction('', Array)
+#10 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/web/Application.php(100): yii\base\Module->runAction('', Array)
+#11 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#12 /var/www/html/AmazonCompanies/web/index.php(12): yii\base\Application->run()
+#13 {main}
+2016-12-01 19:05:56 [127.0.0.1][1][lqfvh9rihudnf67ob5gm3mi6g7][info][application] $_COOKIE = [
+    '_csrf' => 'e8e32186ea26e646547382a0fe0329680df2fc2aeb980951a4f6e5f8e6f61153a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"vUyOr7gpBUbk6k3vzkn3bz4rx6K8qiWR\";}'
+    'PHPSESSID' => 'lqfvh9rihudnf67ob5gm3mi6g7'
+    '_identity' => '1de54a1149b80de6528a96989c1654bdfc80c1563a5eee0bba83377ee513af81a:2:{i:0;s:9:\"_identity\";i:1;s:16:\"[1,null,2592000]\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__id' => 1
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'localhost'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:50.0) Gecko/20100101 Firefox/50.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.5'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_COOKIE' => '_csrf=e8e32186ea26e646547382a0fe0329680df2fc2aeb980951a4f6e5f8e6f61153a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22vUyOr7gpBUbk6k3vzkn3bz4rx6K8qiWR%22%3B%7D; PHPSESSID=lqfvh9rihudnf67ob5gm3mi6g7; _identity=1de54a1149b80de6528a96989c1654bdfc80c1563a5eee0bba83377ee513af81a%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_identity%22%3Bi%3A1%3Bs%3A16%3A%22%5B1%2Cnull%2C2592000%5D%22%3B%7D'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.18 (Ubuntu) Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.18 (Ubuntu)'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => '/var/www/html'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/var/www/html'
+    'SERVER_ADMIN' => 'webmaster@localhost'
+    'SCRIPT_FILENAME' => '/var/www/html/AmazonCompanies/web/index.php'
+    'REMOTE_PORT' => '57902'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/AmazonCompanies/web/'
+    'SCRIPT_NAME' => '/AmazonCompanies/web/index.php'
+    'PHP_SELF' => '/AmazonCompanies/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1480619156.927
+    'REQUEST_TIME' => 1480619156
+]
+2016-12-01 19:07:13 [127.0.0.1][1][lqfvh9rihudnf67ob5gm3mi6g7][error][yii\base\UnknownMethodException] yii\base\UnknownMethodException: Calling unknown method: yii\web\User::getIdentificadorPessoa() in /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/Component.php:285
+Stack trace:
+#0 /var/www/html/AmazonCompanies/views/layouts/main.php(40): yii\base\Component->__call('getIdentificado...', Array)
+#1 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/View.php(326): require('/var/www/html/A...')
+#2 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/View.php(248): yii\base\View->renderPhpFile('/var/www/html/A...', Array)
+#3 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/Controller.php(393): yii\base\View->renderFile('/var/www/html/A...', Array, Object(app\controllers\SiteController))
+#4 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/Controller.php(379): yii\base\Controller->renderContent('\n<head>\n  <meta...')
+#5 /var/www/html/AmazonCompanies/controllers/SiteController.php(63): yii\base\Controller->render('index')
+#6 [internal function]: app\controllers\SiteController->actionIndex()
+#7 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/InlineAction.php(55): call_user_func_array(Array, Array)
+#8 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/Controller.php(154): yii\base\InlineAction->runWithParams(Array)
+#9 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/Module.php(454): yii\base\Controller->runAction('', Array)
+#10 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/web/Application.php(100): yii\base\Module->runAction('', Array)
+#11 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#12 /var/www/html/AmazonCompanies/web/index.php(12): yii\base\Application->run()
+#13 {main}
+2016-12-01 19:07:13 [127.0.0.1][1][lqfvh9rihudnf67ob5gm3mi6g7][info][application] $_COOKIE = [
+    '_csrf' => 'e8e32186ea26e646547382a0fe0329680df2fc2aeb980951a4f6e5f8e6f61153a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"vUyOr7gpBUbk6k3vzkn3bz4rx6K8qiWR\";}'
+    'PHPSESSID' => 'lqfvh9rihudnf67ob5gm3mi6g7'
+    '_identity' => '1de54a1149b80de6528a96989c1654bdfc80c1563a5eee0bba83377ee513af81a:2:{i:0;s:9:\"_identity\";i:1;s:16:\"[1,null,2592000]\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__id' => 1
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'localhost'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:50.0) Gecko/20100101 Firefox/50.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.5'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_COOKIE' => '_csrf=e8e32186ea26e646547382a0fe0329680df2fc2aeb980951a4f6e5f8e6f61153a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22vUyOr7gpBUbk6k3vzkn3bz4rx6K8qiWR%22%3B%7D; PHPSESSID=lqfvh9rihudnf67ob5gm3mi6g7; _identity=1de54a1149b80de6528a96989c1654bdfc80c1563a5eee0bba83377ee513af81a%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_identity%22%3Bi%3A1%3Bs%3A16%3A%22%5B1%2Cnull%2C2592000%5D%22%3B%7D'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.18 (Ubuntu) Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.18 (Ubuntu)'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => '/var/www/html'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/var/www/html'
+    'SERVER_ADMIN' => 'webmaster@localhost'
+    'SCRIPT_FILENAME' => '/var/www/html/AmazonCompanies/web/index.php'
+    'REMOTE_PORT' => '57908'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/AmazonCompanies/web/'
+    'SCRIPT_NAME' => '/AmazonCompanies/web/index.php'
+    'PHP_SELF' => '/AmazonCompanies/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1480619233.65
+    'REQUEST_TIME' => 1480619233
+]
+2016-12-01 19:07:15 [127.0.0.1][1][lqfvh9rihudnf67ob5gm3mi6g7][error][yii\base\UnknownMethodException] yii\base\UnknownMethodException: Calling unknown method: yii\web\User::getIdentificadorPessoa() in /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/Component.php:285
+Stack trace:
+#0 /var/www/html/AmazonCompanies/views/layouts/main.php(40): yii\base\Component->__call('getIdentificado...', Array)
+#1 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/View.php(326): require('/var/www/html/A...')
+#2 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/View.php(248): yii\base\View->renderPhpFile('/var/www/html/A...', Array)
+#3 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/Controller.php(393): yii\base\View->renderFile('/var/www/html/A...', Array, Object(app\controllers\SiteController))
+#4 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/Controller.php(379): yii\base\Controller->renderContent('\n<head>\n  <meta...')
+#5 /var/www/html/AmazonCompanies/controllers/SiteController.php(63): yii\base\Controller->render('index')
+#6 [internal function]: app\controllers\SiteController->actionIndex()
+#7 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/InlineAction.php(55): call_user_func_array(Array, Array)
+#8 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/Controller.php(154): yii\base\InlineAction->runWithParams(Array)
+#9 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/Module.php(454): yii\base\Controller->runAction('', Array)
+#10 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/web/Application.php(100): yii\base\Module->runAction('', Array)
+#11 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#12 /var/www/html/AmazonCompanies/web/index.php(12): yii\base\Application->run()
+#13 {main}
+2016-12-01 19:07:15 [127.0.0.1][1][lqfvh9rihudnf67ob5gm3mi6g7][info][application] $_COOKIE = [
+    '_csrf' => 'e8e32186ea26e646547382a0fe0329680df2fc2aeb980951a4f6e5f8e6f61153a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"vUyOr7gpBUbk6k3vzkn3bz4rx6K8qiWR\";}'
+    'PHPSESSID' => 'lqfvh9rihudnf67ob5gm3mi6g7'
+    '_identity' => '1de54a1149b80de6528a96989c1654bdfc80c1563a5eee0bba83377ee513af81a:2:{i:0;s:9:\"_identity\";i:1;s:16:\"[1,null,2592000]\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__id' => 1
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'localhost'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:50.0) Gecko/20100101 Firefox/50.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.5'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_COOKIE' => '_csrf=e8e32186ea26e646547382a0fe0329680df2fc2aeb980951a4f6e5f8e6f61153a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22vUyOr7gpBUbk6k3vzkn3bz4rx6K8qiWR%22%3B%7D; PHPSESSID=lqfvh9rihudnf67ob5gm3mi6g7; _identity=1de54a1149b80de6528a96989c1654bdfc80c1563a5eee0bba83377ee513af81a%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_identity%22%3Bi%3A1%3Bs%3A16%3A%22%5B1%2Cnull%2C2592000%5D%22%3B%7D'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.18 (Ubuntu) Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.18 (Ubuntu)'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => '/var/www/html'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/var/www/html'
+    'SERVER_ADMIN' => 'webmaster@localhost'
+    'SCRIPT_FILENAME' => '/var/www/html/AmazonCompanies/web/index.php'
+    'REMOTE_PORT' => '57910'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/AmazonCompanies/web/'
+    'SCRIPT_NAME' => '/AmazonCompanies/web/index.php'
+    'PHP_SELF' => '/AmazonCompanies/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1480619235.762
+    'REQUEST_TIME' => 1480619235
+]

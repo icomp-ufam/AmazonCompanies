@@ -8,6 +8,7 @@ use yii\bootstrap\Nav;
 use yii\bootstrap\NavBar;
 use yii\widgets\Breadcrumbs;
 use app\assets\AppAsset;
+use app\models\User;
 
 AppAsset::register($this);
 ?>
@@ -32,12 +33,11 @@ AppAsset::register($this);
         'brandLabel' => 'Amazon Companies',
         'brandUrl' => Yii::$app->homeUrl,
         'options' => [
-        		// original 'class' => 'navbar-inverse navbar-fixed-top'
             'class' => 'navbar-inverse navbar-fixed-top',
         ],
     ]);
     
-    if(Yii::$app->user->getId() == '100'){ //Administrador
+    if(Yii::$app->user->getIdentificadorPessoa() == '1'){ //Administrador
     	echo Nav::widget([
     			'encodeLabels' => false,
     			'options' => ['class' => 'navbar-nav navbar-right'],
@@ -56,16 +56,6 @@ AppAsset::register($this);
     							//'<li class="dropdown-header">Dropdown Header</li>',
     							['label' => 'Listar', 'url' => ['/site/listusersadm']],
     					]],
-    					['label' => 'Gerenciar',
-    					'items' => [
-    							'<li class="dropdown-header">Demonstrações</li>',
-    							['label' => 'Tipos de Demonstração', 'url' => ['#']], 
-    							['label' => 'Vincular Existentes', 'url' => ['#']],
-    							'<li class="divider"></li>',
-    							'<li class="dropdown-header">Índices</li>',
-    							['label' => 'Tipos de Índice', 'url' => ['#']],
-    							['label' => 'Cadastrar Índices', 'url' => ['#']],
-    					]],
     					['label' => 'Notificações '. Html::tag('span', '15', ['class' => 'badge']),
     					'items' => [
     							['label' => Html::tag('span', '3', ['class' => 'badge']).' Análises', 'url' => ['/site/validanaadm']],
@@ -83,7 +73,7 @@ AppAsset::register($this);
     									'<li>'
     									. Html::beginForm(['/site/logout'], 'post')
     									. Html::submitButton(																																																														 
-    											'Sair (' . Yii::$app->user->identity->username . ')',
+    											'Sair (' . Yii::$app->user->identity->nome . ')',
     											['class' => 'btn btn-link logout']
     											)
     									. Html::endForm()
@@ -91,7 +81,7 @@ AppAsset::register($this);
     									)
     			],
     	]);
-    }else if (Yii::$app->user->getId() == '101'){ //Aluno
+    }else if (Yii::$app->user->getIdentificadorPessoa() == '2'){ //Aluno
     	echo Nav::widget([
     	'encodeLabels' => false,
     			'options' => ['class' => 'navbar-nav navbar-right'],
@@ -101,11 +91,6 @@ AppAsset::register($this);
     					'items' =>[
     							['label' => 'Cadastrar Dados', 'url' => ['caddadosemp']],
     							['label' => 'Listar Empresas Cadastradas', 'url' => ['listemp']],
-    					]],
-    					['label' => 'Gerenciar',
-    					'items' => [
-    							['label' => 'Tipos de Demonstração', 'url' => '#'],
-    							['label' => 'Tipos de Índice', 'url' => '#'],
     					]],
     					['label' => 'Notificações '. Html::tag('span', '3', ['class' => 'badge'])],
     					['label' => 'Seu Perfil', 'url' => ['/site/altcad']],
@@ -117,7 +102,7 @@ AppAsset::register($this);
     									'<li>'
     									. Html::beginForm(['/site/logout'], 'post')
     									. Html::submitButton(
-    											'Sair (' . Yii::$app->user->identity->username . ')',
+    											'Sair (' . Yii::$app->user->identity->nome . ')',
     											['class' => 'btn btn-link logout']
     											)
     									. Html::endForm()
@@ -125,7 +110,7 @@ AppAsset::register($this);
     									)
     			],
     	]);
-    }else if (Yii::$app->user->getId() == '102'){ //Empresa
+    }else if (Yii::$app->user->getIdentificadorPessoa() == '3'){ //Empresa
     	echo Nav::widget([
     			'options' => ['class' => 'navbar-nav navbar-right'],
     			'items' => [
@@ -145,7 +130,7 @@ AppAsset::register($this);
     									'<li>'
     									. Html::beginForm(['/site/logout'], 'post')
     									. Html::submitButton(
-    											'Sair (' . Yii::$app->user->identity->username . ')',
+    											'Sair (' . Yii::$app->user->identity->nome . ')',
     											['class' => 'btn btn-link logout']
     											)
     									. Html::endForm()
@@ -169,7 +154,7 @@ AppAsset::register($this);
                 	'<li>'
                 	. Html::beginForm(['/site/logout'], 'post')
                 	. Html::submitButton(
-                    	'Sair (' . Yii::$app->user->identity->username . ')',
+                    	'Sair (' . Yii::$app->user->identity->nome . ')',
                     	['class' => 'btn btn-link logout']
                 	)
                 	. Html::endForm()

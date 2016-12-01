@@ -97,4 +97,17 @@ interface IdentityInterface
      * @see getAuthKey()
      */
     public function validateAuthKey($authKey);
+    
+    // obtém o tipo do usuario (tipo 1 = adm, tipo 2 = aluno e tipo 3 = empresa)
+    public function getIdentificadorPessoa();
+    
+    // obtém o status do usuario (status 1 = ativo, status 0 = não ativo)
+    public function getAtivo();
+    
+    // obtém o nome do usuario
+    public function getNome();
+    
+    // obtém o email do usuario
+    public  function getEmail();
+    
 }

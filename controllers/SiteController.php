@@ -9,6 +9,7 @@ use yii\filters\VerbFilter;
 use app\models\LoginForm;
 use app\models\ContactForm;
 
+
 class SiteController extends Controller
 {
     /**
@@ -71,21 +72,29 @@ class SiteController extends Controller
     public function actionLogin()
     {
         if (!Yii::$app->user->isGuest) {
-        	if (Yii::$app->user->getId() == '102'){
-        		return $this->redirect(array ('/site/empresa'));
-        	}else if (Yii::$app->user->getId() == '100'){
-        		return $this->redirect(array ('/site/adm'));
-        	}else if (Yii::$app->user->getId() == '101'){
-        		return $this->redirect(array ('/site/aluno'));
-        	}else{
         		return $this->goHome();
-        	}
-        }
+       }
 
         $model = new LoginForm();
-        if ($model->load(Yii::$app->request->post()) && $model->login()) {
-            return $this->goBack();
+        
+        // se ok, vai redirecionar para as paginas principais dependendo do tipo de usuario (adm, aluno, empresa)
+        if ($model->load(Yii::$app->request->post()) && $model->login()) { 
+        	
+        	if(Yii::$app->user->identity->getAtivo() == 1){ // se ele estiver ativo
+        		if(Yii::$app->user->identity->getIdentificadorPessoa() == 1){ // se ele for tipo 1 = Administrador
+        			return $this->redirect(array('site/adm'));
+        		}else if(Yii::$app->user->identity->getIdentificadorPessoa() == 2){ // se ele for tipo 2 = Aluno
+        			return $this->redirect(array('site/aluno'));
+        		}else if (Yii::$app->user->identity->getIdentificadorPessoa() == 3){
+        			return $this->redirect(array('site/empresa')); // se ele for tipo 3 = Empresa
+        		}
+        	}else{ 
+        		Yii::$app->user->logout();
+        		// enviar uma msg de usuário não ativo?
+        	}
+        	
         }
+        
         return $this->render('login', [
             'model' => $model,
         ]);
@@ -131,7 +140,7 @@ class SiteController extends Controller
         return $this->render('about');
     }
     
-    // feito por mim LG
+    // renderizando páginas em html (prototipo)
     
     public function actionAdm()
     {

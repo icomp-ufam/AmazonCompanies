@@ -351,6 +351,14 @@ class User extends Component
 
         return $identity !== null ? $identity->getId() : null;
     }
+    
+    // retorna o tipo do usuario (1 = adm, 2 = aluno, 3 = empresa)
+    public function getIdentificadorPessoa()
+    {
+    	$identity = $this->getIdentity();
+    
+    	return $identity !== null ? $identity->getIdentificadorPessoa() : null;
+    }
 
     /**
      * Returns the URL that the browser should be redirected to after successful login.

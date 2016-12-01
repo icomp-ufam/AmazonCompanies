@@ -20,7 +20,7 @@ $this->title = 'Amazon Companies';
 if (Yii::$app->user->getIsGuest()){
 	echo '<h1>Bem Vindo, Visitante!</h1>';
 }else{
-	$username = Yii::$app->user->identity->username;
+	$username = Yii::$app->user->identity->nome;
 	echo '<h1>Bem Vindo, ' . $username . '!</h1>';
 }
 

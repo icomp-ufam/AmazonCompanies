@@ -2,110 +2,113 @@
 
 namespace app\models;
 
+use app\models\Usuario as Usuario;
+
 class User extends \yii\base\Object implements \yii\web\IdentityInterface
 {
-    public $id;
-    public $username;
-    public $password;
-    public $authKey;
-    public $accessToken;
+	public $idUsuario;
+	public $nome;
+	public $senha;
+	public $email;
+	public $ativo;
+	public $identificadorPessoa;
 
-    private static $users = [
-        '100' => [
-            'id' => '100',
-            'username' => 'Administrador',
-            'password' => '123456',
-            'authKey' => 'test100key',
-            'accessToken' => '100-token',
-        ],
-        '101' => [
-            'id' => '101',
-            'username' => 'Aluno',
-            'password' => '123456',
-            'authKey' => 'test101key',
-            'accessToken' => '101-token',
-        ],
-    	'102' => [
-    			'id' => '102',
-    			'username' => 'Empresa',
-    			'password' => '123456',
-    			'authKey' => 'test101key',
-    			'accessToken' => '101-token',
-    	],
-    ];
+	/**
+	 * @inheritdoc
+	 */
+	public static function findIdentity($id) {
+		$Usuario = Usuario::find()
+		->where([
+				"idUsuario" => $id
+		])
+		->one();
+		if (!count($Usuario)) {
+			return null;
+		}
+		return new static($Usuario);
+	}
 
+	/**
+	 * @inheritdoc
+	 */
+	public static function findIdentityByAccessToken($token, $userType = null) {
 
-    /**
-     * @inheritdoc
-     */
-    public static function findIdentity($id)
-    {
-        return isset(self::$users[$id]) ? new static(self::$users[$id]) : null;
-    }
+		$Usuario = Usuario::find()
+		->where(["accessToken" => $token])
+		->one();
+		if (!count($Usuario)) {
+			return null;
+		}
+		return new static($Usuario);
+	}
 
-    /**
-     * @inheritdoc
-     */
-    public static function findIdentityByAccessToken($token, $type = null)
-    {
-        foreach (self::$users as $user) {
-            if ($user['accessToken'] === $token) {
-                return new static($user);
-            }
-        }
+	/**
+	 * Finds user by username
+	 *
+	 * @param string $username
+	 * @return static|null
+	 */
+	public static function findByUsername($username) {
+		$Usuario = Usuario::find()
+		->where([
+				"nome" => $username
+		])
+		->one();
+		if (!count($Usuario)) {
+			return null;
+		}
+		return new static($Usuario);
+	}
 
-        return null;
-    }
+	/**
+	 * @inheritdoc
+	 */
+	public function getId()
+	{
+		return $this->idUsuario;
+	}
 
-    /**
-     * Finds user by username
-     *
-     * @param string $username
-     * @return static|null
-     */
-    public static function findByUsername($username)
-    {
-        foreach (self::$users as $user) {
-            if (strcasecmp($user['username'], $username) === 0) {
-                return new static($user);
-            }
-        }
+	/**
+	 * @inheritdoc
+	 */
+	public function getAuthKey()
+	{
+		return null;
+		//$this->authKey;
+	}
 
-        return null;
-    }
+	/**
+	 * @inheritdoc
+	 */
+	public function validateAuthKey($authKey)
+	{
+		return null;
+		//$this->authKey === $authKey;
+	}
 
-    /**
-     * @inheritdoc
-     */
-    public function getId()
-    {
-        return $this->id;
-    }
+	// valida a senha, lê  senhas encriptografadas em MD5
+	public function validatePassword($password)
+	{
+		return $this->senha === md5($password);
+	}
 
-    /**
-     * @inheritdoc
-     */
-    public function getAuthKey()
-    {
-        return $this->authKey;
-    }
+	// obtém o tipo do usuario (tipo 1 = adm, tipo 2 = aluno e tipo 3 = empresa)
+	public function getIdentificadorPessoa(){
+		return $this->identificadorPessoa;
+	}
 
-    /**
-     * @inheritdoc
-     */
-    public function validateAuthKey($authKey)
-    {
-        return $this->authKey === $authKey;
-    }
+	// obtém o status do usuario (status 1 = ativo, status 0 = não ativo)
+	public function getAtivo(){
+		return $this->ativo;
+	}
 
-    /**
-     * Validates password
-     *
-     * @param string $password password to validate
-     * @return bool if password provided is valid for current user
-     */
-    public function validatePassword($password)
-    {
-        return $this->password === $password;
-    }
+	// obtém o nome do usuario
+	public function getNome(){
+		return $this->nome;
+	}
+
+	// obtém o email do usuario
+	public  function getEmail(){
+		return $this->email;
+	}
 }

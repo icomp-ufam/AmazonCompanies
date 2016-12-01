@@ -14,23 +14,7 @@ $this->title = 'Identifique-se';
 	<div class="row">
     <div class="col-md-8">
     <h1><?= Html::encode($this->title) ?></h1>
-    
-    <h3>Selecione seu perfil</h3>
-	<br>
-	
-	<div class="radio">
-		<label class="radio-inline">
-			<input type="radio" name="inlineRadioOptions" id="aluno" value="optionAluno">
-			Aluno
-		</label>
-		<label class="radio-inline">
-			<input type="radio" name="inlineRadioOptions" id="empresa" value="optionEmpresa">Empresa
-		</label>
-    </div>
-    <br>
-    
-    
-    
+        
     <?php $form = ActiveForm::begin([
         'id' => 'login-form',
         'layout' => 'horizontal',
