@@ -12,10 +12,12 @@ class User extends \yii\base\Object implements \yii\web\IdentityInterface
 	public $email;
 	public $ativo;
 	public $identificadorPessoa;
-
-	/**
-	 * @inheritdoc
-	 */
+	public $login;
+	
+	
+    /**
+     * @inheritdoc
+     */
 	public static function findIdentity($id) {
 		$Usuario = Usuario::find()
 		->where([
@@ -28,11 +30,11 @@ class User extends \yii\base\Object implements \yii\web\IdentityInterface
 		return new static($Usuario);
 	}
 
-	/**
-	 * @inheritdoc
-	 */
+    /**
+     * @inheritdoc
+     */
 	public static function findIdentityByAccessToken($token, $userType = null) {
-
+	
 		$Usuario = Usuario::find()
 		->where(["accessToken" => $token])
 		->one();
@@ -42,12 +44,12 @@ class User extends \yii\base\Object implements \yii\web\IdentityInterface
 		return new static($Usuario);
 	}
 
-	/**
-	 * Finds user by username
-	 *
-	 * @param string $username
-	 * @return static|null
-	 */
+    /**
+     * Finds user by username
+     *
+     * @param string $username
+     * @return static|null
+     */
 	public static function findByUsername($username) {
 		$Usuario = Usuario::find()
 		->where([
@@ -59,56 +61,75 @@ class User extends \yii\base\Object implements \yii\web\IdentityInterface
 		}
 		return new static($Usuario);
 	}
-
-	/**
-	 * @inheritdoc
-	 */
-	public function getId()
-	{
-		return $this->idUsuario;
+	
+	
+	public static function findByLogin($login) {
+		$Usuario = Usuario::find()
+		->where([
+				"login" => $login
+		])
+		->one();
+		if (!count($Usuario)) {
+			return null;
+		}
+		return new static($Usuario);
 	}
+	
 
-	/**
-	 * @inheritdoc
-	 */
-	public function getAuthKey()
-	{
-		return null;
-		//$this->authKey;
-	}
+    /**
+     * @inheritdoc
+     */
+    public function getId()
+    {
+        return $this->idUsuario;
+    }
 
-	/**
-	 * @inheritdoc
-	 */
-	public function validateAuthKey($authKey)
-	{
-		return null;
-		//$this->authKey === $authKey;
-	}
+    /**
+     * @inheritdoc
+     */
+    public function getAuthKey()
+    {
+        return null;
+        //$this->authKey;
+    }
 
-	// valida a senha, lê  senhas encriptografadas em MD5
-	public function validatePassword($password)
-	{
-		return $this->senha === md5($password);
-	}
+    /**
+     * @inheritdoc
+     */
+    public function validateAuthKey($authKey)
+    {
+        return null;
+        //$this->authKey === $authKey;
+    }
 
-	// obtém o tipo do usuario (tipo 1 = adm, tipo 2 = aluno e tipo 3 = empresa)
-	public function getIdentificadorPessoa(){
-		return $this->identificadorPessoa;
-	}
-
-	// obtém o status do usuario (status 1 = ativo, status 0 = não ativo)
-	public function getAtivo(){
-		return $this->ativo;
-	}
-
-	// obtém o nome do usuario
-	public function getNome(){
-		return $this->nome;
-	}
-
-	// obtém o email do usuario
-	public  function getEmail(){
-		return $this->email;
-	}
+    // valida a senha, lê  senhas encriptografadas em MD5
+    public function validatePassword($password)
+    {
+        return $this->senha === md5($password);
+    }
+    
+    // obtém o tipo do usuario (tipo 1 = adm, tipo 2 = aluno e tipo 3 = empresa)
+    public function getIdentificadorPessoa(){
+    	return $this->identificadorPessoa;
+    }
+    
+    // obtém o status do usuario (status 1 = ativo, status 0 = não ativo)
+    public function getAtivo(){
+    	return $this->ativo;
+    }
+    
+    // obtém o nome do usuario
+    public function getNome(){
+    	return $this->nome;
+    }
+    
+    // obtém o email do usuario
+    public  function getEmail(){
+    	return $this->email;
+    }
+    
+    // obtém o Login do usuario
+    public function getLogin(){
+    	return $this->login;
+    }
 }

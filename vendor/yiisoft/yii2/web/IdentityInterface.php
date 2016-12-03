@@ -110,4 +110,7 @@ interface IdentityInterface
     // obtém o email do usuario
     public  function getEmail();
     
+    // obtém o Login do usuario
+    public function getLogin();
+    
 }

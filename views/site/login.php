@@ -24,7 +24,7 @@ $this->title = 'Identifique-se';
         ],
     ]); ?>
 
-        <?= $form->field($model, 'username')->textInput(['autofocus' => false]) ?>
+        <?= $form->field($model, 'login')->textInput(['autofocus' => false]) ?>
 
         <?= $form->field($model, 'password')->passwordInput() ?>
 
