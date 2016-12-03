@@ -1,8 +1,9 @@
 -- phpMyAdmin SQL Dump
 -- version 4.5.4.1deb2ubuntu2
+-- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Tempo de geração: 30/11/2016 às 19:56
+-- Tempo de geração: 03/12/2016 às 09:55
 -- Versão do servidor: 5.7.16-0ubuntu0.16.04.1
 -- Versão do PHP: 7.0.8-0ubuntu0.16.04.3
 
@@ -87,17 +88,18 @@ CREATE TABLE `empresa` (
   `nome` varchar(45) NOT NULL,
   `analise` text,
   `fonte` varchar(45) NOT NULL,
-  `Tipo_Empresa_idTipo_Empresa` int(11) NOT NULL
+  `Tipo_Empresa_idTipo_Empresa` int(11) NOT NULL,
+  `logotipo` varchar(200) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Fazendo dump de dados para tabela `empresa`
 --
 
-INSERT INTO `empresa` (`idEmpresa`, `nome`, `analise`, `fonte`, `Tipo_Empresa_idTipo_Empresa`) VALUES
-(1, 'Moto Honda da Amazônia LTDA', NULL, '', 2),
-(2, 'Teewa', 'Isto aqui é um teste!', '', 1),
-(3, 'Microsoft Windows', 'Este é um sistema operacional que muitos usam, mas eu ainda prefiro Linux.', '', 3);
+INSERT INTO `empresa` (`idEmpresa`, `nome`, `analise`, `fonte`, `Tipo_Empresa_idTipo_Empresa`, `logotipo`) VALUES
+(1, 'Moto Honda da Amazônia LTDA', NULL, '', 2, NULL),
+(2, 'Teewa', 'Isto aqui é um teste!', '', 1, NULL),
+(3, 'Microsoft Windows', 'Este é um sistema operacional que muitos usam, mas eu ainda prefiro Linux.', '', 3, NULL);
 
 -- --------------------------------------------------------
 
@@ -214,7 +216,8 @@ INSERT INTO `tipo_indice` (`idTipo_indice`, `nome`) VALUES
 
 CREATE TABLE `usuario` (
   `idUsuario` int(11) NOT NULL,
-  `nome` varchar(45) NOT NULL,
+  `login` varchar(45) NOT NULL,
+  `nome` varchar(255) NOT NULL,
   `senha` varchar(45) NOT NULL,
   `ativo` tinyint(1) NOT NULL,
   `identificadorPessoa` int(11) NOT NULL,
@@ -225,11 +228,11 @@ CREATE TABLE `usuario` (
 -- Fazendo dump de dados para tabela `usuario`
 --
 
-INSERT INTO `usuario` (`idUsuario`, `nome`, `senha`, `ativo`, `identificadorPessoa`, `email`) VALUES
-(1, 'Luiz Gustavo', '@p310608039090lG', 1, 1, 'lgpa@icomp.ufam.edu.br'),
-(2, 'Tatazinha', 'qwert', 0, 1, 'tla@icomp.ufam.edu.br'),
-(3, 'Gisele', '12345678', 1, 2, 'gisa@icomp.ufam.edu.br'),
-(4, 'Moto Honda da Amazônia LTDA', 'motohonda', 1, 3, 'motohonda@gmail.com');
+INSERT INTO `usuario` (`idUsuario`, `login`, `nome`, `senha`, `ativo`, `identificadorPessoa`, `email`) VALUES
+(1, 'LG', 'Luiz Gustavo', 'b1270e45ddc61a1c2dc42fa71b5f6c29', 1, 1, 'lgpa@icomp.ufam.edu.br'),
+(2, 'Tata14', 'Tatazinha', 'a384b6463fc216a5f8ecb6670f86456a', 0, 1, 'tla@icomp.ufam.edu.br'),
+(3, 'Gisa', 'Gisele', '25d55ad283aa400af464c76d713c07ad', 1, 2, 'gisa@icomp.ufam.edu.br'),
+(4, 'Motoca', 'Moto Honda da Amazônia LTDA', '3dcdda99b20ed51f83b25c6315c5a818', 1, 3, 'motohonda@gmail.com');
 
 --
 -- Índices de tabelas apagadas
