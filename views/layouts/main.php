@@ -46,7 +46,7 @@ AppAsset::register($this);
     					['label' => 'Empresas',
     					'items' =>[
     					['label' => 'Cadastrar Dados', 'url' => ['caddadosemp']],
-    					['label' => 'Listar Empresas Cadastradas', 'url' => ['listemp']],
+    					['label' => 'Listar Empresas Cadastradas', 'url' => ['empresa/index']],
     					]],
     					
     					['label' => 'Usuários',
@@ -90,7 +90,7 @@ AppAsset::register($this);
     					['label' => 'Empresas',
     					'items' =>[
     							['label' => 'Cadastrar Dados', 'url' => ['caddadosemp']],
-    							['label' => 'Listar Empresas Cadastradas', 'url' => ['listemp']],
+    							['label' => 'Listar Empresas Cadastradas', 'url' => ['empresa/index']],
     					]],
     					['label' => 'Notificações '. Html::tag('span', '3', ['class' => 'badge'])],
     					['label' => 'Seu Perfil', 'url' => ['/site/altcad']],
@@ -118,7 +118,7 @@ AppAsset::register($this);
     					['label' => 'Empresas',
     					'items' =>[
     							['label' => 'Cadastrar Informações', 'url' => ['cadinfoemp']],
-    							['label' => 'Listar Empresas Cadastradas', 'url' => ['listemp']],
+    							['label' => 'Listar Empresas Cadastradas', 'url' => ['empresa/index']],
     					]],
     					['label' => 'Seu Perfil', 'url' => ['/site/altcademp']],
     					['label' => 'Sobre', 'url' => ['/site/about']],
@@ -143,7 +143,7 @@ AppAsset::register($this);
         	'options' => ['class' => 'navbar-nav navbar-right'],
         	'items' => [
             	['label' => 'Página Inicial', 'url' => ['/site/index']],
-            	['label' => 'Empresas', 'url' => ['/site/listempvis']],
+            	['label' => 'Empresas', 'url' => ['empresa/index']],
             	['label' => 'Contato', 'url' => ['/site/contact']],
             	['label' => 'Sobre', 'url' => ['/site/about']],
             	

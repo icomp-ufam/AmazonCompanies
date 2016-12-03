@@ -11602,3 +11602,1046 @@ $_SERVER = [
     'REQUEST_TIME_FLOAT' => 1480619235.762
     'REQUEST_TIME' => 1480619235
 ]
+2016-12-02 15:42:40 [127.0.0.1][-][-][error][yii\base\UnknownPropertyException] yii\base\UnknownPropertyException: Getting unknown property: app\models\Empresa::tipo_empresa in /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/Component.php:143
+Stack trace:
+#0 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/db/BaseActiveRecord.php(286): yii\base\Component->__get('tipo_empresa')
+#1 /var/www/html/AmazonCompanies/views/empresa/view.php(36): yii\db\BaseActiveRecord->__get('tipo_empresa')
+#2 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/View.php(326): require('/var/www/html/A...')
+#3 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/View.php(248): yii\base\View->renderPhpFile('/var/www/html/A...', Array)
+#4 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/View.php(150): yii\base\View->renderFile('/var/www/html/A...', Array, Object(app\controllers\EmpresaController))
+#5 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/Controller.php(378): yii\base\View->render('view', Array, Object(app\controllers\EmpresaController))
+#6 /var/www/html/AmazonCompanies/controllers/EmpresaController.php(55): yii\base\Controller->render('view', Array)
+#7 [internal function]: app\controllers\EmpresaController->actionView('1')
+#8 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/InlineAction.php(55): call_user_func_array(Array, Array)
+#9 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/Controller.php(154): yii\base\InlineAction->runWithParams(Array)
+#10 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/Module.php(454): yii\base\Controller->runAction('view', Array)
+#11 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/web/Application.php(100): yii\base\Module->runAction('empresa/view', Array)
+#12 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#13 /var/www/html/AmazonCompanies/web/index.php(12): yii\base\Application->run()
+#14 {main}
+2016-12-02 15:42:40 [127.0.0.1][-][-][info][application] $_GET = [
+    'r' => 'empresa/view'
+    'id' => '1'
+]
+
+$_COOKIE = [
+    '_csrf' => 'a5260614f96f17cb27c14a9b8fe6bbb99d833cd3aa254f571411126d2327d82aa:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"VSnn5OYVo9fhjduXfoUDUTQp0RHdUtfF\";}'
+    'PHPSESSID' => '2iv0kdp6sp8lg8faraqifmn031'
+    '_identity' => '17295b3d78c8a1bfe0dddabd10fa68afad63fc1dbe1225018927ccef7a7b10bea:2:{i:0;s:9:\"_identity\";i:1;s:16:\"[3,null,2592000]\";}'
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.100 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'
+    'HTTP_REFERER' => 'http://localhost/AmazonCompanies/web/index.php?r=empresa%2Findex'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'pt-BR,pt;q=0.8,en-US;q=0.6,en;q=0.4'
+    'HTTP_COOKIE' => '_csrf=a5260614f96f17cb27c14a9b8fe6bbb99d833cd3aa254f571411126d2327d82aa%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22VSnn5OYVo9fhjduXfoUDUTQp0RHdUtfF%22%3B%7D; PHPSESSID=2iv0kdp6sp8lg8faraqifmn031; _identity=17295b3d78c8a1bfe0dddabd10fa68afad63fc1dbe1225018927ccef7a7b10bea%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_identity%22%3Bi%3A1%3Bs%3A16%3A%22%5B3%2Cnull%2C2592000%5D%22%3B%7D'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.18 (Ubuntu) Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.18 (Ubuntu)'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => '/var/www/html'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/var/www/html'
+    'SERVER_ADMIN' => 'webmaster@localhost'
+    'SCRIPT_FILENAME' => '/var/www/html/AmazonCompanies/web/index.php'
+    'REMOTE_PORT' => '37486'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=empresa%2Fview&id=1'
+    'REQUEST_URI' => '/AmazonCompanies/web/index.php?r=empresa%2Fview&id=1'
+    'SCRIPT_NAME' => '/AmazonCompanies/web/index.php'
+    'PHP_SELF' => '/AmazonCompanies/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1480693360.656
+    'REQUEST_TIME' => 1480693360
+]
+2016-12-02 15:46:29 [127.0.0.1][-][-][error][yii\base\UnknownPropertyException] yii\base\UnknownPropertyException: Getting unknown property: app\models\Empresa::tipo_empresa in /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/Component.php:143
+Stack trace:
+#0 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/db/BaseActiveRecord.php(286): yii\base\Component->__get('tipo_empresa')
+#1 /var/www/html/AmazonCompanies/views/empresa/view.php(37): yii\db\BaseActiveRecord->__get('tipo_empresa')
+#2 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/View.php(326): require('/var/www/html/A...')
+#3 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/View.php(248): yii\base\View->renderPhpFile('/var/www/html/A...', Array)
+#4 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/View.php(150): yii\base\View->renderFile('/var/www/html/A...', Array, Object(app\controllers\EmpresaController))
+#5 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/Controller.php(378): yii\base\View->render('view', Array, Object(app\controllers\EmpresaController))
+#6 /var/www/html/AmazonCompanies/controllers/EmpresaController.php(55): yii\base\Controller->render('view', Array)
+#7 [internal function]: app\controllers\EmpresaController->actionView('1')
+#8 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/InlineAction.php(55): call_user_func_array(Array, Array)
+#9 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/Controller.php(154): yii\base\InlineAction->runWithParams(Array)
+#10 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/Module.php(454): yii\base\Controller->runAction('view', Array)
+#11 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/web/Application.php(100): yii\base\Module->runAction('empresa/view', Array)
+#12 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#13 /var/www/html/AmazonCompanies/web/index.php(12): yii\base\Application->run()
+#14 {main}
+2016-12-02 15:46:29 [127.0.0.1][-][-][info][application] $_GET = [
+    'r' => 'empresa/view'
+    'id' => '1'
+]
+
+$_COOKIE = [
+    '_csrf' => 'a5260614f96f17cb27c14a9b8fe6bbb99d833cd3aa254f571411126d2327d82aa:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"VSnn5OYVo9fhjduXfoUDUTQp0RHdUtfF\";}'
+    'PHPSESSID' => '2iv0kdp6sp8lg8faraqifmn031'
+    '_identity' => '17295b3d78c8a1bfe0dddabd10fa68afad63fc1dbe1225018927ccef7a7b10bea:2:{i:0;s:9:\"_identity\";i:1;s:16:\"[3,null,2592000]\";}'
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.100 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'
+    'HTTP_REFERER' => 'http://localhost/AmazonCompanies/web/index.php?r=empresa%2Findex'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'pt-BR,pt;q=0.8,en-US;q=0.6,en;q=0.4'
+    'HTTP_COOKIE' => '_csrf=a5260614f96f17cb27c14a9b8fe6bbb99d833cd3aa254f571411126d2327d82aa%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22VSnn5OYVo9fhjduXfoUDUTQp0RHdUtfF%22%3B%7D; PHPSESSID=2iv0kdp6sp8lg8faraqifmn031; _identity=17295b3d78c8a1bfe0dddabd10fa68afad63fc1dbe1225018927ccef7a7b10bea%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_identity%22%3Bi%3A1%3Bs%3A16%3A%22%5B3%2Cnull%2C2592000%5D%22%3B%7D'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.18 (Ubuntu) Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.18 (Ubuntu)'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => '/var/www/html'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/var/www/html'
+    'SERVER_ADMIN' => 'webmaster@localhost'
+    'SCRIPT_FILENAME' => '/var/www/html/AmazonCompanies/web/index.php'
+    'REMOTE_PORT' => '37546'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=empresa%2Fview&id=1'
+    'REQUEST_URI' => '/AmazonCompanies/web/index.php?r=empresa%2Fview&id=1'
+    'SCRIPT_NAME' => '/AmazonCompanies/web/index.php'
+    'PHP_SELF' => '/AmazonCompanies/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1480693589.898
+    'REQUEST_TIME' => 1480693589
+]
+2016-12-02 15:49:04 [127.0.0.1][-][-][error][yii\base\UnknownPropertyException] yii\base\UnknownPropertyException: Getting unknown property: app\models\Empresa::tipo_empresa in /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/Component.php:143
+Stack trace:
+#0 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/db/BaseActiveRecord.php(286): yii\base\Component->__get('tipo_empresa')
+#1 /var/www/html/AmazonCompanies/views/empresa/view.php(37): yii\db\BaseActiveRecord->__get('tipo_empresa')
+#2 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/View.php(326): require('/var/www/html/A...')
+#3 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/View.php(248): yii\base\View->renderPhpFile('/var/www/html/A...', Array)
+#4 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/View.php(150): yii\base\View->renderFile('/var/www/html/A...', Array, Object(app\controllers\EmpresaController))
+#5 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/Controller.php(378): yii\base\View->render('view', Array, Object(app\controllers\EmpresaController))
+#6 /var/www/html/AmazonCompanies/controllers/EmpresaController.php(55): yii\base\Controller->render('view', Array)
+#7 [internal function]: app\controllers\EmpresaController->actionView('1')
+#8 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/InlineAction.php(55): call_user_func_array(Array, Array)
+#9 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/Controller.php(154): yii\base\InlineAction->runWithParams(Array)
+#10 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/Module.php(454): yii\base\Controller->runAction('view', Array)
+#11 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/web/Application.php(100): yii\base\Module->runAction('empresa/view', Array)
+#12 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#13 /var/www/html/AmazonCompanies/web/index.php(12): yii\base\Application->run()
+#14 {main}
+2016-12-02 15:49:04 [127.0.0.1][-][-][info][application] $_GET = [
+    'r' => 'empresa/view'
+    'id' => '1'
+]
+
+$_COOKIE = [
+    '_csrf' => 'a5260614f96f17cb27c14a9b8fe6bbb99d833cd3aa254f571411126d2327d82aa:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"VSnn5OYVo9fhjduXfoUDUTQp0RHdUtfF\";}'
+    'PHPSESSID' => '2iv0kdp6sp8lg8faraqifmn031'
+    '_identity' => '17295b3d78c8a1bfe0dddabd10fa68afad63fc1dbe1225018927ccef7a7b10bea:2:{i:0;s:9:\"_identity\";i:1;s:16:\"[3,null,2592000]\";}'
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.100 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'
+    'HTTP_REFERER' => 'http://localhost/AmazonCompanies/web/index.php?r=empresa%2Findex'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'pt-BR,pt;q=0.8,en-US;q=0.6,en;q=0.4'
+    'HTTP_COOKIE' => '_csrf=a5260614f96f17cb27c14a9b8fe6bbb99d833cd3aa254f571411126d2327d82aa%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22VSnn5OYVo9fhjduXfoUDUTQp0RHdUtfF%22%3B%7D; PHPSESSID=2iv0kdp6sp8lg8faraqifmn031; _identity=17295b3d78c8a1bfe0dddabd10fa68afad63fc1dbe1225018927ccef7a7b10bea%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_identity%22%3Bi%3A1%3Bs%3A16%3A%22%5B3%2Cnull%2C2592000%5D%22%3B%7D'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.18 (Ubuntu) Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.18 (Ubuntu)'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => '/var/www/html'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/var/www/html'
+    'SERVER_ADMIN' => 'webmaster@localhost'
+    'SCRIPT_FILENAME' => '/var/www/html/AmazonCompanies/web/index.php'
+    'REMOTE_PORT' => '37554'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=empresa%2Fview&id=1'
+    'REQUEST_URI' => '/AmazonCompanies/web/index.php?r=empresa%2Fview&id=1'
+    'SCRIPT_NAME' => '/AmazonCompanies/web/index.php'
+    'PHP_SELF' => '/AmazonCompanies/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1480693744.154
+    'REQUEST_TIME' => 1480693744
+]
+2016-12-02 15:53:21 [127.0.0.1][-][-][error][yii\base\UnknownPropertyException] yii\base\UnknownPropertyException: Getting unknown property: app\models\Empresa::tipo_empresa in /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/Component.php:143
+Stack trace:
+#0 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/db/BaseActiveRecord.php(286): yii\base\Component->__get('tipo_empresa')
+#1 /var/www/html/AmazonCompanies/views/empresa/view.php(37): yii\db\BaseActiveRecord->__get('tipo_empresa')
+#2 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/View.php(326): require('/var/www/html/A...')
+#3 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/View.php(248): yii\base\View->renderPhpFile('/var/www/html/A...', Array)
+#4 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/View.php(150): yii\base\View->renderFile('/var/www/html/A...', Array, Object(app\controllers\EmpresaController))
+#5 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/Controller.php(378): yii\base\View->render('view', Array, Object(app\controllers\EmpresaController))
+#6 /var/www/html/AmazonCompanies/controllers/EmpresaController.php(55): yii\base\Controller->render('view', Array)
+#7 [internal function]: app\controllers\EmpresaController->actionView('1')
+#8 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/InlineAction.php(55): call_user_func_array(Array, Array)
+#9 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/Controller.php(154): yii\base\InlineAction->runWithParams(Array)
+#10 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/Module.php(454): yii\base\Controller->runAction('view', Array)
+#11 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/web/Application.php(100): yii\base\Module->runAction('empresa/view', Array)
+#12 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#13 /var/www/html/AmazonCompanies/web/index.php(12): yii\base\Application->run()
+#14 {main}
+2016-12-02 15:53:21 [127.0.0.1][-][-][info][application] $_GET = [
+    'r' => 'empresa/view'
+    'id' => '1'
+]
+
+$_COOKIE = [
+    '_csrf' => 'a5260614f96f17cb27c14a9b8fe6bbb99d833cd3aa254f571411126d2327d82aa:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"VSnn5OYVo9fhjduXfoUDUTQp0RHdUtfF\";}'
+    'PHPSESSID' => '2iv0kdp6sp8lg8faraqifmn031'
+    '_identity' => '17295b3d78c8a1bfe0dddabd10fa68afad63fc1dbe1225018927ccef7a7b10bea:2:{i:0;s:9:\"_identity\";i:1;s:16:\"[3,null,2592000]\";}'
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.100 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'
+    'HTTP_REFERER' => 'http://localhost/AmazonCompanies/web/index.php?r=empresa%2Findex'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'pt-BR,pt;q=0.8,en-US;q=0.6,en;q=0.4'
+    'HTTP_COOKIE' => '_csrf=a5260614f96f17cb27c14a9b8fe6bbb99d833cd3aa254f571411126d2327d82aa%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22VSnn5OYVo9fhjduXfoUDUTQp0RHdUtfF%22%3B%7D; PHPSESSID=2iv0kdp6sp8lg8faraqifmn031; _identity=17295b3d78c8a1bfe0dddabd10fa68afad63fc1dbe1225018927ccef7a7b10bea%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_identity%22%3Bi%3A1%3Bs%3A16%3A%22%5B3%2Cnull%2C2592000%5D%22%3B%7D'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.18 (Ubuntu) Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.18 (Ubuntu)'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => '/var/www/html'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/var/www/html'
+    'SERVER_ADMIN' => 'webmaster@localhost'
+    'SCRIPT_FILENAME' => '/var/www/html/AmazonCompanies/web/index.php'
+    'REMOTE_PORT' => '37584'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=empresa%2Fview&id=1'
+    'REQUEST_URI' => '/AmazonCompanies/web/index.php?r=empresa%2Fview&id=1'
+    'SCRIPT_NAME' => '/AmazonCompanies/web/index.php'
+    'PHP_SELF' => '/AmazonCompanies/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1480694001.751
+    'REQUEST_TIME' => 1480694001
+]
+2016-12-02 15:53:24 [127.0.0.1][-][-][error][yii\base\UnknownPropertyException] yii\base\UnknownPropertyException: Getting unknown property: app\models\Empresa::tipo_empresa in /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/Component.php:143
+Stack trace:
+#0 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/db/BaseActiveRecord.php(286): yii\base\Component->__get('tipo_empresa')
+#1 /var/www/html/AmazonCompanies/views/empresa/view.php(37): yii\db\BaseActiveRecord->__get('tipo_empresa')
+#2 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/View.php(326): require('/var/www/html/A...')
+#3 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/View.php(248): yii\base\View->renderPhpFile('/var/www/html/A...', Array)
+#4 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/View.php(150): yii\base\View->renderFile('/var/www/html/A...', Array, Object(app\controllers\EmpresaController))
+#5 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/Controller.php(378): yii\base\View->render('view', Array, Object(app\controllers\EmpresaController))
+#6 /var/www/html/AmazonCompanies/controllers/EmpresaController.php(55): yii\base\Controller->render('view', Array)
+#7 [internal function]: app\controllers\EmpresaController->actionView('1')
+#8 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/InlineAction.php(55): call_user_func_array(Array, Array)
+#9 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/Controller.php(154): yii\base\InlineAction->runWithParams(Array)
+#10 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/Module.php(454): yii\base\Controller->runAction('view', Array)
+#11 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/web/Application.php(100): yii\base\Module->runAction('empresa/view', Array)
+#12 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#13 /var/www/html/AmazonCompanies/web/index.php(12): yii\base\Application->run()
+#14 {main}
+2016-12-02 15:53:24 [127.0.0.1][-][-][info][application] $_GET = [
+    'r' => 'empresa/view'
+    'id' => '1'
+]
+
+$_COOKIE = [
+    '_csrf' => 'a5260614f96f17cb27c14a9b8fe6bbb99d833cd3aa254f571411126d2327d82aa:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"VSnn5OYVo9fhjduXfoUDUTQp0RHdUtfF\";}'
+    'PHPSESSID' => '2iv0kdp6sp8lg8faraqifmn031'
+    '_identity' => '17295b3d78c8a1bfe0dddabd10fa68afad63fc1dbe1225018927ccef7a7b10bea:2:{i:0;s:9:\"_identity\";i:1;s:16:\"[3,null,2592000]\";}'
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.100 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'pt-BR,pt;q=0.8,en-US;q=0.6,en;q=0.4'
+    'HTTP_COOKIE' => '_csrf=a5260614f96f17cb27c14a9b8fe6bbb99d833cd3aa254f571411126d2327d82aa%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22VSnn5OYVo9fhjduXfoUDUTQp0RHdUtfF%22%3B%7D; PHPSESSID=2iv0kdp6sp8lg8faraqifmn031; _identity=17295b3d78c8a1bfe0dddabd10fa68afad63fc1dbe1225018927ccef7a7b10bea%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_identity%22%3Bi%3A1%3Bs%3A16%3A%22%5B3%2Cnull%2C2592000%5D%22%3B%7D'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.18 (Ubuntu) Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.18 (Ubuntu)'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => '/var/www/html'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/var/www/html'
+    'SERVER_ADMIN' => 'webmaster@localhost'
+    'SCRIPT_FILENAME' => '/var/www/html/AmazonCompanies/web/index.php'
+    'REMOTE_PORT' => '37586'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=empresa%2Fview&id=1'
+    'REQUEST_URI' => '/AmazonCompanies/web/index.php?r=empresa%2Fview&id=1'
+    'SCRIPT_NAME' => '/AmazonCompanies/web/index.php'
+    'PHP_SELF' => '/AmazonCompanies/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1480694004.104
+    'REQUEST_TIME' => 1480694004
+]
+2016-12-02 18:31:10 [127.0.0.1][-][-][error][yii\base\UnknownPropertyException] yii\base\UnknownPropertyException: Getting unknown property: app\models\Empresa::tipo_empresa in /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/Component.php:143
+Stack trace:
+#0 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/db/BaseActiveRecord.php(286): yii\base\Component->__get('tipo_empresa')
+#1 /var/www/html/AmazonCompanies/views/empresa/view.php(37): yii\db\BaseActiveRecord->__get('tipo_empresa')
+#2 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/View.php(326): require('/var/www/html/A...')
+#3 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/View.php(248): yii\base\View->renderPhpFile('/var/www/html/A...', Array)
+#4 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/View.php(150): yii\base\View->renderFile('/var/www/html/A...', Array, Object(app\controllers\EmpresaController))
+#5 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/Controller.php(378): yii\base\View->render('view', Array, Object(app\controllers\EmpresaController))
+#6 /var/www/html/AmazonCompanies/controllers/EmpresaController.php(55): yii\base\Controller->render('view', Array)
+#7 [internal function]: app\controllers\EmpresaController->actionView('1')
+#8 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/InlineAction.php(55): call_user_func_array(Array, Array)
+#9 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/Controller.php(154): yii\base\InlineAction->runWithParams(Array)
+#10 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/Module.php(454): yii\base\Controller->runAction('view', Array)
+#11 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/web/Application.php(100): yii\base\Module->runAction('empresa/view', Array)
+#12 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#13 /var/www/html/AmazonCompanies/web/index.php(12): yii\base\Application->run()
+#14 {main}
+2016-12-02 18:31:10 [127.0.0.1][-][-][info][application] $_GET = [
+    'r' => 'empresa/view'
+    'id' => '1'
+]
+
+$_COOKIE = [
+    '_csrf' => 'a5260614f96f17cb27c14a9b8fe6bbb99d833cd3aa254f571411126d2327d82aa:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"VSnn5OYVo9fhjduXfoUDUTQp0RHdUtfF\";}'
+    'PHPSESSID' => '2iv0kdp6sp8lg8faraqifmn031'
+    '_identity' => '17295b3d78c8a1bfe0dddabd10fa68afad63fc1dbe1225018927ccef7a7b10bea:2:{i:0;s:9:\"_identity\";i:1;s:16:\"[3,null,2592000]\";}'
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.100 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'pt-BR,pt;q=0.8,en-US;q=0.6,en;q=0.4'
+    'HTTP_COOKIE' => '_csrf=a5260614f96f17cb27c14a9b8fe6bbb99d833cd3aa254f571411126d2327d82aa%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22VSnn5OYVo9fhjduXfoUDUTQp0RHdUtfF%22%3B%7D; PHPSESSID=2iv0kdp6sp8lg8faraqifmn031; _identity=17295b3d78c8a1bfe0dddabd10fa68afad63fc1dbe1225018927ccef7a7b10bea%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_identity%22%3Bi%3A1%3Bs%3A16%3A%22%5B3%2Cnull%2C2592000%5D%22%3B%7D'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.18 (Ubuntu) Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.18 (Ubuntu)'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => '/var/www/html'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/var/www/html'
+    'SERVER_ADMIN' => 'webmaster@localhost'
+    'SCRIPT_FILENAME' => '/var/www/html/AmazonCompanies/web/index.php'
+    'REMOTE_PORT' => '39752'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=empresa%2Fview&id=1'
+    'REQUEST_URI' => '/AmazonCompanies/web/index.php?r=empresa%2Fview&id=1'
+    'SCRIPT_NAME' => '/AmazonCompanies/web/index.php'
+    'PHP_SELF' => '/AmazonCompanies/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1480703470.618
+    'REQUEST_TIME' => 1480703470
+]
+2016-12-02 18:31:41 [127.0.0.1][-][-][error][yii\base\UnknownPropertyException] yii\base\UnknownPropertyException: Getting unknown property: app\models\Empresa::idTipo_Empresa in /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/Component.php:143
+Stack trace:
+#0 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/db/BaseActiveRecord.php(286): yii\base\Component->__get('idTipo_Empresa')
+#1 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/Model.php(984): yii\db\BaseActiveRecord->__get('idTipo_Empresa')
+#2 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/db/ActiveRelationTrait.php(458): yii\base\Model->offsetGet('idTipo_Empresa')
+#3 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/db/ActiveQuery.php(187): yii\db\ActiveQuery->filterByModels(Array)
+#4 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/db/QueryBuilder.php(90): yii\db\ActiveQuery->prepare(Object(yii\db\mysql\QueryBuilder))
+#5 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/db/ActiveQuery.php(319): yii\db\QueryBuilder->build(Object(yii\db\ActiveQuery))
+#6 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/db/Query.php(247): yii\db\ActiveQuery->createCommand(Object(yii\db\Connection))
+#7 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/db/ActiveQuery.php(295): yii\db\Query->one(NULL)
+#8 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/db/ActiveRelationTrait.php(157): yii\db\ActiveQuery->one()
+#9 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/db/BaseActiveRecord.php(288): yii\db\ActiveQuery->findFor('tipoEmpresa', Object(app\models\Empresa))
+#10 /var/www/html/AmazonCompanies/views/empresa/view.php(37): yii\db\BaseActiveRecord->__get('tipoEmpresa')
+#11 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/View.php(326): require('/var/www/html/A...')
+#12 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/View.php(248): yii\base\View->renderPhpFile('/var/www/html/A...', Array)
+#13 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/View.php(150): yii\base\View->renderFile('/var/www/html/A...', Array, Object(app\controllers\EmpresaController))
+#14 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/Controller.php(378): yii\base\View->render('view', Array, Object(app\controllers\EmpresaController))
+#15 /var/www/html/AmazonCompanies/controllers/EmpresaController.php(55): yii\base\Controller->render('view', Array)
+#16 [internal function]: app\controllers\EmpresaController->actionView('1')
+#17 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/InlineAction.php(55): call_user_func_array(Array, Array)
+#18 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/Controller.php(154): yii\base\InlineAction->runWithParams(Array)
+#19 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/Module.php(454): yii\base\Controller->runAction('view', Array)
+#20 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/web/Application.php(100): yii\base\Module->runAction('empresa/view', Array)
+#21 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#22 /var/www/html/AmazonCompanies/web/index.php(12): yii\base\Application->run()
+#23 {main}
+2016-12-02 18:31:41 [127.0.0.1][-][-][info][application] $_GET = [
+    'r' => 'empresa/view'
+    'id' => '1'
+]
+
+$_COOKIE = [
+    '_csrf' => 'a5260614f96f17cb27c14a9b8fe6bbb99d833cd3aa254f571411126d2327d82aa:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"VSnn5OYVo9fhjduXfoUDUTQp0RHdUtfF\";}'
+    'PHPSESSID' => '2iv0kdp6sp8lg8faraqifmn031'
+    '_identity' => '17295b3d78c8a1bfe0dddabd10fa68afad63fc1dbe1225018927ccef7a7b10bea:2:{i:0;s:9:\"_identity\";i:1;s:16:\"[3,null,2592000]\";}'
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.100 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'pt-BR,pt;q=0.8,en-US;q=0.6,en;q=0.4'
+    'HTTP_COOKIE' => '_csrf=a5260614f96f17cb27c14a9b8fe6bbb99d833cd3aa254f571411126d2327d82aa%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22VSnn5OYVo9fhjduXfoUDUTQp0RHdUtfF%22%3B%7D; PHPSESSID=2iv0kdp6sp8lg8faraqifmn031; _identity=17295b3d78c8a1bfe0dddabd10fa68afad63fc1dbe1225018927ccef7a7b10bea%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_identity%22%3Bi%3A1%3Bs%3A16%3A%22%5B3%2Cnull%2C2592000%5D%22%3B%7D'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.18 (Ubuntu) Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.18 (Ubuntu)'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => '/var/www/html'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/var/www/html'
+    'SERVER_ADMIN' => 'webmaster@localhost'
+    'SCRIPT_FILENAME' => '/var/www/html/AmazonCompanies/web/index.php'
+    'REMOTE_PORT' => '39756'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=empresa%2Fview&id=1'
+    'REQUEST_URI' => '/AmazonCompanies/web/index.php?r=empresa%2Fview&id=1'
+    'SCRIPT_NAME' => '/AmazonCompanies/web/index.php'
+    'PHP_SELF' => '/AmazonCompanies/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1480703501.134
+    'REQUEST_TIME' => 1480703501
+]
+2016-12-02 18:32:16 [127.0.0.1][-][-][error][yii\base\UnknownPropertyException] yii\base\UnknownPropertyException: Getting unknown property: app\models\Empresa::idTipoEmpresa in /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/Component.php:143
+Stack trace:
+#0 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/db/BaseActiveRecord.php(286): yii\base\Component->__get('idTipoEmpresa')
+#1 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/Model.php(984): yii\db\BaseActiveRecord->__get('idTipoEmpresa')
+#2 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/db/ActiveRelationTrait.php(458): yii\base\Model->offsetGet('idTipoEmpresa')
+#3 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/db/ActiveQuery.php(187): yii\db\ActiveQuery->filterByModels(Array)
+#4 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/db/QueryBuilder.php(90): yii\db\ActiveQuery->prepare(Object(yii\db\mysql\QueryBuilder))
+#5 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/db/ActiveQuery.php(319): yii\db\QueryBuilder->build(Object(yii\db\ActiveQuery))
+#6 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/db/Query.php(247): yii\db\ActiveQuery->createCommand(Object(yii\db\Connection))
+#7 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/db/ActiveQuery.php(295): yii\db\Query->one(NULL)
+#8 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/db/ActiveRelationTrait.php(157): yii\db\ActiveQuery->one()
+#9 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/db/BaseActiveRecord.php(288): yii\db\ActiveQuery->findFor('tipoEmpresa', Object(app\models\Empresa))
+#10 /var/www/html/AmazonCompanies/views/empresa/view.php(37): yii\db\BaseActiveRecord->__get('tipoEmpresa')
+#11 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/View.php(326): require('/var/www/html/A...')
+#12 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/View.php(248): yii\base\View->renderPhpFile('/var/www/html/A...', Array)
+#13 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/View.php(150): yii\base\View->renderFile('/var/www/html/A...', Array, Object(app\controllers\EmpresaController))
+#14 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/Controller.php(378): yii\base\View->render('view', Array, Object(app\controllers\EmpresaController))
+#15 /var/www/html/AmazonCompanies/controllers/EmpresaController.php(55): yii\base\Controller->render('view', Array)
+#16 [internal function]: app\controllers\EmpresaController->actionView('1')
+#17 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/InlineAction.php(55): call_user_func_array(Array, Array)
+#18 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/Controller.php(154): yii\base\InlineAction->runWithParams(Array)
+#19 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/Module.php(454): yii\base\Controller->runAction('view', Array)
+#20 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/web/Application.php(100): yii\base\Module->runAction('empresa/view', Array)
+#21 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#22 /var/www/html/AmazonCompanies/web/index.php(12): yii\base\Application->run()
+#23 {main}
+2016-12-02 18:32:16 [127.0.0.1][-][-][info][application] $_GET = [
+    'r' => 'empresa/view'
+    'id' => '1'
+]
+
+$_COOKIE = [
+    '_csrf' => 'a5260614f96f17cb27c14a9b8fe6bbb99d833cd3aa254f571411126d2327d82aa:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"VSnn5OYVo9fhjduXfoUDUTQp0RHdUtfF\";}'
+    'PHPSESSID' => '2iv0kdp6sp8lg8faraqifmn031'
+    '_identity' => '17295b3d78c8a1bfe0dddabd10fa68afad63fc1dbe1225018927ccef7a7b10bea:2:{i:0;s:9:\"_identity\";i:1;s:16:\"[3,null,2592000]\";}'
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.100 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'pt-BR,pt;q=0.8,en-US;q=0.6,en;q=0.4'
+    'HTTP_COOKIE' => '_csrf=a5260614f96f17cb27c14a9b8fe6bbb99d833cd3aa254f571411126d2327d82aa%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22VSnn5OYVo9fhjduXfoUDUTQp0RHdUtfF%22%3B%7D; PHPSESSID=2iv0kdp6sp8lg8faraqifmn031; _identity=17295b3d78c8a1bfe0dddabd10fa68afad63fc1dbe1225018927ccef7a7b10bea%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_identity%22%3Bi%3A1%3Bs%3A16%3A%22%5B3%2Cnull%2C2592000%5D%22%3B%7D'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.18 (Ubuntu) Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.18 (Ubuntu)'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => '/var/www/html'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/var/www/html'
+    'SERVER_ADMIN' => 'webmaster@localhost'
+    'SCRIPT_FILENAME' => '/var/www/html/AmazonCompanies/web/index.php'
+    'REMOTE_PORT' => '39760'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=empresa%2Fview&id=1'
+    'REQUEST_URI' => '/AmazonCompanies/web/index.php?r=empresa%2Fview&id=1'
+    'SCRIPT_NAME' => '/AmazonCompanies/web/index.php'
+    'PHP_SELF' => '/AmazonCompanies/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1480703536.202
+    'REQUEST_TIME' => 1480703536
+]
+2016-12-02 18:34:48 [127.0.0.1][-][-][error][yii\db\Exception] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'idEmpresa' in 'where clause' in /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/db/Command.php:900
+Stack trace:
+#0 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/db/Command.php(900): PDOStatement->execute()
+#1 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/db/Command.php(376): yii\db\Command->queryInternal('fetch', NULL)
+#2 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/db/Query.php(247): yii\db\Command->queryOne()
+#3 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/db/ActiveQuery.php(295): yii\db\Query->one(NULL)
+#4 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/db/ActiveRelationTrait.php(157): yii\db\ActiveQuery->one()
+#5 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/db/BaseActiveRecord.php(288): yii\db\ActiveQuery->findFor('tipoEmpresa', Object(app\models\Empresa))
+#6 /var/www/html/AmazonCompanies/views/empresa/view.php(37): yii\db\BaseActiveRecord->__get('tipoEmpresa')
+#7 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/View.php(326): require('/var/www/html/A...')
+#8 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/View.php(248): yii\base\View->renderPhpFile('/var/www/html/A...', '[<span class="s...')
+#9 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/View.php(150): yii\base\View->renderFile('/var/www/html/A...', Array, Object(app\controllers\EmpresaController))
+#10 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/Controller.php(378): yii\base\View->render('view', Array, Object(app\controllers\EmpresaController))
+#11 /var/www/html/AmazonCompanies/controllers/EmpresaController.php(55): yii\base\Controller->render('view', Array)
+#12 [internal function]: app\controllers\EmpresaController->actionView('1')
+#13 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/InlineAction.php(55): call_user_func_array(Array, Array)
+#14 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/Controller.php(154): yii\base\InlineAction->runWithParams(Array)
+#15 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/Module.php(454): yii\base\Controller->runAction('view', Array)
+#16 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/web/Application.php(100): yii\base\Module->runAction('empresa/view', Array)
+#17 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#18 /var/www/html/AmazonCompanies/web/index.php(12): yii\base\Application->run()
+#19 {main}
+
+Next yii\db\Exception: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'idEmpresa' in 'where clause'
+The SQL being executed was: SELECT * FROM `tipo_empresa` WHERE `idEmpresa`=2 in /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/db/Schema.php:631
+Stack trace:
+#0 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/db/Command.php(915): yii\db\Schema->convertException(Object(PDOException), 'SELECT * FROM `...')
+#1 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/db/Command.php(376): yii\db\Command->queryInternal('fetch', NULL)
+#2 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/db/Query.php(247): yii\db\Command->queryOne()
+#3 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/db/ActiveQuery.php(295): yii\db\Query->one(NULL)
+#4 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/db/ActiveRelationTrait.php(157): yii\db\ActiveQuery->one()
+#5 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/db/BaseActiveRecord.php(288): yii\db\ActiveQuery->findFor('tipoEmpresa', Object(app\models\Empresa))
+#6 /var/www/html/AmazonCompanies/views/empresa/view.php(37): yii\db\BaseActiveRecord->__get('tipoEmpresa')
+#7 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/View.php(326): require('/var/www/html/A...')
+#8 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/View.php(248): yii\base\View->renderPhpFile('/var/www/html/A...', '[<span class="s...')
+#9 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/View.php(150): yii\base\View->renderFile('/var/www/html/A...', Array, Object(app\controllers\EmpresaController))
+#10 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/Controller.php(378): yii\base\View->render('view', Array, Object(app\controllers\EmpresaController))
+#11 /var/www/html/AmazonCompanies/controllers/EmpresaController.php(55): yii\base\Controller->render('view', Array)
+#12 [internal function]: app\controllers\EmpresaController->actionView('1')
+#13 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/InlineAction.php(55): call_user_func_array(Array, Array)
+#14 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/Controller.php(154): yii\base\InlineAction->runWithParams(Array)
+#15 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/Module.php(454): yii\base\Controller->runAction('view', Array)
+#16 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/web/Application.php(100): yii\base\Module->runAction('empresa/view', Array)
+#17 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#18 /var/www/html/AmazonCompanies/web/index.php(12): yii\base\Application->run()
+#19 {main}
+Additional Information:
+Array
+(
+    [0] => 42S22
+    [1] => 1054
+    [2] => Unknown column 'idEmpresa' in 'where clause'
+)
+
+2016-12-02 18:34:48 [127.0.0.1][-][-][info][application] $_GET = [
+    'r' => 'empresa/view'
+    'id' => '1'
+]
+
+$_COOKIE = [
+    '_csrf' => 'a5260614f96f17cb27c14a9b8fe6bbb99d833cd3aa254f571411126d2327d82aa:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"VSnn5OYVo9fhjduXfoUDUTQp0RHdUtfF\";}'
+    'PHPSESSID' => '2iv0kdp6sp8lg8faraqifmn031'
+    '_identity' => '17295b3d78c8a1bfe0dddabd10fa68afad63fc1dbe1225018927ccef7a7b10bea:2:{i:0;s:9:\"_identity\";i:1;s:16:\"[3,null,2592000]\";}'
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.100 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'pt-BR,pt;q=0.8,en-US;q=0.6,en;q=0.4'
+    'HTTP_COOKIE' => '_csrf=a5260614f96f17cb27c14a9b8fe6bbb99d833cd3aa254f571411126d2327d82aa%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22VSnn5OYVo9fhjduXfoUDUTQp0RHdUtfF%22%3B%7D; PHPSESSID=2iv0kdp6sp8lg8faraqifmn031; _identity=17295b3d78c8a1bfe0dddabd10fa68afad63fc1dbe1225018927ccef7a7b10bea%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_identity%22%3Bi%3A1%3Bs%3A16%3A%22%5B3%2Cnull%2C2592000%5D%22%3B%7D'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.18 (Ubuntu) Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.18 (Ubuntu)'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => '/var/www/html'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/var/www/html'
+    'SERVER_ADMIN' => 'webmaster@localhost'
+    'SCRIPT_FILENAME' => '/var/www/html/AmazonCompanies/web/index.php'
+    'REMOTE_PORT' => '39764'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=empresa%2Fview&id=1'
+    'REQUEST_URI' => '/AmazonCompanies/web/index.php?r=empresa%2Fview&id=1'
+    'SCRIPT_NAME' => '/AmazonCompanies/web/index.php'
+    'PHP_SELF' => '/AmazonCompanies/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1480703688.562
+    'REQUEST_TIME' => 1480703688
+]
+2016-12-02 18:35:49 [127.0.0.1][-][-][error][yii\db\Exception] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'idEmpresa' in 'where clause' in /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/db/Command.php:900
+Stack trace:
+#0 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/db/Command.php(900): PDOStatement->execute()
+#1 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/db/Command.php(376): yii\db\Command->queryInternal('fetch', NULL)
+#2 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/db/Query.php(247): yii\db\Command->queryOne()
+#3 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/db/ActiveQuery.php(295): yii\db\Query->one(NULL)
+#4 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/db/ActiveRelationTrait.php(157): yii\db\ActiveQuery->one()
+#5 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/db/BaseActiveRecord.php(288): yii\db\ActiveQuery->findFor('tipoEmpresa', Object(app\models\Empresa))
+#6 /var/www/html/AmazonCompanies/views/empresa/view.php(37): yii\db\BaseActiveRecord->__get('tipoEmpresa')
+#7 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/View.php(326): require('/var/www/html/A...')
+#8 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/View.php(248): yii\base\View->renderPhpFile('/var/www/html/A...', '[<span class="s...')
+#9 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/View.php(150): yii\base\View->renderFile('/var/www/html/A...', Array, Object(app\controllers\EmpresaController))
+#10 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/Controller.php(378): yii\base\View->render('view', Array, Object(app\controllers\EmpresaController))
+#11 /var/www/html/AmazonCompanies/controllers/EmpresaController.php(55): yii\base\Controller->render('view', Array)
+#12 [internal function]: app\controllers\EmpresaController->actionView('1')
+#13 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/InlineAction.php(55): call_user_func_array(Array, Array)
+#14 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/Controller.php(154): yii\base\InlineAction->runWithParams(Array)
+#15 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/Module.php(454): yii\base\Controller->runAction('view', Array)
+#16 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/web/Application.php(100): yii\base\Module->runAction('empresa/view', Array)
+#17 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#18 /var/www/html/AmazonCompanies/web/index.php(12): yii\base\Application->run()
+#19 {main}
+
+Next yii\db\Exception: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'idEmpresa' in 'where clause'
+The SQL being executed was: SELECT * FROM `tipo_empresa` WHERE `idEmpresa`=2 in /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/db/Schema.php:631
+Stack trace:
+#0 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/db/Command.php(915): yii\db\Schema->convertException(Object(PDOException), 'SELECT * FROM `...')
+#1 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/db/Command.php(376): yii\db\Command->queryInternal('fetch', NULL)
+#2 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/db/Query.php(247): yii\db\Command->queryOne()
+#3 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/db/ActiveQuery.php(295): yii\db\Query->one(NULL)
+#4 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/db/ActiveRelationTrait.php(157): yii\db\ActiveQuery->one()
+#5 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/db/BaseActiveRecord.php(288): yii\db\ActiveQuery->findFor('tipoEmpresa', Object(app\models\Empresa))
+#6 /var/www/html/AmazonCompanies/views/empresa/view.php(37): yii\db\BaseActiveRecord->__get('tipoEmpresa')
+#7 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/View.php(326): require('/var/www/html/A...')
+#8 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/View.php(248): yii\base\View->renderPhpFile('/var/www/html/A...', '[<span class="s...')
+#9 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/View.php(150): yii\base\View->renderFile('/var/www/html/A...', Array, Object(app\controllers\EmpresaController))
+#10 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/Controller.php(378): yii\base\View->render('view', Array, Object(app\controllers\EmpresaController))
+#11 /var/www/html/AmazonCompanies/controllers/EmpresaController.php(55): yii\base\Controller->render('view', Array)
+#12 [internal function]: app\controllers\EmpresaController->actionView('1')
+#13 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/InlineAction.php(55): call_user_func_array(Array, Array)
+#14 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/Controller.php(154): yii\base\InlineAction->runWithParams(Array)
+#15 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/Module.php(454): yii\base\Controller->runAction('view', Array)
+#16 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/web/Application.php(100): yii\base\Module->runAction('empresa/view', Array)
+#17 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#18 /var/www/html/AmazonCompanies/web/index.php(12): yii\base\Application->run()
+#19 {main}
+Additional Information:
+Array
+(
+    [0] => 42S22
+    [1] => 1054
+    [2] => Unknown column 'idEmpresa' in 'where clause'
+)
+
+2016-12-02 18:35:49 [127.0.0.1][-][-][info][application] $_GET = [
+    'r' => 'empresa/view'
+    'id' => '1'
+]
+
+$_COOKIE = [
+    '_csrf' => 'a5260614f96f17cb27c14a9b8fe6bbb99d833cd3aa254f571411126d2327d82aa:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"VSnn5OYVo9fhjduXfoUDUTQp0RHdUtfF\";}'
+    'PHPSESSID' => '2iv0kdp6sp8lg8faraqifmn031'
+    '_identity' => '17295b3d78c8a1bfe0dddabd10fa68afad63fc1dbe1225018927ccef7a7b10bea:2:{i:0;s:9:\"_identity\";i:1;s:16:\"[3,null,2592000]\";}'
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.100 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'pt-BR,pt;q=0.8,en-US;q=0.6,en;q=0.4'
+    'HTTP_COOKIE' => '_csrf=a5260614f96f17cb27c14a9b8fe6bbb99d833cd3aa254f571411126d2327d82aa%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22VSnn5OYVo9fhjduXfoUDUTQp0RHdUtfF%22%3B%7D; PHPSESSID=2iv0kdp6sp8lg8faraqifmn031; _identity=17295b3d78c8a1bfe0dddabd10fa68afad63fc1dbe1225018927ccef7a7b10bea%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_identity%22%3Bi%3A1%3Bs%3A16%3A%22%5B3%2Cnull%2C2592000%5D%22%3B%7D'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.18 (Ubuntu) Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.18 (Ubuntu)'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => '/var/www/html'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/var/www/html'
+    'SERVER_ADMIN' => 'webmaster@localhost'
+    'SCRIPT_FILENAME' => '/var/www/html/AmazonCompanies/web/index.php'
+    'REMOTE_PORT' => '39768'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=empresa%2Fview&id=1'
+    'REQUEST_URI' => '/AmazonCompanies/web/index.php?r=empresa%2Fview&id=1'
+    'SCRIPT_NAME' => '/AmazonCompanies/web/index.php'
+    'PHP_SELF' => '/AmazonCompanies/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1480703749.977
+    'REQUEST_TIME' => 1480703749
+]
+2016-12-02 18:37:04 [127.0.0.1][-][-][error][yii\db\Exception] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'idEmpresa' in 'where clause' in /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/db/Command.php:900
+Stack trace:
+#0 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/db/Command.php(900): PDOStatement->execute()
+#1 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/db/Command.php(376): yii\db\Command->queryInternal('fetch', NULL)
+#2 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/db/Query.php(247): yii\db\Command->queryOne()
+#3 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/db/ActiveQuery.php(295): yii\db\Query->one(NULL)
+#4 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/db/ActiveRelationTrait.php(157): yii\db\ActiveQuery->one()
+#5 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/db/BaseActiveRecord.php(288): yii\db\ActiveQuery->findFor('tipoEmpresa', Object(app\models\Empresa))
+#6 /var/www/html/AmazonCompanies/views/empresa/view.php(37): yii\db\BaseActiveRecord->__get('tipoEmpresa')
+#7 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/View.php(326): require('/var/www/html/A...')
+#8 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/View.php(248): yii\base\View->renderPhpFile('/var/www/html/A...', '[<span class="s...')
+#9 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/View.php(150): yii\base\View->renderFile('/var/www/html/A...', Array, Object(app\controllers\EmpresaController))
+#10 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/Controller.php(378): yii\base\View->render('view', Array, Object(app\controllers\EmpresaController))
+#11 /var/www/html/AmazonCompanies/controllers/EmpresaController.php(55): yii\base\Controller->render('view', Array)
+#12 [internal function]: app\controllers\EmpresaController->actionView('1')
+#13 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/InlineAction.php(55): call_user_func_array(Array, Array)
+#14 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/Controller.php(154): yii\base\InlineAction->runWithParams(Array)
+#15 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/Module.php(454): yii\base\Controller->runAction('view', Array)
+#16 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/web/Application.php(100): yii\base\Module->runAction('empresa/view', Array)
+#17 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#18 /var/www/html/AmazonCompanies/web/index.php(12): yii\base\Application->run()
+#19 {main}
+
+Next yii\db\Exception: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'idEmpresa' in 'where clause'
+The SQL being executed was: SELECT * FROM `tipo_empresa` WHERE `idEmpresa`=2 in /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/db/Schema.php:631
+Stack trace:
+#0 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/db/Command.php(915): yii\db\Schema->convertException(Object(PDOException), 'SELECT * FROM `...')
+#1 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/db/Command.php(376): yii\db\Command->queryInternal('fetch', NULL)
+#2 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/db/Query.php(247): yii\db\Command->queryOne()
+#3 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/db/ActiveQuery.php(295): yii\db\Query->one(NULL)
+#4 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/db/ActiveRelationTrait.php(157): yii\db\ActiveQuery->one()
+#5 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/db/BaseActiveRecord.php(288): yii\db\ActiveQuery->findFor('tipoEmpresa', Object(app\models\Empresa))
+#6 /var/www/html/AmazonCompanies/views/empresa/view.php(37): yii\db\BaseActiveRecord->__get('tipoEmpresa')
+#7 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/View.php(326): require('/var/www/html/A...')
+#8 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/View.php(248): yii\base\View->renderPhpFile('/var/www/html/A...', '[<span class="s...')
+#9 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/View.php(150): yii\base\View->renderFile('/var/www/html/A...', Array, Object(app\controllers\EmpresaController))
+#10 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/Controller.php(378): yii\base\View->render('view', Array, Object(app\controllers\EmpresaController))
+#11 /var/www/html/AmazonCompanies/controllers/EmpresaController.php(55): yii\base\Controller->render('view', Array)
+#12 [internal function]: app\controllers\EmpresaController->actionView('1')
+#13 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/InlineAction.php(55): call_user_func_array(Array, Array)
+#14 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/Controller.php(154): yii\base\InlineAction->runWithParams(Array)
+#15 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/Module.php(454): yii\base\Controller->runAction('view', Array)
+#16 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/web/Application.php(100): yii\base\Module->runAction('empresa/view', Array)
+#17 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#18 /var/www/html/AmazonCompanies/web/index.php(12): yii\base\Application->run()
+#19 {main}
+Additional Information:
+Array
+(
+    [0] => 42S22
+    [1] => 1054
+    [2] => Unknown column 'idEmpresa' in 'where clause'
+)
+
+2016-12-02 18:37:04 [127.0.0.1][-][-][info][application] $_GET = [
+    'r' => 'empresa/view'
+    'id' => '1'
+]
+
+$_COOKIE = [
+    '_csrf' => 'a5260614f96f17cb27c14a9b8fe6bbb99d833cd3aa254f571411126d2327d82aa:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"VSnn5OYVo9fhjduXfoUDUTQp0RHdUtfF\";}'
+    'PHPSESSID' => '2iv0kdp6sp8lg8faraqifmn031'
+    '_identity' => '17295b3d78c8a1bfe0dddabd10fa68afad63fc1dbe1225018927ccef7a7b10bea:2:{i:0;s:9:\"_identity\";i:1;s:16:\"[3,null,2592000]\";}'
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.100 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'pt-BR,pt;q=0.8,en-US;q=0.6,en;q=0.4'
+    'HTTP_COOKIE' => '_csrf=a5260614f96f17cb27c14a9b8fe6bbb99d833cd3aa254f571411126d2327d82aa%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22VSnn5OYVo9fhjduXfoUDUTQp0RHdUtfF%22%3B%7D; PHPSESSID=2iv0kdp6sp8lg8faraqifmn031; _identity=17295b3d78c8a1bfe0dddabd10fa68afad63fc1dbe1225018927ccef7a7b10bea%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_identity%22%3Bi%3A1%3Bs%3A16%3A%22%5B3%2Cnull%2C2592000%5D%22%3B%7D'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.18 (Ubuntu) Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.18 (Ubuntu)'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => '/var/www/html'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/var/www/html'
+    'SERVER_ADMIN' => 'webmaster@localhost'
+    'SCRIPT_FILENAME' => '/var/www/html/AmazonCompanies/web/index.php'
+    'REMOTE_PORT' => '39772'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=empresa%2Fview&id=1'
+    'REQUEST_URI' => '/AmazonCompanies/web/index.php?r=empresa%2Fview&id=1'
+    'SCRIPT_NAME' => '/AmazonCompanies/web/index.php'
+    'PHP_SELF' => '/AmazonCompanies/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1480703824.943
+    'REQUEST_TIME' => 1480703824
+]
+2016-12-02 18:37:06 [127.0.0.1][-][-][error][yii\db\Exception] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'idEmpresa' in 'where clause' in /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/db/Command.php:900
+Stack trace:
+#0 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/db/Command.php(900): PDOStatement->execute()
+#1 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/db/Command.php(376): yii\db\Command->queryInternal('fetch', NULL)
+#2 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/db/Query.php(247): yii\db\Command->queryOne()
+#3 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/db/ActiveQuery.php(295): yii\db\Query->one(NULL)
+#4 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/db/ActiveRelationTrait.php(157): yii\db\ActiveQuery->one()
+#5 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/db/BaseActiveRecord.php(288): yii\db\ActiveQuery->findFor('tipoEmpresa', Object(app\models\Empresa))
+#6 /var/www/html/AmazonCompanies/views/empresa/view.php(37): yii\db\BaseActiveRecord->__get('tipoEmpresa')
+#7 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/View.php(326): require('/var/www/html/A...')
+#8 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/View.php(248): yii\base\View->renderPhpFile('/var/www/html/A...', '[<span class="s...')
+#9 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/View.php(150): yii\base\View->renderFile('/var/www/html/A...', Array, Object(app\controllers\EmpresaController))
+#10 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/Controller.php(378): yii\base\View->render('view', Array, Object(app\controllers\EmpresaController))
+#11 /var/www/html/AmazonCompanies/controllers/EmpresaController.php(55): yii\base\Controller->render('view', Array)
+#12 [internal function]: app\controllers\EmpresaController->actionView('1')
+#13 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/InlineAction.php(55): call_user_func_array(Array, Array)
+#14 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/Controller.php(154): yii\base\InlineAction->runWithParams(Array)
+#15 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/Module.php(454): yii\base\Controller->runAction('view', Array)
+#16 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/web/Application.php(100): yii\base\Module->runAction('empresa/view', Array)
+#17 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#18 /var/www/html/AmazonCompanies/web/index.php(12): yii\base\Application->run()
+#19 {main}
+
+Next yii\db\Exception: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'idEmpresa' in 'where clause'
+The SQL being executed was: SELECT * FROM `tipo_empresa` WHERE `idEmpresa`=2 in /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/db/Schema.php:631
+Stack trace:
+#0 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/db/Command.php(915): yii\db\Schema->convertException(Object(PDOException), 'SELECT * FROM `...')
+#1 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/db/Command.php(376): yii\db\Command->queryInternal('fetch', NULL)
+#2 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/db/Query.php(247): yii\db\Command->queryOne()
+#3 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/db/ActiveQuery.php(295): yii\db\Query->one(NULL)
+#4 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/db/ActiveRelationTrait.php(157): yii\db\ActiveQuery->one()
+#5 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/db/BaseActiveRecord.php(288): yii\db\ActiveQuery->findFor('tipoEmpresa', Object(app\models\Empresa))
+#6 /var/www/html/AmazonCompanies/views/empresa/view.php(37): yii\db\BaseActiveRecord->__get('tipoEmpresa')
+#7 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/View.php(326): require('/var/www/html/A...')
+#8 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/View.php(248): yii\base\View->renderPhpFile('/var/www/html/A...', '[<span class="s...')
+#9 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/View.php(150): yii\base\View->renderFile('/var/www/html/A...', Array, Object(app\controllers\EmpresaController))
+#10 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/Controller.php(378): yii\base\View->render('view', Array, Object(app\controllers\EmpresaController))
+#11 /var/www/html/AmazonCompanies/controllers/EmpresaController.php(55): yii\base\Controller->render('view', Array)
+#12 [internal function]: app\controllers\EmpresaController->actionView('1')
+#13 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/InlineAction.php(55): call_user_func_array(Array, Array)
+#14 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/Controller.php(154): yii\base\InlineAction->runWithParams(Array)
+#15 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/Module.php(454): yii\base\Controller->runAction('view', Array)
+#16 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/web/Application.php(100): yii\base\Module->runAction('empresa/view', Array)
+#17 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#18 /var/www/html/AmazonCompanies/web/index.php(12): yii\base\Application->run()
+#19 {main}
+Additional Information:
+Array
+(
+    [0] => 42S22
+    [1] => 1054
+    [2] => Unknown column 'idEmpresa' in 'where clause'
+)
+
+2016-12-02 18:37:06 [127.0.0.1][-][-][info][application] $_GET = [
+    'r' => 'empresa/view'
+    'id' => '1'
+]
+
+$_COOKIE = [
+    '_csrf' => 'a5260614f96f17cb27c14a9b8fe6bbb99d833cd3aa254f571411126d2327d82aa:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"VSnn5OYVo9fhjduXfoUDUTQp0RHdUtfF\";}'
+    'PHPSESSID' => '2iv0kdp6sp8lg8faraqifmn031'
+    '_identity' => '17295b3d78c8a1bfe0dddabd10fa68afad63fc1dbe1225018927ccef7a7b10bea:2:{i:0;s:9:\"_identity\";i:1;s:16:\"[3,null,2592000]\";}'
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.100 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'pt-BR,pt;q=0.8,en-US;q=0.6,en;q=0.4'
+    'HTTP_COOKIE' => '_csrf=a5260614f96f17cb27c14a9b8fe6bbb99d833cd3aa254f571411126d2327d82aa%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22VSnn5OYVo9fhjduXfoUDUTQp0RHdUtfF%22%3B%7D; PHPSESSID=2iv0kdp6sp8lg8faraqifmn031; _identity=17295b3d78c8a1bfe0dddabd10fa68afad63fc1dbe1225018927ccef7a7b10bea%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_identity%22%3Bi%3A1%3Bs%3A16%3A%22%5B3%2Cnull%2C2592000%5D%22%3B%7D'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.18 (Ubuntu) Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.18 (Ubuntu)'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => '/var/www/html'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/var/www/html'
+    'SERVER_ADMIN' => 'webmaster@localhost'
+    'SCRIPT_FILENAME' => '/var/www/html/AmazonCompanies/web/index.php'
+    'REMOTE_PORT' => '39774'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=empresa%2Fview&id=1'
+    'REQUEST_URI' => '/AmazonCompanies/web/index.php?r=empresa%2Fview&id=1'
+    'SCRIPT_NAME' => '/AmazonCompanies/web/index.php'
+    'PHP_SELF' => '/AmazonCompanies/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1480703826.868
+    'REQUEST_TIME' => 1480703826
+]
+2016-12-02 18:37:25 [127.0.0.1][-][-][warning][yii\web\User::getIdentityAndDurationFromCookie] Invalid auth key attempted for user '3': 
+    in /var/www/html/AmazonCompanies/views/layouts/main.php:40
+    in /var/www/html/AmazonCompanies/controllers/EmpresaController.php:55
+2016-12-02 18:37:25 [127.0.0.1][-][-][info][application] $_GET = [
+    'r' => 'empresa/view'
+    'id' => '1'
+]
+
+$_COOKIE = [
+    '_csrf' => 'a5260614f96f17cb27c14a9b8fe6bbb99d833cd3aa254f571411126d2327d82aa:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"VSnn5OYVo9fhjduXfoUDUTQp0RHdUtfF\";}'
+    'PHPSESSID' => '2iv0kdp6sp8lg8faraqifmn031'
+    '_identity' => '17295b3d78c8a1bfe0dddabd10fa68afad63fc1dbe1225018927ccef7a7b10bea:2:{i:0;s:9:\"_identity\";i:1;s:16:\"[3,null,2592000]\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.100 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'pt-BR,pt;q=0.8,en-US;q=0.6,en;q=0.4'
+    'HTTP_COOKIE' => '_csrf=a5260614f96f17cb27c14a9b8fe6bbb99d833cd3aa254f571411126d2327d82aa%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22VSnn5OYVo9fhjduXfoUDUTQp0RHdUtfF%22%3B%7D; PHPSESSID=2iv0kdp6sp8lg8faraqifmn031; _identity=17295b3d78c8a1bfe0dddabd10fa68afad63fc1dbe1225018927ccef7a7b10bea%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_identity%22%3Bi%3A1%3Bs%3A16%3A%22%5B3%2Cnull%2C2592000%5D%22%3B%7D'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.18 (Ubuntu) Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.18 (Ubuntu)'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => '/var/www/html'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/var/www/html'
+    'SERVER_ADMIN' => 'webmaster@localhost'
+    'SCRIPT_FILENAME' => '/var/www/html/AmazonCompanies/web/index.php'
+    'REMOTE_PORT' => '39778'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=empresa%2Fview&id=1'
+    'REQUEST_URI' => '/AmazonCompanies/web/index.php?r=empresa%2Fview&id=1'
+    'SCRIPT_NAME' => '/AmazonCompanies/web/index.php'
+    'PHP_SELF' => '/AmazonCompanies/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1480703845.55
+    'REQUEST_TIME' => 1480703845
+]
+2016-12-03 00:22:25 [127.0.0.1][-][-][error][yii\base\UnknownPropertyException] yii\base\UnknownPropertyException: Getting unknown property: app\models\Empresa::tipo_empresa in /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/Component.php:143
+Stack trace:
+#0 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/db/BaseActiveRecord.php(286): yii\base\Component->__get('tipo_empresa')
+#1 /var/www/html/AmazonCompanies/views/empresa/view.php(37): yii\db\BaseActiveRecord->__get('tipo_empresa')
+#2 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/View.php(326): require('/var/www/html/A...')
+#3 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/View.php(248): yii\base\View->renderPhpFile('/var/www/html/A...', Array)
+#4 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/View.php(150): yii\base\View->renderFile('/var/www/html/A...', Array, Object(app\controllers\EmpresaController))
+#5 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/Controller.php(378): yii\base\View->render('view', Array, Object(app\controllers\EmpresaController))
+#6 /var/www/html/AmazonCompanies/controllers/EmpresaController.php(55): yii\base\Controller->render('view', Array)
+#7 [internal function]: app\controllers\EmpresaController->actionView('1')
+#8 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/InlineAction.php(55): call_user_func_array(Array, Array)
+#9 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/Controller.php(154): yii\base\InlineAction->runWithParams(Array)
+#10 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/Module.php(454): yii\base\Controller->runAction('view', Array)
+#11 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/web/Application.php(100): yii\base\Module->runAction('empresa/view', Array)
+#12 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#13 /var/www/html/AmazonCompanies/web/index.php(12): yii\base\Application->run()
+#14 {main}
+2016-12-03 00:22:25 [127.0.0.1][-][-][info][application] $_GET = [
+    'r' => 'empresa/view'
+    'id' => '1'
+]
+
+$_COOKIE = [
+    '_csrf' => 'd0bf5a613818a8334222f4ea5fe827856827c075193b0da8efb1e67eb703ad31a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"f-FjNoXfGjNFKWMY5e48zt6ArXHkQWdY\";}'
+    'PHPSESSID' => 'h45km5vle3qtugpta0c0clpf96'
+    '_identity' => '17295b3d78c8a1bfe0dddabd10fa68afad63fc1dbe1225018927ccef7a7b10bea:2:{i:0;s:9:\"_identity\";i:1;s:16:\"[3,null,2592000]\";}'
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.100 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'
+    'HTTP_REFERER' => 'http://localhost/AmazonCompanies/web/index.php?r=empresa%2Findex'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'pt-BR,pt;q=0.8,en-US;q=0.6,en;q=0.4'
+    'HTTP_COOKIE' => '_csrf=d0bf5a613818a8334222f4ea5fe827856827c075193b0da8efb1e67eb703ad31a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22f-FjNoXfGjNFKWMY5e48zt6ArXHkQWdY%22%3B%7D; PHPSESSID=h45km5vle3qtugpta0c0clpf96; _identity=17295b3d78c8a1bfe0dddabd10fa68afad63fc1dbe1225018927ccef7a7b10bea%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_identity%22%3Bi%3A1%3Bs%3A16%3A%22%5B3%2Cnull%2C2592000%5D%22%3B%7D'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.18 (Ubuntu) Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.18 (Ubuntu)'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => '/var/www/html'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/var/www/html'
+    'SERVER_ADMIN' => 'webmaster@localhost'
+    'SCRIPT_FILENAME' => '/var/www/html/AmazonCompanies/web/index.php'
+    'REMOTE_PORT' => '58516'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=empresa%2Fview&id=1'
+    'REQUEST_URI' => '/AmazonCompanies/web/index.php?r=empresa%2Fview&id=1'
+    'SCRIPT_NAME' => '/AmazonCompanies/web/index.php'
+    'PHP_SELF' => '/AmazonCompanies/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1480724545.11
+    'REQUEST_TIME' => 1480724545
+]
