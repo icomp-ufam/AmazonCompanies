@@ -62,7 +62,7 @@ AppAsset::register($this);
     							//'<li class="divider"></li>',
     							//'<li class="dropdown-header">Dropdown Header</li>',
     							['label' => Html::tag('span', '3', ['class' => 'badge']).' Alteração de Dados', 'url' => ['validaltdados']],
-    							['label' => Html::tag('span', '9', ['class' => 'badge']).' Cadastro', 'url' => ['/site/validcadadm']],
+    							['label' => Html::tag('span', '9', ['class' => 'badge']).' Cadastro', 'url' => ['/usuario/']],
     					]],
     					['label' => 'Seu Perfil', 'url' => ['/site/altcad']],
     					
@@ -90,7 +90,7 @@ AppAsset::register($this);
     					['label' => 'Empresas',
     					'items' =>[
     							['label' => 'Cadastrar Dados', 'url' => ['caddadosemp']],
-    							['label' => 'Listar Empresas Cadastradas', 'url' => ['empresa/index']],
+    							['label' => 'Listar Empresas Cadastradas', 'url' => ['listemp']],
     					]],
     					['label' => 'Notificações '. Html::tag('span', '3', ['class' => 'badge'])],
     					['label' => 'Seu Perfil', 'url' => ['/site/altcad']],
@@ -118,7 +118,7 @@ AppAsset::register($this);
     					['label' => 'Empresas',
     					'items' =>[
     							['label' => 'Cadastrar Informações', 'url' => ['cadinfoemp']],
-    							['label' => 'Listar Empresas Cadastradas', 'url' => ['empresa/index']],
+    							['label' => 'Listar Empresas Cadastradas', 'url' => ['listemp']],
     					]],
     					['label' => 'Seu Perfil', 'url' => ['/site/altcademp']],
     					['label' => 'Sobre', 'url' => ['/site/about']],
@@ -143,7 +143,7 @@ AppAsset::register($this);
         	'options' => ['class' => 'navbar-nav navbar-right'],
         	'items' => [
             	['label' => 'Página Inicial', 'url' => ['/site/index']],
-            	['label' => 'Empresas', 'url' => ['empresa/index']],
+            	['label' => 'Empresas', 'url' => ['/site/listempvis']],
             	['label' => 'Contato', 'url' => ['/site/contact']],
             	['label' => 'Sobre', 'url' => ['/site/about']],
             	

@@ -51,6 +51,7 @@ class SiteController extends Controller
                 'class' => 'yii\captcha\CaptchaAction',
                 'fixedVerifyCode' => YII_ENV_TEST ? 'testme' : null,
             ],
+        		
         ];
     }
 
@@ -145,11 +146,6 @@ class SiteController extends Controller
     public function actionAdm()
     {
     	return $this->render('adm');
-    }
-    
-    public function actionValidcadadm()
-    {
-    	return $this->render('validcadadm');
     }
     
     public function actionValidanaadm()

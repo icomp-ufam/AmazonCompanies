@@ -90,4 +90,20 @@ class Usuario extends \yii\db\ActiveRecord
     {
         return $this->hasMany(Notificacao::className(), ['Usuario_idUsuario' => 'idUsuario']);
     }
+    
+    public function setAtivo($id)
+    {
+    	return mysql_query("UPDATE usuario SET ativo='1' WHERE id=$id");
+    	
+    	//$this->set(Usuario::className(), ['Usuario_idUsuario' => 'idUsuario']);
+    	
+    	
+    	//UPDATE `usuario` SET `ativo` = '1' WHERE `usuario`.`idUsuario` = $id;
+    	
+    	
+  /*  	$_get_categoria_tipo_marca=CategoriaTipoMarca::model()->findAll(array('order' => 'categoria_tipo_marca asc'));
+    	return CHtml::listData($_get_categoria_tipo_marca,"id","categoria_tipo_marca");
+    	Yii::app()->findall();
+    	*/
+    }
 }
