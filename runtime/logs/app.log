@@ -28031,3 +28031,763 @@ $_SERVER = [
     'REQUEST_TIME_FLOAT' => 1480863081.095
     'REQUEST_TIME' => 1480863081
 ]
+2016-12-05 19:43:09 [127.0.0.1][-][-][error][yii\db\Exception] PDOException: SQLSTATE[HY000] [1049] Unknown database 'amazonCompanies22' in /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/db/Connection.php:602
+Stack trace:
+#0 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/db/Connection.php(602): PDO->__construct('mysql:host=loca...', 'root', 'root', NULL)
+#1 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/db/Connection.php(544): yii\db\Connection->createPdoInstance()
+#2 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/db/Connection.php(863): yii\db\Connection->open()
+#3 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/db/Connection.php(850): yii\db\Connection->getMasterPdo()
+#4 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/db/Schema.php(478): yii\db\Connection->getSlavePdo()
+#5 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/db/Connection.php(759): yii\db\Schema->quoteValue('root')
+#6 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/db/Command.php(175): yii\db\Connection->quoteValue('root')
+#7 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/db/Command.php(869): yii\db\Command->getRawSql()
+#8 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/db/Command.php(376): yii\db\Command->queryInternal('fetch', NULL)
+#9 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/db/Query.php(247): yii\db\Command->queryOne()
+#10 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/db/ActiveQuery.php(295): yii\db\Query->one(NULL)
+#11 /var/www/html/AmazonCompanies/models/User.php(71): yii\db\ActiveQuery->one()
+#12 /var/www/html/AmazonCompanies/models/LoginForm.php(85): app\models\User::findByLogin('root')
+#13 /var/www/html/AmazonCompanies/models/LoginForm.php(57): app\models\LoginForm->getUser()
+#14 [internal function]: app\models\LoginForm->validatePassword('password', NULL)
+#15 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/validators/InlineValidator.php(69): call_user_func(Array, 'password', NULL)
+#16 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/validators/Validator.php(265): yii\validators\InlineValidator->validateAttribute(Object(app\models\LoginForm), 'password')
+#17 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/Model.php(356): yii\validators\Validator->validateAttributes(Object(app\models\LoginForm), Array)
+#18 /var/www/html/AmazonCompanies/models/LoginForm.php(71): yii\base\Model->validate()
+#19 /var/www/html/AmazonCompanies/controllers/SiteController.php(82): app\models\LoginForm->login()
+#20 [internal function]: app\controllers\SiteController->actionLogin()
+#21 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/InlineAction.php(55): call_user_func_array(Array, Array)
+#22 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/Controller.php(154): yii\base\InlineAction->runWithParams(Array)
+#23 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/Module.php(454): yii\base\Controller->runAction('login', Array)
+#24 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/web/Application.php(100): yii\base\Module->runAction('site/login', Array)
+#25 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#26 /var/www/html/AmazonCompanies/web/index.php(12): yii\base\Application->run()
+#27 {main}
+
+Next yii\db\Exception: SQLSTATE[HY000] [1049] Unknown database 'amazonCompanies22' in /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/db/Connection.php:549
+Stack trace:
+#0 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/db/Connection.php(863): yii\db\Connection->open()
+#1 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/db/Connection.php(850): yii\db\Connection->getMasterPdo()
+#2 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/db/Schema.php(478): yii\db\Connection->getSlavePdo()
+#3 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/db/Connection.php(759): yii\db\Schema->quoteValue('root')
+#4 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/db/Command.php(175): yii\db\Connection->quoteValue('root')
+#5 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/db/Command.php(869): yii\db\Command->getRawSql()
+#6 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/db/Command.php(376): yii\db\Command->queryInternal('fetch', NULL)
+#7 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/db/Query.php(247): yii\db\Command->queryOne()
+#8 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/db/ActiveQuery.php(295): yii\db\Query->one(NULL)
+#9 /var/www/html/AmazonCompanies/models/User.php(71): yii\db\ActiveQuery->one()
+#10 /var/www/html/AmazonCompanies/models/LoginForm.php(85): app\models\User::findByLogin('root')
+#11 /var/www/html/AmazonCompanies/models/LoginForm.php(57): app\models\LoginForm->getUser()
+#12 [internal function]: app\models\LoginForm->validatePassword('password', NULL)
+#13 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/validators/InlineValidator.php(69): call_user_func(Array, 'password', NULL)
+#14 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/validators/Validator.php(265): yii\validators\InlineValidator->validateAttribute(Object(app\models\LoginForm), 'password')
+#15 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/Model.php(356): yii\validators\Validator->validateAttributes(Object(app\models\LoginForm), Array)
+#16 /var/www/html/AmazonCompanies/models/LoginForm.php(71): yii\base\Model->validate()
+#17 /var/www/html/AmazonCompanies/controllers/SiteController.php(82): app\models\LoginForm->login()
+#18 [internal function]: app\controllers\SiteController->actionLogin()
+#19 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/InlineAction.php(55): call_user_func_array(Array, Array)
+#20 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/Controller.php(154): yii\base\InlineAction->runWithParams(Array)
+#21 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/Module.php(454): yii\base\Controller->runAction('login', Array)
+#22 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/web/Application.php(100): yii\base\Module->runAction('site/login', Array)
+#23 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#24 /var/www/html/AmazonCompanies/web/index.php(12): yii\base\Application->run()
+#25 {main}
+Additional Information:
+
+2016-12-05 19:43:09 [127.0.0.1][-][-][info][application] $_GET = [
+    'r' => 'site/login'
+]
+
+$_POST = [
+    '_csrf' => 'LWx6TGdTZk5DJQsnXwoxFEoVTB4qOlYlWFUUfQ1qKihUIQwpBCIJHA=='
+    'LoginForm' => [
+        'login' => 'root'
+        'password' => 'root'
+        'rememberMe' => '1'
+    ]
+    'login-button' => ''
+]
+
+$_COOKIE = [
+    '_csrf' => '9493b9dcbf5c6eb5621c4641b8b0ce178bf631fd4a0874ad44857a1497c02901a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"nIqk8YWZgy6RMi0ku9n1j9LfyMvecqoR\";}'
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'localhost'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:45.0) Gecko/20100101 Firefox/45.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.5'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_REFERER' => 'http://localhost/AmazonCompanies/web/index.php?r=site%2Flogin'
+    'HTTP_COOKIE' => '_csrf=9493b9dcbf5c6eb5621c4641b8b0ce178bf631fd4a0874ad44857a1497c02901a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22nIqk8YWZgy6RMi0ku9n1j9LfyMvecqoR%22%3B%7D'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'CONTENT_TYPE' => 'application/x-www-form-urlencoded'
+    'CONTENT_LENGTH' => '205'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.18 (Ubuntu) Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.18 (Ubuntu)'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => '/var/www/html'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/var/www/html'
+    'SERVER_ADMIN' => 'webmaster@localhost'
+    'SCRIPT_FILENAME' => '/var/www/html/AmazonCompanies/web/index.php'
+    'REMOTE_PORT' => '40894'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'POST'
+    'QUERY_STRING' => 'r=site%2Flogin'
+    'REQUEST_URI' => '/AmazonCompanies/web/index.php?r=site%2Flogin'
+    'SCRIPT_NAME' => '/AmazonCompanies/web/index.php'
+    'PHP_SELF' => '/AmazonCompanies/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1480966989.154
+    'REQUEST_TIME' => 1480966989
+]
+2016-12-05 20:07:38 [127.0.0.1][-][-][error][yii\db\Exception] PDOException: SQLSTATE[HY000] [1049] Unknown database 'amazonCompanies22' in /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/db/Connection.php:602
+Stack trace:
+#0 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/db/Connection.php(602): PDO->__construct('mysql:host=loca...', 'root', 'root', NULL)
+#1 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/db/Connection.php(544): yii\db\Connection->createPdoInstance()
+#2 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/db/Connection.php(863): yii\db\Connection->open()
+#3 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/db/Connection.php(850): yii\db\Connection->getMasterPdo()
+#4 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/db/Schema.php(478): yii\db\Connection->getSlavePdo()
+#5 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/db/Connection.php(759): yii\db\Schema->quoteValue('root')
+#6 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/db/Command.php(175): yii\db\Connection->quoteValue('root')
+#7 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/db/Command.php(869): yii\db\Command->getRawSql()
+#8 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/db/Command.php(376): yii\db\Command->queryInternal('fetch', NULL)
+#9 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/db/Query.php(247): yii\db\Command->queryOne()
+#10 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/db/ActiveQuery.php(295): yii\db\Query->one(NULL)
+#11 /var/www/html/AmazonCompanies/models/User.php(71): yii\db\ActiveQuery->one()
+#12 /var/www/html/AmazonCompanies/models/LoginForm.php(85): app\models\User::findByLogin('root')
+#13 /var/www/html/AmazonCompanies/models/LoginForm.php(57): app\models\LoginForm->getUser()
+#14 [internal function]: app\models\LoginForm->validatePassword('password', NULL)
+#15 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/validators/InlineValidator.php(69): call_user_func(Array, 'password', NULL)
+#16 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/validators/Validator.php(265): yii\validators\InlineValidator->validateAttribute(Object(app\models\LoginForm), 'password')
+#17 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/Model.php(356): yii\validators\Validator->validateAttributes(Object(app\models\LoginForm), Array)
+#18 /var/www/html/AmazonCompanies/models/LoginForm.php(71): yii\base\Model->validate()
+#19 /var/www/html/AmazonCompanies/controllers/SiteController.php(82): app\models\LoginForm->login()
+#20 [internal function]: app\controllers\SiteController->actionLogin()
+#21 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/InlineAction.php(55): call_user_func_array(Array, Array)
+#22 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/Controller.php(154): yii\base\InlineAction->runWithParams(Array)
+#23 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/Module.php(454): yii\base\Controller->runAction('login', Array)
+#24 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/web/Application.php(100): yii\base\Module->runAction('site/login', Array)
+#25 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#26 /var/www/html/AmazonCompanies/web/index.php(12): yii\base\Application->run()
+#27 {main}
+
+Next yii\db\Exception: SQLSTATE[HY000] [1049] Unknown database 'amazonCompanies22' in /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/db/Connection.php:549
+Stack trace:
+#0 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/db/Connection.php(863): yii\db\Connection->open()
+#1 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/db/Connection.php(850): yii\db\Connection->getMasterPdo()
+#2 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/db/Schema.php(478): yii\db\Connection->getSlavePdo()
+#3 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/db/Connection.php(759): yii\db\Schema->quoteValue('root')
+#4 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/db/Command.php(175): yii\db\Connection->quoteValue('root')
+#5 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/db/Command.php(869): yii\db\Command->getRawSql()
+#6 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/db/Command.php(376): yii\db\Command->queryInternal('fetch', NULL)
+#7 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/db/Query.php(247): yii\db\Command->queryOne()
+#8 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/db/ActiveQuery.php(295): yii\db\Query->one(NULL)
+#9 /var/www/html/AmazonCompanies/models/User.php(71): yii\db\ActiveQuery->one()
+#10 /var/www/html/AmazonCompanies/models/LoginForm.php(85): app\models\User::findByLogin('root')
+#11 /var/www/html/AmazonCompanies/models/LoginForm.php(57): app\models\LoginForm->getUser()
+#12 [internal function]: app\models\LoginForm->validatePassword('password', NULL)
+#13 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/validators/InlineValidator.php(69): call_user_func(Array, 'password', NULL)
+#14 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/validators/Validator.php(265): yii\validators\InlineValidator->validateAttribute(Object(app\models\LoginForm), 'password')
+#15 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/Model.php(356): yii\validators\Validator->validateAttributes(Object(app\models\LoginForm), Array)
+#16 /var/www/html/AmazonCompanies/models/LoginForm.php(71): yii\base\Model->validate()
+#17 /var/www/html/AmazonCompanies/controllers/SiteController.php(82): app\models\LoginForm->login()
+#18 [internal function]: app\controllers\SiteController->actionLogin()
+#19 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/InlineAction.php(55): call_user_func_array(Array, Array)
+#20 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/Controller.php(154): yii\base\InlineAction->runWithParams(Array)
+#21 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/Module.php(454): yii\base\Controller->runAction('login', Array)
+#22 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/web/Application.php(100): yii\base\Module->runAction('site/login', Array)
+#23 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#24 /var/www/html/AmazonCompanies/web/index.php(12): yii\base\Application->run()
+#25 {main}
+Additional Information:
+
+2016-12-05 20:07:38 [127.0.0.1][-][-][info][application] $_GET = [
+    'r' => 'site/login'
+]
+
+$_POST = [
+    '_csrf' => 'WUVzXzZwQjM6ERARBAgyBhsQBGpmARF6KjUKLHNHBHkbLwc1RUYOag=='
+    'LoginForm' => [
+        'login' => 'root'
+        'password' => 'root'
+        'rememberMe' => '1'
+    ]
+    'login-button' => ''
+]
+
+$_COOKIE = [
+    '_csrf' => 'dbd02de03f4a425ae8a50d10bb98b3771c45c8632a56b5a763590eef4cf6b719a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"cTcN2xp5BUw5PqSIspysE7FJBjtjs6LY\";}'
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'localhost'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:45.0) Gecko/20100101 Firefox/45.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_ACCEPT_LANGUAGE' => 'pt-BR,pt;q=0.8,en-US;q=0.5,en;q=0.3'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_REFERER' => 'http://localhost/AmazonCompanies/web/index.php?r=site%2Flogin'
+    'HTTP_COOKIE' => '_csrf=dbd02de03f4a425ae8a50d10bb98b3771c45c8632a56b5a763590eef4cf6b719a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22cTcN2xp5BUw5PqSIspysE7FJBjtjs6LY%22%3B%7D'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'CONTENT_TYPE' => 'application/x-www-form-urlencoded'
+    'CONTENT_LENGTH' => '205'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.18 (Ubuntu) Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.18 (Ubuntu)'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => '/var/www/html'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/var/www/html'
+    'SERVER_ADMIN' => 'webmaster@localhost'
+    'SCRIPT_FILENAME' => '/var/www/html/AmazonCompanies/web/index.php'
+    'REMOTE_PORT' => '44550'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'POST'
+    'QUERY_STRING' => 'r=site%2Flogin'
+    'REQUEST_URI' => '/AmazonCompanies/web/index.php?r=site%2Flogin'
+    'SCRIPT_NAME' => '/AmazonCompanies/web/index.php'
+    'PHP_SELF' => '/AmazonCompanies/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1480968458.452
+    'REQUEST_TIME' => 1480968458
+]
+2016-12-05 20:12:57 [127.0.0.1][-][-][error][yii\db\Exception] PDOException: SQLSTATE[HY000] [1049] Unknown database 'amazonCompanies22' in /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/db/Connection.php:602
+Stack trace:
+#0 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/db/Connection.php(602): PDO->__construct('mysql:host=loca...', 'root', 'root', NULL)
+#1 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/db/Connection.php(544): yii\db\Connection->createPdoInstance()
+#2 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/db/Connection.php(863): yii\db\Connection->open()
+#3 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/db/Connection.php(850): yii\db\Connection->getMasterPdo()
+#4 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/db/Schema.php(478): yii\db\Connection->getSlavePdo()
+#5 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/db/Connection.php(759): yii\db\Schema->quoteValue('root')
+#6 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/db/Command.php(175): yii\db\Connection->quoteValue('root')
+#7 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/db/Command.php(869): yii\db\Command->getRawSql()
+#8 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/db/Command.php(376): yii\db\Command->queryInternal('fetch', NULL)
+#9 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/db/Query.php(247): yii\db\Command->queryOne()
+#10 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/db/ActiveQuery.php(295): yii\db\Query->one(NULL)
+#11 /var/www/html/AmazonCompanies/models/User.php(71): yii\db\ActiveQuery->one()
+#12 /var/www/html/AmazonCompanies/models/LoginForm.php(85): app\models\User::findByLogin('root')
+#13 /var/www/html/AmazonCompanies/models/LoginForm.php(57): app\models\LoginForm->getUser()
+#14 [internal function]: app\models\LoginForm->validatePassword('password', NULL)
+#15 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/validators/InlineValidator.php(69): call_user_func(Array, 'password', NULL)
+#16 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/validators/Validator.php(265): yii\validators\InlineValidator->validateAttribute(Object(app\models\LoginForm), 'password')
+#17 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/Model.php(356): yii\validators\Validator->validateAttributes(Object(app\models\LoginForm), Array)
+#18 /var/www/html/AmazonCompanies/models/LoginForm.php(71): yii\base\Model->validate()
+#19 /var/www/html/AmazonCompanies/controllers/SiteController.php(82): app\models\LoginForm->login()
+#20 [internal function]: app\controllers\SiteController->actionLogin()
+#21 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/InlineAction.php(55): call_user_func_array(Array, Array)
+#22 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/Controller.php(154): yii\base\InlineAction->runWithParams(Array)
+#23 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/Module.php(454): yii\base\Controller->runAction('login', Array)
+#24 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/web/Application.php(100): yii\base\Module->runAction('site/login', Array)
+#25 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#26 /var/www/html/AmazonCompanies/web/index.php(12): yii\base\Application->run()
+#27 {main}
+
+Next yii\db\Exception: SQLSTATE[HY000] [1049] Unknown database 'amazonCompanies22' in /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/db/Connection.php:549
+Stack trace:
+#0 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/db/Connection.php(863): yii\db\Connection->open()
+#1 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/db/Connection.php(850): yii\db\Connection->getMasterPdo()
+#2 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/db/Schema.php(478): yii\db\Connection->getSlavePdo()
+#3 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/db/Connection.php(759): yii\db\Schema->quoteValue('root')
+#4 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/db/Command.php(175): yii\db\Connection->quoteValue('root')
+#5 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/db/Command.php(869): yii\db\Command->getRawSql()
+#6 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/db/Command.php(376): yii\db\Command->queryInternal('fetch', NULL)
+#7 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/db/Query.php(247): yii\db\Command->queryOne()
+#8 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/db/ActiveQuery.php(295): yii\db\Query->one(NULL)
+#9 /var/www/html/AmazonCompanies/models/User.php(71): yii\db\ActiveQuery->one()
+#10 /var/www/html/AmazonCompanies/models/LoginForm.php(85): app\models\User::findByLogin('root')
+#11 /var/www/html/AmazonCompanies/models/LoginForm.php(57): app\models\LoginForm->getUser()
+#12 [internal function]: app\models\LoginForm->validatePassword('password', NULL)
+#13 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/validators/InlineValidator.php(69): call_user_func(Array, 'password', NULL)
+#14 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/validators/Validator.php(265): yii\validators\InlineValidator->validateAttribute(Object(app\models\LoginForm), 'password')
+#15 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/Model.php(356): yii\validators\Validator->validateAttributes(Object(app\models\LoginForm), Array)
+#16 /var/www/html/AmazonCompanies/models/LoginForm.php(71): yii\base\Model->validate()
+#17 /var/www/html/AmazonCompanies/controllers/SiteController.php(82): app\models\LoginForm->login()
+#18 [internal function]: app\controllers\SiteController->actionLogin()
+#19 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/InlineAction.php(55): call_user_func_array(Array, Array)
+#20 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/Controller.php(154): yii\base\InlineAction->runWithParams(Array)
+#21 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/Module.php(454): yii\base\Controller->runAction('login', Array)
+#22 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/web/Application.php(100): yii\base\Module->runAction('site/login', Array)
+#23 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#24 /var/www/html/AmazonCompanies/web/index.php(12): yii\base\Application->run()
+#25 {main}
+Additional Information:
+
+2016-12-05 20:12:57 [127.0.0.1][-][-][info][application] $_GET = [
+    'r' => 'site/login'
+]
+
+$_POST = [
+    '_csrf' => 'Y0NqM2o1NXYAFwl9WE1FQyEWHQY6RGY/EDMTQC8CczwhKR5ZGQN5Lw=='
+    'LoginForm' => [
+        'login' => 'root'
+        'password' => 'root'
+        'rememberMe' => '1'
+    ]
+    'login-button' => ''
+]
+
+$_COOKIE = [
+    '_csrf' => 'dbd02de03f4a425ae8a50d10bb98b3771c45c8632a56b5a763590eef4cf6b719a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"cTcN2xp5BUw5PqSIspysE7FJBjtjs6LY\";}'
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'localhost'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:45.0) Gecko/20100101 Firefox/45.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_ACCEPT_LANGUAGE' => 'pt-BR,pt;q=0.8,en-US;q=0.5,en;q=0.3'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_REFERER' => 'http://localhost/AmazonCompanies/web/index.php?r=site%2Flogin'
+    'HTTP_COOKIE' => '_csrf=dbd02de03f4a425ae8a50d10bb98b3771c45c8632a56b5a763590eef4cf6b719a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22cTcN2xp5BUw5PqSIspysE7FJBjtjs6LY%22%3B%7D'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'CONTENT_TYPE' => 'application/x-www-form-urlencoded'
+    'CONTENT_LENGTH' => '207'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.18 (Ubuntu) Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.18 (Ubuntu)'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => '/var/www/html'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/var/www/html'
+    'SERVER_ADMIN' => 'webmaster@localhost'
+    'SCRIPT_FILENAME' => '/var/www/html/AmazonCompanies/web/index.php'
+    'REMOTE_PORT' => '44654'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'POST'
+    'QUERY_STRING' => 'r=site%2Flogin'
+    'REQUEST_URI' => '/AmazonCompanies/web/index.php?r=site%2Flogin'
+    'SCRIPT_NAME' => '/AmazonCompanies/web/index.php'
+    'PHP_SELF' => '/AmazonCompanies/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1480968777.67
+    'REQUEST_TIME' => 1480968777
+]
+2016-12-05 20:13:03 [127.0.0.1][-][-][error][yii\db\Exception] PDOException: SQLSTATE[HY000] [1049] Unknown database 'amazonCompanies22' in /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/db/Connection.php:602
+Stack trace:
+#0 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/db/Connection.php(602): PDO->__construct('mysql:host=loca...', 'root', 'root', NULL)
+#1 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/db/Connection.php(544): yii\db\Connection->createPdoInstance()
+#2 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/db/Connection.php(863): yii\db\Connection->open()
+#3 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/db/Connection.php(850): yii\db\Connection->getMasterPdo()
+#4 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/db/Schema.php(478): yii\db\Connection->getSlavePdo()
+#5 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/db/Connection.php(759): yii\db\Schema->quoteValue('root')
+#6 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/db/Command.php(175): yii\db\Connection->quoteValue('root')
+#7 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/db/Command.php(869): yii\db\Command->getRawSql()
+#8 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/db/Command.php(376): yii\db\Command->queryInternal('fetch', NULL)
+#9 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/db/Query.php(247): yii\db\Command->queryOne()
+#10 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/db/ActiveQuery.php(295): yii\db\Query->one(NULL)
+#11 /var/www/html/AmazonCompanies/models/User.php(71): yii\db\ActiveQuery->one()
+#12 /var/www/html/AmazonCompanies/models/LoginForm.php(85): app\models\User::findByLogin('root')
+#13 /var/www/html/AmazonCompanies/models/LoginForm.php(57): app\models\LoginForm->getUser()
+#14 [internal function]: app\models\LoginForm->validatePassword('password', NULL)
+#15 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/validators/InlineValidator.php(69): call_user_func(Array, 'password', NULL)
+#16 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/validators/Validator.php(265): yii\validators\InlineValidator->validateAttribute(Object(app\models\LoginForm), 'password')
+#17 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/Model.php(356): yii\validators\Validator->validateAttributes(Object(app\models\LoginForm), Array)
+#18 /var/www/html/AmazonCompanies/models/LoginForm.php(71): yii\base\Model->validate()
+#19 /var/www/html/AmazonCompanies/controllers/SiteController.php(82): app\models\LoginForm->login()
+#20 [internal function]: app\controllers\SiteController->actionLogin()
+#21 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/InlineAction.php(55): call_user_func_array(Array, Array)
+#22 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/Controller.php(154): yii\base\InlineAction->runWithParams(Array)
+#23 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/Module.php(454): yii\base\Controller->runAction('login', Array)
+#24 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/web/Application.php(100): yii\base\Module->runAction('site/login', Array)
+#25 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#26 /var/www/html/AmazonCompanies/web/index.php(12): yii\base\Application->run()
+#27 {main}
+
+Next yii\db\Exception: SQLSTATE[HY000] [1049] Unknown database 'amazonCompanies22' in /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/db/Connection.php:549
+Stack trace:
+#0 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/db/Connection.php(863): yii\db\Connection->open()
+#1 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/db/Connection.php(850): yii\db\Connection->getMasterPdo()
+#2 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/db/Schema.php(478): yii\db\Connection->getSlavePdo()
+#3 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/db/Connection.php(759): yii\db\Schema->quoteValue('root')
+#4 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/db/Command.php(175): yii\db\Connection->quoteValue('root')
+#5 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/db/Command.php(869): yii\db\Command->getRawSql()
+#6 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/db/Command.php(376): yii\db\Command->queryInternal('fetch', NULL)
+#7 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/db/Query.php(247): yii\db\Command->queryOne()
+#8 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/db/ActiveQuery.php(295): yii\db\Query->one(NULL)
+#9 /var/www/html/AmazonCompanies/models/User.php(71): yii\db\ActiveQuery->one()
+#10 /var/www/html/AmazonCompanies/models/LoginForm.php(85): app\models\User::findByLogin('root')
+#11 /var/www/html/AmazonCompanies/models/LoginForm.php(57): app\models\LoginForm->getUser()
+#12 [internal function]: app\models\LoginForm->validatePassword('password', NULL)
+#13 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/validators/InlineValidator.php(69): call_user_func(Array, 'password', NULL)
+#14 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/validators/Validator.php(265): yii\validators\InlineValidator->validateAttribute(Object(app\models\LoginForm), 'password')
+#15 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/Model.php(356): yii\validators\Validator->validateAttributes(Object(app\models\LoginForm), Array)
+#16 /var/www/html/AmazonCompanies/models/LoginForm.php(71): yii\base\Model->validate()
+#17 /var/www/html/AmazonCompanies/controllers/SiteController.php(82): app\models\LoginForm->login()
+#18 [internal function]: app\controllers\SiteController->actionLogin()
+#19 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/InlineAction.php(55): call_user_func_array(Array, Array)
+#20 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/Controller.php(154): yii\base\InlineAction->runWithParams(Array)
+#21 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/Module.php(454): yii\base\Controller->runAction('login', Array)
+#22 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/web/Application.php(100): yii\base\Module->runAction('site/login', Array)
+#23 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#24 /var/www/html/AmazonCompanies/web/index.php(12): yii\base\Application->run()
+#25 {main}
+Additional Information:
+
+2016-12-05 20:13:03 [127.0.0.1][-][-][info][application] $_GET = [
+    'r' => 'site/login'
+]
+
+$_POST = [
+    '_csrf' => 'Y0NqM2o1NXYAFwl9WE1FQyEWHQY6RGY/EDMTQC8CczwhKR5ZGQN5Lw=='
+    'LoginForm' => [
+        'login' => 'root'
+        'password' => 'root'
+        'rememberMe' => '1'
+    ]
+    'login-button' => ''
+]
+
+$_COOKIE = [
+    '_csrf' => 'dbd02de03f4a425ae8a50d10bb98b3771c45c8632a56b5a763590eef4cf6b719a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"cTcN2xp5BUw5PqSIspysE7FJBjtjs6LY\";}'
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'localhost'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:45.0) Gecko/20100101 Firefox/45.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_ACCEPT_LANGUAGE' => 'pt-BR,pt;q=0.8,en-US;q=0.5,en;q=0.3'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_REFERER' => 'http://localhost/AmazonCompanies/web/index.php?r=site%2Flogin'
+    'HTTP_COOKIE' => '_csrf=dbd02de03f4a425ae8a50d10bb98b3771c45c8632a56b5a763590eef4cf6b719a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22cTcN2xp5BUw5PqSIspysE7FJBjtjs6LY%22%3B%7D'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'CONTENT_TYPE' => 'application/x-www-form-urlencoded'
+    'CONTENT_LENGTH' => '207'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.18 (Ubuntu) Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.18 (Ubuntu)'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => '/var/www/html'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/var/www/html'
+    'SERVER_ADMIN' => 'webmaster@localhost'
+    'SCRIPT_FILENAME' => '/var/www/html/AmazonCompanies/web/index.php'
+    'REMOTE_PORT' => '44676'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'POST'
+    'QUERY_STRING' => 'r=site%2Flogin'
+    'REQUEST_URI' => '/AmazonCompanies/web/index.php?r=site%2Flogin'
+    'SCRIPT_NAME' => '/AmazonCompanies/web/index.php'
+    'PHP_SELF' => '/AmazonCompanies/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1480968783.278
+    'REQUEST_TIME' => 1480968783
+]
+2016-12-05 20:39:06 [127.0.0.1][2][s5penpjb14qu5vaopvemrcgqg0][error][yii\web\HttpException:404] yii\base\InvalidRouteException: Unable to resolve the request "TipoDemostracao". in /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/Module.php:462
+Stack trace:
+#0 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/web/Application.php(100): yii\base\Module->runAction('TipoDemostracao', Array)
+#1 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 /var/www/html/AmazonCompanies/web/index.php(12): yii\base\Application->run()
+#3 {main}
+
+Next yii\web\NotFoundHttpException: Page not found. in /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/web/Application.php:112
+Stack trace:
+#0 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 /var/www/html/AmazonCompanies/web/index.php(12): yii\base\Application->run()
+#2 {main}
+2016-12-05 20:39:06 [127.0.0.1][2][s5penpjb14qu5vaopvemrcgqg0][info][application] $_GET = [
+    'r' => 'TipoDemostracao'
+]
+
+$_COOKIE = [
+    '_csrf' => 'dbd02de03f4a425ae8a50d10bb98b3771c45c8632a56b5a763590eef4cf6b719a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"cTcN2xp5BUw5PqSIspysE7FJBjtjs6LY\";}'
+    'PHPSESSID' => 's5penpjb14qu5vaopvemrcgqg0'
+    '_identity' => 'eca551149296fc488b28a273004d075ae9679ce691908dff8bb57b5f336ba8bba:2:{i:0;s:9:\"_identity\";i:1;s:16:\"[2,null,2592000]\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__id' => 2
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'localhost'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:45.0) Gecko/20100101 Firefox/45.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_ACCEPT_LANGUAGE' => 'pt-BR,pt;q=0.8,en-US;q=0.5,en;q=0.3'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_COOKIE' => '_csrf=dbd02de03f4a425ae8a50d10bb98b3771c45c8632a56b5a763590eef4cf6b719a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22cTcN2xp5BUw5PqSIspysE7FJBjtjs6LY%22%3B%7D; PHPSESSID=s5penpjb14qu5vaopvemrcgqg0; _identity=eca551149296fc488b28a273004d075ae9679ce691908dff8bb57b5f336ba8bba%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_identity%22%3Bi%3A1%3Bs%3A16%3A%22%5B2%2Cnull%2C2592000%5D%22%3B%7D'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.18 (Ubuntu) Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.18 (Ubuntu)'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => '/var/www/html'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/var/www/html'
+    'SERVER_ADMIN' => 'webmaster@localhost'
+    'SCRIPT_FILENAME' => '/var/www/html/AmazonCompanies/web/index.php'
+    'REMOTE_PORT' => '45140'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=TipoDemostracao'
+    'REQUEST_URI' => '/AmazonCompanies/web/index.php?r=TipoDemostracao'
+    'SCRIPT_NAME' => '/AmazonCompanies/web/index.php'
+    'PHP_SELF' => '/AmazonCompanies/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1480970346.529
+    'REQUEST_TIME' => 1480970346
+]
+2016-12-05 20:39:10 [127.0.0.1][2][s5penpjb14qu5vaopvemrcgqg0][error][yii\web\HttpException:404] yii\base\InvalidRouteException: Unable to resolve the request "tipoDemostracao". in /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/Module.php:462
+Stack trace:
+#0 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/web/Application.php(100): yii\base\Module->runAction('tipoDemostracao', Array)
+#1 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 /var/www/html/AmazonCompanies/web/index.php(12): yii\base\Application->run()
+#3 {main}
+
+Next yii\web\NotFoundHttpException: Page not found. in /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/web/Application.php:112
+Stack trace:
+#0 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 /var/www/html/AmazonCompanies/web/index.php(12): yii\base\Application->run()
+#2 {main}
+2016-12-05 20:39:10 [127.0.0.1][2][s5penpjb14qu5vaopvemrcgqg0][info][application] $_GET = [
+    'r' => 'tipoDemostracao'
+]
+
+$_COOKIE = [
+    '_csrf' => 'dbd02de03f4a425ae8a50d10bb98b3771c45c8632a56b5a763590eef4cf6b719a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"cTcN2xp5BUw5PqSIspysE7FJBjtjs6LY\";}'
+    'PHPSESSID' => 's5penpjb14qu5vaopvemrcgqg0'
+    '_identity' => 'eca551149296fc488b28a273004d075ae9679ce691908dff8bb57b5f336ba8bba:2:{i:0;s:9:\"_identity\";i:1;s:16:\"[2,null,2592000]\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__id' => 2
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'localhost'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:45.0) Gecko/20100101 Firefox/45.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_ACCEPT_LANGUAGE' => 'pt-BR,pt;q=0.8,en-US;q=0.5,en;q=0.3'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_COOKIE' => '_csrf=dbd02de03f4a425ae8a50d10bb98b3771c45c8632a56b5a763590eef4cf6b719a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22cTcN2xp5BUw5PqSIspysE7FJBjtjs6LY%22%3B%7D; PHPSESSID=s5penpjb14qu5vaopvemrcgqg0; _identity=eca551149296fc488b28a273004d075ae9679ce691908dff8bb57b5f336ba8bba%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_identity%22%3Bi%3A1%3Bs%3A16%3A%22%5B2%2Cnull%2C2592000%5D%22%3B%7D'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.18 (Ubuntu) Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.18 (Ubuntu)'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => '/var/www/html'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/var/www/html'
+    'SERVER_ADMIN' => 'webmaster@localhost'
+    'SCRIPT_FILENAME' => '/var/www/html/AmazonCompanies/web/index.php'
+    'REMOTE_PORT' => '45140'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=tipoDemostracao'
+    'REQUEST_URI' => '/AmazonCompanies/web/index.php?r=tipoDemostracao'
+    'SCRIPT_NAME' => '/AmazonCompanies/web/index.php'
+    'PHP_SELF' => '/AmazonCompanies/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1480970350.085
+    'REQUEST_TIME' => 1480970350
+]
+2016-12-05 20:40:31 [127.0.0.1][2][s5penpjb14qu5vaopvemrcgqg0][error][yii\web\HttpException:404] yii\base\InvalidRouteException: Unable to resolve the request "tipoDemostracao". in /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/Module.php:462
+Stack trace:
+#0 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/web/Application.php(100): yii\base\Module->runAction('tipoDemostracao', Array)
+#1 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 /var/www/html/AmazonCompanies/web/index.php(12): yii\base\Application->run()
+#3 {main}
+
+Next yii\web\NotFoundHttpException: Page not found. in /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/web/Application.php:112
+Stack trace:
+#0 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 /var/www/html/AmazonCompanies/web/index.php(12): yii\base\Application->run()
+#2 {main}
+2016-12-05 20:40:31 [127.0.0.1][2][s5penpjb14qu5vaopvemrcgqg0][info][application] $_GET = [
+    'r' => 'tipoDemostracao'
+]
+
+$_COOKIE = [
+    '_csrf' => 'dbd02de03f4a425ae8a50d10bb98b3771c45c8632a56b5a763590eef4cf6b719a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"cTcN2xp5BUw5PqSIspysE7FJBjtjs6LY\";}'
+    'PHPSESSID' => 's5penpjb14qu5vaopvemrcgqg0'
+    '_identity' => 'eca551149296fc488b28a273004d075ae9679ce691908dff8bb57b5f336ba8bba:2:{i:0;s:9:\"_identity\";i:1;s:16:\"[2,null,2592000]\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__id' => 2
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'localhost'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:45.0) Gecko/20100101 Firefox/45.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_ACCEPT_LANGUAGE' => 'pt-BR,pt;q=0.8,en-US;q=0.5,en;q=0.3'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_COOKIE' => '_csrf=dbd02de03f4a425ae8a50d10bb98b3771c45c8632a56b5a763590eef4cf6b719a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22cTcN2xp5BUw5PqSIspysE7FJBjtjs6LY%22%3B%7D; PHPSESSID=s5penpjb14qu5vaopvemrcgqg0; _identity=eca551149296fc488b28a273004d075ae9679ce691908dff8bb57b5f336ba8bba%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_identity%22%3Bi%3A1%3Bs%3A16%3A%22%5B2%2Cnull%2C2592000%5D%22%3B%7D'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.18 (Ubuntu) Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.18 (Ubuntu)'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => '/var/www/html'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/var/www/html'
+    'SERVER_ADMIN' => 'webmaster@localhost'
+    'SCRIPT_FILENAME' => '/var/www/html/AmazonCompanies/web/index.php'
+    'REMOTE_PORT' => '45166'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=tipoDemostracao'
+    'REQUEST_URI' => '/AmazonCompanies/web/index.php?r=tipoDemostracao'
+    'SCRIPT_NAME' => '/AmazonCompanies/web/index.php'
+    'PHP_SELF' => '/AmazonCompanies/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1480970431.058
+    'REQUEST_TIME' => 1480970431
+]
+2016-12-05 20:40:35 [127.0.0.1][2][s5penpjb14qu5vaopvemrcgqg0][error][yii\web\HttpException:404] yii\base\InvalidRouteException: Unable to resolve the request "tipo_demostracao". in /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/Module.php:462
+Stack trace:
+#0 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/web/Application.php(100): yii\base\Module->runAction('tipo_demostraca...', Array)
+#1 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 /var/www/html/AmazonCompanies/web/index.php(12): yii\base\Application->run()
+#3 {main}
+
+Next yii\web\NotFoundHttpException: Page not found. in /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/web/Application.php:112
+Stack trace:
+#0 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 /var/www/html/AmazonCompanies/web/index.php(12): yii\base\Application->run()
+#2 {main}
+2016-12-05 20:40:35 [127.0.0.1][2][s5penpjb14qu5vaopvemrcgqg0][info][application] $_GET = [
+    'r' => 'tipo_demostracao'
+]
+
+$_COOKIE = [
+    '_csrf' => 'dbd02de03f4a425ae8a50d10bb98b3771c45c8632a56b5a763590eef4cf6b719a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"cTcN2xp5BUw5PqSIspysE7FJBjtjs6LY\";}'
+    'PHPSESSID' => 's5penpjb14qu5vaopvemrcgqg0'
+    '_identity' => 'eca551149296fc488b28a273004d075ae9679ce691908dff8bb57b5f336ba8bba:2:{i:0;s:9:\"_identity\";i:1;s:16:\"[2,null,2592000]\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__id' => 2
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'localhost'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:45.0) Gecko/20100101 Firefox/45.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_ACCEPT_LANGUAGE' => 'pt-BR,pt;q=0.8,en-US;q=0.5,en;q=0.3'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_COOKIE' => '_csrf=dbd02de03f4a425ae8a50d10bb98b3771c45c8632a56b5a763590eef4cf6b719a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22cTcN2xp5BUw5PqSIspysE7FJBjtjs6LY%22%3B%7D; PHPSESSID=s5penpjb14qu5vaopvemrcgqg0; _identity=eca551149296fc488b28a273004d075ae9679ce691908dff8bb57b5f336ba8bba%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_identity%22%3Bi%3A1%3Bs%3A16%3A%22%5B2%2Cnull%2C2592000%5D%22%3B%7D'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.18 (Ubuntu) Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.18 (Ubuntu)'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => '/var/www/html'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/var/www/html'
+    'SERVER_ADMIN' => 'webmaster@localhost'
+    'SCRIPT_FILENAME' => '/var/www/html/AmazonCompanies/web/index.php'
+    'REMOTE_PORT' => '45166'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=tipo_demostracao'
+    'REQUEST_URI' => '/AmazonCompanies/web/index.php?r=tipo_demostracao'
+    'SCRIPT_NAME' => '/AmazonCompanies/web/index.php'
+    'PHP_SELF' => '/AmazonCompanies/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1480970435.237
+    'REQUEST_TIME' => 1480970435
+]
+2016-12-05 20:40:57 [127.0.0.1][2][s5penpjb14qu5vaopvemrcgqg0][error][yii\web\HttpException:404] yii\base\InvalidRouteException: Unable to resolve the request "tipo-demostracao". in /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/Module.php:462
+Stack trace:
+#0 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/web/Application.php(100): yii\base\Module->runAction('tipo-demostraca...', Array)
+#1 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 /var/www/html/AmazonCompanies/web/index.php(12): yii\base\Application->run()
+#3 {main}
+
+Next yii\web\NotFoundHttpException: Page not found. in /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/web/Application.php:112
+Stack trace:
+#0 /var/www/html/AmazonCompanies/vendor/yiisoft/yii2/base/Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 /var/www/html/AmazonCompanies/web/index.php(12): yii\base\Application->run()
+#2 {main}
+2016-12-05 20:40:57 [127.0.0.1][2][s5penpjb14qu5vaopvemrcgqg0][info][application] $_GET = [
+    'r' => 'tipo-demostracao'
+]
+
+$_COOKIE = [
+    '_csrf' => 'dbd02de03f4a425ae8a50d10bb98b3771c45c8632a56b5a763590eef4cf6b719a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"cTcN2xp5BUw5PqSIspysE7FJBjtjs6LY\";}'
+    'PHPSESSID' => 's5penpjb14qu5vaopvemrcgqg0'
+    '_identity' => 'eca551149296fc488b28a273004d075ae9679ce691908dff8bb57b5f336ba8bba:2:{i:0;s:9:\"_identity\";i:1;s:16:\"[2,null,2592000]\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__id' => 2
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'localhost'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:45.0) Gecko/20100101 Firefox/45.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_ACCEPT_LANGUAGE' => 'pt-BR,pt;q=0.8,en-US;q=0.5,en;q=0.3'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_COOKIE' => '_csrf=dbd02de03f4a425ae8a50d10bb98b3771c45c8632a56b5a763590eef4cf6b719a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22cTcN2xp5BUw5PqSIspysE7FJBjtjs6LY%22%3B%7D; PHPSESSID=s5penpjb14qu5vaopvemrcgqg0; _identity=eca551149296fc488b28a273004d075ae9679ce691908dff8bb57b5f336ba8bba%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_identity%22%3Bi%3A1%3Bs%3A16%3A%22%5B2%2Cnull%2C2592000%5D%22%3B%7D'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.18 (Ubuntu) Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.18 (Ubuntu)'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => '/var/www/html'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/var/www/html'
+    'SERVER_ADMIN' => 'webmaster@localhost'
+    'SCRIPT_FILENAME' => '/var/www/html/AmazonCompanies/web/index.php'
+    'REMOTE_PORT' => '45178'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=tipo-demostracao'
+    'REQUEST_URI' => '/AmazonCompanies/web/index.php?r=tipo-demostracao'
+    'SCRIPT_NAME' => '/AmazonCompanies/web/index.php'
+    'PHP_SELF' => '/AmazonCompanies/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1480970457.475
+    'REQUEST_TIME' => 1480970457
+]
