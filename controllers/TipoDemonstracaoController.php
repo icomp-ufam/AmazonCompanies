@@ -17,8 +17,11 @@ class TipoDemonstracaoController extends Controller
     /**
      * @inheritdoc
      */
+
     public function behaviors()
     {
+        $this->layout = 'modal';
+
         return [
             'verbs' => [
                 'class' => VerbFilter::className(),
@@ -35,6 +38,8 @@ class TipoDemonstracaoController extends Controller
      */
     public function actionIndex()
     {
+        $this->layout = 'modal';
+
         $searchModel = new TipoDemonstracaoSearch();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 
@@ -66,7 +71,7 @@ class TipoDemonstracaoController extends Controller
         $model = new TipoDemonstracao();
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->idTipo_Demonstracao]);
+            return $this->redirect(['index', 'id' => $model->idTipo_Demonstracao]);
         } else {
             return $this->render('create', [
                 'model' => $model,
@@ -85,7 +90,7 @@ class TipoDemonstracaoController extends Controller
         $model = $this->findModel($id);
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->idTipo_Demonstracao]);
+            return $this->redirect(['index', 'id' => $model->idTipo_Demonstracao]);
         } else {
             return $this->render('update', [
                 'model' => $model,

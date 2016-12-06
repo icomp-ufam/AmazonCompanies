@@ -12,7 +12,7 @@ $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="tipo-demonstracao-create">
 
-    <h1><?= Html::encode($this->title) ?></h1>
+    <h4>Criar Novo</h4>
 
     <?= $this->render('_form', [
         'model' => $model,

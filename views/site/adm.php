@@ -493,33 +493,38 @@ if (Yii::$app->user->getIsGuest()){
 			<div class="modal" id="gerenTipDemo" role="dialog">
     			<div class="modal-dialog">
     				<div class="modal-content">
-        				<div class="modal-header">
-          					<button type="button" class="close" data-dismiss="modal">&times;</button>
-          					<h3 class="modal-title">Gerenciar Tipos de Demonstração</h3>
-        				</div>
-        				<div class="modal-body">	
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            <h3 class="modal-title">Gerenciar Tipos de Demonstração</h3>
+                        </div>
+                        <div class="modal-body">
+                            <iframe  frameborder="0" marginheight="0" marginwidth="0" width="100%" height="300" src="/AmazonCompanies/web/index.php?r=tipo-demonstracao%2Findex" ></iframe>
+                        </div>
+
+        				<!--
+        				<div class="modal-body">
         					<table class="table table-hover">
     						<thead>
       							<tr>
       								<th><input type="checkbox"/></th>
         							<th>Demonstrações Cadastradas</th>
-        							
+
       							</tr>
     						</thead>
     						<tbody>
       							<tr>
       								<td><input type="checkbox"/></td>
-        							
+
         							<td><input class="form-control" placeholder="Balanço Patrimonial"></td>
-        							
-        							
+
+
       							</tr>
       							<tr>
       								<td><input type="checkbox"/></td>
-        							
+
         							<td><input class="form-control" placeholder="Demonstração dos Fluxos de Caixa"></td>
-        							
-        							
+
+
       							</tr>
       							<tr>
       								<td><input type="checkbox"/></td>
@@ -527,7 +532,7 @@ if (Yii::$app->user->getIsGuest()){
       							</tr>
     						</tbody>
   						</table>
-  				
+
         				</div>
         				<div class="modal-footer">
           					<form class="form-inline" role="form">
@@ -535,7 +540,7 @@ if (Yii::$app->user->getIsGuest()){
           						<button type="button" class="btn btn-default">Adicionar Nova Demonstração</button>
           						<button type="button" class="btn btn-primary" data-dismiss="modal">Enviar</button>
         					</form>
-        				</div>
+        				</div>-->
       				</div>
     			</div>
   			</div>

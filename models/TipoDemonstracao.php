@@ -31,6 +31,8 @@ class TipoDemonstracao extends \yii\db\ActiveRecord
             [['nome'], 'required'],
             [['nome'], 'string', 'max' => 45],
         ];
+    }
+
     /**
      * @inheritdoc
      */
