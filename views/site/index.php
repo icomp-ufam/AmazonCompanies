@@ -1,6 +1,8 @@
 <?php
 
 /* @var $this yii\web\View */
+use miloschuman\highcharts\Highcharts;
+use yii\web\JsExpression;
 
 $this->title = 'Amazon Companies';
 
@@ -79,13 +81,55 @@ if (Yii::$app->user->getIsGuest()){
   </div>
   </div>
   <br>
-  <h4>A tabela abaixo só deverá aparecer após os filtros acima serem acionados</h4>
- 
 	
 	<br>
-	
 
-    <div class="body-content">
+          <?php  
+
+            echo Highcharts::widget([
+            'scripts' => [
+                'modules/exporting',
+                'themes/grid-light',
+            ],
+            'options' => [
+                'title' => [
+                    'text' => 'Empresa',
+                ],
+                'xAxis' => [
+                    'categories' => ['Disponibilidades', 'Estoques', 'Imposto a Recuperar', 'Imobilizado', 'Outros Ativos'],
+                ],
+                'series' => [
+                    [
+                        'type' => 'column',
+                        'name' => '2013',
+                        'data' => [91381, 265916, 12253, 41907, 3135],
+                    ],
+                    [
+                        'type' => 'column',
+                        'name' => '2014',
+                        'data' => [83469, 176848, 20141, 49112, 3337],
+                    ],
+                    [
+                        'type' => 'column',
+                        'name' => '2015',
+                        'data' => [73356, 234359, 15572, 43214, 3221],
+                    ],
+                    [
+                        'type' => 'spline',
+                        'name' => 'Média',
+                        'data' => [82735, 22513, 23678, 47811, 3201],
+                        'marker' => [
+                            'lineWidth' => 2,
+                            'lineColor' => new JsExpression('Highcharts.getOptions().colors[3]'),
+                            'fillColor' => 'white',
+                        ],
+                    ],
+                ],
+            ],
+        ]); 
+    ?>
+    
+	 <div class="body-content">
     	<p>Site da empresa: www.google.com.br</p> 
     	<ul class="nav nav-tabs">
   			<li class="active"><a data-toggle="tab" href="#demox">Balanço Patrimonial</a></li>
