@@ -1,7 +1,7 @@
 <?php
 
 /* @var $this yii\web\View */
-use miloschuman\highcharts\Highcharts;
+//use miloschuman\highcharts\Highcharts;
 use yii\web\JsExpression;
 
 $this->title = 'Amazon Companies';
@@ -86,7 +86,7 @@ if (Yii::$app->user->getIsGuest()){
 
           <?php  
 
-            echo Highcharts::widget([
+           /* echo Highcharts::widget([
             'scripts' => [
                 'modules/exporting',
                 'themes/grid-light',
@@ -126,7 +126,7 @@ if (Yii::$app->user->getIsGuest()){
                     ],
                 ],
             ],
-        ]); 
+        ]); */
     ?>
     
 	 <div class="body-content">

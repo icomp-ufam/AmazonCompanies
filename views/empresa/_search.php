@@ -23,7 +23,7 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'fonte') ?>
 
-    <?= $form->field($model, 'Tipo_Empresa_idTipo_Empresa') ?>
+    <?= $form->field($model, 'tipo') ?>
 
     <?php // echo $form->field($model, 'logotipo') ?>
 

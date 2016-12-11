@@ -13,29 +13,34 @@ $this->defaultExtension = $model->logotipo
 ?>
 <div class="empresa-view">
 
-    <h1><?= Html::encode($this->title) ?></h1>
+
 
     <p>
-        <?= Html::a(Html::img('img/'.$this->defaultExtension,  ['style'=>'width:50px']))?>
 
+        <h1>
+            <?= Html::a(Html::img('img/'.$this->defaultExtension,  ['style'=>'width:50px']) ) ?>
+            <?= Html::encode($this->title) ?>
+        </h1>
+    <?= $model->fonte ?>
     </p>
 
     <?= DetailView::widget([
         'model' => $model,
         'attributes' => [
-            'idEmpresa',
-            'nome',
-            'analise:ntext',
-            'fonte',
+            //'idEmpresa',
+            //'nome',
+            //'analise:ntext',
+            //'fonte',
             //[
              //   'attribute'=>'Tipo_Empresa_idTipo_Empresa',
               //  'value'=>$model->tipo_empresa->nome
             //],
-            'tipoEmpresaIdTipoEmpresa.nome',
+         //   'tipo',
            // 'logotipo'
         ],
     ]) ?>
-    <p align="center">
+
+    <!--<p align="center">
 
         <?= Html::a('Update', ['update', 'id' => $model->idEmpresa], ['class' => 'btn btn-primary']) ?>
         <?= Html::a('Delete', ['delete', 'id' => $model->idEmpresa], [
@@ -45,6 +50,6 @@ $this->defaultExtension = $model->logotipo
                 'method' => 'post',
             ],
         ]) ?>
-    </p>
+    </p-->
 
 </div>

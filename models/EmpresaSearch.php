@@ -18,8 +18,8 @@ class EmpresaSearch extends Empresa
     public function rules()
     {
         return [
-            [['idEmpresa', 'Tipo_Empresa_idTipo_Empresa'], 'integer'],
-            [['nome', 'analise', 'fonte', 'logotipo'], 'safe'],
+            [['idEmpresa'], 'integer'],
+            [['nome', 'fonte', 'logotipo' , 'tipo'], 'safe' ],
         ];
     }
 
@@ -61,11 +61,10 @@ class EmpresaSearch extends Empresa
         // grid filtering conditions
         $query->andFilterWhere([
             'idEmpresa' => $this->idEmpresa,
-            'Tipo_Empresa_idTipo_Empresa' => $this->Tipo_Empresa_idTipo_Empresa,
         ]);
 
-        $query->andFilterWhere(['like', 'nome', $this->nome])
-            ->andFilterWhere(['like', 'analise', $this->analise])
+        $query->andFilterWhere(['like', 'tipo', $this->tipo])
+            ->andFilterWhere(['like', 'nome', $this->nome])
             ->andFilterWhere(['like', 'fonte', $this->fonte])
             ->andFilterWhere(['like', 'logotipo', $this->logotipo]);
 

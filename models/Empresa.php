@@ -9,15 +9,13 @@ use Yii;
  *
  * @property integer $idEmpresa
  * @property string $nome
- * @property string $analise
  * @property string $fonte
- * @property integer $Tipo_Empresa_idTipo_Empresa
  * @property string $logotipo
+ * @property integer $tipo
  *
+ * @property Analise[] $analises
  * @property Comentario[] $comentarios
- * @property Conta[] $contas
  * @property Demonstracao[] $demonstracaos
- * @property TipoEmpresa $tipoEmpresaIdTipoEmpresa
  * @property EmpresaHasUsuario[] $empresaHasUsuarios
  * @property Usuario[] $usuarioIdUsuarios
  */
@@ -37,12 +35,10 @@ class Empresa extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['nome', 'fonte', 'Tipo_Empresa_idTipo_Empresa'], 'required'],
-            [['analise'], 'string'],
-            [['Tipo_Empresa_idTipo_Empresa'], 'integer'],
+            [['nome', 'fonte', 'tipo'], 'required'],
+            [['tipo'], 'string'],
             [['nome', 'fonte'], 'string', 'max' => 45],
             [['logotipo'], 'string', 'max' => 200],
-            [['Tipo_Empresa_idTipo_Empresa'], 'exist', 'skipOnError' => true, 'targetClass' => TipoEmpresa::className(), 'targetAttribute' => ['Tipo_Empresa_idTipo_Empresa' => 'idTipo_Empresa']],
         ];
     }
 
@@ -54,11 +50,18 @@ class Empresa extends \yii\db\ActiveRecord
         return [
             'idEmpresa' => 'Id Empresa',
             'nome' => 'Nome',
-            'analise' => 'Analise',
             'fonte' => 'Fonte',
-            'Tipo_Empresa_idTipo_Empresa' => 'Tipo  Empresa Id Tipo  Empresa',
             'logotipo' => 'Logotipo',
+            'tipo' => 'Tipo de Empresa',
         ];
+    }
+
+    /**
+     * @return \yii\db\ActiveQuery
+     */
+    public function getAnalises()
+    {
+        return $this->hasMany(Analise::className(), ['idEmpresa' => 'idEmpresa']);
     }
 
     /**
@@ -72,25 +75,9 @@ class Empresa extends \yii\db\ActiveRecord
     /**
      * @return \yii\db\ActiveQuery
      */
-    public function getContas()
-    {
-        return $this->hasMany(Conta::className(), ['Empresa_idEmpresa' => 'idEmpresa']);
-    }
-
-    /**
-     * @return \yii\db\ActiveQuery
-     */
     public function getDemonstracaos()
     {
         return $this->hasMany(Demonstracao::className(), ['Empresa_idEmpresa' => 'idEmpresa']);
-    }
-
-    /**
-     * @return \yii\db\ActiveQuery
-     */
-    public function getTipoEmpresaIdTipoEmpresa()
-    {
-        return $this->hasOne(TipoEmpresa::className(), ['idTipo_Empresa' => 'Tipo_Empresa_idTipo_Empresa']);
     }
 
     /**
@@ -109,11 +96,18 @@ class Empresa extends \yii\db\ActiveRecord
         return $this->hasMany(Usuario::className(), ['idUsuario' => 'Usuario_idUsuario'])->viaTable('empresaHasUsuario', ['Empresa_idEmpresa' => 'idEmpresa']);
     }
 
-
-    public function getTipoEmpresa()
+    private $nome, $extensao;
+    public function upload()
     {
-        return $this->hasOne(
-            TipoEmpresa::className(),['idEmpresa'=>'idTipo_Empresa']
-        );
+        $nome= "imagem_tmp";
+        //$extensao = $this->logotipo;
+        if ($this->validate()) {
+            $this->logotipo->saveAs('img/' . $nome);
+            $this->logotipo="img/".$nome;
+
+            return true;
+        } else {
+            return false;
+        }
     }
 }

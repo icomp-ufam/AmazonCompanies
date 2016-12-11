@@ -2,12 +2,15 @@
 
 namespace app\controllers;
 
+use phpDocumentor\Reflection\Types\Array_;
 use Yii;
 use app\models\Empresa;
 use app\models\EmpresaSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
+use yii\web\UploadedFile;
+
 
 /**
  * EmpresaController implements the CRUD actions for Empresa model.
@@ -61,11 +64,12 @@ class EmpresaController extends Controller
      * If creation is successful, the browser will be redirected to the 'view' page.
      * @return mixed
      */
-    public function actionCreate()
-    {
+    public function actionCreate(){
         $model = new Empresa();
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
+            $model->logotipo = UploadedFile::getInstance($model, 'logotipo');
+            $model->upload();
             return $this->redirect(['view', 'id' => $model->idEmpresa]);
         } else {
             return $this->render('create', [
@@ -73,7 +77,6 @@ class EmpresaController extends Controller
             ]);
         }
     }
-
     /**
      * Updates an existing Empresa model.
      * If update is successful, the browser will be redirected to the 'view' page.

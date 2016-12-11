@@ -17,10 +17,10 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Banco de dados: `amazonCompanies`
+-- Banco de dados: `amazonCompanies2`
 --
-CREATE DATABASE IF NOT EXISTS `amazonCompanies` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
-USE `amazonCompanies`;
+CREATE DATABASE IF NOT EXISTS `amazonCompanies2` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
+USE `amazonCompanies2`;
 
 -- --------------------------------------------------------
 
@@ -141,7 +141,7 @@ CREATE TABLE `empresa` (
   `nome` varchar(45) NOT NULL,
   `fonte` varchar(45) NOT NULL,
   `logotipo` varchar(200) DEFAULT NULL,
-  `tipo` tinyint(1) NOT NULL
+  `tipo` varchar(45) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --

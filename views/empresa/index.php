@@ -43,8 +43,7 @@ $this->params['breadcrumbs'][] = $this->title;
                 'nome',
                 //'analise:ntext',
                 'fonte',
-                ['label'=>'Tipo de Empresa',
-                    'value'=>'tipoEmpresaIdTipoEmpresa.nome'],
+                'tipo',
                 // 'logotipo',
 
                 ['class' => 'yii\grid\ActionColumn',
@@ -77,8 +76,7 @@ $this->params['breadcrumbs'][] = $this->title;
                     'nome',
                     //'analise:ntext',
                     'fonte',
-                    ['label'=>'Tipo de Empresa',
-                        'value'=>'tipoEmpresaIdTipoEmpresa.nome'],
+                    'tipo',
                     // 'logotipo',
 
                     ['class' => 'yii\grid\ActionColumn',
@@ -110,8 +108,7 @@ $this->params['breadcrumbs'][] = $this->title;
                     'nome',
                     //'analise:ntext',
                     'fonte',
-                    ['label'=>'Tipo de Empresa',
-                        'value'=>'tipoEmpresaIdTipoEmpresa.nome'],
+                    'tipo',
                     // 'logotipo',
 
                     ['class' => 'yii\grid\ActionColumn',
@@ -140,8 +137,7 @@ $this->params['breadcrumbs'][] = $this->title;
             'nome',
             //'analise:ntext',
             'fonte',
-            ['label'=>'Tipo de Empresa',
-                'value'=>'tipoEmpresaIdTipoEmpresa.nome'],
+            'tipo',
             // 'logotipo',
             ['class' => 'yii\grid\ActionColumn',
                 'template'=> '{view}']
