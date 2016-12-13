@@ -31,7 +31,7 @@ class Analise extends \yii\db\ActiveRecord
     {
         return [
             [['texto'], 'string'],
-            [['status', 'idEmpresa'], 'required'],
+            [['idEmpresa'], 'required'],
             [['status', 'idEmpresa'], 'integer'],
             [['idEmpresa'], 'exist', 'skipOnError' => true, 'targetClass' => Empresa::className(), 'targetAttribute' => ['idEmpresa' => 'idEmpresa']],
         ];

@@ -6,7 +6,7 @@ use yii\helpers\Html;
 /* @var $this yii\web\View */
 /* @var $model app\models\Analise */
 
-$this->title = 'Create Analise';
+//$this->title = 'Submeter Analise';
 $this->params['breadcrumbs'][] = ['label' => 'Analises', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>

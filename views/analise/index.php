@@ -9,6 +9,7 @@ use yii\grid\GridView;
 
 $this->title = 'Analises';
 $this->params['breadcrumbs'][] = $this->title;
+$testProvider = $dataProvider;
 ?>
 <div class="analise-index">
 
@@ -25,7 +26,9 @@ $this->params['breadcrumbs'][] = $this->title;
             ['class' => 'yii\grid\SerialColumn'],
 
             'idanalise',
-            'texto:ntext',
+            ['attribute'=>'texto',
+            'value'=>'texto',
+            'format'=>'html'],
             'status',
             'idEmpresa',
 

@@ -2,16 +2,18 @@
 
 use yii\helpers\Html;
 use yii\grid\GridView;
-
+use yii\data\ActiveDataProvider;
+use yii\db\Query;
 /* @var $this yii\web\View */
 /* @var $searchModel app\models\EmpresaSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
 $this->title = 'Empresas';
 $this->params['breadcrumbs'][] = $this->title;
+
+
 ?>
 <div class="empresa-index">
-
     <h1><?= Html::encode($this->title) ?></h1>
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
 
@@ -148,5 +150,34 @@ $this->params['breadcrumbs'][] = $this->title;
     <?php
     }
     ?>
+    <div class="col-md-3">
+        <button type="button" class="btn btn-default" data-toggle="modal" data-target="#cadAgrega">Comparar Empresas</button>
+    </div>
+    <script>
+        var keys = $('#grid').yiiGridView('getSelectedRows');
+        console.log(keys);
+    </script>
+
+    <div class="modal" id="cadAgrega" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h3 class="modal-title">Comparar Empresas</h3>
+                </div>
+                <div class="modal-body">
+                    <form class="form-inline" role="form">
+                        <div class="form-group">
+
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-dismiss="modal">Enviar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
 
 </div>

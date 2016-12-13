@@ -45,7 +45,7 @@ AppAsset::register($this);
     					['label' => 'Página Inicial', 'url' => ['/site/adm']],
     					['label' => 'Empresas',
     					'items' =>[
-    					['label' => 'Cadastrar Dados', 'url' => ['caddadosemp']],
+    					['label' => 'Cadastrar Dados', 'url' => ['site/caddadosemp']],
     					['label' => 'Listar Empresas Cadastradas', 'url' => ['empresa/index']],
     					]],
     					
@@ -58,7 +58,7 @@ AppAsset::register($this);
     					]],
     					['label' => 'Notificações '. Html::tag('span', '15', ['class' => 'badge']),
     					'items' => [
-    							['label' => Html::tag('span', '3', ['class' => 'badge']).' Análises', 'url' => ['/site/validanaadm']],
+    							['label' => Html::tag('span', '3', ['class' => 'badge']).' Análises', 'url' => ['/analise/index']],
     							//'<li class="divider"></li>',
     							//'<li class="dropdown-header">Dropdown Header</li>',
     							['label' => Html::tag('span', '3', ['class' => 'badge']).' Alteração de Dados', 'url' => ['validaltdados']],
@@ -89,7 +89,7 @@ AppAsset::register($this);
     					['label' => 'Página Inicial', 'url' => ['/site/aluno']],
     					['label' => 'Empresas',
     					'items' =>[
-    							['label' => 'Cadastrar Dados', 'url' => ['caddadosemp']],
+    							['label' => 'Cadastrar Dados', 'url' => ['site/caddadosemp']],
     							['label' => 'Listar Empresas Cadastradas', 'url' => ['empresa/index']],
     					]],
     					['label' => 'Notificações '. Html::tag('span', '3', ['class' => 'badge'])],
@@ -117,7 +117,7 @@ AppAsset::register($this);
     					['label' => 'Página Inicial', 'url' => ['/site/empresa']],
     					['label' => 'Empresas',
     					'items' =>[
-    							['label' => 'Cadastrar Informações', 'url' => ['cadinfoemp']],
+    							['label' => 'Cadastrar Informações', 'url' => ['site/cadinfoemp']],
     							['label' => 'Listar Empresas Cadastradas', 'url' => ['empresa/index']],
     					]],
     					['label' => 'Seu Perfil', 'url' => ['/site/altcademp']],
