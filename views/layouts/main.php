@@ -143,7 +143,7 @@ AppAsset::register($this);
         	'options' => ['class' => 'navbar-nav navbar-right'],
         	'items' => [
             	['label' => 'Página Inicial', 'url' => ['/site/index']],
-            	['label' => 'Empresas', 'url' => ['/site/empresa/index']],
+            	['label' => 'Empresas', 'url' => ['/empresa/index']],
             	['label' => 'Contato', 'url' => ['/site/contact']],
             	['label' => 'Sobre', 'url' => ['/site/about']],
             	

@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Tempo de geração: 09/12/2016 às 10:25
+-- Tempo de geração: 13/12/2016 às 14:17
 -- Versão do servidor: 5.7.16-0ubuntu0.16.04.1
 -- Versão do PHP: 7.0.8-0ubuntu0.16.04.3
 
@@ -17,10 +17,10 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Banco de dados: `amazonCompanies2`
+-- Banco de dados: `amazonCompanies`
 --
-CREATE DATABASE IF NOT EXISTS `amazonCompanies2` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
-USE `amazonCompanies2`;
+CREATE DATABASE IF NOT EXISTS `amazonCompanies` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
+USE `amazonCompanies`;
 
 -- --------------------------------------------------------
 
@@ -149,10 +149,10 @@ CREATE TABLE `empresa` (
 --
 
 INSERT INTO `empresa` (`idEmpresa`, `nome`, `fonte`, `logotipo`, `tipo`) VALUES
-(1, 'Moto Honda da Amazônia LTDA', 'www.motohonda.com.br', NULL, 2),
-(2, 'Teewa', 'www.teewa.com.br', NULL, 1),
-(3, 'Microsoft S.A', 'www.microsoft.com', NULL, 3),
-(4, 'Pastelaria do Arruda EPP', 'www.queso.blogspot.com.br', NULL, 1);
+(1, 'Moto Honda da Amazônia LTDA', 'www.motohonda.com.br', NULL, 'Nacional'),
+(2, 'Teewa', 'www.teewa.com.br', NULL, 'Local'),
+(3, 'Microsoft S.A', 'www.microsoft.com', NULL, 'Estrangeira'),
+(4, 'Pastelaria do Arruda EPP', 'www.queso.blogspot.com.br', NULL, 'Local');
 
 -- --------------------------------------------------------
 

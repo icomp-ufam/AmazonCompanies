@@ -1,0 +1,503 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="9bf8dbc5-3c81-4a33-86a2-ce13d1415bc0" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/assets/1f0adbb1/img/loading-plugin.gif" afterPath="$PROJECT_DIR$/web/assets/1f0adbb1/img/loading-plugin.gif" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/assets/3839c3c1/fonts/glyphicons-halflings-regular.eot" afterPath="$PROJECT_DIR$/web/assets/3839c3c1/fonts/glyphicons-halflings-regular.eot" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/assets/3839c3c1/fonts/glyphicons-halflings-regular.ttf" afterPath="$PROJECT_DIR$/web/assets/3839c3c1/fonts/glyphicons-halflings-regular.ttf" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/assets/3839c3c1/fonts/glyphicons-halflings-regular.woff" afterPath="$PROJECT_DIR$/web/assets/3839c3c1/fonts/glyphicons-halflings-regular.woff" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/assets/3839c3c1/fonts/glyphicons-halflings-regular.woff2" afterPath="$PROJECT_DIR$/web/assets/3839c3c1/fonts/glyphicons-halflings-regular.woff2" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/assets/555601c2/examples/images/pig.ico" afterPath="$PROJECT_DIR$/web/assets/555601c2/examples/images/pig.ico" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/assets/7b605f0f/img/loading.gif" afterPath="$PROJECT_DIR$/web/assets/7b605f0f/img/loading.gif" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/assets/a4fcb5aa/logo.png" afterPath="$PROJECT_DIR$/web/assets/a4fcb5aa/logo.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/assets/d9453508/img/loading-sm.gif" afterPath="$PROJECT_DIR$/web/assets/d9453508/img/loading-sm.gif" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/assets/d9453508/img/loading.gif" afterPath="$PROJECT_DIR$/web/assets/d9453508/img/loading.gif" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/AmazonCompanies.iml" afterPath="$PROJECT_DIR$/.idea/AmazonCompanies.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/DB_AmazonCompanies.sql" afterPath="$PROJECT_DIR$/DB_AmazonCompanies.sql" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/console.php" afterPath="$PROJECT_DIR$/config/console.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/db.php" afterPath="$PROJECT_DIR$/config/db.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/controllers/AnaliseController.php" afterPath="$PROJECT_DIR$/controllers/AnaliseController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/controllers/TipoDemonstracaoController.php" afterPath="$PROJECT_DIR$/controllers/TipoDemonstracaoController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/models/Analise.php" afterPath="$PROJECT_DIR$/models/Analise.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/models/AnaliseSearch.php" afterPath="$PROJECT_DIR$/models/AnaliseSearch.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/models/Empresa.php" afterPath="$PROJECT_DIR$/models/Empresa.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/models/TipoDemonstracao.php" afterPath="$PROJECT_DIR$/models/TipoDemonstracao.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/models/TipoDemonstracaoSearch.php" afterPath="$PROJECT_DIR$/models/TipoDemonstracaoSearch.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/runtime/logs/app.log" afterPath="$PROJECT_DIR$/runtime/logs/app.log" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/runtime/mail/20161211-160805-9416-1121.eml" afterPath="$PROJECT_DIR$/runtime/mail/20161211-160805-9416-1121.eml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/analise/_form.php" afterPath="$PROJECT_DIR$/views/analise/_form.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/analise/_search.php" afterPath="$PROJECT_DIR$/views/analise/_search.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/analise/create.php" afterPath="$PROJECT_DIR$/views/analise/create.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/analise/index.php" afterPath="$PROJECT_DIR$/views/analise/index.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/analise/update.php" afterPath="$PROJECT_DIR$/views/analise/update.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/analise/view.php" afterPath="$PROJECT_DIR$/views/analise/view.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/tipo-demonstracao/_form.php" afterPath="$PROJECT_DIR$/views/tipo-demonstracao/_form.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/tipo-demonstracao/_search.php" afterPath="$PROJECT_DIR$/views/tipo-demonstracao/_search.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/tipo-demonstracao/create.php" afterPath="$PROJECT_DIR$/views/tipo-demonstracao/create.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/tipo-demonstracao/index.php" afterPath="$PROJECT_DIR$/views/tipo-demonstracao/index.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/tipo-demonstracao/update.php" afterPath="$PROJECT_DIR$/views/tipo-demonstracao/update.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/tipo-demonstracao/view.php" afterPath="$PROJECT_DIR$/views/tipo-demonstracao/view.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/assets/10042488/js/dialog.js" afterPath="$PROJECT_DIR$/web/assets/10042488/js/dialog.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/assets/10042488/js/dialog.min.js" afterPath="$PROJECT_DIR$/web/assets/10042488/js/dialog.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/assets/12d2aa6/bloodhound.js" afterPath="$PROJECT_DIR$/web/assets/12d2aa6/bloodhound.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/assets/12d2aa6/bloodhound.min.js" afterPath="$PROJECT_DIR$/web/assets/12d2aa6/bloodhound.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/assets/12d2aa6/typeahead.bundle.js" afterPath="$PROJECT_DIR$/web/assets/12d2aa6/typeahead.bundle.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/assets/12d2aa6/typeahead.bundle.min.js" afterPath="$PROJECT_DIR$/web/assets/12d2aa6/typeahead.bundle.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/assets/12d2aa6/typeahead.jquery.js" afterPath="$PROJECT_DIR$/web/assets/12d2aa6/typeahead.jquery.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/assets/12d2aa6/typeahead.jquery.min.js" afterPath="$PROJECT_DIR$/web/assets/12d2aa6/typeahead.jquery.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/assets/1f0adbb1/css/animate.css" afterPath="$PROJECT_DIR$/web/assets/1f0adbb1/css/animate.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/assets/1f0adbb1/css/animate.min.css" afterPath="$PROJECT_DIR$/web/assets/1f0adbb1/css/animate.min.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/assets/1f0adbb1/css/html5input.css" afterPath="$PROJECT_DIR$/web/assets/1f0adbb1/css/html5input.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/assets/1f0adbb1/css/html5input.min.css" afterPath="$PROJECT_DIR$/web/assets/1f0adbb1/css/html5input.min.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/assets/1f0adbb1/css/kv-widgets.css" afterPath="$PROJECT_DIR$/web/assets/1f0adbb1/css/kv-widgets.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/assets/1f0adbb1/css/kv-widgets.min.css" afterPath="$PROJECT_DIR$/web/assets/1f0adbb1/css/kv-widgets.min.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/assets/1f0adbb1/js/kv-widgets.js" afterPath="$PROJECT_DIR$/web/assets/1f0adbb1/js/kv-widgets.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/assets/1f0adbb1/js/kv-widgets.min.js" afterPath="$PROJECT_DIR$/web/assets/1f0adbb1/js/kv-widgets.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/assets/3839c3c1/css/bootstrap-theme.css" afterPath="$PROJECT_DIR$/web/assets/3839c3c1/css/bootstrap-theme.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/assets/3839c3c1/css/bootstrap-theme.css.map" afterPath="$PROJECT_DIR$/web/assets/3839c3c1/css/bootstrap-theme.css.map" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/assets/3839c3c1/css/bootstrap-theme.min.css" afterPath="$PROJECT_DIR$/web/assets/3839c3c1/css/bootstrap-theme.min.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/assets/3839c3c1/css/bootstrap-theme.min.css.map" afterPath="$PROJECT_DIR$/web/assets/3839c3c1/css/bootstrap-theme.min.css.map" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/assets/3839c3c1/css/bootstrap.css" afterPath="$PROJECT_DIR$/web/assets/3839c3c1/css/bootstrap.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/assets/3839c3c1/css/bootstrap.css.map" afterPath="$PROJECT_DIR$/web/assets/3839c3c1/css/bootstrap.css.map" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/assets/3839c3c1/css/bootstrap.min.css" afterPath="$PROJECT_DIR$/web/assets/3839c3c1/css/bootstrap.min.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/assets/3839c3c1/css/bootstrap.min.css.map" afterPath="$PROJECT_DIR$/web/assets/3839c3c1/css/bootstrap.min.css.map" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/assets/3839c3c1/fonts/glyphicons-halflings-regular.svg" afterPath="$PROJECT_DIR$/web/assets/3839c3c1/fonts/glyphicons-halflings-regular.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/assets/3839c3c1/js/bootstrap.js" afterPath="$PROJECT_DIR$/web/assets/3839c3c1/js/bootstrap.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/assets/3839c3c1/js/bootstrap.min.js" afterPath="$PROJECT_DIR$/web/assets/3839c3c1/js/bootstrap.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/assets/3839c3c1/js/npm.js" afterPath="$PROJECT_DIR$/web/assets/3839c3c1/js/npm.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/assets/555601c2/bower.json" afterPath="$PROJECT_DIR$/web/assets/555601c2/bower.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/assets/555601c2/changelog.txt" afterPath="$PROJECT_DIR$/web/assets/555601c2/changelog.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/assets/555601c2/composer.json" afterPath="$PROJECT_DIR$/web/assets/555601c2/composer.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/assets/555601c2/dist/css/bootstrap-dialog.css" afterPath="$PROJECT_DIR$/web/assets/555601c2/dist/css/bootstrap-dialog.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/assets/555601c2/dist/css/bootstrap-dialog.min.css" afterPath="$PROJECT_DIR$/web/assets/555601c2/dist/css/bootstrap-dialog.min.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/assets/555601c2/dist/js/bootstrap-dialog.js" afterPath="$PROJECT_DIR$/web/assets/555601c2/dist/js/bootstrap-dialog.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/assets/555601c2/dist/js/bootstrap-dialog.min.js" afterPath="$PROJECT_DIR$/web/assets/555601c2/dist/js/bootstrap-dialog.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/assets/555601c2/dist/less/bootstrap-dialog.less" afterPath="$PROJECT_DIR$/web/assets/555601c2/dist/less/bootstrap-dialog.less" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/assets/555601c2/examples/index.html" afterPath="$PROJECT_DIR$/web/assets/555601c2/examples/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/assets/555601c2/examples/play/append-to-div.html" afterPath="$PROJECT_DIR$/web/assets/555601c2/examples/play/append-to-div.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/assets/555601c2/examples/play/button-event.html" afterPath="$PROJECT_DIR$/web/assets/555601c2/examples/play/button-event.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/assets/555601c2/examples/play/custom-dialog-id.html" afterPath="$PROJECT_DIR$/web/assets/555601c2/examples/play/custom-dialog-id.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/assets/555601c2/examples/play/only-one-dialog.html" afterPath="$PROJECT_DIR$/web/assets/555601c2/examples/play/only-one-dialog.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/assets/555601c2/examples/play/reopen-dialog.html" afterPath="$PROJECT_DIR$/web/assets/555601c2/examples/play/reopen-dialog.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/assets/555601c2/examples/play/spinning-icon.html" afterPath="$PROJECT_DIR$/web/assets/555601c2/examples/play/spinning-icon.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/assets/555601c2/examples/play/tabindex.html" afterPath="$PROJECT_DIR$/web/assets/555601c2/examples/play/tabindex.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/assets/555601c2/examples/remote.html" afterPath="$PROJECT_DIR$/web/assets/555601c2/examples/remote.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/assets/555601c2/gulpfile.js" afterPath="$PROJECT_DIR$/web/assets/555601c2/gulpfile.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/assets/555601c2/src/css/bootstrap-dialog.css" afterPath="$PROJECT_DIR$/web/assets/555601c2/src/css/bootstrap-dialog.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/assets/555601c2/src/js/bootstrap-dialog.js" afterPath="$PROJECT_DIR$/web/assets/555601c2/src/js/bootstrap-dialog.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/assets/555601c2/src/less/bootstrap-dialog.less" afterPath="$PROJECT_DIR$/web/assets/555601c2/src/less/bootstrap-dialog.less" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/assets/5c1536c5/yii.activeForm.js" afterPath="$PROJECT_DIR$/web/assets/5c1536c5/yii.activeForm.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/assets/5c1536c5/yii.captcha.js" afterPath="$PROJECT_DIR$/web/assets/5c1536c5/yii.captcha.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/assets/5c1536c5/yii.gridView.js" afterPath="$PROJECT_DIR$/web/assets/5c1536c5/yii.gridView.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/assets/5c1536c5/yii.js" afterPath="$PROJECT_DIR$/web/assets/5c1536c5/yii.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/assets/5c1536c5/yii.validation.js" afterPath="$PROJECT_DIR$/web/assets/5c1536c5/yii.validation.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/assets/7b605f0f/css/editable.css" afterPath="$PROJECT_DIR$/web/assets/7b605f0f/css/editable.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/assets/7b605f0f/css/editable.min.css" afterPath="$PROJECT_DIR$/web/assets/7b605f0f/css/editable.min.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/assets/7b605f0f/js/editable-pjax.js" afterPath="$PROJECT_DIR$/web/assets/7b605f0f/js/editable-pjax.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/assets/7b605f0f/js/editable-pjax.min.js" afterPath="$PROJECT_DIR$/web/assets/7b605f0f/js/editable-pjax.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/assets/7b605f0f/js/editable.js" afterPath="$PROJECT_DIR$/web/assets/7b605f0f/js/editable.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/assets/7b605f0f/js/editable.min.js" afterPath="$PROJECT_DIR$/web/assets/7b605f0f/js/editable.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/assets/a4fcb5aa/gii.js" afterPath="$PROJECT_DIR$/web/assets/a4fcb5aa/gii.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/assets/a4fcb5aa/main.css" afterPath="$PROJECT_DIR$/web/assets/a4fcb5aa/main.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/assets/b400d2da/jquery.js" afterPath="$PROJECT_DIR$/web/assets/b400d2da/jquery.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/assets/b400d2da/jquery.min.js" afterPath="$PROJECT_DIR$/web/assets/b400d2da/jquery.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/assets/b400d2da/jquery.min.map" afterPath="$PROJECT_DIR$/web/assets/b400d2da/jquery.min.map" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/assets/d9453508/css/jquery.resizableColumns.css" afterPath="$PROJECT_DIR$/web/assets/d9453508/css/jquery.resizableColumns.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/assets/d9453508/css/jquery.resizableColumns.min.css" afterPath="$PROJECT_DIR$/web/assets/d9453508/css/jquery.resizableColumns.min.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/assets/d9453508/css/kv-grid-action.css" afterPath="$PROJECT_DIR$/web/assets/d9453508/css/kv-grid-action.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/assets/d9453508/css/kv-grid-action.min.css" afterPath="$PROJECT_DIR$/web/assets/d9453508/css/kv-grid-action.min.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/assets/d9453508/css/kv-grid-expand.css" afterPath="$PROJECT_DIR$/web/assets/d9453508/css/kv-grid-expand.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/assets/d9453508/css/kv-grid-expand.min.css" afterPath="$PROJECT_DIR$/web/assets/d9453508/css/kv-grid-expand.min.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/assets/d9453508/css/kv-grid.css" afterPath="$PROJECT_DIR$/web/assets/d9453508/css/kv-grid.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/assets/d9453508/css/kv-grid.min.css" afterPath="$PROJECT_DIR$/web/assets/d9453508/css/kv-grid.min.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/assets/d9453508/css/perfect-scrollbar-kv.css" afterPath="$PROJECT_DIR$/web/assets/d9453508/css/perfect-scrollbar-kv.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/assets/d9453508/css/perfect-scrollbar-kv.min.css" afterPath="$PROJECT_DIR$/web/assets/d9453508/css/perfect-scrollbar-kv.min.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/assets/d9453508/css/perfect-scrollbar.css" afterPath="$PROJECT_DIR$/web/assets/d9453508/css/perfect-scrollbar.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/assets/d9453508/css/perfect-scrollbar.min.css" afterPath="$PROJECT_DIR$/web/assets/d9453508/css/perfect-scrollbar.min.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/assets/d9453508/js/jquery.floatThead.js" afterPath="$PROJECT_DIR$/web/assets/d9453508/js/jquery.floatThead.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/assets/d9453508/js/jquery.floatThead.min.js" afterPath="$PROJECT_DIR$/web/assets/d9453508/js/jquery.floatThead.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/assets/d9453508/js/jquery.resizableColumns.js" afterPath="$PROJECT_DIR$/web/assets/d9453508/js/jquery.resizableColumns.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/assets/d9453508/js/jquery.resizableColumns.min.js" afterPath="$PROJECT_DIR$/web/assets/d9453508/js/jquery.resizableColumns.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/assets/d9453508/js/kv-grid-action.js" afterPath="$PROJECT_DIR$/web/assets/d9453508/js/kv-grid-action.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/assets/d9453508/js/kv-grid-action.min.js" afterPath="$PROJECT_DIR$/web/assets/d9453508/js/kv-grid-action.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/assets/d9453508/js/kv-grid-checkbox.js" afterPath="$PROJECT_DIR$/web/assets/d9453508/js/kv-grid-checkbox.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/assets/d9453508/js/kv-grid-checkbox.min.js" afterPath="$PROJECT_DIR$/web/assets/d9453508/js/kv-grid-checkbox.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/assets/d9453508/js/kv-grid-editable.js" afterPath="$PROJECT_DIR$/web/assets/d9453508/js/kv-grid-editable.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/assets/d9453508/js/kv-grid-editable.min.js" afterPath="$PROJECT_DIR$/web/assets/d9453508/js/kv-grid-editable.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/assets/d9453508/js/kv-grid-expand.js" afterPath="$PROJECT_DIR$/web/assets/d9453508/js/kv-grid-expand.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/assets/d9453508/js/kv-grid-expand.min.js" afterPath="$PROJECT_DIR$/web/assets/d9453508/js/kv-grid-expand.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/assets/d9453508/js/kv-grid-export.js" afterPath="$PROJECT_DIR$/web/assets/d9453508/js/kv-grid-export.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/assets/d9453508/js/kv-grid-export.min.js" afterPath="$PROJECT_DIR$/web/assets/d9453508/js/kv-grid-export.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/assets/d9453508/js/kv-grid-group.js" afterPath="$PROJECT_DIR$/web/assets/d9453508/js/kv-grid-group.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/assets/d9453508/js/kv-grid-group.min.js" afterPath="$PROJECT_DIR$/web/assets/d9453508/js/kv-grid-group.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/assets/d9453508/js/kv-grid-radio.js" afterPath="$PROJECT_DIR$/web/assets/d9453508/js/kv-grid-radio.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/assets/d9453508/js/kv-grid-radio.min.js" afterPath="$PROJECT_DIR$/web/assets/d9453508/js/kv-grid-radio.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/assets/d9453508/js/kv-grid-toggle.js" afterPath="$PROJECT_DIR$/web/assets/d9453508/js/kv-grid-toggle.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/assets/d9453508/js/kv-grid-toggle.min.js" afterPath="$PROJECT_DIR$/web/assets/d9453508/js/kv-grid-toggle.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/assets/d9453508/js/perfect-scrollbar.jquery.js" afterPath="$PROJECT_DIR$/web/assets/d9453508/js/perfect-scrollbar.jquery.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/assets/d9453508/js/perfect-scrollbar.jquery.min.js" afterPath="$PROJECT_DIR$/web/assets/d9453508/js/perfect-scrollbar.jquery.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/assets/d9453508/js/store.js" afterPath="$PROJECT_DIR$/web/assets/d9453508/js/store.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/assets/d9453508/js/store.min.js" afterPath="$PROJECT_DIR$/web/assets/d9453508/js/store.min.js" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ComposerSettings">
+    <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
+  </component>
+  <component name="CreatePatchCommitExecutor">
+    <option name="PATCH_PATH" value="" />
+  </component>
+  <component name="DatabaseView">
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_TABLE_DETAILS" value="true" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
+  <component name="FavoritesManager">
+    <favorites_list name="AmazonCompanies" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="console.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/config/console.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="3" lean-forward="false" selection-start-line="0" selection-start-column="3" selection-end-line="0" selection-end-column="3" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/config/db.php" />
+        <option value="$PROJECT_DIR$/config/console.php" />
+      </list>
+    </option>
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsFlowSettings">
+    <service-enabled>false</service-enabled>
+    <exe-path />
+    <annotation-enable>false</annotation-enable>
+    <other-services-enabled>false</other-services-enabled>
+  </component>
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true">
+    <include_path>
+      <path value="$PROJECT_DIR$/vendor/guzzlehttp/psr7" />
+      <path value="$PROJECT_DIR$/vendor/kartik-v/yii2-widget-affix" />
+      <path value="$PROJECT_DIR$/vendor/ezyang/htmlpurifier" />
+      <path value="$PROJECT_DIR$/vendor/kartik-v/bootstrap-star-rating" />
+      <path value="$PROJECT_DIR$/vendor/kartik-v/yii2-widget-timepicker" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/object-enumerator" />
+      <path value="$PROJECT_DIR$/vendor/phpunit/php-file-iterator" />
+      <path value="$PROJECT_DIR$/vendor/bower-asset/bootstrap3-dialog" />
+      <path value="$PROJECT_DIR$/vendor/webmozart/assert" />
+      <path value="$PROJECT_DIR$/vendor/psr/log" />
+      <path value="$PROJECT_DIR$/vendor/symfony/event-dispatcher" />
+      <path value="$PROJECT_DIR$/vendor/kartik-v/yii2-widget-activeform" />
+      <path value="$PROJECT_DIR$/vendor/kartik-v/yii2-krajee-base" />
+      <path value="$PROJECT_DIR$/vendor/kartik-v/yii2-widget-growl" />
+      <path value="$PROJECT_DIR$/vendor/psr/http-message" />
+      <path value="$PROJECT_DIR$/vendor/kartik-v/yii2-popover-x" />
+      <path value="$PROJECT_DIR$/vendor/kartik-v/bootstrap-popover-x" />
+      <path value="$PROJECT_DIR$/vendor/kartik-v/yii2-widget-switchinput" />
+      <path value="$PROJECT_DIR$/vendor/bower/typeahead.js" />
+      <path value="$PROJECT_DIR$/vendor/symfony/console" />
+      <path value="$PROJECT_DIR$/vendor/kartik-v/yii2-mpdf" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/global-state" />
+      <path value="$PROJECT_DIR$/vendor/fzaninotto/faker" />
+      <path value="$PROJECT_DIR$/vendor/yiisoft/yii2-gii" />
+      <path value="$PROJECT_DIR$/vendor/kartik-v/yii2-widget-spinner" />
+      <path value="$PROJECT_DIR$/vendor/phpunit/php-code-coverage" />
+      <path value="$PROJECT_DIR$/vendor/bower/punycode" />
+      <path value="$PROJECT_DIR$/vendor/yiisoft/yii2-faker" />
+      <path value="$PROJECT_DIR$/vendor/kartik-v/yii2-widget-sidenav" />
+      <path value="$PROJECT_DIR$/vendor/symfony/css-selector" />
+      <path value="$PROJECT_DIR$/vendor/bower/jquery" />
+      <path value="$PROJECT_DIR$/vendor/symfony/yaml" />
+      <path value="$PROJECT_DIR$/vendor/kartik-v/yii2-widget-datetimepicker" />
+      <path value="$PROJECT_DIR$/vendor/doctrine/instantiator" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/exporter" />
+      <path value="$PROJECT_DIR$/vendor/symfony/browser-kit" />
+      <path value="$PROJECT_DIR$/vendor/phpdocumentor/reflection-docblock" />
+      <path value="$PROJECT_DIR$/vendor/symfony/dom-crawler" />
+      <path value="$PROJECT_DIR$/vendor/kartik-v/yii2-editable" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-mbstring" />
+      <path value="$PROJECT_DIR$/vendor/kartik-v/yii2-widget-datepicker" />
+      <path value="$PROJECT_DIR$/vendor/composer" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/environment" />
+      <path value="$PROJECT_DIR$/vendor/phpdocumentor/reflection-common" />
+      <path value="$PROJECT_DIR$/vendor/phpspec/prophecy" />
+      <path value="$PROJECT_DIR$/vendor/bower/jquery.inputmask" />
+      <path value="$PROJECT_DIR$/vendor/codeception/verify" />
+      <path value="$PROJECT_DIR$/vendor/behat/gherkin" />
+      <path value="$PROJECT_DIR$/vendor/kartik-v/yii2-widget-fileinput" />
+      <path value="$PROJECT_DIR$/vendor/bower-asset/jquery" />
+      <path value="$PROJECT_DIR$/vendor/phpspec/php-diff" />
+      <path value="$PROJECT_DIR$/vendor/phpunit/phpunit-mock-objects" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/diff" />
+      <path value="$PROJECT_DIR$/vendor/codeception/base" />
+      <path value="$PROJECT_DIR$/vendor/yiisoft/yii2" />
+      <path value="$PROJECT_DIR$/vendor/kartik-v/yii2-widget-depdrop" />
+      <path value="$PROJECT_DIR$/vendor/phpunit/phpunit" />
+      <path value="$PROJECT_DIR$/vendor/codeception/specify" />
+      <path value="$PROJECT_DIR$/vendor/myclabs/deep-copy" />
+      <path value="$PROJECT_DIR$/vendor/kartik-v/yii2-dialog" />
+      <path value="$PROJECT_DIR$/vendor/swiftmailer/swiftmailer" />
+      <path value="$PROJECT_DIR$/vendor/yiisoft/yii2-swiftmailer" />
+      <path value="$PROJECT_DIR$/vendor/kartik-v/bootstrap-fileinput" />
+      <path value="$PROJECT_DIR$/vendor/symfony/debug" />
+      <path value="$PROJECT_DIR$/vendor/yiisoft/yii2-debug" />
+      <path value="$PROJECT_DIR$/vendor/cebe/markdown" />
+      <path value="$PROJECT_DIR$/vendor/bower/bootstrap3-dialog" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/version" />
+      <path value="$PROJECT_DIR$/vendor/yiisoft/yii2-composer" />
+      <path value="$PROJECT_DIR$/vendor/bower/yii2-pjax" />
+      <path value="$PROJECT_DIR$/vendor/bower/bootstrap" />
+      <path value="$PROJECT_DIR$/vendor/kartik-v/yii2-widgets" />
+      <path value="$PROJECT_DIR$/vendor/kartik-v/yii2-widget-colorinput" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/resource-operations" />
+      <path value="$PROJECT_DIR$/vendor/kartik-v/mpdf" />
+      <path value="$PROJECT_DIR$/vendor/bower-asset/jquery.inputmask" />
+      <path value="$PROJECT_DIR$/vendor/phpunit/php-token-stream" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/comparator" />
+      <path value="$PROJECT_DIR$/vendor/bower-asset/yii2-pjax" />
+      <path value="$PROJECT_DIR$/vendor/phpdocumentor/type-resolver" />
+      <path value="$PROJECT_DIR$/vendor/kartik-v/yii2-widget-typeahead" />
+      <path value="$PROJECT_DIR$/vendor/kartik-v/yii2-widget-alert" />
+      <path value="$PROJECT_DIR$/vendor/bower-asset/punycode" />
+      <path value="$PROJECT_DIR$/vendor/bower-asset/bootstrap" />
+      <path value="$PROJECT_DIR$/vendor/kartik-v/yii2-grid" />
+      <path value="$PROJECT_DIR$/vendor/kartik-v/yii2-widget-select2" />
+      <path value="$PROJECT_DIR$/vendor/phpunit/php-timer" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/recursion-context" />
+      <path value="$PROJECT_DIR$/vendor/symfony/finder" />
+      <path value="$PROJECT_DIR$/vendor/yiisoft/yii2-bootstrap" />
+      <path value="$PROJECT_DIR$/vendor/kartik-v/yii2-widget-rating" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/code-unit-reverse-lookup" />
+      <path value="$PROJECT_DIR$/vendor/kartik-v/dependent-dropdown" />
+      <path value="$PROJECT_DIR$/vendor/kartik-v/yii2-widget-touchspin" />
+      <path value="$PROJECT_DIR$/vendor/phpunit/php-text-template" />
+      <path value="$PROJECT_DIR$/vendor/kartik-v/yii2-widget-rangeinput" />
+    </include_path>
+  </component>
+  <component name="ProjectFrameBounds">
+    <option name="y" value="24" />
+    <option name="width" value="1366" />
+    <option name="height" value="689" />
+  </component>
+  <component name="ProjectView">
+    <navigator currentView="ProjectPane" proportions="" version="1">
+      <flattenPackages />
+      <showMembers />
+      <showModules />
+      <showLibraryContents />
+      <hideEmptyPackages />
+      <abbreviatePackageNames />
+      <autoscrollToSource />
+      <autoscrollFromSource />
+      <sortByType />
+      <manualOrder />
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="AmazonCompanies" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="AmazonCompanies" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
+      <pane id="Scope" />
+      <pane id="Scratches" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="settings.editor.selected.configurable" value="File.Encoding" />
+  </component>
+  <component name="ShelveChangesManager" show_recycled="false">
+    <option name="remove_strategy" value="false" />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="9bf8dbc5-3c81-4a33-86a2-ce13d1415bc0" name="Default" comment="" />
+      <created>1481591114869</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1481591114869</updated>
+      <workItem from="1481591120501" duration="840000" />
+      <workItem from="1481592019048" duration="258000" />
+      <workItem from="1481652641445" duration="67000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="1165000" />
+  </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="0" y="24" width="1366" height="689" extended-state="6" />
+    <editor active="false" />
+    <layout>
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20131771" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32736155" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32899022" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+    </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="processedProjectFiles" value="true" />
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager />
+    <watches-manager />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/config/console.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DB_AmazonCompanies.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/site/cadinfoemp.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/empresa/view.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/empresa/update.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/db.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="9" column="0" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/console.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="6" column="28" lean-forward="false" selection-start-line="6" selection-start-column="28" selection-end-line="6" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/site/cadinfoemp.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="119" column="16" lean-forward="false" selection-start-line="119" selection-start-column="16" selection-end-line="119" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DB_AmazonCompanies.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/empresa/view.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/empresa/update.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/db.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="9" column="0" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/console.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="3" lean-forward="false" selection-start-line="0" selection-start-column="3" selection-end-line="0" selection-end-column="3" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>

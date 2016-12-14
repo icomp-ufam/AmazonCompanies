@@ -3,25 +3,25 @@
 $params = require(__DIR__ . '/params.php');
 $db = require(__DIR__ . '/db.php');
 
-$config = [
+$config = array(
     'id' => 'basic-console',
     'basePath' => dirname(__DIR__),
-    'bootstrap' => ['log'],
+    'bootstrap' => array('log'),
     'controllerNamespace' => 'app\commands',
-    'components' => [
-        'cache' => [
+    'components' => array(
+        'cache' => array(
             'class' => 'yii\caching\FileCache',
-        ],
-        'log' => [
-            'targets' => [
-                [
+        ),
+        'log' => array(
+            'targets' => array(
+                array(
                     'class' => 'yii\log\FileTarget',
-                    'levels' => ['error', 'warning'],
-                ],
-            ],
-        ],
+                    'levels' => array('error', 'warning'),
+                ),
+            ),
+        ),
         'db' => $db,
-    ],
+    ),
     'params' => $params,
     /*
     'controllerMap' => [
@@ -30,7 +30,7 @@ $config = [
         ],
     ],
     */
-];
+);
 
 if (YII_ENV_DEV) {
     // configuration adjustments for 'dev' environment
