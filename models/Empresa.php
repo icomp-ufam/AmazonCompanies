@@ -99,12 +99,22 @@ class Empresa extends \yii\db\ActiveRecord
     private $nome, $extensao;
     public function upload()
     {
-        $nome= "imagem_tmp";
-        //$extensao = $this->logotipo;
+        $nome= "imagem_tmp.png";
+       // $extensao = $this->logotipo;
         if ($this->validate()) {
             $this->logotipo->saveAs('img/' . $nome);
             $this->logotipo="img/".$nome;
-
+            return true;
+        } else {
+            return false;
+        }
+    }
+    public function upload2()
+    {
+        if ($this->validate()) {
+            foreach ($this->logotipo as $file) {
+                $file->saveAs('img/' . $file->baseName . '.' . $file->extension);
+            }
             return true;
         } else {
             return false;

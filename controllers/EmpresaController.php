@@ -10,6 +10,7 @@ use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 use yii\web\UploadedFile;
+use app\models\UploadForm;
 
 
 /**
@@ -67,10 +68,14 @@ class EmpresaController extends Controller
     public function actionCreate(){
         $model = new Empresa();
 
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            $model->logotipo = UploadedFile::getInstance($model, 'logotipo');
-            $model->upload();
-            return $this->redirect(['view', 'id' => $model->idEmpresa]);
+        if ($model->load(Yii::$app->request->post())){
+            //$model->logotipo = UploadedFile::getInstance($model, 'logotipo');
+            //$model->upload();
+            $file = \yii\web\UploadedFile::getInstance($model, 'logotipo');
+            $file->saveAs('img/'.$file->name);
+            if($model->save(false)) {
+                return $this->redirect(['view', 'id' => $model->idEmpresa]);
+            }
         } else {
             return $this->render('create', [
                 'model' => $model,
