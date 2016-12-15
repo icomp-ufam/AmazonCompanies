@@ -5,12 +5,12 @@ namespace app\models;
 use Yii;
 use yii\base\Model;
 use yii\data\ActiveDataProvider;
-use app\models\TipoDemonstracao;
+use app\models\Agregado;
 
 /**
- * TipoDemonstracaoSearch represents the model behind the search form about `app\models\TipoDemonstracao`.
+ * AgregadoSearch represents the model behind the search form about `app\models\Agregado`.
  */
-class TipoDemonstracaoSearch extends TipoDemonstracao
+class AgregadoSearch extends Agregado
 {
     /**
      * @inheritdoc
@@ -18,8 +18,8 @@ class TipoDemonstracaoSearch extends TipoDemonstracao
     public function rules()
     {
         return [
-            [['idTipo_Demonstracao'], 'integer'],
-            [['nome'], 'safe'],
+            [['idAgregado'], 'integer'],
+            [['nome', 'sigla'], 'safe'],
         ];
     }
 
@@ -41,7 +41,7 @@ class TipoDemonstracaoSearch extends TipoDemonstracao
      */
     public function search($params)
     {
-        $query = TipoDemonstracao::find();
+        $query = Agregado::find();
 
         // add conditions that should always apply here
 
@@ -59,10 +59,11 @@ class TipoDemonstracaoSearch extends TipoDemonstracao
 
         // grid filtering conditions
         $query->andFilterWhere([
-            'idTipo_Demonstracao' => $this->idTipo_Demonstracao,
+            'idAgregado' => $this->idAgregado,
         ]);
 
-        $query->andFilterWhere(['like', 'nome', $this->nome]);
+        $query->andFilterWhere(['like', 'nome', $this->nome])
+            ->andFilterWhere(['like', 'sigla', $this->sigla]);
 
         return $dataProvider;
     }

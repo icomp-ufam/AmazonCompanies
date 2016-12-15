@@ -77,11 +77,12 @@ $analiseProvider->sort->sortParam= 'analise-sort';
                 print_r($posts[0]['texto']);
                 echo '</div>';
             }else{
-        ?>
-            <?= Html::a('Create Analise', ['analise/create'], ['class' => 'btn btn-default']) ?>
-        <?php
+
+        echo '<a href="http://localhost/AmazonCompanies/web/index.php?r=analise%2Fcreate&idEmpresa='.$model->idEmpresa.'"><button class="btn btn-default">Criar Análise</button> </a>';
+
             }
         ?>
     </div>
+<!--?= Html::a('Create Analise', ['analise/create', 'id'=>$model->idEmpresa], ['class' => 'btn btn-default']) ?-->
 <br>
 

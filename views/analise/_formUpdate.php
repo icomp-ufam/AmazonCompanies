@@ -18,9 +18,9 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'texto')->textarea(['rows' => 6]) ?>
 
-    <?= $form->field($model, 'status')->hiddenInput(['value'=>'Pendente'])->label(false);//hiddenInput(['value'=>'Pendente']) ?>
+    <?= $form->field($model, 'status')->hiddenInput()->label(false)//hiddenInput(['value'=>'Pendente']) ?>
 
-    <?= $form->field($model, 'idEmpresa')->hiddenInput(['value'=>$idEmpresa])->label(false); ?>
+    <?= $form->field($model, 'idEmpresa')->hiddenInput()->label(false); ?>
     <div class="form-group">
         <?= Html::submitButton($model->isNewRecord ? 'Submeter' : 'Update', ['class' => $model->isNewRecord ? 'btn btn-primary' : 'btn btn-primary']) ?>
     </div>
