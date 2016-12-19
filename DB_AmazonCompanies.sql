@@ -50,7 +50,7 @@ INSERT INTO `agregado` (`idAgregado`, `nome`, `sigla`) VALUES
 CREATE TABLE `analise` (
   `idanalise` int(11) NOT NULL,
   `texto` text,
-  `status` tinyint(1) NOT NULL,
+  `status` varchar(20) NOT NULL,
   `idEmpresa` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 

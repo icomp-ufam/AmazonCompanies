@@ -45,7 +45,11 @@ AppAsset::register($this);
     					['label' => 'Página Inicial', 'url' => ['/site/adm']],
     					['label' => 'Empresas',
     					'items' =>[
+<<<<<<< HEAD
     					['label' => 'Cadastrar Dados', 'url' => ['/site/caddadosemp']],
+=======
+    					['label' => 'Cadastrar Dados', 'url' => ['site/caddadosemp']],
+>>>>>>> 447bd2c980b4d38fa01d26298fd3aa13f99e8fe6
     					['label' => 'Listar Empresas Cadastradas', 'url' => ['empresa/index']],
     					]],
     					
@@ -58,7 +62,7 @@ AppAsset::register($this);
     					]],
     					['label' => 'Notificações '. Html::tag('span', '15', ['class' => 'badge']),
     					'items' => [
-    							['label' => Html::tag('span', '3', ['class' => 'badge']).' Análises', 'url' => ['/site/validanaadm']],
+    							['label' => Html::tag('span', '3', ['class' => 'badge']).' Análises', 'url' => ['/analise/index']],
     							//'<li class="divider"></li>',
     							//'<li class="dropdown-header">Dropdown Header</li>',
     							['label' => Html::tag('span', '3', ['class' => 'badge']).' Alteração de Dados', 'url' => ['validaltdados']],
@@ -87,8 +91,13 @@ AppAsset::register($this);
     					['label' => 'Página Inicial', 'url' => ['/site/aluno']],
     					['label' => 'Empresas',
     					'items' =>[
+<<<<<<< HEAD
     							['label' => 'Cadastrar Dados', 'url' => ['/site/caddadosemp']],
     							['label' => 'Listar Empresas Cadastradas', 'url' => ['/empresa/index']],
+=======
+    							['label' => 'Cadastrar Dados', 'url' => ['site/caddadosemp']],
+    							['label' => 'Listar Empresas Cadastradas', 'url' => ['empresa/index']],
+>>>>>>> 447bd2c980b4d38fa01d26298fd3aa13f99e8fe6
     					]],
     					['label' => 'Notificações '. Html::tag('span', '3', ['class' => 'badge'])],
     					['label' => 'Seu Perfil', 'url' => ['/usuario/update', 'id' => Yii::$app->user->getId()]],
@@ -115,7 +124,11 @@ AppAsset::register($this);
     					['label' => 'Página Inicial', 'url' => ['/site/empresa']],
     					['label' => 'Empresas',
     					'items' =>[
+<<<<<<< HEAD
     							['label' => 'Cadastrar Informações', 'url' => ['/site/cadinfoemp']],
+=======
+    							['label' => 'Cadastrar Informações', 'url' => ['site/cadinfoemp']],
+>>>>>>> 447bd2c980b4d38fa01d26298fd3aa13f99e8fe6
     							['label' => 'Listar Empresas Cadastradas', 'url' => ['empresa/index']],
     					]],
     					['label' => 'Seu Perfil', 'url' => ['/usuario/update', 'id' => Yii::$app->user->getId()]],

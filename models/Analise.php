@@ -30,9 +30,9 @@ class Analise extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['texto'], 'string'],
-            [['status', 'idEmpresa'], 'required'],
-            [['status', 'idEmpresa'], 'integer'],
+            [['status','texto'], 'string'],
+            [['idEmpresa'], 'required'],
+            [[ 'idEmpresa'], 'integer'],
             [['idEmpresa'], 'exist', 'skipOnError' => true, 'targetClass' => Empresa::className(), 'targetAttribute' => ['idEmpresa' => 'idEmpresa']],
         ];
     }

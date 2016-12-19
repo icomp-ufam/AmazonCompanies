@@ -9,6 +9,7 @@ use yii\grid\GridView;
 
 $this->title = 'Analises';
 $this->params['breadcrumbs'][] = $this->title;
+$testProvider = $dataProvider;
 ?>
 <div class="analise-index">
 
@@ -16,20 +17,25 @@ $this->params['breadcrumbs'][] = $this->title;
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
 
     <p>
-        <?= Html::a('Create Analise', ['create'], ['class' => 'btn btn-success']) ?>
+        <!--?= Html::a('Create Analise', ['create'], ['class' => 'btn btn-success']) ?-->
     </p>
     <?= GridView::widget([
         'dataProvider' => $dataProvider,
         'filterModel' => $searchModel,
         'columns' => [
-            ['class' => 'yii\grid\SerialColumn'],
-
-            'idanalise',
-            'texto:ntext',
+            //'idanalise',
+//            ['attribute'=>'texto',
+//            'value'=>'texto',
+//            'format'=>'html'],
+            'idEmpresa0.nome',
             'status',
-            'idEmpresa',
 
-            ['class' => 'yii\grid\ActionColumn'],
+            ['class' => 'yii\grid\ActionColumn',
+                'template'=> '{view}'],
+            ['class' => 'yii\grid\ActionColumn',
+                'template'=> '{update}'],
+            ['class' => 'yii\grid\ActionColumn',
+                'template'=> '{delete}']
         ],
     ]); ?>
 </div>

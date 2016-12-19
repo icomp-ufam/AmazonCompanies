@@ -10,6 +10,7 @@ use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 use yii\web\UploadedFile;
+use app\models\UploadForm;
 
 
 /**
@@ -66,11 +67,15 @@ class EmpresaController extends Controller
      */
     public function actionCreate(){
         $model = new Empresa();
+        $file = \yii\web\UploadedFile::getInstance($model, 'logotipo');
 
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
+        if ($model->load(Yii::$app->request->post()) and $file != null){
             $model->logotipo = UploadedFile::getInstance($model, 'logotipo');
-            $model->upload();
-            return $this->redirect(['view', 'id' => $model->idEmpresa]);
+            //$model->upload();
+            $file->saveAs('img/'.$file->name);
+            if($model->save(false)) {
+                return $this->redirect(['view', 'id' => $model->idEmpresa]);
+            }
         } else {
             return $this->render('create', [
                 'model' => $model,
@@ -83,11 +88,12 @@ class EmpresaController extends Controller
      * @param integer $id
      * @return mixed
      */
+
     public function actionUpdate($id)
     {
         $model = $this->findModel($id);
-
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
+            $model->logotipo = UploadedFile::getInstance($model, 'logotipo');
             return $this->redirect(['view', 'id' => $model->idEmpresa]);
         } else {
             return $this->render('update', [

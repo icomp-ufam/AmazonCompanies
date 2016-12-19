@@ -3,25 +3,22 @@
 namespace app\controllers;
 
 use Yii;
-use app\models\TipoDemonstracao;
-use app\models\TipoDemonstracaoSearch;
+use app\models\Agregado;
+use app\models\AgregadoSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 
 /**
- * TipoDemonstracaoController implements the CRUD actions for TipoDemonstracao model.
+ * AgregadoController implements the CRUD actions for Agregado model.
  */
-class TipoDemonstracaoController extends Controller
+class AgregadoController extends Controller
 {
     /**
      * @inheritdoc
      */
-
     public function behaviors()
     {
-        $this->layout = 'modal';
-
         return [
             'verbs' => [
                 'class' => VerbFilter::className(),
@@ -33,14 +30,12 @@ class TipoDemonstracaoController extends Controller
     }
 
     /**
-     * Lists all TipoDemonstracao models.
+     * Lists all Agregado models.
      * @return mixed
      */
     public function actionIndex()
     {
-        $this->layout = 'modal';
-
-        $searchModel = new TipoDemonstracaoSearch();
+        $searchModel = new AgregadoSearch();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 
         return $this->render('index', [
@@ -50,7 +45,7 @@ class TipoDemonstracaoController extends Controller
     }
 
     /**
-     * Displays a single TipoDemonstracao model.
+     * Displays a single Agregado model.
      * @param integer $id
      * @return mixed
      */
@@ -62,16 +57,16 @@ class TipoDemonstracaoController extends Controller
     }
 
     /**
-     * Creates a new TipoDemonstracao model.
+     * Creates a new Agregado model.
      * If creation is successful, the browser will be redirected to the 'view' page.
      * @return mixed
      */
     public function actionCreate()
     {
-        $model = new TipoDemonstracao();
+        $model = new Agregado();
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['index', 'id' => $model->idTipo_Demonstracao]);
+            return $this->redirect(['view', 'id' => $model->idAgregado]);
         } else {
             return $this->render('create', [
                 'model' => $model,
@@ -80,7 +75,7 @@ class TipoDemonstracaoController extends Controller
     }
 
     /**
-     * Updates an existing TipoDemonstracao model.
+     * Updates an existing Agregado model.
      * If update is successful, the browser will be redirected to the 'view' page.
      * @param integer $id
      * @return mixed
@@ -90,7 +85,7 @@ class TipoDemonstracaoController extends Controller
         $model = $this->findModel($id);
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['index', 'id' => $model->idTipo_Demonstracao]);
+            return $this->redirect(['view', 'id' => $model->idAgregado]);
         } else {
             return $this->render('update', [
                 'model' => $model,
@@ -99,7 +94,7 @@ class TipoDemonstracaoController extends Controller
     }
 
     /**
-     * Deletes an existing TipoDemonstracao model.
+     * Deletes an existing Agregado model.
      * If deletion is successful, the browser will be redirected to the 'index' page.
      * @param integer $id
      * @return mixed
@@ -112,15 +107,15 @@ class TipoDemonstracaoController extends Controller
     }
 
     /**
-     * Finds the TipoDemonstracao model based on its primary key value.
+     * Finds the Agregado model based on its primary key value.
      * If the model is not found, a 404 HTTP exception will be thrown.
      * @param integer $id
-     * @return TipoDemonstracao the loaded model
+     * @return Agregado the loaded model
      * @throws NotFoundHttpException if the model cannot be found
      */
     protected function findModel($id)
     {
-        if (($model = TipoDemonstracao::findOne($id)) !== null) {
+        if (($model = Agregado::findOne($id)) !== null) {
             return $model;
         } else {
             throw new NotFoundHttpException('The requested page does not exist.');
