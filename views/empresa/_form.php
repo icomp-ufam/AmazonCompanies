@@ -13,14 +13,10 @@ use kartik\widgets\FileInput;
 
 
     <?php
-<<<<<<< HEAD
+
         $tipoEmpresa =  Array('prompt' => 'Selecione...', 'Local'=>'Local','Nacional'=>'Nacional','Estrangeira'=> 'Estrangeira');
         $form = ActiveForm::begin();
-=======
-        $tipoEmpresa =  Array('Local'=>'Local','Nacional'=>'Nacional','Estrangeira'=> 'Estrangeira');
 
-        $form = ActiveForm::begin(['options' => ['enctype' => 'multipart/form-data']]);
->>>>>>> 447bd2c980b4d38fa01d26298fd3aa13f99e8fe6
     ?>
 
     <?= $form->field($model, 'nome')->textInput(['maxlength' => true]) ?>
