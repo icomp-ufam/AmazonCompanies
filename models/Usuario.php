@@ -3,6 +3,7 @@
 namespace app\models;
 
 use Yii;
+use kartik\password\StrengthValidator;
 
 /**
  * This is the model class for table "usuario".
@@ -22,6 +23,7 @@ use Yii;
  */
 class Usuario extends \yii\db\ActiveRecord
 {
+	public $repetir_senha;
     /**
      * @inheritdoc
      */
@@ -36,10 +38,13 @@ class Usuario extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['login', 'nome', 'senha', 'ativo', 'identificadorPessoa', 'email'], 'required'],
+            [['login', 'nome', 'senha', 'repetir_senha', 'ativo', 'identificadorPessoa', 'email'], 'required'],
             [['ativo', 'identificadorPessoa'], 'integer'],
-            [['login', 'nome', 'senha', 'email'], 'string', 'max' => 45],
-            [['email'], 'unique'],
+            [['login', 'nome', 'senha', 'repetir_senha', 'email'], 'string', 'max' => 45],
+        	[['senha', 'repetir_senha'], 'string', 'min' => 8 ],
+            [['login', 'email'], 'unique'],
+        	[['email'], 'email'],
+        	['repetir_senha', 'compare', 'compareAttribute'=>'senha', 'message'=>"Senha inserida não é igual a anterior" ],
         ];
     }
 
@@ -91,19 +96,10 @@ class Usuario extends \yii\db\ActiveRecord
         return $this->hasMany(Notificacao::className(), ['Usuario_idUsuario' => 'idUsuario']);
     }
     
-    public function setAtivo($id)
-    {
-    	return mysql_query("UPDATE usuario SET ativo='1' WHERE id=$id");
-    	
-    	//$this->set(Usuario::className(), ['Usuario_idUsuario' => 'idUsuario']);
-    	
-    	
-    	//UPDATE `usuario` SET `ativo` = '1' WHERE `usuario`.`idUsuario` = $id;
-    	
-    	
-  /*  	$_get_categoria_tipo_marca=CategoriaTipoMarca::model()->findAll(array('order' => 'categoria_tipo_marca asc'));
-    	return CHtml::listData($_get_categoria_tipo_marca,"id","categoria_tipo_marca");
-    	Yii::app()->findall();
-    	*/
+    // converte a senha basica para uma encriptografada e salva no bd
+    public function setSenhaMD5($model){
+    	$model->senha = md5($model->senha);
+    	$model->repetir_senha = md5($model->repetir_senha);
+    	return $model->save();
     }
 }

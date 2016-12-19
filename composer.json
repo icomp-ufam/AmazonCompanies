@@ -21,7 +21,10 @@
         "kartik-v/yii2-grid": "@dev",
         "kartik-v/yii2-mpdf": "*",
         "kartik-v/yii2-editable": "*",
-        "kartik-v/yii2-widgets": "*"
+        "kartik-v/yii2-widgets": "*",
+        "miloschuman/yii2-highcharts-widget": "dev-master",
+        "kartik-v/yii2-builder": "@dev",
+        "kartik-v/yii2-password": "@dev"
     },
     "require-dev": {
         "yiisoft/yii2-debug": "~2.0.0",

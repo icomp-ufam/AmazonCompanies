@@ -168,11 +168,6 @@ class SiteController extends Controller
     	return $this->render('listusersadm');
     }
     
-    public function actionCaduseradm()
-    {
-    	return $this->render('caduseradm');
-    }
-    
     public function actionAltcad()
     {
     	return $this->render('altcad');

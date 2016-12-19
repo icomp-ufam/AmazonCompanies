@@ -8,7 +8,8 @@ use app\models\UsuarioSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
-use yii\helpers\Json;
+//use yii\helpers\Json;
+
 
 /**
  * UsuarioController implements the CRUD actions for Usuario model.
@@ -38,7 +39,7 @@ class UsuarioController extends Controller
     {
         $searchModel = new UsuarioSearch();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
-		
+		/*
         // validate if there is a editable input saved via AJAX
         if (Yii::$app->request->post('hasEditable')) {
         	// instantiate your usuario model for saving
@@ -83,9 +84,10 @@ class UsuarioController extends Controller
         			echo $out;
         			return;
         }
+        */
+       //$model = new UsuarioSearch
         
-        
-        
+       
         
         
         return $this->render('index', [
@@ -116,11 +118,20 @@ class UsuarioController extends Controller
         $model = new Usuario();
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->idUsuario]);
+        	Yii::$app->mailer->compose()
+        	->setFrom('lgpa@icomp.ufam.edu.br') // inserir outro e-mail!
+        	->setTo($model->email)
+        	->setSubject('Cadastro no AmazonCompanies realizado com sucesso!')
+        	//->setTextBody('Plain text content')
+        	->setHtmlBody('<h3><b>Bem vindo Sr(a).' .$model->nome. '</b></h3><br>Você foi cadastrado no site AmazonCompanies. Seu perfil será analisado e validado pelo Administrador do sistema.<br>Qualquer dúvida ou reclamação por favor contate-nos atraves do link: "contato"')
+        	->send();
+        	Usuario::setSenhaMD5($model);
+        	Yii::$app->session->setFlash('success', "Aguarde, seu cadastro será validado pelo administador do sistema.");
+        	return $this->redirect(['/usuario/create']);
         } else {
-            return $this->render('create', [
-                'model' => $model,
-            ]);
+        	return $this->render('create', [
+        		'model' => $model,
+        	]);
         }
     }
 
@@ -131,11 +142,26 @@ class UsuarioController extends Controller
      * @return mixed
      */
     public function actionUpdate($id)
-    {
+    {	
         $model = $this->findModel($id);
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->idUsuario]);
+        	Yii::$app->mailer->compose()
+        	->setFrom('lgpa@icomp.ufam.edu.br') // inserir outro e-mail!
+        	->setTo($model->email)
+        	->setSubject('Cadastro atualizado com sucesso!')
+        	//->setTextBody('Plain text content')
+        	->setHtmlBody('<h3><b>Olá Sr(a).' .$model->nome. '</b></h3><br>Seu cadastro foi atualizado com suceso.<br>Se não foi você, entre em contato com o administrador do sistema.')
+        	->send();
+        	Usuario::setSenhaMD5($model);
+        	//Yii::$app->session->setFlash('success', "");
+        	if($model->identificadorPessoa == 1){ // EDITAR O INDEX PARA NAO PRECISAR FAZER ISSO AQUI!!!! E TERMINAR O RESTANTE DO UPDATE!!
+        		return $this->redirect(['/site/adm']);
+        	}else if($model->identificadorPessoa == 2){
+        		return $this->redirect(['/site/aluno']);
+        	}else{
+        		return $this->redirect(['/site/empresa']);
+        	}
         } else {
             return $this->render('update', [
                 'model' => $model,
@@ -170,10 +196,5 @@ class UsuarioController extends Controller
         } else {
             throw new NotFoundHttpException('A página requisitada não existe.');
         }
-    }
-    
-    public function actionValidcadadm()
-    {
-    	return $this->render('validcadadm');
     }
 }

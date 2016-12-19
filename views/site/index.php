@@ -1,8 +1,9 @@
 <?php
 
 /* @var $this yii\web\View */
-//use miloschuman\highcharts\Highcharts;
+use miloschuman\highcharts\Highcharts;
 use yii\web\JsExpression;
+use app\models\User;
 
 $this->title = 'Amazon Companies';
 
@@ -24,9 +25,14 @@ if (Yii::$app->user->getIsGuest()){
 }else{
 	$username = Yii::$app->user->identity->nome;
 	echo '<h1>Bem Vindo, ' . $username . '!</h1>';
+	if(Yii::$app->user->getIdentificadorPessoa() == '1'){
+		$this->render('/site/adm');
+	}
 }
 
-?>
+
+ ?>
+
 <!-- Para aparecer a janela ao passar o mouse encima -->
 <script type="text/javascript" src="wz_tooltip.js"></script>
 
@@ -86,7 +92,7 @@ if (Yii::$app->user->getIsGuest()){
 
           <?php  
 
-           /* echo Highcharts::widget([
+            echo Highcharts::widget([
             'scripts' => [
                 'modules/exporting',
                 'themes/grid-light',
@@ -126,7 +132,7 @@ if (Yii::$app->user->getIsGuest()){
                     ],
                 ],
             ],
-        ]); */
+        ]); 
     ?>
     
 	 <div class="body-content">

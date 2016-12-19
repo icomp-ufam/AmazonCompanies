@@ -1,9 +1,8 @@
 <?php
 
-use kartik\grid\GridView;
-use yii\helpers\Html;
-use kartik\editable\Editable;
-
+use kartik\widgets\ActiveForm;
+use kartik\helpers\Html;
+use kartik\builder\TabularForm;
 
 /* @var $this yii\web\View */
 /* @var $searchModel app\models\UsuarioSearch */
@@ -14,9 +13,7 @@ $this->title = 'Validar Cadastros';
 
 ?>
 
-<?php
-        if(Yii::$app->user->getIdentificadorPessoa() == '1'){ //Administrador
-    ?>
+
 
 <div class="usuario-index">
 
@@ -25,49 +22,24 @@ $this->title = 'Validar Cadastros';
 
   
   
- <?=  GridView::widget([
- 		'filterModel' => $searchModel,
- 		'dataProvider'=> $dataProvider,
- 		
- 		
- 	
- 		//'showPageSummary' => true,
- 		
- 		'columns' => [
-          
-
-            'nome',
-        	'email:email',
-        	'login',
-           	//'ativo',
- 				
-			[
- 				'class'=>'kartik\grid\BooleanColumn',
- 				'attribute'=>'ativo',
- 				//'vAlign'=>'middle'
- 			],
- 				[
- 				'attribute' => 'ativo',
- 				'class' => 'kartik\grid\EditableColumn',
- 				'editableOptions' => [
- 						'asPopover' => false,
- 						'inputType' => Editable::INPUT_DROPDOWN_LIST,
- 						'data' => ['1'=>'Ativar','0'=>'Desativar'],
- 						'displayValueConfig' => ['Ativar' => '<p class="glyphicon glyphicon-ok"/p>',
- 								'Desativar' => '<i class="glyphicon glyphicon-remove">'
- 								],
- 				],
- 				],
-     
- 				['class' => 'yii\grid\ActionColumn',
- 				'template'=> '{delete}'],
-        ],
- 		
- ]);
+ <?php  $form = ActiveForm::begin();?>
+ <?= 
+TabularForm::widget([
+    'dataProvider'=>$dataProvider,
+    'form'=>$form,
+	
+	'actionColumn' => false,
+		'serialColumn' => false,
+		'checkboxColumn' => false,
+    'attributes'=> $searchModel->formAttribs
+		
+]);
 ?>
+
+<?=  '<div class="form-group">' . 
+     Html::submitButton('Salvar', ['class'=>'btn btn-primary']) .
+     '<div>';
+     ?>
+<?php ActiveForm::end();?>
 </div>
- <?php
-        }else{
-        	return null;
-        }
-    ?>
+ 

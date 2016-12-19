@@ -12,7 +12,7 @@ use yii\widgets\ActiveForm;
 
 
     <?php
-        $tipoEmpresa =  Array('Local'=>'Local','Nacional'=>'Nacional','Estrangeira'=> 'Estrangeira');
+        $tipoEmpresa =  Array('prompt' => 'Selecione...', 'Local'=>'Local','Nacional'=>'Nacional','Estrangeira'=> 'Estrangeira');
         $form = ActiveForm::begin();
     ?>
 

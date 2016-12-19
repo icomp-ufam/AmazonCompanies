@@ -7,13 +7,6 @@ $config = [
     'basePath' => dirname(__DIR__),
     'bootstrap' => ['log'],
     'components' => [		
-     /*	'view' => [
-    		'theme' => [
-    			'pathMap' => ['@app/views' => ['@app/themes/w3-by-lg', '@app/views']
-    			],
-    			'baseUrl' => '@web/../themes/w3-by-lg',
-    		],	
-    	],*/
         'request' => [
             // !!! insert a secret key in the following (if it is empty) - this is required by cookie validation
             'cookieValidationKey' => 't3pEM-8tvEVvdoK1VEVtIIf8X5H7d1Bz',
@@ -33,7 +26,15 @@ $config = [
             // send all mails to a file by default. You have to set
             // 'useFileTransport' to false and configure a transport
             // for the mailer to send real emails.
-            'useFileTransport' => true,
+            'useFileTransport' => true, // alterar para false para mandar emails de verdade
+        		'transport' => [
+        				'class' => 'Swift_SmtpTransport',
+        				'host' => 'smtp.gmail.com',
+        				'username' => '', // inserir o email que vai mandar os emails
+        				'password' => '', // inserir a senha do email q vai mandar os emails
+        				'port' => '587',
+        				'encryption' => 'tls'
+        		]
         ],
         'log' => [
             'traceLevel' => YII_DEBUG ? 3 : 0,
@@ -45,28 +46,6 @@ $config = [
             ],
         ],
         'db' => require(__DIR__ . '/db.php'),
-    		
-    	// BACKUP
-    		/*
-    		 'urlManager' => [
-    		 'enablePrettyUrl' => true,
-    		 'showScriptName' => false,
-    		 'rules' => [
-    		 ],
-    		 ],
-    		 */
-        
-        // Habilitando a se
-        
-        
-        /*
-        'urlManager' => [
-            'enablePrettyUrl' => true,
-            'showScriptName' => false,
-            'rules' => [
-            ],
-        ],
-        */
     ],
 	'modules' => [
 			'gridview' =>  [

@@ -29,6 +29,10 @@ class ComposerStaticInit82d3d59d0f27e0ffbe5e405f66b5b153
         array (
             'phpDocumentor\\Reflection\\' => 25,
         ),
+        'm' => 
+        array (
+            'miloschuman\\highcharts\\' => 23,
+        ),
         'k' => 
         array (
             'kartik\\widgets\\' => 15,
@@ -45,7 +49,9 @@ class ComposerStaticInit82d3d59d0f27e0ffbe5e405f66b5b153
             'kartik\\plugins\\popover\\' => 23,
             'kartik\\plugins\\fileinput\\' => 25,
             'kartik\\plugins\\depdrop\\' => 23,
+            'kartik\\password\\' => 16,
             'kartik\\mpdf\\' => 12,
+            'kartik\\helpers\\' => 15,
             'kartik\\growl\\' => 13,
             'kartik\\grid\\' => 12,
             'kartik\\form\\' => 12,
@@ -56,9 +62,11 @@ class ComposerStaticInit82d3d59d0f27e0ffbe5e405f66b5b153
             'kartik\\datetime\\' => 16,
             'kartik\\date\\' => 12,
             'kartik\\color\\' => 13,
+            'kartik\\builder\\' => 15,
             'kartik\\base\\' => 12,
             'kartik\\alert\\' => 13,
             'kartik\\affix\\' => 13,
+            'kartik\\' => 7,
         ),
         'c' => 
         array (
@@ -140,6 +148,10 @@ class ComposerStaticInit82d3d59d0f27e0ffbe5e405f66b5b153
             1 => __DIR__ . '/..' . '/phpdocumentor/type-resolver/src',
             2 => __DIR__ . '/..' . '/phpdocumentor/reflection-docblock/src',
         ),
+        'miloschuman\\highcharts\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/miloschuman/yii2-highcharts-widget/src',
+        ),
         'kartik\\widgets\\' => 
         array (
             0 => __DIR__ . '/..' . '/kartik-v/yii2-widgets',
@@ -196,9 +208,17 @@ class ComposerStaticInit82d3d59d0f27e0ffbe5e405f66b5b153
         array (
             0 => __DIR__ . '/..' . '/kartik-v/dependent-dropdown',
         ),
+        'kartik\\password\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/kartik-v/yii2-password',
+        ),
         'kartik\\mpdf\\' => 
         array (
             0 => __DIR__ . '/..' . '/kartik-v/yii2-mpdf',
+        ),
+        'kartik\\helpers\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/kartik-v/yii2-helpers',
         ),
         'kartik\\growl\\' => 
         array (
@@ -240,6 +260,10 @@ class ComposerStaticInit82d3d59d0f27e0ffbe5e405f66b5b153
         array (
             0 => __DIR__ . '/..' . '/kartik-v/yii2-widget-colorinput',
         ),
+        'kartik\\builder\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/kartik-v/yii2-builder',
+        ),
         'kartik\\base\\' => 
         array (
             0 => __DIR__ . '/..' . '/kartik-v/yii2-krajee-base',
@@ -251,6 +275,10 @@ class ComposerStaticInit82d3d59d0f27e0ffbe5e405f66b5b153
         'kartik\\affix\\' => 
         array (
             0 => __DIR__ . '/..' . '/kartik-v/yii2-widget-affix',
+        ),
+        'kartik\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/kartik-v/strength-meter',
         ),
         'cebe\\markdown\\' => 
         array (

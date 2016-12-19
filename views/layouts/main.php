@@ -45,16 +45,16 @@ AppAsset::register($this);
     					['label' => 'Página Inicial', 'url' => ['/site/adm']],
     					['label' => 'Empresas',
     					'items' =>[
-    					['label' => 'Cadastrar Dados', 'url' => ['caddadosemp']],
+    					['label' => 'Cadastrar Dados', 'url' => ['/site/caddadosemp']],
     					['label' => 'Listar Empresas Cadastradas', 'url' => ['empresa/index']],
     					]],
     					
     					['label' => 'Usuários',
     					'items' => [
-    					['label' => 'Cadastrar', 'url' => ['/site/caduseradm']],
+    					['label' => 'Cadastrar', 'url' => ['/cadadm/create']],
     							//'<li class="divider"></li>',
     							//'<li class="dropdown-header">Dropdown Header</li>',
-    							['label' => 'Listar', 'url' => ['/site/listusersadm']],
+    							['label' => 'Listar', 'url' => ['/cadadm/']],
     					]],
     					['label' => 'Notificações '. Html::tag('span', '15', ['class' => 'badge']),
     					'items' => [
@@ -64,9 +64,7 @@ AppAsset::register($this);
     							['label' => Html::tag('span', '3', ['class' => 'badge']).' Alteração de Dados', 'url' => ['validaltdados']],
     							['label' => Html::tag('span', '9', ['class' => 'badge']).' Cadastro', 'url' => ['/usuario/']],
     					]],
-    					['label' => 'Seu Perfil', 'url' => ['/site/altcad']],
-    					
-    					 
+    					['label' => 'Seu Perfil', 'url' => ['/usuario/update', 'id' => Yii::$app->user->getId()]], 
     					Yii::$app->user->isGuest ? (
     							['label' => 'Entrar', 'url' => ['/site/login']]
     							) : (
@@ -89,11 +87,11 @@ AppAsset::register($this);
     					['label' => 'Página Inicial', 'url' => ['/site/aluno']],
     					['label' => 'Empresas',
     					'items' =>[
-    							['label' => 'Cadastrar Dados', 'url' => ['caddadosemp']],
-    							['label' => 'Listar Empresas Cadastradas', 'url' => ['empresa/index']],
+    							['label' => 'Cadastrar Dados', 'url' => ['/site/caddadosemp']],
+    							['label' => 'Listar Empresas Cadastradas', 'url' => ['/empresa/index']],
     					]],
     					['label' => 'Notificações '. Html::tag('span', '3', ['class' => 'badge'])],
-    					['label' => 'Seu Perfil', 'url' => ['/site/altcad']],
+    					['label' => 'Seu Perfil', 'url' => ['/usuario/update', 'id' => Yii::$app->user->getId()]],
     					['label' => 'Sobre', 'url' => ['/site/about']],
     					 
     					Yii::$app->user->isGuest ? (
@@ -117,10 +115,10 @@ AppAsset::register($this);
     					['label' => 'Página Inicial', 'url' => ['/site/empresa']],
     					['label' => 'Empresas',
     					'items' =>[
-    							['label' => 'Cadastrar Informações', 'url' => ['cadinfoemp']],
+    							['label' => 'Cadastrar Informações', 'url' => ['/site/cadinfoemp']],
     							['label' => 'Listar Empresas Cadastradas', 'url' => ['empresa/index']],
     					]],
-    					['label' => 'Seu Perfil', 'url' => ['/site/altcademp']],
+    					['label' => 'Seu Perfil', 'url' => ['/usuario/update', 'id' => Yii::$app->user->getId()]],
     					['label' => 'Sobre', 'url' => ['/site/about']],
     					
     					
@@ -147,7 +145,6 @@ AppAsset::register($this);
             	['label' => 'Contato', 'url' => ['/site/contact']],
             	['label' => 'Sobre', 'url' => ['/site/about']],
             	
-        	
             	Yii::$app->user->isGuest ? (
                 	['label' => 'Entrar', 'url' => ['/site/login']]
             	) : (

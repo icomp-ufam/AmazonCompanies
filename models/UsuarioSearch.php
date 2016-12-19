@@ -41,12 +41,15 @@ class UsuarioSearch extends Usuario
      */
     public function search($params)
     {
-        $query = Usuario::find();
+        $query = Usuario::find()->indexBy('idUsuario');
 
         // add conditions that should always apply here
 
         $dataProvider = new ActiveDataProvider([
             'query' => $query,
+        		'pagination' => [
+        				'pagesize' => 10
+        		]
         ]);
 
         $this->load($params);
@@ -71,4 +74,40 @@ class UsuarioSearch extends Usuario
 
         return $dataProvider;
     }
+    
+    public function getFormAttribs() {
+    	return [
+    
+    			'idUsuario' =>[
+    					'type' =>  'hiddenInput',
+    					'columnOptions' => ['hidden'=>true]
+    			],
+    			'login' => [
+    					'type' => 'staticInput',
+    			],
+    			'nome' => [
+    					'type' => 'staticInput',
+    			],
+    			'email' => [
+    					'type' => 'staticInput',
+    			],
+    			'ativo' => [
+    	
+    					  'label' => 'Ativar',
+    	'type' => 'widget',
+    	'widgetClass' => \kartik\widgets\SwitchInput::classname(),
+    	'options' =>
+    	[
+    			'pluginOptions' => [
+    					'onColor' => 'success',
+    					'onText' => 'Ativado',
+    					'offText' => 'Desativado'
+    			]
+    	],
+    	
+    			]
+    
+    	];
+    }
+    
 }
