@@ -11,6 +11,7 @@
       <excludeFolder url="file://$MODULE_DIR$/vendor/bower-asset/yii2-pjax" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/bower/bootstrap" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/bower/bootstrap3-dialog" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/bower/highcharts" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/bower/jquery" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/bower/jquery.inputmask" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/bower/punycode" />
@@ -30,11 +31,15 @@
       <excludeFolder url="file://$MODULE_DIR$/vendor/kartik-v/bootstrap-star-rating" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/kartik-v/dependent-dropdown" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/kartik-v/mpdf" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/kartik-v/strength-meter" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/kartik-v/yii2-builder" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/kartik-v/yii2-dialog" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/kartik-v/yii2-editable" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/kartik-v/yii2-grid" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/kartik-v/yii2-helpers" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/kartik-v/yii2-krajee-base" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/kartik-v/yii2-mpdf" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/kartik-v/yii2-password" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/kartik-v/yii2-popover-x" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/kartik-v/yii2-widget-activeform" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/kartik-v/yii2-widget-affix" />
@@ -55,6 +60,7 @@
       <excludeFolder url="file://$MODULE_DIR$/vendor/kartik-v/yii2-widget-touchspin" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/kartik-v/yii2-widget-typeahead" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/kartik-v/yii2-widgets" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/miloschuman/yii2-highcharts-widget" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/myclabs/deep-copy" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/phpdocumentor/reflection-common" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/phpdocumentor/reflection-docblock" />
@@ -133,6 +139,7 @@
           <root url="file://$MODULE_DIR$/vendor/bower-asset/yii2-pjax" />
           <root url="file://$MODULE_DIR$/vendor/bower/bootstrap" />
           <root url="file://$MODULE_DIR$/vendor/bower/bootstrap3-dialog" />
+          <root url="file://$MODULE_DIR$/vendor/bower/highcharts" />
           <root url="file://$MODULE_DIR$/vendor/bower/jquery" />
           <root url="file://$MODULE_DIR$/vendor/bower/jquery.inputmask" />
           <root url="file://$MODULE_DIR$/vendor/bower/punycode" />
@@ -152,11 +159,15 @@
           <root url="file://$MODULE_DIR$/vendor/kartik-v/bootstrap-star-rating" />
           <root url="file://$MODULE_DIR$/vendor/kartik-v/dependent-dropdown" />
           <root url="file://$MODULE_DIR$/vendor/kartik-v/mpdf" />
+          <root url="file://$MODULE_DIR$/vendor/kartik-v/strength-meter" />
+          <root url="file://$MODULE_DIR$/vendor/kartik-v/yii2-builder" />
           <root url="file://$MODULE_DIR$/vendor/kartik-v/yii2-dialog" />
           <root url="file://$MODULE_DIR$/vendor/kartik-v/yii2-editable" />
           <root url="file://$MODULE_DIR$/vendor/kartik-v/yii2-grid" />
+          <root url="file://$MODULE_DIR$/vendor/kartik-v/yii2-helpers" />
           <root url="file://$MODULE_DIR$/vendor/kartik-v/yii2-krajee-base" />
           <root url="file://$MODULE_DIR$/vendor/kartik-v/yii2-mpdf" />
+          <root url="file://$MODULE_DIR$/vendor/kartik-v/yii2-password" />
           <root url="file://$MODULE_DIR$/vendor/kartik-v/yii2-popover-x" />
           <root url="file://$MODULE_DIR$/vendor/kartik-v/yii2-widget-activeform" />
           <root url="file://$MODULE_DIR$/vendor/kartik-v/yii2-widget-affix" />
@@ -177,6 +188,7 @@
           <root url="file://$MODULE_DIR$/vendor/kartik-v/yii2-widget-touchspin" />
           <root url="file://$MODULE_DIR$/vendor/kartik-v/yii2-widget-typeahead" />
           <root url="file://$MODULE_DIR$/vendor/kartik-v/yii2-widgets" />
+          <root url="file://$MODULE_DIR$/vendor/miloschuman/yii2-highcharts-widget" />
           <root url="file://$MODULE_DIR$/vendor/myclabs/deep-copy" />
           <root url="file://$MODULE_DIR$/vendor/phpdocumentor/reflection-common" />
           <root url="file://$MODULE_DIR$/vendor/phpdocumentor/reflection-docblock" />
@@ -231,6 +243,7 @@
           <root url="file://$MODULE_DIR$/vendor/bower-asset/yii2-pjax" />
           <root url="file://$MODULE_DIR$/vendor/bower/bootstrap" />
           <root url="file://$MODULE_DIR$/vendor/bower/bootstrap3-dialog" />
+          <root url="file://$MODULE_DIR$/vendor/bower/highcharts" />
           <root url="file://$MODULE_DIR$/vendor/bower/jquery" />
           <root url="file://$MODULE_DIR$/vendor/bower/jquery.inputmask" />
           <root url="file://$MODULE_DIR$/vendor/bower/punycode" />
@@ -250,11 +263,15 @@
           <root url="file://$MODULE_DIR$/vendor/kartik-v/bootstrap-star-rating" />
           <root url="file://$MODULE_DIR$/vendor/kartik-v/dependent-dropdown" />
           <root url="file://$MODULE_DIR$/vendor/kartik-v/mpdf" />
+          <root url="file://$MODULE_DIR$/vendor/kartik-v/strength-meter" />
+          <root url="file://$MODULE_DIR$/vendor/kartik-v/yii2-builder" />
           <root url="file://$MODULE_DIR$/vendor/kartik-v/yii2-dialog" />
           <root url="file://$MODULE_DIR$/vendor/kartik-v/yii2-editable" />
           <root url="file://$MODULE_DIR$/vendor/kartik-v/yii2-grid" />
+          <root url="file://$MODULE_DIR$/vendor/kartik-v/yii2-helpers" />
           <root url="file://$MODULE_DIR$/vendor/kartik-v/yii2-krajee-base" />
           <root url="file://$MODULE_DIR$/vendor/kartik-v/yii2-mpdf" />
+          <root url="file://$MODULE_DIR$/vendor/kartik-v/yii2-password" />
           <root url="file://$MODULE_DIR$/vendor/kartik-v/yii2-popover-x" />
           <root url="file://$MODULE_DIR$/vendor/kartik-v/yii2-widget-activeform" />
           <root url="file://$MODULE_DIR$/vendor/kartik-v/yii2-widget-affix" />
@@ -275,6 +292,7 @@
           <root url="file://$MODULE_DIR$/vendor/kartik-v/yii2-widget-touchspin" />
           <root url="file://$MODULE_DIR$/vendor/kartik-v/yii2-widget-typeahead" />
           <root url="file://$MODULE_DIR$/vendor/kartik-v/yii2-widgets" />
+          <root url="file://$MODULE_DIR$/vendor/miloschuman/yii2-highcharts-widget" />
           <root url="file://$MODULE_DIR$/vendor/myclabs/deep-copy" />
           <root url="file://$MODULE_DIR$/vendor/phpdocumentor/reflection-common" />
           <root url="file://$MODULE_DIR$/vendor/phpdocumentor/reflection-docblock" />
