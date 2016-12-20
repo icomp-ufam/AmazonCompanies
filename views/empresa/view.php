@@ -17,33 +17,13 @@ $this->defaultExtension = $model->logotipo
 ?>
 <div class="empresa-view">
 
-
-
     <p>
-
         <h1>
             <?= Html::a(Html::img('img/'.$this->defaultExtension,  ['style'=>'width:50px']) ) ?>
             <?= Html::encode('Analise dos dados da empresa '.$this->title) ?>
         </h1>
     <?= $model->fonte ?>
     </p>
-
-    <!--?= DetailView::widget([
-        'model' => $model,
-        'attributes' => [
-            //'idEmpresa',
-            //'nome',
-            //'analise:ntext',
-            //'fonte',
-            //[
-             //   'attribute'=>'Tipo_Empresa_idTipo_Empresa',
-              //  'value'=>$model->tipo_empresa->nome
-            //],
-         //   'tipo',
-           // 'logotipo'
-        ],
-    ]) ?-->
-
 </div>
 <?php
 
@@ -64,22 +44,19 @@ $analiseProvider = new ActiveDataProvider([
 $posts = $analiseProvider->getModels();
 $analiseProvider->pagination->pageParam = 'analise-page';
 $analiseProvider->sort->sortParam= 'analise-sort';
-//echo GridView::widget([
-//    'dataProvider' => $analiseProvider,
-//]);
+
 ?>
-
     <div id="analise" class="row">
-
         <?php
             if (!empty($posts)){
                 echo '<div class="col-md-10" style="background-color: lavender">';
                 print_r($posts[0]['texto']);
                 echo '</div>';
-            }else{
-
-        echo '<a href="http://localhost/AmazonCompanies/web/index.php?r=analise%2Fcreate&idEmpresa='.$model->idEmpresa.'"><button class="btn btn-default">Criar Análise</button> </a>';
-
+            }else {
+                echo "<div class='text-info'>Essa empresa não possui análise registrada! </div><br>";
+                if ((Yii::$app->user->getIdentificadorPessoa() == '1') or (Yii::$app->user->getIdentificadorPessoa() == '2')){
+                    echo '<a href="http://localhost/AmazonCompanies/web/index.php?r=analise%2Fcreate&idEmpresa=' . $model->idEmpresa . '"><button class="btn btn-default">Criar Análise</button> </a>';
+                }
             }
         ?>
     </div>
