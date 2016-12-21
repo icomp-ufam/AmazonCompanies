@@ -15,28 +15,60 @@ $this->params['breadcrumbs'][] = $this->title;
 <div class="analise-view">
 
     <h1><?= Html::encode($this->title) ?></h1>
-
+	
 
     <div id="analise" class="row">
 
         <div class="title-body">
-            Análise
+            <h3><strong>Análise</strong></h3>
         </div>
          <div class="col-md-8" style="background-color: lavender">
              <?= $model->texto ?>
         </div>
-
+		
     </div>
-
+<?php if(Yii::$app->user->getIdentificadorPessoa() == '1'){?>
     <p>
-        <?= Html::a('Update', ['update', 'id' => $model->idanalise], ['class' => 'btn btn-primary']) ?>
-        <?= Html::a('Delete', ['delete', 'id' => $model->idanalise], [
-            'class' => 'btn btn-danger',
+    <br>
+    <div class = "row">
+    
+    <?php echo '<label class="control-label"><h4>Status: </h4></label>'; ?>
+    <?php if($model->status == 0){
+    		echo "Desativado";
+    	}else{ 
+     		echo "Ativado";
+    	} ?>   
+        </div>
+    	<br>
+    	<?php if($model->status == 1){?>
+    	<?=
+    	Html::a('Invalidar Análise', ['status', 'id' => $model->idanalise], [
+    			'class' => 'btn btn-danger',
+    			'data' =>[
+    			'confirm' => 'Deseja invalidar a análise?'
+    	]]) ?>
+    	<?php }else{ ?>
+    	<?=
+    	Html::a('Validar Análise', ['status', 'id' => $model->idanalise], [
+    			'class' => 'btn btn-success',
+    			'data' =>[
+    			'confirm' => 'Deseja validar a análise?'
+    	]]) ?>
+    	<?php } ?>
+    	<br>
+        <br>
+        <?= Html::a('Editar Análise', ['update', 'id' => $model->idanalise], ['class' => 'btn btn-primary']) ?>
+        <?= Html::a('Apagar Análise', ['delete', 'id' => $model->idanalise], [
+            'class' => 'btn btn-primary',
             'data' => [
-                'confirm' => 'Are you sure you want to delete this item?',
+                'confirm' => 'Tem certeza que deseja apagar a análise?',
                 'method' => 'post',
             ],
         ]) ?>
+         <?=
+         // ativar funcionalidade de comentários
+         Html::button('Enviar Comentário', ['class' => 'btn btn-primary']) ?>
+        <?php } ?>
     </p>
     <!--?= DetailView::widget([
         'model' => $model,

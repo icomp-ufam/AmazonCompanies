@@ -63,7 +63,7 @@ AppAsset::register($this);
     							['label' => Html::tag('span', '3', ['class' => 'badge']).' Análises', 'url' => ['/analise/index']],
     							//'<li class="divider"></li>',
     							//'<li class="dropdown-header">Dropdown Header</li>',
-    							['label' => Html::tag('span', '3', ['class' => 'badge']).' Alteração de Dados', 'url' => ['validaltdados']],
+    							['label' => Html::tag('span', '3', ['class' => 'badge']).' Alteração de Dados', 'url' => ['/site/validaltdados']],
     							['label' => Html::tag('span', '9', ['class' => 'badge']).' Cadastro', 'url' => ['/usuario/']],
     					]],
     					['label' => 'Seu Perfil', 'url' => ['/usuario/update', 'id' => Yii::$app->user->getId()]], 
