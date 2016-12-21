@@ -23,7 +23,7 @@ $this->params['breadcrumbs'][] = $this->title;
         if(Yii::$app->user->getIdentificadorPessoa() == '1'){ //Administrador
     ?>
             <p>
-                <?= Html::a('Create Empresa', ['create'], ['class' => 'btn btn-success']) ?>
+                <?= Html::a('Criar Empresa', ['create'], ['class' => 'btn btn-success']) ?>
 
             </p>
 
@@ -33,7 +33,7 @@ $this->params['breadcrumbs'][] = $this->title;
             'columns' => [
                 ['class' => 'yii\grid\CheckboxColumn'],
 
-                'idEmpresa',
+          
                 [
                     'attribute' => 'Logotipo',
                     'format' => 'html',
@@ -93,8 +93,6 @@ $this->params['breadcrumbs'][] = $this->title;
                 'filterModel' => $searchModel,
                 'columns' => [
                     ['class' => 'yii\grid\CheckboxColumn'],
-
-                    'idEmpresa',
                     [
                         'attribute' => 'Logotipo',
                         'format' => 'html',
@@ -122,8 +120,6 @@ $this->params['breadcrumbs'][] = $this->title;
         'filterModel' => $searchModel,
         'columns' => [
             ['class' => 'yii\grid\CheckboxColumn'],
-
-            'idEmpresa',
             [
                 'attribute' => 'Logotipo',
                 'format' => 'html',

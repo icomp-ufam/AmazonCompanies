@@ -2,8 +2,8 @@
 
 return [
     'class' => 'yii\db\Connection',
-    'dsn' => 'mysql:host=localhost;dbname=amazonCompanies2',
+    'dsn' => 'mysql:host=localhost;dbname=amazonCompanies',
     'username' => 'root',
-    'password' => 'root',
+    'password' => '',
     'charset' => 'utf8',
 ];

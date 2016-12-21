@@ -55013,3 +55013,1441 @@ $_SERVER = [
     'REQUEST_TIME_FLOAT' => 1482181552.026
     'REQUEST_TIME' => 1482181552
 ]
+2016-12-21 03:29:47 [::1][-][-][error][yii\db\Exception] exception 'PDOException' with message 'SQLSTATE[HY000] [1049] Unknown database 'amazoncompanies2'' in C:\xampp\htdocs\AmazonCompanies\vendor\yiisoft\yii2\db\Connection.php:602
+Stack trace:
+#0 C:\xampp\htdocs\AmazonCompanies\vendor\yiisoft\yii2\db\Connection.php(602): PDO->__construct('mysql:host=loca...', 'root', '', NULL)
+#1 C:\xampp\htdocs\AmazonCompanies\vendor\yiisoft\yii2\db\Connection.php(544): yii\db\Connection->createPdoInstance()
+#2 C:\xampp\htdocs\AmazonCompanies\vendor\yiisoft\yii2\db\Connection.php(863): yii\db\Connection->open()
+#3 C:\xampp\htdocs\AmazonCompanies\vendor\yiisoft\yii2\db\Connection.php(850): yii\db\Connection->getMasterPdo()
+#4 C:\xampp\htdocs\AmazonCompanies\vendor\yiisoft\yii2\db\Command.php(219): yii\db\Connection->getSlavePdo()
+#5 C:\xampp\htdocs\AmazonCompanies\vendor\yiisoft\yii2\db\Command.php(894): yii\db\Command->prepare('<span class="ke...')
+#6 C:\xampp\htdocs\AmazonCompanies\vendor\yiisoft\yii2\db\Command.php(362): yii\db\Command->queryInternal('<span class="st...', '<span class="ke...')
+#7 C:\xampp\htdocs\AmazonCompanies\vendor\yiisoft\yii2\db\mysql\Schema.php(198): yii\db\Command->queryAll()
+#8 C:\xampp\htdocs\AmazonCompanies\vendor\yiisoft\yii2\db\mysql\Schema.php(97): yii\db\mysql\Schema->findColumns(Object(yii\db\TableSchema))
+#9 C:\xampp\htdocs\AmazonCompanies\vendor\yiisoft\yii2\db\Schema.php(147): yii\db\mysql\Schema->loadTableSchema('<span class="st...')
+#10 C:\xampp\htdocs\AmazonCompanies\vendor\yiisoft\yii2\db\ActiveRecord.php(296): yii\db\Schema->getTableSchema('<span class="st...')
+#11 C:\xampp\htdocs\AmazonCompanies\vendor\yiisoft\yii2\db\ActiveRecord.php(330): yii\db\ActiveRecord::getTableSchema()
+#12 C:\xampp\htdocs\AmazonCompanies\vendor\yiisoft\yii2\db\BaseActiveRecord.php(461): yii\db\ActiveRecord->attributes()
+#13 C:\xampp\htdocs\AmazonCompanies\vendor\yiisoft\yii2\db\BaseActiveRecord.php(280): yii\db\BaseActiveRecord->hasAttribute('<span class="st...')
+#14 C:\xampp\htdocs\AmazonCompanies\vendor\yiisoft\yii2\validators\Validator.php(262): yii\db\BaseActiveRecord->__get('<span class="st...')
+#15 C:\xampp\htdocs\AmazonCompanies\vendor\yiisoft\yii2\base\Model.php(356): yii\validators\Validator->validateAttributes(Object(app\models\IndiceSearch), '[<span class="s...')
+#16 C:\xampp\htdocs\AmazonCompanies\models\IndiceSearch.php(54): yii\base\Model->validate()
+#17 C:\xampp\htdocs\AmazonCompanies\controllers\IndiceController.php(39): app\models\IndiceSearch->search('[<span class="s...')
+#18 [internal function]: app\controllers\IndiceController->actionIndex()
+#19 C:\xampp\htdocs\AmazonCompanies\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array('[<span class="t...', '[]')
+#20 C:\xampp\htdocs\AmazonCompanies\vendor\yiisoft\yii2\base\Controller.php(154): yii\base\InlineAction->runWithParams('[<span class="s...')
+#21 C:\xampp\htdocs\AmazonCompanies\vendor\yiisoft\yii2\base\Module.php(454): yii\base\Controller->runAction('<span class="st...', '[<span class="s...')
+#22 C:\xampp\htdocs\AmazonCompanies\vendor\yiisoft\yii2\web\Application.php(100): yii\base\Module->runAction('<span class="st...', '[<span class="s...')
+#23 C:\xampp\htdocs\AmazonCompanies\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#24 C:\xampp\htdocs\AmazonCompanies\web\index.php(12): yii\base\Application->run()
+#25 {main}
+
+Next exception 'yii\db\Exception' with message 'SQLSTATE[HY000] [1049] Unknown database 'amazoncompanies2'' in C:\xampp\htdocs\AmazonCompanies\vendor\yiisoft\yii2\db\Connection.php:549
+Stack trace:
+#0 C:\xampp\htdocs\AmazonCompanies\vendor\yiisoft\yii2\db\Connection.php(863): yii\db\Connection->open()
+#1 C:\xampp\htdocs\AmazonCompanies\vendor\yiisoft\yii2\db\Connection.php(850): yii\db\Connection->getMasterPdo()
+#2 C:\xampp\htdocs\AmazonCompanies\vendor\yiisoft\yii2\db\Command.php(219): yii\db\Connection->getSlavePdo()
+#3 C:\xampp\htdocs\AmazonCompanies\vendor\yiisoft\yii2\db\Command.php(894): yii\db\Command->prepare('<span class="ke...')
+#4 C:\xampp\htdocs\AmazonCompanies\vendor\yiisoft\yii2\db\Command.php(362): yii\db\Command->queryInternal('<span class="st...', '<span class="ke...')
+#5 C:\xampp\htdocs\AmazonCompanies\vendor\yiisoft\yii2\db\mysql\Schema.php(198): yii\db\Command->queryAll()
+#6 C:\xampp\htdocs\AmazonCompanies\vendor\yiisoft\yii2\db\mysql\Schema.php(97): yii\db\mysql\Schema->findColumns(Object(yii\db\TableSchema))
+#7 C:\xampp\htdocs\AmazonCompanies\vendor\yiisoft\yii2\db\Schema.php(147): yii\db\mysql\Schema->loadTableSchema('<span class="st...')
+#8 C:\xampp\htdocs\AmazonCompanies\vendor\yiisoft\yii2\db\ActiveRecord.php(296): yii\db\Schema->getTableSchema('<span class="st...')
+#9 C:\xampp\htdocs\AmazonCompanies\vendor\yiisoft\yii2\db\ActiveRecord.php(330): yii\db\ActiveRecord::getTableSchema()
+#10 C:\xampp\htdocs\AmazonCompanies\vendor\yiisoft\yii2\db\BaseActiveRecord.php(461): yii\db\ActiveRecord->attributes()
+#11 C:\xampp\htdocs\AmazonCompanies\vendor\yiisoft\yii2\db\BaseActiveRecord.php(280): yii\db\BaseActiveRecord->hasAttribute('<span class="st...')
+#12 C:\xampp\htdocs\AmazonCompanies\vendor\yiisoft\yii2\validators\Validator.php(262): yii\db\BaseActiveRecord->__get('<span class="st...')
+#13 C:\xampp\htdocs\AmazonCompanies\vendor\yiisoft\yii2\base\Model.php(356): yii\validators\Validator->validateAttributes(Object(app\models\IndiceSearch), '[<span class="s...')
+#14 C:\xampp\htdocs\AmazonCompanies\models\IndiceSearch.php(54): yii\base\Model->validate()
+#15 C:\xampp\htdocs\AmazonCompanies\controllers\IndiceController.php(39): app\models\IndiceSearch->search('[<span class="s...')
+#16 [internal function]: app\controllers\IndiceController->actionIndex()
+#17 C:\xampp\htdocs\AmazonCompanies\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array('[<span class="t...', '[]')
+#18 C:\xampp\htdocs\AmazonCompanies\vendor\yiisoft\yii2\base\Controller.php(154): yii\base\InlineAction->runWithParams('[<span class="s...')
+#19 C:\xampp\htdocs\AmazonCompanies\vendor\yiisoft\yii2\base\Module.php(454): yii\base\Controller->runAction('<span class="st...', '[<span class="s...')
+#20 C:\xampp\htdocs\AmazonCompanies\vendor\yiisoft\yii2\web\Application.php(100): yii\base\Module->runAction('<span class="st...', '[<span class="s...')
+#21 C:\xampp\htdocs\AmazonCompanies\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#22 C:\xampp\htdocs\AmazonCompanies\web\index.php(12): yii\base\Application->run()
+#23 {main}
+Additional Information:
+
+2016-12-21 03:29:47 [::1][-][-][info][application] $_GET = [
+    'r' => 'indice'
+]
+
+$_COOKIE = [
+    '_csrf' => 'cadb28148d09ef0559151aaee49827f402e2c1cf1f01140bb6559e10fa6b273aa:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"AGUjsbBq1uolDiqSRZrw3q66p4NgYeeI\";}'
+    'PHPSESSID' => 'ps8ncr2jaoa5ocf5e84bvv18n0'
+]
+
+$_SERVER = [
+    'MIBDIRS' => 'C:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'C:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.8'
+    'HTTP_COOKIE' => '_csrf=cadb28148d09ef0559151aaee49827f402e2c1cf1f01140bb6559e10fa6b273aa%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22AGUjsbBq1uolDiqSRZrw3q66p4NgYeeI%22%3B%7D; PHPSESSID=ps8ncr2jaoa5ocf5e84bvv18n0'
+    'PATH' => 'C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Program Files (x86)\\Intel\\iCLS Client\\;C:\\Program Files\\Intel\\iCLS Client\\;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files\\Acer\\Remote Files\\;C:\\Program Files (x86)\\Windows Kits\\8.1\\Windows Performance Toolkit\\;C:\\Program Files (x86)\\Microsoft SDKs\\TypeScript\\1.0\\;C:\\Program Files (x86)\\Windows Live\\Shared;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\RemObjects Software\\Elements\\bin;C:\\xampp\\php;C:\\ProgramData\\ComposerSetup\\bin;C:\\HashiCorp\\Vagrant\\bin;C:\\Users\\Saymon Souza\\AppData\\Roaming\\Composer\\vendor\\bin;C:\\Users\\Saymon Souza\\AppData\\Local\\Microsoft\\WindowsApps'
+    'SystemRoot' => 'C:\\WINDOWS'
+    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\WINDOWS'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.17 (Win32) OpenSSL/1.0.2d PHP/5.6.23 Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.17 (Win32) OpenSSL/1.0.2d PHP/5.6.23'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'C:/xampp/htdocs'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/xampp/htdocs'
+    'SERVER_ADMIN' => 'postmaster@localhost'
+    'SCRIPT_FILENAME' => 'C:/xampp/htdocs/AmazonCompanies/web/index.php'
+    'REMOTE_PORT' => '26406'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=indice'
+    'REQUEST_URI' => '/AmazonCompanies/web/index.php?r=indice'
+    'SCRIPT_NAME' => '/AmazonCompanies/web/index.php'
+    'PHP_SELF' => '/AmazonCompanies/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1482287387.226
+    'REQUEST_TIME' => 1482287387
+]
+2016-12-21 03:32:55 [::1][-][ps8ncr2jaoa5ocf5e84bvv18n0][error][yii\web\HttpException:404] exception 'yii\base\InvalidRouteException' with message 'Unable to resolve the request "conta".' in C:\xampp\htdocs\AmazonCompanies\vendor\yiisoft\yii2\base\Module.php:462
+Stack trace:
+#0 C:\xampp\htdocs\AmazonCompanies\vendor\yiisoft\yii2\web\Application.php(100): yii\base\Module->runAction('conta', Array)
+#1 C:\xampp\htdocs\AmazonCompanies\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 C:\xampp\htdocs\AmazonCompanies\web\index.php(12): yii\base\Application->run()
+#3 {main}
+
+Next exception 'yii\web\NotFoundHttpException' with message 'Page not found.' in C:\xampp\htdocs\AmazonCompanies\vendor\yiisoft\yii2\web\Application.php:112
+Stack trace:
+#0 C:\xampp\htdocs\AmazonCompanies\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 C:\xampp\htdocs\AmazonCompanies\web\index.php(12): yii\base\Application->run()
+#2 {main}
+2016-12-21 03:32:55 [::1][-][ps8ncr2jaoa5ocf5e84bvv18n0][info][application] $_GET = [
+    'r' => 'conta'
+]
+
+$_COOKIE = [
+    '_csrf' => 'cadb28148d09ef0559151aaee49827f402e2c1cf1f01140bb6559e10fa6b273aa:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"AGUjsbBq1uolDiqSRZrw3q66p4NgYeeI\";}'
+    'PHPSESSID' => 'ps8ncr2jaoa5ocf5e84bvv18n0'
+]
+
+$_SESSION = [
+    '__flash' => []
+]
+
+$_SERVER = [
+    'MIBDIRS' => 'C:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'C:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.8'
+    'HTTP_COOKIE' => '_csrf=cadb28148d09ef0559151aaee49827f402e2c1cf1f01140bb6559e10fa6b273aa%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22AGUjsbBq1uolDiqSRZrw3q66p4NgYeeI%22%3B%7D; PHPSESSID=ps8ncr2jaoa5ocf5e84bvv18n0'
+    'PATH' => 'C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Program Files (x86)\\Intel\\iCLS Client\\;C:\\Program Files\\Intel\\iCLS Client\\;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files\\Acer\\Remote Files\\;C:\\Program Files (x86)\\Windows Kits\\8.1\\Windows Performance Toolkit\\;C:\\Program Files (x86)\\Microsoft SDKs\\TypeScript\\1.0\\;C:\\Program Files (x86)\\Windows Live\\Shared;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\RemObjects Software\\Elements\\bin;C:\\xampp\\php;C:\\ProgramData\\ComposerSetup\\bin;C:\\HashiCorp\\Vagrant\\bin;C:\\Users\\Saymon Souza\\AppData\\Roaming\\Composer\\vendor\\bin;C:\\Users\\Saymon Souza\\AppData\\Local\\Microsoft\\WindowsApps'
+    'SystemRoot' => 'C:\\WINDOWS'
+    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\WINDOWS'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.17 (Win32) OpenSSL/1.0.2d PHP/5.6.23 Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.17 (Win32) OpenSSL/1.0.2d PHP/5.6.23'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'C:/xampp/htdocs'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/xampp/htdocs'
+    'SERVER_ADMIN' => 'postmaster@localhost'
+    'SCRIPT_FILENAME' => 'C:/xampp/htdocs/AmazonCompanies/web/index.php'
+    'REMOTE_PORT' => '26516'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=conta'
+    'REQUEST_URI' => '/AmazonCompanies/web/index.php?r=conta'
+    'SCRIPT_NAME' => '/AmazonCompanies/web/index.php'
+    'PHP_SELF' => '/AmazonCompanies/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1482287575.478
+    'REQUEST_TIME' => 1482287575
+]
+2016-12-21 03:33:42 [::1][-][ps8ncr2jaoa5ocf5e84bvv18n0][error][yii\web\HttpException:404] exception 'yii\base\InvalidRouteException' with message 'Unable to resolve the request "demonstracao".' in C:\xampp\htdocs\AmazonCompanies\vendor\yiisoft\yii2\base\Module.php:462
+Stack trace:
+#0 C:\xampp\htdocs\AmazonCompanies\vendor\yiisoft\yii2\web\Application.php(100): yii\base\Module->runAction('demonstracao', Array)
+#1 C:\xampp\htdocs\AmazonCompanies\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 C:\xampp\htdocs\AmazonCompanies\web\index.php(12): yii\base\Application->run()
+#3 {main}
+
+Next exception 'yii\web\NotFoundHttpException' with message 'Page not found.' in C:\xampp\htdocs\AmazonCompanies\vendor\yiisoft\yii2\web\Application.php:112
+Stack trace:
+#0 C:\xampp\htdocs\AmazonCompanies\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 C:\xampp\htdocs\AmazonCompanies\web\index.php(12): yii\base\Application->run()
+#2 {main}
+2016-12-21 03:33:42 [::1][-][ps8ncr2jaoa5ocf5e84bvv18n0][info][application] $_GET = [
+    'r' => 'demonstracao'
+]
+
+$_COOKIE = [
+    '_csrf' => 'cadb28148d09ef0559151aaee49827f402e2c1cf1f01140bb6559e10fa6b273aa:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"AGUjsbBq1uolDiqSRZrw3q66p4NgYeeI\";}'
+    'PHPSESSID' => 'ps8ncr2jaoa5ocf5e84bvv18n0'
+]
+
+$_SESSION = [
+    '__flash' => []
+]
+
+$_SERVER = [
+    'MIBDIRS' => 'C:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'C:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.8'
+    'HTTP_COOKIE' => '_csrf=cadb28148d09ef0559151aaee49827f402e2c1cf1f01140bb6559e10fa6b273aa%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22AGUjsbBq1uolDiqSRZrw3q66p4NgYeeI%22%3B%7D; PHPSESSID=ps8ncr2jaoa5ocf5e84bvv18n0'
+    'PATH' => 'C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Program Files (x86)\\Intel\\iCLS Client\\;C:\\Program Files\\Intel\\iCLS Client\\;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files\\Acer\\Remote Files\\;C:\\Program Files (x86)\\Windows Kits\\8.1\\Windows Performance Toolkit\\;C:\\Program Files (x86)\\Microsoft SDKs\\TypeScript\\1.0\\;C:\\Program Files (x86)\\Windows Live\\Shared;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\RemObjects Software\\Elements\\bin;C:\\xampp\\php;C:\\ProgramData\\ComposerSetup\\bin;C:\\HashiCorp\\Vagrant\\bin;C:\\Users\\Saymon Souza\\AppData\\Roaming\\Composer\\vendor\\bin;C:\\Users\\Saymon Souza\\AppData\\Local\\Microsoft\\WindowsApps'
+    'SystemRoot' => 'C:\\WINDOWS'
+    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\WINDOWS'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.17 (Win32) OpenSSL/1.0.2d PHP/5.6.23 Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.17 (Win32) OpenSSL/1.0.2d PHP/5.6.23'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'C:/xampp/htdocs'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/xampp/htdocs'
+    'SERVER_ADMIN' => 'postmaster@localhost'
+    'SCRIPT_FILENAME' => 'C:/xampp/htdocs/AmazonCompanies/web/index.php'
+    'REMOTE_PORT' => '26526'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=demonstracao'
+    'REQUEST_URI' => '/AmazonCompanies/web/index.php?r=demonstracao'
+    'SCRIPT_NAME' => '/AmazonCompanies/web/index.php'
+    'PHP_SELF' => '/AmazonCompanies/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1482287622.316
+    'REQUEST_TIME' => 1482287622
+]
+2016-12-21 13:36:47 [::1][-][-][error][yii\base\ErrorException:4] exception 'yii\base\ErrorException' with message 'syntax error, unexpected '<'' in C:\xampp\htdocs\AmazonCompanies\views\empresa\view.php:26
+Stack trace:
+#0 [internal function]: yii\base\ErrorHandler->handleFatalError()
+#1 {main}
+2016-12-21 13:36:47 [::1][-][-][info][application] $_GET = [
+    'r' => 'empresa/view'
+    'id' => '1'
+]
+
+$_COOKIE = [
+    '_csrf' => 'cadb28148d09ef0559151aaee49827f402e2c1cf1f01140bb6559e10fa6b273aa:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"AGUjsbBq1uolDiqSRZrw3q66p4NgYeeI\";}'
+    'PHPSESSID' => 'ps8ncr2jaoa5ocf5e84bvv18n0'
+]
+
+$_SERVER = [
+    'MIBDIRS' => 'C:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'C:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'
+    'HTTP_REFERER' => 'http://localhost/AmazonCompanies/web/index.php?r=empresa%2Findex'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.8'
+    'HTTP_COOKIE' => '_csrf=cadb28148d09ef0559151aaee49827f402e2c1cf1f01140bb6559e10fa6b273aa%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22AGUjsbBq1uolDiqSRZrw3q66p4NgYeeI%22%3B%7D; PHPSESSID=ps8ncr2jaoa5ocf5e84bvv18n0'
+    'PATH' => 'C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Program Files (x86)\\Intel\\iCLS Client\\;C:\\Program Files\\Intel\\iCLS Client\\;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files\\Acer\\Remote Files\\;C:\\Program Files (x86)\\Windows Kits\\8.1\\Windows Performance Toolkit\\;C:\\Program Files (x86)\\Microsoft SDKs\\TypeScript\\1.0\\;C:\\Program Files (x86)\\Windows Live\\Shared;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\RemObjects Software\\Elements\\bin;C:\\xampp\\php;C:\\ProgramData\\ComposerSetup\\bin;C:\\HashiCorp\\Vagrant\\bin;C:\\Users\\Saymon Souza\\AppData\\Roaming\\Composer\\vendor\\bin;C:\\Users\\Saymon Souza\\AppData\\Local\\Microsoft\\WindowsApps'
+    'SystemRoot' => 'C:\\WINDOWS'
+    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\WINDOWS'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.17 (Win32) OpenSSL/1.0.2d PHP/5.6.23 Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.17 (Win32) OpenSSL/1.0.2d PHP/5.6.23'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'C:/xampp/htdocs'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/xampp/htdocs'
+    'SERVER_ADMIN' => 'postmaster@localhost'
+    'SCRIPT_FILENAME' => 'C:/xampp/htdocs/AmazonCompanies/web/index.php'
+    'REMOTE_PORT' => '17270'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=empresa%2Fview&id=1'
+    'REQUEST_URI' => '/AmazonCompanies/web/index.php?r=empresa%2Fview&id=1'
+    'SCRIPT_NAME' => '/AmazonCompanies/web/index.php'
+    'PHP_SELF' => '/AmazonCompanies/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1482323806.997
+    'REQUEST_TIME' => 1482323806
+]
+2016-12-21 13:55:48 [::1][1][3qvb92gs0tcqlc55qj67hg2li3][error][yii\web\HttpException:404] exception 'yii\base\InvalidRouteException' with message 'Unable to resolve the request "tipo-demonstracao/index".' in C:\xampp\htdocs\AmazonCompanies\vendor\yiisoft\yii2\base\Module.php:462
+Stack trace:
+#0 C:\xampp\htdocs\AmazonCompanies\vendor\yiisoft\yii2\web\Application.php(100): yii\base\Module->runAction('tipo-demonstrac...', Array)
+#1 C:\xampp\htdocs\AmazonCompanies\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 C:\xampp\htdocs\AmazonCompanies\web\index.php(12): yii\base\Application->run()
+#3 {main}
+
+Next exception 'yii\web\NotFoundHttpException' with message 'Page not found.' in C:\xampp\htdocs\AmazonCompanies\vendor\yiisoft\yii2\web\Application.php:112
+Stack trace:
+#0 C:\xampp\htdocs\AmazonCompanies\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 C:\xampp\htdocs\AmazonCompanies\web\index.php(12): yii\base\Application->run()
+#2 {main}
+2016-12-21 13:55:48 [::1][1][3qvb92gs0tcqlc55qj67hg2li3][info][application] $_GET = [
+    'r' => 'tipo-demonstracao/index'
+]
+
+$_COOKIE = [
+    '_csrf' => 'cadb28148d09ef0559151aaee49827f402e2c1cf1f01140bb6559e10fa6b273aa:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"AGUjsbBq1uolDiqSRZrw3q66p4NgYeeI\";}'
+    'PHPSESSID' => '3qvb92gs0tcqlc55qj67hg2li3'
+    '_identity' => '1de54a1149b80de6528a96989c1654bdfc80c1563a5eee0bba83377ee513af81a:2:{i:0;s:9:\"_identity\";i:1;s:16:\"[1,null,2592000]\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__captcha/site/captcha' => 'drhefir'
+    '__captcha/site/captchacount' => 1
+    '__id' => 1
+]
+
+$_SERVER = [
+    'MIBDIRS' => 'C:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'C:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'
+    'HTTP_REFERER' => 'http://localhost/AmazonCompanies/web/index.php?r=site%2Fadm'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.8'
+    'HTTP_COOKIE' => '_csrf=cadb28148d09ef0559151aaee49827f402e2c1cf1f01140bb6559e10fa6b273aa%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22AGUjsbBq1uolDiqSRZrw3q66p4NgYeeI%22%3B%7D; PHPSESSID=3qvb92gs0tcqlc55qj67hg2li3; _identity=1de54a1149b80de6528a96989c1654bdfc80c1563a5eee0bba83377ee513af81a%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_identity%22%3Bi%3A1%3Bs%3A16%3A%22%5B1%2Cnull%2C2592000%5D%22%3B%7D'
+    'PATH' => 'C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Program Files (x86)\\Intel\\iCLS Client\\;C:\\Program Files\\Intel\\iCLS Client\\;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files\\Acer\\Remote Files\\;C:\\Program Files (x86)\\Windows Kits\\8.1\\Windows Performance Toolkit\\;C:\\Program Files (x86)\\Microsoft SDKs\\TypeScript\\1.0\\;C:\\Program Files (x86)\\Windows Live\\Shared;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\RemObjects Software\\Elements\\bin;C:\\xampp\\php;C:\\ProgramData\\ComposerSetup\\bin;C:\\HashiCorp\\Vagrant\\bin;C:\\Users\\Saymon Souza\\AppData\\Roaming\\Composer\\vendor\\bin;C:\\Users\\Saymon Souza\\AppData\\Local\\Microsoft\\WindowsApps'
+    'SystemRoot' => 'C:\\WINDOWS'
+    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\WINDOWS'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.17 (Win32) OpenSSL/1.0.2d PHP/5.6.23 Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.17 (Win32) OpenSSL/1.0.2d PHP/5.6.23'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'C:/xampp/htdocs'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/xampp/htdocs'
+    'SERVER_ADMIN' => 'postmaster@localhost'
+    'SCRIPT_FILENAME' => 'C:/xampp/htdocs/AmazonCompanies/web/index.php'
+    'REMOTE_PORT' => '30212'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=tipo-demonstracao%2Findex'
+    'REQUEST_URI' => '/AmazonCompanies/web/index.php?r=tipo-demonstracao%2Findex'
+    'SCRIPT_NAME' => '/AmazonCompanies/web/index.php'
+    'PHP_SELF' => '/AmazonCompanies/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1482324948.735
+    'REQUEST_TIME' => 1482324948
+]
+2016-12-21 13:56:30 [::1][1][3qvb92gs0tcqlc55qj67hg2li3][error][yii\web\HttpException:404] exception 'yii\base\InvalidRouteException' with message 'Unable to resolve the request: analise/validaltdados' in C:\xampp\htdocs\AmazonCompanies\vendor\yiisoft\yii2\base\Controller.php:125
+Stack trace:
+#0 C:\xampp\htdocs\AmazonCompanies\vendor\yiisoft\yii2\base\Module.php(454): yii\base\Controller->runAction('validaltdados', Array)
+#1 C:\xampp\htdocs\AmazonCompanies\vendor\yiisoft\yii2\web\Application.php(100): yii\base\Module->runAction('analise/validal...', Array)
+#2 C:\xampp\htdocs\AmazonCompanies\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#3 C:\xampp\htdocs\AmazonCompanies\web\index.php(12): yii\base\Application->run()
+#4 {main}
+
+Next exception 'yii\web\NotFoundHttpException' with message 'Page not found.' in C:\xampp\htdocs\AmazonCompanies\vendor\yiisoft\yii2\web\Application.php:112
+Stack trace:
+#0 C:\xampp\htdocs\AmazonCompanies\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 C:\xampp\htdocs\AmazonCompanies\web\index.php(12): yii\base\Application->run()
+#2 {main}
+2016-12-21 13:56:30 [::1][1][3qvb92gs0tcqlc55qj67hg2li3][info][application] $_GET = [
+    'r' => 'analise/validaltdados'
+]
+
+$_COOKIE = [
+    '_csrf' => 'cadb28148d09ef0559151aaee49827f402e2c1cf1f01140bb6559e10fa6b273aa:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"AGUjsbBq1uolDiqSRZrw3q66p4NgYeeI\";}'
+    'PHPSESSID' => '3qvb92gs0tcqlc55qj67hg2li3'
+    '_identity' => '1de54a1149b80de6528a96989c1654bdfc80c1563a5eee0bba83377ee513af81a:2:{i:0;s:9:\"_identity\";i:1;s:16:\"[1,null,2592000]\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__captcha/site/captcha' => 'drhefir'
+    '__captcha/site/captchacount' => 1
+    '__id' => 1
+]
+
+$_SERVER = [
+    'MIBDIRS' => 'C:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'C:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'
+    'HTTP_REFERER' => 'http://localhost/AmazonCompanies/web/index.php?r=analise%2Fupdate&id=2'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.8'
+    'HTTP_COOKIE' => '_csrf=cadb28148d09ef0559151aaee49827f402e2c1cf1f01140bb6559e10fa6b273aa%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22AGUjsbBq1uolDiqSRZrw3q66p4NgYeeI%22%3B%7D; PHPSESSID=3qvb92gs0tcqlc55qj67hg2li3; _identity=1de54a1149b80de6528a96989c1654bdfc80c1563a5eee0bba83377ee513af81a%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_identity%22%3Bi%3A1%3Bs%3A16%3A%22%5B1%2Cnull%2C2592000%5D%22%3B%7D'
+    'PATH' => 'C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Program Files (x86)\\Intel\\iCLS Client\\;C:\\Program Files\\Intel\\iCLS Client\\;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files\\Acer\\Remote Files\\;C:\\Program Files (x86)\\Windows Kits\\8.1\\Windows Performance Toolkit\\;C:\\Program Files (x86)\\Microsoft SDKs\\TypeScript\\1.0\\;C:\\Program Files (x86)\\Windows Live\\Shared;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\RemObjects Software\\Elements\\bin;C:\\xampp\\php;C:\\ProgramData\\ComposerSetup\\bin;C:\\HashiCorp\\Vagrant\\bin;C:\\Users\\Saymon Souza\\AppData\\Roaming\\Composer\\vendor\\bin;C:\\Users\\Saymon Souza\\AppData\\Local\\Microsoft\\WindowsApps'
+    'SystemRoot' => 'C:\\WINDOWS'
+    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\WINDOWS'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.17 (Win32) OpenSSL/1.0.2d PHP/5.6.23 Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.17 (Win32) OpenSSL/1.0.2d PHP/5.6.23'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'C:/xampp/htdocs'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/xampp/htdocs'
+    'SERVER_ADMIN' => 'postmaster@localhost'
+    'SCRIPT_FILENAME' => 'C:/xampp/htdocs/AmazonCompanies/web/index.php'
+    'REMOTE_PORT' => '30563'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=analise%2Fvalidaltdados'
+    'REQUEST_URI' => '/AmazonCompanies/web/index.php?r=analise%2Fvalidaltdados'
+    'SCRIPT_NAME' => '/AmazonCompanies/web/index.php'
+    'PHP_SELF' => '/AmazonCompanies/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1482324989.994
+    'REQUEST_TIME' => 1482324989
+]
+2016-12-21 13:58:20 [::1][1][3qvb92gs0tcqlc55qj67hg2li3][error][yii\web\HttpException:404] exception 'yii\base\InvalidRouteException' with message 'Unable to resolve the request "tipo-demonstracao/index".' in C:\xampp\htdocs\AmazonCompanies\vendor\yiisoft\yii2\base\Module.php:462
+Stack trace:
+#0 C:\xampp\htdocs\AmazonCompanies\vendor\yiisoft\yii2\web\Application.php(100): yii\base\Module->runAction('tipo-demonstrac...', Array)
+#1 C:\xampp\htdocs\AmazonCompanies\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 C:\xampp\htdocs\AmazonCompanies\web\index.php(12): yii\base\Application->run()
+#3 {main}
+
+Next exception 'yii\web\NotFoundHttpException' with message 'Page not found.' in C:\xampp\htdocs\AmazonCompanies\vendor\yiisoft\yii2\web\Application.php:112
+Stack trace:
+#0 C:\xampp\htdocs\AmazonCompanies\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 C:\xampp\htdocs\AmazonCompanies\web\index.php(12): yii\base\Application->run()
+#2 {main}
+2016-12-21 13:58:20 [::1][1][3qvb92gs0tcqlc55qj67hg2li3][info][application] $_GET = [
+    'r' => 'tipo-demonstracao/index'
+]
+
+$_COOKIE = [
+    '_csrf' => 'cadb28148d09ef0559151aaee49827f402e2c1cf1f01140bb6559e10fa6b273aa:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"AGUjsbBq1uolDiqSRZrw3q66p4NgYeeI\";}'
+    'PHPSESSID' => '3qvb92gs0tcqlc55qj67hg2li3'
+    '_identity' => '1de54a1149b80de6528a96989c1654bdfc80c1563a5eee0bba83377ee513af81a:2:{i:0;s:9:\"_identity\";i:1;s:16:\"[1,null,2592000]\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__captcha/site/captcha' => 'drhefir'
+    '__captcha/site/captchacount' => 1
+    '__id' => 1
+]
+
+$_SERVER = [
+    'MIBDIRS' => 'C:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'C:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'
+    'HTTP_REFERER' => 'http://localhost/AmazonCompanies/web/index.php?r=site%2Fadm'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.8'
+    'HTTP_COOKIE' => '_csrf=cadb28148d09ef0559151aaee49827f402e2c1cf1f01140bb6559e10fa6b273aa%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22AGUjsbBq1uolDiqSRZrw3q66p4NgYeeI%22%3B%7D; PHPSESSID=3qvb92gs0tcqlc55qj67hg2li3; _identity=1de54a1149b80de6528a96989c1654bdfc80c1563a5eee0bba83377ee513af81a%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_identity%22%3Bi%3A1%3Bs%3A16%3A%22%5B1%2Cnull%2C2592000%5D%22%3B%7D'
+    'PATH' => 'C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Program Files (x86)\\Intel\\iCLS Client\\;C:\\Program Files\\Intel\\iCLS Client\\;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files\\Acer\\Remote Files\\;C:\\Program Files (x86)\\Windows Kits\\8.1\\Windows Performance Toolkit\\;C:\\Program Files (x86)\\Microsoft SDKs\\TypeScript\\1.0\\;C:\\Program Files (x86)\\Windows Live\\Shared;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\RemObjects Software\\Elements\\bin;C:\\xampp\\php;C:\\ProgramData\\ComposerSetup\\bin;C:\\HashiCorp\\Vagrant\\bin;C:\\Users\\Saymon Souza\\AppData\\Roaming\\Composer\\vendor\\bin;C:\\Users\\Saymon Souza\\AppData\\Local\\Microsoft\\WindowsApps'
+    'SystemRoot' => 'C:\\WINDOWS'
+    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\WINDOWS'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.17 (Win32) OpenSSL/1.0.2d PHP/5.6.23 Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.17 (Win32) OpenSSL/1.0.2d PHP/5.6.23'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'C:/xampp/htdocs'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/xampp/htdocs'
+    'SERVER_ADMIN' => 'postmaster@localhost'
+    'SCRIPT_FILENAME' => 'C:/xampp/htdocs/AmazonCompanies/web/index.php'
+    'REMOTE_PORT' => '31972'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=tipo-demonstracao%2Findex'
+    'REQUEST_URI' => '/AmazonCompanies/web/index.php?r=tipo-demonstracao%2Findex'
+    'SCRIPT_NAME' => '/AmazonCompanies/web/index.php'
+    'PHP_SELF' => '/AmazonCompanies/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1482325100.574
+    'REQUEST_TIME' => 1482325100
+]
+2016-12-21 14:03:35 [::1][1][3qvb92gs0tcqlc55qj67hg2li3][error][yii\web\HttpException:404] exception 'yii\base\InvalidRouteException' with message 'Unable to resolve the request "tipo-demonstracao/index".' in C:\xampp\htdocs\AmazonCompanies\vendor\yiisoft\yii2\base\Module.php:462
+Stack trace:
+#0 C:\xampp\htdocs\AmazonCompanies\vendor\yiisoft\yii2\web\Application.php(100): yii\base\Module->runAction('tipo-demonstrac...', Array)
+#1 C:\xampp\htdocs\AmazonCompanies\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 C:\xampp\htdocs\AmazonCompanies\web\index.php(12): yii\base\Application->run()
+#3 {main}
+
+Next exception 'yii\web\NotFoundHttpException' with message 'Page not found.' in C:\xampp\htdocs\AmazonCompanies\vendor\yiisoft\yii2\web\Application.php:112
+Stack trace:
+#0 C:\xampp\htdocs\AmazonCompanies\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 C:\xampp\htdocs\AmazonCompanies\web\index.php(12): yii\base\Application->run()
+#2 {main}
+2016-12-21 14:03:35 [::1][1][3qvb92gs0tcqlc55qj67hg2li3][info][application] $_GET = [
+    'r' => 'tipo-demonstracao/index'
+]
+
+$_COOKIE = [
+    '_csrf' => 'cadb28148d09ef0559151aaee49827f402e2c1cf1f01140bb6559e10fa6b273aa:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"AGUjsbBq1uolDiqSRZrw3q66p4NgYeeI\";}'
+    'PHPSESSID' => '3qvb92gs0tcqlc55qj67hg2li3'
+    '_identity' => '1de54a1149b80de6528a96989c1654bdfc80c1563a5eee0bba83377ee513af81a:2:{i:0;s:9:\"_identity\";i:1;s:16:\"[1,null,2592000]\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__captcha/site/captcha' => 'drhefir'
+    '__captcha/site/captchacount' => 1
+    '__id' => 1
+]
+
+$_SERVER = [
+    'MIBDIRS' => 'C:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'C:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'
+    'HTTP_REFERER' => 'http://localhost/AmazonCompanies/web/index.php?r=site%2Fadm'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.8'
+    'HTTP_COOKIE' => '_csrf=cadb28148d09ef0559151aaee49827f402e2c1cf1f01140bb6559e10fa6b273aa%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22AGUjsbBq1uolDiqSRZrw3q66p4NgYeeI%22%3B%7D; PHPSESSID=3qvb92gs0tcqlc55qj67hg2li3; _identity=1de54a1149b80de6528a96989c1654bdfc80c1563a5eee0bba83377ee513af81a%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_identity%22%3Bi%3A1%3Bs%3A16%3A%22%5B1%2Cnull%2C2592000%5D%22%3B%7D'
+    'PATH' => 'C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Program Files (x86)\\Intel\\iCLS Client\\;C:\\Program Files\\Intel\\iCLS Client\\;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files\\Acer\\Remote Files\\;C:\\Program Files (x86)\\Windows Kits\\8.1\\Windows Performance Toolkit\\;C:\\Program Files (x86)\\Microsoft SDKs\\TypeScript\\1.0\\;C:\\Program Files (x86)\\Windows Live\\Shared;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\RemObjects Software\\Elements\\bin;C:\\xampp\\php;C:\\ProgramData\\ComposerSetup\\bin;C:\\HashiCorp\\Vagrant\\bin;C:\\Users\\Saymon Souza\\AppData\\Roaming\\Composer\\vendor\\bin;C:\\Users\\Saymon Souza\\AppData\\Local\\Microsoft\\WindowsApps'
+    'SystemRoot' => 'C:\\WINDOWS'
+    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\WINDOWS'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.17 (Win32) OpenSSL/1.0.2d PHP/5.6.23 Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.17 (Win32) OpenSSL/1.0.2d PHP/5.6.23'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'C:/xampp/htdocs'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/xampp/htdocs'
+    'SERVER_ADMIN' => 'postmaster@localhost'
+    'SCRIPT_FILENAME' => 'C:/xampp/htdocs/AmazonCompanies/web/index.php'
+    'REMOTE_PORT' => '35587'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=tipo-demonstracao%2Findex'
+    'REQUEST_URI' => '/AmazonCompanies/web/index.php?r=tipo-demonstracao%2Findex'
+    'SCRIPT_NAME' => '/AmazonCompanies/web/index.php'
+    'PHP_SELF' => '/AmazonCompanies/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1482325415.211
+    'REQUEST_TIME' => 1482325415
+]
+2016-12-21 14:04:06 [::1][1][3qvb92gs0tcqlc55qj67hg2li3][error][yii\web\HttpException:404] exception 'yii\base\InvalidRouteException' with message 'Unable to resolve the request "tipo-demonstracao/index".' in C:\xampp\htdocs\AmazonCompanies\vendor\yiisoft\yii2\base\Module.php:462
+Stack trace:
+#0 C:\xampp\htdocs\AmazonCompanies\vendor\yiisoft\yii2\web\Application.php(100): yii\base\Module->runAction('tipo-demonstrac...', Array)
+#1 C:\xampp\htdocs\AmazonCompanies\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 C:\xampp\htdocs\AmazonCompanies\web\index.php(12): yii\base\Application->run()
+#3 {main}
+
+Next exception 'yii\web\NotFoundHttpException' with message 'Page not found.' in C:\xampp\htdocs\AmazonCompanies\vendor\yiisoft\yii2\web\Application.php:112
+Stack trace:
+#0 C:\xampp\htdocs\AmazonCompanies\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 C:\xampp\htdocs\AmazonCompanies\web\index.php(12): yii\base\Application->run()
+#2 {main}
+2016-12-21 14:04:06 [::1][1][3qvb92gs0tcqlc55qj67hg2li3][info][application] $_GET = [
+    'r' => 'tipo-demonstracao/index'
+]
+
+$_COOKIE = [
+    '_csrf' => 'cadb28148d09ef0559151aaee49827f402e2c1cf1f01140bb6559e10fa6b273aa:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"AGUjsbBq1uolDiqSRZrw3q66p4NgYeeI\";}'
+    'PHPSESSID' => '3qvb92gs0tcqlc55qj67hg2li3'
+    '_identity' => '1de54a1149b80de6528a96989c1654bdfc80c1563a5eee0bba83377ee513af81a:2:{i:0;s:9:\"_identity\";i:1;s:16:\"[1,null,2592000]\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__captcha/site/captcha' => 'drhefir'
+    '__captcha/site/captchacount' => 1
+    '__id' => 1
+]
+
+$_SERVER = [
+    'MIBDIRS' => 'C:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'C:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'
+    'HTTP_REFERER' => 'http://localhost/AmazonCompanies/web/index.php?r=site%2Fadm'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.8'
+    'HTTP_COOKIE' => '_csrf=cadb28148d09ef0559151aaee49827f402e2c1cf1f01140bb6559e10fa6b273aa%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22AGUjsbBq1uolDiqSRZrw3q66p4NgYeeI%22%3B%7D; PHPSESSID=3qvb92gs0tcqlc55qj67hg2li3; _identity=1de54a1149b80de6528a96989c1654bdfc80c1563a5eee0bba83377ee513af81a%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_identity%22%3Bi%3A1%3Bs%3A16%3A%22%5B1%2Cnull%2C2592000%5D%22%3B%7D'
+    'PATH' => 'C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Program Files (x86)\\Intel\\iCLS Client\\;C:\\Program Files\\Intel\\iCLS Client\\;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files\\Acer\\Remote Files\\;C:\\Program Files (x86)\\Windows Kits\\8.1\\Windows Performance Toolkit\\;C:\\Program Files (x86)\\Microsoft SDKs\\TypeScript\\1.0\\;C:\\Program Files (x86)\\Windows Live\\Shared;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\RemObjects Software\\Elements\\bin;C:\\xampp\\php;C:\\ProgramData\\ComposerSetup\\bin;C:\\HashiCorp\\Vagrant\\bin;C:\\Users\\Saymon Souza\\AppData\\Roaming\\Composer\\vendor\\bin;C:\\Users\\Saymon Souza\\AppData\\Local\\Microsoft\\WindowsApps'
+    'SystemRoot' => 'C:\\WINDOWS'
+    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\WINDOWS'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.17 (Win32) OpenSSL/1.0.2d PHP/5.6.23 Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.17 (Win32) OpenSSL/1.0.2d PHP/5.6.23'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'C:/xampp/htdocs'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/xampp/htdocs'
+    'SERVER_ADMIN' => 'postmaster@localhost'
+    'SCRIPT_FILENAME' => 'C:/xampp/htdocs/AmazonCompanies/web/index.php'
+    'REMOTE_PORT' => '35936'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=tipo-demonstracao%2Findex'
+    'REQUEST_URI' => '/AmazonCompanies/web/index.php?r=tipo-demonstracao%2Findex'
+    'SCRIPT_NAME' => '/AmazonCompanies/web/index.php'
+    'PHP_SELF' => '/AmazonCompanies/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1482325446.825
+    'REQUEST_TIME' => 1482325446
+]
+2016-12-21 14:04:35 [::1][1][3qvb92gs0tcqlc55qj67hg2li3][error][yii\web\HttpException:404] exception 'yii\base\InvalidRouteException' with message 'Unable to resolve the request "tipo-demonstracao/index".' in C:\xampp\htdocs\AmazonCompanies\vendor\yiisoft\yii2\base\Module.php:462
+Stack trace:
+#0 C:\xampp\htdocs\AmazonCompanies\vendor\yiisoft\yii2\web\Application.php(100): yii\base\Module->runAction('tipo-demonstrac...', Array)
+#1 C:\xampp\htdocs\AmazonCompanies\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 C:\xampp\htdocs\AmazonCompanies\web\index.php(12): yii\base\Application->run()
+#3 {main}
+
+Next exception 'yii\web\NotFoundHttpException' with message 'Page not found.' in C:\xampp\htdocs\AmazonCompanies\vendor\yiisoft\yii2\web\Application.php:112
+Stack trace:
+#0 C:\xampp\htdocs\AmazonCompanies\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 C:\xampp\htdocs\AmazonCompanies\web\index.php(12): yii\base\Application->run()
+#2 {main}
+2016-12-21 14:04:35 [::1][1][3qvb92gs0tcqlc55qj67hg2li3][info][application] $_GET = [
+    'r' => 'tipo-demonstracao/index'
+]
+
+$_COOKIE = [
+    '_csrf' => 'cadb28148d09ef0559151aaee49827f402e2c1cf1f01140bb6559e10fa6b273aa:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"AGUjsbBq1uolDiqSRZrw3q66p4NgYeeI\";}'
+    'PHPSESSID' => '3qvb92gs0tcqlc55qj67hg2li3'
+    '_identity' => '1de54a1149b80de6528a96989c1654bdfc80c1563a5eee0bba83377ee513af81a:2:{i:0;s:9:\"_identity\";i:1;s:16:\"[1,null,2592000]\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__captcha/site/captcha' => 'drhefir'
+    '__captcha/site/captchacount' => 1
+    '__id' => 1
+]
+
+$_SERVER = [
+    'MIBDIRS' => 'C:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'C:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'
+    'HTTP_REFERER' => 'http://localhost/AmazonCompanies/web/index.php?r=site%2Fadm'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.8'
+    'HTTP_COOKIE' => '_csrf=cadb28148d09ef0559151aaee49827f402e2c1cf1f01140bb6559e10fa6b273aa%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22AGUjsbBq1uolDiqSRZrw3q66p4NgYeeI%22%3B%7D; PHPSESSID=3qvb92gs0tcqlc55qj67hg2li3; _identity=1de54a1149b80de6528a96989c1654bdfc80c1563a5eee0bba83377ee513af81a%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_identity%22%3Bi%3A1%3Bs%3A16%3A%22%5B1%2Cnull%2C2592000%5D%22%3B%7D'
+    'PATH' => 'C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Program Files (x86)\\Intel\\iCLS Client\\;C:\\Program Files\\Intel\\iCLS Client\\;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files\\Acer\\Remote Files\\;C:\\Program Files (x86)\\Windows Kits\\8.1\\Windows Performance Toolkit\\;C:\\Program Files (x86)\\Microsoft SDKs\\TypeScript\\1.0\\;C:\\Program Files (x86)\\Windows Live\\Shared;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\RemObjects Software\\Elements\\bin;C:\\xampp\\php;C:\\ProgramData\\ComposerSetup\\bin;C:\\HashiCorp\\Vagrant\\bin;C:\\Users\\Saymon Souza\\AppData\\Roaming\\Composer\\vendor\\bin;C:\\Users\\Saymon Souza\\AppData\\Local\\Microsoft\\WindowsApps'
+    'SystemRoot' => 'C:\\WINDOWS'
+    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\WINDOWS'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.17 (Win32) OpenSSL/1.0.2d PHP/5.6.23 Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.17 (Win32) OpenSSL/1.0.2d PHP/5.6.23'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'C:/xampp/htdocs'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/xampp/htdocs'
+    'SERVER_ADMIN' => 'postmaster@localhost'
+    'SCRIPT_FILENAME' => 'C:/xampp/htdocs/AmazonCompanies/web/index.php'
+    'REMOTE_PORT' => '36268'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=tipo-demonstracao%2Findex'
+    'REQUEST_URI' => '/AmazonCompanies/web/index.php?r=tipo-demonstracao%2Findex'
+    'SCRIPT_NAME' => '/AmazonCompanies/web/index.php'
+    'PHP_SELF' => '/AmazonCompanies/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1482325475.84
+    'REQUEST_TIME' => 1482325475
+]
+2016-12-21 14:06:12 [::1][1][rs2h67j6s9s64b6qr1ju4kurh5][error][yii\web\HttpException:404] exception 'yii\base\InvalidRouteException' with message 'Unable to resolve the request "tipo-demonstracao/index".' in C:\xampp\htdocs\AmazonCompanies\vendor\yiisoft\yii2\base\Module.php:462
+Stack trace:
+#0 C:\xampp\htdocs\AmazonCompanies\vendor\yiisoft\yii2\web\Application.php(100): yii\base\Module->runAction('tipo-demonstrac...', Array)
+#1 C:\xampp\htdocs\AmazonCompanies\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 C:\xampp\htdocs\AmazonCompanies\web\index.php(12): yii\base\Application->run()
+#3 {main}
+
+Next exception 'yii\web\NotFoundHttpException' with message 'Page not found.' in C:\xampp\htdocs\AmazonCompanies\vendor\yiisoft\yii2\web\Application.php:112
+Stack trace:
+#0 C:\xampp\htdocs\AmazonCompanies\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 C:\xampp\htdocs\AmazonCompanies\web\index.php(12): yii\base\Application->run()
+#2 {main}
+2016-12-21 14:06:12 [::1][1][rs2h67j6s9s64b6qr1ju4kurh5][info][application] $_GET = [
+    'r' => 'tipo-demonstracao/index'
+]
+
+$_COOKIE = [
+    '_csrf' => 'cadb28148d09ef0559151aaee49827f402e2c1cf1f01140bb6559e10fa6b273aa:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"AGUjsbBq1uolDiqSRZrw3q66p4NgYeeI\";}'
+    'PHPSESSID' => 'rs2h67j6s9s64b6qr1ju4kurh5'
+    '_identity' => '1de54a1149b80de6528a96989c1654bdfc80c1563a5eee0bba83377ee513af81a:2:{i:0;s:9:\"_identity\";i:1;s:16:\"[1,null,2592000]\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__id' => 1
+]
+
+$_SERVER = [
+    'MIBDIRS' => 'C:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'C:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'
+    'HTTP_REFERER' => 'http://localhost/AmazonCompanies/web/index.php?r=site%2Fadm'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.8'
+    'HTTP_COOKIE' => '_csrf=cadb28148d09ef0559151aaee49827f402e2c1cf1f01140bb6559e10fa6b273aa%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22AGUjsbBq1uolDiqSRZrw3q66p4NgYeeI%22%3B%7D; PHPSESSID=rs2h67j6s9s64b6qr1ju4kurh5; _identity=1de54a1149b80de6528a96989c1654bdfc80c1563a5eee0bba83377ee513af81a%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_identity%22%3Bi%3A1%3Bs%3A16%3A%22%5B1%2Cnull%2C2592000%5D%22%3B%7D'
+    'PATH' => 'C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Program Files (x86)\\Intel\\iCLS Client\\;C:\\Program Files\\Intel\\iCLS Client\\;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files\\Acer\\Remote Files\\;C:\\Program Files (x86)\\Windows Kits\\8.1\\Windows Performance Toolkit\\;C:\\Program Files (x86)\\Microsoft SDKs\\TypeScript\\1.0\\;C:\\Program Files (x86)\\Windows Live\\Shared;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\RemObjects Software\\Elements\\bin;C:\\xampp\\php;C:\\ProgramData\\ComposerSetup\\bin;C:\\HashiCorp\\Vagrant\\bin;C:\\Users\\Saymon Souza\\AppData\\Roaming\\Composer\\vendor\\bin;C:\\Users\\Saymon Souza\\AppData\\Local\\Microsoft\\WindowsApps'
+    'SystemRoot' => 'C:\\WINDOWS'
+    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\WINDOWS'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.17 (Win32) OpenSSL/1.0.2d PHP/5.6.23 Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.17 (Win32) OpenSSL/1.0.2d PHP/5.6.23'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'C:/xampp/htdocs'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/xampp/htdocs'
+    'SERVER_ADMIN' => 'postmaster@localhost'
+    'SCRIPT_FILENAME' => 'C:/xampp/htdocs/AmazonCompanies/web/index.php'
+    'REMOTE_PORT' => '37352'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=tipo-demonstracao%2Findex'
+    'REQUEST_URI' => '/AmazonCompanies/web/index.php?r=tipo-demonstracao%2Findex'
+    'SCRIPT_NAME' => '/AmazonCompanies/web/index.php'
+    'PHP_SELF' => '/AmazonCompanies/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1482325572.644
+    'REQUEST_TIME' => 1482325572
+]
+2016-12-21 14:12:19 [::1][-][-][error][yii\base\ErrorException:4] exception 'yii\base\ErrorException' with message 'syntax error, unexpected '<'' in C:\xampp\htdocs\AmazonCompanies\views\empresa\view.php:285
+Stack trace:
+#0 [internal function]: yii\base\ErrorHandler->handleFatalError()
+#1 {main}
+2016-12-21 14:12:19 [::1][-][-][info][application] $_GET = [
+    'r' => 'empresa/view'
+    'id' => '1'
+]
+
+$_COOKIE = [
+    '_csrf' => 'cadb28148d09ef0559151aaee49827f402e2c1cf1f01140bb6559e10fa6b273aa:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"AGUjsbBq1uolDiqSRZrw3q66p4NgYeeI\";}'
+    'PHPSESSID' => 'j1mkrfjg6e2op06auvq9a1ko81'
+]
+
+$_SERVER = [
+    'MIBDIRS' => 'C:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'C:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'
+    'HTTP_REFERER' => 'http://localhost/AmazonCompanies/web/index.php?r=empresa%2Findex'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.8'
+    'HTTP_COOKIE' => '_csrf=cadb28148d09ef0559151aaee49827f402e2c1cf1f01140bb6559e10fa6b273aa%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22AGUjsbBq1uolDiqSRZrw3q66p4NgYeeI%22%3B%7D; PHPSESSID=j1mkrfjg6e2op06auvq9a1ko81'
+    'PATH' => 'C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Program Files (x86)\\Intel\\iCLS Client\\;C:\\Program Files\\Intel\\iCLS Client\\;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files\\Acer\\Remote Files\\;C:\\Program Files (x86)\\Windows Kits\\8.1\\Windows Performance Toolkit\\;C:\\Program Files (x86)\\Microsoft SDKs\\TypeScript\\1.0\\;C:\\Program Files (x86)\\Windows Live\\Shared;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\RemObjects Software\\Elements\\bin;C:\\xampp\\php;C:\\ProgramData\\ComposerSetup\\bin;C:\\HashiCorp\\Vagrant\\bin;C:\\Users\\Saymon Souza\\AppData\\Roaming\\Composer\\vendor\\bin;C:\\Users\\Saymon Souza\\AppData\\Local\\Microsoft\\WindowsApps'
+    'SystemRoot' => 'C:\\WINDOWS'
+    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\WINDOWS'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.17 (Win32) OpenSSL/1.0.2d PHP/5.6.23 Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.17 (Win32) OpenSSL/1.0.2d PHP/5.6.23'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'C:/xampp/htdocs'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/xampp/htdocs'
+    'SERVER_ADMIN' => 'postmaster@localhost'
+    'SCRIPT_FILENAME' => 'C:/xampp/htdocs/AmazonCompanies/web/index.php'
+    'REMOTE_PORT' => '6105'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=empresa%2Fview&id=1'
+    'REQUEST_URI' => '/AmazonCompanies/web/index.php?r=empresa%2Fview&id=1'
+    'SCRIPT_NAME' => '/AmazonCompanies/web/index.php'
+    'PHP_SELF' => '/AmazonCompanies/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1482325939.392
+    'REQUEST_TIME' => 1482325939
+]
+2016-12-21 17:56:55 [::1][-][-][error][yii\base\ErrorException:1] exception 'yii\base\ErrorException' with message 'Class 'JsExpression' not found' in C:\xampp\htdocs\AmazonCompanies\views\empresa\view.php:288
+Stack trace:
+#0 [internal function]: yii\base\ErrorHandler->handleFatalError()
+#1 {main}
+2016-12-21 17:56:55 [::1][-][-][info][application] $_GET = [
+    'r' => 'empresa/view'
+    'id' => '2'
+]
+
+$_COOKIE = [
+    '_csrf' => 'cadb28148d09ef0559151aaee49827f402e2c1cf1f01140bb6559e10fa6b273aa:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"AGUjsbBq1uolDiqSRZrw3q66p4NgYeeI\";}'
+    'PHPSESSID' => 'j1mkrfjg6e2op06auvq9a1ko81'
+]
+
+$_SERVER = [
+    'MIBDIRS' => 'C:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'C:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'
+    'HTTP_REFERER' => 'http://localhost/AmazonCompanies/web/index.php?r=empresa%2Findex'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.8'
+    'HTTP_COOKIE' => '_csrf=cadb28148d09ef0559151aaee49827f402e2c1cf1f01140bb6559e10fa6b273aa%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22AGUjsbBq1uolDiqSRZrw3q66p4NgYeeI%22%3B%7D; PHPSESSID=j1mkrfjg6e2op06auvq9a1ko81'
+    'PATH' => 'C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Program Files (x86)\\Intel\\iCLS Client\\;C:\\Program Files\\Intel\\iCLS Client\\;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files\\Acer\\Remote Files\\;C:\\Program Files (x86)\\Windows Kits\\8.1\\Windows Performance Toolkit\\;C:\\Program Files (x86)\\Microsoft SDKs\\TypeScript\\1.0\\;C:\\Program Files (x86)\\Windows Live\\Shared;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\RemObjects Software\\Elements\\bin;C:\\xampp\\php;C:\\ProgramData\\ComposerSetup\\bin;C:\\HashiCorp\\Vagrant\\bin;C:\\Users\\Saymon Souza\\AppData\\Roaming\\Composer\\vendor\\bin;C:\\Users\\Saymon Souza\\AppData\\Local\\Microsoft\\WindowsApps'
+    'SystemRoot' => 'C:\\WINDOWS'
+    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\WINDOWS'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.17 (Win32) OpenSSL/1.0.2d PHP/5.6.23 Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.17 (Win32) OpenSSL/1.0.2d PHP/5.6.23'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'C:/xampp/htdocs'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/xampp/htdocs'
+    'SERVER_ADMIN' => 'postmaster@localhost'
+    'SCRIPT_FILENAME' => 'C:/xampp/htdocs/AmazonCompanies/web/index.php'
+    'REMOTE_PORT' => '20478'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=empresa%2Fview&id=2'
+    'REQUEST_URI' => '/AmazonCompanies/web/index.php?r=empresa%2Fview&id=2'
+    'SCRIPT_NAME' => '/AmazonCompanies/web/index.php'
+    'PHP_SELF' => '/AmazonCompanies/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1482339415.084
+    'REQUEST_TIME' => 1482339415
+]
+2016-12-21 18:25:17 [::1][-][-][error][yii\base\UnknownPropertyException] exception 'yii\base\UnknownPropertyException' with message 'Getting unknown property: yii\web\View::titulo' in C:\xampp\htdocs\AmazonCompanies\vendor\yiisoft\yii2\base\Component.php:143
+Stack trace:
+#0 C:\xampp\htdocs\AmazonCompanies\views\empresa\view.php(256): yii\base\Component->__get('titulo')
+#1 C:\xampp\htdocs\AmazonCompanies\vendor\yiisoft\yii2\base\View.php(326): require('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\AmazonCompanies\vendor\yiisoft\yii2\base\View.php(248): yii\base\View->renderPhpFile('C:\\xampp\\htdocs...', Array)
+#3 C:\xampp\htdocs\AmazonCompanies\vendor\yiisoft\yii2\base\View.php(150): yii\base\View->renderFile('C:\\xampp\\htdocs...', Array, Object(app\controllers\EmpresaController))
+#4 C:\xampp\htdocs\AmazonCompanies\vendor\yiisoft\yii2\base\Controller.php(378): yii\base\View->render('view', Array, Object(app\controllers\EmpresaController))
+#5 C:\xampp\htdocs\AmazonCompanies\controllers\EmpresaController.php(60): yii\base\Controller->render('view', Array)
+#6 [internal function]: app\controllers\EmpresaController->actionView('2')
+#7 C:\xampp\htdocs\AmazonCompanies\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
+#8 C:\xampp\htdocs\AmazonCompanies\vendor\yiisoft\yii2\base\Controller.php(154): yii\base\InlineAction->runWithParams(Array)
+#9 C:\xampp\htdocs\AmazonCompanies\vendor\yiisoft\yii2\base\Module.php(454): yii\base\Controller->runAction('view', Array)
+#10 C:\xampp\htdocs\AmazonCompanies\vendor\yiisoft\yii2\web\Application.php(100): yii\base\Module->runAction('empresa/view', Array)
+#11 C:\xampp\htdocs\AmazonCompanies\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#12 C:\xampp\htdocs\AmazonCompanies\web\index.php(12): yii\base\Application->run()
+#13 {main}
+2016-12-21 18:25:17 [::1][-][-][info][application] $_GET = [
+    'r' => 'empresa/view'
+    'id' => '2'
+]
+
+$_COOKIE = [
+    '_csrf' => 'cadb28148d09ef0559151aaee49827f402e2c1cf1f01140bb6559e10fa6b273aa:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"AGUjsbBq1uolDiqSRZrw3q66p4NgYeeI\";}'
+    'PHPSESSID' => 'j1mkrfjg6e2op06auvq9a1ko81'
+]
+
+$_SERVER = [
+    'MIBDIRS' => 'C:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'C:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'
+    'HTTP_REFERER' => 'http://localhost/AmazonCompanies/web/index.php?r=empresa%2Findex'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.8'
+    'HTTP_COOKIE' => '_csrf=cadb28148d09ef0559151aaee49827f402e2c1cf1f01140bb6559e10fa6b273aa%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22AGUjsbBq1uolDiqSRZrw3q66p4NgYeeI%22%3B%7D; PHPSESSID=j1mkrfjg6e2op06auvq9a1ko81'
+    'PATH' => 'C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Program Files (x86)\\Intel\\iCLS Client\\;C:\\Program Files\\Intel\\iCLS Client\\;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files\\Acer\\Remote Files\\;C:\\Program Files (x86)\\Windows Kits\\8.1\\Windows Performance Toolkit\\;C:\\Program Files (x86)\\Microsoft SDKs\\TypeScript\\1.0\\;C:\\Program Files (x86)\\Windows Live\\Shared;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\RemObjects Software\\Elements\\bin;C:\\xampp\\php;C:\\ProgramData\\ComposerSetup\\bin;C:\\HashiCorp\\Vagrant\\bin;C:\\Users\\Saymon Souza\\AppData\\Roaming\\Composer\\vendor\\bin;C:\\Users\\Saymon Souza\\AppData\\Local\\Microsoft\\WindowsApps'
+    'SystemRoot' => 'C:\\WINDOWS'
+    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\WINDOWS'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.17 (Win32) OpenSSL/1.0.2d PHP/5.6.23 Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.17 (Win32) OpenSSL/1.0.2d PHP/5.6.23'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'C:/xampp/htdocs'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/xampp/htdocs'
+    'SERVER_ADMIN' => 'postmaster@localhost'
+    'SCRIPT_FILENAME' => 'C:/xampp/htdocs/AmazonCompanies/web/index.php'
+    'REMOTE_PORT' => '40087'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=empresa%2Fview&id=2'
+    'REQUEST_URI' => '/AmazonCompanies/web/index.php?r=empresa%2Fview&id=2'
+    'SCRIPT_NAME' => '/AmazonCompanies/web/index.php'
+    'PHP_SELF' => '/AmazonCompanies/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1482341117.693
+    'REQUEST_TIME' => 1482341117
+]
+2016-12-21 18:40:41 [::1][-][-][error][yii\base\ErrorException:4] exception 'yii\base\ErrorException' with message 'syntax error, unexpected '->' (T_OBJECT_OPERATOR)' in C:\xampp\htdocs\AmazonCompanies\views\empresa\view.php:261
+Stack trace:
+#0 [internal function]: yii\base\ErrorHandler->handleFatalError()
+#1 {main}
+2016-12-21 18:40:41 [::1][-][-][info][application] $_GET = [
+    'r' => 'empresa/view'
+    'id' => '2'
+]
+
+$_COOKIE = [
+    '_csrf' => 'cadb28148d09ef0559151aaee49827f402e2c1cf1f01140bb6559e10fa6b273aa:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"AGUjsbBq1uolDiqSRZrw3q66p4NgYeeI\";}'
+    'PHPSESSID' => 'j1mkrfjg6e2op06auvq9a1ko81'
+]
+
+$_SERVER = [
+    'MIBDIRS' => 'C:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'C:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'
+    'HTTP_REFERER' => 'http://localhost/AmazonCompanies/web/index.php?r=empresa%2Findex'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.8'
+    'HTTP_COOKIE' => '_csrf=cadb28148d09ef0559151aaee49827f402e2c1cf1f01140bb6559e10fa6b273aa%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22AGUjsbBq1uolDiqSRZrw3q66p4NgYeeI%22%3B%7D; PHPSESSID=j1mkrfjg6e2op06auvq9a1ko81'
+    'PATH' => 'C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Program Files (x86)\\Intel\\iCLS Client\\;C:\\Program Files\\Intel\\iCLS Client\\;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files\\Acer\\Remote Files\\;C:\\Program Files (x86)\\Windows Kits\\8.1\\Windows Performance Toolkit\\;C:\\Program Files (x86)\\Microsoft SDKs\\TypeScript\\1.0\\;C:\\Program Files (x86)\\Windows Live\\Shared;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\RemObjects Software\\Elements\\bin;C:\\xampp\\php;C:\\ProgramData\\ComposerSetup\\bin;C:\\HashiCorp\\Vagrant\\bin;C:\\Users\\Saymon Souza\\AppData\\Roaming\\Composer\\vendor\\bin;C:\\Users\\Saymon Souza\\AppData\\Local\\Microsoft\\WindowsApps'
+    'SystemRoot' => 'C:\\WINDOWS'
+    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\WINDOWS'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.17 (Win32) OpenSSL/1.0.2d PHP/5.6.23 Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.17 (Win32) OpenSSL/1.0.2d PHP/5.6.23'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'C:/xampp/htdocs'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/xampp/htdocs'
+    'SERVER_ADMIN' => 'postmaster@localhost'
+    'SCRIPT_FILENAME' => 'C:/xampp/htdocs/AmazonCompanies/web/index.php'
+    'REMOTE_PORT' => '50862'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=empresa%2Fview&id=2'
+    'REQUEST_URI' => '/AmazonCompanies/web/index.php?r=empresa%2Fview&id=2'
+    'SCRIPT_NAME' => '/AmazonCompanies/web/index.php'
+    'PHP_SELF' => '/AmazonCompanies/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1482342041.071
+    'REQUEST_TIME' => 1482342041
+]
+2016-12-21 18:41:07 [::1][-][-][error][yii\base\ErrorException:8] exception 'yii\base\ErrorException' with message 'Use of undefined constant this - assumed 'this'' in C:\xampp\htdocs\AmazonCompanies\views\empresa\view.php:261
+Stack trace:
+#0 C:\xampp\htdocs\AmazonCompanies\views\empresa\view.php(261): yii\base\ErrorHandler->handleError(8, 'Use of undefine...', 'C:\\xampp\\htdocs...', 261, Array)
+#1 C:\xampp\htdocs\AmazonCompanies\vendor\yiisoft\yii2\base\View.php(326): require('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\AmazonCompanies\vendor\yiisoft\yii2\base\View.php(248): yii\base\View->renderPhpFile('C:\\xampp\\htdocs...', Array)
+#3 C:\xampp\htdocs\AmazonCompanies\vendor\yiisoft\yii2\base\View.php(150): yii\base\View->renderFile('C:\\xampp\\htdocs...', Array, Object(app\controllers\EmpresaController))
+#4 C:\xampp\htdocs\AmazonCompanies\vendor\yiisoft\yii2\base\Controller.php(378): yii\base\View->render('view', Array, Object(app\controllers\EmpresaController))
+#5 C:\xampp\htdocs\AmazonCompanies\controllers\EmpresaController.php(60): yii\base\Controller->render('view', Array)
+#6 [internal function]: app\controllers\EmpresaController->actionView('2')
+#7 C:\xampp\htdocs\AmazonCompanies\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
+#8 C:\xampp\htdocs\AmazonCompanies\vendor\yiisoft\yii2\base\Controller.php(154): yii\base\InlineAction->runWithParams(Array)
+#9 C:\xampp\htdocs\AmazonCompanies\vendor\yiisoft\yii2\base\Module.php(454): yii\base\Controller->runAction('view', Array)
+#10 C:\xampp\htdocs\AmazonCompanies\vendor\yiisoft\yii2\web\Application.php(100): yii\base\Module->runAction('empresa/view', Array)
+#11 C:\xampp\htdocs\AmazonCompanies\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#12 C:\xampp\htdocs\AmazonCompanies\web\index.php(12): yii\base\Application->run()
+#13 {main}
+2016-12-21 18:41:07 [::1][-][-][info][application] $_GET = [
+    'r' => 'empresa/view'
+    'id' => '2'
+]
+
+$_COOKIE = [
+    '_csrf' => 'cadb28148d09ef0559151aaee49827f402e2c1cf1f01140bb6559e10fa6b273aa:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"AGUjsbBq1uolDiqSRZrw3q66p4NgYeeI\";}'
+    'PHPSESSID' => 'j1mkrfjg6e2op06auvq9a1ko81'
+]
+
+$_SERVER = [
+    'MIBDIRS' => 'C:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'C:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'
+    'HTTP_REFERER' => 'http://localhost/AmazonCompanies/web/index.php?r=empresa%2Findex'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.8'
+    'HTTP_COOKIE' => '_csrf=cadb28148d09ef0559151aaee49827f402e2c1cf1f01140bb6559e10fa6b273aa%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22AGUjsbBq1uolDiqSRZrw3q66p4NgYeeI%22%3B%7D; PHPSESSID=j1mkrfjg6e2op06auvq9a1ko81'
+    'PATH' => 'C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Program Files (x86)\\Intel\\iCLS Client\\;C:\\Program Files\\Intel\\iCLS Client\\;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files\\Acer\\Remote Files\\;C:\\Program Files (x86)\\Windows Kits\\8.1\\Windows Performance Toolkit\\;C:\\Program Files (x86)\\Microsoft SDKs\\TypeScript\\1.0\\;C:\\Program Files (x86)\\Windows Live\\Shared;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\RemObjects Software\\Elements\\bin;C:\\xampp\\php;C:\\ProgramData\\ComposerSetup\\bin;C:\\HashiCorp\\Vagrant\\bin;C:\\Users\\Saymon Souza\\AppData\\Roaming\\Composer\\vendor\\bin;C:\\Users\\Saymon Souza\\AppData\\Local\\Microsoft\\WindowsApps'
+    'SystemRoot' => 'C:\\WINDOWS'
+    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\WINDOWS'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.17 (Win32) OpenSSL/1.0.2d PHP/5.6.23 Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.17 (Win32) OpenSSL/1.0.2d PHP/5.6.23'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'C:/xampp/htdocs'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/xampp/htdocs'
+    'SERVER_ADMIN' => 'postmaster@localhost'
+    'SCRIPT_FILENAME' => 'C:/xampp/htdocs/AmazonCompanies/web/index.php'
+    'REMOTE_PORT' => '51164'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=empresa%2Fview&id=2'
+    'REQUEST_URI' => '/AmazonCompanies/web/index.php?r=empresa%2Fview&id=2'
+    'SCRIPT_NAME' => '/AmazonCompanies/web/index.php'
+    'PHP_SELF' => '/AmazonCompanies/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1482342067.274
+    'REQUEST_TIME' => 1482342067
+]
+2016-12-21 18:43:02 [::1][-][-][error][yii\base\ErrorException:8] exception 'yii\base\ErrorException' with message 'Use of undefined constant title - assumed 'title'' in C:\xampp\htdocs\AmazonCompanies\views\empresa\view.php:261
+Stack trace:
+#0 C:\xampp\htdocs\AmazonCompanies\views\empresa\view.php(261): yii\base\ErrorHandler->handleError(8, 'Use of undefine...', 'C:\\xampp\\htdocs...', 261, Array)
+#1 C:\xampp\htdocs\AmazonCompanies\vendor\yiisoft\yii2\base\View.php(326): require('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\AmazonCompanies\vendor\yiisoft\yii2\base\View.php(248): yii\base\View->renderPhpFile('C:\\xampp\\htdocs...', Array)
+#3 C:\xampp\htdocs\AmazonCompanies\vendor\yiisoft\yii2\base\View.php(150): yii\base\View->renderFile('C:\\xampp\\htdocs...', Array, Object(app\controllers\EmpresaController))
+#4 C:\xampp\htdocs\AmazonCompanies\vendor\yiisoft\yii2\base\Controller.php(378): yii\base\View->render('view', Array, Object(app\controllers\EmpresaController))
+#5 C:\xampp\htdocs\AmazonCompanies\controllers\EmpresaController.php(60): yii\base\Controller->render('view', Array)
+#6 [internal function]: app\controllers\EmpresaController->actionView('2')
+#7 C:\xampp\htdocs\AmazonCompanies\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
+#8 C:\xampp\htdocs\AmazonCompanies\vendor\yiisoft\yii2\base\Controller.php(154): yii\base\InlineAction->runWithParams(Array)
+#9 C:\xampp\htdocs\AmazonCompanies\vendor\yiisoft\yii2\base\Module.php(454): yii\base\Controller->runAction('view', Array)
+#10 C:\xampp\htdocs\AmazonCompanies\vendor\yiisoft\yii2\web\Application.php(100): yii\base\Module->runAction('empresa/view', Array)
+#11 C:\xampp\htdocs\AmazonCompanies\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#12 C:\xampp\htdocs\AmazonCompanies\web\index.php(12): yii\base\Application->run()
+#13 {main}
+2016-12-21 18:43:02 [::1][-][-][info][application] $_GET = [
+    'r' => 'empresa/view'
+    'id' => '2'
+]
+
+$_COOKIE = [
+    '_csrf' => 'cadb28148d09ef0559151aaee49827f402e2c1cf1f01140bb6559e10fa6b273aa:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"AGUjsbBq1uolDiqSRZrw3q66p4NgYeeI\";}'
+    'PHPSESSID' => 'j1mkrfjg6e2op06auvq9a1ko81'
+]
+
+$_SERVER = [
+    'MIBDIRS' => 'C:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'C:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'
+    'HTTP_REFERER' => 'http://localhost/AmazonCompanies/web/index.php?r=empresa%2Findex'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.8'
+    'HTTP_COOKIE' => '_csrf=cadb28148d09ef0559151aaee49827f402e2c1cf1f01140bb6559e10fa6b273aa%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22AGUjsbBq1uolDiqSRZrw3q66p4NgYeeI%22%3B%7D; PHPSESSID=j1mkrfjg6e2op06auvq9a1ko81'
+    'PATH' => 'C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Program Files (x86)\\Intel\\iCLS Client\\;C:\\Program Files\\Intel\\iCLS Client\\;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files\\Acer\\Remote Files\\;C:\\Program Files (x86)\\Windows Kits\\8.1\\Windows Performance Toolkit\\;C:\\Program Files (x86)\\Microsoft SDKs\\TypeScript\\1.0\\;C:\\Program Files (x86)\\Windows Live\\Shared;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\RemObjects Software\\Elements\\bin;C:\\xampp\\php;C:\\ProgramData\\ComposerSetup\\bin;C:\\HashiCorp\\Vagrant\\bin;C:\\Users\\Saymon Souza\\AppData\\Roaming\\Composer\\vendor\\bin;C:\\Users\\Saymon Souza\\AppData\\Local\\Microsoft\\WindowsApps'
+    'SystemRoot' => 'C:\\WINDOWS'
+    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\WINDOWS'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.17 (Win32) OpenSSL/1.0.2d PHP/5.6.23 Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.17 (Win32) OpenSSL/1.0.2d PHP/5.6.23'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'C:/xampp/htdocs'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/xampp/htdocs'
+    'SERVER_ADMIN' => 'postmaster@localhost'
+    'SCRIPT_FILENAME' => 'C:/xampp/htdocs/AmazonCompanies/web/index.php'
+    'REMOTE_PORT' => '52487'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=empresa%2Fview&id=2'
+    'REQUEST_URI' => '/AmazonCompanies/web/index.php?r=empresa%2Fview&id=2'
+    'SCRIPT_NAME' => '/AmazonCompanies/web/index.php'
+    'PHP_SELF' => '/AmazonCompanies/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1482342182.448
+    'REQUEST_TIME' => 1482342182
+]
+2016-12-21 19:47:43 [::1][1][09m3s1oq10iacv0mcidovqc2i4][error][yii\web\HttpException:404] exception 'yii\base\InvalidRouteException' with message 'Unable to resolve the request "tipo-demonstracao/index".' in C:\xampp\htdocs\AmazonCompanies\vendor\yiisoft\yii2\base\Module.php:462
+Stack trace:
+#0 C:\xampp\htdocs\AmazonCompanies\vendor\yiisoft\yii2\web\Application.php(100): yii\base\Module->runAction('tipo-demonstrac...', Array)
+#1 C:\xampp\htdocs\AmazonCompanies\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 C:\xampp\htdocs\AmazonCompanies\web\index.php(12): yii\base\Application->run()
+#3 {main}
+
+Next exception 'yii\web\NotFoundHttpException' with message 'Page not found.' in C:\xampp\htdocs\AmazonCompanies\vendor\yiisoft\yii2\web\Application.php:112
+Stack trace:
+#0 C:\xampp\htdocs\AmazonCompanies\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 C:\xampp\htdocs\AmazonCompanies\web\index.php(12): yii\base\Application->run()
+#2 {main}
+2016-12-21 19:47:43 [::1][1][09m3s1oq10iacv0mcidovqc2i4][info][application] $_GET = [
+    'r' => 'tipo-demonstracao/index'
+]
+
+$_COOKIE = [
+    '_csrf' => 'cadb28148d09ef0559151aaee49827f402e2c1cf1f01140bb6559e10fa6b273aa:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"AGUjsbBq1uolDiqSRZrw3q66p4NgYeeI\";}'
+    'PHPSESSID' => '09m3s1oq10iacv0mcidovqc2i4'
+    '_identity' => '1de54a1149b80de6528a96989c1654bdfc80c1563a5eee0bba83377ee513af81a:2:{i:0;s:9:\"_identity\";i:1;s:16:\"[1,null,2592000]\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__id' => 1
+]
+
+$_SERVER = [
+    'MIBDIRS' => 'C:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'C:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'
+    'HTTP_REFERER' => 'http://localhost/AmazonCompanies/web/index.php?r=site%2Fadm'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.8'
+    'HTTP_COOKIE' => '_csrf=cadb28148d09ef0559151aaee49827f402e2c1cf1f01140bb6559e10fa6b273aa%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22AGUjsbBq1uolDiqSRZrw3q66p4NgYeeI%22%3B%7D; PHPSESSID=09m3s1oq10iacv0mcidovqc2i4; _identity=1de54a1149b80de6528a96989c1654bdfc80c1563a5eee0bba83377ee513af81a%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_identity%22%3Bi%3A1%3Bs%3A16%3A%22%5B1%2Cnull%2C2592000%5D%22%3B%7D'
+    'PATH' => 'C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Program Files (x86)\\Intel\\iCLS Client\\;C:\\Program Files\\Intel\\iCLS Client\\;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files\\Acer\\Remote Files\\;C:\\Program Files (x86)\\Windows Kits\\8.1\\Windows Performance Toolkit\\;C:\\Program Files (x86)\\Microsoft SDKs\\TypeScript\\1.0\\;C:\\Program Files (x86)\\Windows Live\\Shared;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\RemObjects Software\\Elements\\bin;C:\\xampp\\php;C:\\ProgramData\\ComposerSetup\\bin;C:\\HashiCorp\\Vagrant\\bin;C:\\Users\\Saymon Souza\\AppData\\Roaming\\Composer\\vendor\\bin;C:\\Users\\Saymon Souza\\AppData\\Local\\Microsoft\\WindowsApps'
+    'SystemRoot' => 'C:\\WINDOWS'
+    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\WINDOWS'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.17 (Win32) OpenSSL/1.0.2d PHP/5.6.23 Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.17 (Win32) OpenSSL/1.0.2d PHP/5.6.23'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'C:/xampp/htdocs'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/xampp/htdocs'
+    'SERVER_ADMIN' => 'postmaster@localhost'
+    'SCRIPT_FILENAME' => 'C:/xampp/htdocs/AmazonCompanies/web/index.php'
+    'REMOTE_PORT' => '6380'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=tipo-demonstracao%2Findex'
+    'REQUEST_URI' => '/AmazonCompanies/web/index.php?r=tipo-demonstracao%2Findex'
+    'SCRIPT_NAME' => '/AmazonCompanies/web/index.php'
+    'PHP_SELF' => '/AmazonCompanies/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1482346063.611
+    'REQUEST_TIME' => 1482346063
+]
+2016-12-21 19:48:54 [::1][1][09m3s1oq10iacv0mcidovqc2i4][error][yii\web\HttpException:404] exception 'yii\base\InvalidRouteException' with message 'Unable to resolve the request: analise/validaltdados' in C:\xampp\htdocs\AmazonCompanies\vendor\yiisoft\yii2\base\Controller.php:125
+Stack trace:
+#0 C:\xampp\htdocs\AmazonCompanies\vendor\yiisoft\yii2\base\Module.php(454): yii\base\Controller->runAction('validaltdados', Array)
+#1 C:\xampp\htdocs\AmazonCompanies\vendor\yiisoft\yii2\web\Application.php(100): yii\base\Module->runAction('analise/validal...', Array)
+#2 C:\xampp\htdocs\AmazonCompanies\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#3 C:\xampp\htdocs\AmazonCompanies\web\index.php(12): yii\base\Application->run()
+#4 {main}
+
+Next exception 'yii\web\NotFoundHttpException' with message 'Page not found.' in C:\xampp\htdocs\AmazonCompanies\vendor\yiisoft\yii2\web\Application.php:112
+Stack trace:
+#0 C:\xampp\htdocs\AmazonCompanies\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 C:\xampp\htdocs\AmazonCompanies\web\index.php(12): yii\base\Application->run()
+#2 {main}
+2016-12-21 19:48:54 [::1][1][09m3s1oq10iacv0mcidovqc2i4][info][application] $_GET = [
+    'r' => 'analise/validaltdados'
+]
+
+$_COOKIE = [
+    '_csrf' => 'cadb28148d09ef0559151aaee49827f402e2c1cf1f01140bb6559e10fa6b273aa:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"AGUjsbBq1uolDiqSRZrw3q66p4NgYeeI\";}'
+    'PHPSESSID' => '09m3s1oq10iacv0mcidovqc2i4'
+    '_identity' => '1de54a1149b80de6528a96989c1654bdfc80c1563a5eee0bba83377ee513af81a:2:{i:0;s:9:\"_identity\";i:1;s:16:\"[1,null,2592000]\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__id' => 1
+]
+
+$_SERVER = [
+    'MIBDIRS' => 'C:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'C:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'
+    'HTTP_REFERER' => 'http://localhost/AmazonCompanies/web/index.php?r=analise%2Findex'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.8'
+    'HTTP_COOKIE' => '_csrf=cadb28148d09ef0559151aaee49827f402e2c1cf1f01140bb6559e10fa6b273aa%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22AGUjsbBq1uolDiqSRZrw3q66p4NgYeeI%22%3B%7D; PHPSESSID=09m3s1oq10iacv0mcidovqc2i4; _identity=1de54a1149b80de6528a96989c1654bdfc80c1563a5eee0bba83377ee513af81a%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_identity%22%3Bi%3A1%3Bs%3A16%3A%22%5B1%2Cnull%2C2592000%5D%22%3B%7D'
+    'PATH' => 'C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Program Files (x86)\\Intel\\iCLS Client\\;C:\\Program Files\\Intel\\iCLS Client\\;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files\\Acer\\Remote Files\\;C:\\Program Files (x86)\\Windows Kits\\8.1\\Windows Performance Toolkit\\;C:\\Program Files (x86)\\Microsoft SDKs\\TypeScript\\1.0\\;C:\\Program Files (x86)\\Windows Live\\Shared;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\RemObjects Software\\Elements\\bin;C:\\xampp\\php;C:\\ProgramData\\ComposerSetup\\bin;C:\\HashiCorp\\Vagrant\\bin;C:\\Users\\Saymon Souza\\AppData\\Roaming\\Composer\\vendor\\bin;C:\\Users\\Saymon Souza\\AppData\\Local\\Microsoft\\WindowsApps'
+    'SystemRoot' => 'C:\\WINDOWS'
+    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\WINDOWS'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.17 (Win32) OpenSSL/1.0.2d PHP/5.6.23 Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.17 (Win32) OpenSSL/1.0.2d PHP/5.6.23'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'C:/xampp/htdocs'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/xampp/htdocs'
+    'SERVER_ADMIN' => 'postmaster@localhost'
+    'SCRIPT_FILENAME' => 'C:/xampp/htdocs/AmazonCompanies/web/index.php'
+    'REMOTE_PORT' => '7186'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=analise%2Fvalidaltdados'
+    'REQUEST_URI' => '/AmazonCompanies/web/index.php?r=analise%2Fvalidaltdados'
+    'SCRIPT_NAME' => '/AmazonCompanies/web/index.php'
+    'PHP_SELF' => '/AmazonCompanies/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1482346134.098
+    'REQUEST_TIME' => 1482346134
+]
+2016-12-21 19:49:04 [::1][1][09m3s1oq10iacv0mcidovqc2i4][error][yii\web\HttpException:404] exception 'yii\base\InvalidRouteException' with message 'Unable to resolve the request "tipo-demonstracao/index".' in C:\xampp\htdocs\AmazonCompanies\vendor\yiisoft\yii2\base\Module.php:462
+Stack trace:
+#0 C:\xampp\htdocs\AmazonCompanies\vendor\yiisoft\yii2\web\Application.php(100): yii\base\Module->runAction('tipo-demonstrac...', Array)
+#1 C:\xampp\htdocs\AmazonCompanies\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 C:\xampp\htdocs\AmazonCompanies\web\index.php(12): yii\base\Application->run()
+#3 {main}
+
+Next exception 'yii\web\NotFoundHttpException' with message 'Page not found.' in C:\xampp\htdocs\AmazonCompanies\vendor\yiisoft\yii2\web\Application.php:112
+Stack trace:
+#0 C:\xampp\htdocs\AmazonCompanies\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 C:\xampp\htdocs\AmazonCompanies\web\index.php(12): yii\base\Application->run()
+#2 {main}
+2016-12-21 19:49:04 [::1][1][09m3s1oq10iacv0mcidovqc2i4][info][application] $_GET = [
+    'r' => 'tipo-demonstracao/index'
+]
+
+$_COOKIE = [
+    '_csrf' => 'cadb28148d09ef0559151aaee49827f402e2c1cf1f01140bb6559e10fa6b273aa:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"AGUjsbBq1uolDiqSRZrw3q66p4NgYeeI\";}'
+    'PHPSESSID' => '09m3s1oq10iacv0mcidovqc2i4'
+    '_identity' => '1de54a1149b80de6528a96989c1654bdfc80c1563a5eee0bba83377ee513af81a:2:{i:0;s:9:\"_identity\";i:1;s:16:\"[1,null,2592000]\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__id' => 1
+]
+
+$_SERVER = [
+    'MIBDIRS' => 'C:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'C:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'
+    'HTTP_REFERER' => 'http://localhost/AmazonCompanies/web/index.php?r=site%2Fadm'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.8'
+    'HTTP_COOKIE' => '_csrf=cadb28148d09ef0559151aaee49827f402e2c1cf1f01140bb6559e10fa6b273aa%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22AGUjsbBq1uolDiqSRZrw3q66p4NgYeeI%22%3B%7D; PHPSESSID=09m3s1oq10iacv0mcidovqc2i4; _identity=1de54a1149b80de6528a96989c1654bdfc80c1563a5eee0bba83377ee513af81a%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_identity%22%3Bi%3A1%3Bs%3A16%3A%22%5B1%2Cnull%2C2592000%5D%22%3B%7D'
+    'PATH' => 'C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Program Files (x86)\\Intel\\iCLS Client\\;C:\\Program Files\\Intel\\iCLS Client\\;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files\\Acer\\Remote Files\\;C:\\Program Files (x86)\\Windows Kits\\8.1\\Windows Performance Toolkit\\;C:\\Program Files (x86)\\Microsoft SDKs\\TypeScript\\1.0\\;C:\\Program Files (x86)\\Windows Live\\Shared;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\RemObjects Software\\Elements\\bin;C:\\xampp\\php;C:\\ProgramData\\ComposerSetup\\bin;C:\\HashiCorp\\Vagrant\\bin;C:\\Users\\Saymon Souza\\AppData\\Roaming\\Composer\\vendor\\bin;C:\\Users\\Saymon Souza\\AppData\\Local\\Microsoft\\WindowsApps'
+    'SystemRoot' => 'C:\\WINDOWS'
+    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\WINDOWS'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.17 (Win32) OpenSSL/1.0.2d PHP/5.6.23 Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.17 (Win32) OpenSSL/1.0.2d PHP/5.6.23'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'C:/xampp/htdocs'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/xampp/htdocs'
+    'SERVER_ADMIN' => 'postmaster@localhost'
+    'SCRIPT_FILENAME' => 'C:/xampp/htdocs/AmazonCompanies/web/index.php'
+    'REMOTE_PORT' => '7186'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=tipo-demonstracao%2Findex'
+    'REQUEST_URI' => '/AmazonCompanies/web/index.php?r=tipo-demonstracao%2Findex'
+    'SCRIPT_NAME' => '/AmazonCompanies/web/index.php'
+    'PHP_SELF' => '/AmazonCompanies/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1482346144.102
+    'REQUEST_TIME' => 1482346144
+]
