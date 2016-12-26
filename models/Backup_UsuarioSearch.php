@@ -74,4 +74,41 @@ class UsuarioSearch extends Usuario
 
         return $dataProvider;
     }
+    
+    public function getFormAttribs() {
+    	return [
+    
+    			'idUsuario' =>[
+    					'type' =>  'hiddenInput',
+    					'columnOptions' => ['hidden'=>true]
+    			],
+    			'login' => [
+    					'type' => 'staticInput',
+    			],
+    			'nome' => [
+    					'type' => 'staticInput',
+    			],
+    			'email' => [
+    					'type' => 'staticInput',
+    			],
+    			'ativo' => [
+    	
+    					  'label' => 'Ativar',
+    	'type' => 'widget',
+    	'widgetClass' => \kartik\widgets\SwitchInput::classname(),
+    	'options' =>
+    	[
+    			'pluginOptions' => [
+    					'offColor'= 'danger',
+    					'onColor' => 'success',
+    					'onText' => 'Ativado',
+    					'offText' => 'Desativado'
+    			]
+    	],
+    	
+    			]
+    
+    	];
+    }
+    
 }
