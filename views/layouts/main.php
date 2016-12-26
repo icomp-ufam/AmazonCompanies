@@ -13,6 +13,7 @@ use app\models\User;
 AppAsset::register($this);
 ?>
 <?php $this->beginPage() ?>
+
 <!DOCTYPE html>
 <html lang="<?= Yii::$app->language ?>">
 <head>
@@ -27,8 +28,13 @@ AppAsset::register($this);
 
 <div class="wrap">
     <?php
+    // contador de notificações
+    $not_aluno = 3;
+    $not_adm_analise=1;
+    $not_adm_cadastro=2;
+    $not_adm_alt_dados=3;
+	$not_adm_total = $not_adm_alt_dados + $not_adm_analise + $not_adm_cadastro;
     
-
     NavBar::begin([
         'brandLabel' => 'Amazon Companies',
         'brandUrl' => Yii::$app->homeUrl,
@@ -58,13 +64,13 @@ AppAsset::register($this);
     							//'<li class="dropdown-header">Dropdown Header</li>',
     							['label' => 'Listar', 'url' => ['/cadadm/']],
     					]],
-    					['label' => 'Notificações '. Html::tag('span', '15', ['class' => 'badge']),
+    					['label' => 'Notificações '. Html::tag('span', $not_adm_total, ['class' => 'badge']),
     					'items' => [
-    							['label' => Html::tag('span', '3', ['class' => 'badge']).' Análises', 'url' => ['/analise/index']],
+    							['label' => Html::tag('span', $not_adm_analise, ['class' => 'badge']).' Análises', 'url' => ['/analise/index']],
     							//'<li class="divider"></li>',
     							//'<li class="dropdown-header">Dropdown Header</li>',
-    							['label' => Html::tag('span', '3', ['class' => 'badge']).' Alteração de Dados', 'url' => ['validaltdados']],
-    							['label' => Html::tag('span', '9', ['class' => 'badge']).' Cadastro', 'url' => ['/usuario/']],
+    							['label' => Html::tag('span', $not_adm_alt_dados, ['class' => 'badge']).' Alteração de Dados', 'url' => ['/site/validaltdados']],
+    							['label' => Html::tag('span', $not_adm_cadastro, ['class' => 'badge']).' Cadastro', 'url' => ['/usuario/']],
     					]],
     					['label' => 'Seu Perfil', 'url' => ['/usuario/update', 'id' => Yii::$app->user->getId()]], 
     					Yii::$app->user->isGuest ? (
@@ -92,7 +98,7 @@ AppAsset::register($this);
     							['label' => 'Cadastrar Dados', 'url' => ['/site/caddadosemp']],
     							['label' => 'Listar Empresas Cadastradas', 'url' => ['/empresa/index']],
     					]],
-    					['label' => 'Notificações '. Html::tag('span', '3', ['class' => 'badge'])],
+    					['label' => 'Notificações '. Html::tag('span', $not_aluno, ['class' => 'badge'])],
     					['label' => 'Seu Perfil', 'url' => ['/usuario/update', 'id' => Yii::$app->user->getId()]],
     					['label' => 'Sobre', 'url' => ['/site/about']],
     					 
