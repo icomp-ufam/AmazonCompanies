@@ -36,7 +36,12 @@ $this->title = 'Lista de Usuarário Cadastrados';
         					}else{
         						return 'Empresa';
         					}
-        			}
+        			},
+        			'filter' => [
+        					'1' => 'Administrador',
+        					'2' => 'Aluno',
+        					'3' => 'Empresa'
+        			]
     		],
             'email:email',
         ],
