@@ -31,7 +31,15 @@ $this->title = 'Identifique-se';
         <?= $form->field($model, 'rememberMe')->checkbox([
             'template' => "<div class=\"col-md-offset-1 col-md-3\">{input} {label}</div>\n<div class=\"col-md-8\">{error}</div>",
         ]) ?>
-
+		
+		<?php if (Yii::$app->session->hasFlash('danger')): ?>
+  				<div class="alert alert-danger alert-dismissable col-md-5">
+  					<button aria-hidden="true" data-dismiss="alert" class="close" type="button">x</button>
+  					<!-- <h4><i class="icon fa fa-check"></i>Usuário Cadastrado com sucesso!</h4>  Opção para aparecer mais alguma informação-->
+  		<?= Yii::$app->session->getFlash('danger') ?>
+  				</div>
+		<?php endif; ?>
+		
         <div class="form-group">
             <div class="col-md-offset-1 col-md-11">
                 <?= Html::submitButton('Entrar', ['class' => 'btn btn-primary', 'name' => 'login-button']) ?> <button type="button" class="btn btn-link" data-toggle="modal" data-target="#recuperar">Recuperar Senha</button>
