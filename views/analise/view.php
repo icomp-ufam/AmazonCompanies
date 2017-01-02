@@ -3,7 +3,6 @@
 use yii\helpers\Html;
 use yii\widgets\DetailView;
 
-
 /* @var $this yii\web\View */
 /* @var $model app\models\Analise */
 
@@ -35,26 +34,43 @@ $this->params['breadcrumbs'][] = $this->title;
     <?php echo '<label class="control-label"><h4>Status: </h4></label>'; ?>
     <?php if($model->status == 0){
     		echo "Desativado";
-    	}else{ 
+    	}else if($model->status == 1){ 
      		echo "Ativado";
-    	} ?>   
+    	}else{
+    		echo "Não Analisado";
+    	}
+    	?>   
         </div>
     	<br>
     	<?php if($model->status == 1){?>
     	<?=
-    	Html::a('Invalidar Análise', ['status', 'id' => $model->idanalise], [
+    	Html::a('Invalidar Análise', ['desativar', 'id' => $model->idanalise], [
     			'class' => 'btn btn-danger',
     			'data' =>[
     			'confirm' => 'Deseja invalidar a análise?'
     	]]) ?>
-    	<?php }else{ ?>
+    	<?php }else if ($model->status == 0){ ?>
     	<?=
-    	Html::a('Validar Análise', ['status', 'id' => $model->idanalise], [
+    	Html::a('Validar Análise', ['ativar', 'id' => $model->idanalise], [
     			'class' => 'btn btn-success',
     			'data' =>[
     			'confirm' => 'Deseja validar a análise?'
     	]]) ?>
-    	<?php } ?>
+    	<?php }else{ ?>
+    	<?=
+    	Html::a('Validar Análise', ['ativar', 'id' => $model->idanalise], [
+    			'class' => 'btn btn-success',
+    			'data' =>[
+    			'confirm' => 'Deseja validar a análise?'
+    	]]) ?>
+    	<?=
+    	Html::a('Invalidar Análise', ['desativar', 'id' => $model->idanalise], [
+    			'class' => 'btn btn-danger',
+    			'data' =>[
+    			'confirm' => 'Deseja invalidar a análise?'
+    	]]) ?>
+    	
+    	<?php }?>
     	<br>
         <br>
         <?= Html::a('Editar Análise', ['update', 'id' => $model->idanalise], ['class' => 'btn btn-primary']) ?>
@@ -67,7 +83,7 @@ $this->params['breadcrumbs'][] = $this->title;
         ]) ?>
          <?=
          // ativar funcionalidade de comentários
-         Html::button('Enviar Comentário', ['class' => 'btn btn-primary']) ?>
+         Html::button('Notificar Autor', ['class' => 'btn btn-primary']) ?>
         <?php } ?>
     </p>
     <!--?= DetailView::widget([
