@@ -1,7 +1,5 @@
 <?php
-
 namespace app\controllers;
-
 use Yii;
 use app\models\cadadm;
 //use yii\data\ActiveDataProvider;
@@ -9,8 +7,6 @@ use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 use app\models\CadadmSearch;
-
-
 /**
  * CadadmController implements the CRUD actions for cadadm model.
  */
@@ -30,7 +26,6 @@ class CadadmController extends Controller
             ],
         ];
     }
-
     /**
      * Lists all cadadm models.
      * @return mixed
@@ -43,13 +38,11 @@ class CadadmController extends Controller
        */ 
         $searchModel = new CadadmSearch();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
-
         return $this->render('index', [
         	'searchModel' => $searchModel,
             'dataProvider' => $dataProvider,
         ]);
     }
-
     /**
      * Displays a single cadadm model.
      * @param integer $id
@@ -61,7 +54,6 @@ class CadadmController extends Controller
             'model' => $this->findModel($id),
         ]);
     }
-
     /**
      * Creates a new cadadm model.
      * If creation is successful, the browser will be redirected to the 'view' page.
@@ -88,7 +80,6 @@ class CadadmController extends Controller
             ]);
         }
     }
-
     /**
      * Updates an existing cadadm model.
      * If update is successful, the browser will be redirected to the 'view' page.
@@ -98,7 +89,6 @@ class CadadmController extends Controller
     public function actionUpdate($id)
     {
         $model = $this->findModel($id);
-
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             return $this->redirect(['view', 'id' => $model->idUsuario]);
         } else {
@@ -107,7 +97,6 @@ class CadadmController extends Controller
             ]);
         }
     }
-
     /**
      * Deletes an existing cadadm model.
      * If deletion is successful, the browser will be redirected to the 'index' page.
@@ -117,10 +106,8 @@ class CadadmController extends Controller
     public function actionDelete($id)
     {
         $this->findModel($id)->delete();
-
         return $this->redirect(['index']);
     }
-
     /**
      * Finds the cadadm model based on its primary key value.
      * If the model is not found, a 404 HTTP exception will be thrown.

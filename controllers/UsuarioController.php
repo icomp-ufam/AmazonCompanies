@@ -8,7 +8,7 @@ use app\models\UsuarioSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
-//use yii\helpers\Json;
+use yii\helpers\Json;
 
 
 /**
@@ -39,7 +39,7 @@ class UsuarioController extends Controller
     {
         $searchModel = new UsuarioSearch();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
-		/*
+		
         // validate if there is a editable input saved via AJAX
         if (Yii::$app->request->post('hasEditable')) {
         	// instantiate your usuario model for saving
@@ -84,7 +84,7 @@ class UsuarioController extends Controller
         			echo $out;
         			return;
         }
-        */
+        
        //$model = new UsuarioSearch
         
        

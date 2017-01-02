@@ -1,7 +1,7 @@
 <?php
 
 use yii\helpers\Html;
-use yii\grid\GridView;
+use kartik\grid\GridView;
 
 /* @var $this yii\web\View */
 /* @var $searchModel app\models\AnaliseSearch */
@@ -28,14 +28,18 @@ $testProvider = $dataProvider;
 //            'value'=>'texto',
 //            'format'=>'html'],
             'idEmpresa0.nome',
-            'status',
+            
+        	[
+        			'class' => 'kartik\grid\BooleanColumn',
+        			'attribute' => 'status'
+    		],
 
-            ['class' => 'yii\grid\ActionColumn',
+            ['class' => 'kartik\grid\ActionColumn',
                 'template'=> '{view}'],
-            ['class' => 'yii\grid\ActionColumn',
-                'template'=> '{update}'],
-            ['class' => 'yii\grid\ActionColumn',
-                'template'=> '{delete}']
+      //      ['class' => 'kartik\grid\ActionColumn',
+      //          'template'=> '{update}'],
+     //       ['class' => 'kartik\grid\ActionColumn',
+        //        'template'=> '{delete}']
         ],
     ]); ?>
 </div>

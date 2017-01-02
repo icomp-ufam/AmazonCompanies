@@ -93,7 +93,29 @@ class AnaliseController extends Controller
             ]);
         }
     }
-
+	
+    public function actionStatus($id)
+    {
+    	$model = $this->findModel($id);
+    
+    	if($model->status == '1'){
+    		$model->status = '0';
+    		$model->save();
+    	}else{
+    		$model->status = '1';
+    		$model->save();
+    	}
+    	
+    	//if ($model->load(Yii::$app->request->post()) && $model->save()) {
+    		return $this->redirect(['view', 'id' => $model->idanalise]);
+    	//} else {
+    	//	return $this->render('update', [
+    	//			'model' => $model,
+    	//	]);
+    	
+    }
+    
+    
     /**
      * Deletes an existing Analise model.
      * If deletion is successful, the browser will be redirected to the 'index' page.
