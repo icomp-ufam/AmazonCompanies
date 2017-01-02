@@ -1,66 +1,62 @@
 <?php
 
-use kartik\grid\GridView;
 use yii\helpers\Html;
-use kartik\widgets\ActiveForm;
-use kartik\builder\TabularForm;
-use yii\helpers\ArrayHelper;
-use app\models\Usuario;
+use kartik\grid\GridView;
+use kartik\widgets\SwitchInput;
 
 /* @var $this yii\web\View */
 /* @var $searchModel app\models\UsuarioSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = 'Validar Cadastros (Save não funciona!)';
-
-
+$this->title = Yii::t('app', 'Usuarios');
+//$this->params['breadcrumbs'][] = $this->title;
 ?>
+<div class="usuario-index">
 
-<?php $form = ActiveForm::begin();
+    <h1><?= Html::encode($this->title) ?></h1>
+    <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
 
-echo TabularForm::widget([
-		'form' => $form,
-		'dataProvider' => $dataProvider,
-		'attributes' => [
-				'idUsuario' => ['type' => TabularForm::INPUT_STATIC, 'columnOptions'=>['hAlign'=>GridView::ALIGN_CENTER]],
-				'login' => ['type' => TabularForm::INPUT_TEXT],
-				'identificadorPessoa' => [ 'type' => TabularForm::INPUT_TEXT],
-				'nome' => [
-						'type' => TabularForm::INPUT_TEXT,
-						//'items'=>ArrayHelper::map(Usuario::find()->orderBy('nome')->asArray()->all(), 'idUsuario', 'nome')
-				],
-				'ativo' => [
-						'type' => TabularForm::INPUT_TEXT,
-						'options'=>['class'=>'form-control text-right'],
-						'columnOptions'=>['hAlign'=>GridView::ALIGN_RIGHT]
-				],
-				'email' => [
-						'type' => TabularForm::INPUT_STATIC,
-						'columnOptions'=>['hAlign'=>GridView::ALIGN_RIGHT]
-				],
-		],
-		'gridSettings' => [
-				'floatHeader' => true,
-				'panel' => [
-						'heading' => '<h3 class="panel-title"><i class="glyphicon glyphicon-book"></i> Não está salvando!</h3>',
-						'type' => GridView::TYPE_PRIMARY,
-						'after'=>
-						Html::a(
-								'<i class="glyphicon glyphicon-plus"></i> Add New',
-								'usuario/create',
-								['class'=>'btn btn-success']
-								) . '&nbsp;' .
-						Html::a(
-								'<i class="glyphicon glyphicon-remove"></i> Delete',
-								'create',
-								['class'=>'btn btn-danger']
-								) . '&nbsp;' .
-						Html::submitButton(
-								'<i class="glyphicon glyphicon-floppy-disk"></i> Save',
-								['class'=>'btn btn-primary']
-								)
-				]
-		]
-]);
+    <?= GridView::widget([
+    		'summary' => '',
+        'dataProvider' => $dataProvider,
+        'filterModel' => $searchModel,
+    	
+        'columns' => [
+        		
+           // ['class' => 'kartik\grid\SerialColumn'],
 
- ActiveForm::end(); ?>
+            //'idUsuario',
+            'login',
+        	'nome',
+            //'senha',
+        	[
+        		'class' => 'kartik\grid\BooleanColumn',
+        		'attribute' => 'ativo'
+        	],
+            // 'identificadorPessoa',
+            // 'email:email',
+            		[
+            		'class'=>'kartik\grid\EditableColumn',
+            		'attribute'=> 'ativo',
+					'format' => 'raw',
+					'value' => function ($model) { 
+						return SwitchInput::widget([
+							'name' => $model->nome,
+						//	'id'=>$model->nome.$model->idUsuario,
+							'value'=>(!$model->ativo),
+							'pluginOptions' => [
+								'size' => 'medium',
+								'onColor' => 'success',
+								'offColor' => 'danger',
+								'onText'=>'activate',
+								'offText' => 'deactivate',
+							]
+						]);
+            		}
+    		],
+
+        	//	['class' => 'kartik\grid\ActionColumn',
+        	//	'template'=> '{status}'],
+        ],
+    ]); ?>
+</div>
