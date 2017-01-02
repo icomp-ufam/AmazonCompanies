@@ -11,6 +11,8 @@ use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 use yii\web\UploadedFile;
 use app\models\UploadForm;
+use yii\db\Query;
+use yii\db\ActiveQuery;
 
 
 /**
@@ -48,6 +50,61 @@ class EmpresaController extends Controller
         ]);
     }
 
+    /**
+     * @return string
+     */
+    public function actionGetDescricao(){
+
+        $empresaP = $_POST['empresa'];
+        $empresas = explode('#', $empresaP);
+        $tabela = "<table class='table'>
+                       <tr> ";
+        foreach ($empresas as $empresa){
+        //Pegando o nome da empresa
+            $conectEmpresa = \Yii::$app->db;
+            $queryEmpresa = 'SELECT nome FROM empresa WHERE idEmpresa = '.$empresa;
+            $nomeEmpresa = $conectEmpresa->createCommand($queryEmpresa)->queryScalar();
+            $tabela .= "<th> $nomeEmpresa </th> ";
+        }
+        $tabela.="</tr> ";
+        //Pegando o nome da demonstração
+        $tabela.="<tr> ";
+        foreach ($empresas as $empresa) {
+            $tabela.= "<td>";
+            $connection = \Yii::$app->db;
+            $query = 'SELECT tipoDemonstracao.nome, demonstracao.idDemonstracao
+                  FROM demonstracao INNER JOIN tipoDemonstracao 
+                  ON demonstracao.idtipoDemonstracao = tipoDemonstracao.idtipoDemonstracao 
+                  WHERE demonstracao.Empresa_idEmpresa = ' . $empresa;
+            $demonstracoes = $connection->createCommand($query)->queryAll();
+            if(count($demonstracoes) > 0) {
+                foreach ($demonstracoes as $result):
+                    $tabela .= "<b> {$result['nome']}</b> </br>  ";
+                    $connection2 = \Yii::$app->db;
+                    $queryConta = "SELECT nome, valor FROM conta WHERE idDemonstracao = {$result['idDemonstracao']}";
+                    $contas = $connection2->createCommand($queryConta)->queryAll();
+                    if(count($contas)>0){
+                        foreach ($contas as $ct){
+                            $tabela .= "{$ct['nome']}: {$ct['valor']} <br>";
+                        }
+                    }else $tabela.= "Não há dados <br>";
+                endforeach;
+            }else $tabela.= "Empresa sem demonstrações <br> ";
+            $tabela.="</td>";
+        }
+        $tabela.="</tr>
+            </table>";
+
+        //echo count($resultado);
+        return $tabela;
+        //SELECT nome, valor FROM conta WHERE idDemonstracao in
+        // (SELECT idDemonstracao FROM demonstracao
+        // INNER JOIN tipoDemonstracao ON demonstracao.idtipoDemonstracao = tipoDemonstracao.idtipoDemonstracao
+        // WHERE demonstracao.Empresa_idEmpresa = 1)
+        //SELECT tipoDemonstracao.nome FROM tipoDemonstracao ]
+        //JOIN demonstracao ON tipoDemonstracao.idtipoDemonstracao= demonstracao.idtipoDemonstracao 
+        //WHERE demonstracao.Empresa_idEmpresa = 1;*/
+    }
     /**
      * Displays a single Empresa model.
      * @param integer $id
