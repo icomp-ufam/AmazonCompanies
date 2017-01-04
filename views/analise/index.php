@@ -34,12 +34,11 @@ $testProvider = $dataProvider;
         			'attribute' => 'status'
     		],
 
-            ['class' => 'kartik\grid\ActionColumn',
-                'template'=> '{view}'],
-      //      ['class' => 'kartik\grid\ActionColumn',
-      //          'template'=> '{update}'],
-     //       ['class' => 'kartik\grid\ActionColumn',
-        //        'template'=> '{delete}']
+            [
+            	'class' => 'kartik\grid\ActionColumn',
+            	'header' => 'Visualizar Análise',
+                'template'=> '{view}'	
+    		]
         ],
     ]); ?>
 </div>
