@@ -127,9 +127,10 @@ class EmpresaController extends Controller
         $file = \yii\web\UploadedFile::getInstance($model, 'logotipo');
 
         if ($model->load(Yii::$app->request->post()) and $file != null){
+
             $model->logotipo = UploadedFile::getInstance($model, 'logotipo');
-            //$model->upload();
             $file->saveAs('img/'.$file->name);
+
             if($model->save(false)) {
                 return $this->redirect(['view', 'id' => $model->idEmpresa]);
             }
@@ -149,9 +150,16 @@ class EmpresaController extends Controller
     public function actionUpdate($id)
     {
         $model = $this->findModel($id);
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
+        $file = \yii\web\UploadedFile::getInstance($model, 'logotipo');
+
+        if ($model->load(Yii::$app->request->post()) && $file != null) {
+
             $model->logotipo = UploadedFile::getInstance($model, 'logotipo');
-            return $this->redirect(['view', 'id' => $model->idEmpresa]);
+            $file->saveAs('img/'.$file->name);
+
+            if($model->save(false)) {
+                return $this->redirect(['view', 'id' => $model->idEmpresa]);
+            }
         } else {
             return $this->render('update', [
                 'model' => $model,
