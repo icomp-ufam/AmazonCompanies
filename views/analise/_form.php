@@ -18,7 +18,7 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'texto')->textarea(['rows' => 6]) ?>
 
-    <?= $form->field($model, 'status')->hiddenInput(['value'=>'Pendente'])->label(false);//hiddenInput(['value'=>'Pendente']) ?>
+    <?= $form->field($model, 'status')->hiddenInput(['value'=>'2'])->label(false);//hiddenInput(['value'=>'Pendente']) ?>
 
     <?= $form->field($model, 'idEmpresa')->hiddenInput(['value'=>$idEmpresa])->label(false); ?>
     <div class="form-group">

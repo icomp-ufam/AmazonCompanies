@@ -341,16 +341,20 @@
         $posts = $analiseProvider->getModels();
         $analiseProvider->pagination->pageParam = 'analise-page';
         $analiseProvider->sort->sortParam= 'analise-sort';
-
-        if (!empty($posts)){
-            echo '<div class="col-md-10" style="background-color: lavender">';
-            print_r($posts[0]['texto']);
-            echo '</div>';
-        }else {
-            echo "<div class='text-info'>Essa empresa não possui análise registrada! </div><br>";
-            echo '<a href="http://localhost/AmazonCompanies/web/index.php?r=analise%2Fcreate&idEmpresa=' . $model->idEmpresa . '"><button class="btn btn-default">Criar Análise</button> </a>';
+        $flag = false;
+        foreach($posts as $post){
+            if (!empty($post) and $post['status'] == 1){
+                $flag = true;
+                echo '<div class="col-md-10" style="background-color: lavender">';
+                print_r($post['texto']);
+                echo '</div>';
+            }
         }
-    ?> 
+        if($flag == false){
+         echo "<div class='text-info'>Essa empresa não possui análise registrada! </div><br>";
+         echo '<a href="http://localhost/AmazonCompanies/web/index.php?r=analise%2Fcreate&idEmpresa=' . $model->idEmpresa . '"><button class="btn btn-default">Criar Análise</button> </a>';
+        }
+    ?>
 </div>
 
 <div class="row">

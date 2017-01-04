@@ -42,12 +42,12 @@ AppAsset::register($this);
 
         }
         .navbar .navbar-nav .navbar-right .brand, .navbar .nav > li > a:hover {
-            color: #001a35 ;
-            background-color: white;
+            background: #0d6aad;
+            color: white;
         }
         .navbar-inverse .navbar-right .navbar-nav>.active>a:hover {
-            color: #001a35;
-            background-color: white;
+            background: #0d6aad;
+            color: white;
         }
         .navbar-inverse .navbar-right .navbar-nav > .active > a, .navbar-inverse .navbar-nav > .active > a:hover, .navbar-inverse .navbar-nav > .active > a:focus{
             background: #0d6aad;

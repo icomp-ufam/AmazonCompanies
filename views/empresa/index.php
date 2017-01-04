@@ -3,10 +3,11 @@
 use yii\helpers\Html;
 use yii\helpers\Url;
 use yii\helpers\BaseUrl;
-use yii\grid\GridView;
+//use yii\grid\GridView;
 use yii\data\ActiveDataProvider;
 use yii\db\Query;
 use yii\widgets\DetailView;
+use kartik\grid\GridView;
 /* @var $this yii\web\View */
 /* @var $searchModel app\models\EmpresaSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
@@ -17,7 +18,7 @@ $this->params['breadcrumbs'][] = $this->title;
 
 ?>
 <div class="empresa-index">
-    <h1><?= Html::encode($this->title) ?></h1>
+    <h2><strong><?= Html::encode($this->title) ?></strong></h2>
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
 
 
@@ -25,13 +26,9 @@ $this->params['breadcrumbs'][] = $this->title;
     <?php
     if(Yii::$app->user->getIdentificadorPessoa() == '1'){ //Administrador
         ?>
-        <p>
-            <?= Html::a('Criar Empresa', ['create'], ['class' => 'btn btn-success']) ?>
-
-        </p>
-
         <?= GridView::widget([
             'id'=>'grid',
+            'summary'=>'',
             'dataProvider' => $dataProvider,
             'filterModel' => $searchModel,
             'columns' => [
@@ -49,7 +46,16 @@ $this->params['breadcrumbs'][] = $this->title;
                 'nome',
                 //'analise:ntext',
                 'fonte',
-                'tipo',
+                [
+                    'attribute' => 'tipo',
+                    'hAlign' => 'center',
+                    'value' => 'tipo',
+                    'filter' => [
+                        'Local' => 'Local',
+                        'Nacional' => 'Nacional',
+                        'Estrangeira' => 'Estrangeira'
+                    ]
+                ],
                 // 'logotipo',
 
                 ['class' => 'yii\grid\ActionColumn',
@@ -60,12 +66,25 @@ $this->params['breadcrumbs'][] = $this->title;
                     'template'=> '{delete}']
             ],
         ]); ?>
+        <div class="row">
+            <div class="col-md-10">
+                <button type="button" onclick="comparar()" class="btn btn-primary" >Comparar Empresas</button>
+                <button  data-toggle="modal" data-target="#cadAgrega" id="teste" style=" visibility: hidden"></button>
+
+            </div>
+            <div class="col-md-2" >
+                <?= Html::a('Criar Empresa', ['create'], ['class' => 'btn btn-primary']) ?>
+            </div>
+        </div>
+
+
         <?php
     }else if (Yii::$app->user->getIdentificadorPessoa() == '2'){
         //Aluno
         ?>
         <?= GridView::widget([
             'id'=>'grid',
+            'summary'=>'',
             'dataProvider' => $dataProvider,
             'filterModel' => $searchModel,
             'columns' => [
@@ -83,18 +102,35 @@ $this->params['breadcrumbs'][] = $this->title;
                 'nome',
                 //'analise:ntext',
                 'fonte',
-                'tipo',
+                [
+                    'attribute' => 'tipo',
+                    'hAlign' => 'center',
+                    'value' => 'tipo',
+                    'filter' => [
+                        'Local' => 'Local',
+                        'Nacional' => 'Nacional',
+                        'Estrangeira' => 'Estrangeira'
+                    ]
+                ],
                 // 'logotipo',
 
                 ['class' => 'yii\grid\ActionColumn',
                     'template'=> '{view}'],
             ],
         ]); ?>
+        <div class="row">
+            <div class="col-md-10">
+                <button type="button" onclick="comparar()" class="btn btn-primary" >Comparar Empresas</button>
+                <button  data-toggle="modal" data-target="#cadAgrega" id="teste" style=" visibility: hidden"></button>
+
+            </div>
+        </div>
         <?php
     }else if (Yii::$app->user->getIdentificadorPessoa() == '3'){ //Empresa
         ?>
         <?= GridView::widget([
             'id'=>'grid',
+            'summary'=>'',
             'dataProvider' => $dataProvider,
             'filterModel' => $searchModel,
             'columns' => [
@@ -110,7 +146,16 @@ $this->params['breadcrumbs'][] = $this->title;
                 'nome',
                 //'analise:ntext',
                 'fonte',
-                'tipo',
+                [
+                    'attribute' => 'tipo',
+                    'hAlign' => 'center',
+                    'value' => 'tipo',
+                    'filter' => [
+                        'Local' => 'Local',
+                        'Nacional' => 'Nacional',
+                        'Estrangeira' => 'Estrangeira'
+                    ]
+                ],
                 // 'logotipo',
 
                 ['class' => 'yii\grid\ActionColumn',
@@ -118,11 +163,17 @@ $this->params['breadcrumbs'][] = $this->title;
 
             ],
         ]); ?>
+        <div class="col-md-10">
+            <button type="button" onclick="comparar()" class="btn btn-primary" >Comparar Empresas</button>
+            <button  data-toggle="modal" data-target="#cadAgrega" id="teste" style=" visibility: hidden"></button>
+
+        </div>
         <?php
     }else{ // Visitante
         ?>
         <?= GridView::widget([
             'id'=>'grid',
+            'summary'=>'',
             'dataProvider' => $dataProvider,
             'filterModel' => $searchModel,
             'columns' => [
@@ -138,7 +189,16 @@ $this->params['breadcrumbs'][] = $this->title;
                 'nome',
                 //'analise:ntext',
                 'fonte',
-                'tipo',
+                [
+                    'attribute' => 'tipo',
+                    'hAlign' => 'center',
+                    'value' => 'tipo',
+                    'filter' => [
+                        'Local' => 'Local',
+                        'Nacional' => 'Nacional',
+                        'Estrangeira' => 'Estrangeira'
+                    ]
+                ],
                 // 'logotipo',
                 ['class' => 'yii\grid\ActionColumn',
                     'template'=> '{view}']
@@ -146,14 +206,15 @@ $this->params['breadcrumbs'][] = $this->title;
             ],
         ]);
         ?>
+        <div class="col-md-10">
+            <button type="button" onclick="comparar()" class="btn btn-primary" >Comparar Empresas</button>
+            <button  data-toggle="modal" data-target="#cadAgrega" id="teste" style=" visibility: hidden"></button>
+
+        </div>
         <?php
     }
     ?>
 
-    <div class="col-md-3">
-        <button type="button" onclick="comparar()" class="btn btn-default" >Comparar Empresas</button>
-        <button  data-toggle="modal" data-target="#cadAgrega" id="teste" style=" visibility: hidden"></button>
-    </div>
     <script type="application/javascript">
         //Criar controlador acesado vai requisição ajax."
         var keys;
