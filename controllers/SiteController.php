@@ -149,29 +149,9 @@ class SiteController extends Controller
     	return $this->render('adm');
     }
     
-    public function actionValidanaadm()
-    {
-    	return $this->render('validanaadm');
-    }
-    
     public function actionListempvis()
     {
     	return $this->render('listempvis');
-    }
-    
-    public function actionListemp()
-    {
-    	return $this->render('listemp');
-    }
-    
-    public function actionListusersadm()
-    {
-    	return $this->render('listusersadm');
-    }
-    
-    public function actionAltcad()
-    {
-    	return $this->render('altcad');
     }
     
     public function actionAltcademp()
