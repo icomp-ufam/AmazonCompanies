@@ -59,7 +59,7 @@ class Usuario extends \yii\db\ActiveRecord
             'nome' => 'Nome',
             'senha' => 'Senha',
             'ativo' => 'Ativo',
-            'identificadorPessoa' => 'Identificador Pessoa',
+            'identificadorPessoa' => 'Tipo',
             'email' => 'Email',
         ];
     }
@@ -101,5 +101,11 @@ class Usuario extends \yii\db\ActiveRecord
     	$model->senha = md5($model->senha);
     	$model->repetir_senha = md5($model->repetir_senha);
     	return $model->save();
+    }
+    
+    // retorna a quantidade de status pendentes
+    public function getNotification(){
+    	$query = Usuario::find()->where(['ativo' => '2'])->count();
+    	return $query;
     }
 }

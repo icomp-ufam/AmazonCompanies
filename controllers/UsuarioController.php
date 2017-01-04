@@ -5,11 +5,14 @@ namespace app\controllers;
 use Yii;
 use app\models\Usuario;
 use app\models\UsuarioSearch;
+use app\models\UsuarioValid;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
-use yii\helpers\Json;
-
+use yii\base\Model;
+//use yii\helpers\ArrayHelper;
+use kartik\builder\TabularForm;
+use kartik\grid\GridView;
 
 /**
  * UsuarioController implements the CRUD actions for Usuario model.
@@ -35,61 +38,11 @@ class UsuarioController extends Controller
      * Lists all Usuario models.
      * @return mixed
      */
-    public function actionIndex()
-    {
-        $searchModel = new UsuarioSearch();
-        $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
-		
-        // validate if there is a editable input saved via AJAX
-        if (Yii::$app->request->post('hasEditable')) {
-        	// instantiate your usuario model for saving
-        	$_id = $_POST['editableKey'];
-        	$model = $this->findModel($_id);
-        
-        	// store a default json response as desired by editable
-        	$out = Json::encode(['output'=>'treze', 'message'=>'Pronto!']);
-        
-        	// fetch the first entry in posted data (there should only be one entry
-        	// anyway in this array for an editable submission)
-        			// - $posted is the posted data for Book without any indexes
-        			// - $post is the converted array for single model validation
-        			$posted = current($_POST['Usuario']);
-        			$post = ['Usuario' => $posted];
-        
-        			// load model like any single model validation
-        			if ($model->load($post)) {
-        				// can save model or do something before saving model
-        				$model->save();
-        
-        				// custom output to return to be displayed as the editable grid cell
-        				// data. Normally this is empty - whereby whatever value is edited by
-        				// in the input by user is updated automatically.
-        				$output = '';
-        
-        				// specific use case where you need to validate a specific
-        				// editable column posted when you have more than one
-        				// EditableColumn in the grid view. We evaluate here a
-        				// check to see if buy_amount was posted for the Book model
-        		//		if (isset($posted['ativo'])) {
-        		//			$output = Yii::$app->formatter->asInteger($model->ativo, 2);
-        		//		}
-        
-        				// similarly you can check if the name attribute was posted as well
-        				// if (isset($posted['name'])) {
-        				// $output = ''; // process as you need
-        					// }
-        				//	$out = Json::encode(['output'=>$output, 'message'=>'teste2']);
-        			}
-        			// return ajax json encoded response and exit
-        			echo $out;
-        			return;
-        }
-        
-       //$model = new UsuarioSearch
-        
-       
-        
-        
+    public function actionIndex(){ // é onde será feita a validação
+    	
+    	$searchModel = new UsuarioSearch();
+    	$dataProvider = $searchModel->search(Yii::$app->request->queryParams);
+    	
         return $this->render('index', [
             'searchModel' => $searchModel,
             'dataProvider' => $dataProvider,
@@ -196,5 +149,21 @@ class UsuarioController extends Controller
         } else {
             throw new NotFoundHttpException('A página requisitada não existe.');
         }
+    }
+    
+    public function actionStatus($id)
+    {
+    	$model = $this->findModel($id);
+    
+    	if($model->ativo == '1'){
+    		$model->ativo = '0';
+    		$model->save(false); // salvando sem validar!
+    	}else{
+    		$model->ativo = '1';
+    		$model->save(false); // salvando sem validar!
+    	}
+ 
+    	return $this->redirect(['usuario/index']);
+   
     }
 }
