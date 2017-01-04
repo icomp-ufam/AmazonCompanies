@@ -25,6 +25,42 @@ AppAsset::register($this);
     <?= Html::csrfMetaTags() ?>
     <title><?= Html::encode($this->title)?></title>
     <?php $this->head() ?>
+    <style>
+        .nav > li > form > button.logout:focus,
+        .nav > li > form > button.logout:hover {
+            text-decoration: none;
+        }
+        .nav > li > form > button.logout:focus {
+            outline: none;
+        }
+        .navbar .nav > li > a {
+            color: white;
+        }
+        .nav .open > a
+        {
+            background:green;
+
+        }
+        .navbar .navbar-nav .navbar-right .brand, .navbar .nav > li > a:hover {
+            color: #001a35 ;
+            background-color: white;
+        }
+        .navbar-inverse .navbar-right .navbar-nav>.active>a:hover {
+            color: #001a35;
+            background-color: white;
+        }
+        .navbar-inverse .navbar-right .navbar-nav > .active > a, .navbar-inverse .navbar-nav > .active > a:hover, .navbar-inverse .navbar-nav > .active > a:focus{
+            background: #0d6aad;
+            color: white;
+        }
+        .navbar-inverse {
+            background-color: #001a35;
+            border-color: #001a35;
+            background: linear-gradient(to right,  #001a35 , #0d6aad,  #001a35);
+        }
+        }
+
+    </style>
 </head>
 <body>
 <?php $this->beginBody() ?>

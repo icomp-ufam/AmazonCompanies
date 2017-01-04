@@ -6,8 +6,10 @@
     use yii\db\Query;
     use yii\grid\GridView;
 
+
     /* @var $this yii\web\View */
-    /* @var $model app\models\Empresa */
+    /* @var $model app\models\Empresa
+     * */
 
     $this->title = $model->nome;
     $this->params['breadcrumbs'][] = ['label' => 'Empresas', 'url' => ['index']];
@@ -17,6 +19,7 @@
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 <script src="https://code.highcharts.com/highcharts.js"></script> 
+
 
 <div class="empresa-view">
     <p>
@@ -143,6 +146,7 @@
                         <li><a data-toggle="tab" href="#indicev">Giros Viaconti</a></li>
                     </ul>
 
+<<<<<<< Updated upstream
                     <div class="tab-content">
                         <div id="indicex" class="tab-pane fade in active">
                             <div class="container">            
