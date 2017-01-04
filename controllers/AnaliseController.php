@@ -94,25 +94,22 @@ class AnaliseController extends Controller
         }
     }
 	
-    public function actionStatus($id)
+    public function actionAtivar($id)
     {
     	$model = $this->findModel($id);
+    	$model->status = '1';
+    	$model->save();
+    	
+    	return $this->redirect(['view', 'id' => $model->idanalise]);
+    }
     
-    	if($model->status == '1'){
-    		$model->status = '0';
-    		$model->save();
-    	}else{
-    		$model->status = '1';
-    		$model->save();
-    	}
-    	
-    	//if ($model->load(Yii::$app->request->post()) && $model->save()) {
-    		return $this->redirect(['view', 'id' => $model->idanalise]);
-    	//} else {
-    	//	return $this->render('update', [
-    	//			'model' => $model,
-    	//	]);
-    	
+    public function actionDesativar($id)
+    {
+    	$model = $this->findModel($id);
+    	$model->status = '0';
+    	$model->save();
+    	 
+    	return $this->redirect(['view', 'id' => $model->idanalise]);
     }
     
     
@@ -141,7 +138,7 @@ class AnaliseController extends Controller
         if (($model = Analise::findOne($id)) !== null) {
             return $model;
         } else {
-            throw new NotFoundHttpException('The requested page does not exist.');
+            throw new NotFoundHttpException('A página requisitada não existe.');
         }
     }
 }
