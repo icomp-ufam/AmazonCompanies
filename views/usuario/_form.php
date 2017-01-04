@@ -26,7 +26,7 @@ use yii\widgets\ActiveForm;
 	
 	<?= $form->field($model, 'repetir_senha')->passwordInput(['maxlength' => true])->label('Repetir Senha') ?>
 	
-    <?= $form->field($model, 'ativo')->hiddenInput(['value'=>'0'])->label(false) ?>
+    <?= $form->field($model, 'ativo')->hiddenInput(['value'=>'2'])->label(false) ?>
 
     <?= $form->field($model, 'email')->textInput(['maxlength' => true])->hint('Ex: gii@icomp.ufam.edu.br')->label('E-mail') ?>
 

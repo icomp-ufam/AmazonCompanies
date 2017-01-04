@@ -51,12 +51,15 @@ class BooleanColumn extends DataColumn
     /**
      * @var string label for the true value. Defaults to `Active`.
      */
-    public $trueLabel;
+    public $trueLabel = 'Ativo';
 
     /**
      * @var string label for the false value. Defaults to `Inactive`.
      */
-    public $falseLabel;
+    public $falseLabel = 'Inativo';
+    
+    // criando uma label para não visualizado -> status = 2
+    public $alertLabel = 'Pendente';
 
     /**
      * @var string icon/indicator for the true value. If this is not set, it will use the value from `trueLabel`. If
@@ -69,7 +72,10 @@ class BooleanColumn extends DataColumn
      * GridView `bootstrap` property is set to true - it will default to [[GridView::ICON_INACTIVE]].
      */
     public $falseIcon;
-
+	
+    //icone do alerta
+    public $alertIcon;
+    
     /**
      * @var boolean whether to show null value as a false icon.
      */
@@ -81,12 +87,15 @@ class BooleanColumn extends DataColumn
     public function init()
     {
         if (empty($this->trueLabel)) {
-            $this->trueLabel = Yii::t('kvgrid', 'Active');
+            $this->trueLabel = Yii::t('kvgrid', 'Ativo');
         }
         if (empty($this->falseLabel)) {
-            $this->falseLabel = Yii::t('kvgrid', 'Inactive');
+            $this->falseLabel = Yii::t('kvgrid', 'Inativo');
         }
-        $this->filter = [true => $this->trueLabel, false => $this->falseLabel];
+        if(empty($this->alertLabel)){
+        	$this->alertLabel = Yii::t('kvgrid', 'Pendente');
+        }
+        $this->filter = [true => $this->trueLabel, false => $this->falseLabel, '2' => $this->alertLabel];
 
         if (empty($this->trueIcon)) {
             /** @noinspection PhpUndefinedFieldInspection */
@@ -96,6 +105,11 @@ class BooleanColumn extends DataColumn
         if (empty($this->falseIcon)) {
             /** @noinspection PhpUndefinedFieldInspection */
             $this->falseIcon = ($this->grid->bootstrap) ? GridView::ICON_INACTIVE : $this->falseLabel;
+        }
+        
+        if (empty($this->alertIcon)) {
+        	/** @noinspection PhpUndefinedFieldInspection */
+        	$this->alertIcon = ($this->grid->bootstrap) ? GridView::ICON_ALERT : $this->alertLabel;
         }
 
         parent::init();
@@ -108,7 +122,11 @@ class BooleanColumn extends DataColumn
     {
         $value = parent::getDataCellValue($model, $key, $index);
         if ($value !== null) {
-            return $value ? $this->trueIcon : $this->falseIcon;
+            if($value == 2){
+            	return $this->alertIcon; 
+         	}else{
+        		return $value ? $this->trueIcon : $this->falseIcon;
+            }
         }
         return $this->showNullAsFalse ? $this->falseIcon : $value;
     }
