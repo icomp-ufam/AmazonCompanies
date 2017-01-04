@@ -9,6 +9,9 @@ use yii\bootstrap\NavBar;
 use yii\widgets\Breadcrumbs;
 use app\assets\AppAsset;
 use app\models\User;
+use app\models\Analise; 
+use app\models\Usuario;
+use app\models\Notificacao;
 
 AppAsset::register($this);
 ?>
@@ -29,10 +32,10 @@ AppAsset::register($this);
 <div class="wrap">
     <?php
     // contador de notificações
-    $not_aluno = 3;
-    $not_adm_analise=1;
-    $not_adm_cadastro=2;
-    $not_adm_alt_dados=3;
+    $not_aluno = Notificacao::getNotification();
+    $not_adm_analise =  Analise::getNotification();
+    $not_adm_cadastro = Usuario::getNotification();
+    $not_adm_alt_dados = 0; // gerar uma função que conte os pendentes desta funcionalidade.
 	$not_adm_total = $not_adm_alt_dados + $not_adm_analise + $not_adm_cadastro;
     
     NavBar::begin([
@@ -64,7 +67,7 @@ AppAsset::register($this);
     							//'<li class="dropdown-header">Dropdown Header</li>',
     							['label' => 'Listar', 'url' => ['/cadadm/']],
     					]],
-    					['label' => 'Notificações '. Html::tag('span', $not_adm_total, ['class' => 'badge']),
+    					['label' => 'Notificações '. Html::tag('span', $not_adm_total, ['class' => 'badge']), // configurar para que o o botão, ao ser clicado abra as notificações e ao passar o mouse acima, exiba o dropdown
     					'items' => [
     							['label' => Html::tag('span', $not_adm_analise, ['class' => 'badge']).' Análises', 'url' => ['/analise/index']],
     							//'<li class="divider"></li>',
@@ -98,7 +101,7 @@ AppAsset::register($this);
     							['label' => 'Cadastrar Dados', 'url' => ['/site/caddadosemp']],
     							['label' => 'Listar Empresas Cadastradas', 'url' => ['/empresa/index']],
     					]],
-    					['label' => 'Notificações '. Html::tag('span', $not_aluno, ['class' => 'badge'])],
+    					['label' => 'Notificações '. Html::tag('span', $not_aluno, ['class' => 'badge']), 'url' => ['/notificacao/']],
     					['label' => 'Seu Perfil', 'url' => ['/usuario/update', 'id' => Yii::$app->user->getId()]],
     					['label' => 'Sobre', 'url' => ['/site/about']],
     					 
