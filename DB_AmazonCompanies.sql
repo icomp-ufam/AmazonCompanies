@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Tempo de geração: 13/12/2016 às 14:17
+-- Tempo de geracão: 13/12/2016 às 14:17
 -- Versão do servidor: 5.7.16-0ubuntu0.16.04.1
 -- Versão do PHP: 7.0.8-0ubuntu0.16.04.3
 
@@ -118,14 +118,14 @@ CREATE TABLE `demonstracao` (
   `idDemonstracao` int(11) NOT NULL,
   `ano` year(4) NOT NULL,
   `Empresa_idEmpresa` int(11) NOT NULL,
-  `idtipoDemonstração` int(11) NOT NULL
+  `idtipoDemonstracao` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Fazendo dump de dados para tabela `demonstracao`
 --
 
-INSERT INTO `demonstracao` (`idDemonstracao`, `ano`, `Empresa_idEmpresa`, `idtipoDemonstração`) VALUES
+INSERT INTO `demonstracao` (`idDemonstracao`, `ano`, `Empresa_idEmpresa`, `idtipoDemonstracao`) VALUES
 (1, 2013, 1, 2),
 (2, 2013, 1, 1),
 (3, 2013, 1, 3);
@@ -221,8 +221,8 @@ INSERT INTO `notificacao` (`idNotificacao`, `Usuario_idUsuario`, `status`, `cont
 -- Estrutura para tabela `tipoDemonstração`
 --
 
-CREATE TABLE `tipoDemonstração` (
-  `idtipoDemonstração` int(11) NOT NULL,
+CREATE TABLE `tipoDemonstracao` (
+  `idtipoDemonstracao` int(11) NOT NULL,
   `nome` varchar(200) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -230,7 +230,7 @@ CREATE TABLE `tipoDemonstração` (
 -- Fazendo dump de dados para tabela `tipoDemonstração`
 --
 
-INSERT INTO `tipoDemonstração` (`idtipoDemonstração`, `nome`) VALUES
+INSERT INTO `tipoDemonstracao` (`idtipoDemonstracao`, `nome`) VALUES
 (1, 'Balanço Patrimonial'),
 (2, 'Demonstração dos Fluxos de Caixa'),
 (3, 'Demonstração do Resultado do Exercício');
@@ -316,7 +316,7 @@ ALTER TABLE `comentario`
 --
 ALTER TABLE `conta`
   ADD PRIMARY KEY (`idConta`),
-  ADD KEY `fk_Demonstração_Tipo_Demonstração1_idx` (`idDemonstracao`),
+  ADD KEY `fk_Demonstracao_Tipo_Demonstracao1_idx` (`idDemonstracao`),
   ADD KEY `fk_agregado_idx` (`idAgregado`);
 
 --
@@ -325,7 +325,7 @@ ALTER TABLE `conta`
 ALTER TABLE `demonstracao`
   ADD PRIMARY KEY (`idDemonstracao`),
   ADD KEY `fk_demonstracao_1_idx` (`Empresa_idEmpresa`),
-  ADD KEY `fk_demonstracao_2_idx` (`idtipoDemonstração`);
+  ADD KEY `fk_demonstracao_2_idx` (`idtipoDemonstracao`);
 
 --
 -- Índices de tabela `empresa`
@@ -346,20 +346,20 @@ ALTER TABLE `empresaHasUsuario`
 --
 ALTER TABLE `indice`
   ADD PRIMARY KEY (`idIndice`) USING BTREE,
-  ADD KEY `fk_Índice_Tipo_Índice1_idx` (`idTipo_Indice`);
+  ADD KEY `fk_Indice_Tipo_Indice1_idx` (`idTipo_Indice`);
 
 --
 -- Índices de tabela `notificacao`
 --
 ALTER TABLE `notificacao`
   ADD PRIMARY KEY (`idNotificacao`,`Usuario_idUsuario`),
-  ADD KEY `fk_Notificação_Usuario_idx` (`Usuario_idUsuario`);
+  ADD KEY `fk_Notificacao_Usuario_idx` (`Usuario_idUsuario`);
 
 --
--- Índices de tabela `tipoDemonstração`
+-- Índices de tabela `tipoDemonstracao`
 --
-ALTER TABLE `tipoDemonstração`
-  ADD PRIMARY KEY (`idtipoDemonstração`);
+ALTER TABLE `tipoDemonstracao`
+  ADD PRIMARY KEY (`idtipoDemonstracao`);
 
 --
 -- Índices de tabela `tipo_indice`
@@ -437,15 +437,15 @@ ALTER TABLE `analise`
 -- Restrições para tabelas `comentario`
 --
 ALTER TABLE `comentario`
-  ADD CONSTRAINT `fk_Comentário_Comentário1` FOREIGN KEY (`Comentario_idComentario`) REFERENCES `comentario` (`idComentario`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  ADD CONSTRAINT `fk_Comentário_Empresa1` FOREIGN KEY (`Empresa_idEmpresa`) REFERENCES `empresa` (`idEmpresa`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  ADD CONSTRAINT `fk_Comentário_Usuario1` FOREIGN KEY (`Usuario_idUsuario`) REFERENCES `usuario` (`idUsuario`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+  ADD CONSTRAINT `fk_Comentario_Comentario1` FOREIGN KEY (`Comentario_idComentario`) REFERENCES `comentario` (`idComentario`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  ADD CONSTRAINT `fk_Comentario_Empresa1` FOREIGN KEY (`Empresa_idEmpresa`) REFERENCES `empresa` (`idEmpresa`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  ADD CONSTRAINT `fk_Comentario_Usuario1` FOREIGN KEY (`Usuario_idUsuario`) REFERENCES `usuario` (`idUsuario`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
 -- Restrições para tabelas `conta`
 --
 ALTER TABLE `conta`
-  ADD CONSTRAINT `fk_Demonstração_Demonstração1` FOREIGN KEY (`idDemonstracao`) REFERENCES `demonstracao` (`idDemonstracao`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  ADD CONSTRAINT `fk_Demonstracao_Demonstracao1` FOREIGN KEY (`idDemonstracao`) REFERENCES `demonstracao` (`idDemonstracao`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   ADD CONSTRAINT `fk_agregado` FOREIGN KEY (`idAgregado`) REFERENCES `agregado` (`idAgregado`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
@@ -453,7 +453,7 @@ ALTER TABLE `conta`
 --
 ALTER TABLE `demonstracao`
   ADD CONSTRAINT `fk_demonstracao_1` FOREIGN KEY (`Empresa_idEmpresa`) REFERENCES `empresa` (`idEmpresa`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  ADD CONSTRAINT `fk_demonstracao_2` FOREIGN KEY (`idtipoDemonstração`) REFERENCES `tipoDemonstração` (`idtipoDemonstração`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+  ADD CONSTRAINT `fk_demonstracao_2` FOREIGN KEY (`idtipoDemonstracao`) REFERENCES `tipoDemonstracao` (`idtipoDemonstracao`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
 -- Restrições para tabelas `empresaHasUsuario`
@@ -466,13 +466,13 @@ ALTER TABLE `empresaHasUsuario`
 -- Restrições para tabelas `indice`
 --
 ALTER TABLE `indice`
-  ADD CONSTRAINT `fk_Índice_Tipo_Índice1` FOREIGN KEY (`idTipo_Indice`) REFERENCES `tipo_indice` (`idTipo_indice`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+  ADD CONSTRAINT `fk_Indice_Tipo_Indice1` FOREIGN KEY (`idTipo_Indice`) REFERENCES `tipo_indice` (`idTipo_indice`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
 -- Restrições para tabelas `notificacao`
 --
 ALTER TABLE `notificacao`
-  ADD CONSTRAINT `fk_Notificação_Usuario` FOREIGN KEY (`Usuario_idUsuario`) REFERENCES `usuario` (`idUsuario`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+  ADD CONSTRAINT `fk_Notificacao_Usuario` FOREIGN KEY (`Usuario_idUsuario`) REFERENCES `usuario` (`idUsuario`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
