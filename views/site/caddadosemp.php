@@ -79,9 +79,10 @@ $this->title = 'Cadastrar Dados de Empresa';
   
   <div class="col-md-12">
  <ul class="nav nav-tabs">
-  			<li class="active"><a data-toggle="tab" href="#demox">Balanço Patrimonial</a></li>
+  			<li data-toggle="tab" class="active"><a  href="#demox">Balanço Patrimonial</a></li>
   			<li><a data-toggle="tab" href="#demoy">Demonstração dos Fluxos de Caixa</a></li>
   			<li><a data-toggle="tab" href="#demoz">Demonstração do Resultado do Exercício</a></li>
+            <li><a data-toggle="tab" href="#indic">Índices</a></li>
   
 		</ul>
 
@@ -93,7 +94,7 @@ $this->title = 'Cadastrar Dados de Empresa';
   						<table class="table table-hover">
     						<thead>
       							<tr>
-      								<th><input type="checkbox"/></th>
+      								<th></th>
         							<th>Nome Conta</th>
         							<th>Valor</th>
       							</tr>
@@ -101,19 +102,19 @@ $this->title = 'Cadastrar Dados de Empresa';
     						<tbody>
       							<tr>
       								<td><input type="checkbox"/></td>
-        							<td><textarea class="form-control" rows="1">Ativo Circulante Financeiro</textarea></td>
-        							<td><textarea class="form-control" rows="1">R$ 31.647.000,00</textarea></td>
+        							<td><textarea class="form-control" rows="1"></textarea></td>
+        							<td><textarea class="form-control" rows="1"></textarea></td>
       							</tr>
       							<tr>
       								<td><input type="checkbox"/></td>
-        							<td><textarea class="form-control" rows="1">Disponibilidades</textarea></td>
-        							<td><textarea class="form-control" rows="1">R$ 31.647.000,00</textarea></td>
+        							<td><textarea class="form-control" rows="1"></textarea></td>
+        							<td><textarea class="form-control" rows="1"></textarea></td>
         							
       							</tr>
       							<tr>
       								<td><input type="checkbox"/></td>
-        							<td><textarea class="form-control" rows="1">Ativo Circulante Operacional</textarea></td>
-        							<td><textarea class="form-control" rows="1">R$ 771.547.000,00</textarea></td>
+        							<td><textarea class="form-control" rows="1"></textarea></td>
+        							<td><textarea class="form-control" rows="1"></textarea></td>
         							       							
       							</tr>
     						</tbody>
@@ -127,7 +128,7 @@ $this->title = 'Cadastrar Dados de Empresa';
   						<table class="table table-hover">
     						<thead>
       							<tr>
-      								<th><input type="checkbox"/></th>
+      								<th></th>
         							<th>Nome Conta</th>
         							<th>Valor</th>
       							</tr>
@@ -136,20 +137,20 @@ $this->title = 'Cadastrar Dados de Empresa';
       							<tr>
       								<td><input type="checkbox"/></td>
       								
-        							<td><textarea class="form-control" rows="1">Depreciação e Amortização</textarea></td>
-        							<td><textarea class="form-control" rows="1">R$ 7.529.000,00</textarea></td>
+        							<td><textarea class="form-control" rows="1"></textarea></td>
+        							<td><textarea class="form-control" rows="1"></textarea></td>
         							
       							</tr>
       							<tr>
       								<td><input type="checkbox"/></td>
-        							<td><textarea class="form-control" rows="1">Provisões e Atualizações para demandas Judiciais e Administrativas</textarea></td>
-        							<td><textarea class="form-control" rows="1">R$ 14.375.000,00</textarea></td>
+        							<td><textarea class="form-control" rows="1"></textarea></td>
+        							<td><textarea class="form-control" rows="1"></textarea></td>
         							
       							</tr>
       							<tr>
       								<td><input type="checkbox"/></td>
-        							<td><textarea class="form-control" rows="1">Ajuste a Valor Presente</textarea></td>
-        							<td><textarea class="form-control" rows="1">R$ -3.057.000,00</textarea></td>
+        							<td><textarea class="form-control" rows="1"></textarea></td>
+        							<td><textarea class="form-control" rows="1"></textarea></td>
       							</tr>
     						</tbody>
   						</table>
@@ -162,7 +163,7 @@ $this->title = 'Cadastrar Dados de Empresa';
   						<table class="table table-hover">
     						<thead>
       							<tr>
-      								<th><input type="checkbox"/></th>
+      								<th></th>
         							<th>Nome Conta</th>
         							<th>Valor</th>
       							</tr>
@@ -170,20 +171,20 @@ $this->title = 'Cadastrar Dados de Empresa';
     						<tbody>
       							<tr>
       								<td><input type="checkbox"/></td>
-        							<td><textarea class="form-control" rows="1">Receita Líquida de Vendas</textarea></td>
-        							<td><textarea class="form-control" rows="1">R$ 814.175.000,00</textarea></td>
+        							<td><textarea class="form-control" rows="1"></textarea></td>
+        							<td><textarea class="form-control" rows="1"></textarea></td>
         							
       							</tr>
       							<tr>
       								<td><input type="checkbox"/></td>
-        							<td><textarea class="form-control" rows="1">Custo dos Produtos</textarea></td>
-        							<td><textarea class="form-control" rows="1">R$ -764.866.000,00</textarea></td>
+        							<td><textarea class="form-control" rows="1"></textarea></td>
+        							<td><textarea class="form-control" rows="1"></textarea></td>
         							
       							</tr>
       							<tr>
       								<td><input type="checkbox"/></td>
-        							<td><textarea class="form-control" rows="1">Lucro Bruto</textarea></td>
-        							<td><textarea class="form-control" rows="1">R$ 49.309.000,00</textarea></td>
+        							<td><textarea class="form-control" rows="1"></textarea></td>
+        							<td><textarea class="form-control" rows="1"></textarea></td>
   
       							</tr>
     						</tbody>
@@ -191,6 +192,41 @@ $this->title = 'Cadastrar Dados de Empresa';
 					</div>
 					<!-- Final da tabela dentro da tab -->
   			</div>
+
+            <div id="indic" class="tab-pane fade in active">
+                <!-- Inicio da tabela dentro das tabs -->
+                <div class="container">
+                    <table class="table table-hover">
+                        <thead>
+                        <tr>
+                            <th></th>
+                            <th>Nome Conta</th>
+                            <th>Valor</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td><input type="checkbox"/></td>
+                            <td><textarea class="form-control" rows="1"></textarea></td>
+                            <td><textarea class="form-control" rows="1"></textarea></td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox"/></td>
+                            <td><textarea class="form-control" rows="1"></textarea></td>
+                            <td><textarea class="form-control" rows="1"></textarea></td>
+
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox"/></td>
+                            <td><textarea class="form-control" rows="1"></textarea></td>
+                            <td><textarea class="form-control" rows="1"></textarea></td>
+
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <!-- Final da tabela dentro da tab -->
+            </div>
   		
 			</div>
 			</div>
