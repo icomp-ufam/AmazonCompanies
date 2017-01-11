@@ -94,7 +94,7 @@ INSERT INTO `comentario` (`idComentario`, `conteudo`, `Empresa_idEmpresa`, `Usua
 CREATE TABLE `conta` (
   `idConta` int(20) NOT NULL,
   `nome` varchar(255) NOT NULL,
-  `valor` decimal(20,3) NOT NULL,
+  `valor` decimal(20,2) NOT NULL,
   `idDemonstracao` int(11) DEFAULT NULL,
   `idAgregado` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
