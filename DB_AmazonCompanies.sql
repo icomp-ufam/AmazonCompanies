@@ -1,4 +1,4 @@
--- phpMyAdmin SQL Dump
+﻿-- phpMyAdmin SQL Dump
 -- version 4.5.4.1deb2ubuntu2
 -- http://www.phpmyadmin.net
 --
@@ -324,8 +324,7 @@ ALTER TABLE `conta`
 --
 ALTER TABLE `demonstracao`
   ADD PRIMARY KEY (`idDemonstracao`),
-  ADD KEY `fk_demonstracao_1_idx` (`Empresa_idEmpresa`),
-  ADD KEY `fk_demonstracao_2_idx` (`idtipoDemonstracao`);
+  ADD KEY `fk_demonstracao_1_idx` (`Empresa_idEmpresa`);
 
 --
 -- Índices de tabela `empresa`
@@ -452,8 +451,7 @@ ALTER TABLE `conta`
 -- Restrições para tabelas `demonstracao`
 --
 ALTER TABLE `demonstracao`
-  ADD CONSTRAINT `fk_demonstracao_1` FOREIGN KEY (`Empresa_idEmpresa`) REFERENCES `empresa` (`idEmpresa`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  ADD CONSTRAINT `fk_demonstracao_2` FOREIGN KEY (`idtipoDemonstracao`) REFERENCES `tipoDemonstracao` (`idtipoDemonstracao`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+  ADD CONSTRAINT `fk_demonstracao_1` FOREIGN KEY (`Empresa_idEmpresa`) REFERENCES `empresa` (`idEmpresa`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
 -- Restrições para tabelas `empresaHasUsuario`
@@ -462,7 +460,7 @@ ALTER TABLE `empresaHasUsuario`
   ADD CONSTRAINT `fk_Empresa_has_Usuario_Empresa1` FOREIGN KEY (`Empresa_idEmpresa`) REFERENCES `empresa` (`idEmpresa`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   ADD CONSTRAINT `fk_Empresa_has_Usuario_Usuario1` FOREIGN KEY (`Usuario_idUsuario`) REFERENCES `usuario` (`idUsuario`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
---
+
 -- Restrições para tabelas `indice`
 --
 ALTER TABLE `indice`
