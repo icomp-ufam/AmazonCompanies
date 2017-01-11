@@ -62806,3 +62806,172 @@ $_SERVER = [
     'REQUEST_TIME_FLOAT' => 1482758653.62
     'REQUEST_TIME' => 1482758653
 ]
+2017-01-09 19:35:22 [::1][-][-][warning][yii\web\User::getIdentityAndDurationFromCookie] Invalid auth key attempted for user '1': 
+    in C:\xampp\htdocs\AmazonCompanies\views\site\index.php:8
+    in C:\xampp\htdocs\AmazonCompanies\controllers\SiteController.php:65
+2017-01-09 19:35:17 [::1][-][-][info][application] $_COOKIE = [
+    '_identity' => '1de54a1149b80de6528a96989c1654bdfc80c1563a5eee0bba83377ee513af81a:2:{i:0;s:9:\"_identity\";i:1;s:16:\"[1,null,2592000]\";}'
+]
+
+$_SERVER = [
+    'MIBDIRS' => 'C:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'C:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_ACCEPT' => 'text/html, application/xhtml+xml, image/jxr, */*'
+    'HTTP_ACCEPT_LANGUAGE' => 'pt-BR'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.79 Safari/537.36 Edge/14.14393'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'Keep-Alive'
+    'HTTP_COOKIE' => '_identity=1de54a1149b80de6528a96989c1654bdfc80c1563a5eee0bba83377ee513af81a%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_identity%22%3Bi%3A1%3Bs%3A16%3A%22%5B1%2Cnull%2C2592000%5D%22%3B%7D'
+    'PATH' => 'C:\\ProgramData\\Oracle\\Java\\javapath;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\Skype\\Phone\\;C:\\Program Files\\Java\\jdk1.8.0_91\\bin;C:\\Bitnami\\wappstack-5.6.20-1\\php;C:\\ProgramData\\ComposerSetup\\bin;C:\\Program Files\\Git\\cmd;C:\\xampp\\php;C:\\Users\\Cliente\\AppData\\Roaming\\Composer\\vendor\\bin;C:\\Users\\Cliente\\AppData\\Local\\Microsoft\\WindowsApps;'
+    'SystemRoot' => 'C:\\WINDOWS'
+    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\WINDOWS'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.23 (Win32) OpenSSL/1.0.2h PHP/5.6.28 Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.23 (Win32) OpenSSL/1.0.2h PHP/5.6.28'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'C:/xampp/htdocs'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/xampp/htdocs'
+    'SERVER_ADMIN' => 'postmaster@localhost'
+    'SCRIPT_FILENAME' => 'C:/xampp/htdocs/AmazonCompanies/web/index.php'
+    'REMOTE_PORT' => '50570'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/AmazonCompanies/web/index.php'
+    'SCRIPT_NAME' => '/AmazonCompanies/web/index.php'
+    'PHP_SELF' => '/AmazonCompanies/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1483986915.845
+    'REQUEST_TIME' => 1483986915
+]
+2017-01-09 22:01:59 [::1][-][-][warning][yii\web\User::getIdentityAndDurationFromCookie] Invalid auth key attempted for user '1': 
+    in C:\xampp\htdocs\AmazonCompanies\models\Notificacao.php:66
+    in C:\xampp\htdocs\AmazonCompanies\views\layouts\main.php:71
+    in C:\xampp\htdocs\AmazonCompanies\controllers\IndiceController.php:44
+2017-01-09 22:01:55 [::1][-][-][info][application] $_GET = [
+    'r' => 'indice'
+]
+
+$_COOKIE = [
+    '_csrf' => '7f96e8e6346a7ea511ac3a1c752b68113c94fa15f79b7f08d6620ea301d77a45a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"ploEqIedK0YQWWYQwDZZPILIHefMD-hD\";}'
+    'PHPSESSID' => '4a37q5hi1hq5hmf5vve2bf5sd6'
+    '_identity' => '1de54a1149b80de6528a96989c1654bdfc80c1563a5eee0bba83377ee513af81a:2:{i:0;s:9:\"_identity\";i:1;s:16:\"[1,null,2592000]\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+]
+
+$_SERVER = [
+    'MIBDIRS' => 'C:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'C:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_ACCEPT' => 'text/html, application/xhtml+xml, image/jxr, */*'
+    'HTTP_ACCEPT_LANGUAGE' => 'pt-BR'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.79 Safari/537.36 Edge/14.14393'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'Keep-Alive'
+    'HTTP_COOKIE' => '_csrf=7f96e8e6346a7ea511ac3a1c752b68113c94fa15f79b7f08d6620ea301d77a45a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22ploEqIedK0YQWWYQwDZZPILIHefMD-hD%22%3B%7D; PHPSESSID=4a37q5hi1hq5hmf5vve2bf5sd6; _identity=1de54a1149b80de6528a96989c1654bdfc80c1563a5eee0bba83377ee513af81a%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_identity%22%3Bi%3A1%3Bs%3A16%3A%22%5B1%2Cnull%2C2592000%5D%22%3B%7D'
+    'PATH' => 'C:\\ProgramData\\Oracle\\Java\\javapath;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\Skype\\Phone\\;C:\\Program Files\\Java\\jdk1.8.0_91\\bin;C:\\Bitnami\\wappstack-5.6.20-1\\php;C:\\ProgramData\\ComposerSetup\\bin;C:\\Program Files\\Git\\cmd;C:\\xampp\\php;C:\\Users\\Cliente\\AppData\\Roaming\\Composer\\vendor\\bin;C:\\Users\\Cliente\\AppData\\Local\\Microsoft\\WindowsApps;'
+    'SystemRoot' => 'C:\\WINDOWS'
+    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\WINDOWS'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.23 (Win32) OpenSSL/1.0.2h PHP/5.6.28 Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.23 (Win32) OpenSSL/1.0.2h PHP/5.6.28'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'C:/xampp/htdocs'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/xampp/htdocs'
+    'SERVER_ADMIN' => 'postmaster@localhost'
+    'SCRIPT_FILENAME' => 'C:/xampp/htdocs/AmazonCompanies/web/index.php'
+    'REMOTE_PORT' => '60197'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=indice'
+    'REQUEST_URI' => '/amazoncompanies/web/index.php?r=indice'
+    'SCRIPT_NAME' => '/amazoncompanies/web/index.php'
+    'PHP_SELF' => '/amazoncompanies/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1483995714.864
+    'REQUEST_TIME' => 1483995714
+]
+2017-01-11 18:28:46 [::1][-][-][error][yii\web\HttpException:404] exception 'yii\base\InvalidRouteException' with message 'Unable to resolve the request "empresas".' in C:\xampp\htdocs\AmazonCompanies\vendor\yiisoft\yii2\base\Module.php:462
+Stack trace:
+#0 C:\xampp\htdocs\AmazonCompanies\vendor\yiisoft\yii2\web\Application.php(100): yii\base\Module->runAction('empresas', Array)
+#1 C:\xampp\htdocs\AmazonCompanies\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 C:\xampp\htdocs\AmazonCompanies\web\index.php(12): yii\base\Application->run()
+#3 {main}
+
+Next exception 'yii\web\NotFoundHttpException' with message 'Page not found.' in C:\xampp\htdocs\AmazonCompanies\vendor\yiisoft\yii2\web\Application.php:112
+Stack trace:
+#0 C:\xampp\htdocs\AmazonCompanies\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 C:\xampp\htdocs\AmazonCompanies\web\index.php(12): yii\base\Application->run()
+#2 {main}
+2017-01-11 18:28:46 [::1][-][-][info][application] $_GET = [
+    'r' => 'empresas'
+]
+
+$_SERVER = [
+    'MIBDIRS' => 'C:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'C:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_ACCEPT' => 'text/html, application/xhtml+xml, image/jxr, */*'
+    'HTTP_ACCEPT_LANGUAGE' => 'pt-BR'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.79 Safari/537.36 Edge/14.14393'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'Keep-Alive'
+    'PATH' => 'C:\\ProgramData\\Oracle\\Java\\javapath;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\Skype\\Phone\\;C:\\Program Files\\Java\\jdk1.8.0_91\\bin;C:\\Bitnami\\wappstack-5.6.20-1\\php;C:\\ProgramData\\ComposerSetup\\bin;C:\\Program Files\\Git\\cmd;C:\\xampp\\php;C:\\Users\\Cliente\\AppData\\Roaming\\Composer\\vendor\\bin;C:\\Users\\Cliente\\AppData\\Local\\Microsoft\\WindowsApps;'
+    'SystemRoot' => 'C:\\WINDOWS'
+    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\WINDOWS'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.23 (Win32) OpenSSL/1.0.2h PHP/5.6.28 Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.23 (Win32) OpenSSL/1.0.2h PHP/5.6.28'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'C:/xampp/htdocs'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/xampp/htdocs'
+    'SERVER_ADMIN' => 'postmaster@localhost'
+    'SCRIPT_FILENAME' => 'C:/xampp/htdocs/AmazonCompanies/web/index.php'
+    'REMOTE_PORT' => '52967'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=empresas'
+    'REQUEST_URI' => '/amazoncompanies/web/index.php?r=empresas'
+    'SCRIPT_NAME' => '/amazoncompanies/web/index.php'
+    'PHP_SELF' => '/amazoncompanies/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1484155725.57
+    'REQUEST_TIME' => 1484155725
+]
