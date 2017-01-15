@@ -9,12 +9,10 @@ use Yii;
  *
  * @property integer $idConta
  * @property string $nome
- * @property string $valor
  * @property integer $idDemonstracao
- * @property integer $idAgregado
  *
  * @property Demonstracao $idDemonstracao0
- * @property Agregado $idAgregado0
+ * @property EmpresaConta[] $empresaContas
  */
 class Conta extends \yii\db\ActiveRecord
 {
@@ -32,12 +30,10 @@ class Conta extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['nome', 'valor'], 'required'],
-            [['valor'], 'number'],
-            [['idDemonstracao', 'idAgregado'], 'integer'],
+            [['nome', 'idDemonstracao'], 'required'],
+            [['idDemonstracao'], 'integer'],
             [['nome'], 'string', 'max' => 255],
             [['idDemonstracao'], 'exist', 'skipOnError' => true, 'targetClass' => Demonstracao::className(), 'targetAttribute' => ['idDemonstracao' => 'idDemonstracao']],
-            [['idAgregado'], 'exist', 'skipOnError' => true, 'targetClass' => Agregado::className(), 'targetAttribute' => ['idAgregado' => 'idAgregado']],
         ];
     }
 
@@ -49,9 +45,7 @@ class Conta extends \yii\db\ActiveRecord
         return [
             'idConta' => 'Id Conta',
             'nome' => 'Nome',
-            'valor' => 'Valor',
             'idDemonstracao' => 'Id Demonstracao',
-            'idAgregado' => 'Id Agregado',
         ];
     }
 
@@ -66,8 +60,8 @@ class Conta extends \yii\db\ActiveRecord
     /**
      * @return \yii\db\ActiveQuery
      */
-    public function getIdAgregado0()
+    public function getEmpresaContas()
     {
-        return $this->hasOne(Agregado::className(), ['idAgregado' => 'idAgregado']);
+        return $this->hasMany(EmpresaConta::className(), ['idConta' => 'idConta']);
     }
 }

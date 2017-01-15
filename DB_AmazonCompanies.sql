@@ -3,9 +3,9 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: 13-Jan-2017 às 01:37
--- Versão do servidor: 10.1.10-MariaDB
--- PHP Version: 5.5.33
+-- Generation Time: 14-Jan-2017 às 22:30
+-- Versão do servidor: 10.1.19-MariaDB
+-- PHP Version: 5.6.28
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -92,7 +92,7 @@ INSERT INTO `conta` (`idConta`, `nome`, `idDemonstracao`) VALUES
 --
 
 CREATE TABLE `demonstracao` (
-  `id` int(11) NOT NULL,
+  `idDemonstracao` int(11) NOT NULL,
   `nomeDemonstracao` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -100,7 +100,7 @@ CREATE TABLE `demonstracao` (
 -- Extraindo dados da tabela `demonstracao`
 --
 
-INSERT INTO `demonstracao` (`id`, `nomeDemonstracao`) VALUES
+INSERT INTO `demonstracao` (`idDemonstracao`, `nomeDemonstracao`) VALUES
 (1, ''),
 (2, ''),
 (3, '');
@@ -112,7 +112,7 @@ INSERT INTO `demonstracao` (`id`, `nomeDemonstracao`) VALUES
 --
 
 CREATE TABLE `empresa` (
-  `id` int(11) NOT NULL,
+  `idEmpresa` int(11) NOT NULL,
   `nome` varchar(45) NOT NULL,
   `fonte` varchar(45) NOT NULL,
   `logotipo` varchar(200) DEFAULT NULL,
@@ -123,7 +123,7 @@ CREATE TABLE `empresa` (
 -- Extraindo dados da tabela `empresa`
 --
 
-INSERT INTO `empresa` (`id`, `nome`, `fonte`, `logotipo`, `tipo`) VALUES
+INSERT INTO `empresa` (`idEmpresa`, `nome`, `fonte`, `logotipo`, `tipo`) VALUES
 (1, 'Moto Honda da Amazônia LTDA', 'www.motohonda.com.br', NULL, 'Nacional'),
 (2, 'Teewa', 'www.teewa.com.br', NULL, 'Local'),
 (3, 'Microsoft S.A', 'www.microsoft.com', NULL, 'Estrangeira'),
@@ -311,13 +311,13 @@ ALTER TABLE `conta`
 -- Indexes for table `demonstracao`
 --
 ALTER TABLE `demonstracao`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`idDemonstracao`);
 
 --
 -- Indexes for table `empresa`
 --
 ALTER TABLE `empresa`
-  ADD PRIMARY KEY (`id`),
+  ADD PRIMARY KEY (`idEmpresa`),
   ADD KEY `fkTipo` (`tipo`);
 
 --
@@ -391,12 +391,12 @@ ALTER TABLE `conta`
 -- AUTO_INCREMENT for table `demonstracao`
 --
 ALTER TABLE `demonstracao`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `idDemonstracao` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 --
 -- AUTO_INCREMENT for table `empresa`
 --
 ALTER TABLE `empresa`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `idEmpresa` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 --
 -- AUTO_INCREMENT for table `indice`
 --
@@ -420,21 +420,21 @@ ALTER TABLE `usuario`
 -- Limitadores para a tabela `analise`
 --
 ALTER TABLE `analise`
-  ADD CONSTRAINT `fk_analise_1` FOREIGN KEY (`idEmpresa`) REFERENCES `empresa` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+  ADD CONSTRAINT `fk_analise_1` FOREIGN KEY (`idEmpresa`) REFERENCES `empresa` (`idEmpresa`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
 -- Limitadores para a tabela `comentario`
 --
 ALTER TABLE `comentario`
   ADD CONSTRAINT `fk_Comentario_Comentario1` FOREIGN KEY (`Comentario_idComentario`) REFERENCES `comentario` (`idComentario`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  ADD CONSTRAINT `fk_Comentario_Empresa1` FOREIGN KEY (`Empresa_idEmpresa`) REFERENCES `empresa` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  ADD CONSTRAINT `fk_Comentario_Empresa1` FOREIGN KEY (`Empresa_idEmpresa`) REFERENCES `empresa` (`idEmpresa`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   ADD CONSTRAINT `fk_Comentario_Usuario1` FOREIGN KEY (`Usuario_idUsuario`) REFERENCES `usuario` (`idUsuario`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
 -- Limitadores para a tabela `conta`
 --
 ALTER TABLE `conta`
-  ADD CONSTRAINT `fkDemonstracao` FOREIGN KEY (`idDemonstracao`) REFERENCES `demonstracao` (`id`);
+  ADD CONSTRAINT `fkDemonstracao` FOREIGN KEY (`idDemonstracao`) REFERENCES `demonstracao` (`idDemonstracao`);
 
 --
 -- Limitadores para a tabela `empresa`
@@ -446,7 +446,7 @@ ALTER TABLE `empresa`
 -- Limitadores para a tabela `empresahasusuario`
 --
 ALTER TABLE `empresahasusuario`
-  ADD CONSTRAINT `fk_Empresa_has_Usuario_Empresa1` FOREIGN KEY (`Empresa_idEmpresa`) REFERENCES `empresa` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  ADD CONSTRAINT `fk_Empresa_has_Usuario_Empresa1` FOREIGN KEY (`Empresa_idEmpresa`) REFERENCES `empresa` (`idEmpresa`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   ADD CONSTRAINT `fk_Empresa_has_Usuario_Usuario1` FOREIGN KEY (`Usuario_idUsuario`) REFERENCES `usuario` (`idUsuario`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
@@ -454,7 +454,7 @@ ALTER TABLE `empresahasusuario`
 --
 ALTER TABLE `empresa_conta`
   ADD CONSTRAINT `fkIdConta` FOREIGN KEY (`idConta`) REFERENCES `conta` (`idConta`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  ADD CONSTRAINT `fkIdEmpresa` FOREIGN KEY (`idEmpresa`) REFERENCES `empresa` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+  ADD CONSTRAINT `fkIdEmpresa` FOREIGN KEY (`idEmpresa`) REFERENCES `empresa` (`idEmpresa`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
 -- Limitadores para a tabela `indice`
