@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: 14-Jan-2017 às 22:30
+-- Generation Time: 17-Jan-2017 às 19:59
 -- Versão do servidor: 10.1.19-MariaDB
 -- PHP Version: 5.6.28
 
@@ -81,9 +81,30 @@ CREATE TABLE `conta` (
 --
 
 INSERT INTO `conta` (`idConta`, `nome`, `idDemonstracao`) VALUES
-(1, 'Ativo Circulante Financeiro', 1),
-(2, 'Disponibilidades', 2),
-(3, 'Ativo Circulante Operacional', 3);
+(4, 'Ativos Totais', 1),
+(5, 'Ativo Circulante', 1),
+(6, 'Disponibilidades + Aplicações Fin Liq Im.', 1),
+(7, 'Estoques ', 1),
+(8, 'Ativo não Circulante', 1),
+(9, 'Imobilizado', 1),
+(10, 'Passivo Circulante', 1),
+(11, 'Passivo Não Circulante', 3),
+(12, 'Passivo Não Circulante Oneroso', 1),
+(13, 'Passivo Exigível', 1),
+(14, 'Patrimônio Líquido', 1),
+(15, 'Ativos Totais Médios', 1),
+(16, 'Investimentos (Oneroso + PL)', 3),
+(17, 'Investimentos Médios', 3),
+(18, 'Patrimônio Líquido Médios', 1),
+(19, 'Fornecedores Médio', 1),
+(20, 'Estoque Médio', 1),
+(21, 'Clientes Médio', 2),
+(22, 'CMV', 2),
+(23, 'Compras', 1),
+(24, 'Vendas Líquidas', 2),
+(25, 'Lucro Bruto', 2),
+(26, 'Lucro Operacional', 2),
+(27, 'Lucro Líquido', 2);
 
 -- --------------------------------------------------------
 
@@ -101,9 +122,9 @@ CREATE TABLE `demonstracao` (
 --
 
 INSERT INTO `demonstracao` (`idDemonstracao`, `nomeDemonstracao`) VALUES
-(1, ''),
-(2, ''),
-(3, '');
+(1, 'BALANÇO PATRIMONIAL\r\n'),
+(2, 'DEMONSTRAÇÃO DO RESULTADO DO EXERCÍCIO'),
+(3, 'DEMONSTRAÇÃO DOS FLUXOS DE CAIXA');
 
 -- --------------------------------------------------------
 
@@ -160,13 +181,6 @@ CREATE TABLE `empresa_conta` (
   `idConta` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
---
--- Extraindo dados da tabela `empresa_conta`
---
-
-INSERT INTO `empresa_conta` (`ano`, `valor`, `idEmpresa`, `idConta`) VALUES
-(2013, 100, 1, 2);
-
 -- --------------------------------------------------------
 
 --
@@ -176,16 +190,17 @@ INSERT INTO `empresa_conta` (`ano`, `valor`, `idEmpresa`, `idConta`) VALUES
 CREATE TABLE `indice` (
   `idIndice` int(11) NOT NULL,
   `formula` varchar(45) NOT NULL,
-  `idTipo_Indice` int(11) NOT NULL
+  `idTipo_Indice` int(11) NOT NULL,
+  `nomeIndice` varchar(100) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Extraindo dados da tabela `indice`
 --
 
-INSERT INTO `indice` (`idIndice`, `formula`, `idTipo_Indice`) VALUES
-(1, 'LG = (AT/PE)', 1),
-(2, 'LC = (AC/PC)', 2);
+INSERT INTO `indice` (`idIndice`, `formula`, `idTipo_Indice`, `nomeIndice`) VALUES
+(1, 'LG = (AT/PE)', 1, NULL),
+(2, 'LC = (AC/PC)', 2, NULL);
 
 -- --------------------------------------------------------
 
@@ -278,7 +293,8 @@ INSERT INTO `usuario` (`idUsuario`, `login`, `nome`, `senha`, `ativo`, `identifi
 (1, 'LG', 'Luiz Gustavo', '25d55ad283aa400af464c76d713c07ad', 1, 1, 'lgpa@icomp.ufam.edu.br'),
 (2, 'Tata14', 'Tatazinha', 'a384b6463fc216a5f8ecb6670f86456a', 0, 1, 'tla@icomp.ufam.edu.br'),
 (3, 'Gisa', 'Gisele', '25d55ad283aa400af464c76d713c07ad', 1, 2, 'gisa@icomp.ufam.edu.br'),
-(4, 'Motoca', 'Moto Honda da Amazônia LTDA', '3dcdda99b20ed51f83b25c6315c5a818', 1, 3, 'motohonda@gmail.com');
+(4, 'Motoca', 'Moto Honda da Amazônia LTDA', '3dcdda99b20ed51f83b25c6315c5a818', 1, 3, 'motohonda@gmail.com'),
+(5, 'icaro', 'Icaro Dolzane', 'a48e0f40dba24e3bcfe84aad2c272d8d', 0, 1, 'ifd@icomp.ufam.edu.br');
 
 --
 -- Indexes for dumped tables
@@ -386,7 +402,7 @@ ALTER TABLE `comentario`
 -- AUTO_INCREMENT for table `conta`
 --
 ALTER TABLE `conta`
-  MODIFY `idConta` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `idConta` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
 --
 -- AUTO_INCREMENT for table `demonstracao`
 --
@@ -411,7 +427,7 @@ ALTER TABLE `notificacao`
 -- AUTO_INCREMENT for table `usuario`
 --
 ALTER TABLE `usuario`
-  MODIFY `idUsuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `idUsuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 --
 -- Constraints for dumped tables
 --
