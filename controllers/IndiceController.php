@@ -101,8 +101,7 @@ class IndiceController extends Controller
         $indice = Indice::find()->select('formula')->all();
         $calculator = new Calculator();
         $sinais = ['+', '-', '/', '*', '(', ')'];
-        //$calculator->setExpression('(32482.888*32482.235)+(4*2)');
-        //echo $calculator->calculate(); // 2.5
+        
 
         $concatenar='';
         $anterior;
@@ -112,9 +111,7 @@ class IndiceController extends Controller
                     # code...
             $teste = preg_split('/[@]/',$indice[$j]->formula);
 
-          // for ($j=0; $j<count($teste); $j++) { 
-              
-          // }
+          
                     $concatenar='';
                     $anterior='';
 
