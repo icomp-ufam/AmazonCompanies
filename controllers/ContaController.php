@@ -5,6 +5,9 @@ namespace app\controllers;
 use Yii;
 use app\models\Conta;
 use app\models\ContaSearch;
+use app\models\Demonstracao;
+use app\models\DemonstracaoSearch;
+
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
@@ -73,6 +76,64 @@ class ContaController extends Controller
             ]);
         }
     }
+
+     public function actionBaixar_documento(){
+
+        $contas = Conta::find()->all();
+
+        $titulosColunas = ['TIPO DE DEMONSTRACAO', 'NOME DA CONTA', 'ANO', 'VALOR'];
+
+        $filename = 'templateAmazonCompanies.xls';
+
+        $html='
+            <html>
+                <head>
+                    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+                </head>
+                <body>
+                    <table>
+        ';
+                        $html.='<tr>';
+                            foreach ($titulosColunas as $tituloColuna) {
+                                $html.='<td><b>'.$tituloColuna.'</b></td>';
+                            }
+                        $html.='</tr>';
+
+                        foreach ($contas as $conta) {
+                            $demonstracao=Demonstracao::find()->select("nomeDemonstracao")->where(['idDemonstracao' => $conta->idDemonstracao])->one();
+
+                            $html.='<tr>';
+                                $html.='<td><b>'.$demonstracao->nomeDemonstracao.'</b></td>';
+                                $html.='<td><b>'.$conta->nome.'</b></td>';
+                               
+                            $html.='</tr>';
+                        }
+
+        $html.='
+                    </table>
+                </body>
+            </html>
+        ';
+
+
+        // Forces the browser to download the table
+        header ("Expires: Mon, 26 Jul 1997 05:00:00 GMT");
+        header ("Last-Modified: " . gmdate("D,d M YH:i:s") . " GMT");
+        header ("Cache-Control: no-cache, must-revalidate");
+        header ("Pragma: no-cache");
+        header ("Content-type: application/x-msexcel");
+        header ("Content-Disposition: attachment; filename=\"{$filename}\"" );
+        header ("Content-Description: Planilha de Alunos - Sistema PPGI UFAM" );
+        
+        // Sends file content to browser
+        echo $html;
+
+
+
+    }
+
+
+
 
     /**
      * Updates an existing Conta model.

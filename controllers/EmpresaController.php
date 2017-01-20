@@ -6,6 +6,9 @@ use phpDocumentor\Reflection\Types\Array_;
 use Yii;
 use app\models\Empresa;
 use app\models\EmpresaSearch;
+use app\models\EmpresaConta;
+use app\models\Conta;
+
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
@@ -13,6 +16,8 @@ use yii\web\UploadedFile;
 use app\models\UploadForm;
 use yii\db\Query;
 use yii\db\ActiveQuery;
+use moonland\phpexcel\Excel;
+
 
 
 /**
@@ -110,11 +115,58 @@ class EmpresaController extends Controller
      * @param integer $id
      * @return mixed
      */
-    public function actionView($id)
-    {
-        return $this->render('view', [
-            'model' => $this->findModel($id),
-        ]);
+    public function actionView($id){
+        $file = UploadedFile::getInstance($this->findModel($id), 'upload_file');
+        
+        if($this->findModel($id)->load(Yii::$app->request->post()) and $file != null){
+            $file->saveAs('uploads/'.$file->name);
+           //print_r($file->name);
+
+
+            $objPHPExcel = new Excel();
+
+            $inputFileName = './uploads/'.$file->name;  // File to read
+            
+            try {
+               $objPHPExcel = Excel::import($inputFileName);
+            } catch(Exception $e) {
+               die('Error loading file "'.pathinfo($inputFileName,PATHINFO_BASENAME).'": '.$e->getMessage());
+            }
+                $cont=1;
+               $myarray = array_shift($objPHPExcel);
+               
+               for ($i = 0; $i < count($myarray); $i++) {
+                    $model = new EmpresaConta();
+
+                    $nome = $myarray[$i]['Nome'];
+                    $conta = Conta::find()->select("idConta")->where(['nome' => $nome])->one();
+                    print_r($conta->idConta);
+
+                    $valor = $myarray[$i]['Valor'];
+                    $ano = $myarray[$i]['Ano'];
+                    $model->idEmpresa = $id;
+                    $model->ano = $ano;
+                    $model->valor = $valor;
+                    
+                    $model->idConta = $conta->idConta;
+
+                   
+                    $model->save();
+
+                   
+                }
+        }
+        
+
+        
+
+
+                 return $this->render('view', [
+                    'model' => $this->findModel($id),
+                    ]);
+             
+
+        
     }
 
     /**
@@ -166,6 +218,58 @@ class EmpresaController extends Controller
             ]);
         }
     }
+
+     public function actionLoad_documento($id){
+
+        
+        $model = new EmpresaConta();
+
+        $objPHPExcel = new Excel();
+
+        $inputFileName = './uploads/documentosTeste.xlsx';  // File to read
+        
+        try {
+           $objPHPExcel = Excel::import($inputFileName);
+        } catch(Exception $e) {
+           die('Error loading file "'.pathinfo($inputFileName,PATHINFO_BASENAME).'": '.$e->getMessage());
+        }
+            $cont=1;
+           $myarray = array_shift($objPHPExcel);
+           
+           for ($i = 0; $i < count($myarray); $i++) {
+                $model = new EmpresaConta();
+
+                $nome = $myarray[$i]['Nome'];
+                $conta = Conta::find()->select("idConta")->where(['nome' => $nome])->one();
+                print_r($conta->idConta);
+
+                $valor = $myarray[$i]['Valor'];
+                $ano = $myarray[$i]['Ano'];
+                $model->idEmpresa = $id;
+                $model->ano = $ano;
+                $model->valor = $valor;
+                
+                $model->idConta = $conta->idConta;
+
+               
+                $model->save();
+
+               
+            }
+
+
+      
+
+             if($model->save()) {
+                 return $this->redirect(['view', 'id' => $idEmpresa]);
+             }
+
+
+
+    }
+
+   
+
 
     /**
      * Deletes an existing Empresa model.

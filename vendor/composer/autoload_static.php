@@ -9,8 +9,8 @@ class ComposerStaticInit82d3d59d0f27e0ffbe5e405f66b5b153
     public static $files = array (
         '2cffec82183ee1cea088009cef9a6fc3' => __DIR__ . '/..' . '/ezyang/htmlpurifier/library/HTMLPurifier.composer.php',
         '0e6d7bf4a5811bfa5cf40c5ccd6fae6a' => __DIR__ . '/..' . '/symfony/polyfill-mbstring/bootstrap.php',
-        '2c102faa651ef8ea5874edb585946bce' => __DIR__ . '/..' . '/swiftmailer/swiftmailer/lib/swift_required.php',
         'a0edc8309cc5e1d60e3047b5df6b7052' => __DIR__ . '/..' . '/guzzlehttp/psr7/src/functions_include.php',
+        '2c102faa651ef8ea5874edb585946bce' => __DIR__ . '/..' . '/swiftmailer/swiftmailer/lib/swift_required.php',
         '180092cfc969a12e06f2132a203a3184' => __DIR__ . '/..' . '/codeception/verify/src/Codeception/function.php',
     );
 
@@ -31,6 +31,7 @@ class ComposerStaticInit82d3d59d0f27e0ffbe5e405f66b5b153
         ),
         'm' => 
         array (
+            'moonland\\phpexcel\\' => 18,
             'miloschuman\\highcharts\\' => 23,
         ),
         'k' => 
@@ -99,6 +100,7 @@ class ComposerStaticInit82d3d59d0f27e0ffbe5e405f66b5b153
         ),
         'F' => 
         array (
+            'Fintara\\Tools\\Calculator\\' => 25,
             'Faker\\' => 6,
         ),
         'D' => 
@@ -145,8 +147,12 @@ class ComposerStaticInit82d3d59d0f27e0ffbe5e405f66b5b153
         'phpDocumentor\\Reflection\\' => 
         array (
             0 => __DIR__ . '/..' . '/phpdocumentor/reflection-common/src',
-            1 => __DIR__ . '/..' . '/phpdocumentor/type-resolver/src',
-            2 => __DIR__ . '/..' . '/phpdocumentor/reflection-docblock/src',
+            1 => __DIR__ . '/..' . '/phpdocumentor/reflection-docblock/src',
+            2 => __DIR__ . '/..' . '/phpdocumentor/type-resolver/src',
+        ),
+        'moonland\\phpexcel\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/moonlandsoft/yii2-phpexcel',
         ),
         'miloschuman\\highcharts\\' => 
         array (
@@ -336,6 +342,10 @@ class ComposerStaticInit82d3d59d0f27e0ffbe5e405f66b5b153
         array (
             0 => __DIR__ . '/..' . '/guzzlehttp/psr7/src',
         ),
+        'Fintara\\Tools\\Calculator\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/fintara/calculator-php/src',
+        ),
         'Faker\\' => 
         array (
             0 => __DIR__ . '/..' . '/fzaninotto/faker/src/Faker',
@@ -364,6 +374,10 @@ class ComposerStaticInit82d3d59d0f27e0ffbe5e405f66b5b153
             'Prophecy\\' => 
             array (
                 0 => __DIR__ . '/..' . '/phpspec/prophecy/src',
+            ),
+            'PHPExcel' => 
+            array (
+                0 => __DIR__ . '/..' . '/phpoffice/phpexcel/Classes',
             ),
         ),
         'H' => 

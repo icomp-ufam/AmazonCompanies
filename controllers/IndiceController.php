@@ -5,10 +5,14 @@ namespace app\controllers;
 use Yii;
 use app\models\Indice;
 use app\models\IndiceSearch;
+use app\models\Conta;
+use app\models\EmpresaConta;
+
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
-
+use \Fintara\Tools\Calculator\Calculator;
+use \Fintara\Tools\Calculator\DefaultLexer;
 /**
  * IndiceController implements the CRUD actions for Indice model.
  */
@@ -92,6 +96,73 @@ class IndiceController extends Controller
             ]);
         }
     }
+
+    public function actionPegar_tag(){
+        $indice = Indice::find()->select('formula')->all();
+        $calculator = new Calculator();
+        $sinais = ['+', '-', '/', '*', '(', ')'];
+        //$calculator->setExpression('(32482.888*32482.235)+(4*2)');
+        //echo $calculator->calculate(); // 2.5
+
+        $concatenar='';
+        $anterior;
+        print_r(count($indice));
+        echo '<br>';
+        for ($j=0; $j < count($indice) ; $j++) { 
+                    # code...
+            $teste = preg_split('/[@]/',$indice[$j]->formula);
+
+          // for ($j=0; $j<count($teste); $j++) { 
+              
+          // }
+                    $concatenar='';
+                    $anterior='';
+
+          for ($i=0; $i <count($teste); $i++) {
+            if(in_array($teste[$i],$sinais)){
+                print_r('sim');
+                                                echo '<br>';
+                $anterior = $concatenar;
+                $concatenar = $anterior.$teste[$i];
+
+        }
+        else{ 
+                print_r($teste[$i]);
+                
+                print_r(" ");
+            $conta = Conta::find()->select("idConta")->where(['chave' => $teste[$i]])->one();
+                print_r($conta['idConta']);
+                $idConta = $conta['idConta'];
+                echo '<br>';
+            $empresaConta = EmpresaConta::find()->select("valor")->where(['idConta' => $idConta])->one();
+                print_r($empresaConta['valor']);
+                $anterior = $concatenar;
+                $concatenar = $anterior.$empresaConta['valor'];
+                                echo '<br>';
+
+        }
+
+
+                
+
+          }
+         print_r($concatenar);
+         echo '<br>';
+        $calculator->setExpression($concatenar);
+                 print_r($calculator->calculate());
+                 echo '<br>';
+
+
+
+
+        }        
+
+          
+
+
+   
+            
+        }
 
     /**
      * Deletes an existing Indice model.

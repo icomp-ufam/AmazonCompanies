@@ -24,7 +24,10 @@
         "kartik-v/yii2-widgets": "*",
         "miloschuman/yii2-highcharts-widget": "dev-master",
         "kartik-v/yii2-builder": "@dev",
-        "kartik-v/yii2-password": "@dev"
+        "kartik-v/yii2-password": "@dev",
+        "moonlandsoft/yii2-phpexcel": "*",
+        "PHPOffice/PHPExcel": "1.8.x",
+        "fintara/calculator-php": "^0.1.0"
     },
     "require-dev": {
         "yiisoft/yii2-debug": "~2.0.0",

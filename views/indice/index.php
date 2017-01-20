@@ -17,6 +17,8 @@ $this->params['breadcrumbs'][] = $this->title;
 
     <p>
         <?= Html::a(Yii::t('app', 'Cadastrar Índice'), ['create'], ['class' => 'btn btn-success']) ?>
+                <?= Html::a(Yii::t('app', 'Pegar Tag'), ['pegar_tag'], ['class' => 'btn btn-success']) ?>
+
     </p>
     <?= GridView::widget([
         'dataProvider' => $dataProvider,

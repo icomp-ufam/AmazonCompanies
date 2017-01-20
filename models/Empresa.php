@@ -3,6 +3,7 @@
 namespace app\models;
 
 use Yii;
+use app\models\UploadForm;
 
 /**
  * This is the model class for table "empresa".
@@ -24,6 +25,9 @@ class Empresa extends \yii\db\ActiveRecord
     /**
      * @inheritdoc
      */
+
+    public $upload_file;
+
     public static function tableName()
     {
         return 'empresa';
@@ -39,6 +43,7 @@ class Empresa extends \yii\db\ActiveRecord
             [['tipo'], 'string'],
             [['nome', 'fonte'], 'string', 'max' => 45],
             [['logotipo'], 'string', 'max' => 200],
+            [['upload_file'], 'file', 'skipOnEmpty' => true, 'extensions' => 'doc, xlsx, xls'],
         ];
     }
 
@@ -120,4 +125,6 @@ class Empresa extends \yii\db\ActiveRecord
             return false;
         }
     }
+
+
 }

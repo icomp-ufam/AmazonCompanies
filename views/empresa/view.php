@@ -5,6 +5,9 @@
     use yii\data\ActiveDataProvider;
     use yii\db\Query;
     use yii\grid\GridView;
+    use yii\widgets\ActiveForm;
+use kartik\widgets\FileInput;
+
 
 
     /* @var $this yii\web\View */
@@ -26,8 +29,23 @@
         <h1>
             <?= Html::a(Html::img('img/'.$this->defaultExtension,  ['style'=>'width:50px']) ) ?>
             <?= Html::encode('Dados da '.$this->title) ?>
+            
         </h1>
-        <label>Fonte:</label><?= Html::encode(' '.$model->fonte) ?>
+        
+        <div>
+            
+            <label>Fonte:</label><?= Html::encode(' '.$model->fonte) ?>
+            
+
+        </div>
+        <div>
+            <?= $this->render('_telaBotao', [
+                'model' => $model,
+                ]) ?>
+        </div>
+            
+
+        
         
     </p>
 </div>

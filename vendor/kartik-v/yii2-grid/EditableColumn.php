@@ -51,7 +51,7 @@ class EditableColumn extends DataColumn
     /**
      * @var boolean whether to refresh the grid on successful submission of editable
      */
-    public $refreshGrid = true;
+    public $refreshGrid = false;
 
     /**
      * @var boolean|Closure whether to prevent rendering the editable behavior and display a readonly data. You can

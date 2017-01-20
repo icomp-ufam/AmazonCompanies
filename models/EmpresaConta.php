@@ -1,0 +1,71 @@
+<?php
+
+namespace app\models;
+
+use Yii;
+
+/**
+ * This is the model class for table "empresa_conta".
+ *
+ * @property integer $id
+ * @property integer $ano
+ * @property integer $valor
+ * @property integer $idEmpresa
+ * @property integer $idConta
+ *
+ * @property Conta $idConta0
+ * @property Empresa $idEmpresa0
+ */
+class EmpresaConta extends \yii\db\ActiveRecord
+{
+    /**
+     * @inheritdoc
+     */
+    public static function tableName()
+    {
+        return 'empresa_conta';
+    }
+
+    /**
+     * @inheritdoc
+     */
+    public function rules()
+    {
+        return [
+            [['ano', 'valor', 'idEmpresa', 'idConta'], 'required'],
+            [['ano', 'valor', 'idEmpresa', 'idConta'], 'integer'],
+            [['idConta'], 'exist', 'skipOnError' => true, 'targetClass' => Conta::className(), 'targetAttribute' => ['idConta' => 'idConta']],
+            [['idEmpresa'], 'exist', 'skipOnError' => true, 'targetClass' => Empresa::className(), 'targetAttribute' => ['idEmpresa' => 'idEmpresa']],
+        ];
+    }
+
+    /**
+     * @inheritdoc
+     */
+    public function attributeLabels()
+    {
+        return [
+            'id' => 'ID',
+            'ano' => 'Ano',
+            'valor' => 'Valor',
+            'idEmpresa' => 'Id Empresa',
+            'idConta' => 'Id Conta',
+        ];
+    }
+
+    /**
+     * @return \yii\db\ActiveQuery
+     */
+    public function getIdConta0()
+    {
+        return $this->hasOne(Conta::className(), ['idConta' => 'idConta']);
+    }
+
+    /**
+     * @return \yii\db\ActiveQuery
+     */
+    public function getIdEmpresa0()
+    {
+        return $this->hasOne(Empresa::className(), ['idEmpresa' => 'idEmpresa']);
+    }
+}

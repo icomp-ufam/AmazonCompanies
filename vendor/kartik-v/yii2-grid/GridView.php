@@ -88,10 +88,6 @@ class GridView extends YiiGridView
      * The **active** icon markup for [[BooleanColumn]]
      */
     const ICON_ACTIVE = '<span class="glyphicon glyphicon-ok text-success"></span>';
-    
-    // Icone de ALERTA para booleano
-    const ICON_ALERT = '<span class ="glyphicon glyphicon-alert", style="color:orange"></span>';
-    
     /**
      * The **inactive** icon markup for [[BooleanColumn]]
      */
