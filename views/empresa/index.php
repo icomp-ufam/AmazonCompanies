@@ -232,7 +232,7 @@ $this->params['breadcrumbs'][] = $this->title;
                     }
                     ids += keys[keys.length-1];
                     $.ajax({
-                        url: '<?php echo Url::to(['empresa/get-descricao']); ?>',
+                        url: '<?php echo Url::to(['indice/pegar_tag']);?>',
                         type:'POST',
                         data: {
                             'empresa': ids,

@@ -58,8 +58,18 @@ class EmpresaController extends Controller
     /**
      * @return string
      */
-    public function actionGetDescricao(){
 
+    public function actionCarregado()
+    {
+    
+        return $this->render('view', [
+                    'model' => $this->findModel($id),
+                    ]);
+             
+    }
+
+    public function actionGetDescricao(){
+        print_r('entrou get descricao');
         $empresaP = $_POST['empresa'];
         $empresas = explode('#', $empresaP);
         $tabela = "<table class='table'>

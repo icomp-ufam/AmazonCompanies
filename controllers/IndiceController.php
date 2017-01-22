@@ -98,68 +98,71 @@ class IndiceController extends Controller
     }
 
     public function actionPegar_tag(){
+        $empresaP = $_POST['idEmpresa'];
+        $indiceP = $_POST['idIndice'];
+
+        print_r($empresaP);
+        echo '<br>';
+        print_r($indiceP);
+        echo '<br>';
         $indice = Indice::find()->select('formula')->all();
         $calculator = new Calculator();
         $sinais = ['+', '-', '/', '*', '(', ')'];
+
+        foreach ($sinais as $sinal) {
+            print_r($sinal);
+        }
         
 
         $concatenar='';
         $anterior;
-        print_r(count($indice));
-        echo '<br>';
         for ($j=0; $j < count($indice) ; $j++) { 
-                    # code...
-            $teste = preg_split('/[@]/',$indice[$j]->formula);
-
-          
+            $getChaveContas = preg_split('/[@]/',$indice[$j]->formula);
                     $concatenar='';
-                    $anterior='';
+                    $anterior='';                            
+                    $verificaSeEhNull=0;
 
-          for ($i=0; $i <count($teste); $i++) {
-            if(in_array($teste[$i],$sinais)){
-                print_r('sim');
-                                                echo '<br>';
-                $anterior = $concatenar;
-                $concatenar = $anterior.$teste[$i];
+            for ($i=0; $i <count($getChaveContas); $i++) {
+                if(in_array($getChaveContas[$i],$sinais)){
+                    $anterior = $concatenar;
+                    $concatenar = $anterior.$getChaveContas[$i];
 
-        }
-        else{ 
-                print_r($teste[$i]);
-                
-                print_r(" ");
-            $conta = Conta::find()->select("idConta")->where(['chave' => $teste[$i]])->one();
-                print_r($conta['idConta']);
-                $idConta = $conta['idConta'];
+                }else{ 
+                    print_r($getChaveContas[$i]);
+                    $conta = Conta::find()->select("idConta")->where(['chave' => $getChaveContas[$i]])->one();
+                    $idConta = $conta['idConta'];
+                    $empresaConta = EmpresaConta::find()->select("valor")->where(['idConta' => $idConta])->andWhere(['ano' =>2016])->andWhere(['idEmpresa' =>4])->one();
+                    if($empresaConta==null){
+                        //print_r('@é null@');
+                        $anterior = $concatenar;
+                        $concatenar = $anterior.'@ehnull@';
+                        $verificaSeEhNull = 1;
+
+                        echo '<br>';
+
+
+                    } else{
+                        $anterior = $concatenar;
+                    $concatenar = $anterior.$empresaConta['valor'];
+                    echo '<br>';
+                    }
+                    
+                }   
+
+            }
+            if($verificaSeEhNull==1){
+                print_r('sim é null');
                 echo '<br>';
-            $empresaConta = EmpresaConta::find()->select("valor")->where(['idConta' => $idConta])->one();
-                print_r($empresaConta['valor']);
-                $anterior = $concatenar;
-                $concatenar = $anterior.$empresaConta['valor'];
-                                echo '<br>';
 
-        }
-
-
-                
-
-          }
-         print_r($concatenar);
-         echo '<br>';
-        $calculator->setExpression($concatenar);
-                 print_r($calculator->calculate());
-                 echo '<br>';
-
-
-
-
-        }        
-
-          
-
-
-   
-            
-        }
+            }else{
+             print_r($concatenar);
+             echo '<br>';
+             $calculator->setExpression($concatenar);
+                      print_r($calculator->calculate());
+                      echo '<br>';
+         }
+        }                    
+    }
 
     /**
      * Deletes an existing Indice model.

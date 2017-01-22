@@ -1,11 +1,19 @@
 <?php
 
     use yii\helpers\Html;
+    use yii\helpers\Url;
+use yii\helpers\BaseUrl;
     use yii\widgets\DetailView;
     use yii\data\ActiveDataProvider;
     use yii\db\Query;
     use yii\grid\GridView;
     use yii\widgets\ActiveForm;
+    use app\models\TipoIndice;
+    use app\models\EmpresaConta;
+    use app\models\Demonstracao;
+
+    use app\models\Indice;
+
 use kartik\widgets\FileInput;
 
 
@@ -52,10 +60,28 @@ use kartik\widgets\FileInput;
 
 <div class="body-content">
     <ul class="nav nav-tabs">
-        <li class="active"><a data-toggle="tab" href="#demox">Balanço Patrimonial</a></li>
-        <li><a data-toggle="tab" href="#demoy">Demonstração dos Fluxos de Caixa</a></li>
-        <li><a data-toggle="tab" href="#demoz">Demonstração do Resultado do Exercício</a></li>
-        <li><a data-toggle="tab" href="#demov">Índice</a></li>
+    <?php
+                        $demonstracoes = Demonstracao::find()->select('*')->all();
+                        //$idIndices = TipoIndice::find()->select('idTipo_indice')->all();
+                        $tweets = [['nome'=>'Liquidez', 'id'=>100]];
+
+                        
+
+
+                        
+
+                        foreach($demonstracoes as $demonstracao){
+
+                         
+                    ?>
+                    <li><a data-toggle="tab" href="<?=$demonstracao->idDemonstracao?>"><?=$demonstracao->nomeDemonstracao?></a></li>
+
+                <?php
+                        }   
+                    ?>
+
+        
+        <li><a data-toggle="tab" href="#demoIndice">Índice</a></li>
     </ul>
 
     <div class="tab-content">
@@ -152,122 +178,138 @@ use kartik\widgets\FileInput;
             </div>
         </div>
         
-        <div id="demov" class="tab-pane fade">
+        <div id="demoIndice" class="tab-pane fade">
                 <div class="container">            
                     <ul class="nav nav-tabs">
-                        <li class="active"><a data-toggle="tab" href="#indicex">Liquidez</a></li>
-                        <li><a data-toggle="tab" href="#indicey">Endividamento</a></li>
-                        <li><a data-toggle="tab" href="#indicez">Lucratividade</a></li>
-                        <li><a data-toggle="tab" href="#indicev">Rentabilidade</a></li>
-                        <li><a data-toggle="tab" href="#indicev">Giros e Prazos</a></li>
-                        <li><a data-toggle="tab" href="#indicev">Giros Assaf Neto</a></li>
-                        <li><a data-toggle="tab" href="#indicev">Giros Viaconti</a></li>
+                    <?php
+                        $tipoIndices = TipoIndice::find()->select('*')->all();
+                        //$idIndices = TipoIndice::find()->select('idTipo_indice')->all();
+                        $tweets = [['nome'=>'Liquidez', 'id'=>100]];
+
+                        foreach($tipoIndices as $tipoIndice){
+
+                         
+                    ?>
+                        <li><a data-toggle="tab" href="#<?=$tipoIndice->idTipo_indice?>"><?=$tipoIndice->nome?></a></li>
+                        
+                        <?php
+                        }   
+                    ?>
                     </ul>
 
-<<<<<<< Updated upstream
-                    <div class="tab-content">
-                        <div id="indicex" class="tab-pane fade in active">
-                            <div class="container">            
-                                <table class="table table-hover">
-                                    <thead>
-                                        <tr>
-                                            <th><input type="checkbox"/></th>
-                                            <th>Agregados</th>
-                                            <th>Valor</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <td><input type="checkbox"/></td>
-                                            <td onmouseover="Tip('Ex: Lucro Gerado = (Ativos Totais/Passivo Exigível)')" onmouseout = "UnTip()">LG = (AT/PE)</td>
-                                            <td>R$ 31.647.000,00</td>
-                                        </tr>
-                                        <tr>
-                                            <td><input type="checkbox" /></td>
-                                            <td onmouseover="Tip('Ex: Lucro Contínuo = (Ativos Circulantes/Passivos Circulantes)')" onmouseout = "UnTip()">LC = (AC/PC)</td>
-                                            <td>R$ 31.647.000,00</td>
-                                            
-                                        </tr>
-                                        <tr>
-                                            <td><input type="checkbox" /></td>
-                                            <td onmouseover="Tip('Ex: Lucro Significativo = (Ativos Circulantes - Estoques)/Passivos Circulantes')" onmouseout = "UnTip()">LS = (AC-Estoques)/PC</td>
-                                            <td>R$ 771.547.000,00</td>
-                                            
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-
-                        <div id="indicey" class="tab-pane fade">
-                            <div class="container">            
-                                <table class="table table-hover">
-                                    <thead>
-                                        <tr>
-                                            <th><input type="checkbox"/></th>
-                                            <th>Agregados</th>
-                                            <th>Valor</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <td><input type="checkbox"/></td>
-                                            <td onmouseover="Tip('e=mc^3')" onmouseout = "UnTip()">EG = PE/PT</td>
-                                            <td>R$ 7.529.000,00</td>
-                                            
-                                        </tr>
-                                        <tr>
-                                            <td><input type="checkbox"/></td>
-                                            <td onmouseover="Tip('e=mc^4')" onmouseout = "UnTip()">RCT = PE/PL</td>
-                                            <td>R$ 14.375.000,00</td>
-                                            
-                                        </tr>
-                                        <tr>
-                                            <td><input type="checkbox"/></td>
-                                            <td onmouseover="Tip('e=mc^2')" onmouseout = "UnTip()">ED = PC/PNC</td>
-                                            <td>R$ -3.057.000,00</td>
-                                            
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-
-                        <div id="indicez" class="tab-pane fade">
-                            <div class="container">           
-                                <table class="table table-hover">
-                                    <thead>
-                                        <tr>
-                                            <th><input type="checkbox"/></th>
-                                            <th>Agregados</th>
-                                            <th>Valor</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <td><input type="checkbox"/></td>
-                                            <td onmouseover="Tip('e=mc^2')" onmouseout = "UnTip()">MB = LB/VL</td>
-                                            <td>R$ 814.175.000,00</td>    
-                                        </tr>
-                                        <tr>
-                                            <td><input type="checkbox"/></td>
-                                            <td onmouseover="Tip('e=mc^4')" onmouseout = "UnTip()">MO = LO/VL</td>
-                                            <td>R$ -764.866.000,00</td>    
-                                        </tr>
-                                        <tr>
-                                            <td><input type="checkbox"/></td>
-                                            <td onmouseover="Tip('e=mc^3')" onmouseout = "UnTip()">ML = LL/VL</td>
-                                            <td>R$ 49.309.000,00</td>    
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>              
-                    </div>
+                    
                 </div>
             </div>
+
+            <div class="tab-content">
+                    <?php
+                        $tipoIndices = TipoIndice::find()->select('*')->all();
+                        //$idIndices = TipoIndice::find()->select('idTipo_indice')->all();
+                        $tweets = [['nome'=>'Liquidez', 'id'=>100]];
+
+                        foreach($tipoIndices as $tipoIndice){
+
+                         
+                    ?>
+
+                        <div id="<?=$tipoIndice->idTipo_indice?>" class="tab-pane fade">
+                            <div class="container">            
+                                <table class="table table-hover">
+                                    <thead>
+                                        <tr>
+                                            <th></th>
+                                            <th>Formula: <?=$tipoIndice->idTipo_indice?></th>
+                                            <th>Ano</th>
+                                            <th></th>
+
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <?php
+                                            $indices = Indice::find()->select('*')->where(['idTipo_indice' => $tipoIndice->idTipo_indice])->all();
+
+                                                //$idIndices = TipoIndice::find()->select('idTipo_indice')->all();
+                                                $tweets = [['nome'=>'Liquidez', 'id'=>100]];
+
+                                                foreach($indices as $indice){
+
+                                                 
+                                            ?>
+                                        <tr>
+                                            <td></td>
+                                            <td onmouseover="Tip('Ex: Lucro Gerado = (Ativos Totais/Passivo Exigível)')" onmouseout = "UnTip()"><?=$indice->formula?></td>
+                                            <td>
+                                            <div class="dropdown">
+                                                <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">
+                                                <span class="caret"></span></button>
+                                                <ul class="dropdown-menu">
+                                                <?php
+                                            $anosEmpresas = EmpresaConta::find()->select('ano')->distinct()->orderBy(["ano"=> SORT_ASC])->all();
+                                                $tweets = [['nome'=>'Liquidez', 'id'=>100]];
+
+                                                foreach($anosEmpresas as $anosEmpresa){  
+                                            ?>
+                                                    <li><a href=""><?=$anosEmpresa->ano?></a></li>
+                                            <?php
+                                                }   
+                                            ?>       
+                                            </ul>
+                                            </div>
+                                            </td>
+
+                                            <td>
+                                                <button type="button" onclick="comparar(<?=$indice->idIndice?>)" class="btn btn-default" >Calcular</button>
+                                                <button  data-toggle="modal" data-target="#cadCalIndice" id="teste" style=" visibility: hidden"></button>
+
+                                            </td>
+                                        </tr>
+                                        <?php
+                                                }   
+                                            ?>
+                        
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <?php
+                        }   
+                    ?>
+
+
+                       
+                    </div>
+
+            <script type="application/javascript">
+        //Criar controlador acesado vai requisição ajax."
+        var keys;
+        function comparar(idIndice) {
+            <?=$anosEmpresa->ano?>;
+                    $.ajax({
+                        url: '<?php echo Url::to(['indice/pegar_tag']);?>',
+                        type:'POST',
+                        data: {
+                            'idEmpresa': <?=$model->idEmpresa?>,
+                            'idIndice' : idIndice,
+                        },
+                        success: function (data) {
+                            var $teste = document.querySelector('.wrapper'), novohtml =  data;
+                            $teste.insertAdjacentHTML('afterbegin', novohtml);
+                        }
+                    });
+                    $("#teste").trigger('click');
+             
+        }
+
+    </script>
+
+
+
+
+
+
         </div>
     </div>
+
 
 
 <div id="analise" class="row">
@@ -408,3 +450,20 @@ use kartik\widgets\FileInput;
             </tbody>
         </table>
  </div>
+ <div class="modal" id="cadCalIndice" role="dialog">
+        <div class="modal-content">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <?= Html::a('&times;', ['view', 'id' => $model->idEmpresa], ['class' => 'btn close']) ?>
+                    <h3 class="modal-title">Cálculo de Índices</h3>
+                </div>
+                <div class="modal-body">
+                    <form class="form-inline" role="form">
+                        <div class="wrapper">
+
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
