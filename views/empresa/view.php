@@ -10,6 +10,8 @@ use yii\helpers\BaseUrl;
     use yii\widgets\ActiveForm;
     use app\models\TipoIndice;
     use app\models\EmpresaConta;
+        use app\models\Conta;
+
     use app\models\Demonstracao;
 
     use app\models\Indice;
@@ -163,16 +165,38 @@ use kartik\widgets\FileInput;
                                         <?php
                                             $indices = Indice::find()->select('*')->where(['idTipo_indice' => $tipoIndice->idTipo_indice])->all();
 
-                                                //$idIndices = TipoIndice::find()->select('idTipo_indice')->all();
-                                                $tweets = [['nome'=>'Liquidez', 'id'=>100]];
-
+                                                 $sinais = ['+', '-', '/', '*', '(', ')'];
                                                 foreach($indices as $indice){
+                                                    $indiceIn = Indice::find()->select('formula')->where(['idIndice' => $indice->idIndice])->all();
+
+                                                     $getChaveContas = preg_split('/[@]/',$indiceIn[0]->formula);
+                                                            
+                                                            $montarFormulaAnterior = '';
+                                                            $montarFormula='';
+                                                            for ($i=0; $i <count($getChaveContas); $i++) {
+                                                        if(in_array($getChaveContas[$i],$sinais)){
+                                                            
+                                                            $montarFormulaAnterior = ' '.$montarFormula.' ';
+                                                            $montarFormula=$montarFormulaAnterior.$getChaveContas[$i];
+
+                                                        }else{ 
+                                                            $conta = Conta::find()->select("*")->where(['chave' => $getChaveContas[$i]])->one();
+                                                            $idConta = $conta['idConta'];
+                                                            
+
+                                                            $montarFormulaAnterior = ' '.$montarFormula.' ';
+                                                            $montarFormula=$montarFormulaAnterior.$conta['nome'];
+                                                            
+                                                        }   
+
+                                                    }
+                                                    
 
                                                  
                                             ?>
                                         <tr>
                                             <td></td>
-                                            <td onmouseover="Tip('Ex: Lucro Gerado = (Ativos Totais/Passivo Exigível)')" onmouseout = "UnTip()"><?=$indice->formula?></td>
+                                            <td onmouseover="Tip('Ex: Lucro Gerado = (Ativos Totais/Passivo Exigível)')" onmouseout = "UnTip()"><?=$montarFormula?></td>
                                             <?php
                                             $anosEmpresas = EmpresaConta::find()->select('ano')->distinct()->orderBy(["ano"=> SORT_ASC])->all();
                                                 $tweets = [['nome'=>'Liquidez', 'id'=>100]];

@@ -105,8 +105,7 @@ class IndiceController extends Controller
         echo '<br>';
         print_r($indiceP);
         echo '<br>';
-        $tabela = "<table class='table'>
-                       <tr> ";
+        
         
         $indice = Indice::find()->select('formula')->where(['idIndice' => $indiceP])->all();
         //$indice = Indice::find()->select('formula')->all();
@@ -114,27 +113,29 @@ class IndiceController extends Controller
         $sinais = ['+', '-', '/', '*', '(', ')'];
         $concatenar='';
         $anterior;
-                            $tabela .= "<th> $indice[0]->nomeIndice </th> ";
-        $tabela.="</tr> ";
+                            
 
 
         for ($j=0; $j < count($indice) ; $j++) {
+
 
             $getChaveContas = preg_split('/[@]/',$indice[$j]->formula);
                     $concatenar='';
                     $anterior='';                            
                     $verificaSeEhNull=0;
+                    
 
             for ($i=0; $i <count($getChaveContas); $i++) {
                 if(in_array($getChaveContas[$i],$sinais)){
                     $anterior = $concatenar;
                     $concatenar = $anterior.$getChaveContas[$i];
+                    
 
                 }else{ 
                     print_r($getChaveContas[$i]);
-                    $conta = Conta::find()->select("idConta")->where(['chave' => $getChaveContas[$i]])->one();
+                    $conta = Conta::find()->select("*")->where(['chave' => $getChaveContas[$i]])->one();
                     $idConta = $conta['idConta'];
-                    $empresaConta = EmpresaConta::find()->select("valor")->where(['idConta' => $idConta])->andWhere(['ano' =>2016])->andWhere(['idEmpresa' =>$empresaP])->one();
+                    $empresaConta = EmpresaConta::find()->select("*")->where(['idConta' => $idConta])->andWhere(['ano' =>2016])->andWhere(['idEmpresa' =>$empresaP])->one();
                     if($empresaConta==null){
                         //print_r('@é null@');
                         $anterior = $concatenar;
@@ -149,6 +150,8 @@ class IndiceController extends Controller
                     $concatenar = $anterior.$empresaConta['valor'];
                     echo '<br>';
                     }
+
+                    
                     
                 }   
 
@@ -166,11 +169,9 @@ class IndiceController extends Controller
          }
         }
 
-        $tabela.="</tr>
-            </table>";
-
+        
         //echo count($resultado);
-        return $tabela;
+        //return $tabela;
 
 
     }
