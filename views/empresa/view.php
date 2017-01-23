@@ -289,6 +289,26 @@ use kartik\widgets\FileInput;
     <div id="grafico" style="width: auto; height: auto; margin: 0 auto"></div>
    
 <script language="JavaScript">$(function () {
+
+        $names = [
+        {
+                name: '2014',
+                data: [91381, 91381, 564384, 265916, 96377, 186664, 12253,39,3135, 655765]
+            },
+
+        {
+                name: '2016',
+                data: [91381, 91381, 564384, 265916, 96377, 186664, 12253,39,3135, 655765]
+            },
+
+        ];
+        $names[0]['name'] = '2013';
+        //$names[0]['data'] = 200;
+
+        console.log($names[0]['name']);
+        console.log($names[0]['data']);
+
+
     Highcharts.chart('grafico', {
         chart: {
             type: 'bar'
@@ -339,16 +359,7 @@ use kartik\widgets\FileInput;
         credits: {
             enabled: false
         },
-        series: [{
-            name: '2013',
-            data: [91381, 91381, 564384, 265916, 96377, 186664, 12253,39,3135, 655765]
-        }, {
-            name: '2014',
-            data: [46051, 46051, 749872, 312579, 114499, 307460, 11170, 39, 4125]
-        }, {
-            name: '2015',
-            data: [31647, 31647, 771547, 218310, 95738, 437522, 18847, 39, 1091, 803194]
-        }]
+        series: $names
     });
 });
 </script>
