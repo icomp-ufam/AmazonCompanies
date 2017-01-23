@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: 23-Jan-2017 às 18:10
+-- Generation Time: 23-Jan-2017 às 22:29
 -- Versão do servidor: 5.5.50
 -- PHP Version: 5.6.23
 
@@ -53,7 +53,7 @@ INSERT INTO `analise` (`idanalise`, `texto`, `status`, `idEmpresa`) VALUES
 CREATE TABLE `comentario` (
   `idComentario` int(11) NOT NULL,
   `conteudo` text NOT NULL,
-  `Analise_idanalise` int(11) NOT NULL,
+  `Empresa_idEmpresa` int(11) NOT NULL,
   `Usuario_idUsuario` int(11) NOT NULL,
   `Comentario_idComentario` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -62,10 +62,10 @@ CREATE TABLE `comentario` (
 -- Extraindo dados da tabela `comentario`
 --
 
-INSERT INTO `comentario` (`idComentario`, `conteudo`, `Analise_idanalise`, `Usuario_idUsuario`, `Comentario_idComentario`) VALUES
-(1, 'Esta análise me parece boa!', 3, 1, NULL),
+INSERT INTO `comentario` (`idComentario`, `conteudo`, `Empresa_idEmpresa`, `Usuario_idUsuario`, `Comentario_idComentario`) VALUES
+(1, 'Esta análise me parece boa!', 1, 1, NULL),
 (2, 'Talvez precisa investir mais em RH', 2, 3, NULL),
-(3, 'Não concordo e nem discordo de você, muito pelo contrário!', 3, 3, 1);
+(3, 'Não concordo e nem discordo de você, muito pelo contrário!', 1, 3, 1);
 
 -- --------------------------------------------------------
 
@@ -332,8 +332,8 @@ ALTER TABLE `analise`
 -- Indexes for table `comentario`
 --
 ALTER TABLE `comentario`
-  ADD PRIMARY KEY (`idComentario`,`Analise_idanalise`,`Usuario_idUsuario`),
-  ADD KEY `fk_Comentário_Empresa1_idx` (`Analise_idanalise`),
+  ADD PRIMARY KEY (`idComentario`,`Empresa_idEmpresa`,`Usuario_idUsuario`),
+  ADD KEY `fk_Comentário_Empresa1_idx` (`Empresa_idEmpresa`),
   ADD KEY `fk_Comentário_Usuario1_idx` (`Usuario_idUsuario`),
   ADD KEY `fk_Comentário_Comentário1_idx` (`Comentario_idComentario`);
 
@@ -470,7 +470,7 @@ ALTER TABLE `analise`
 --
 ALTER TABLE `comentario`
   ADD CONSTRAINT `fk_Comentario_Comentario1` FOREIGN KEY (`Comentario_idComentario`) REFERENCES `comentario` (`idComentario`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  ADD CONSTRAINT `fk_Comentario_Analise1` FOREIGN KEY (`Analise_idanalise`) REFERENCES `analise` (`idanalise`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  ADD CONSTRAINT `fk_Comentario_Empresa1` FOREIGN KEY (`Empresa_idEmpresa`) REFERENCES `empresa` (`idEmpresa`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   ADD CONSTRAINT `fk_Comentario_Usuario1` FOREIGN KEY (`Usuario_idUsuario`) REFERENCES `usuario` (`idUsuario`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
