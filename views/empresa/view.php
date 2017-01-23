@@ -72,7 +72,7 @@ use kartik\widgets\FileInput;
                     ?>
 
         
-        <li><a data-toggle="tab" href="#demoIndice">Índice</a></li>
+        <li><a data-toggle="tab" href="#demoIndice">ÍNDICE</a></li>
     </ul>
 
     <div class="tab-content">
@@ -86,16 +86,52 @@ use kartik\widgets\FileInput;
                 <table class="table table-hover">
                     <thead>
                         <tr>
-                            <th><input type="checkbox"/></th>
                             <th>Nome Conta: <?=$demonstracao->idDemonstracao?></th>
-                            <th>Valor</th>
+                            <?php
+                                            $anosEmpresas = EmpresaConta::find()->select('ano')->distinct()->orderBy(["ano"=> SORT_ASC])->all();
+                                                 $tweets = [['nome'=>'Liquidez', 'id'=>100]];
+ 
+                                                foreach($anosEmpresas as $anosEmpresa){  
+                                             ?>
+                            <th><?=$anosEmpresa->ano?></th>
+                            <?php
+                                                }   
+                                             ?>
                         </tr>
                     </thead>
                     <tbody>
+                    <?php
+                    $contas = Conta::find()->select('*')->where(['idDemonstracao' => $demonstracao->idDemonstracao])->all();                                              
+                            foreach($contas as $conta){
+                                            ?>
                         <tr>
-                            <td><input type="checkbox"/></td>
-                            <td onmouseover="Tip('e=mc^2')" onmouseout = "UnTip()">Receita Líquida de Vendas</td>
-                            <td>R$ 814.175.000,00</td>    
+                            <td><?=$conta->nome?></td>
+                        
+                               <?php
+                                            $anosEmpresas = EmpresaConta::find()->select('ano')->distinct()->orderBy(["ano"=> SORT_ASC])->all();
+                                                 $tweets = [['nome'=>'Liquidez', 'id'=>100]];
+ 
+                                                foreach($anosEmpresas as $anosEmpresa){
+                                                    $valoress = EmpresaConta::find()->select('valor')->where(['idConta' => $conta->idConta])->andWhere(['ano' =>$anosEmpresa->ano])->all();
+                                                    if(count($valoress)>0){
+                                                        foreach($valoress as $valores){
+
+                                             ?>             
+                                                    <td>R$ <?=$valores->valor?></td> 
+                                                    <?php
+                                                        }
+                                                    } else{
+                                                    ?>             
+                                                    <td>-----</td> 
+                                                    <?php
+
+
+
+
+                                                    }  
+                                                } 
+                                    } 
+                                             ?>   
                         </tr>
                         
                     </tbody>
@@ -145,18 +181,10 @@ use kartik\widgets\FileInput;
                                 <table class="table table-hover">
                                     <thead>
                                         <tr>
-                                            <th></th>
-                                            <th>Formula: <?=$tipoIndice->idTipo_indice?></th>
-                                            <?php
-                                            $anosEmpresas = EmpresaConta::find()->select('ano')->distinct()->orderBy(["ano"=> SORT_ASC])->all();
-                                                $tweets = [['nome'=>'Liquidez', 'id'=>100]];
+                                        
+                                            <th>Nome:</th>
+                                            <th>Fórmula:</th>
 
-                                                foreach($anosEmpresas as $anosEmpresa){  
-                                            ?>
-                                            <th><?=$anosEmpresa->ano?></th>
-                                            <?php
-                                                }   
-                                            ?>  
                                             <th></th>
 
                                         </tr>
@@ -167,7 +195,7 @@ use kartik\widgets\FileInput;
 
                                                  $sinais = ['+', '-', '/', '*', '(', ')'];
                                                 foreach($indices as $indice){
-                                                    $indiceIn = Indice::find()->select('formula')->where(['idIndice' => $indice->idIndice])->all();
+                                                    $indiceIn = Indice::find()->select('*')->where(['idIndice' => $indice->idIndice])->all();
 
                                                      $getChaveContas = preg_split('/[@]/',$indiceIn[0]->formula);
                                                             
@@ -195,22 +223,10 @@ use kartik\widgets\FileInput;
                                                  
                                             ?>
                                         <tr>
-                                            <td></td>
-                                            <td onmouseover="Tip('Ex: Lucro Gerado = (Ativos Totais/Passivo Exigível)')" onmouseout = "UnTip()"><?=$montarFormula?></td>
-                                            <?php
-                                            $anosEmpresas = EmpresaConta::find()->select('ano')->distinct()->orderBy(["ano"=> SORT_ASC])->all();
-                                                $tweets = [['nome'=>'Liquidez', 'id'=>100]];
+                                        <td><?=$indiceIn[0]->nomeIndice?></td>
+                                            <td><?=$montarFormula?></td>
+                                            
 
-                                                foreach($anosEmpresas as $anosEmpresa){  
-                                            ?>
-                                            <td>
-                                            
-                                    
-                                            
-                                            </td>
-                                            <?php
-                                                }   
-                                            ?>  
 
                                             <td>
                                                 <button type="button" onclick="comparar(<?=$indice->idIndice?>)" class="btn btn-default" >Calcular</button>
@@ -240,7 +256,6 @@ use kartik\widgets\FileInput;
         function comparar(idIndice) {
             console.log("entrou");
                
-            <?=$anosEmpresa->ano?>;
                     $.ajax({
                         url: '<?php echo Url::to(['indice/calc_indice']);?>',
                         type:'POST',

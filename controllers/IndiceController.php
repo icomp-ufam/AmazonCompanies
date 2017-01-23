@@ -101,10 +101,6 @@ class IndiceController extends Controller
 
         $empresaP = $_POST['idEmpresa'];
         $indiceP = $_POST['idIndice'];
-        print_r($empresaP);
-        echo '<br>';
-        print_r($indiceP);
-        echo '<br>';
         
         
         $indice = Indice::find()->select('formula')->where(['idIndice' => $indiceP])->all();
@@ -114,55 +110,59 @@ class IndiceController extends Controller
         $concatenar='';
         $anterior;
                             
+        $anosEmpresas = EmpresaConta::find()->select('ano')->distinct()->orderBy(["ano"=> SORT_ASC])->all();
 
+        foreach($anosEmpresas as $anosEmpresa) {
+            print_r("ano: " );
+            print_r($anosEmpresa->ano);
+            echo '<br>';
 
-        for ($j=0; $j < count($indice) ; $j++) {
-
-
-            $getChaveContas = preg_split('/[@]/',$indice[$j]->formula);
+            $getChaveContas = preg_split('/[@]/',$indice[0]->formula);
                     $concatenar='';
                     $anterior='';                            
                     $verificaSeEhNull=0;
-                    
+                    $montarFormulaAnterior = '';
+                    $montarFormula='';
 
             for ($i=0; $i <count($getChaveContas); $i++) {
                 if(in_array($getChaveContas[$i],$sinais)){
                     $anterior = $concatenar;
                     $concatenar = $anterior.$getChaveContas[$i];
-                    
+                    $montarFormulaAnterior = ' '.$montarFormula.' ';
+                    $montarFormula=$montarFormulaAnterior.$getChaveContas[$i];
 
                 }else{ 
-                    print_r($getChaveContas[$i]);
                     $conta = Conta::find()->select("*")->where(['chave' => $getChaveContas[$i]])->one();
                     $idConta = $conta['idConta'];
-                    $empresaConta = EmpresaConta::find()->select("*")->where(['idConta' => $idConta])->andWhere(['ano' =>2016])->andWhere(['idEmpresa' =>$empresaP])->one();
+                    $empresaConta = EmpresaConta::find()->select("*")->where(['idConta' => $idConta])->andWhere(['ano' =>$anosEmpresa->ano])->andWhere(['idEmpresa' =>$empresaP])->one();
                     if($empresaConta==null){
                         //print_r('@é null@');
                         $anterior = $concatenar;
-                        $concatenar = $anterior.'@ehnull@';
+                        $concatenar = $anterior.'xxxx';
                         $verificaSeEhNull = 1;
 
-                        echo '<br>';
 
 
                     } else{
                         $anterior = $concatenar;
                     $concatenar = $anterior.$empresaConta['valor'];
-                    echo '<br>';
                     }
 
-                    
+                    $montarFormulaAnterior = ' '.$montarFormula.' ';
+                    $montarFormula=$montarFormulaAnterior.$conta['nome'];
                     
                 }   
 
             }
+            print_r($montarFormula);
+            print_r(" = ");
             if($verificaSeEhNull==1){
-                print_r('sim é null');
-                echo '<br>';
+                print_r($concatenar);
+                echo "<br>";
 
             }else{
              print_r($concatenar);
-             echo '<br>';
+             print_r(" = ");
              $calculator->setExpression($concatenar);
                       print_r($calculator->calculate());
                       echo '<br>';
