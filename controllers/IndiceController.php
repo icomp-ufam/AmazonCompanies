@@ -97,26 +97,29 @@ class IndiceController extends Controller
         }
     }
 
-    public function actionPegar_tag(){
+    public function actionCalc_indice(){
+
         $empresaP = $_POST['idEmpresa'];
         $indiceP = $_POST['idIndice'];
-
         print_r($empresaP);
         echo '<br>';
         print_r($indiceP);
         echo '<br>';
-        $indice = Indice::find()->select('formula')->all();
+        $tabela = "<table class='table'>
+                       <tr> ";
+        
+        $indice = Indice::find()->select('formula')->where(['idIndice' => $indiceP])->all();
+        //$indice = Indice::find()->select('formula')->all();
         $calculator = new Calculator();
         $sinais = ['+', '-', '/', '*', '(', ')'];
-
-        foreach ($sinais as $sinal) {
-            print_r($sinal);
-        }
-        
-
         $concatenar='';
         $anterior;
-        for ($j=0; $j < count($indice) ; $j++) { 
+                            $tabela .= "<th> $indice[0]->nomeIndice </th> ";
+        $tabela.="</tr> ";
+
+
+        for ($j=0; $j < count($indice) ; $j++) {
+
             $getChaveContas = preg_split('/[@]/',$indice[$j]->formula);
                     $concatenar='';
                     $anterior='';                            
@@ -131,7 +134,7 @@ class IndiceController extends Controller
                     print_r($getChaveContas[$i]);
                     $conta = Conta::find()->select("idConta")->where(['chave' => $getChaveContas[$i]])->one();
                     $idConta = $conta['idConta'];
-                    $empresaConta = EmpresaConta::find()->select("valor")->where(['idConta' => $idConta])->andWhere(['ano' =>2016])->andWhere(['idEmpresa' =>4])->one();
+                    $empresaConta = EmpresaConta::find()->select("valor")->where(['idConta' => $idConta])->andWhere(['ano' =>2016])->andWhere(['idEmpresa' =>$empresaP])->one();
                     if($empresaConta==null){
                         //print_r('@é null@');
                         $anterior = $concatenar;
@@ -161,7 +164,15 @@ class IndiceController extends Controller
                       print_r($calculator->calculate());
                       echo '<br>';
          }
-        }                    
+        }
+
+        $tabela.="</tr>
+            </table>";
+
+        //echo count($resultado);
+        return $tabela;
+
+
     }
 
     /**

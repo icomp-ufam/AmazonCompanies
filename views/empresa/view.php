@@ -40,18 +40,7 @@ use kartik\widgets\FileInput;
             
         </h1>
         
-        <div>
-            
-            <label>Fonte:</label><?= Html::encode(' '.$model->fonte) ?>
-            
-
-        </div>
-        <div>
-            <?= $this->render('_telaBotao', [
-                'model' => $model,
-                ]) ?>
-        </div>
-            
+       
 
         
         
@@ -74,7 +63,7 @@ use kartik\widgets\FileInput;
 
                          
                     ?>
-                    <li><a data-toggle="tab" href="<?=$demonstracao->idDemonstracao?>"><?=$demonstracao->nomeDemonstracao?></a></li>
+                    <li><a data-toggle="tab" href="#Demonstracao<?=$demonstracao->idDemonstracao?>"><?=$demonstracao->nomeDemonstracao?></a></li>
 
                 <?php
                         }   
@@ -85,75 +74,18 @@ use kartik\widgets\FileInput;
     </ul>
 
     <div class="tab-content">
-        <div id="demox" class="tab-pane fade in active">
-            <div class="container">            
-                <table class="table table-hover">
-                    <thead>
-                        <tr>
-                            <th><input type="checkbox"/></th>
-                                <th>Nome Conta</th>
-                                <th>Valor</th>
-                            </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td><input type="checkbox"/></td>
-                            <td onmouseover="Tip('e=mc^2')" onmouseout = "UnTip()">Ativo Circulante Financeiro</td>
-                            <td>R$ 31.647.000,00</td>
-                        </tr>
-                        <tr>
-                            <td><input type="checkbox" /></td>
-                            <td onmouseover="Tip('e=mc^3')" onmouseout = "UnTip()">Disponibilidades</td>
-                            <td>R$ 31.647.000,00</td>
-                        </tr>
-                        <tr>
-                            <td><input type="checkbox" /></td>
-                            <td onmouseover="Tip('e=mc^4')" onmouseout = "UnTip()">Ativo Circulante Operacional</td>
-                            <td>R$ 771.547.000,00</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </div>
-        
-        <div id="demoy" class="tab-pane fade">
-            <div class="container">            
-                <table class="table table-hover">
-                    <thead>
-                        <tr>
-                            <th><input type="checkbox"/></th>
-                                <th>Nome Conta</th>
-                                <th>Valor</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td><input type="checkbox"/></td>
-                            <td onmouseover="Tip('e=mc^3')" onmouseout = "UnTip()">Depreciação e Amortização</td>
-                                <td>R$ 7.529.000,00</td>  
-                        </tr>
-                        <tr>
-                            <td><input type="checkbox"/></td>
-                            <td onmouseover="Tip('e=mc^4')" onmouseout = "UnTip()">Provisões e Atualizações para demandas Judiciais e Administrativas</td>
-                            <td>R$ 14.375.000,00</td>    
-                        </tr>
-                        <tr>
-                            <td><input type="checkbox"/></td>
-                            <td onmouseover="Tip('e=mc^2')" onmouseout = "UnTip()">Ajuste a Valor Presente</td>
-                            <td>R$ -3.057.000,00</td>    
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </div>
-        
-        <div id="demoz" class="tab-pane fade">
+        <?php
+                        $demonstracoes = Demonstracao::find()->select('*')->all();
+                        //$idIndices = TipoIndice::find()->select('idTipo_indice')->all();
+                        foreach($demonstracoes as $demonstracao){             
+                    ?>
+        <div id="Demonstracao<?=$demonstracao->idDemonstracao?>" class="tab-pane fade">
             <div class="container">           
                 <table class="table table-hover">
                     <thead>
                         <tr>
                             <th><input type="checkbox"/></th>
-                            <th>Nome Conta</th>
+                            <th>Nome Conta: <?=$demonstracao->idDemonstracao?></th>
                             <th>Valor</th>
                         </tr>
                     </thead>
@@ -163,20 +95,14 @@ use kartik\widgets\FileInput;
                             <td onmouseover="Tip('e=mc^2')" onmouseout = "UnTip()">Receita Líquida de Vendas</td>
                             <td>R$ 814.175.000,00</td>    
                         </tr>
-                        <tr>
-                            <td><input type="checkbox"/></td>
-                            <td onmouseover="Tip('e=mc^4')" onmouseout = "UnTip()">Custo dos Produtos</td>
-                            <td>R$ -764.866.000,00</td>    
-                        </tr>
-                        <tr>
-                            <td><input type="checkbox"/></td>
-                            <td onmouseover="Tip('e=mc^3')" onmouseout = "UnTip()">Lucro Bruto</td>
-                            <td>R$ 49.309.000,00</td>    
-                        </tr>
+                        
                     </tbody>
                 </table>
             </div>
         </div>
+        <?php
+                        }   
+                    ?>
         
         <div id="demoIndice" class="tab-pane fade">
                 <div class="container">            
@@ -190,7 +116,7 @@ use kartik\widgets\FileInput;
 
                          
                     ?>
-                        <li><a data-toggle="tab" href="#<?=$tipoIndice->idTipo_indice?>"><?=$tipoIndice->nome?></a></li>
+                        <li><a data-toggle="tab" href="#Indice<?=$tipoIndice->idTipo_indice?>"><?=$tipoIndice->nome?></a></li>
                         
                         <?php
                         }   
@@ -212,14 +138,23 @@ use kartik\widgets\FileInput;
                          
                     ?>
 
-                        <div id="<?=$tipoIndice->idTipo_indice?>" class="tab-pane fade">
+                        <div id="Indice<?=$tipoIndice->idTipo_indice?>" class="tab-pane fade">
                             <div class="container">            
                                 <table class="table table-hover">
                                     <thead>
                                         <tr>
                                             <th></th>
                                             <th>Formula: <?=$tipoIndice->idTipo_indice?></th>
-                                            <th>Ano</th>
+                                            <?php
+                                            $anosEmpresas = EmpresaConta::find()->select('ano')->distinct()->orderBy(["ano"=> SORT_ASC])->all();
+                                                $tweets = [['nome'=>'Liquidez', 'id'=>100]];
+
+                                                foreach($anosEmpresas as $anosEmpresa){  
+                                            ?>
+                                            <th><?=$anosEmpresa->ano?></th>
+                                            <?php
+                                                }   
+                                            ?>  
                                             <th></th>
 
                                         </tr>
@@ -238,24 +173,20 @@ use kartik\widgets\FileInput;
                                         <tr>
                                             <td></td>
                                             <td onmouseover="Tip('Ex: Lucro Gerado = (Ativos Totais/Passivo Exigível)')" onmouseout = "UnTip()"><?=$indice->formula?></td>
-                                            <td>
-                                            <div class="dropdown">
-                                                <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">
-                                                <span class="caret"></span></button>
-                                                <ul class="dropdown-menu">
-                                                <?php
+                                            <?php
                                             $anosEmpresas = EmpresaConta::find()->select('ano')->distinct()->orderBy(["ano"=> SORT_ASC])->all();
                                                 $tweets = [['nome'=>'Liquidez', 'id'=>100]];
 
                                                 foreach($anosEmpresas as $anosEmpresa){  
                                             ?>
-                                                    <li><a href=""><?=$anosEmpresa->ano?></a></li>
+                                            <td>
+                                            
+                                    
+                                            
+                                            </td>
                                             <?php
                                                 }   
-                                            ?>       
-                                            </ul>
-                                            </div>
-                                            </td>
+                                            ?>  
 
                                             <td>
                                                 <button type="button" onclick="comparar(<?=$indice->idIndice?>)" class="btn btn-default" >Calcular</button>
@@ -283,9 +214,11 @@ use kartik\widgets\FileInput;
         //Criar controlador acesado vai requisição ajax."
         var keys;
         function comparar(idIndice) {
+            console.log("entrou");
+               
             <?=$anosEmpresa->ano?>;
                     $.ajax({
-                        url: '<?php echo Url::to(['indice/pegar_tag']);?>',
+                        url: '<?php echo Url::to(['indice/calc_indice']);?>',
                         type:'POST',
                         data: {
                             'idEmpresa': <?=$model->idEmpresa?>,

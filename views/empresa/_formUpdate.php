@@ -31,6 +31,14 @@ use kartik\widgets\FileInput;
     <div class="form-group">
         <?= Html::submitButton($model->isNewRecord ? 'Create' : 'Update', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
     </div>
+    <h3> DADOS DE CONTAS:
+    </h3>
+        <div>
+            <?= $this->render('_telaBotao', [
+                'model' => $model,
+                ]) ?>
+        </div>
+            
 
     <?php ActiveForm::end(); ?>
 
