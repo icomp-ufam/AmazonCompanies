@@ -400,7 +400,7 @@ use kartik\widgets\FileInput;
     ?>
 </div>
 
-<div class="row">
+<div id = "comentario" class="row">
 </br>
     <legend>Deixe seu comentário</legend>
     <div class="input-group">
@@ -409,7 +409,38 @@ use kartik\widgets\FileInput;
             <button type="button" class="btn btn-default">Enviar Comentário</button>
         </div>
     </div>
-        <table class="table table-striped">
+    <?php
+        
+        $query = (new Query())->from('comentario')->where(['Empresa_idEmpresa'=> $model->idEmpresa]);
+        $comentarioProvider = new ActiveDataProvider([
+            'query' => $query,
+            'pagination' => [
+                'pageSize'  => 10,
+                'pageParam'=> '',
+            ],
+            'sort' => [
+                'sortParam' => '',
+            ],
+        ]);
+
+        $posts = $comentarioProvider->getModels();
+        $comentarioProvider->pagination->pageParam = 'comentario-page';
+        $comentarioProvider->sort->sortParam= 'comentario-sort';
+        $flag = false;
+        foreach($posts as $post){
+            if (!empty($post)){
+                $flag = true;
+                echo '<div class="col-md-10" style="background-color: lavender">';
+                print_r($post['conteudo']);
+                echo '</div>';
+            }
+        }
+        if($flag == false){
+         echo "<div class='text-info'>Essa empresa não possui análise registrada! </div><br>";
+         echo '<a href="http://localhost/AmazonCompanies/web/index.php?r=comentario=' . $model->idEmpresa . '"><button class="btn btn-default">Criar Análise</button> </a>';
+        }
+    ?>
+       <!--  <table class="table table-striped">
             <thead>
                 <tr>
                     <th>Comentário</th>
@@ -431,7 +462,7 @@ use kartik\widgets\FileInput;
                     <td>André</td>
                 </tr>
             </tbody>
-        </table>
+        </table> -->
  </div>
  <div class="modal" id="cadCalIndice" role="dialog">
         <div class="modal-content">
