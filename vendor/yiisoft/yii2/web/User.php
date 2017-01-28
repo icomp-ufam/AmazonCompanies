@@ -352,7 +352,7 @@ class User extends Component
         return $identity !== null ? $identity->getId() : null;
     }
     
-    // retorna o tipo do usuario (1 = adm, 2 = aluno, 3 = empresa)
+    // retorna o tipo do usuario (1 = adm, 2 = aluno, 3 = empresa), se for visitante retorna nulo
     public function getIdentificadorPessoa()
     {
     	$identity = $this->getIdentity();
@@ -360,6 +360,22 @@ class User extends Component
     	return $identity !== null ? $identity->getIdentificadorPessoa() : null;
     }
 
+    // retorna o nome do usuario logado, se for visitante retorna nulo
+    public function getNome()
+    {
+    	$identity = $this->getIdentity();
+    
+    	return $identity !== null ? $identity->getNome() : null; // pega a o objeto(usuario logado) e executa função
+    }
+    
+    // retorna o email do usuario logado, se for visitante retorna nulo
+    public function getEmail()
+    {
+    	$identity = $this->getIdentity();
+    
+    	return $identity !== null ? $identity->getEmail() : null; // pega a o objeto(usuario logado) e executa função
+    }
+    
     /**
      * Returns the URL that the browser should be redirected to after successful login.
      *
