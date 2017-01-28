@@ -139,6 +139,7 @@ AppAsset::register($this);
     					]],
     					['label' => 'Notificações '. Html::tag('span', $not_aluno, ['class' => 'badge']), 'url' => ['/notificacao/']],
     					['label' => 'Seu Perfil', 'url' => ['/usuario/update', 'id' => Yii::$app->user->getId()]],
+    					['label' => 'Contato', 'url' => ['/site/contact']],
     					['label' => 'Sobre', 'url' => ['/site/about']],
     					 
     					Yii::$app->user->isGuest ? (
@@ -168,6 +169,7 @@ AppAsset::register($this);
     							['label' => 'Listar Empresas Cadastradas', 'url' => ['empresa/index']],
     					]],
     					['label' => 'Seu Perfil', 'url' => ['/usuario/update', 'id' => Yii::$app->user->getId()]],
+    					['label' => 'Contato', 'url' => ['/site/contact']],
     					['label' => 'Sobre', 'url' => ['/site/about']],
     					
     					
