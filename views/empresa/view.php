@@ -86,6 +86,7 @@ use kartik\widgets\FileInput;
                 <table class="table table-hover">
                     <thead>
                         <tr>
+                        	<th><input type="checkbox" id="check_all" /></th>
                             <th>Nome Conta: <?=$demonstracao->idDemonstracao?></th>
                             <?php
                                             $anosEmpresas = EmpresaConta::find()->select('ano')->distinct()->orderBy(["ano"=> SORT_ASC])->all();
@@ -105,6 +106,7 @@ use kartik\widgets\FileInput;
                             foreach($contas as $conta){
                                             ?>
                         <tr>
+                        	<td><input type="checkbox"/></td>
                             <td><?=$conta->nome?></td>
                         
                                <?php
