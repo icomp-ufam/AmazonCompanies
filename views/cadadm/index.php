@@ -7,7 +7,7 @@ use kartik\grid\GridView;
 /* @var $searchModel app\models\CadadmSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = 'Lista de Usuarário Cadastrados';
+$this->title = 'Lista de Usuário Cadastrados';
 ?>
 <div class="cadadm-index">
 
