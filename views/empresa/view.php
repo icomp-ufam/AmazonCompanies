@@ -41,11 +41,12 @@ use kartik\widgets\FileInput;
             <?= Html::encode('Dados da '.$this->title) ?>
             
         </h1>
-        
-       
 
         
-        
+    </p>
+
+    <p>
+            <?= Html::a('<span></span> Gerar PDF', ['gerar_pdf'], ['class'=> 'btn btn-primary']) ?>
     </p>
 </div>
 
