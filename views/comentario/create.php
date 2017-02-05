@@ -6,7 +6,7 @@ use yii\helpers\Html;
 /* @var $this yii\web\View */
 /* @var $model app\models\Comentario */
 
-$this->title = Yii::t('app', 'Create Comentario');
+$this->title = Yii::t('app', 'Criar Comentario');
 $this->params['breadcrumbs'][] = ['label' => Yii::t('app', 'Comentarios'), 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>

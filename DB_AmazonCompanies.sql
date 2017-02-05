@@ -3,9 +3,9 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: 17-Jan-2017 às 19:59
--- Versão do servidor: 10.1.19-MariaDB
--- PHP Version: 5.6.28
+-- Generation Time: 23-Jan-2017 às 22:29
+-- Versão do servidor: 5.5.50
+-- PHP Version: 5.6.23
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -19,6 +19,9 @@ SET time_zone = "+00:00";
 --
 -- Database: `amazoncompanies`
 --
+
+CREATE DATABASE IF NOT EXISTS `amazonCompanies` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
+USE `amazonCompanies`;
 
 -- --------------------------------------------------------
 
@@ -73,38 +76,39 @@ INSERT INTO `comentario` (`idComentario`, `conteudo`, `Empresa_idEmpresa`, `Usua
 CREATE TABLE `conta` (
   `idConta` int(20) NOT NULL,
   `nome` varchar(255) NOT NULL,
-  `idDemonstracao` int(11) NOT NULL
+  `idDemonstracao` int(11) NOT NULL,
+  `chave` varchar(30) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Extraindo dados da tabela `conta`
 --
 
-INSERT INTO `conta` (`idConta`, `nome`, `idDemonstracao`) VALUES
-(4, 'Ativos Totais', 1),
-(5, 'Ativo Circulante', 1),
-(6, 'Disponibilidades + Aplicações Fin Liq Im.', 1),
-(7, 'Estoques ', 1),
-(8, 'Ativo não Circulante', 1),
-(9, 'Imobilizado', 1),
-(10, 'Passivo Circulante', 1),
-(11, 'Passivo Não Circulante', 3),
-(12, 'Passivo Não Circulante Oneroso', 1),
-(13, 'Passivo Exigível', 1),
-(14, 'Patrimônio Líquido', 1),
-(15, 'Ativos Totais Médios', 1),
-(16, 'Investimentos (Oneroso + PL)', 3),
-(17, 'Investimentos Médios', 3),
-(18, 'Patrimônio Líquido Médios', 1),
-(19, 'Fornecedores Médio', 1),
-(20, 'Estoque Médio', 1),
-(21, 'Clientes Médio', 2),
-(22, 'CMV', 2),
-(23, 'Compras', 1),
-(24, 'Vendas Líquidas', 2),
-(25, 'Lucro Bruto', 2),
-(26, 'Lucro Operacional', 2),
-(27, 'Lucro Líquido', 2);
+INSERT INTO `conta` (`idConta`, `nome`, `idDemonstracao`, `chave`) VALUES
+(4, 'Ativos Totais', 1, '#AT'),
+(5, 'Ativo Circulante', 1, '#AC'),
+(6, 'Disponibilidades + Aplicações Fin Liq Im.', 1, '#DALI'),
+(7, 'Estoques ', 1, '#EST'),
+(8, 'Ativo não Circulante', 1, '#ANC'),
+(9, 'Imobilizado', 1, '#IM'),
+(10, 'Passivo Circulante', 1, '#PC'),
+(11, 'Passivo Não Circulante', 3, '#PNC'),
+(12, 'Passivo Não Circulante Oneroso', 1, '#PNCO'),
+(13, 'Passivo Exigível', 1, '#PE'),
+(14, 'Patrimônio Líquido', 1, '#PL'),
+(15, 'Ativos Totais Médios', 1, '#ATM'),
+(16, 'Investimentos (Oneroso + PL)', 3, '#IOPL'),
+(17, 'Investimentos Médios', 3, '#IM'),
+(18, 'Patrimônio Líquido Médios', 1, '#PLM'),
+(19, 'Fornecedores Médio', 1, '#FM'),
+(20, 'Estoque Médio', 1, '#EM'),
+(21, 'Clientes Médio', 2, '#CM'),
+(22, 'CMV', 2, '#CMV'),
+(23, 'Compras', 1, '#COMP'),
+(24, 'Vendas Líquidas', 2, '#VL'),
+(25, 'Lucro Bruto', 2, '#LB'),
+(26, 'Lucro Operacional', 2, '#LO'),
+(27, 'Lucro Líquido', 2, '#LL');
 
 -- --------------------------------------------------------
 
@@ -122,7 +126,7 @@ CREATE TABLE `demonstracao` (
 --
 
 INSERT INTO `demonstracao` (`idDemonstracao`, `nomeDemonstracao`) VALUES
-(1, 'BALANÇO PATRIMONIAL\r\n'),
+(1, 'BALANÇO PATRIMONIAAAAL'),
 (2, 'DEMONSTRAÇÃO DO RESULTADO DO EXERCÍCIO'),
 (3, 'DEMONSTRAÇÃO DOS FLUXOS DE CAIXA');
 
@@ -148,7 +152,8 @@ INSERT INTO `empresa` (`idEmpresa`, `nome`, `fonte`, `logotipo`, `tipo`) VALUES
 (1, 'Moto Honda da Amazônia LTDA', 'www.motohonda.com.br', NULL, 'Nacional'),
 (2, 'Teewa', 'www.teewa.com.br', NULL, 'Local'),
 (3, 'Microsoft S.A', 'www.microsoft.com', NULL, 'Estrangeira'),
-(4, 'Pastelaria do Arruda EPP', 'www.queso.blogspot.com.br', NULL, 'Local');
+(4, 'Pastelaria do Arruda EPP', 'www.queso.blogspot.com.br', NULL, 'Local'),
+(5, 'TeamSleep', 'teamsleep.com.br', '4a7f8cdb589109163541eebe1715889c-275-275.jpeg', 'Local');
 
 -- --------------------------------------------------------
 
@@ -175,11 +180,25 @@ INSERT INTO `empresahasusuario` (`Empresa_idEmpresa`, `Usuario_idUsuario`) VALUE
 --
 
 CREATE TABLE `empresa_conta` (
+  `id` int(11) NOT NULL,
   `ano` int(11) NOT NULL,
   `valor` int(11) NOT NULL,
   `idEmpresa` int(11) NOT NULL,
   `idConta` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Extraindo dados da tabela `empresa_conta`
+--
+
+INSERT INTO `empresa_conta` (`id`, `ano`, `valor`, `idEmpresa`, `idConta`) VALUES
+(1, 2016, 400, 5, 4),
+(2, 2016, 500, 5, 5),
+(3, 2016, 25, 5, 7),
+(4, 2016, 888, 5, 6),
+(5, 2015, 25, 5, 4),
+(6, 2015, 5, 5, 5),
+(7, 2014, 55, 5, 4);
 
 -- --------------------------------------------------------
 
@@ -199,8 +218,9 @@ CREATE TABLE `indice` (
 --
 
 INSERT INTO `indice` (`idIndice`, `formula`, `idTipo_Indice`, `nomeIndice`) VALUES
-(1, 'LG = (AT/PE)', 1, NULL),
-(2, 'LC = (AC/PC)', 2, NULL);
+(1, '(@#AT@+@#AC@)@*@(@#AT@-@#AC@)', 1, 'Liquidez Primária'),
+(2, '#DALI@+@#EST', 2, 'Endividamento Secundário'),
+(3, '(@#AC@+@#AT@)@*@(@#AC@-@#AT@)', 1, 'Liquidez Teste Indice');
 
 -- --------------------------------------------------------
 
@@ -267,7 +287,8 @@ INSERT INTO `tipo_indice` (`idTipo_indice`, `nome`) VALUES
 (4, 'Rentabilidade'),
 (5, 'Giros e Prazos'),
 (6, 'Giros Assaf Neto'),
-(7, 'Giros Viaconti');
+(7, 'Giros Viaconti'),
+(8, 'Teste Listagem');
 
 -- --------------------------------------------------------
 
@@ -348,6 +369,7 @@ ALTER TABLE `empresahasusuario`
 -- Indexes for table `empresa_conta`
 --
 ALTER TABLE `empresa_conta`
+  ADD PRIMARY KEY (`id`),
   ADD KEY `fkIdConta` (`idConta`),
   ADD KEY `fkIdEmpresa` (`idEmpresa`);
 
@@ -412,12 +434,17 @@ ALTER TABLE `demonstracao`
 -- AUTO_INCREMENT for table `empresa`
 --
 ALTER TABLE `empresa`
-  MODIFY `idEmpresa` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `idEmpresa` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+--
+-- AUTO_INCREMENT for table `empresa_conta`
+--
+ALTER TABLE `empresa_conta`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=493;
 --
 -- AUTO_INCREMENT for table `indice`
 --
 ALTER TABLE `indice`
-  MODIFY `idIndice` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `idIndice` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 --
 -- AUTO_INCREMENT for table `notificacao`
 --

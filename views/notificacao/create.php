@@ -6,11 +6,11 @@ use yii\helpers\Html;
 /* @var $this yii\web\View */
 /* @var $model app\models\Notificacao */
 
-$this->title = Yii::t('app', 'Create Notificacao');
+$this->title = Yii::t('app', 'Criar Notificacao');
 $this->params['breadcrumbs'][] = ['label' => Yii::t('app', 'Notificacaos'), 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<div class="notificacao-create">
+<div class="notificacao-criar">
 
     <h1><?= Html::encode($this->title) ?></h1>
 

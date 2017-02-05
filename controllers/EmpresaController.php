@@ -18,6 +18,10 @@ use yii\db\Query;
 use yii\db\ActiveQuery;
 use moonland\phpexcel\Excel;
 
+use kartik\mpdf\Pdf;
+
+use mPDF;
+
 
 
 /**
@@ -309,4 +313,47 @@ class EmpresaController extends Controller
             throw new NotFoundHttpException('The requested page does not exist.');
         }
     }
+
+     public function actionGerar_pdf(){
+
+    
+       /* //require_once __DIR__ . '/vendor/autoload.php';
+
+        $mpdf = new mPDF();
+
+        // Buffer the following html with PHP so we can store it to a variable later
+
+        ob_start();
+
+
+
+        // This is where your script would normally output the HTML using echo or print
+
+        // Now collect the output buffer into a variable
+
+        $html = ob_get_contents();
+
+        ob_end_clean();
+
+        // send the captured HTML from the output buffer to the mPDF class for processing
+
+        $mpdf->WriteHTML($html);
+
+        $mpdf->Output();
+
+        exit;
+*/
+
+       $html = 
+        '<bookmark content="Análise da Empresa X " />
+            <div>Gráficos</div>
+            <div>Análises</div>';
+
+        $mpdf = new mPDF();
+        $mpdf->WriteHTML($html);
+        $mpdf->Output();
+
+  }
+
+    
 }
