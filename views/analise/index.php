@@ -24,11 +24,22 @@ $testProvider = $dataProvider;
         'filterModel' => $searchModel,
         'columns' => [
             //'idanalise',
-//            ['attribute'=>'texto',
-//            'value'=>'texto',
-//            'format'=>'html'],
-            'idEmpresa0.nome',
-            
+
+            ['attribute'=>'Usuario_idUsuario',
+             'value'=>'usuarioIdUsuario.nome',
+
+            ],            
+            //'idEmpresa0.nome',
+            ['attribute'=>'idEmpresa',
+             'value'=>'idEmpresa0.nome',
+
+            ], 
+            'texto',
+            //'textoAnalisador',
+
+            ['attribute'=>'textoAnalisador',
+            'value'=>'textoAnalisador',
+            'format'=>'html'],
         	[
         			'class' => 'kartik\grid\BooleanColumn',
         			'attribute' => 'status'
@@ -38,7 +49,10 @@ $testProvider = $dataProvider;
             	'class' => 'kartik\grid\ActionColumn',
             	'header' => 'Visualizar Análise',
                 'template'=> '{view}'	
+                
     		]
+
+
         ],
     ]); ?>
 </div>

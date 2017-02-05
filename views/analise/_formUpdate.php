@@ -21,10 +21,19 @@ use yii\widgets\ActiveForm;
     <?= $form->field($model, 'status')->hiddenInput()->label(false)//hiddenInput(['value'=>'Pendente']) ?>
 
     <?= $form->field($model, 'idEmpresa')->hiddenInput()->label(false); ?>
+
+    <?= $form->field($model, 'textoAnalisador')->textarea(['rows' => 6]) ?>
+
+
+
+
+
+
     <div class="form-group">
-        <?= Html::submitButton($model->isNewRecord ? 'Submeter' : 'Update', ['class' => $model->isNewRecord ? 'btn btn-primary' : 'btn btn-primary']) ?>
+        <?= Html::submitButton($model->isNewRecord ? 'Submeter' : 'Salvar', ['class' => $model->isNewRecord ? 'btn btn-primary' : 'btn btn-primary']) ?>
     </div>
 
+    
     <?php ActiveForm::end(); ?>
 
 </div>

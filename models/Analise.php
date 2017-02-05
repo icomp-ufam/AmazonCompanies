@@ -30,10 +30,11 @@ class Analise extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['status','texto'], 'string'],
-            [['idEmpresa'], 'required'],
-            [[ 'idEmpresa'], 'integer'],
+            [['status','texto', 'textoAnalisador'], 'string'],
+            [['idEmpresa','Usuario_idUsuario'], 'required'],
+            [[ 'idEmpresa','Usuario_idUsuario'], 'integer'],
             [['idEmpresa'], 'exist', 'skipOnError' => true, 'targetClass' => Empresa::className(), 'targetAttribute' => ['idEmpresa' => 'idEmpresa']],
+            [['Usuario_idUsuario'], 'exist', 'skipOnError' => true, 'targetClass' => Analise::className(), 'targetAttribute' => ['Usuario_idUsuario' => 'Usuario_idUsuario']],
         ];
     }
 
@@ -45,8 +46,10 @@ class Analise extends \yii\db\ActiveRecord
         return [
             'idanalise' => 'Idanalise',
             'texto' => 'Texto',
+            'textoAnalisador' => 'Análise',
             'status' => 'Status',
-            'idEmpresa' => 'Id Empresa',
+            'idEmpresa' => 'Empresa',
+            'Usuario_idUsuario' => Yii::t('app', 'Usuário'),
         ];
     }
 
@@ -57,10 +60,20 @@ class Analise extends \yii\db\ActiveRecord
     {
         return $this->hasOne(Empresa::className(), ['idEmpresa' => 'idEmpresa']);
     }
+
+    public function getUsuarioIdUsuario()
+    {
+        return $this->hasOne(Usuario::className(), ['idUsuario' => 'Usuario_idUsuario']);
+    }
     
     // retorna a quantidade de status pendentes
     public function getNotification(){
     	$query = Analise::find()->where(['status' => '2'])->count();
     	return $query;
+    }
+
+    public function getNotificacaos()
+    {
+        return $this->hasMany(Notificacao::className(), ['Usuario_idUsuario' => 'idUsuario']);
     }
 }

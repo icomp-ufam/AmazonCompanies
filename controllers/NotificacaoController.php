@@ -8,6 +8,8 @@ use app\models\NotificacaoSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
+use app\models\Analse;
+use app\models\AnalseSearch;
 
 /**
  * NotificacaoController implements the CRUD actions for Notificacao model.
@@ -28,6 +30,9 @@ class NotificacaoController extends Controller
             ],
         ];
     }
+
+
+    
 
     /**
      * Lists all Notificacao models.
@@ -54,6 +59,7 @@ class NotificacaoController extends Controller
     {
         return $this->render('view', [
             'model' => $this->findModel($idNotificacao, $Usuario_idUsuario),
+           
         ]);
     }
 
@@ -125,4 +131,7 @@ class NotificacaoController extends Controller
             throw new NotFoundHttpException('The requested page does not exist.');
         }
     }
+
+
+    
 }

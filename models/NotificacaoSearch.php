@@ -6,6 +6,8 @@ use Yii;
 use yii\base\Model;
 use yii\data\ActiveDataProvider;
 use app\models\Notificacao;
+use app\models\Analise;
+use app\models\AnaliseSearch;
 
 /**
  * NotificacaoSearch represents the model behind the search form about `app\models\Notificacao`.
@@ -15,11 +17,15 @@ class NotificacaoSearch extends Notificacao
     /**
      * @inheritdoc
      */
+
+
+    public $search;
+
     public function rules()
     {
         return [
             [['idNotificacao', 'Usuario_idUsuario', 'status', 'tipo'], 'integer'],
-            [['conteudo'], 'safe'],
+            [['conteudo', 'idAnalise'], 'safe'],
         ];
     }
 
@@ -62,12 +68,17 @@ class NotificacaoSearch extends Notificacao
         // grid filtering conditions
         $query->andFilterWhere([
             'idNotificacao' => $this->idNotificacao,
-            //'Usuario_idUsuario' => $this->Usuario_idUsuario,
+            'Usuario_idUsuario' => $this->Usuario_idUsuario,
             'status' => $this->status,
             'tipo' => $this->tipo,
+            'idAnalise' => $this->idAnalise,
         ]);
 
         $query->andFilterWhere(['like', 'conteudo', $this->conteudo]);
+        $query->andFilterWhere(['like', 'Usuario_idUsuario', $this->Usuario_idUsuario]);
+        $query->andFilterWhere(['like', 'status', $this->status]);
+        $query->andFilterWhere(['like', 'tipo', $this->tipo]);
+        $query->andFilterWhere(['like', 'idAnalise', $this->idAnalise]);
 
         return $dataProvider;
     }

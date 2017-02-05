@@ -68,7 +68,7 @@ AppAsset::register($this);
 <div class="wrap">
     <?php
     // contador de notificações
-    $not_aluno = Notificacao::getNotification();
+    $not_aluno = Analise::getNotification();
     $not_adm_analise =  Analise::getNotification();
     $not_adm_cadastro = Usuario::getNotification();
     $not_adm_alt_dados = 0; // gerar uma função que conte os pendentes desta funcionalidade.
@@ -138,7 +138,7 @@ AppAsset::register($this);
     							['label' => 'Listar Empresas Cadastradas', 'url' => ['/empresa/index']],
     					]],
     					['label' => 'Notificações '. Html::tag('span', $not_aluno, ['class' => 'badge']), 'url' => ['/notificacao/']],
-    					['label' => 'Seu Perfil', 'url' => ['/usuario/update', 'id' => Yii::$app->user->getId()]],
+    					['label' => 'Seu Perfil', 'url' => ['/usuario/update/Salvar', 'id' => Yii::$app->user->getId()]],
     					['label' => 'Sobre', 'url' => ['/site/about']],
     					 
     					Yii::$app->user->isGuest ? (

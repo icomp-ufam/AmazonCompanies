@@ -54,7 +54,7 @@ class Empresa extends \yii\db\ActiveRecord
     {
         return [
             'idEmpresa' => 'Id Empresa',
-            'nome' => 'Nome',
+            'nome' => 'Empresa',
             'fonte' => 'Fonte',
             'logotipo' => 'Logotipo',
             'tipo' => 'Tipo de Empresa',
