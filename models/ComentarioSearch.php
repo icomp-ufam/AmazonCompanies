@@ -18,8 +18,8 @@ class ComentarioSearch extends Comentario
     public function rules()
     {
         return [
-            [['idComentario', 'Empresa_idEmpresa', 'Usuario_idUsuario', 'Comentario_idComentario'], 'integer'],
-            [['conteudo'], 'safe'],
+            [['idComentario', 'Empresa_idEmpresa', 'Comentario_idComentario'], 'integer'],
+            [['conteudo', 'nome', 'email', 'data', 'hora'], 'safe'],
         ];
     }
 
@@ -61,11 +61,14 @@ class ComentarioSearch extends Comentario
         $query->andFilterWhere([
             'idComentario' => $this->idComentario,
             'Empresa_idEmpresa' => $this->Empresa_idEmpresa,
-            'Usuario_idUsuario' => $this->Usuario_idUsuario,
+            'data' => $this->data,
+            'hora' => $this->hora,
             'Comentario_idComentario' => $this->Comentario_idComentario,
         ]);
 
-        $query->andFilterWhere(['like', 'conteudo', $this->conteudo]);
+        $query->andFilterWhere(['like', 'conteudo', $this->conteudo])
+            ->andFilterWhere(['like', 'nome', $this->nome])
+            ->andFilterWhere(['like', 'email', $this->email]);
 
         return $dataProvider;
     }

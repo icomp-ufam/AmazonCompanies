@@ -8,6 +8,7 @@ use app\models\Empresa;
 use app\models\EmpresaSearch;
 use app\models\EmpresaConta;
 use app\models\Conta;
+use app\models\Comentario;
 
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
@@ -21,7 +22,6 @@ use moonland\phpexcel\Excel;
 use kartik\mpdf\Pdf;
 
 use mPDF;
-
 
 
 /**
@@ -130,11 +130,18 @@ class EmpresaController extends Controller
      * @return mixed
      */
     public function actionView($id){
+
+        $comentario = new Comentario();
+
         $file = UploadedFile::getInstance($this->findModel($id), 'upload_file');
-        
-        if($this->findModel($id)->load(Yii::$app->request->post()) and $file != null){
+        $model = $this->findModel($id);
+
+         if($model->load(Yii::$app->request->post()) and $file != null){
             $file->saveAs('uploads/'.$file->name);
-           //print_r($file->name);
+        
+        // if($this->findModel($id)->load(Yii::$app->request->post()) and $file != null){
+        //     $file->saveAs('uploads/'.$file->name);
+        //    //print_r($file->name);
 
 
             $objPHPExcel = new Excel();
@@ -170,15 +177,19 @@ class EmpresaController extends Controller
                    
                 }
         }
+
+        $comentario->Empresa_idEmpresa = $model->idEmpresa;
         
 
-        
+        if ($comentario->load(Yii::$app->request->post()) && $comentario->save())  {
+            return $this->redirect(['view', 'id' => $model->idEmpresa]);
+        }
 
 
                  return $this->render('view', [
                     'model' => $this->findModel($id),
+                    'comentario' => $comentario ,
                     ]);
-             
 
         
     }

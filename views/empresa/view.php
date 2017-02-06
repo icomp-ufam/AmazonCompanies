@@ -405,15 +405,46 @@ use kartik\widgets\FileInput;
 
 <div id = "comentario" class="row">
 </br>
-    <legend>Deixe seu comentário</legend>
-    <div class="input-group">
-        <input type="text" class="form-control" placeholder="Escreva seu comentário aqui">
-        <div class="input-group-btn">
-            <button type="button" class="btn btn-default">Enviar Comentário</button>
-        </div>
+
+<!-- ?php if(Yii::$app->user->isGuest) { ?> -->
+
+<legend>Deixe seu comentário</legend>
+
+<div class="comentario-form">
+
+<?php $_SESSION = Yii::$app->session; 
+$_SESSION->open();
+
+$_SESSION["email"] = "larissa@icomp.ufam.edu.br";
+$_SESSION["nome"] =  "Neves";
+ ?>
+
+
+    <?php $form = ActiveForm::begin(); ?>
+
+    <?= $form->field($comentario, 'conteudo')->textarea(['rows' => 6]) ?>
+
+    <?= $form->field($comentario, 'nome')->hiddenInput(['value'=>$_SESSION["nome"]])->label(false); ?>
+
+    <?= $form->field($comentario, 'email')->hiddenInput(['value'=>$_SESSION["email"]])->label(false); ?>
+
+    <?= $form->field($comentario, 'data')->hiddenInput(['value'=>date('Y-m-d')])->label(false); ?>
+
+    <?= $form->field($comentario, 'hora')->hiddenInput(['value'=>time('H:i:s')])->label(false); ?>
+
+    <?= $form->field($comentario, 'Comentario_idComentario')->hiddenInput(['value'=>null])->label(false); ?>
+
+    <div class="form-group">
+        <?= Html::submitButton('Enviar Comentário', ['class' =>  'btn btn-success' ]) ?>
     </div>
-    <?php
-        
+
+    <?php ActiveForm::end(); ?>
+
+</div>
+<!-- ?php } ?>  -->
+
+<?php
+          
         $query = (new Query())->from('comentario')->where(['Empresa_idEmpresa'=> $model->idEmpresa]);
         $comentarioProvider = new ActiveDataProvider([
             'query' => $query,
@@ -430,42 +461,57 @@ use kartik\widgets\FileInput;
         $comentarioProvider->pagination->pageParam = 'comentario-page';
         $comentarioProvider->sort->sortParam= 'comentario-sort';
         $flag = false;
-        foreach($posts as $post){
-            if (!empty($post)){
-                $flag = true;
-                echo '<div class="col-md-10" style="background-color: lavender">';
-                print_r($post['conteudo']);
-                echo '</div>';
+
+            echo'<table class="table">';
+                echo '<thead>';
+                echo '<tr>';
+                echo '<th>Comentário</th>';
+                echo '<th>Usuário</th>';
+                echo '</tr>';
+                echo '</thead>';
+            foreach($posts as $post){
+                if (!empty($post) && (empty($post['Comentario_idComentario']))){
+                    $flag = true;
+                    echo '<tr>';
+                    echo '<td>';
+                    print_r($post['conteudo']);
+                    echo '</td>';
+                    echo '<td>';
+                    print_r($_SESSION["nome"]);
+                    echo '</td>';
+                    echo '<td border-color="#FFFFFF" bgcolor="#FFFFFF">';
+                    $coment = ($post['idComentario']);
+                    // if(Yii::$app->user->isGuest) {
+                    echo '<a href="http://localhost/AmazonCompanies/web/index.php?r=comentario%2Fcreate&idEmpresa=' . $model->idEmpresa . ' &Comentario_idComentario=' . $coment . '"><button class="btn btn-default">Responder</button> </a>';
+                    echo '</td>';//}
+                    // echo '<td >';
+                    // if(Yii::$app->user->getIdentificadorPessoa() == '1'){
+                    // echo '<a href="http://localhost/AmazonCompanies/web/index.php?r=comentario%2Fcreate&idEmpresa=' . $model->idEmpresa . ' &Comentario_idComentario=' . $coment . '"><button class="btn btn-danger">Excluir comentário</button> </a>';
+                    // echo '</td>';}
+                    echo '</tr>';
+                    
+                    foreach($posts as $post){
+                        if (!empty($post) && (($post['Comentario_idComentario']) == $coment)){
+                            echo '<tr>';
+                            echo '<td bgcolor="#E6E6FA">';
+                            print_r($post['conteudo']);
+                            echo '</td>';
+                            echo '<td bgcolor="#E6E6FA">';
+                            print_r($post['nome']);
+                            echo '</td>';
+                            echo '</tr>';
+
+                        }
+                    }
+                }
             }
-        }
+
         if($flag == false){
-         echo "<div class='text-info'>Essa empresa não possui análise registrada! </div><br>";
-         echo '<a href="http://localhost/AmazonCompanies/web/index.php?r=comentario=' . $model->idEmpresa . '"><button class="btn btn-default">Criar Análise</button> </a>';
-        }
+         echo "<div class='text-info'>Essa empresa não possui comentários! Seja o primeiro a comentar </div><br>";
+        }   
+
     ?>
-       <!--  <table class="table table-striped">
-            <thead>
-                <tr>
-                    <th>Comentário</th>
-                    <th>Usuário</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-                   dolore magna aliqua</td>
-                    <td>Giselle</td>
-                </tr>
-                <tr>
-                    <td>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</td>
-                    <td>Nick</td>
-                </tr>
-                <tr>
-                    <td>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</td>
-                    <td>André</td>
-                </tr>
-            </tbody>
-        </table> -->
+
  </div>
  <div class="modal" id="cadCalIndice" role="dialog">
         <div class="modal-content">

@@ -46,15 +46,13 @@ class ComentarioController extends Controller
 
     /**
      * Displays a single Comentario model.
-     * @param integer $idComentario
-     * @param integer $Empresa_idEmpresa
-     * @param integer $Usuario_idUsuario
+     * @param integer $id
      * @return mixed
      */
-    public function actionView($idComentario, $Empresa_idEmpresa, $Usuario_idUsuario)
+    public function actionView($id)
     {
         return $this->render('view', [
-            'model' => $this->findModel($idComentario, $Empresa_idEmpresa, $Usuario_idUsuario),
+            'model' => $this->findModel($id),
         ]);
     }
 
@@ -68,7 +66,10 @@ class ComentarioController extends Controller
         $model = new Comentario();
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'idComentario' => $model->idComentario, 'Empresa_idEmpresa' => $model->Empresa_idEmpresa, 'Usuario_idUsuario' => $model->Usuario_idUsuario]);
+
+            // return $this->redirect(['view', 'id' => $model->idComentario]);
+
+            return $this->redirect(['empresa/view', 'id' => $model->Empresa_idEmpresa]);
         } else {
             return $this->render('create', [
                 'model' => $model,
@@ -79,17 +80,15 @@ class ComentarioController extends Controller
     /**
      * Updates an existing Comentario model.
      * If update is successful, the browser will be redirected to the 'view' page.
-     * @param integer $idComentario
-     * @param integer $Empresa_idEmpresa
-     * @param integer $Usuario_idUsuario
+     * @param integer $id
      * @return mixed
      */
-    public function actionUpdate($idComentario, $Empresa_idEmpresa, $Usuario_idUsuario)
+    public function actionUpdate($id)
     {
-        $model = $this->findModel($idComentario, $Empresa_idEmpresa, $Usuario_idUsuario);
+        $model = $this->findModel($id);
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'idComentario' => $model->idComentario, 'Empresa_idEmpresa' => $model->Empresa_idEmpresa, 'Usuario_idUsuario' => $model->Usuario_idUsuario]);
+            return $this->redirect(['view', 'id' => $model->idComentario]);
         } else {
             return $this->render('update', [
                 'model' => $model,
@@ -100,14 +99,12 @@ class ComentarioController extends Controller
     /**
      * Deletes an existing Comentario model.
      * If deletion is successful, the browser will be redirected to the 'index' page.
-     * @param integer $idComentario
-     * @param integer $Empresa_idEmpresa
-     * @param integer $Usuario_idUsuario
+     * @param integer $id
      * @return mixed
      */
-    public function actionDelete($idComentario, $Empresa_idEmpresa, $Usuario_idUsuario)
+    public function actionDelete($id)
     {
-        $this->findModel($idComentario, $Empresa_idEmpresa, $Usuario_idUsuario)->delete();
+        $this->findModel($id)->delete();
 
         return $this->redirect(['index']);
     }
@@ -115,15 +112,13 @@ class ComentarioController extends Controller
     /**
      * Finds the Comentario model based on its primary key value.
      * If the model is not found, a 404 HTTP exception will be thrown.
-     * @param integer $idComentario
-     * @param integer $Empresa_idEmpresa
-     * @param integer $Usuario_idUsuario
+     * @param integer $id
      * @return Comentario the loaded model
      * @throws NotFoundHttpException if the model cannot be found
      */
-    protected function findModel($idComentario, $Empresa_idEmpresa, $Usuario_idUsuario)
+    protected function findModel($id)
     {
-        if (($model = Comentario::findOne(['idComentario' => $idComentario, 'Empresa_idEmpresa' => $Empresa_idEmpresa, 'Usuario_idUsuario' => $Usuario_idUsuario])) !== null) {
+        if (($model = Comentario::findOne($id)) !== null) {
             return $model;
         } else {
             throw new NotFoundHttpException('The requested page does not exist.');

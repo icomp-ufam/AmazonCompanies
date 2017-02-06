@@ -7,8 +7,9 @@ use yii\grid\GridView;
 /* @var $searchModel app\models\ComentarioSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = Yii::t('app', 'Comentarios');
+$this->title = 'Comentarios';
 $this->params['breadcrumbs'][] = $this->title;
+$testProvider = $dataProvider;
 ?>
 <div class="comentario-index">
 
@@ -16,21 +17,33 @@ $this->params['breadcrumbs'][] = $this->title;
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
 
     <p>
-        <?= Html::a(Yii::t('app', 'Criar Comentario'), ['criar'], ['class' => 'btn btn-success']) ?>
+        
     </p>
     <?= GridView::widget([
         'dataProvider' => $dataProvider,
         'filterModel' => $searchModel,
         'columns' => [
-            ['class' => 'yii\grid\SerialColumn'],
+            // ['class' => 'yii\grid\SerialColumn'],
 
-            'idComentario',
-            'conteudo:ntext',
-            'Empresa_idEmpresa',
-            'Usuario_idUsuario',
-            'Comentario_idComentario',
+            // 'idComentario',
+            // 'conteudo:ntext',
+            // 'Empresa_idEmpresa',
+            // 'nome',
+            // 'email:email',
+            // 'data',
+            // 'hora',
+            // 'Comentario_idComentario',
+               'idEmpresa0.nome',
+            
+            
+                    ['class' => 'yii\grid\ActionColumn'],
+            ],
 
-            ['class' => 'yii\grid\ActionColumn'],
+            [
+                'class' => 'kartik\grid\ActionColumn',
+                'header' => 'Visualizar Comentário',
+                'template'=> '{view}'   
+            ]
         ],
     ]); ?>
 </div>
