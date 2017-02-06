@@ -9,7 +9,7 @@ use yii\helpers\Html;
 //$this->title = $model->idEmpresa0->nome;
 $this->params['breadcrumbs'][] = ['label' => 'Analises', 'url' => ['index']];
 $this->params['breadcrumbs'][] = ['label' => $model->idanalise, 'url' => ['view', 'id' => $model->idanalise]];
-$this->params['breadcrumbs'][] = 'Atualizar';
+$this->params['breadcrumbs'][] = 'Update';
 ?>
 <div class="analise-update">
 

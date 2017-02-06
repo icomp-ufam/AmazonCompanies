@@ -1,7 +1,6 @@
 <?php
 
 use yii\helpers\Html;
-use app\models\Usuario;
 
 
 /* @var $this yii\web\View */
@@ -22,4 +21,3 @@ $idEmpresa = $_GET['idEmpresa'];
     ]) ?>
 
 </div>
-

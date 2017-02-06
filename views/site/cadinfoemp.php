@@ -1,3 +1,8 @@
+
+
+
+
+
 <?php
 
 /* @var $this yii\web\View */
@@ -21,10 +26,18 @@ $this->title = 'Cadastrar Informações';
  
   
   <div class="col-md-8">
-  <button class="btn btn-default" type="button">Selecione o arquivo</button>
-  <div style="color:#999;">
-        Caro usuário, o arquivo a ser enviado deve ser do tipo <strong>*.xlsx</strong>
+<form action="envia_foto.php" method="post" enctype="multipart/form-data"> 
+<input type="file" name="Arquivo" id="Arquivo"><br>
+<div style="color:#999;">
+     Caro usuário, o arquivo a ser enviado deve ser do tipo <strong>*.xlsx</strong> 
    </div>
+<input type="reset" value="Apagar">
+</form> 
+ 
+   <div class="col-md-2">
+    Ano:
+    <div class="form-control"></div>
+  </div>
     </div>
   <br>
   </div>
@@ -33,8 +46,7 @@ $this->title = 'Cadastrar Informações';
   <br>
   
   <div class="col-md-2">
-  	Ano:
-  	<div class="form-control"></div>
+ 
   </div>
   <br>
   <br>
