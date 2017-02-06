@@ -10,13 +10,15 @@ use Yii;
  * @property integer $idComentario
  * @property string $conteudo
  * @property integer $Empresa_idEmpresa
- * @property integer $Usuario_idUsuario
+ * @property string $nome
+ * @property string $email
+ * @property string $data
+ * @property string $hora
  * @property integer $Comentario_idComentario
  *
  * @property Comentario $comentarioIdComentario
  * @property Comentario[] $comentarios
  * @property Empresa $empresaIdEmpresa
- * @property Usuario $usuarioIdUsuario
  */
 class Comentario extends \yii\db\ActiveRecord
 {
@@ -34,12 +36,13 @@ class Comentario extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['conteudo', 'Empresa_idEmpresa', 'Usuario_idUsuario'], 'required'],
+            [[ 'conteudo', 'Empresa_idEmpresa', 'nome', 'email', 'data', 'hora'], 'required'],
+            [['idComentario', 'Empresa_idEmpresa', 'Comentario_idComentario'], 'integer'],
             [['conteudo'], 'string'],
-            [['Empresa_idEmpresa', 'Usuario_idUsuario', 'Comentario_idComentario'], 'integer'],
+            [['data', 'hora'], 'safe'],
+            [['nome', 'email'], 'string', 'max' => 45],
             [['Comentario_idComentario'], 'exist', 'skipOnError' => true, 'targetClass' => Comentario::className(), 'targetAttribute' => ['Comentario_idComentario' => 'idComentario']],
             [['Empresa_idEmpresa'], 'exist', 'skipOnError' => true, 'targetClass' => Empresa::className(), 'targetAttribute' => ['Empresa_idEmpresa' => 'idEmpresa']],
-            [['Usuario_idUsuario'], 'exist', 'skipOnError' => true, 'targetClass' => Usuario::className(), 'targetAttribute' => ['Usuario_idUsuario' => 'idUsuario']],
         ];
     }
 
@@ -52,7 +55,10 @@ class Comentario extends \yii\db\ActiveRecord
             'idComentario' => 'Id Comentario',
             'conteudo' => 'Conteudo',
             'Empresa_idEmpresa' => 'Empresa Id Empresa',
-            'Usuario_idUsuario' => 'Usuario Id Usuario',
+            'nome' => 'Nome',
+            'email' => 'Email',
+            'data' => 'Data',
+            'hora' => 'Hora',
             'Comentario_idComentario' => 'Comentario Id Comentario',
         ];
     }
@@ -81,11 +87,4 @@ class Comentario extends \yii\db\ActiveRecord
         return $this->hasOne(Empresa::className(), ['idEmpresa' => 'Empresa_idEmpresa']);
     }
 
-    /**
-     * @return \yii\db\ActiveQuery
-     */
-    public function getUsuarioIdUsuario()
-    {
-        return $this->hasOne(Usuario::className(), ['idUsuario' => 'Usuario_idUsuario']);
-    }
 }

@@ -9,7 +9,7 @@ $this->title = Yii::t('app', 'Update {modelClass}: ', [
     'modelClass' => 'Comentario',
 ]) . $model->idComentario;
 $this->params['breadcrumbs'][] = ['label' => Yii::t('app', 'Comentarios'), 'url' => ['index']];
-$this->params['breadcrumbs'][] = ['label' => $model->idComentario, 'url' => ['view', 'idComentario' => $model->idComentario, 'Empresa_idEmpresa' => $model->Empresa_idEmpresa, 'Usuario_idUsuario' => $model->Usuario_idUsuario]];
+$this->params['breadcrumbs'][] = ['label' => $model->idComentario, 'url' => ['view', 'id' => $model->idComentario]];
 $this->params['breadcrumbs'][] = Yii::t('app', 'Update');
 ?>
 <div class="comentario-update">
