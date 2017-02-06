@@ -65,9 +65,13 @@ $this->title = 'Cadastrar Dados de Empresa';
   <br>
   <br>
   <div class="col-md-8">
-  <button class="btn btn-default" type="button">Selecione o arquivo</button>
+  <form action="envia_foto.php" method="post" enctype="multipart/form-data"> 
+  <input type="file" name="Arquivo" id="Arquivo"><br>
+  <input type="reset" value="Apagar">
+  </form> 
+  Caro usuário, o arquivo a ser enviado deve ser do tipo <strong>*.xlsx</strong>
   <div style="color:#999;">
-        Caro usuário, o arquivo a ser enviado deve ser do tipo <strong>*.xlsx</strong>
+        
    </div>
     </div>
   <br>
