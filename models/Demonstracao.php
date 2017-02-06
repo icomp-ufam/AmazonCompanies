@@ -39,8 +39,8 @@ class Demonstracao extends \yii\db\ActiveRecord
     public function attributeLabels()
     {
         return [
-            'idDemonstracao' => 'Id Demonstracao',
-            'nomeDemonstracao' => 'Nome Demonstracao',
+            'idDemonstracao' => 'Id Demonstração',
+            'nomeDemonstracao' => 'Nome Demonstração',
         ];
     }
 

@@ -7,7 +7,7 @@ use yii\grid\GridView;
 /* @var $searchModel app\models\DemonstracaoSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = Yii::t('app', 'Demonstracões');
+$this->title = Yii::t('app', 'Demonstrações');
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="demonstracao-index">
@@ -16,15 +16,15 @@ $this->params['breadcrumbs'][] = $this->title;
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
 
     <p>
-        <?= Html::a(Yii::t('app', 'Criar Demonstracao'), ['criar'], ['class' => 'btn btn-success']) ?>
+        <?= Html::a(Yii::t('app', 'Criar Demonstração'), ['create'], ['class' => 'btn btn-success']) ?>
     </p>
+
     <?= GridView::widget([
+        'summary' => "",
         'dataProvider' => $dataProvider,
         'filterModel' => $searchModel,
         'columns' => [
-            ['class' => 'yii\grid\SerialColumn'],
 
-            'idDemonstracao',
             'nomeDemonstracao',
 
             ['class' => 'yii\grid\ActionColumn'],
