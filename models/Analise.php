@@ -31,9 +31,10 @@ class Analise extends \yii\db\ActiveRecord
     {
         return [
             [['status','texto', 'textoAnalisador'], 'string'],
-            [['idEmpresa','Usuario_idUsuario'], 'required'],
-            [[ 'idEmpresa','Usuario_idUsuario'], 'integer'],
+            [['idEmpresa'], 'required'],
+            [[ 'idEmpresa'], 'integer'],
             [['idEmpresa'], 'exist', 'skipOnError' => true, 'targetClass' => Empresa::className(), 'targetAttribute' => ['idEmpresa' => 'idEmpresa']],
+            [['Usuario_idUsuario'], 'exist', 'skipOnError' => true, 'targetClass' => Usuario::className(), 'targetAttribute' => ['Usuario_idUsuario' => 'idUsuario']],
             [['Usuario_idUsuario'], 'exist', 'skipOnError' => true, 'targetClass' => Analise::className(), 'targetAttribute' => ['Usuario_idUsuario' => 'Usuario_idUsuario']],
         ];
     }
@@ -46,10 +47,10 @@ class Analise extends \yii\db\ActiveRecord
         return [
             'idanalise' => 'Idanalise',
             'texto' => 'Texto',
-            'textoAnalisador' => 'Análise',
+            'textoAnalisador' => 'Análise do responsável',
             'status' => 'Status',
             'idEmpresa' => 'Empresa',
-            'Usuario_idUsuario' => Yii::t('app', 'Usuário'),
+            'Usuario_idUsuario' => 'Usuário'
         ];
     }
 

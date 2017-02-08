@@ -8,6 +8,13 @@ use yii\data\ActiveDataProvider;
 use yii\db\Query;
 use yii\widgets\DetailView;
 use kartik\grid\GridView;
+use miloschuman\highcharts\Highcharts;
+use app\models\Empresa;
+use app\models\EmpresaSearch;
+use app\models\EmpresaConta;
+use app\models\Conta;
+
+
 /* @var $this yii\web\View */
 /* @var $searchModel app\models\EmpresaSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
@@ -232,7 +239,7 @@ $this->params['breadcrumbs'][] = $this->title;
                     }
                     ids += keys[keys.length-1];
                     $.ajax({
-                        url: '<?php echo Url::to(['indice/pegar_tag']);?>',
+                        url: '<?php echo Url::to(['empresa/get_descricao']);?>',
                         type:'POST',
                         data: {
                             'empresa': ids,

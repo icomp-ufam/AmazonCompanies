@@ -2,6 +2,13 @@
 
 use yii\helpers\Html;
 use yii\widgets\DetailView;
+use app\models\Notificacao;
+use app\models\Analise;
+use app\models\Usuario;
+use yii\widgets\ActiveForm;
+use yii\helpers\ArrayHelper;
+use yii\db\ActiveRecord;
+
 
 /* @var $this yii\web\View */
 /* @var $model app\models\Analise */
@@ -19,11 +26,22 @@ $this->params['breadcrumbs'][] = $this->title;
     <div id="analise" class="row">
 
         <div class="title-body">
-            <h3><strong>Análise</strong></h3>
+            
         </div>
-         <div class="col-md-8" style="background-color: lavender">
-             <?= $model->texto ?>
+
+        <div class="col-md-8" style="background-color: lavender">
+
+            <h4><strong>Texto a ser analisado enviado pelo aluno</strong></h4>
+             <?= $model->texto ?> 
+
+             <p><br></p>
+
+            <h4><strong>Resultado da análise realizado pelo responsável</strong></h4>     
+            <?= $model->textoAnalisador ?>
         </div>
+
+
+         
 		
     </div>
 <?php if(Yii::$app->user->getIdentificadorPessoa() == '1'){?>
@@ -41,17 +59,17 @@ $this->params['breadcrumbs'][] = $this->title;
     	}
     	?>   
         </div>
-    	<br>
+
+    	
     	<?php if($model->status == 1){?>
     	<?=
-    	Html::a('Invalidar Análise', ['desativar', 'id' => $model->idanalise], [
+    	Html::a('<span class="glyphicon glyphicon-ban-circle" aria-hidden=true></span> Invalidar Análise', ['desativar', 'id' => $model->idanalise], [
     			'class' => 'btn btn-danger',
     			'data' =>[
     			'confirm' => 'Deseja invalidar a análise?'
     	]]) ?>
     	<?php }else if ($model->status == 0){ ?>
-    	<?=
-    	Html::a('Validar Análise', ['ativar', 'id' => $model->idanalise], [
+    	<?=	Html::a('<span class="glyphicon glyphicon-ok" aria-hidden=true></span> Validar Análise', ['ativar', 'id' => $model->idanalise], [
     			'class' => 'btn btn-success',
     			'data' =>[
     			'confirm' => 'Deseja validar a análise?'
@@ -69,21 +87,43 @@ $this->params['breadcrumbs'][] = $this->title;
     			'data' =>[
     			'confirm' => 'Deseja invalidar a análise?'
     	]]) ?>
+
+        
     	
     	<?php }?>
-    	<br>
-        <br>
-        <?= Html::a('Editar Análise', ['update', 'id' => $model->idanalise], ['class' => 'btn btn-primary']) ?>
-        <?= Html::a('Apagar Análise', ['delete', 'id' => $model->idanalise], [
-            'class' => 'btn btn-primary',
-            'data' => [
-                'confirm' => 'Tem certeza que deseja apagar a análise?',
-                'method' => 'post',
-            ],
-        ]) ?>
-         <?=
-         // ativar funcionalidade de comentários
-         Html::button('Notificar Autor', ['class' => 'btn btn-primary']) ?>
+    	
+        
+        <link href="css/bootstrap.min.css" rel="stylesheet"> 
+        <link href="css/docs.min.css" rel="stylesheet">
+
+        <?= Html::a('<span class="glyphicon glyphicon-upload" aria-hidden=true> </span> <span class=glyphicon-class> Editar Análise</span>',
+            ['update', 'id' => $model->idanalise], ['class' => 'btn btn-primary']) ?>
+
+        <?= Html::a('<span class="glyphicon glyphicon-remove" aria-hidden=true> </span>
+                     <span class=glyphicon-class> Apagar Análise</span>',
+                      ['delete', 'id' => $model->idanalise], [
+                       'class' => 'btn btn-danger',
+                       'data' => [
+                       'confirm' => 'Tem certeza que deseja apagar a análise?',
+                       'method' => 'post',
+         ],]) ?>
+
+              
+         
+         <?= Html::a('<span class="glyphicon glyphicon-upload" aria-hidden=true> </span> 
+                      <span class=glyphicon-class> Notificar Autor </span>',
+                      ['/notificacao/','idNotificacao' => $model->idanalise],
+                      ['class' => 'btn btn-primary']) ?>
+
+
+         <?= Html::a('<span class="glyphicon glyphicon-eye-close"></span> Cancelar', ['analise/index'], ['class' => 'btn btn-danger']) ?>
+        
+              
+
+
+
+
+        
         <?php } ?>
     </p>
     <!--?= DetailView::widget([

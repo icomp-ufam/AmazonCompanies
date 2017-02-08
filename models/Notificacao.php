@@ -36,8 +36,8 @@ class Notificacao extends \yii\db\ActiveRecord
             [['Usuario_idUsuario', 'status', 'conteudo', 'tipo', 'idAnalise'], 'required'],
             [['Usuario_idUsuario', 'status', 'tipo', 'idAnalise'], 'integer'],
             [['conteudo']],
-            [['Usuario_idUsuario'], 'exist', 'skipOnError' => true, 'targetClass' => Analise::className(), 'targetAttribute' => ['Usuario_idUsuario' => 'idanalise']],
-            [['idAnalise'], 'exist', 'skipOnError' => true, 'targetClass' => Analise::className(), 'targetAttribute' => ['idAnalise' => 'idanaise']],
+            [['Usuario_idUsuario'], 'exist', 'skipOnError' => true, 'targetClass' => Usuario::className(), 'targetAttribute' => ['Usuario_idUsuario' => 'idUsuario']],
+            [['idAnalise'], 'exist', 'skipOnError' => true, 'targetClass' => Analise::className(), 'targetAttribute' => ['idAnalise' => 'idanalise']],
             
         ];
     }
@@ -53,7 +53,7 @@ class Notificacao extends \yii\db\ActiveRecord
             'status' => Yii::t('app', 'Status'),
             
             'tipo' => Yii::t('app', 'Tipo'),
-            'idAnalise' => Yii::t('app', 'Usuário'),
+            'idAnalise' => Yii::t('app', 'Análise----------'),
             'conteudo' => Yii::t('app', 'Texto'),
         ];
     }

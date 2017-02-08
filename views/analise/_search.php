@@ -17,7 +17,7 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'idanalise') ?>
 
-    <?= $form->field($model, 'texto') ?>
+    <?= $form->field($model, 'conteudo') ?>
 
     <?= $form->field($model, 'status') ?>
 

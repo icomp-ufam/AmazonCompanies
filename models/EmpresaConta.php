@@ -12,9 +12,12 @@ use Yii;
  * @property integer $valor
  * @property integer $idEmpresa
  * @property integer $idConta
+ * @property integer $idUsuario
+ * @property integer $statusValidacao
  *
  * @property Conta $idConta0
  * @property Empresa $idEmpresa0
+ * @property Usuario $idUsuario0
  */
 class EmpresaConta extends \yii\db\ActiveRecord
 {
@@ -32,10 +35,11 @@ class EmpresaConta extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['ano', 'valor', 'idEmpresa', 'idConta'], 'required'],
-            [['ano', 'valor', 'idEmpresa', 'idConta'], 'integer'],
+            [['ano', 'valor', 'idEmpresa', 'idConta', 'idUsuario', 'statusValidacao'], 'required'],
+            [['ano', 'valor', 'idEmpresa', 'idConta', 'idUsuario', 'statusValidacao'], 'integer'],
             [['idConta'], 'exist', 'skipOnError' => true, 'targetClass' => Conta::className(), 'targetAttribute' => ['idConta' => 'idConta']],
             [['idEmpresa'], 'exist', 'skipOnError' => true, 'targetClass' => Empresa::className(), 'targetAttribute' => ['idEmpresa' => 'idEmpresa']],
+            [['idUsuario'], 'exist', 'skipOnError' => true, 'targetClass' => Usuario::className(), 'targetAttribute' => ['idUsuario' => 'idUsuario']],
         ];
     }
 
@@ -48,8 +52,10 @@ class EmpresaConta extends \yii\db\ActiveRecord
             'id' => 'ID',
             'ano' => 'Ano',
             'valor' => 'Valor',
-            'idEmpresa' => 'Id Empresa',
+            'idEmpresa' => 'Nome da Empresa',
             'idConta' => 'Id Conta',
+            'idUsuario' => 'Id Usuario',
+            'statusValidacao' => 'Status Validacao',
         ];
     }
 
@@ -67,5 +73,21 @@ class EmpresaConta extends \yii\db\ActiveRecord
     public function getIdEmpresa0()
     {
         return $this->hasOne(Empresa::className(), ['idEmpresa' => 'idEmpresa']);
+
+        //$query = EmpresaConta::find()->where(['idEmpresa' => ''])->count();
+        //return $query;
+    }
+
+    /**
+     * @return \yii\db\ActiveQuery
+     */
+    public function getIdUsuario0()
+    {
+        return $this->hasOne(Usuario::className(), ['idUsuario' => 'idUsuario']);
+    }
+
+    public function getNotification(){
+        $query = EmpresaConta::find()->where(['statusValidacao' => '2'])->count();
+        return $query;
     }
 }

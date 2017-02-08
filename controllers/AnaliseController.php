@@ -84,7 +84,7 @@ class AnaliseController extends Controller
     {
         $model = $this->findModel($id);
 
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
+        if ($model->load(Yii::$app->request->post()) && $model->save(false)) {
             return $this->redirect(['view', 'id' => $model->idanalise]);
         } else {
             return $this->render('update', [
@@ -98,7 +98,7 @@ class AnaliseController extends Controller
     {
     	$model = $this->findModel($id);
     	$model->status = '1';
-    	$model->save();
+    	$model->save(false);
     	
     	return $this->redirect(['view', 'id' => $model->idanalise]);
     }
@@ -107,7 +107,7 @@ class AnaliseController extends Controller
     {
     	$model = $this->findModel($id);
     	$model->status = '0';
-    	$model->save();
+    	$model->save(false);
     	 
     	return $this->redirect(['view', 'id' => $model->idanalise]);
     }
