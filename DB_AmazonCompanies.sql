@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.5.1
+-- version 4.5.4.1deb2ubuntu2
 -- http://www.phpmyadmin.net
 --
--- Host: 127.0.0.1
--- Generation Time: 06-Fev-2017 às 22:21
--- Versão do servidor: 10.1.19-MariaDB
--- PHP Version: 5.6.28
+-- Host: localhost
+-- Tempo de geração: 08/02/2017 às 19:41
+-- Versão do servidor: 5.7.17-0ubuntu0.16.04.1
+-- Versão do PHP: 7.0.13-0ubuntu0.16.04.1
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -17,13 +17,15 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `amazoncompanies`
+-- Banco de dados: `amazonCompanies`
 --
+CREATE DATABASE IF NOT EXISTS `amazonCompanies` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
+USE `amazonCompanies`;
 
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `analise`
+-- Estrutura para tabela `analise`
 --
 
 CREATE TABLE `analise` (
@@ -32,22 +34,23 @@ CREATE TABLE `analise` (
   `status` varchar(20) NOT NULL,
   `idEmpresa` int(11) NOT NULL,
   `textoAnalisador` varchar(50) DEFAULT NULL,
-  `Usuario_idUsuario` int(10) DEFAULT NULL
+  `Usuario_idUsuario` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Extraindo dados da tabela `analise`
+-- Fazendo dump de dados para tabela `analise`
 --
 
 INSERT INTO `analise` (`idanalise`, `texto`, `status`, `idEmpresa`, `textoAnalisador`, `Usuario_idUsuario`) VALUES
-(2, 'Texto enviado para análise', '1', 2, 'Resultado da análise', 0),
-(3, 'Este é um sistema operacional que', '1', 1, 'Mais um teste de análise', 5),
-(6, 'dddddddddddddddddddddddddddddddd', '', 4, 'blá blá blá', 6);
+(2, 'Texto enviado para análise', '0', 2, 'Resultado da análise feita pelo responsável.', 2),
+(3, 'Este é um sistema operacional que', '0', 1, 'ooooooooooooooooooooooooooooooooooooo', 1),
+(6, 'Mais um teste do testo enviado para análise.', '1', 4, 'Resultado da análise texto de exemplo ------------', 6),
+(7, 'achei legal<br>', '1', 6, 'bacana<br>', 3);
 
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `comentario`
+-- Estrutura para tabela `comentario`
 --
 
 CREATE TABLE `comentario` (
@@ -62,7 +65,7 @@ CREATE TABLE `comentario` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Extraindo dados da tabela `comentario`
+-- Fazendo dump de dados para tabela `comentario`
 --
 
 INSERT INTO `comentario` (`idComentario`, `conteudo`, `Empresa_idEmpresa`, `nome`, `email`, `data`, `hora`, `Comentario_idComentario`) VALUES
@@ -72,18 +75,18 @@ INSERT INTO `comentario` (`idComentario`, `conteudo`, `Empresa_idEmpresa`, `nome
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `conta`
+-- Estrutura para tabela `conta`
 --
 
 CREATE TABLE `conta` (
   `idConta` int(20) NOT NULL,
   `nome` varchar(255) NOT NULL,
   `idDemonstracao` int(11) NOT NULL,
-  `chave` varchar(20) DEFAULT NULL
+  `chave` varchar(30) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Extraindo dados da tabela `conta`
+-- Fazendo dump de dados para tabela `conta`
 --
 
 INSERT INTO `conta` (`idConta`, `nome`, `idDemonstracao`, `chave`) VALUES
@@ -115,7 +118,7 @@ INSERT INTO `conta` (`idConta`, `nome`, `idDemonstracao`, `chave`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `demonstracao`
+-- Estrutura para tabela `demonstracao`
 --
 
 CREATE TABLE `demonstracao` (
@@ -124,7 +127,7 @@ CREATE TABLE `demonstracao` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Extraindo dados da tabela `demonstracao`
+-- Fazendo dump de dados para tabela `demonstracao`
 --
 
 INSERT INTO `demonstracao` (`idDemonstracao`, `nomeDemonstracao`) VALUES
@@ -135,7 +138,7 @@ INSERT INTO `demonstracao` (`idDemonstracao`, `nomeDemonstracao`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `empresa`
+-- Estrutura para tabela `empresa`
 --
 
 CREATE TABLE `empresa` (
@@ -147,19 +150,21 @@ CREATE TABLE `empresa` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Extraindo dados da tabela `empresa`
+-- Fazendo dump de dados para tabela `empresa`
 --
 
 INSERT INTO `empresa` (`idEmpresa`, `nome`, `fonte`, `logotipo`, `tipo`) VALUES
 (1, 'Moto Honda da Amazônia LTDA', 'www.motohonda.com.br', NULL, 'Nacional'),
 (2, 'Teewa', 'www.teewa.com.br', NULL, 'Local'),
 (3, 'Microsoft S.A', 'www.microsoft.com', NULL, 'Estrangeira'),
-(4, 'Pastelaria do Arruda EPP', 'www.queso.blogspot.com.br', NULL, 'Local');
+(4, 'Pastelaria do Arruda EPP', 'www.queso.blogspot.com.br', 'beneficio-morango.jpg', 'Local'),
+(5, 'TeamSleep', 'teamsleep.com.br', '9428da2563387bf08c4b2ba32af5db03169fa0d5.jpeg', 'Local'),
+(6, 'SauronGames', 'www.senhordosaneis.com', NULL, 'Estrangeira');
 
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `empresahasusuario`
+-- Estrutura para tabela `empresahasusuario`
 --
 
 CREATE TABLE `empresahasusuario` (
@@ -168,7 +173,7 @@ CREATE TABLE `empresahasusuario` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Extraindo dados da tabela `empresahasusuario`
+-- Fazendo dump de dados para tabela `empresahasusuario`
 --
 
 INSERT INTO `empresahasusuario` (`Empresa_idEmpresa`, `Usuario_idUsuario`) VALUES
@@ -177,20 +182,35 @@ INSERT INTO `empresahasusuario` (`Empresa_idEmpresa`, `Usuario_idUsuario`) VALUE
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `empresa_conta`
+-- Estrutura para tabela `empresa_conta`
 --
 
 CREATE TABLE `empresa_conta` (
+  `id` int(11) NOT NULL,
   `ano` int(11) NOT NULL,
   `valor` int(11) NOT NULL,
   `idEmpresa` int(11) NOT NULL,
-  `idConta` int(11) NOT NULL
+  `idConta` int(11) NOT NULL,
+  `idUsuario` int(11) NOT NULL,
+  `statusValidacao` tinyint(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Fazendo dump de dados para tabela `empresa_conta`
+--
+
+INSERT INTO `empresa_conta` (`id`, `ano`, `valor`, `idEmpresa`, `idConta`, `idUsuario`, `statusValidacao`) VALUES
+(2, 2014, 54102, 5, 4, 6, 1),
+(3, 2013, 422000, 4, 4, 6, 1),
+(4, 2016, 888, 5, 6, 3, 1),
+(5, 2015, 25, 5, 4, 3, 0),
+(6, 2015, 5, 5, 5, 3, 0),
+(7, 2014, 55, 5, 5, 4, 1);
 
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `indice`
+-- Estrutura para tabela `indice`
 --
 
 CREATE TABLE `indice` (
@@ -201,17 +221,18 @@ CREATE TABLE `indice` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Extraindo dados da tabela `indice`
+-- Fazendo dump de dados para tabela `indice`
 --
 
 INSERT INTO `indice` (`idIndice`, `formula`, `idTipo_Indice`, `nomeIndice`) VALUES
-(1, 'LG = (AT/PE)', 1, NULL),
-(2, 'LC = (AC/PC)', 2, NULL);
+(1, '(@#AT@+@#AC@)@*@(@#AT@-@#AC@)', 1, 'Liquidez Primária'),
+(2, '#DALI@+@#EST', 2, 'Endividamento Secundário'),
+(3, '(@#AC@+@#AT@)@*@(@#AC@-@#AT@)', 1, 'Liquidez Teste Indice');
 
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `notificacao`
+-- Estrutura para tabela `notificacao`
 --
 
 CREATE TABLE `notificacao` (
@@ -224,7 +245,7 @@ CREATE TABLE `notificacao` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Extraindo dados da tabela `notificacao`
+-- Fazendo dump de dados para tabela `notificacao`
 --
 
 INSERT INTO `notificacao` (`idNotificacao`, `Usuario_idUsuario`, `status`, `conteudo`, `tipo`, `idAnalise`) VALUES
@@ -237,7 +258,7 @@ INSERT INTO `notificacao` (`idNotificacao`, `Usuario_idUsuario`, `status`, `cont
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `tipo_empresa`
+-- Estrutura para tabela `tipo_empresa`
 --
 
 CREATE TABLE `tipo_empresa` (
@@ -246,7 +267,7 @@ CREATE TABLE `tipo_empresa` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Extraindo dados da tabela `tipo_empresa`
+-- Fazendo dump de dados para tabela `tipo_empresa`
 --
 
 INSERT INTO `tipo_empresa` (`Nome`, `id`) VALUES
@@ -257,7 +278,7 @@ INSERT INTO `tipo_empresa` (`Nome`, `id`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `tipo_indice`
+-- Estrutura para tabela `tipo_indice`
 --
 
 CREATE TABLE `tipo_indice` (
@@ -266,7 +287,7 @@ CREATE TABLE `tipo_indice` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Extraindo dados da tabela `tipo_indice`
+-- Fazendo dump de dados para tabela `tipo_indice`
 --
 
 INSERT INTO `tipo_indice` (`idTipo_indice`, `nome`) VALUES
@@ -276,12 +297,13 @@ INSERT INTO `tipo_indice` (`idTipo_indice`, `nome`) VALUES
 (4, 'Rentabilidade'),
 (5, 'Giros e Prazos'),
 (6, 'Giros Assaf Neto'),
-(7, 'Giros Viaconti');
+(7, 'Giros Viaconti'),
+(8, 'Teste Listagem');
 
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `usuario`
+-- Estrutura para tabela `usuario`
 --
 
 CREATE TABLE `usuario` (
@@ -295,7 +317,7 @@ CREATE TABLE `usuario` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Extraindo dados da tabela `usuario`
+-- Fazendo dump de dados para tabela `usuario`
 --
 
 INSERT INTO `usuario` (`idUsuario`, `login`, `nome`, `senha`, `ativo`, `identificadorPessoa`, `email`) VALUES
@@ -304,21 +326,26 @@ INSERT INTO `usuario` (`idUsuario`, `login`, `nome`, `senha`, `ativo`, `identifi
 (3, 'Gisa', 'Gisele', '25d55ad283aa400af464c76d713c07ad', 1, 2, 'gisa@icomp.ufam.edu.br'),
 (4, 'Motoca', 'Moto Honda da Amazônia LTDA', '3dcdda99b20ed51f83b25c6315c5a818', 1, 3, 'motohonda@gmail.com'),
 (5, 'icaro', 'Icaro Dolzane', 'a48e0f40dba24e3bcfe84aad2c272d8d', 0, 1, 'ifd@icomp.ufam.edu.br'),
-(6, 'Daniel_aluno', 'Daniel_aluno', '25d55ad283aa400af464c76d713c07ad', 1, 2, 'Daniel_aluno@gmail.com');
+(6, 'Thitan', 'Thiego Barros', '394bdfc0ac888e1e9a8e6c829dc43025', 1, 1, 't@icomp.ufam.br'),
+(7, 'agus', 'Augusto Arruda', '41092952f6cfadc1a1ef40c405159ce3', 1, 2, 'augusto_rr_arruda@gmail.com'),
+(8, 'Brasitech', 'Brasitech Indústria de Produtos LTDA', '25d55ad283aa400af464c76d713c07ad', 1, 3, 'bra@gmail.com'),
+(9, 'Daniel_aluno', 'Daniel_aluno', '25d55ad283aa400af464c76d713c07ad', 1, 2, 'Daniel_aluno@gmail.com'),
+(10, 'teste2', 'tdasdadas', '25d55ad283aa400af464c76d713c07ad', 1, 2, 'cacs@icomp.ufam.edu.br');
 
 --
--- Indexes for dumped tables
+-- Índices de tabelas apagadas
 --
 
 --
--- Indexes for table `analise`
+-- Índices de tabela `analise`
 --
 ALTER TABLE `analise`
   ADD PRIMARY KEY (`idanalise`),
+  ADD UNIQUE KEY `fk_idUsuario` (`Usuario_idUsuario`) USING BTREE,
   ADD KEY `fk_analise_1_idx` (`idEmpresa`);
 
 --
--- Indexes for table `comentario`
+-- Índices de tabela `comentario`
 --
 ALTER TABLE `comentario`
   ADD PRIMARY KEY (`idComentario`),
@@ -326,27 +353,27 @@ ALTER TABLE `comentario`
   ADD KEY `Empresa_idEmpresa` (`Empresa_idEmpresa`);
 
 --
--- Indexes for table `conta`
+-- Índices de tabela `conta`
 --
 ALTER TABLE `conta`
   ADD PRIMARY KEY (`idConta`),
   ADD KEY `fkDemonstracao` (`idDemonstracao`);
 
 --
--- Indexes for table `demonstracao`
+-- Índices de tabela `demonstracao`
 --
 ALTER TABLE `demonstracao`
   ADD PRIMARY KEY (`idDemonstracao`);
 
 --
--- Indexes for table `empresa`
+-- Índices de tabela `empresa`
 --
 ALTER TABLE `empresa`
   ADD PRIMARY KEY (`idEmpresa`),
   ADD KEY `fkTipo` (`tipo`);
 
 --
--- Indexes for table `empresahasusuario`
+-- Índices de tabela `empresahasusuario`
 --
 ALTER TABLE `empresahasusuario`
   ADD PRIMARY KEY (`Empresa_idEmpresa`,`Usuario_idUsuario`),
@@ -354,140 +381,149 @@ ALTER TABLE `empresahasusuario`
   ADD KEY `fk_Empresa_has_Usuario_Empresa1_idx` (`Empresa_idEmpresa`);
 
 --
--- Indexes for table `empresa_conta`
+-- Índices de tabela `empresa_conta`
 --
 ALTER TABLE `empresa_conta`
+  ADD PRIMARY KEY (`id`),
   ADD KEY `fkIdConta` (`idConta`),
-  ADD KEY `fkIdEmpresa` (`idEmpresa`);
+  ADD KEY `fkIdEmpresa` (`idEmpresa`),
+  ADD KEY `idUsuario` (`idUsuario`);
 
 --
--- Indexes for table `indice`
+-- Índices de tabela `indice`
 --
 ALTER TABLE `indice`
   ADD PRIMARY KEY (`idIndice`) USING BTREE,
   ADD KEY `fk_Indice_Tipo_Indice1_idx` (`idTipo_Indice`);
 
 --
--- Indexes for table `notificacao`
+-- Índices de tabela `notificacao`
 --
 ALTER TABLE `notificacao`
   ADD PRIMARY KEY (`idNotificacao`,`Usuario_idUsuario`),
   ADD KEY `fk_Notificacao_Usuario_idx` (`Usuario_idUsuario`);
 
 --
--- Indexes for table `tipo_empresa`
+-- Índices de tabela `tipo_empresa`
 --
 ALTER TABLE `tipo_empresa`
   ADD PRIMARY KEY (`Nome`);
 
 --
--- Indexes for table `tipo_indice`
+-- Índices de tabela `tipo_indice`
 --
 ALTER TABLE `tipo_indice`
   ADD PRIMARY KEY (`idTipo_indice`);
 
 --
--- Indexes for table `usuario`
+-- Índices de tabela `usuario`
 --
 ALTER TABLE `usuario`
   ADD PRIMARY KEY (`idUsuario`),
   ADD UNIQUE KEY `email` (`email`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- AUTO_INCREMENT de tabelas apagadas
 --
 
 --
--- AUTO_INCREMENT for table `analise`
+-- AUTO_INCREMENT de tabela `analise`
 --
 ALTER TABLE `analise`
-  MODIFY `idanalise` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `idanalise` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 --
--- AUTO_INCREMENT for table `comentario`
+-- AUTO_INCREMENT de tabela `comentario`
 --
 ALTER TABLE `comentario`
-  MODIFY `idComentario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `idComentario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 --
--- AUTO_INCREMENT for table `conta`
+-- AUTO_INCREMENT de tabela `conta`
 --
 ALTER TABLE `conta`
   MODIFY `idConta` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
 --
--- AUTO_INCREMENT for table `demonstracao`
+-- AUTO_INCREMENT de tabela `demonstracao`
 --
 ALTER TABLE `demonstracao`
-  MODIFY `idDemonstracao` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `idDemonstracao` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 --
--- AUTO_INCREMENT for table `empresa`
+-- AUTO_INCREMENT de tabela `empresa`
 --
 ALTER TABLE `empresa`
-  MODIFY `idEmpresa` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `idEmpresa` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 --
--- AUTO_INCREMENT for table `indice`
+-- AUTO_INCREMENT de tabela `empresa_conta`
+--
+ALTER TABLE `empresa_conta`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+--
+-- AUTO_INCREMENT de tabela `indice`
 --
 ALTER TABLE `indice`
-  MODIFY `idIndice` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `idIndice` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 --
--- AUTO_INCREMENT for table `notificacao`
+-- AUTO_INCREMENT de tabela `notificacao`
 --
 ALTER TABLE `notificacao`
   MODIFY `idNotificacao` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 --
--- AUTO_INCREMENT for table `usuario`
+-- AUTO_INCREMENT de tabela `usuario`
 --
 ALTER TABLE `usuario`
-  MODIFY `idUsuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `idUsuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 --
--- Constraints for dumped tables
+-- Restrições para dumps de tabelas
 --
 
 --
--- Limitadores para a tabela `analise`
+-- Restrições para tabelas `analise`
 --
 ALTER TABLE `analise`
-  ADD CONSTRAINT `fk_analise_1` FOREIGN KEY (`idEmpresa`) REFERENCES `empresa` (`idEmpresa`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+  ADD CONSTRAINT `fk_analise_1` FOREIGN KEY (`idEmpresa`) REFERENCES `empresa` (`idEmpresa`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  ADD CONSTRAINT `fk_idUsuario1` FOREIGN KEY (`Usuario_idUsuario`) REFERENCES `notificacao` (`Usuario_idUsuario`);
 
 --
--- Limitadores para a tabela `comentario`
+-- Restrições para tabelas `comentario`
 --
 ALTER TABLE `comentario`
   ADD CONSTRAINT `comentario_ibfk_1` FOREIGN KEY (`Comentario_idComentario`) REFERENCES `comentario` (`idComentario`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   ADD CONSTRAINT `comentario_ibfk_2` FOREIGN KEY (`Empresa_idEmpresa`) REFERENCES `empresa` (`idEmpresa`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
--- Limitadores para a tabela `conta`
+-- Restrições para tabelas `conta`
 --
 ALTER TABLE `conta`
   ADD CONSTRAINT `fkDemonstracao` FOREIGN KEY (`idDemonstracao`) REFERENCES `demonstracao` (`idDemonstracao`);
 
 --
--- Limitadores para a tabela `empresa`
+-- Restrições para tabelas `empresa`
 --
 ALTER TABLE `empresa`
   ADD CONSTRAINT `fkTipo` FOREIGN KEY (`tipo`) REFERENCES `tipo_empresa` (`Nome`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
--- Limitadores para a tabela `empresahasusuario`
+-- Restrições para tabelas `empresahasusuario`
 --
 ALTER TABLE `empresahasusuario`
   ADD CONSTRAINT `fk_Empresa_has_Usuario_Empresa1` FOREIGN KEY (`Empresa_idEmpresa`) REFERENCES `empresa` (`idEmpresa`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   ADD CONSTRAINT `fk_Empresa_has_Usuario_Usuario1` FOREIGN KEY (`Usuario_idUsuario`) REFERENCES `usuario` (`idUsuario`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
--- Limitadores para a tabela `empresa_conta`
+-- Restrições para tabelas `empresa_conta`
 --
 ALTER TABLE `empresa_conta`
   ADD CONSTRAINT `fkIdConta` FOREIGN KEY (`idConta`) REFERENCES `conta` (`idConta`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  ADD CONSTRAINT `fkIdEmpresa` FOREIGN KEY (`idEmpresa`) REFERENCES `empresa` (`idEmpresa`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+  ADD CONSTRAINT `fkIdEmpresa` FOREIGN KEY (`idEmpresa`) REFERENCES `empresa` (`idEmpresa`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  ADD CONSTRAINT `fkIdUsuario` FOREIGN KEY (`idUsuario`) REFERENCES `usuario` (`idUsuario`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
--- Limitadores para a tabela `indice`
+-- Restrições para tabelas `indice`
 --
 ALTER TABLE `indice`
   ADD CONSTRAINT `fk_Indice_Tipo_Indice1` FOREIGN KEY (`idTipo_Indice`) REFERENCES `tipo_indice` (`idTipo_indice`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
--- Limitadores para a tabela `notificacao`
+-- Restrições para tabelas `notificacao`
 --
 ALTER TABLE `notificacao`
   ADD CONSTRAINT `fk_Notificacao_Usuario` FOREIGN KEY (`Usuario_idUsuario`) REFERENCES `usuario` (`idUsuario`) ON DELETE NO ACTION ON UPDATE NO ACTION;
