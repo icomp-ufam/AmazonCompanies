@@ -18,10 +18,8 @@ use app\models\UploadForm;
 use yii\db\Query;
 use yii\db\ActiveQuery;
 use moonland\phpexcel\Excel;
+use miloschuman\highcharts\Highcharts;
 
-use kartik\mpdf\Pdf;
-
-use mPDF;
 
 
 /**
@@ -72,57 +70,137 @@ class EmpresaController extends Controller
              
     }
 
-    public function actionGetDescricao(){
-        print_r('entrou get descricao');
-        $empresaP = $_POST['empresa'];
-        $empresas = explode('#', $empresaP);
-        $tabela = "<table class='table'>
-                       <tr> ";
-        foreach ($empresas as $empresa){
-        //Pegando o nome da empresa
-            $conectEmpresa = \Yii::$app->db;
-            $queryEmpresa = 'SELECT nome FROM empresa WHERE idEmpresa = '.$empresa;
-            $nomeEmpresa = $conectEmpresa->createCommand($queryEmpresa)->queryScalar();
-            $tabela .= "<th> $nomeEmpresa </th> ";
-        }
-        $tabela.="</tr> ";
-        //Pegando o nome da demonstração
-        $tabela.="<tr> ";
-        foreach ($empresas as $empresa) {
-            $tabela.= "<td>";
-            $connection = \Yii::$app->db;
-            $query = 'SELECT tipoDemonstracao.nome, demonstracao.idDemonstracao
-                  FROM demonstracao INNER JOIN tipoDemonstracao 
-                  ON demonstracao.idtipoDemonstracao = tipoDemonstracao.idtipoDemonstracao 
-                  WHERE demonstracao.Empresa_idEmpresa = ' . $empresa;
-            $demonstracoes = $connection->createCommand($query)->queryAll();
-            if(count($demonstracoes) > 0) {
-                foreach ($demonstracoes as $result):
-                    $tabela .= "<b> {$result['nome']}</b> </br>  ";
-                    $connection2 = \Yii::$app->db;
-                    $queryConta = "SELECT nome, valor FROM conta WHERE idDemonstracao = {$result['idDemonstracao']}";
-                    $contas = $connection2->createCommand($queryConta)->queryAll();
-                    if(count($contas)>0){
-                        foreach ($contas as $ct){
-                            $tabela .= "{$ct['nome']}: {$ct['valor']} <br>";
-                        }
-                    }else $tabela.= "Não há dados <br>";
-                endforeach;
-            }else $tabela.= "Empresa sem demonstrações <br> ";
-            $tabela.="</td>";
-        }
-        $tabela.="</tr>
-            </table>";
-
-        //echo count($resultado);
-        return $tabela;
-        //SELECT nome, valor FROM conta WHERE idDemonstracao in
-        // (SELECT idDemonstracao FROM demonstracao
-        // INNER JOIN tipoDemonstracao ON demonstracao.idtipoDemonstracao = tipoDemonstracao.idtipoDemonstracao
-        // WHERE demonstracao.Empresa_idEmpresa = 1)
-        //SELECT tipoDemonstracao.nome FROM tipoDemonstracao ]
-        //JOIN demonstracao ON tipoDemonstracao.idtipoDemonstracao= demonstracao.idtipoDemonstracao 
-        //WHERE demonstracao.Empresa_idEmpresa = 1;*/
+    public function actionGet_descricao(){
+    	$contas = Conta::find()->select('*')->all();
+    	$i=0;
+    	foreach($contas as $conta){
+    
+    		$categorias[$i]=$conta->nome;
+    		$i++;
+    
+    	}
+    	 
+    	$anosEmpresas = EmpresaConta::find()->select('ano')->distinct()->orderBy(["ano"=> SORT_ASC])->all();
+    	$i=0;
+    
+    	foreach($anosEmpresas as $anosEmpresa){
+    
+    		$field[$i]['type'] = 'column';
+    		$field[$i]['name'] = $anosEmpresa->ano;
+    		// $valoress = EmpresaConta::find()->select('valor')->where(['idConta' => $conta->idConta])->andWhere(['ano' =>$anosEmpresa->ano])->all();
+    		// if(count($valoress)>0){
+    		//     $j=0;
+    			//     foreach($valoress as $valores){
+    			//         $data[$j] =
+    				//     }
+    			// } else{
+    
+    			// }
+    			for ($j=0; $j <24 ; $j++) {
+    				$data[$j]= $j+1;
+    
+    			}
+    			$field[$i]['data'] = $data;
+    			$i++;
+    
+    
+    			}
+    
+    			// print_r($field);
+    			// echo '<br>';
+    			// print_r($categorias);
+    
+    
+    			// echo Highcharts::widget([
+    			//     'scripts' => array(
+    			//                 'modules/exporting',
+    					//                 'themes/grid-light',
+    					//             ),
+    					//             'options' => array(
+    					//                 'title' => array(
+    							//                     'text' => 'Demonstração',
+    							//                 ),
+    							//                 'xAxis' => array(
+    							//                     'categories' => $categorias,
+    									//                 ),
+    
+    							//                 'series' => $field
+    							//                 // array(
+    							//                 //     array(
+    							//                 //         'type' => 'column',
+    							//                 //         'name' => '2014',
+    							//                 //         'data' => array(3, 2),
+    							//                 //     ),
+    							//                 //     array(
+    							//                 //         'type' => 'column',
+    							//                 //         'name' => '2016',
+    							//                 //         'data' => array(2, 3),
+    							//                 //     ),
+    
+    							//                 // ),
+    							//             )
+    							//         ]);
+    
+    			// return $this->render('index', [
+    					//                     'model' => $model,
+    					//                     'field' => $field,
+    					//                     'categorias' => $categorias
+    					//                     ]);
+    					 
+    
+    
+    
+    
+    					// print_r('entrou get descricao');
+    					// $empresaP = $_POST['empresa'];
+    					// $empresas = explode('#', $empresaP);
+    					// $tabela = "<table class='table'>
+    					//                <tr> ";
+    					// foreach ($empresas as $empresa){
+    					// //Pegando o nome da empresa
+    						//     $conectEmpresa = \Yii::$app->db;
+    						//     $queryEmpresa = 'SELECT nome FROM empresa WHERE idEmpresa = '.$empresa;
+    						//     $nomeEmpresa = $conectEmpresa->createCommand($queryEmpresa)->queryScalar();
+    						//     $tabela .= "<th> $nomeEmpresa </th> ";
+    						// }
+    						// $tabela.="</tr> ";
+    						// //Pegando o nome da demonstração
+    						// $tabela.="<tr> ";
+    						// foreach ($empresas as $empresa) {
+    			//     $tabela.= "<td>";
+    			//     $connection = \Yii::$app->db;
+    			//     $query = 'SELECT tipoDemonstracao.nome, demonstracao.idDemonstracao
+    			//           FROM demonstracao INNER JOIN tipoDemonstracao
+    			//           ON demonstracao.idtipoDemonstracao = tipoDemonstracao.idtipoDemonstracao
+    			//           WHERE demonstracao.Empresa_idEmpresa = ' . $empresa;
+    			//     $demonstracoes = $connection->createCommand($query)->queryAll();
+    			//     if(count($demonstracoes) > 0) {
+    			//         foreach ($demonstracoes as $result):
+    			//             $tabela .= "<b> {$result['nome']}</b> </br>  ";
+    			//             $connection2 = \Yii::$app->db;
+    			//             $queryConta = "SELECT nome, valor FROM conta WHERE idDemonstracao = {$result['idDemonstracao']}";
+    			//             $contas = $connection2->createCommand($queryConta)->queryAll();
+    			//             if(count($contas)>0){
+    			//                 foreach ($contas as $ct){
+    			//                     $tabela .= "{$ct['nome']}: {$ct['valor']} <br>";
+    				//                 }
+    				//             }else $tabela.= "Não há dados <br>";
+    				//         endforeach;
+    				//     }else $tabela.= "Empresa sem demonstrações <br> ";
+    				//     $tabela.="</td>";
+    				// }
+    			// $tabela.="</tr>
+    			//     </table>";
+    
+    			// //echo count($resultado);
+    			// return $tabela;
+    			// //SELECT nome, valor FROM conta WHERE idDemonstracao in
+    			// // (SELECT idDemonstracao FROM demonstracao
+    			// // INNER JOIN tipoDemonstracao ON demonstracao.idtipoDemonstracao = tipoDemonstracao.idtipoDemonstracao
+    			// // WHERE demonstracao.Empresa_idEmpresa = 1)
+    			// //SELECT tipoDemonstracao.nome FROM tipoDemonstracao ]
+    			// //JOIN demonstracao ON tipoDemonstracao.idtipoDemonstracao= demonstracao.idtipoDemonstracao 
+    			// //WHERE demonstracao.Empresa_idEmpresa = 1;*/
     }
     /**
      * Displays a single Empresa model.
@@ -134,49 +212,120 @@ class EmpresaController extends Controller
         $comentario = new Comentario();
 
         $file = UploadedFile::getInstance($this->findModel($id), 'upload_file');
-        $model = $this->findModel($id);
-
-         if($model->load(Yii::$app->request->post()) and $file != null){
-            $file->saveAs('uploads/'.$file->name);
         
-        // if($this->findModel($id)->load(Yii::$app->request->post()) and $file != null){
-        //     $file->saveAs('uploads/'.$file->name);
-        //    //print_r($file->name);
-
-
-            $objPHPExcel = new Excel();
-
-            $inputFileName = './uploads/'.$file->name;  // File to read
-            
-            try {
-               $objPHPExcel = Excel::import($inputFileName);
-            } catch(Exception $e) {
-               die('Error loading file "'.pathinfo($inputFileName,PATHINFO_BASENAME).'": '.$e->getMessage());
-            }
-                $cont=1;
-               $myarray = array_shift($objPHPExcel);
-               
-               for ($i = 0; $i < count($myarray); $i++) {
-                    $model = new EmpresaConta();
-
-                    $nome = $myarray[$i]['Nome'];
-                    $conta = Conta::find()->select("idConta")->where(['nome' => $nome])->one();
-                    print_r($conta->idConta);
-
-                    $valor = $myarray[$i]['Valor'];
-                    $ano = $myarray[$i]['Ano'];
-                    $model->idEmpresa = $id;
-                    $model->ano = $ano;
-                    $model->valor = $valor;
-                    
-                    $model->idConta = $conta->idConta;
-
-                   
-                    $model->save();
-
-                   
-                }
+        if($this->findModel($id)->load(Yii::$app->request->post()) and $file != null){
+        	$file->saveAs('uploads/'.$file->name);
+        	//print_r($file->name);
+        
+        
+        	$objPHPExcel = new Excel();
+        
+        	$inputFileName = './uploads/'.$file->name;  // File to read
+        
+        	try {
+        		$objPHPExcel = Excel::import($inputFileName);
+        	} catch(Exception $e) {
+        		die('Error loading file "'.pathinfo($inputFileName,PATHINFO_BASENAME).'": '.$e->getMessage());
+        	}
+        	$cont=1;
+        	$myarray = array_shift($objPHPExcel);
+        	 
+        	for ($i = 0; $i < count($myarray); $i++) {
+        		$model = new EmpresaConta();
+        
+        		$nome = $myarray[$i]['Nome'];
+        		$conta = Conta::find()->select("idConta")->where(['nome' => $nome])->one();
+        		print_r($conta->idConta);
+        
+        		$valor = $myarray[$i]['Valor'];
+        		$ano = $myarray[$i]['Ano'];
+        		$model->idEmpresa = $id;
+        		$model->ano = $ano;
+        		$model->valor = $valor;
+        
+        		$model->idConta = $conta->idConta;
+        
+        		 
+        		$model->save();
+        
+        		 
+        	}
         }
+        $contas = Conta::find()->select('*')->all();
+        $i=0;
+        foreach($contas as $conta){
+        
+        	$categorias[$i]=$conta->nome;
+        	$i++;
+        
+        }
+         
+        $anosEmpresas = EmpresaConta::find()->select('ano')->distinct()->orderBy(["ano"=> SORT_ASC])->all();
+        $i=0;
+        
+        foreach($anosEmpresas as $anosEmpresa){
+        
+        	$field[$i]['type'] = 'column';
+        	$field[$i]['name'] = $anosEmpresa->ano;
+        	// $valoress = EmpresaConta::find()->select('valor')->where(['idConta' => $conta->idConta])->andWhere(['ano' =>$anosEmpresa->ano])->all();
+        	// if(count($valoress)>0){
+        	//     $j=0;
+        		//     foreach($valoress as $valores){
+        		//         $data[$j] =
+        			//     }
+        		// } else{
+        
+        		// }
+        		for ($j=0; $j <24 ; $j++) {
+        			$data[$j]= $j+1;
+        
+        		}
+        		$field[$i]['data'] = $data;
+        		$i++;
+        
+        
+        		}
+        		// print_r(count($anosEmpresas));
+        
+        		// for ($i = 0; $i <= 2; $i++) {
+        		//     $field[$i]['type'] = 'column';
+        		//     $field[$i]['name'] = '201' . $i+4;
+        		//     for ($j=0; $j <24 ; $j++) {
+        		//          $data[$j]= $j+1;
+        
+        			//     }
+        			//                     $field[$i]['data'] = $data;
+        
+        
+        			// }
+        			//print_r(count($categorias));
+        			// echo '<br>';
+        			// for ($i=0; $i <= 5 ; $i++) {
+        			//     $categorias[$i]='Ativo Total'.$i;
+        				// }
+        				// print_r($categorias);
+        
+        				// $series = [
+        				// [
+        				//         'type' => 'column',
+        				//         'name' => '2014',
+        				//         'data'=> [3, 2]
+        				//     ],
+        
+        				// [
+        				//         'type' => 'column',
+        
+        				//         'name'=> '2016',
+        				//         'data'=> [2, 3]
+        				//     ],
+        
+        				// ];
+        
+        				// print_r($field);
+        				// echo '<br>';
+        				// print_r($series);
+        		//print_r($categorias);
+      $model = $this->findModel($id);
 
         $comentario->Empresa_idEmpresa = $model->idEmpresa;
         
@@ -189,6 +338,8 @@ class EmpresaController extends Controller
                  return $this->render('view', [
                     'model' => $this->findModel($id),
                     'comentario' => $comentario ,
+                 	'field' => $field,
+                 	'categorias' => $categorias
                     ]);
 
         

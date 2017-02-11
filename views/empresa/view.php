@@ -11,12 +11,18 @@ use yii\helpers\BaseUrl;
     use app\models\TipoIndice;
     use app\models\EmpresaConta;
         use app\models\Conta;
+        use miloschuman\highcharts\Highcharts;
+        use hscstudio\chart\ChartNew;
+        use \Fintara\Tools\Calculator\Calculator;
+        use \Fintara\Tools\Calculator\DefaultLexer;
 
     use app\models\Demonstracao;
 
     use app\models\Indice;
 
 use kartik\widgets\FileInput;
+use phpnt\bootstrapSelect\BootstrapSelectAsset;
+use kartik\widgets\Select2;
 
 
 
@@ -188,7 +194,16 @@ use kartik\widgets\FileInput;
                                             <th>Nome:</th>
                                             <th>Fórmula:</th>
 
-                                            <th></th>
+                                            <?php
+                                            $anosEmpresas = EmpresaConta::find()->select('ano')->distinct()->orderBy(["ano"=> SORT_ASC])->all();
+                                                 $tweets = [['nome'=>'Liquidez', 'id'=>100]];
+ 
+                                                foreach($anosEmpresas as $anosEmpresa){  
+                                             ?>
+                            <th><?=$anosEmpresa->ano?></th>
+                            <?php
+                                                }   
+                                             ?>
 
                                         </tr>
                                     </thead>
@@ -197,6 +212,7 @@ use kartik\widgets\FileInput;
                                             $indices = Indice::find()->select('*')->where(['idTipo_indice' => $tipoIndice->idTipo_indice])->all();
 
                                                  $sinais = ['+', '-', '/', '*', '(', ')'];
+                                                    $calculator = new Calculator();
                                                 foreach($indices as $indice){
                                                     $indiceIn = Indice::find()->select('*')->where(['idIndice' => $indice->idIndice])->all();
 
@@ -205,37 +221,73 @@ use kartik\widgets\FileInput;
                                                             $montarFormulaAnterior = '';
                                                             $montarFormula='';
                                                             for ($i=0; $i <count($getChaveContas); $i++) {
-                                                        if(in_array($getChaveContas[$i],$sinais)){
-                                                            
+                                                        if(in_array($getChaveContas[$i],$sinais)){                  
                                                             $montarFormulaAnterior = ' '.$montarFormula.' ';
                                                             $montarFormula=$montarFormulaAnterior.$getChaveContas[$i];
-
                                                         }else{ 
                                                             $conta = Conta::find()->select("*")->where(['chave' => $getChaveContas[$i]])->one();
                                                             $idConta = $conta['idConta'];
-                                                            
-
-                                                            $montarFormulaAnterior = ' '.$montarFormula.' ';
-                                                            $montarFormula=$montarFormulaAnterior.$conta['nome'];
-                                                            
+                                                        $montarFormulaAnterior = ' '.$montarFormula.' ';
+                                                        $montarFormula=$montarFormulaAnterior.$conta['nome'];
                                                         }   
-
                                                     }
-                                                    
-
-                                                 
                                             ?>
                                         <tr>
                                         <td><?=$indiceIn[0]->nomeIndice?></td>
                                             <td><?=$montarFormula?></td>
                                             
+                                            <?php  
+                                                $anosEmpresas = EmpresaConta::find()->select('ano')->distinct()->orderBy(["ano"=> SORT_ASC])->all();
+                                                                        foreach($anosEmpresas as $anosEmpresa) {
+                                                                                    $concatenar='';
+                                                                                    $anterior='';         
+                                                                                    $verificaSeEhNull=0;
+                                                                                    $montarFormulaAnterior = '';
+                                                                                    $montarFormula='';
+
+                                                                            for ($i=0; $i <count($getChaveContas); $i++) {
+                                                                                if(in_array($getChaveContas[$i],$sinais)){
+                                                                                    $anterior = $concatenar;
+                                                                                    $concatenar = $anterior.$getChaveContas[$i];
+                                                                                    $montarFormulaAnterior = ' '.$montarFormula.' ';
+                                                                                    $montarFormula=$montarFormulaAnterior.$getChaveContas[$i];
+
+                                                                                }else{ 
+                                                                                    $conta = Conta::find()->select("*")->where(['chave' => $getChaveContas[$i]])->one();
+                                                                                    $idConta = $conta['idConta'];
+                                                                                    $empresaConta = EmpresaConta::find()->select("*")->where(['idConta' => $idConta])->andWhere(['ano' =>$anosEmpresa->ano])->andWhere(['idEmpresa' =>$model->idEmpresa])->one();
+                                                                                    if($empresaConta==null){
+                                                                                        $anterior = $concatenar;
+                                                                                        $concatenar = $anterior.'xxxx';
+                                                                                        $verificaSeEhNull = 1;
+                                                                                    } else{
+                                                                                        $anterior = $concatenar;
+                                                                                    $concatenar = $anterior.$empresaConta['valor'];
+                                                                                    }
+                                                                                    $montarFormulaAnterior = ' '.$montarFormula.' ';
+                                                                                    $montarFormula=$montarFormulaAnterior.$conta['nome'];    
+                                                                                }   
+                                                                            }
+                                                                            if($verificaSeEhNull==1){
+                                                                            ?>
+                                                                            <td>-----</td> 
+                                                                            <?php
+                                                                            }else{
+                                                                             $calculator->setExpression($concatenar);
+                                                                                ?>
+                                                                                    <td><?=$calculator->calculate()?></td>
+                                                                                      <?php
+                                                                         }
+                                                                        }
+
+                                                                                                            ?>
 
 
-                                            <td>
+                                            <!-- <td>
                                                 <button type="button" onclick="comparar(<?=$indice->idIndice?>)" class="btn btn-default" >Calcular</button>
                                                 <button  data-toggle="modal" data-target="#cadCalIndice" id="teste" style=" visibility: hidden"></button>
 
-                                            </td>
+                                            </td> -->
                                         </tr>
                                         <?php
                                                 }   
@@ -275,6 +327,12 @@ use kartik\widgets\FileInput;
              
         }
 
+        function getIdSelect(){
+            console.log('entrou');
+            var id_select = $('#id_select').val();
+            console.log(id_select);
+        }
+
     </script>
 
 
@@ -287,83 +345,120 @@ use kartik\widgets\FileInput;
 
 
 
+
 <div id="analise" class="row">
+
     <legend>Gráfico</legend> 
     <div id="grafico" style="width: auto; height: auto; margin: 0 auto"></div>
+
+
+<?php 
+echo Highcharts::widget([
+   'scripts' => array(
+        'modules/exporting',
+        'themes/grid-light',
+    ),
+    'options' => array(
+        'title' => array(
+            'text' => 'Demonstração',
+        ),
+        'xAxis' => array(
+            'categories' => $categorias,
+        ),
+        
+        'series' => $field
+        // array(
+        //     array(
+        //         'type' => 'column',
+        //         'name' => '2014',
+        //         'data' => array(3, 2),
+        //     ),
+        //     array(
+        //         'type' => 'column',
+        //         'name' => '2016',
+        //         'data' => array(2, 3),
+        //     ),
+            
+        // ),
+    )
+]);
+
+ ?>
+
+
    
 <script language="JavaScript">$(function () {
+    //     $names = [
+    //     {
+    //             name: '2014',
+    //             data: [91381, 91381, 564384, 265916, 96377, 186664, 12253,39,3135, 655765]
+    //         },
 
-        $names = [
-        {
-                name: '2014',
-                data: [91381, 91381, 564384, 265916, 96377, 186664, 12253,39,3135, 655765]
-            },
+    //     {
+    //             name: '2016',
+    //             data: [91381, 91381, 564384, 265916, 96377, 186664, 12253,39,3135, 655765]
+    //         },
 
-        {
-                name: '2016',
-                data: [91381, 91381, 564384, 265916, 96377, 186664, 12253,39,3135, 655765]
-            },
+    //     ];
+    //     $names[0]['name'] = '2013';
+    //     //$names[0]['data'] = 200;
 
-        ];
-        $names[0]['name'] = '2013';
-        //$names[0]['data'] = 200;
-
-        console.log($names[0]['name']);
-        console.log($names[0]['data']);
+    //     // console.log($names[0]['name']);
+    //     // console.log($names[0]['data']);
 
 
-    Highcharts.chart('grafico', {
-        chart: {
-            type: 'bar'
-        },
-        title: {
-            text: '' //Colocar o nome da empresa via PHP
-        },
-        subtitle: {
-            text: '' //Colocar a fonte via PHP
-        },
-        xAxis: {
-            categories: ['Ativo Circulante', 'Ativo Circulante Financeiro', 'Disponibilidades', 'Ativo Circulante Operacional', 'Estoques', 'Contas a Receber', 'Partes Relacionais','Impulso a Recuperar', 'Bens destinados à venda','Outros Ativos', 'Total do Ativo Circulante'],
-            title: {
-                text: null
-            }
-        },
-        yAxis: {
-            min: 0,
-            title: {
-                text: 'Quantidade em Milhões de Reais',
-                align: 'high'
-            },
-            labels: {
-                overflow: 'justify'
-            }
-        },
-        tooltip: {
-            valueSuffix: 'R$'
-        },
-        plotOptions: {
-            bar: {
-                dataLabels: {
-                    enabled: true
-                }
-            }
-        },
-        legend: {
-            layout: 'vertical',
-            align: 'right',
-            verticalAlign: 'top',
-            x: -40,
-            y: 80,
-            floating: true,
-            borderWidth: 1,
-            backgroundColor: ((Highcharts.theme && Highcharts.theme.legendBackgroundColor) || '#FFFFFF'),
-            shadow: true
-        },
-        credits: {
-            enabled: false
-        },
-        series: $names
-    });
+    // Highcharts.chart('grafico', {
+    //     chart: {
+    //         type: 'bar'
+    //     },
+    //     title: {
+    //         text: '' //Colocar o nome da empresa via PHP
+    //     },
+    //     subtitle: {
+    //         text: '' //Colocar a fonte via PHP
+    //     },
+    //     xAxis: {
+    //         categories: ['Ativo Circulante', 'Ativo Circulante Financeiro', 'Disponibilidades', 'Ativo Circulante Operacional', 'Estoques', 'Contas a Receber', 'Partes Relacionais','Impulso a Recuperar', 'Bens destinados à venda','Outros Ativos', 'Total do Ativo Circulante'],
+    //         title: {
+    //             text: null
+    //         }
+    //     },
+    //     yAxis: {
+    //         min: 0,
+    //         title: {
+    //             text: 'Quantidade em Milhões de Reais',
+    //             align: 'high'
+    //         },
+    //         labels: {
+    //             overflow: 'justify'
+    //         }
+    //     },
+    //     tooltip: {
+    //         valueSuffix: 'R$'
+    //     },
+    //     plotOptions: {
+    //         bar: {
+    //             dataLabels: {
+    //                 enabled: true
+    //             }
+    //         }
+    //     },
+    //     legend: {
+    //         layout: 'vertical',
+    //         align: 'right',
+    //         verticalAlign: 'top',
+    //         x: -40,
+    //         y: 80,
+    //         floating: true,
+    //         borderWidth: 1,
+    //         backgroundColor: ((Highcharts.theme && Highcharts.theme.legendBackgroundColor) || '#FFFFFF'),
+    //         shadow: true
+    //     },
+    //     credits: {
+    //         enabled: false
+    //     },
+    //     series: $names
+    // });
 });
 </script>
    
