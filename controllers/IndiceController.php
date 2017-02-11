@@ -13,6 +13,11 @@ use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 use \Fintara\Tools\Calculator\Calculator;
 use \Fintara\Tools\Calculator\DefaultLexer;
+use miloschuman\highcharts\Highcharts;
+use yii\bootstrap\Html;
+use yii\bootstrap\ActiveForm;
+use phpnt\bootstrapSelect\BootstrapSelectAsset;
+
 /**
  * IndiceController implements the CRUD actions for Indice model.
  */
@@ -67,6 +72,12 @@ class IndiceController extends Controller
      */
     public function actionCreate()
     {
+
+         //$indiceP = $_POST['idSelect'];
+        // print_r('idSelect');
+        // echo '<br>';
+        // print_r($indiceP);
+        $conta = Conta::find()->select("*")->all();
         $model = new Indice();
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
@@ -74,6 +85,7 @@ class IndiceController extends Controller
         } else {
             return $this->render('create', [
                 'model' => $model,
+                'conta' => $conta,
             ]);
         }
     }
@@ -95,6 +107,32 @@ class IndiceController extends Controller
                 'model' => $model,
             ]);
         }
+    }
+    public function actionCadastrar_indice(){
+        //print_r("entrando em pegar");
+        $indiceP = $_POST['idSelect'];
+        $sinais = ['+', '-', '/', '*', '(', ')'];
+
+        $montarFormulaAnterior = '';
+                    $montarFormula='';
+        for ($i=0; $i < count($indiceP) ; $i++) { 
+            //print_r($indiceP[$i]);
+            if(in_array($indiceP[$i],$sinais)){
+                //print_r("sinal");
+                    $montarFormulaAnterior = ''.$montarFormula.'@';
+                    $montarFormula=$montarFormulaAnterior.$indiceP[$i];
+            } else{
+                 $conta = Conta::find()->select("*")->where(['nome' => $indiceP[$i]])->one();
+                $montarFormulaAnterior = ''.$montarFormula.'@';
+                    $montarFormula=$montarFormulaAnterior.$conta['chave'];
+
+                //print_r("normal");
+            }
+            
+
+        }
+
+        print_r($montarFormula);
     }
 
     public function actionCalc_indice(){
@@ -158,7 +196,11 @@ class IndiceController extends Controller
             print_r(" = ");
             if($verificaSeEhNull==1){
                 print_r($concatenar);
+                print_r(" = ");
+
+                print_r("-----");
                 echo "<br>";
+
 
             }else{
              print_r($concatenar);
@@ -169,9 +211,64 @@ class IndiceController extends Controller
          }
         }
 
+        for ($i = 0; $i <= 2; $i++) {
+            $field2[$i]['type'] = 'column';
+            $field2[$i]['name'] = '201' . $i+4;
+            for ($j=0; $j <24 ; $j++) { 
+                 $data[$j]= $j+1;
+
+            }
+                            $field2[$i]['data'] = $data;
+
+
+        }
+         //print_r(count($categorias));
+        //echo '<br>';
+        for ($i=0; $i <= 5 ; $i++) { 
+            $categorias2[$i]='Ativo Total'.$i;
+        }
+            
+
         
         //echo count($resultado);
         //return $tabela;
+        echo Highcharts::widget([
+   'scripts' => array(
+        'modules/exporting',
+        'themes/grid-light',
+    ),
+    'options' => array(
+        'title' => array(
+            'text' => 'Demonstração',
+        ),
+        'xAxis' => array(
+            'categories' => ['Ativo Total1', 'Ativo Total 2'],
+        ),
+        
+        'series' => //$field2
+        array(
+            array(
+                'type' => 'column',
+                'name' => '2014',
+                'data' => array(3, 2),
+            ),
+            array(
+                'type' => 'column',
+                'name' => '2016',
+                'data' => array(2, 3),
+            ),
+            
+        ),
+    )
+]);
+
+// echo ChartNew::widget([
+//   'type'=>'horizontalBar', # pie, doughnut, line, bar, horizontalBar, radar, polar, stackedBar, polarArea
+//   'title'=>'PHP Framework',
+//   'labels'=>$categorias,
+//   'datasets' => $field,
+// ]);
+
 
 
     }
