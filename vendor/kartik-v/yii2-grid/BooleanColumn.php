@@ -81,10 +81,10 @@ class BooleanColumn extends DataColumn
     public function init()
     {
         if (empty($this->trueLabel)) {
-            $this->trueLabel = Yii::t('kvgrid', 'Active');
+            $this->trueLabel = Yii::t('kvgrid','Aceito');
         }
         if (empty($this->falseLabel)) {
-            $this->falseLabel = Yii::t('kvgrid', 'Inactive');
+            $this->falseLabel = Yii::t('kvgrid','Negado');
         }
         $this->filter = [true => $this->trueLabel, false => $this->falseLabel];
 
