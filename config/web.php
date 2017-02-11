@@ -12,8 +12,8 @@ $config = [
             'cookieValidationKey' => 't3pEM-8tvEVvdoK1VEVtIIf8X5H7d1Bz',
         ],
 
-        'urlManager' => [
-            'enablePrettyUrl' => true,
+        'urlManager' => [ // ao ativar, dá problemas. Colocar regras (rules)
+            'enablePrettyUrl' => false,
             'showScriptName' => false,
             'rules' => [
             ],
