@@ -1,5 +1,5 @@
 <?php
-
+Yii::$app->language = 'pt-Br';
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 
@@ -18,9 +18,9 @@ use yii\widgets\ActiveForm;
 							3 => 'Empresa'
 					])->label('Tipo de Usuário')?>
 	
-    <?= $form->field($model, 'login')->textInput(['maxlength' => true])->hint('Ex: gisa123')->label('Nome de Usuário') ?>
+    <?= $form->field($model, 'login')->textInput(['maxlength' => true])->hint('Ex: Usuário123')->label('Nome de Usuário') ?>
 
-    <?= $form->field($model, 'nome')->textInput(['maxlength' => true])->hint('Ex: Gisele Almeida') ?>
+    <?= $form->field($model, 'nome')->textInput(['maxlength' => true])->hint('Ex: Nome Sobrenome') ?>
 
     <?= $form->field($model, 'senha')->passwordInput(['maxlength' => true]) ?>
 	
@@ -28,7 +28,7 @@ use yii\widgets\ActiveForm;
 	
     <?= $form->field($model, 'ativo')->hiddenInput(['value'=>'2'])->label(false) ?>
 
-    <?= $form->field($model, 'email')->textInput(['maxlength' => true])->hint('Ex: gii@icomp.ufam.edu.br')->label('E-mail') ?>
+    <?= $form->field($model, 'email')->textInput(['maxlength' => true])->hint('Ex: usuário@email.com.br')->label('E-mail') ?>
 
     <div class = "form-group">
         <?php if (Yii::$app->session->hasFlash('success')): ?>
