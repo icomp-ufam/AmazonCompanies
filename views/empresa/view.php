@@ -493,7 +493,7 @@ echo Highcharts::widget([
         }
         if($flag == false){
          echo "<div class='text-info'>Essa empresa não possui análise registrada! </div><br>";
-         echo '<a href="http://localhost/AmazonCompanies/web/index.php?r=analise%2Fcreate&idEmpresa=' . $model->idEmpresa . '"><button class="btn btn-default">Criar Análise</button> </a>';
+         echo '<a href="index.php?r=analise%2Fcreate&idEmpresa=' . $model->idEmpresa . '"><button class="btn btn-default">Criar Análise</button> </a>';
         }
     ?>
 </div>
@@ -577,7 +577,7 @@ $_SESSION["nome"] =  "Neves";
                     echo '<td border-color="#FFFFFF" bgcolor="#FFFFFF">';
                     $coment = ($post['idComentario']);
                     // if(Yii::$app->user->isGuest) {
-                    echo '<a href="http://localhost/AmazonCompanies/web/index.php?r=comentario%2Fcreate&idEmpresa=' . $model->idEmpresa . ' &Comentario_idComentario=' . $coment . '"><button class="btn btn-default">Responder</button> </a>';
+                    echo '<a href="index.php?r=comentario%2Fcreate&idEmpresa=' . $model->idEmpresa . ' &Comentario_idComentario=' . $coment . '"><button class="btn btn-default">Responder</button> </a>';
                     echo '</td>';//}
                     // echo '<td >';
                     // if(Yii::$app->user->getIdentificadorPessoa() == '1'){
