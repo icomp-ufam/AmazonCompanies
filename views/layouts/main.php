@@ -13,6 +13,7 @@ use app\models\Analise;
 use app\models\Usuario;
 use app\models\Notificacao;
 
+
 AppAsset::register($this);
 ?>
 <?php $this->beginPage() ?>
@@ -61,6 +62,7 @@ AppAsset::register($this);
         }
 
     </style>
+
 </head>
 <body>
 <?php $this->beginBody() ?>
@@ -106,7 +108,17 @@ AppAsset::register($this);
 
     					['label' => 'Listar Empresas Cadastradas', 'url' => ['empresa/index']],
     					]],
-    					
+                        ['label' => 'Cadastro',
+                        'items' =>[
+
+                                        ['label' => 'Contas', 'url' => ['conta/index']],
+
+                                        ['label' => 'Demonstrações', 'url' => ['demonstracao/index']],
+
+                                        ['label' => 'Índices', 'url' => ['indice/index']],
+                                  ]
+                        ],
+
     					['label' => 'Usuários',
     					'items' => [
     					['label' => 'Cadastrar', 'url' => ['/cadadm/create']],
