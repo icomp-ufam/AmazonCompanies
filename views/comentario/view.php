@@ -18,16 +18,17 @@ $idEmpresa = $_GET['idEmpresa'];
 
     <div id="comentario" class="row">
 
+        <h4><strong>Tem certeza que deseja apagar o comentário?</strong></h4>
+
         <div class="title-body">
-            <h3><strong>Comentário</strong></h3>
         </div>
          <div class="col-md-8" style="background-color: #F8F8FF; float: left">
-         		<?= $model->conteudo ?>
+                <?= $model->conteudo ?>
         </div>
 
         <div style="float: right">
-        	<link href="css/bootstrap.min.css" rel="stylesheet"> 
-        	<link href="css/docs.min.css" rel="stylesheet">
+            <link href="css/bootstrap.min.css" rel="stylesheet"> 
+            <link href="css/docs.min.css" rel="stylesheet">
 
         <?= Html::a('<span class="glyphicon glyphicon-remove" aria-hidden=true> </span>
                      <span class=glyphicon-class> Apagar Comentário</span>',
@@ -39,7 +40,7 @@ $idEmpresa = $_GET['idEmpresa'];
         </div>
 
     </div>
-    	
+        
 
 </div>
 
