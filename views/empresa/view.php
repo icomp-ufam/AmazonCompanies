@@ -583,7 +583,7 @@ $_SESSION["nome"] =  "Neves";
                     if(Yii::$app->user->getIdentificadorPessoa() == '1'){
                     
                     echo '<a href="index.php?r=comentario%2Fview&idEmpresa=' . $model->idEmpresa . ' &id=' . $coment . '"><button class="btn btn-danger">Excluir comentário</button> </a>';}
-                    echo '</td>';}
+                    echo '</td>';
                     echo '</tr>';
                     
                     foreach($posts as $post){
