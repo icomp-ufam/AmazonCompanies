@@ -525,7 +525,7 @@ $_SESSION["nome"] =  "Neves";
 
     <?= $form->field($comentario, 'data')->hiddenInput(['value'=>date('Y-m-d')])->label(false); ?>
 
-    <?= $form->field($comentario, 'hora')->hiddenInput(['value'=>time('H:i:s')])->label(false); ?>
+    <?= $form->field($comentario, 'hora')->hiddenInput(['value'=>time('HH:MM:SS')])->label(false); ?>
 
     <?= $form->field($comentario, 'Comentario_idComentario')->hiddenInput(['value'=>null])->label(false); ?>
 
@@ -579,10 +579,11 @@ $_SESSION["nome"] =  "Neves";
                     // if(Yii::$app->user->isGuest) {
                     echo '<a href="index.php?r=comentario%2Fcreate&idEmpresa=' . $model->idEmpresa . ' &Comentario_idComentario=' . $coment . '"><button class="btn btn-default">Responder</button> </a>';
                     echo '</td>';//}
-                    // echo '<td >';
-                    // if(Yii::$app->user->getIdentificadorPessoa() == '1'){
-                    // echo '<a href="http://localhost/AmazonCompanies/web/index.php?r=comentario%2Fcreate&idEmpresa=' . $model->idEmpresa . ' &Comentario_idComentario=' . $coment . '"><button class="btn btn-danger">Excluir comentário</button> </a>';
-                    // echo '</td>';}
+                    echo '<td >';
+                    if(Yii::$app->user->getIdentificadorPessoa() == '1'){
+                    
+                    echo '<a href="index.php?r=comentario%2Fview&idEmpresa=' . $model->idEmpresa . ' &id=' . $coment . '"><button class="btn btn-danger">Excluir comentário</button> </a>';}
+                    echo '</td>';}
                     echo '</tr>';
                     
                     foreach($posts as $post){
