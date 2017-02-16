@@ -3,9 +3,9 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: 15-Fev-2017 às 21:10
+-- Generation Time: 16-Fev-2017 às 23:09
 -- Versão do servidor: 10.1.19-MariaDB
--- PHP Version: 5.6.28
+-- PHP Version: 5.6.24
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -30,6 +30,9 @@ CREATE TABLE `analise` (
   `idanalise` int(11) NOT NULL,
   `texto` varchar(50) DEFAULT NULL,
   `status` varchar(20) NOT NULL,
+  `ano` int(11) NOT NULL,
+  `investidor` int(11) NOT NULL,
+  `credor` int(11) NOT NULL,
   `idEmpresa` int(11) NOT NULL,
   `textoAnalisador` varchar(50) DEFAULT NULL,
   `Usuario_idUsuario` int(11) NOT NULL
@@ -39,10 +42,15 @@ CREATE TABLE `analise` (
 -- Extraindo dados da tabela `analise`
 --
 
-INSERT INTO `analise` (`idanalise`, `texto`, `status`, `idEmpresa`, `textoAnalisador`, `Usuario_idUsuario`) VALUES
-(2, 'Texto enviado para análise', '0', 2, 'Resultado da análise feita pelo responsável.', 2),
-(6, 'Mais um teste do testo enviado para análise.', '1', 4, 'Resultado da análise texto de exemplo ------------', 6),
-(7, 'achei legal<br>', '1', 6, 'bacana<br>', 3);
+INSERT INTO `analise` (`idanalise`, `texto`, `status`, `ano`, `investidor`, `credor`, `idEmpresa`, `textoAnalisador`, `Usuario_idUsuario`) VALUES
+(2, 'Texto enviado para análise', '0', 2015, 0, 0, 2, 'Resultado da análise feita pelo responsável.', 2),
+(3, 'Este é um sistema operacional que', '0', 2015, 0, 0, 5, 'ooooooooooooooooooooooooooooooooooooo', 1),
+(6, 'Mais um teste do testo enviado para análise.', '1', 2016, 0, 0, 4, 'Resultado da análise texto de exemplo ------------', 6),
+(7, 'achei legal<br>', '1', 2016, 0, 0, 6, 'bacana<br>', 3),
+(8, 'Analise teste com ano', '1', 2016, 0, 0, 5, '', 1),
+(9, 'teste', '1', 2016, 0, 0, 2, '', 1),
+(10, '1', '1', 2016, 0, 0, 3, '', 1),
+(11, 'testando tendencias', '1', 2017, 2, 2, 5, '', 1);
 
 -- --------------------------------------------------------
 
@@ -67,11 +75,7 @@ CREATE TABLE `comentario` (
 
 INSERT INTO `comentario` (`idComentario`, `conteudo`, `Empresa_idEmpresa`, `nome`, `email`, `data`, `hora`, `Comentario_idComentario`) VALUES
 (1, 'olar', 3, 'Neves', 'larissa@icomp.ufam.edu.br', '2017-02-06', '838:59:59', NULL),
-(2, 'olar\r\n', 3, 'Larissa', 'llen@icomp.ufam.edu.br', '2017-02-06', '00:00:00', 1),
-(4, 'oi', 5, 'Neves', 'larissa@icomp.ufam.edu.br', '2017-02-13', '00:00:00', NULL),
-(5, 'oi', 5, 'Neves', 'larissa@icomp.ufam.edu.br', '2017-02-13', '00:00:00', NULL),
-(6, 'olá', 5, 'Larissa', 'llen@icomp.ufam.edu.br', '2017-02-13', '00:00:00', 4),
-(7, 'beleza?', 5, 'Neves', 'larissa@icomp.ufam.edu.br', '2017-02-13', '00:00:00', NULL);
+(2, 'olar\r\n', 3, 'Larissa', 'llen@icomp.ufam.edu.br', '2017-02-06', '00:00:00', 1);
 
 -- --------------------------------------------------------
 
@@ -83,38 +87,39 @@ CREATE TABLE `conta` (
   `idConta` int(20) NOT NULL,
   `nome` varchar(255) NOT NULL,
   `idDemonstracao` int(11) NOT NULL,
-  `chave` varchar(30) NOT NULL
+  `chave` varchar(30) NOT NULL,
+  `obrigatorio` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Extraindo dados da tabela `conta`
 --
 
-INSERT INTO `conta` (`idConta`, `nome`, `idDemonstracao`, `chave`) VALUES
-(4, 'Ativos Totais', 1, '#AT'),
-(5, 'Ativo Circulante', 1, '#AC'),
-(6, 'Disponibilidades + Aplicações Fin Liq Im.', 1, '#DALI'),
-(7, 'Estoques ', 1, '#EST'),
-(8, 'Ativo não Circulante', 1, '#ANC'),
-(9, 'Imobilizado', 1, '#IM'),
-(10, 'Passivo Circulante', 1, '#PC'),
-(11, 'Passivo Não Circulante', 3, '#PNC'),
-(12, 'Passivo Não Circulante Oneroso', 1, '#PNCO'),
-(13, 'Passivo Exigível', 1, '#PE'),
-(14, 'Patrimônio Líquido', 1, '#PL'),
-(15, 'Ativos Totais Médios', 1, '#ATM'),
-(16, 'Investimentos (Oneroso + PL)', 3, '#IOPL'),
-(17, 'Investimentos Médios', 3, '#IM'),
-(18, 'Patrimônio Líquido Médios', 1, '#PLM'),
-(19, 'Fornecedores Médio', 1, '#FM'),
-(20, 'Estoque Médio', 1, '#EM'),
-(21, 'Clientes Médio', 2, '#CM'),
-(22, 'CMV', 2, '#CMV'),
-(23, 'Compras', 1, '#COMP'),
-(24, 'Vendas Líquidas', 2, '#VL'),
-(25, 'Lucro Bruto', 2, '#LB'),
-(26, 'Lucro Operacional', 2, '#LO'),
-(27, 'Lucro Líquido', 2, '#LL');
+INSERT INTO `conta` (`idConta`, `nome`, `idDemonstracao`, `chave`, `obrigatorio`) VALUES
+(4, 'Ativos Totais', 1, '#AT', 1),
+(5, 'Ativo Circulante', 1, '#AC', 1),
+(6, 'Disponibilidades + Aplicações Fin Liq Im.', 1, '#DALI', 1),
+(7, 'Estoques ', 1, '#EST', 1),
+(8, 'Ativo não Circulante', 1, '#ANC', 1),
+(9, 'Imobilizado', 1, '#IM', 1),
+(10, 'Passivo Circulante', 1, '#PC', 1),
+(11, 'Passivo Não Circulante', 3, '#PNC', 0),
+(12, 'Passivo Não Circulante Oneroso', 1, '#PNCO', 0),
+(13, 'Passivo Exigível', 1, '#PE', 1),
+(14, 'Patrimônio Líquido', 1, '#PL', NULL),
+(15, 'Ativos Totais Médios', 1, '#ATM', NULL),
+(16, 'Investimentos (Oneroso + PL)', 3, '#IOPL', NULL),
+(17, 'Investimentos Médios', 3, '#IM', NULL),
+(18, 'Patrimônio Líquido Médios', 1, '#PLM', NULL),
+(19, 'Fornecedores Médio', 1, '#FM', NULL),
+(20, 'Estoque Médio', 1, '#EM', NULL),
+(21, 'Clientes Médio', 2, '#CM', NULL),
+(22, 'CMV', 2, '#CMV', NULL),
+(23, 'Compras', 1, '#COMP', NULL),
+(24, 'Vendas Líquidas', 2, '#VL', NULL),
+(25, 'Lucro Bruto', 2, '#LB', NULL),
+(26, 'Lucro Operacional', 2, '#LO', NULL),
+(27, 'Lucro Líquido', 2, '#LL', NULL);
 
 -- --------------------------------------------------------
 
@@ -157,7 +162,7 @@ CREATE TABLE `empresa` (
 INSERT INTO `empresa` (`idEmpresa`, `nome`, `fonte`, `logotipo`, `tipo`) VALUES
 (1, 'Moto Honda da Amazônia LTDA', 'www.motohonda.com.br', NULL, 'Nacional'),
 (2, 'Teewa', 'www.teewa.com.br', NULL, 'Local'),
-(3, 'Microsoft S.A', 'www.microsoft.com', NULL, 'Estrangeira'),
+(3, 'Microsoft S.A', 'www.microsoft.com', 'documentosTeste.xlsx', 'Estrangeira'),
 (4, 'Pastelaria do Arruda EPP', 'www.queso.blogspot.com.br', 'beneficio-morango.jpg', 'Local'),
 (5, 'TeamSleep', 'teamsleep.com.br', '9428da2563387bf08c4b2ba32af5db03169fa0d5.jpeg', 'Local'),
 (6, 'SauronGames', 'www.senhordosaneis.com', NULL, 'Estrangeira');
@@ -386,6 +391,7 @@ ALTER TABLE `empresahasusuario`
 --
 ALTER TABLE `empresa_conta`
   ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `uniqueBalancete` (`idEmpresa`,`ano`,`idConta`),
   ADD KEY `fkIdConta` (`idConta`),
   ADD KEY `fkIdEmpresa` (`idEmpresa`),
   ADD KEY `idUsuario` (`idUsuario`);
@@ -431,12 +437,12 @@ ALTER TABLE `usuario`
 -- AUTO_INCREMENT for table `analise`
 --
 ALTER TABLE `analise`
-  MODIFY `idanalise` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `idanalise` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 --
 -- AUTO_INCREMENT for table `comentario`
 --
 ALTER TABLE `comentario`
-  MODIFY `idComentario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `idComentario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 --
 -- AUTO_INCREMENT for table `conta`
 --
@@ -481,7 +487,7 @@ ALTER TABLE `usuario`
 --
 ALTER TABLE `analise`
   ADD CONSTRAINT `fk_analise_1` FOREIGN KEY (`idEmpresa`) REFERENCES `empresa` (`idEmpresa`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  ADD CONSTRAINT `fk_idUsuario1` FOREIGN KEY (`Usuario_idUsuario`) REFERENCES `usuario` (`idUsuario`);
+  ADD CONSTRAINT `fk_idUsuario1` FOREIGN KEY (`Usuario_idUsuario`) REFERENCES `notificacao` (`Usuario_idUsuario`);
 
 --
 -- Limitadores para a tabela `comentario`

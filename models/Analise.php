@@ -32,7 +32,7 @@ class Analise extends \yii\db\ActiveRecord
         return [
             [['status','texto', 'textoAnalisador'], 'string'],
             [['idEmpresa'], 'required'],
-            [[ 'idEmpresa'], 'integer'],
+            [[ 'idEmpresa', 'ano', 'investidor', 'credor'], 'integer'],
             [['idEmpresa'], 'exist', 'skipOnError' => true, 'targetClass' => Empresa::className(), 'targetAttribute' => ['idEmpresa' => 'idEmpresa']],
             [['Usuario_idUsuario'], 'exist', 'skipOnError' => true, 'targetClass' => Usuario::className(), 'targetAttribute' => ['Usuario_idUsuario' => 'idUsuario']],
         ];
@@ -48,6 +48,9 @@ class Analise extends \yii\db\ActiveRecord
             'texto' => 'Texto',
             'textoAnalisador' => 'Análise do responsável',
             'status' => 'Status',
+            'ano' => 'Ano',
+            'investidor' => 'Investidor',
+            'credor' => 'Credor',
             'idEmpresa' => 'Empresa',
             'Usuario_idUsuario' => 'Usuário'
         ];
@@ -68,8 +71,8 @@ class Analise extends \yii\db\ActiveRecord
     
     // retorna a quantidade de status pendentes
     public function getNotification(){
-    	$query = Analise::find()->where(['status' => '2'])->count();
-    	return $query;
+        $query = Analise::find()->where(['status' => '2'])->count();
+        return $query;
     }
 
     public function getNotificacaos()

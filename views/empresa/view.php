@@ -19,6 +19,8 @@ use yii\helpers\BaseUrl;
     use app\models\Demonstracao;
 
     use app\models\Indice;
+    use app\models\Analise;
+
 
 use kartik\widgets\FileInput;
 use phpnt\bootstrapSelect\BootstrapSelectAsset;
@@ -60,17 +62,9 @@ use kartik\widgets\Select2;
     <ul class="nav nav-tabs">
     <?php
                         $demonstracoes = Demonstracao::find()->select('*')->all();
-                        //$idIndices = TipoIndice::find()->select('idTipo_indice')->all();
-                        $tweets = [['nome'=>'Liquidez', 'id'=>100]];
-
-                        
-
-
-                        
 
                         foreach($demonstracoes as $demonstracao){
-
-                         
+     
                     ?>
                     <li><a data-toggle="tab" href="#Demonstracao<?=$demonstracao->idDemonstracao?>"><?=$demonstracao->nomeDemonstracao?></a></li>
 
@@ -87,7 +81,6 @@ use kartik\widgets\Select2;
     <div class="tab-content">
         <?php
                         $demonstracoes = Demonstracao::find()->select('*')->all();
-                        //$idIndices = TipoIndice::find()->select('idTipo_indice')->all();
                         foreach($demonstracoes as $demonstracao){             
                     ?>
         <div id="Demonstracao<?=$demonstracao->idDemonstracao?>" class="tab-pane fade">
@@ -95,7 +88,7 @@ use kartik\widgets\Select2;
                 <table class="table table-hover">
                     <thead>
                         <tr>
-                        	<th><input type="checkbox" id="check_all" /></th>
+                            <th><input type="checkbox" id="check_all" /></th>
                             <th>Nome Conta: <?=$demonstracao->idDemonstracao?></th>
                             <?php
                                             $anosEmpresas = EmpresaConta::find()->select('ano')->distinct()->orderBy(["ano"=> SORT_ASC])->all();
@@ -115,7 +108,7 @@ use kartik\widgets\Select2;
                             foreach($contas as $conta){
                                             ?>
                         <tr>
-                        	<td><input type="checkbox"/></td>
+                            <td><input type="checkbox"/></td>
                             <td><?=$conta->nome?></td>
                         
                                <?php
@@ -215,7 +208,6 @@ use kartik\widgets\Select2;
                     <ul class="nav nav-tabs">
                     <?php
                         $tipoIndices = TipoIndice::find()->select('*')->all();
-                        //$idIndices = TipoIndice::find()->select('idTipo_indice')->all();
                         $tweets = [['nome'=>'Liquidez', 'id'=>100]];
 
                         foreach($tipoIndices as $tipoIndice){
@@ -236,7 +228,6 @@ use kartik\widgets\Select2;
             <div class="tab-content">
                     <?php
                         $tipoIndices = TipoIndice::find()->select('*')->all();
-                        //$idIndices = TipoIndice::find()->select('idTipo_indice')->all();
                         $tweets = [['nome'=>'Liquidez', 'id'=>100]];
 
                         foreach($tipoIndices as $tipoIndice){
@@ -341,12 +332,6 @@ use kartik\widgets\Select2;
 
                                                                                                             ?>
 
-
-                                            <!-- <td>
-                                                <button type="button" onclick="comparar(<?=$indice->idIndice?>)" class="btn btn-default" >Calcular</button>
-                                                <button  data-toggle="modal" data-target="#cadCalIndice" id="teste" style=" visibility: hidden"></button>
-
-                                            </td> -->
                                         </tr>
                                         <?php
                                                 }   
@@ -359,8 +344,6 @@ use kartik\widgets\Select2;
                         <?php
                         }   
                     ?>
-
-
                        
                     </div>
 
@@ -394,22 +377,13 @@ use kartik\widgets\Select2;
 
     </script>
 
-
-
-
-
-
         </div>
     </div>
-
-
-
 
 <div id="analise" class="row">
 
     <legend>Gráfico</legend> 
     <div id="grafico" style="width: auto; height: auto; margin: 0 auto"></div>
-
 
 <?php 
 echo Highcharts::widget([
@@ -426,141 +400,97 @@ echo Highcharts::widget([
         ),
         
         'series' => $field
-        // array(
-        //     array(
-        //         'type' => 'column',
-        //         'name' => '2014',
-        //         'data' => array(3, 2),
-        //     ),
-        //     array(
-        //         'type' => 'column',
-        //         'name' => '2016',
-        //         'data' => array(2, 3),
-        //     ),
-            
-        // ),
+
     )
 ]);
 
- ?>
-
-
-   
-<script language="JavaScript">$(function () {
-    //     $names = [
-    //     {
-    //             name: '2014',
-    //             data: [91381, 91381, 564384, 265916, 96377, 186664, 12253,39,3135, 655765]
-    //         },
-
-    //     {
-    //             name: '2016',
-    //             data: [91381, 91381, 564384, 265916, 96377, 186664, 12253,39,3135, 655765]
-    //         },
-
-    //     ];
-    //     $names[0]['name'] = '2013';
-    //     //$names[0]['data'] = 200;
-
-    //     // console.log($names[0]['name']);
-    //     // console.log($names[0]['data']);
-
-
-    // Highcharts.chart('grafico', {
-    //     chart: {
-    //         type: 'bar'
-    //     },
-    //     title: {
-    //         text: '' //Colocar o nome da empresa via PHP
-    //     },
-    //     subtitle: {
-    //         text: '' //Colocar a fonte via PHP
-    //     },
-    //     xAxis: {
-    //         categories: ['Ativo Circulante', 'Ativo Circulante Financeiro', 'Disponibilidades', 'Ativo Circulante Operacional', 'Estoques', 'Contas a Receber', 'Partes Relacionais','Impulso a Recuperar', 'Bens destinados à venda','Outros Ativos', 'Total do Ativo Circulante'],
-    //         title: {
-    //             text: null
-    //         }
-    //     },
-    //     yAxis: {
-    //         min: 0,
-    //         title: {
-    //             text: 'Quantidade em Milhões de Reais',
-    //             align: 'high'
-    //         },
-    //         labels: {
-    //             overflow: 'justify'
-    //         }
-    //     },
-    //     tooltip: {
-    //         valueSuffix: 'R$'
-    //     },
-    //     plotOptions: {
-    //         bar: {
-    //             dataLabels: {
-    //                 enabled: true
-    //             }
-    //         }
-    //     },
-    //     legend: {
-    //         layout: 'vertical',
-    //         align: 'right',
-    //         verticalAlign: 'top',
-    //         x: -40,
-    //         y: 80,
-    //         floating: true,
-    //         borderWidth: 1,
-    //         backgroundColor: ((Highcharts.theme && Highcharts.theme.legendBackgroundColor) || '#FFFFFF'),
-    //         shadow: true
-    //     },
-    //     credits: {
-    //         enabled: false
-    //     },
-    //     series: $names
-    // });
-});
-</script>
-   
-
-<div id="analise" class="row">
-    <legend>Análise</legend>
+ ?> 
+ <div class="body-content">
+    <ul class="nav nav-tabs">
     <?php
-        
-        $query = (new Query())->from('analise')->where(['idEmpresa'=> $model->idEmpresa]);
-        $analiseProvider = new ActiveDataProvider([
-            'query' => $query,
-            'pagination' => [
-                'pageSize'  => 10,
-                'pageParam'=> '',
-            ],
-            'sort' => [
-                'sortParam' => '',
-            ],
-        ]);
+                         $analises = Analise::find()->select('ano')->where(['idEmpresa' => $model->idEmpresa])->all();
 
-        $posts = $analiseProvider->getModels();
-        $analiseProvider->pagination->pageParam = 'analise-page';
-        $analiseProvider->sort->sortParam= 'analise-sort';
-        $flag = false;
-        foreach($posts as $post){
-            if (!empty($post) and $post['status'] == 1){
-                $flag = true;
-                echo '<div class="col-md-10" style="background-color: lavender">';
-                print_r($post['texto']);
-                echo '</div>';
-            }
+                        foreach($analises as $analise){
+                         
+                    ?>
+                    <li><a data-toggle="tab" href="#Analise<?=$analise->ano?>"><?=$analise->ano?></a></li>
+                <?php
+                        }   
+                    ?>
+    </ul>
+</div> </div>
+    <div class="tab-content">
+        <?php
+                        $analisesanos = Analise::find()->select('ano')->where(['idEmpresa' => $model->idEmpresa])->all();
+                        foreach($analisesanos as $analiseano){            
+                    ?>
+        <div id="Analise<?=$analiseano->ano?>" class="tab-pane fade">
+            <div class="container">           
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th>Analise: <?=$analiseano->ano?>  </th>
+                            
+                        </tr>
+                    </thead>
+                    <tbody>
+                    <?php
+                    $analises = Analise::find()->select('texto')->where(['ano' => $analiseano->ano])->andWhere(['idEmpresa' => $model->idEmpresa])->all();                                              
+                            foreach($analises as $analise){
+                                            ?>
+                        <tr>
+                            <td><?=$analise->texto?></td>
+                        
+                               <?php
+                                             
+                                    } 
+                                             ?>   
+                        </tr>
+                        
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <?php
+                        }   
+                    ?>
+                
+
+            <script type="application/javascript">
+        //Criar controlador acesado vai requisição ajax."
+        var keys;
+        function comparar(idIndice) {
+            console.log("entrou");
+               
+                    $.ajax({
+                        url: '<?php echo Url::to(['indice/calc_indice']);?>',
+                        type:'POST',
+                        data: {
+                            'idEmpresa': <?=$model->idEmpresa?>,
+                            'idIndice' : idIndice,
+                        },
+                        success: function (data) {
+                            var $teste = document.querySelector('.wrapper'), novohtml =  data;
+                            $teste.insertAdjacentHTML('afterbegin', novohtml);
+                        }
+                    });
+                    $("#teste").trigger('click');
+             
         }
-        if($flag == false){
-         echo "<div class='text-info'>Essa empresa não possui análise registrada! </div><br>";
-         echo '<a href="index.php?r=analise%2Fcreate&idEmpresa=' . $model->idEmpresa . '"><button class="btn btn-default">Criar Análise</button> </a>';
+
+        function getIdSelect(){
+            console.log('entrou');
+            var id_select = $('#id_select').val();
+            console.log(id_select);
         }
+
+    </script>
+
+         <?php echo '<a href="index.php?r=analise%2Fcreate&idEmpresa=' . $model->idEmpresa . '"><button class="btn btn-default">Criar Análise</button> </a>';
     ?>
-</div>
 
 <div id = "comentario" class="row">
 </br>
-
-<!-- ?php if(Yii::$app->user->isGuest) { ?> -->
 
 <legend>Deixe seu comentário</legend>
 
@@ -595,7 +525,6 @@ $_SESSION["nome"] =  "Neves";
     <?php ActiveForm::end(); ?>
 
 </div>
-<!-- ?php } ?>  -->
 
 <?php
           
@@ -667,7 +596,6 @@ $_SESSION["nome"] =  "Neves";
 
     ?>
 
- </div>
  <div class="modal" id="cadCalIndice" role="dialog">
         <div class="modal-content">
             <div class="modal-content">
