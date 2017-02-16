@@ -43,7 +43,7 @@ class Indice extends \yii\db\ActiveRecord
     {
         return [
             'idIndice' => 'Id Indice',
-            'formula' => 'Formula',
+            'formula' => 'Fórmula',
             'idTipo_Indice' => 'Id Tipo  Indice',
         ];
     }
@@ -55,4 +55,6 @@ class Indice extends \yii\db\ActiveRecord
     {
         return $this->hasOne(TipoIndice::className(), ['idTipo_indice' => 'idTipo_Indice']);
     }
+
+
 }
