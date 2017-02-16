@@ -80,6 +80,8 @@ use kartik\widgets\Select2;
 
         
         <li><a data-toggle="tab" href="#demoIndice">ÍNDICE</a></li>
+        <li><a data-toggle="tab" href="#demoContasObrigatorias">OBRIGATÓRIAS</a></li>
+
     </ul>
 
     <div class="tab-content">
@@ -150,7 +152,64 @@ use kartik\widgets\Select2;
         <?php
                         }   
                     ?>
-        
+         <div id="demoContasObrigatorias" class="tab-pane fade">
+            <div class="container">           
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th><input type="checkbox" id="check_all" /></th>
+                            <th>Nome Conta:</th>
+                            <?php
+                                            $anosEmpresas = EmpresaConta::find()->select('ano')->distinct()->orderBy(["ano"=> SORT_ASC])->all();
+                                                 $tweets = [['nome'=>'Liquidez', 'id'=>100]];
+ 
+                                                foreach($anosEmpresas as $anosEmpresa){  
+                                             ?>
+                            <th><?=$anosEmpresa->ano?></th>
+                            <?php
+                                                }   
+                                             ?>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    <?php
+                    $contas = Conta::find()->select('*')->where(['obrigatorio' =>1])->all();                                              
+                            foreach($contas as $conta){
+                                            ?>
+                        <tr>
+                            <td><input type="checkbox"/></td>
+                            <td><?=$conta->nome?></td>
+                        
+                               <?php
+                                            $anosEmpresas = EmpresaConta::find()->select('ano')->distinct()->orderBy(["ano"=> SORT_ASC])->all();
+ 
+                                                foreach($anosEmpresas as $anosEmpresa){
+                                                    $valoress = EmpresaConta::find()->select('valor')->where(['idConta' => $conta->idConta])->andWhere(['ano' =>$anosEmpresa->ano])->all();
+                                                    if(count($valoress)>0){
+                                                        foreach($valoress as $valores){
+
+                                             ?>             
+                                                    <td>R$ <?=$valores->valor?></td> 
+                                                    <?php
+                                                        }
+                                                    } else{
+                                                    ?>             
+                                                    <td>-----</td> 
+                                                    <?php
+
+
+
+
+                                                    }  
+                                                } 
+                                    } 
+                                             ?>   
+                        </tr>
+                        
+                    </tbody>
+                </table>
+            </div>
+        </div>
         <div id="demoIndice" class="tab-pane fade">
                 <div class="container">            
                     <ul class="nav nav-tabs">

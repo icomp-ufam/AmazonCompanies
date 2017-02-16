@@ -10,6 +10,8 @@ use Yii;
  * @property integer $idConta
  * @property string $nome
  * @property integer $idDemonstracao
+ * @property string $chave
+ * @property integer $obrigatorio
  *
  * @property Demonstracao $idDemonstracao0
  * @property EmpresaConta[] $empresaContas
@@ -30,9 +32,10 @@ class Conta extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['nome', 'idDemonstracao'], 'required'],
-            [['idDemonstracao'], 'integer'],
+            [['nome', 'idDemonstracao', 'chave'], 'required'],
+            [['idDemonstracao', 'obrigatorio'], 'integer'],
             [['nome'], 'string', 'max' => 255],
+            [['chave'], 'string', 'max' => 30],
             [['idDemonstracao'], 'exist', 'skipOnError' => true, 'targetClass' => Demonstracao::className(), 'targetAttribute' => ['idDemonstracao' => 'idDemonstracao']],
         ];
     }
@@ -46,6 +49,8 @@ class Conta extends \yii\db\ActiveRecord
             'idConta' => 'Id Conta',
             'nome' => 'Nome',
             'idDemonstracao' => 'Id Demonstracao',
+            'chave' => 'Chave',
+            'obrigatorio' => 'Obrigatorio',
         ];
     }
 
