@@ -101,11 +101,7 @@ AppAsset::register($this);
     			'options' => ['class' => 'navbar-nav navbar-right'],
     			'items' => [
     					['label' => 'Página Inicial', 'url' => ['/site/adm']],
-    					['label' => 'Empresas',
-    					'items' =>[
-
-    					['label' => 'Listar Empresas Cadastradas', 'url' => ['empresa/index']],
-    					]],
+    					['label' => 'Empresas', 'url' => ['empresa/index']],
                         ['label' => 'Cadastro',
                         'items' =>[
 
@@ -155,11 +151,7 @@ AppAsset::register($this);
     			'options' => ['class' => 'navbar-nav navbar-right'],
     			'items' => [
     					['label' => 'Página Inicial', 'url' => ['/site/aluno']],
-    					['label' => 'Empresas',
-    					'items' =>[
-    							['label' => 'Cadastrar Dados', 'url' => ['/site/caddadosemp']],
-    							['label' => 'Listar Empresas Cadastradas', 'url' => ['/empresa/index']],
-    					]],
+    					['label' => 'Empresas', 'url' => ['/empresa/index']],
     					['label' => 'Notificações '. Html::tag('span', $not_aluno, ['class' => 'badge']), 'url' => ['/notificacao/']],
     					['label' => 'Seu Perfil', 'url' => ['/usuario/update', 'id' => Yii::$app->user->getId()]],
     					['label' => 'Contato', 'url' => ['/site/contact']],
