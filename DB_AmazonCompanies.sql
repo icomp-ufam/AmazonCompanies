@@ -3,9 +3,9 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: 15-Fev-2017 às 00:56
+-- Generation Time: 15-Fev-2017 às 21:10
 -- Versão do servidor: 10.1.19-MariaDB
--- PHP Version: 5.6.24
+-- PHP Version: 5.6.28
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -42,8 +42,7 @@ CREATE TABLE `analise` (
 INSERT INTO `analise` (`idanalise`, `texto`, `status`, `idEmpresa`, `textoAnalisador`, `Usuario_idUsuario`) VALUES
 (2, 'Texto enviado para análise', '0', 2, 'Resultado da análise feita pelo responsável.', 2),
 (6, 'Mais um teste do testo enviado para análise.', '1', 4, 'Resultado da análise texto de exemplo ------------', 6),
-(7, 'achei legal<br>', '1', 6, 'bacana<br>', 3),
-(14, 'oio', '2', 5, '', 1);
+(7, 'achei legal<br>', '1', 6, 'bacana<br>', 3);
 
 -- --------------------------------------------------------
 
@@ -61,6 +60,18 @@ CREATE TABLE `comentario` (
   `hora` time NOT NULL,
   `Comentario_idComentario` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Extraindo dados da tabela `comentario`
+--
+
+INSERT INTO `comentario` (`idComentario`, `conteudo`, `Empresa_idEmpresa`, `nome`, `email`, `data`, `hora`, `Comentario_idComentario`) VALUES
+(1, 'olar', 3, 'Neves', 'larissa@icomp.ufam.edu.br', '2017-02-06', '838:59:59', NULL),
+(2, 'olar\r\n', 3, 'Larissa', 'llen@icomp.ufam.edu.br', '2017-02-06', '00:00:00', 1),
+(4, 'oi', 5, 'Neves', 'larissa@icomp.ufam.edu.br', '2017-02-13', '00:00:00', NULL),
+(5, 'oi', 5, 'Neves', 'larissa@icomp.ufam.edu.br', '2017-02-13', '00:00:00', NULL),
+(6, 'olá', 5, 'Larissa', 'llen@icomp.ufam.edu.br', '2017-02-13', '00:00:00', 4),
+(7, 'beleza?', 5, 'Neves', 'larissa@icomp.ufam.edu.br', '2017-02-13', '00:00:00', NULL);
 
 -- --------------------------------------------------------
 
@@ -331,7 +342,7 @@ INSERT INTO `usuario` (`idUsuario`, `login`, `nome`, `senha`, `ativo`, `identifi
 --
 ALTER TABLE `analise`
   ADD PRIMARY KEY (`idanalise`),
-  ADD UNIQUE KEY `fk_idUsuario` (`Usuario_idUsuario`) USING BTREE,
+  ADD KEY `fk_idUsuario` (`Usuario_idUsuario`) USING BTREE,
   ADD KEY `fk_analise_1_idx` (`idEmpresa`);
 
 --
@@ -420,12 +431,12 @@ ALTER TABLE `usuario`
 -- AUTO_INCREMENT for table `analise`
 --
 ALTER TABLE `analise`
-  MODIFY `idanalise` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `idanalise` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 --
 -- AUTO_INCREMENT for table `comentario`
 --
 ALTER TABLE `comentario`
-  MODIFY `idComentario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=54;
+  MODIFY `idComentario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 --
 -- AUTO_INCREMENT for table `conta`
 --
@@ -476,7 +487,7 @@ ALTER TABLE `analise`
 -- Limitadores para a tabela `comentario`
 --
 ALTER TABLE `comentario`
-  ADD CONSTRAINT `comentario_ibfk_1` FOREIGN KEY (`Comentario_idComentario`) REFERENCES `comentario` (`idComentario`) ON DELETE CASCADE ON UPDATE NO ACTION,
+  ADD CONSTRAINT `comentario_ibfk_1` FOREIGN KEY (`Comentario_idComentario`) REFERENCES `comentario` (`idComentario`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   ADD CONSTRAINT `comentario_ibfk_2` FOREIGN KEY (`Empresa_idEmpresa`) REFERENCES `empresa` (`idEmpresa`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
@@ -521,4 +532,3 @@ ALTER TABLE `notificacao`
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
-

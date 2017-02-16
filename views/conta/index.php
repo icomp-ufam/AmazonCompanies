@@ -16,18 +16,24 @@ $this->params['breadcrumbs'][] = $this->title;
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
 
     <p>
+        <?php
+        if(Yii::$app->user->getIdentificadorPessoa() == '1'){
+            ?>
         <?= Html::a(Yii::t('app', 'Criar Conta'), ['create'], ['class' => 'btn btn-success']) ?>
+            <?php
+        }
+        ?>
+
+
         <?= Html::a(Yii::t('app', 'Baixar Template'), ['baixar_documento'], ['class' => 'btn btn-default']) ?>
     </p>
     <?= GridView::widget([
         'dataProvider' => $dataProvider,
         'filterModel' => $searchModel,
         'columns' => [
-            ['class' => 'yii\grid\SerialColumn'],
 
-            'idConta',
             'nome',
-            'idDemonstracao',
+            'idDemonstracao0.nomeDemonstracao',
 
             ['class' => 'yii\grid\ActionColumn'],
         ],

@@ -40,7 +40,7 @@ class TipoIndice extends \yii\db\ActiveRecord
     public function attributeLabels()
     {
         return [
-            'idTipo_indice' => 'Id Tipo Indice',
+            'idTipo_indice' => 'Id tipo índice',
             'nome' => 'Nome',
         ];
     }

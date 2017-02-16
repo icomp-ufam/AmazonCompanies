@@ -57,7 +57,7 @@ class Conta extends \yii\db\ActiveRecord
     /**
      * @return \yii\db\ActiveQuery
      */
-    public function getIdDemonstracao0()
+    public function getidDemonstracao0()
     {
         return $this->hasOne(Demonstracao::className(), ['idDemonstracao' => 'idDemonstracao']);
     }

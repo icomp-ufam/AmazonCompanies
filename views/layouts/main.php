@@ -104,8 +104,6 @@ AppAsset::register($this);
     					['label' => 'Empresas',
     					'items' =>[
 
-    					['label' => 'Cadastrar Dados', 'url' => ['/site/caddadosemp']],
-
     					['label' => 'Listar Empresas Cadastradas', 'url' => ['empresa/index']],
     					]],
                         ['label' => 'Cadastro',
@@ -116,6 +114,8 @@ AppAsset::register($this);
                                         ['label' => 'Demonstrações', 'url' => ['demonstracao/index']],
 
                                         ['label' => 'Índices', 'url' => ['indice/index']],
+
+                            ['label' => 'Tipo de índices', 'url' => ['tipo-indice/index']],
                                   ]
                         ],
 
