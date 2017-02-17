@@ -429,7 +429,7 @@ echo Highcharts::widget([
                 <table class="table table-hover">
                     <thead>
                         <tr>
-                            <th>Analise: <?=$analiseano->ano?>  </th>
+                            <th>Analise:  </th>
                             
                         </tr>
                     </thead>
@@ -440,6 +440,32 @@ echo Highcharts::widget([
                                             ?>
                         <tr>
                             <td><?=$analise->texto?></td>
+
+                            <?php if ($analiseano->investidor == 2){
+                                $investidor = 'Comprar';
+
+                            }
+                            elseif ($analiseano->investidor == 3) {
+                                $investidor = 'Vender';
+                            }
+                            elseif ($analiseano->investidor == 4) {
+                                $investidor = 'Neutro';
+                            }
+                            ?>
+
+                            <?php echo '<h5 class="bg-info col-md-3 col-md-offset-2 btn-lg text-center"> Tendencias para o investidor: </br> <strong>'. $investidor .'</strong>  </h5>' ?>
+
+
+                            <?php if ($analiseano->credor == 2){
+                                $credor = 'Emprestar';
+
+                            }
+                            elseif ($analiseano->credor == 3) {
+                                $credor = 'Não emprestar';
+                            }
+                            ?>
+
+                            <?php echo '<h5 class="bg-success col-md-3 col-md-offset-2 btn-lg text-center"> Tendencias para o credor: </br> <strong> '. $credor .' </strong> </h5>' ?>
                         
                                <?php
                                              
