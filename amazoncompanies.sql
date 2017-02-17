@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: 16-Fev-2017 às 23:09
+-- Generation Time: 17-Fev-2017 às 04:17
 -- Versão do servidor: 10.1.19-MariaDB
 -- PHP Version: 5.6.24
 
@@ -30,9 +30,9 @@ CREATE TABLE `analise` (
   `idanalise` int(11) NOT NULL,
   `texto` varchar(50) DEFAULT NULL,
   `status` varchar(20) NOT NULL,
-  `ano` int(11) NOT NULL,
-  `investidor` int(11) NOT NULL,
-  `credor` int(11) NOT NULL,
+  `ano` int(4) NOT NULL,
+  `investidor` int(1) NOT NULL,
+  `credor` int(1) NOT NULL,
   `idEmpresa` int(11) NOT NULL,
   `textoAnalisador` varchar(50) DEFAULT NULL,
   `Usuario_idUsuario` int(11) NOT NULL
@@ -44,13 +44,14 @@ CREATE TABLE `analise` (
 
 INSERT INTO `analise` (`idanalise`, `texto`, `status`, `ano`, `investidor`, `credor`, `idEmpresa`, `textoAnalisador`, `Usuario_idUsuario`) VALUES
 (2, 'Texto enviado para análise', '0', 2015, 0, 0, 2, 'Resultado da análise feita pelo responsável.', 2),
-(3, 'Este é um sistema operacional que', '0', 2015, 0, 0, 5, 'ooooooooooooooooooooooooooooooooooooo', 1),
+(3, 'Este é um sistema operacional que', '0', 2015, 2, 2, 5, 'ooooooooooooooooooooooooooooooooooooo', 1),
 (6, 'Mais um teste do testo enviado para análise.', '1', 2016, 0, 0, 4, 'Resultado da análise texto de exemplo ------------', 6),
 (7, 'achei legal<br>', '1', 2016, 0, 0, 6, 'bacana<br>', 3),
 (8, 'Analise teste com ano', '1', 2016, 0, 0, 5, '', 1),
 (9, 'teste', '1', 2016, 0, 0, 2, '', 1),
 (10, '1', '1', 2016, 0, 0, 3, '', 1),
-(11, 'testando tendencias', '1', 2017, 2, 2, 5, '', 1);
+(11, 'testando tendencias', '1', 2017, 2, 2, 5, '', 1),
+(12, 'oi', '2', 2014, 2, 2, 5, '', 1);
 
 -- --------------------------------------------------------
 
@@ -437,7 +438,7 @@ ALTER TABLE `usuario`
 -- AUTO_INCREMENT for table `analise`
 --
 ALTER TABLE `analise`
-  MODIFY `idanalise` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `idanalise` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 --
 -- AUTO_INCREMENT for table `comentario`
 --
