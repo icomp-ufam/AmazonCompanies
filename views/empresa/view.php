@@ -421,7 +421,7 @@ echo Highcharts::widget([
 </div> </div>
     <div class="tab-content">
         <?php
-                        $analisesanos = Analise::find()->select('ano')->where(['idEmpresa' => $model->idEmpresa])->all();
+                        $analisesanos = Analise::find()->select('*')->where(['idEmpresa' => $model->idEmpresa])->all();
                         foreach($analisesanos as $analiseano){            
                     ?>
         <div id="Analise<?=$analiseano->ano?>" class="tab-pane fade">
