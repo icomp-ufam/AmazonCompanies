@@ -9,6 +9,8 @@ use kartik\grid\GridView;
 
 $this->title = 'Lista de Usuário Cadastrados';
 ?>
+
+<?php $this->params['breadcrumbs'][] = $this->title;?>
 <div class="cadadm-index">
 
     <h2><strong><?= Html::encode($this->title) ?></strong></h2>

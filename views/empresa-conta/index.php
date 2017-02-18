@@ -7,7 +7,7 @@ use kartik\grid\GridView;
 $this->title = 'Validar alteração de Dados';
 
 ?>
-
+<?php $this->params['breadcrumbs'][] = $this->title;?>
 <div class="empresa-conta-index">
     
     <h2><strong><?= Html::encode($this->title) ?></strong></h2>

@@ -6,6 +6,8 @@ $this->title = 'Cadastro de Usuários';
 //$this->params['breadcrumbs'][] = ['label' => 'Cadadms', 'url' => ['index']];
 //$this->params['breadcrumbs'][] = $this->title;
 ?>
+
+<?php $this->params['breadcrumbs'][] = $this->title;?>
 <div class="cadadm-create">
 
     <h2><strong><?= Html::encode($this->title) ?></strong></h2>

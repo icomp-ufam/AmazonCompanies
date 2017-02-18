@@ -39,8 +39,9 @@ $this->params['breadcrumbs'][] = $this->title;
             'dataProvider' => $dataProvider,
             'filterModel' => $searchModel,
             'columns' => [
-                ['class' => 'yii\grid\CheckboxColumn'],
-                'idEmpresa',
+                ['class' => 'kartik\grid\CheckboxColumn'],
+            	'nome',
+                
 
                 [
                     'attribute' => 'Logotipo',
@@ -50,7 +51,7 @@ $this->params['breadcrumbs'][] = $this->title;
                             ['width' => '30px']);
                     },
                 ],
-                'nome',
+                
                 //'analise:ntext',
                 'fonte',
                 [
@@ -65,12 +66,7 @@ $this->params['breadcrumbs'][] = $this->title;
                 ],
                 // 'logotipo',
 
-                ['class' => 'yii\grid\ActionColumn',
-                    'template'=> '{view}'],
-                ['class' => 'yii\grid\ActionColumn',
-                    'template'=> '{update}'],
-                ['class' => 'yii\grid\ActionColumn',
-                    'template'=> '{delete}']
+                ['class' => 'kartik\grid\ActionColumn']
             ],
         ]); ?>
         <div class="row">
