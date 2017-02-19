@@ -30,7 +30,7 @@ $this->title = Yii::t('app', 'Notificações');
             'conteudo',
             'tipo',
 
-            ['class' => 'yii\grid\ActionColumn'],
+            ['class' => 'kartik\grid\ActionColumn'],
         ],
     ]); ?>
 
@@ -79,7 +79,7 @@ $this->title = Yii::t('app', 'Notificações');
                     'attribute' => 'analise.status'
             ],
 
-            ['class' => 'yii\grid\ActionColumn',
+            ['class' => 'kartik\grid\ActionColumn',
                 'template'=>'{delete}'
             ],
 

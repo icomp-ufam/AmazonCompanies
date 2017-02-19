@@ -15,7 +15,6 @@ $this->title = 'Validar alteração de Dados';
     
 
     <?= GridView::widget([
-      'summary' => '',
       'dataProvider' => $dataProvider,
       'filterModel' => $searchModel,
  

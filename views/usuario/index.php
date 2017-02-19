@@ -18,7 +18,6 @@ $this->title = 'Validar Usuários';
     <br>
     
     <?= GridView::widget([
-    	'summary' => '',
         'dataProvider' => $dataProvider,
         'filterModel' => $searchModel,
     	

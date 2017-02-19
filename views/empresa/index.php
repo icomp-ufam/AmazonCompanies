@@ -35,7 +35,6 @@ $this->params['breadcrumbs'][] = $this->title;
         ?>
         <?= GridView::widget([
             'id'=>'grid',
-            'summary'=>'',
             'dataProvider' => $dataProvider,
             'filterModel' => $searchModel,
             'columns' => [
@@ -87,13 +86,12 @@ $this->params['breadcrumbs'][] = $this->title;
         ?>
         <?= GridView::widget([
             'id'=>'grid',
-            'summary'=>'',
             'dataProvider' => $dataProvider,
             'filterModel' => $searchModel,
             'columns' => [
-                ['class' => 'yii\grid\CheckboxColumn'],
+                ['class' => 'kartik\grid\CheckboxColumn'],
 
-                'idEmpresa',
+                'nome',
                 [
                     'attribute' => 'Logotipo',
                     'format' => 'html',
@@ -102,7 +100,6 @@ $this->params['breadcrumbs'][] = $this->title;
                             ['width' => '30px']);
                     },
                 ],
-                'nome',
                 //'analise:ntext',
                 'fonte',
                 [
@@ -117,7 +114,7 @@ $this->params['breadcrumbs'][] = $this->title;
                 ],
                 // 'logotipo',
 
-                ['class' => 'yii\grid\ActionColumn',
+                ['class' => 'kartik\grid\ActionColumn',
                     'template'=> '{view}'],
             ],
         ]); ?>
@@ -133,11 +130,10 @@ $this->params['breadcrumbs'][] = $this->title;
         ?>
         <?= GridView::widget([
             'id'=>'grid',
-            'summary'=>'',
             'dataProvider' => $dataProvider,
             'filterModel' => $searchModel,
             'columns' => [
-                ['class' => 'yii\grid\CheckboxColumn'],
+                ['class' => 'kartik\grid\CheckboxColumn'],
                 [
                     'attribute' => 'Logotipo',
                     'format' => 'html',
@@ -161,7 +157,7 @@ $this->params['breadcrumbs'][] = $this->title;
                 ],
                 // 'logotipo',
 
-                ['class' => 'yii\grid\ActionColumn',
+                ['class' => 'kartik\grid\ActionColumn',
                     'template'=> '{view}']
 
             ],
@@ -176,11 +172,10 @@ $this->params['breadcrumbs'][] = $this->title;
         ?>
         <?= GridView::widget([
             'id'=>'grid',
-            'summary'=>'',
             'dataProvider' => $dataProvider,
             'filterModel' => $searchModel,
             'columns' => [
-                ['class' => 'yii\grid\CheckboxColumn'],
+                ['class' => 'kartik\grid\CheckboxColumn'],
                 [
                     'attribute' => 'Logotipo',
                     'format' => 'html',
@@ -203,7 +198,7 @@ $this->params['breadcrumbs'][] = $this->title;
                     ]
                 ],
                 // 'logotipo',
-                ['class' => 'yii\grid\ActionColumn',
+                ['class' => 'kartik\grid\ActionColumn',
                     'template'=> '{view}']
 
             ],

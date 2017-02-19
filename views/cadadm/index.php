@@ -17,7 +17,6 @@ $this->title = 'Lista de Usuário Cadastrados';
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
     <br>
     <?= GridView::widget([
-    	'summary'=>'',
         'dataProvider' => $dataProvider,
         'filterModel' => $searchModel,
         'columns' => [
