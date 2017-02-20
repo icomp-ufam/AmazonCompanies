@@ -25,7 +25,18 @@ $this->params['breadcrumbs'][] = $this->title;
         'columns' => [
             ['class' => 'kartik\grid\SerialColumn'],
             'nomeIndice',
-            'formula',
+            //'formula',
+            [
+                'attribute' => 'formula',
+                'format' => 'html',
+                //'title' => 'formula',
+                'value' => function ($data) {
+                    return Html::img(Yii::getAlias('@web').'/img/calcuworld.png',
+                        ['width' => '30px', 'title' => str_replace("@", "", $data->formula)] );
+
+
+                },
+            ],
             'idTipoIndice.nome',
             ['class' => 'kartik\grid\ActionColumn'],
 
