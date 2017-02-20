@@ -29,6 +29,35 @@ $this->params['breadcrumbs'][] = $this->title;
             
         </div>
 
+        <div>
+             <?php if ($model->investidor == 2){
+                                $investidor = 'Comprar';
+
+                            }
+                            elseif ($model->investidor == 3) {
+                                $investidor = 'Vender';
+                            }
+                            elseif ($model->investidor == 4) {
+                                $investidor = 'Neutro';
+                            }
+                            ?>
+
+                            <?php echo '<h5 class="bg-info col-md-3 col-md-offset-1 btn-lg text-center"> Tendencias para o investidor: </br> <strong>'. $investidor .'</strong>  </h5>' ?>
+
+
+                            <?php if ($model->credor == 2){
+                                $credor = 'Emprestar';
+
+                            }
+                            elseif ($model->credor == 3) {
+                                $credor = 'Não emprestar';
+                            }
+                            ?>
+
+                            <?php echo '<h5 class="bg-success col-md-3 col-md-offset-1 btn-lg text-center"> Tendencias para o credor: </br> <strong> '. $credor .' </strong> </h5>' ?>
+
+        </div>
+
         <div class="col-md-8" style="background-color: lavender">
 
             <h4><strong>Texto a ser analisado enviado pelo aluno</strong></h4>
