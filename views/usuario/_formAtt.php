@@ -14,7 +14,7 @@ use yii\widgets\ActiveForm;
 	
     <?= $form->field($model, 'login')->textInput(['maxlength' => true])->label('Login') ?>
 
-    <?= $form->field($model, 'nome')->textInput(['maxlength' => true]) ?>
+    <?= $form->field($model, 'nome')->textInput(['maxlength' => true])->label('Nome') ?>
 
     <?= $form->field($model, 'senha')->passwordInput(['maxlength' => true]) ?>
 	

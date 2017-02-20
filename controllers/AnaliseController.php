@@ -8,6 +8,7 @@ use app\models\AnaliseSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
+use app\models\Notificacao;
 
 /**
  * AnaliseController implements the CRUD actions for Analise model.
@@ -100,7 +101,16 @@ class AnaliseController extends Controller
     	$model->status = '1';
     	$model->save(false);
     	
-    	return $this->redirect(['view', 'id' => $model->idanalise]);
+    	//notificando alundo pela validação
+    	$notificacao = new Notificacao;
+    	$notificacao->idAnalise = $model->idanalise;
+    	$notificacao->Usuario_idUsuario = $model->Usuario_idUsuario;
+    	$notificacao->status = '1';
+    	$notificacao->conteudo = 'Sua análise foi aceita!';
+    	$notificacao->tipo = '0';
+    	$notificacao->save();
+    	
+    	return $this->redirect(['/analise/index']);
     }
     
     public function actionDesativar($id)
@@ -109,7 +119,7 @@ class AnaliseController extends Controller
     	$model->status = '0';
     	$model->save(false);
     	 
-    	return $this->redirect(['view', 'id' => $model->idanalise]);
+    	return $this->redirect(['/notificacao/create2', 'idAnalise' => $model->idanalise, 'Usuario_idUsuario' => $model->Usuario_idUsuario]);
     }
     
     

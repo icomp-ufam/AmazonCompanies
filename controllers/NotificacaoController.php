@@ -8,8 +8,6 @@ use app\models\NotificacaoSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
-use app\models\Analse;
-use app\models\AnalseSearch;
 
 /**
  * NotificacaoController implements the CRUD actions for Notificacao model.
@@ -30,9 +28,6 @@ class NotificacaoController extends Controller
             ],
         ];
     }
-
-
-    
 
     /**
      * Lists all Notificacao models.
@@ -59,7 +54,6 @@ class NotificacaoController extends Controller
     {
         return $this->render('view', [
             'model' => $this->findModel($idNotificacao, $Usuario_idUsuario),
-           
         ]);
     }
 
@@ -73,7 +67,7 @@ class NotificacaoController extends Controller
         $model = new Notificacao();
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'idNotificacao' => $model->idNotificacao, 'Usuario_idUsuario' => $model->Usuario_idUsuario]);
+           return $this->redirect(['view', 'idNotificacao' => $model->idNotificacao, 'Usuario_idUsuario' => $model->Usuario_idUsuario]);
         } else {
             return $this->render('create', [
                 'model' => $model,
@@ -81,6 +75,20 @@ class NotificacaoController extends Controller
         }
     }
 
+    public function actionCreate2()
+    {
+    	$model = new Notificacao();
+    
+    	if ($model->load(Yii::$app->request->post()) && $model->save()) {
+    		// return $this->redirect(['view', 'idNotificacao' => $model->idNotificacao, 'Usuario_idUsuario' => $model->Usuario_idUsuario]);
+    		return $this->redirect(['/analise/']);
+    	} else {
+    		return $this->render('create', [
+    				'model' => $model,
+    		]);
+    	}
+    }
+    
     /**
      * Updates an existing Notificacao model.
      * If update is successful, the browser will be redirected to the 'view' page.
@@ -131,7 +139,21 @@ class NotificacaoController extends Controller
             throw new NotFoundHttpException('The requested page does not exist.');
         }
     }
-
-
     
+    public function actionStatus($id, $idUsuario, $edit)
+    {
+    	$model = $this->findModel($id, $idUsuario);
+    
+    	if($model->status != 2){
+    		$model->status = 2;
+    		$model->save();
+    	}
+    
+    	if($edit == TRUE){
+    		return $this->redirect(['/analise/update/', 'id' => $model->idAnalise]);
+    	}
+    	
+    	return $this->redirect(['notificacao/index']);
+    	 
+    }
 }

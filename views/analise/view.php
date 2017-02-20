@@ -66,7 +66,7 @@ $this->params['breadcrumbs'][] = $this->title;
     	Html::a('<span class="glyphicon glyphicon-ban-circle" aria-hidden=true></span> Invalidar Análise', ['desativar', 'id' => $model->idanalise], [
     			'class' => 'btn btn-danger',
     			'data' =>[
-    			'confirm' => 'Deseja invalidar a análise?'
+    			'confirm' => 'Deseja invalidar a análise e notificar o autor?'
     	]]) ?>
     	<?php }else if ($model->status == 0){ ?>
     	<?=	Html::a('<span class="glyphicon glyphicon-ok" aria-hidden=true></span> Validar Análise', ['ativar', 'id' => $model->idanalise], [
@@ -85,7 +85,7 @@ $this->params['breadcrumbs'][] = $this->title;
     	Html::a('Invalidar Análise', ['desativar', 'id' => $model->idanalise], [
     			'class' => 'btn btn-danger',
     			'data' =>[
-    			'confirm' => 'Deseja invalidar a análise?'
+    			'confirm' => 'Deseja invalidar a análise e notificar o autor?'
     	]]) ?>
 
         
@@ -109,11 +109,6 @@ $this->params['breadcrumbs'][] = $this->title;
          ],]) ?>
 
               
-         
-         <?= Html::a('<span class="glyphicon glyphicon-upload" aria-hidden=true> </span> 
-                      <span class=glyphicon-class> Notificar Autor </span>',
-                      ['/notificacao/','idNotificacao' => $model->idanalise],
-                      ['class' => 'btn btn-primary']) ?>
 
 
          <?= Html::a('<span class="glyphicon glyphicon-eye-close"></span> Cancelar', ['analise/index'], ['class' => 'btn btn-danger']) ?>

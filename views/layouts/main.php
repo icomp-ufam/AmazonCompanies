@@ -12,6 +12,7 @@ use app\models\User;
 use app\models\Analise; 
 use app\models\Usuario;
 use app\models\Notificacao;
+use app\models\EmpresaConta;
 
 
 AppAsset::register($this);
@@ -70,11 +71,14 @@ AppAsset::register($this);
 <div class="wrap">
     <?php
     // contador de notificações
-    $not_aluno = Notificacao::getNotification();
+    $not_aluno = Notificacao::getNotification(Yii::$app->user->getId());
+    
+    // notificações para adms
     $not_adm_analise =  Analise::getNotification();
     $not_adm_cadastro = Usuario::getNotification();
-    $not_adm_alt_dados = 0; // gerar uma função que conte os pendentes desta funcionalidade.
+    $not_adm_alt_dados = EmpresaConta::getNotification();
 	$not_adm_total = $not_adm_alt_dados + $not_adm_analise + $not_adm_cadastro;
+	
     
     NavBar::begin([
         'brandLabel' => 'Amazon Companies',

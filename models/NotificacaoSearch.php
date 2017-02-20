@@ -6,8 +6,6 @@ use Yii;
 use yii\base\Model;
 use yii\data\ActiveDataProvider;
 use app\models\Notificacao;
-use app\models\Analise;
-use app\models\AnaliseSearch;
 
 /**
  * NotificacaoSearch represents the model behind the search form about `app\models\Notificacao`.
@@ -17,15 +15,11 @@ class NotificacaoSearch extends Notificacao
     /**
      * @inheritdoc
      */
-
-
-    public $search;
-
     public function rules()
     {
         return [
-            [['idNotificacao', 'Usuario_idUsuario', 'status', 'tipo'], 'integer'],
-            [['conteudo', 'idAnalise'], 'safe'],
+            [['idNotificacao', 'Usuario_idUsuario', 'status', 'tipo', 'idAnalise'], 'integer'],
+            [['conteudo'], 'safe'],
         ];
     }
 
@@ -47,10 +41,13 @@ class NotificacaoSearch extends Notificacao
      */
     public function search($params)
     {
-    	$id = Yii::$app->user->getId();
     	
-        $query = Notificacao::find()->where(['Usuario_idUsuario' => $id]);
-
+    	if(Yii::$app->user->getIdentificadorPessoa() == '1'){ //Administrador
+    		$query = Notificacao::find();
+    	}else{ 
+    		$id = Yii::$app->user->getId();
+    		$query = Notificacao::find()->where(['Usuario_idUsuario' => $id, 'status' => [0,1]]); // status 2 não é apresentado mais
+    	}
         // add conditions that should always apply here
 
         $dataProvider = new ActiveDataProvider([
@@ -75,10 +72,6 @@ class NotificacaoSearch extends Notificacao
         ]);
 
         $query->andFilterWhere(['like', 'conteudo', $this->conteudo]);
-        $query->andFilterWhere(['like', 'Usuario_idUsuario', $this->Usuario_idUsuario]);
-        $query->andFilterWhere(['like', 'status', $this->status]);
-        $query->andFilterWhere(['like', 'tipo', $this->tipo]);
-        $query->andFilterWhere(['like', 'idAnalise', $this->idAnalise]);
 
         return $dataProvider;
     }

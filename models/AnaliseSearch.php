@@ -56,16 +56,26 @@ class AnaliseSearch extends Analise
             // $query->where('0=1');
             return $dataProvider;
         }
-
-        // grid filtering conditions
-        $query->andFilterWhere([
-            'idanalise' => $this->idanalise,
-            'status' => $this->status,
-            'idEmpresa' => $this->idEmpresa,
-        ]);
-
-        $query->andFilterWhere(['like', 'texto', $this->texto]);
-
+	
+        if(Yii::$app->user->getIdentificadorPessoa() == '1'){ //Administrador, só irá exibir os pendentes
+        	$query->andFilterWhere([
+        			'idanalise' => $this->idanalise,
+        			'status' => '2',
+        			'idEmpresa' => $this->idEmpresa,
+        	]);
+        	
+        	$query->andFilterWhere(['like', 'texto', $this->texto]);
+        }else{
+        	$query->andFilterWhere([
+        			'idanalise' => $this->idanalise,
+        			'status' => $this->status,
+        			'idEmpresa' => $this->idEmpresa,
+        	]);
+        	
+        	$query->andFilterWhere(['like', 'texto', $this->texto]);
+        	
+        }
+        
         return $dataProvider;
     }
 }

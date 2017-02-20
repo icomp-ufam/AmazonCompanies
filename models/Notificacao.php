@@ -12,7 +12,9 @@ use Yii;
  * @property integer $status
  * @property string $conteudo
  * @property integer $tipo
+ * @property integer $idAnalise
  *
+ * @property Analise[] $analises
  * @property Usuario $usuarioIdUsuario
  */
 class Notificacao extends \yii\db\ActiveRecord
@@ -20,8 +22,6 @@ class Notificacao extends \yii\db\ActiveRecord
     /**
      * @inheritdoc
      */
-
-   
     public static function tableName()
     {
         return 'notificacao';
@@ -33,12 +33,10 @@ class Notificacao extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['Usuario_idUsuario', 'status', 'conteudo', 'tipo', 'idAnalise'], 'required'],
+            [['Usuario_idUsuario', 'status', 'conteudo', 'tipo'], 'required'],
             [['Usuario_idUsuario', 'status', 'tipo', 'idAnalise'], 'integer'],
-            [['conteudo']],
+            [['conteudo'], 'string'],
             [['Usuario_idUsuario'], 'exist', 'skipOnError' => true, 'targetClass' => Usuario::className(), 'targetAttribute' => ['Usuario_idUsuario' => 'idUsuario']],
-            [['idAnalise'], 'exist', 'skipOnError' => true, 'targetClass' => Analise::className(), 'targetAttribute' => ['idAnalise' => 'idanalise']],
-            
         ];
     }
 
@@ -51,11 +49,18 @@ class Notificacao extends \yii\db\ActiveRecord
             'idNotificacao' => Yii::t('app', 'Id Notificacao'),
             'Usuario_idUsuario' => Yii::t('app', 'Usuario Id Usuario'),
             'status' => Yii::t('app', 'Status'),
-            
-            'tipo' => Yii::t('app', 'Tipo'),
-            'idAnalise' => Yii::t('app', 'Análise----------'),
             'conteudo' => Yii::t('app', 'Texto'),
+            'tipo' => Yii::t('app', 'Tipo'),
+            'idAnalise' => Yii::t('app', 'Id Analise'),
         ];
+    }
+
+    /**
+     * @return \yii\db\ActiveQuery
+     */
+    public function getAnalises()
+    {
+        return $this->hasMany(Analise::className(), ['Usuario_idUsuario' => 'Usuario_idUsuario']);
     }
 
     /**
@@ -65,22 +70,9 @@ class Notificacao extends \yii\db\ActiveRecord
     {
         return $this->hasOne(Usuario::className(), ['idUsuario' => 'Usuario_idUsuario']);
     }
-
-    public function getAnalise()
-    {
-        return $this->hasOne(Analise::className(), ['idanalise' => 'idAnalise']);
-    }
     
-    // retorna a quantidade de status pendentes
-    public function getNotification(){
-    	
-    	$id = Yii::$app->user->getId();
-    	 
-    	$query = Notificacao::find()->where(['Usuario_idUsuario' => $id])->count();
-        $query = Notificacao::find()->where(['idAnalise' => $id])->count();
-        
-    	
+    public function getNotification($id){
+    	$query = Notificacao::find()->where(['Usuario_idUsuario' =>$id, 'status' => [0,1]])->count();
     	return $query;
     }
-    
 }
