@@ -253,137 +253,33 @@ AppAsset::register($this);
 
  
 		
-<div class="art-footer" >
+<div id="footerIn" style="" class="ui-state-focus" style="padding:5px; clear:both;" align="center">
 	<li class="list-group-item list-group-item-info">
-				<table id="t01">
-						<tr>
-							<td style="text-align: left; vertical-align: top;">
-										<div>
-											<a href="http://proeg.ufam.edu.br/">Pr&oacute;-Reitoria de Gradua&ccedil;&atilde;o</a>
-										</div>
-										<div>
-											<a href="http://proeg.ufam.edu.br/cursos-oferecidos">Gradua&ccedil;&atilde;o</a>
-										</div>
-										<div>
-											<a href="http://proeg.ufam.edu.br/guia-do-aluno-2012">Guia do Aluno</a>
-										</div>
-										<div>
-											<a href="http://proeg.ufam.edu.br/calendario-academico">Calend&aacute;rio Acad&ecirc;mico</a>
-										</div>
-										<div>
-											<a href="http://proeg.ufam.edu.br/cursos-oferecidos">Cursos</a>
-										</div>
-										<div>
-											<a href="http://proeg.ufam.edu.br/formas-de-ingresso">Formas de Ingresso</a>
-										</div>
-										<div>
-											<a href="http://proeg.ufam.edu.br/enade">Enade</a>
-										</div>
-										<div>
-											<a href="http://proeg.ufam.edu.br/pet">Programa de Educa&ccedil;&atilde;o Tutorial</a>
-										</div>
-										<div>
-											<a href="http://proeg.ufam.edu.br/promes">Mobilidade Estudantil</a>
-										</div>
-										<div>
-											<a href="http://proeg.ufam.edu.br/estagio">Est&aacute;gio</a>
-										</div>
-										<div>
-											<a href="http://proeg.ufam.edu.br/monitoria">Monitoria</a>
-										</div>
-										<div>
-											&nbsp;
-										</div>
-							</td>
-							
-							<td style="text-align: left; vertical-align: top;">
-										<div>
-											<a href="http://www.protec.ufam.edu.br/">Pr&oacute;-Reitoria de Inova&ccedil;&atilde;o Tecnol&oacute;gica</a>
-										</div>
-										<div>
-											<a href="http://www.protec.ufam.edu.br/orientacoespesquisador">Orienta&ccedil;&otilde;es Pesquisador</a>
-										</div>
-										<div>
-											<a href="http://www.protec.ufam.edu.br/portfolio">Portif&oacute;lio</a>
-										</div>
-										<div>
-											<a href="http://www.protec.ufam.edu.br/artigos">Artigos</a>
-										</div>
-										<div>
-											<a href="http://www.protec.ufam.edu.br/eventos">Eventos</a>
-										</div>
-										<div>
-											<a href="http://www.protec.ufam.edu.br/editais">Editais de Inova&ccedil;&atilde;o</a>
-										</div>
-										<div>
-											<a href="http://www.protec.ufam.edu.br/guia-e-inpi">Manual de Inova&ccedil;&atilde;o e Propriedade Intelectual</a>
-										</div>
-							</td>
-							
-							<td style="text-align: left; vertical-align: top;">
-										<div>
-											<a href="/?option=com_content&amp;view=article&amp;id=624">Di&aacute;rias e Passagens</a>
-										</div>
-										<div>
-											<a href="http://biblioteca.ufam.edu.br">S</a><a href="http://biblioteca.ufam.edu.br/">istema de Biblioteca</a><a href="http://biblioteca.ufam.edu.br/">s</a>
-										</div>
-										<div>
-											<a href="/?option=com_content&amp;view=article&amp;id=6&amp;Itemid=127">Prefeitura do Campus</a>
-										</div>
-										<div>
-											<a href="http://www.proplan.ufam.edu.br/">Processos de Contas Anuais</a>
-										</div>
-							</td>
-						</tr>
-						<tr> <td>                 </td></tr>
-
-						<tr>
-							<td style="text-align: left; vertical-align: top;">
-										<div>
-											<a href="http://www.propesp.ufam.edu.br/pos-graduacao/programas-de-pos-graduacao">Cursos de P&oacute;s-gradua&ccedil;&atilde;o</a>
-										</div>
-										<a href="http://www.propesp.ufam.edu.br/editais-de-pos-graduacao">Editais de P&oacute;s-gradua&ccedil;&atilde;o</a>
-										<div>
-											<a href="http://www.propesp.ufam.edu.br/editais-de-iniciacao-cientifica">Editais de Pesquisa </a>
-										</div>
-										<div>
-											<a href="http://www.propesp.ufam.edu.br/pos-graduacao/calendario-pos-graduacao">Calend&aacute;rio da P&oacute;s-Gradua&ccedil;&atilde;o</a>
-										</div>
-										<div>
-											<a href="http://www.propesp.ufam.edu.br/">Pr&oacute;-Reitoria de Pesquisa P&oacute;s-Gradua&ccedil;&atilde;o</a>
-										</div>
-							</td>
-							
-							<td style="text-align: left; vertical-align: top;">
-										<div>
-											<a href="http://procomun.ufam.edu.br/">Pr&oacute;-Reitoria de Assuntos Comunit&aacute;rios</a>
-										</div>
-										<div>
-											<a href="http://procomun.ufam.edu.br/depto-apoio-ao-servidor">Apoio ao Servidor</a><br />
-										<div>
-											<a href="http://procomun.ufam.edu.br/depto-apoio-ao-estudante">Apoio ao Aluno</a>
-										</div>
-										<div>
-											<a href="http://procomun.ufam.edu.br/deptorecursos-humanos">Recursos Humanos</a>
-										</div>
-							</td>
-							<td rowspan="2" style="text-align: left; vertical-align: top;">
-										<div >
-											Endere&ccedil;o: Av. General Rodrigo &nbsp;
-										</div>
-										<div >
-											Oct&aacute;vio, 6200, Coroado I&nbsp;
-										</div>
-										<div >
-											Cep: 69080-900
-										</div>
-										<div>
-											3305-1480/8426-1963*
-										</div>
-										
-							</td>
-						</tr>		
-				</table>
+        
+        <a href="http://www.ufam.edu.br">
+            <span style="float:none;">
+                <img style="height:70px; vertical-align:middle" class="iconDetails" src="\AmazonCompanies\web\img\ufam.png" alt=""/>
+            </span>
+        </a>
+		<br/>
+		<a href="http://www.fes.ufam.edu.br/">
+            <span style="float:none;">
+                
+                FES - Faculdade de Estudos Sociais
+            </span>
+        </a>
+        <br/>
+		 <a href="http://www.ufam.edu.br">
+            <span style="float:none;" >
+               
+                Universidade Federal Do Amazonas
+            </span>
+        </a>
+		<br/>
+        © Coordenação de Sistemas - UFAM </br>
+		
 	</li>
+
+
 
 </div>
