@@ -666,7 +666,7 @@ $_SESSION["nome"] =  "Neves";
     Note that this code must be written in JavaScript because the Highcharts API is written in 
     JavaScript, and even if the project is using extensions like the one by miloschuman, which 
     allows the code to be fully written in PHP, when the page is rendered, the code is converted 
-    to JavaScript. So, the way we use to capture the graph in real time in a simple way, is using 
+    to JavaScript. So, the way we used to capture the graph in real time in a simple way, is using 
     JavaScript as well.
 
     */

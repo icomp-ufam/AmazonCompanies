@@ -30,7 +30,7 @@
 #tests/_support/_generated
 
 /config/db.php
-/web/assets/*
+#/web/assets/*
 /runtime/mail/*
 /runtime/logs/*
 /runtime/debug/*

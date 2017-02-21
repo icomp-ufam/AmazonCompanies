@@ -91,7 +91,7 @@ class SiteController extends Controller
         		}
         	}else{ 
         		Yii::$app->user->logout();
-        		Yii::$app->session->setFlash('danger', "Usuário com Cadastrado Bloqueado!");
+        		Yii::$app->session->setFlash('danger', "Usuário com Cadastro Bloqueado!");
         		// enviar uma msg de usuário não ativo?
         	}
         	
