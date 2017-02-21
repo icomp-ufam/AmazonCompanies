@@ -13,6 +13,7 @@ use app\models\Analise;
 use app\models\Usuario;
 use app\models\Notificacao;
 use app\models\EmpresaConta;
+use app\models\Rodape;
 
 
 AppAsset::register($this);
@@ -116,6 +117,8 @@ AppAsset::register($this);
                                         ['label' => 'Índices', 'url' => ['indice/index']],
 
                             ['label' => 'Tipo de índices', 'url' => ['tipo-indice/index']],
+
+										['label' => 'Links', 'url' => ['rodape/index']],
                                   ]
                         ],
 
@@ -276,6 +279,31 @@ AppAsset::register($this);
             </span>
         </a>
 		<br/>
+
+		<?php
+			$rodape = Rodape::findOne(1);
+			
+			$link = $rodape->link;
+			echo "$link";
+		?>
+		<br/>
+
+		<?php
+			$rodape = Rodape::findOne(2);
+			
+			$link = $rodape->link;
+			echo "$link";
+		?>
+		<br/>
+
+		<?php
+			$rodape = Rodape::findOne(3);
+			
+			$link = $rodape->link;
+			echo "$link";
+		?>
+		<br/>
+
         © Coordenação de Sistemas - UFAM </br>
 		
 	</li>
