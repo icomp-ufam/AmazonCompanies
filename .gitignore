@@ -33,3 +33,4 @@
 /web/assets/*
 /runtime/mail/*
 /runtime/logs/*
+/runtime/debug/*
