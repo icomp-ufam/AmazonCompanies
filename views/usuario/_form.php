@@ -18,9 +18,9 @@ use yii\widgets\ActiveForm;
 							3 => 'Empresa'
 					])->label('Tipo de Usuário')?>
 	
-    <?= $form->field($model, 'login')->textInput(['maxlength' => true])->hint('Ex: Usuário123')->label('Nome de Usuário') ?>
+    <?= $form->field($model, 'login')->textInput(['maxlength' => true])->hint('Ex: Usuário123') ?>
 
-    <?= $form->field($model, 'nome')->textInput(['maxlength' => true])->hint('Ex: Nome Sobrenome') ?>
+    <?= $form->field($model, 'nome')->textInput(['maxlength' => true])->hint('Ex: Nome Sobrenome')->label("Nome Completo") ?>
 
     <?= $form->field($model, 'senha')->passwordInput(['maxlength' => true]) ?>
 	
