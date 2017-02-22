@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Tempo de geração: 22/02/2017 às 10:40
+-- Tempo de geração: 22/02/2017 às 12:02
 -- Versão do servidor: 5.7.17-0ubuntu0.16.04.1
 -- Versão do PHP: 7.0.13-0ubuntu0.16.04.1
 
@@ -48,10 +48,10 @@ INSERT INTO `analise` (`idanalise`, `texto`, `status`, `ano`, `investidor`, `cre
 (2, 'Texto enviado para análise', 0, 2015, 3, 3, 2, 'Resultado da análise feita pelo responsável.', 2),
 (3, 'Este é um sistema operacional que', 0, 2015, 2, 2, 5, 'ooooooooooooooooooooooooooooooooooooo', 1),
 (6, 'Mais um teste enviado para análise, será que agora vai?<br>', 1, 2016, 2, 2, 4, 'Agora sim ficou muito bom. Parabéns!<br>', 6),
-(7, 'achei legal<br>', 1, 2016, 0, 0, 6, 'bacana<br>', 3),
-(8, 'Analise teste com ano', 1, 2016, 0, 0, 5, '', 1),
+(7, 'achei legal<br>', 1, 2016, 3, 3, 6, 'bacana<br>', 3),
+(8, 'Analise teste com ano', 1, 2016, 3, 3, 5, '', 1),
 (9, 'teste', 1, 2016, 2, 3, 2, '', 1),
-(10, '1', 1, 2016, 0, 0, 3, '', 1),
+(10, '1', 1, 2016, 3, 3, 3, '', 1),
 (12, 'Teste, teste dnovo<br>', 1, 2017, 2, 3, 5, '', 6),
 (13, 'tesgeufakjfaf<br>', 1, 2018, 2, 2, 5, '<br>', 6),
 (15, 'Legal<br>', 1, 2017, 3, 2, 4, NULL, 6);
