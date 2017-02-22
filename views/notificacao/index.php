@@ -23,7 +23,7 @@ $this->params['breadcrumbs'][] = $this->title;
     <h1><?= Html::encode($this->title) ?></h1>
     <?php if(Yii::$app->user->getIdentificadorPessoa() == '1'){ // aqui exibiria as notificações que o adm mandou?> 
 <p>
-        <?= Html::a('Create Analise', ['create'], ['class' => 'btn btn-success']) ?>
+        <?= Html::a('Criar Notificação', ['create'], ['class' => 'btn btn-success']) ?>
     </p>
     <?php } ?>
     
@@ -61,12 +61,14 @@ $this->params['breadcrumbs'][] = $this->title;
         				return 'Rejeitada';
         			}else if ($model->status == 1){
         				return 'Aceita';
+        			}else{
+        				return 'Não Aplicável';
         			}
         		},
         		'filter' => [
         				'0' => 'Rejeitada',
         				'1' => 'Aceita',
-        				'2' => 'Não Analisada',
+        				'2' => 'Não Aplicável'
         		]
         		],
         		
@@ -88,7 +90,7 @@ $this->params['breadcrumbs'][] = $this->title;
         				}
         				},
         				'dispensar' => function ($url, $model)	{
-        					if($model->status == 1){
+        				if($model->status == 1 || $model->idAnalise == NULL){
         						return Html::a('<span class = "glyphicon glyphicon-check" style="color:red;"</span>', $url, [
         								'title' => 'Dispensar',
         								'data' => [

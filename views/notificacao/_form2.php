@@ -20,11 +20,11 @@ use yii\widgets\ActiveForm;
 	
     <?= $form->field($model, 'tipo')->hiddenInput(['value' => $tipo])->label(false) // 0 = Analise, 1 = Alteração de Dados, 2 = Outros  ?>
 	
-    <?= $form->field($model, 'idAnalise')->hiddenInput(['value' => $idAnalise])->label(false) ?>
+    <?= $form->field($model, 'idAnalise')->hiddenInput()->label(false) ?>
 
     <div class="form-group">
     	<?= Html::submitButton('Enviar', ['class' => 'btn btn-success']) ?>
-        <?= Html::a('Cancelar', ['analise/index'], ['class' => 'btn btn-danger']) ?>
+        <?= Html::a('Cancelar', ['/cadadm/'], ['class' => 'btn btn-danger']) ?>
     </div>
 		
     <?php ActiveForm::end(); ?>
