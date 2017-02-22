@@ -19,7 +19,7 @@ class AnaliseSearch extends Analise
     {
         return [
             [['idanalise', 'status', 'idEmpresa'], 'integer'],
-            [['texto', 'textoAnalisador','Usuario_idUsuario'], 'safe'],
+            [['texto', 'Usuario_idUsuario'], 'safe'],
         ];
     }
 
