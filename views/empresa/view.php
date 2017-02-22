@@ -25,6 +25,10 @@ use yii\helpers\BaseUrl;
 use kartik\widgets\FileInput;
 use phpnt\bootstrapSelect\BootstrapSelectAsset;
 use kartik\widgets\Select2;
+use yii\helpers\ArrayHelper;
+use app\models\Empresa;
+
+use yii\base\Widget;
 
 
 
@@ -49,9 +53,21 @@ use kartik\widgets\Select2;
         
     </p>
 
-    <p>
-            <?= Html::button('Gerar PDF', ['id'=> 'export_chart', 'class'=> 'btn btn-primary']) ?>
-    </p>
+    <div class="row">
+            <?= Html::a('<span></span> Gerar PDF', ['gerar_pdf'], ['class'=> 'btn btn-primary']) ?>
+            
+            <div class="dropdown col-sm-1">
+    			<button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown" >Ano <span class="caret"></span></button>
+    			<ul class="dropdown-menu col-sm-1">
+    				<?php
+                        foreach($anos as $ano):           
+                    ?>
+    				<li><a href="#id<?= $ano->ano ?>"><?= $ano->ano ?></a></li> <!--  PRODUZIR FUNÇÃO PARA REALIZAR AS MUDANÇAS NA TABELA -->
+    			<?php endforeach; ?>
+    			</ul>
+    		</div>
+    
+    </div>
 
      <h3> DADOS DE CONTAS:
     </h3>
@@ -415,6 +431,13 @@ echo Highcharts::widget([
 ]);
 
  ?> 
+ <?php if(Yii::$app->user->getIdentificadorPessoa() == '2' || Yii::$app->user->getIdentificadorPessoa() == '1'){
+        					echo '<a href="index.php?r=analise%2Fcreate&idEmpresa=' . $model->idEmpresa . '"><button class="btn btn-primary">Criar Análise</button> </a>';
+						}
+        	?>
+        	<br>
+        	<br>
+ 
  <div class="body-content">
     <ul class="nav nav-tabs">
     <?php
@@ -538,9 +561,7 @@ echo Highcharts::widget([
         <?php
                         }   
                     ?>
-
-        <?php echo '<a href="index.php?r=analise%2Fcreate&idEmpresa=' . $model->idEmpresa . '"><button class="btn btn-default">Criar Análise</button> </a>';
-    ?>
+	
                 
 
             <script type="application/javascript">
