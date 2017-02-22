@@ -19,6 +19,7 @@ use yii\db\Query;
 use yii\db\ActiveQuery;
 use moonland\phpexcel\Excel;
 use miloschuman\highcharts\Highcharts;
+use kartik\mpdf\Pdf;
 
 
 
@@ -463,22 +464,71 @@ class EmpresaController extends Controller
     }
 
 
-    public function actionGenerate_pdf($bin_data) {
-        $data = str_replace(' ', '+', $bin_data);
+    public function actionGenerate_pdf() {
+        $data = str_replace(' ', '+', Yii::$app->request->post('bin_data'));
+        $name = Yii::$app->request->post('name');
         $data = base64_decode($data);
-        //$fileName = date('ymdhis').'.png';
-        $fileName = 'salvou.png';
-        $im = imagecreatefromstring($data);
         
-        Yii::trace("Cheguei aqui!!!");
-        if ($im !== false) {
-            Yii::trace("Passei do if!!!");
+        $img_pre_path = 'temp/savechart/';
+        $img_filename = 'chart-export-'.Yii::$app->security->generateRandomString().'.png';
 
-            // Save image in the specified location
-            imagepng($im, $fileName);
-            imagedestroy($im);
-            //echo "Saved successfully";
+        $pdf_pre_path = "export/empresa/";
+        $pdf_filename = $name."-export-".Yii::$app->security->generateRandomString().'.pdf';
+
+        $img_path = $img_pre_path.$img_filename;
+        $pdf_path = $pdf_pre_path.$pdf_filename;
+
+        if (!is_dir($img_pre_path)) {
+            mkdir($img_pre_path, 0777, true);
         }
+
+        if (!is_dir($pdf_pre_path)) {
+            mkdir($pdf_pre_path, 0777, true);
+        }
+
+        $im = imagecreatefromstring($data);
+
+        if ($im !== false) {
+            // Save image in the specified location
+            imagepng($im, $img_path);
+            imagedestroy($im);
+        }
+
+        // setup kartik\mpdf\Pdf component
+        $pdf = new Pdf([
+            // set to use core fonts only
+            'mode' => Pdf::MODE_CORE, 
+            // A4 paper format
+            'format' => Pdf::FORMAT_A4, 
+            // portrait orientation
+            'orientation' => Pdf::ORIENT_PORTRAIT, 
+            // stream to browser inline
+            'destination' => Pdf::DEST_FILE,
+            'filename' => $pdf_path,
+            // your html content input
+            'content' => 
+            '
+            <h2 style="text-align: center;">AmazonCompanies</h2>
+            <h4 style="text-align: center;">Dados da '.$name.'</h4>
+            <br>
+            <img src="'.$img_path.'">
+            ',  
+            //'cssInline' => '', 
+             // set mPDF properties on the fly
+            'options' => ['title' => $pdf_filename],
+             // call mPDF methods on the fly
+            'methods' => [ 
+                /*
+                'SetFooter'=>[''],
+                */
+            ]
+        ]);
+
+        $pdf->render();
+
+        unlink(getcwd().'/'.$img_path);
+
+        echo $pdf_path;
     }
 
     
