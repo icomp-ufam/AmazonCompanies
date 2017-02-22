@@ -76,7 +76,7 @@ class NotificacaoController extends Controller
     }
 
     public function actionCreate2()
-    {
+    {//notificar análises
     	$model = new Notificacao();
     
     	if ($model->load(Yii::$app->request->post()) && $model->save()) {
@@ -87,6 +87,20 @@ class NotificacaoController extends Controller
     				'model' => $model,
     		]);
     	}
+    }
+    
+    public function actionCreate3()
+    {// notificar "outros"
+    $model = new Notificacao();
+    
+    if ($model->load(Yii::$app->request->post()) && $model->save()) {
+    	// return $this->redirect(['view', 'idNotificacao' => $model->idNotificacao, 'Usuario_idUsuario' => $model->Usuario_idUsuario]);
+    	return $this->redirect(['/cadadm/']);
+    } else {
+    	return $this->render('create2', [
+    			'model' => $model,
+    	]);
+    }
     }
     
     /**

@@ -289,24 +289,23 @@ class EmpresaController extends Controller
         
         	$field[$i]['type'] = 'column';
         	$field[$i]['name'] = $anosEmpresa->ano;
-        	// $valoress = EmpresaConta::find()->select('valor')->where(['idConta' => $conta->idConta])->andWhere(['ano' =>$anosEmpresa->ano])->all();
-        	// if(count($valoress)>0){
-        	//     $j=0;
-        		//     foreach($valoress as $valores){
-        		//         $data[$j] =
-        			//     }
-        		// } else{
-        
-        		// }
-        		for ($j=0; $j <24 ; $j++) {
-        			$data[$j]= $j+1;
-        
+        	
+        	for ($j=0; $j <24 ; $j++) { // percorre cada uma das demonstrações, do ano atual do foreach
+        		$con = Conta::find()->select('idConta')->where(['nome' => $categorias[$j]])->one();
+        		$valore = EmpresaConta::find()->select('valor')->where(['idConta' => $con])->andWhere(['ano' =>$anosEmpresa->ano])->andWhere(['idEmpresa' => $id])->one();
+        		if($valore){
+        			$data[$j] = $valore->valor;
+        		}else{
+        			$data[$j]= 0;
         		}
-        		$field[$i]['data'] = $data;
-        		$i++;
-        
-        
-        		}
+        	}
+        	
+        	$field[$i]['data'] = $data;
+        	$i++;
+        	
+        	
+        	}
+        		
       $model = $this->findModel($id);
 
         $comentario->Empresa_idEmpresa = $model->idEmpresa;
@@ -315,9 +314,13 @@ class EmpresaController extends Controller
         if ($comentario->load(Yii::$app->request->post()) && $comentario->save())  {
             return $this->redirect(['view', 'id' => $model->idEmpresa]);
         }
+        
+        //sessão de variáveis usadas nos foreach na view
+        $anos = EmpresaConta::find()->select('ano')->distinct()->orderBy(["ano"=> SORT_ASC])->all();
 
 
                  return $this->render('view', [
+                 	'anos' => $anos,
                     'model' => $this->findModel($id),
                     'comentario' => $comentario ,
                  	'field' => $field,
