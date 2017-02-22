@@ -12,6 +12,8 @@ use app\models\User;
 use app\models\Analise; 
 use app\models\Usuario;
 use app\models\Notificacao;
+use app\models\EmpresaConta;
+use app\models\Rodape;
 
 
 AppAsset::register($this);
@@ -70,12 +72,19 @@ AppAsset::register($this);
 <div class="wrap">
     <?php
     // contador de notificações
+<<<<<<< HEAD
     //Yii::$app->session->set('user.fingerprint', $fingerprint);
     $not_aluno = Notificacao::getNotification();
+=======
+    $not_aluno = Notificacao::getNotification(Yii::$app->user->getId());
+    
+    // notificações para adms
+>>>>>>> 671651556a698e832616fb3f90bfe1a4a9789f4f
     $not_adm_analise =  Analise::getNotification();
     $not_adm_cadastro = Usuario::getNotification();
-    $not_adm_alt_dados = 0; // gerar uma função que conte os pendentes desta funcionalidade.
+    $not_adm_alt_dados = EmpresaConta::getNotification();
 	$not_adm_total = $not_adm_alt_dados + $not_adm_analise + $not_adm_cadastro;
+	
     
     NavBar::begin([
         'brandLabel' => 'Amazon Companies',
@@ -102,11 +111,7 @@ AppAsset::register($this);
     			'options' => ['class' => 'navbar-nav navbar-right'],
     			'items' => [
     					['label' => 'Página Inicial', 'url' => ['/site/adm']],
-    					['label' => 'Empresas',
-    					'items' =>[
-
-    					['label' => 'Listar Empresas Cadastradas', 'url' => ['empresa/index']],
-    					]],
+    					['label' => 'Empresas', 'url' => ['empresa/index']],
                         ['label' => 'Cadastro',
                         'items' =>[
 
@@ -117,6 +122,8 @@ AppAsset::register($this);
                                         ['label' => 'Índices', 'url' => ['indice/index']],
 
                             ['label' => 'Tipo de índices', 'url' => ['tipo-indice/index']],
+
+										['label' => 'Links', 'url' => ['rodape/index']],
                                   ]
                         ],
 
@@ -156,11 +163,7 @@ AppAsset::register($this);
     			'options' => ['class' => 'navbar-nav navbar-right'],
     			'items' => [
     					['label' => 'Página Inicial', 'url' => ['/site/aluno']],
-    					['label' => 'Empresas',
-    					'items' =>[
-    							['label' => 'Cadastrar Dados', 'url' => ['/site/caddadosemp']],
-    							['label' => 'Listar Empresas Cadastradas', 'url' => ['/empresa/index']],
-    					]],
+    					['label' => 'Empresas', 'url' => ['/empresa/index']],
     					['label' => 'Notificações '. Html::tag('span', $not_aluno, ['class' => 'badge']), 'url' => ['/notificacao/']],
     					['label' => 'Seu Perfil', 'url' => ['/usuario/update', 'id' => Yii::$app->user->getId()]],
     					['label' => 'Contato', 'url' => ['/site/contact']],
@@ -258,137 +261,58 @@ AppAsset::register($this);
 
  
 		
-<div class="art-footer" >
+<div id="footerIn" style="" class="ui-state-focus" style="padding:5px; clear:both;" align="center">
 	<li class="list-group-item list-group-item-info">
-				<table id="t01">
-						<tr>
-							<td style="text-align: left; vertical-align: top;">
-										<div>
-											<a href="http://proeg.ufam.edu.br/">Pr&oacute;-Reitoria de Gradua&ccedil;&atilde;o</a>
-										</div>
-										<div>
-											<a href="http://proeg.ufam.edu.br/cursos-oferecidos">Gradua&ccedil;&atilde;o</a>
-										</div>
-										<div>
-											<a href="http://proeg.ufam.edu.br/guia-do-aluno-2012">Guia do Aluno</a>
-										</div>
-										<div>
-											<a href="http://proeg.ufam.edu.br/calendario-academico">Calend&aacute;rio Acad&ecirc;mico</a>
-										</div>
-										<div>
-											<a href="http://proeg.ufam.edu.br/cursos-oferecidos">Cursos</a>
-										</div>
-										<div>
-											<a href="http://proeg.ufam.edu.br/formas-de-ingresso">Formas de Ingresso</a>
-										</div>
-										<div>
-											<a href="http://proeg.ufam.edu.br/enade">Enade</a>
-										</div>
-										<div>
-											<a href="http://proeg.ufam.edu.br/pet">Programa de Educa&ccedil;&atilde;o Tutorial</a>
-										</div>
-										<div>
-											<a href="http://proeg.ufam.edu.br/promes">Mobilidade Estudantil</a>
-										</div>
-										<div>
-											<a href="http://proeg.ufam.edu.br/estagio">Est&aacute;gio</a>
-										</div>
-										<div>
-											<a href="http://proeg.ufam.edu.br/monitoria">Monitoria</a>
-										</div>
-										<div>
-											&nbsp;
-										</div>
-							</td>
-							
-							<td style="text-align: left; vertical-align: top;">
-										<div>
-											<a href="http://www.protec.ufam.edu.br/">Pr&oacute;-Reitoria de Inova&ccedil;&atilde;o Tecnol&oacute;gica</a>
-										</div>
-										<div>
-											<a href="http://www.protec.ufam.edu.br/orientacoespesquisador">Orienta&ccedil;&otilde;es Pesquisador</a>
-										</div>
-										<div>
-											<a href="http://www.protec.ufam.edu.br/portfolio">Portif&oacute;lio</a>
-										</div>
-										<div>
-											<a href="http://www.protec.ufam.edu.br/artigos">Artigos</a>
-										</div>
-										<div>
-											<a href="http://www.protec.ufam.edu.br/eventos">Eventos</a>
-										</div>
-										<div>
-											<a href="http://www.protec.ufam.edu.br/editais">Editais de Inova&ccedil;&atilde;o</a>
-										</div>
-										<div>
-											<a href="http://www.protec.ufam.edu.br/guia-e-inpi">Manual de Inova&ccedil;&atilde;o e Propriedade Intelectual</a>
-										</div>
-							</td>
-							
-							<td style="text-align: left; vertical-align: top;">
-										<div>
-											<a href="/?option=com_content&amp;view=article&amp;id=624">Di&aacute;rias e Passagens</a>
-										</div>
-										<div>
-											<a href="http://biblioteca.ufam.edu.br">S</a><a href="http://biblioteca.ufam.edu.br/">istema de Biblioteca</a><a href="http://biblioteca.ufam.edu.br/">s</a>
-										</div>
-										<div>
-											<a href="/?option=com_content&amp;view=article&amp;id=6&amp;Itemid=127">Prefeitura do Campus</a>
-										</div>
-										<div>
-											<a href="http://www.proplan.ufam.edu.br/">Processos de Contas Anuais</a>
-										</div>
-							</td>
-						</tr>
-						<tr> <td>                 </td></tr>
+        
+        <a href="http://www.ufam.edu.br">
+            <span style="float:none;">
+                <img style="height:70px; vertical-align:middle" class="iconDetails" src="\AmazonCompanies\web\img\ufam.png" alt=""/>
+            </span>
+        </a>
+		<br/>
+		<a href="http://www.fes.ufam.edu.br/">
+            <span style="float:none;">
+                
+                FES - Faculdade de Estudos Sociais
+            </span>
+        </a>
+        <br/>
+		 <a href="http://www.ufam.edu.br">
+            <span style="float:none;" >
+               
+                Universidade Federal Do Amazonas
+            </span>
+        </a>
+		<br/>
 
-						<tr>
-							<td style="text-align: left; vertical-align: top;">
-										<div>
-											<a href="http://www.propesp.ufam.edu.br/pos-graduacao/programas-de-pos-graduacao">Cursos de P&oacute;s-gradua&ccedil;&atilde;o</a>
-										</div>
-										<a href="http://www.propesp.ufam.edu.br/editais-de-pos-graduacao">Editais de P&oacute;s-gradua&ccedil;&atilde;o</a>
-										<div>
-											<a href="http://www.propesp.ufam.edu.br/editais-de-iniciacao-cientifica">Editais de Pesquisa </a>
-										</div>
-										<div>
-											<a href="http://www.propesp.ufam.edu.br/pos-graduacao/calendario-pos-graduacao">Calend&aacute;rio da P&oacute;s-Gradua&ccedil;&atilde;o</a>
-										</div>
-										<div>
-											<a href="http://www.propesp.ufam.edu.br/">Pr&oacute;-Reitoria de Pesquisa P&oacute;s-Gradua&ccedil;&atilde;o</a>
-										</div>
-							</td>
-							
-							<td style="text-align: left; vertical-align: top;">
-										<div>
-											<a href="http://procomun.ufam.edu.br/">Pr&oacute;-Reitoria de Assuntos Comunit&aacute;rios</a>
-										</div>
-										<div>
-											<a href="http://procomun.ufam.edu.br/depto-apoio-ao-servidor">Apoio ao Servidor</a><br />
-										<div>
-											<a href="http://procomun.ufam.edu.br/depto-apoio-ao-estudante">Apoio ao Aluno</a>
-										</div>
-										<div>
-											<a href="http://procomun.ufam.edu.br/deptorecursos-humanos">Recursos Humanos</a>
-										</div>
-							</td>
-							<td rowspan="2" style="text-align: left; vertical-align: top;">
-										<div >
-											Endere&ccedil;o: Av. General Rodrigo &nbsp;
-										</div>
-										<div >
-											Oct&aacute;vio, 6200, Coroado I&nbsp;
-										</div>
-										<div >
-											Cep: 69080-900
-										</div>
-										<div>
-											3305-1480/8426-1963*
-										</div>
-										
-							</td>
-						</tr>		
-				</table>
+		<?php
+			$rodape = Rodape::findOne(1);
+			
+			$link = $rodape->link;
+			echo "$link";
+		?>
+		<br/>
+
+		<?php
+			$rodape = Rodape::findOne(2);
+			
+			$link = $rodape->link;
+			echo "$link";
+		?>
+		<br/>
+
+		<?php
+			$rodape = Rodape::findOne(3);
+			
+			$link = $rodape->link;
+			echo "$link";
+		?>
+		<br/>
+
+        © Coordenação de Sistemas - UFAM </br>
+		
 	</li>
+
+
 
 </div>

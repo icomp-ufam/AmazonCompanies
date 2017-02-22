@@ -64,9 +64,15 @@ $config = [
 
 if (YII_ENV_DEV) { //desativar isso tudo quando concluir tudo!
     // configuration adjustments for 'dev' environment
+<<<<<<< HEAD
    $config['bootstrap'][] = 'debug';
    $config['modules']['debug'] = [
        'class' => 'yii\debug\Module',
+=======
+    $config['bootstrap'][] = 'debug';
+    $config['modules']['debug'] = [
+    'class' => 'yii\debug\Module',
+>>>>>>> 671651556a698e832616fb3f90bfe1a4a9789f4f
     ];
 
     $config['bootstrap'][] = 'gii';

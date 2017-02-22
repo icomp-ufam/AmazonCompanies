@@ -11,13 +11,13 @@ use kartik\grid\GridView;
 $this->title = 'Validar Usuários';
 //$this->params['breadcrumbs'][] = $this->title;
 ?>
+<?php $this->params['breadcrumbs'][] = $this->title;?>
 <div class="usuario-index">
 
     <h2><strong><?= Html::encode($this->title) ?></strong></h2>
     <br>
     
     <?= GridView::widget([
-    	'summary' => '',
         'dataProvider' => $dataProvider,
         'filterModel' => $searchModel,
     	

@@ -12,9 +12,9 @@ use yii\widgets\ActiveForm;
 	<div class="col-md-4">
     <?php $form = ActiveForm::begin(); ?>
 	
-    <?= $form->field($model, 'login')->textInput(['maxlength' => true])->label('Nome de Usuário') ?>
+    <?= $form->field($model, 'login')->textInput(['maxlength' => true])->label('Login') ?>
 
-    <?= $form->field($model, 'nome')->textInput(['maxlength' => true]) ?>
+    <?= $form->field($model, 'nome')->textInput(['maxlength' => true])->label('Nome') ?>
 
     <?= $form->field($model, 'senha')->passwordInput(['maxlength' => true]) ?>
 	

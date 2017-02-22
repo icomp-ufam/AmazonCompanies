@@ -2,8 +2,6 @@
 
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
-use yii\helpers\ArrayHelper;
-
 
 /* @var $this yii\web\View */
 /* @var $model app\models\Notificacao */
@@ -14,18 +12,21 @@ use yii\helpers\ArrayHelper;
 
     <?php $form = ActiveForm::begin(); ?>
 
-    <?= $form->field($model, 'Usuario_idUsuario')->textInput() ?>
+    <?= $form->field($model, 'Usuario_idUsuario')->hiddenInput(['value'=>$Usuario_idUsuario])->label(false) ?>
 
-    <?= $form->field($model, 'status')->textInput() ?>
+    <?= $form->field($model, 'status')->hiddenInput(['value' => '0'])->label(false) ?>
 
     <?= $form->field($model, 'conteudo')->textarea(['rows' => 6]) ?>
-
-    <?= $form->field($model, 'tipo')->textInput() ?>
+	
+    <?= $form->field($model, 'tipo')->hiddenInput(['value' => 0])->label(false) // 0 = Analise, 1 = Alteração de Dados, 2 = Outros  ?>
+	
+    <?= $form->field($model, 'idAnalise')->hiddenInput(['value' => $idAnalise])->label(false) ?>
 
     <div class="form-group">
-        <?= Html::submitButton($model->isNewRecord ? Yii::t('app', 'Create') : Yii::t('app', 'Update'), ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
+    	<?= Html::submitButton('Enviar', ['class' => 'btn btn-success']) ?>
+        <?= Html::a('Cancelar', ['analise/index'], ['class' => 'btn btn-danger']) ?>
     </div>
-
+		
     <?php ActiveForm::end(); ?>
 
 </div>

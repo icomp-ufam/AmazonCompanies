@@ -37,6 +37,7 @@ class EmpresaController extends Controller
                 'class' => VerbFilter::className(),
                 'actions' => [
                     'delete' => ['POST'],
+                    'generate_pdf' => ['POST'],
                 ],
             ],
         ];
@@ -485,46 +486,24 @@ class EmpresaController extends Controller
         }
     }
 
-     public function actionGerar_pdf(){
 
-    
-       /* //require_once __DIR__ . '/vendor/autoload.php';
+    public function actionGenerate_pdf($bin_data) {
+        $data = str_replace(' ', '+', $bin_data);
+        $data = base64_decode($data);
+        //$fileName = date('ymdhis').'.png';
+        $fileName = 'salvou.png';
+        $im = imagecreatefromstring($data);
+        
+        Yii::trace("Cheguei aqui!!!");
+        if ($im !== false) {
+            Yii::trace("Passei do if!!!");
 
-        $mpdf = new mPDF();
-
-        // Buffer the following html with PHP so we can store it to a variable later
-
-        ob_start();
-
-
-
-        // This is where your script would normally output the HTML using echo or print
-
-        // Now collect the output buffer into a variable
-
-        $html = ob_get_contents();
-
-        ob_end_clean();
-
-        // send the captured HTML from the output buffer to the mPDF class for processing
-
-        $mpdf->WriteHTML($html);
-
-        $mpdf->Output();
-
-        exit;
-*/
-
-       $html = 
-        '<bookmark content="Análise da Empresa X " />
-            <div>Gráficos</div>
-            <div>Análises</div>';
-
-        $mpdf = new mPDF();
-        $mpdf->WriteHTML($html);
-        $mpdf->Output();
-
-  }
+            // Save image in the specified location
+            imagepng($im, $fileName);
+            imagedestroy($im);
+            //echo "Saved successfully";
+        }
+    }
 
     
 }

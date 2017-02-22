@@ -37,17 +37,33 @@ $testProvider = $dataProvider;
              'value'=> 'usuarioIdUsuario.nome',
             ],
 
-            'texto',
+   
+        		['attribute'=>'texto',
+        		'value'=>'texto',
+        		'format'=>'html'],
             //'textoAnalisador',
 
             ['attribute'=>'textoAnalisador',
             'value'=>'textoAnalisador',
             'format'=>'html'],
-        	[
-        			'class' => 'kartik\grid\BooleanColumn',
-        			'attribute' => 'status'
-    		],
-
+        		[
+        		'attribute' => 'status',
+        		'hAlign' => 'center',
+        		'value' => function($model, $index, $dataColumn) {
+        			if($model->status == 2){
+        				return 'Não Analisada';
+        			}else if ($model->status == 1){
+        				return 'Aceita';
+        			}else{
+        				return 'Rejeitada';
+        			}
+        		},
+        		'filter' => [
+        				'0' => 'Rejeitada',
+        				'1' => 'Aceita',
+        				'2' => 'Não Analisada',
+        		]
+        		],
             [
             	'class' => 'kartik\grid\ActionColumn',
             	'header' => 'Visualizar Análise',

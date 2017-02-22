@@ -35,12 +35,12 @@ $this->params['breadcrumbs'][] = $this->title;
         ?>
         <?= GridView::widget([
             'id'=>'grid',
-            'summary'=>'',
             'dataProvider' => $dataProvider,
             'filterModel' => $searchModel,
             'columns' => [
-                ['class' => 'yii\grid\CheckboxColumn'],
-                'idEmpresa',
+                ['class' => 'kartik\grid\CheckboxColumn'],
+            	'nome',
+                
 
                 [
                     'attribute' => 'Logotipo',
@@ -50,7 +50,7 @@ $this->params['breadcrumbs'][] = $this->title;
                             ['width' => '30px']);
                     },
                 ],
-                'nome',
+                
                 //'analise:ntext',
                 'fonte',
                 [
@@ -65,12 +65,7 @@ $this->params['breadcrumbs'][] = $this->title;
                 ],
                 // 'logotipo',
 
-                ['class' => 'yii\grid\ActionColumn',
-                    'template'=> '{view}'],
-                ['class' => 'yii\grid\ActionColumn',
-                    'template'=> '{update}'],
-                ['class' => 'yii\grid\ActionColumn',
-                    'template'=> '{delete}']
+                ['class' => 'kartik\grid\ActionColumn']
             ],
         ]); ?>
         <div class="row">
@@ -91,13 +86,12 @@ $this->params['breadcrumbs'][] = $this->title;
         ?>
         <?= GridView::widget([
             'id'=>'grid',
-            'summary'=>'',
             'dataProvider' => $dataProvider,
             'filterModel' => $searchModel,
             'columns' => [
-                ['class' => 'yii\grid\CheckboxColumn'],
+                ['class' => 'kartik\grid\CheckboxColumn'],
 
-                'idEmpresa',
+                'nome',
                 [
                     'attribute' => 'Logotipo',
                     'format' => 'html',
@@ -106,7 +100,6 @@ $this->params['breadcrumbs'][] = $this->title;
                             ['width' => '30px']);
                     },
                 ],
-                'nome',
                 //'analise:ntext',
                 'fonte',
                 [
@@ -121,7 +114,7 @@ $this->params['breadcrumbs'][] = $this->title;
                 ],
                 // 'logotipo',
 
-                ['class' => 'yii\grid\ActionColumn',
+                ['class' => 'kartik\grid\ActionColumn',
                     'template'=> '{view}'],
             ],
         ]); ?>
@@ -137,11 +130,10 @@ $this->params['breadcrumbs'][] = $this->title;
         ?>
         <?= GridView::widget([
             'id'=>'grid',
-            'summary'=>'',
             'dataProvider' => $dataProvider,
             'filterModel' => $searchModel,
             'columns' => [
-                ['class' => 'yii\grid\CheckboxColumn'],
+                ['class' => 'kartik\grid\CheckboxColumn'],
                 [
                     'attribute' => 'Logotipo',
                     'format' => 'html',
@@ -165,7 +157,7 @@ $this->params['breadcrumbs'][] = $this->title;
                 ],
                 // 'logotipo',
 
-                ['class' => 'yii\grid\ActionColumn',
+                ['class' => 'kartik\grid\ActionColumn',
                     'template'=> '{view}']
 
             ],
@@ -180,11 +172,10 @@ $this->params['breadcrumbs'][] = $this->title;
         ?>
         <?= GridView::widget([
             'id'=>'grid',
-            'summary'=>'',
             'dataProvider' => $dataProvider,
             'filterModel' => $searchModel,
             'columns' => [
-                ['class' => 'yii\grid\CheckboxColumn'],
+                ['class' => 'kartik\grid\CheckboxColumn'],
                 [
                     'attribute' => 'Logotipo',
                     'format' => 'html',
@@ -207,7 +198,7 @@ $this->params['breadcrumbs'][] = $this->title;
                     ]
                 ],
                 // 'logotipo',
-                ['class' => 'yii\grid\ActionColumn',
+                ['class' => 'kartik\grid\ActionColumn',
                     'template'=> '{view}']
 
             ],

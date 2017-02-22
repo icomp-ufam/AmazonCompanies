@@ -10,6 +10,7 @@ $this->title = 'Atualizar Cadastro';//$model->idUsuario;
 //$this->params['breadcrumbs'][] = ['label' => $model->idUsuario, 'url' => ['view', 'id' => $model->idUsuario]];
 
 ?>
+<?php $this->params['breadcrumbs'][] = $this->title;?>
 <div class="usuario-update">
 
     <h2><strong><?= Html::encode($this->title) ?></strong></h2>

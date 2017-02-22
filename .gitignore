@@ -1,2 +1,41 @@
+<<<<<<< HEAD
 web/img/documentosTeste.xlsx
 web/uploads/~$documentosTeste.xlsx
+=======
+# phpstorm project files
+#.idea
+
+# netbeans project files
+#nbproject
+
+# zend studio for eclipse project files
+#.buildpath
+#.project
+#.settings
+
+# windows thumbnail cache
+#Thumbs.db
+
+# composer vendor dir
+#/vendor
+
+# composer itself is not needed
+#composer.phar
+
+# Mac DS_Store Files
+#.DS_Store
+
+# phpunit itself is not needed
+#phpunit.phar
+# local phpunit config
+#/phpunit.xml
+
+#tests/_output/*
+#tests/_support/_generated
+
+/config/db.php
+#/web/assets/*
+/runtime/mail/*
+/runtime/logs/*
+/runtime/debug/*
+>>>>>>> 671651556a698e832616fb3f90bfe1a4a9789f4f

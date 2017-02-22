@@ -38,10 +38,6 @@ use kartik\widgets\Select2;
     $this->defaultExtension = $model->logotipo
 ?>
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-<script src="https://code.highcharts.com/highcharts.js"></script> 
-
-
 <div class="empresa-view">
     <p>
         <h1>
@@ -54,7 +50,7 @@ use kartik\widgets\Select2;
     </p>
 
     <p>
-            <?= Html::a('<span></span> Gerar PDF', ['gerar_pdf'], ['class'=> 'btn btn-primary']) ?>
+            <?= Html::button('Gerar PDF', ['id'=> 'export_chart', 'class'=> 'btn btn-primary']) ?>
     </p>
 
      <h3> DADOS DE CONTAS:
@@ -396,10 +392,15 @@ use kartik\widgets\Select2;
 
 <?php 
 echo Highcharts::widget([
+   /*
    'scripts' => array(
         'modules/exporting',
+        
+        //Warning! The use of this component (themes/grid-light) will cause the export to stop working correctly!
         'themes/grid-light',
     ),
+    */
+    'id' => 'demonstration',
     'options' => array(
         'title' => array(
             'text' => 'Demonstração',
@@ -417,7 +418,7 @@ echo Highcharts::widget([
  <div class="body-content">
     <ul class="nav nav-tabs">
     <?php
-                         $analises = Analise::find()->select('ano')->where(['idEmpresa' => $model->idEmpresa])->all();
+                         $analises = Analise::find()->select('ano')->where(['idEmpresa' => $model->idEmpresa])->orderBy('ano')->all();
 
                         foreach($analises as $analise){
                          
@@ -430,7 +431,7 @@ echo Highcharts::widget([
 </div> </div>
     <div class="tab-content">
         <?php
-                        $analisesanos = Analise::find()->select('ano')->where(['idEmpresa' => $model->idEmpresa])->all();
+                        $analisesanos = Analise::find()->select('*')->where(['idEmpresa' => $model->idEmpresa])->all();
                         foreach($analisesanos as $analiseano){            
                     ?>
         <div id="Analise<?=$analiseano->ano?>" class="tab-pane fade">
@@ -438,7 +439,7 @@ echo Highcharts::widget([
                 <table class="table table-hover">
                     <thead>
                         <tr>
-                            <th>Analise: <?=$analiseano->ano?>  </th>
+                            <th>Analise:  </th>
                             
                         </tr>
                     </thead>
@@ -449,6 +450,32 @@ echo Highcharts::widget([
                                             ?>
                         <tr>
                             <td><?=$analise->texto?></td>
+
+                            <?php if ($analiseano->investidor == 2){
+                                $investidor = 'Comprar';
+
+                            }
+                            elseif ($analiseano->investidor == 3) {
+                                $investidor = 'Vender';
+                            }
+                            elseif ($analiseano->investidor == 4) {
+                                $investidor = 'Neutro';
+                            }
+                            ?>
+
+                            <?php echo '<h5 class="bg-info col-md-3 col-md-offset-2 btn-lg text-center"> Tendencias para o investidor: </br> <strong>'. $investidor .'</strong>  </h5>' ?>
+
+
+                            <?php if ($analiseano->credor == 2){
+                                $credor = 'Emprestar';
+
+                            }
+                            elseif ($analiseano->credor == 3) {
+                                $credor = 'Não emprestar';
+                            }
+                            ?>
+
+                            <?php echo '<h5 class="bg-success col-md-3 col-md-offset-2 btn-lg text-center"> Tendencias para o credor: </br> <strong> '. $credor .' </strong> </h5>' ?>
                         
                                <?php
                                              
@@ -622,3 +649,56 @@ $_SESSION["nome"] =  "Neves";
             </div>
         </div>
     </div>
+
+<!--
+    Savechart (JS part) - Saves a graphic of Highcharts in a .png file on the server
+
+    Author: Pedro Frota <pvmf@icomp.ufam.edu.br>
+    Based on canvg: https://github.com/canvg/canvg - Last visit: February 21, 2017
+    Since: February 17, 2017
+-->
+
+<!-- Required to temporarily save generated .svg -->
+<canvas id="canvas" style="display:none;"></canvas>
+
+<?php
+    
+    //Registering all necessary files
+    $this->registerJsFile("lib/savechart/stackblur.js");
+    $this->registerJsFile("lib/savechart/rgbcolor.js");
+    $this->registerJsFile("lib/savechart/canvg.js");
+
+    /*
+
+    Registering the export function. 
+
+    Note that this code must be written in JavaScript because the Highcharts API is written in 
+    JavaScript, and even if the project is using extensions like the one by miloschuman, which 
+    allows the code to be fully written in PHP, when the page is rendered, the code is converted 
+    to JavaScript. So, the way we used to capture the graph in real time in a simple way, is using 
+    JavaScript as well.
+
+    */
+
+    $this->registerJs("
+    
+    $(function () {
+        $(\"#export_chart\").click(function(){
+            var svg = document.getElementById('demonstration').children[0].innerHTML;
+            canvg(document.getElementById('canvas'),svg);
+            var img = canvas.toDataURL(\"image/png\"); //img is data:image/png;base64
+            img = img.replace('data:image/png;base64,', '');
+
+            $.ajax({
+              type: \"POST\",
+              url: \"lib/savechart/savechart.php\",
+              data: {bin_data: img},
+              success: function(data){
+                alert(data);
+              }
+            });
+        });
+    });
+    
+    ");
+?>

@@ -1,7 +1,7 @@
 <?php
 
 use yii\helpers\Html;
-use yii\grid\GridView;
+use kartik\grid\GridView;
 
 /* @var $this yii\web\View */
 /* @var $searchModel app\models\IndiceSearch */
@@ -23,11 +23,22 @@ $this->params['breadcrumbs'][] = $this->title;
         'dataProvider' => $dataProvider,
         'filterModel' => $searchModel,
         'columns' => [
-            ['class' => 'yii\grid\SerialColumn'],
+            ['class' => 'kartik\grid\SerialColumn'],
             'nomeIndice',
-            'formula',
+            //'formula',
+            [
+                'attribute' => 'formula',
+                'format' => 'html',
+                //'title' => 'formula',
+                'value' => function ($data) {
+                    return Html::img(Yii::getAlias('@web').'/img/calcuworld.png',
+                        ['width' => '30px', 'title' => str_replace("@", "", $data->formula)] );
+
+
+                },
+            ],
             'idTipoIndice.nome',
-            ['class' => 'yii\grid\ActionColumn'],
+            ['class' => 'kartik\grid\ActionColumn'],
 
         ]
     ]); ?>
