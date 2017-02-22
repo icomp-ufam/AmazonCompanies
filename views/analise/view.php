@@ -54,7 +54,7 @@ $this->params['breadcrumbs'][] = $this->title;
                             }
                             elseif ($model->credor == 3) {
                                 $credor = 'Não emprestar';
-                                $img = 'nao1.jpg';
+                                $img = 'nao1.png';
 
                             }
                             ?>
@@ -65,13 +65,11 @@ $this->params['breadcrumbs'][] = $this->title;
 
         <div class="col-md-8" style="background-color: lavender">
 
-            <h4><strong>Texto a ser analisado enviado pelo aluno</strong></h4>
+            <h4><strong>Análise Produzida:</strong></h4>
              <?= $model->texto ?> 
 
              <p><br></p>
 
-            <h4><strong>Resultado da análise realizado pelo responsável</strong></h4>     
-            <?= $model->textoAnalisador ?>
         </div>
 
 
@@ -110,13 +108,13 @@ $this->params['breadcrumbs'][] = $this->title;
     	]]) ?>
     	<?php }else{ ?>
     	<?=
-    	Html::a('Validar Análise', ['ativar', 'id' => $model->idanalise], [
+    	Html::a('<span class="glyphicon glyphicon-ok" aria-hidden=true></span> Validar Análise', ['ativar', 'id' => $model->idanalise], [
     			'class' => 'btn btn-success',
     			'data' =>[
     			'confirm' => 'Deseja validar a análise?'
     	]]) ?>
     	<?=
-    	Html::a('Invalidar Análise', ['desativar', 'id' => $model->idanalise], [
+    	Html::a('<span class="glyphicon glyphicon-ban-circle" aria-hidden=true></span> Invalidar Análise', ['desativar', 'id' => $model->idanalise], [
     			'class' => 'btn btn-danger',
     			'data' =>[
     			'confirm' => 'Deseja invalidar a análise e notificar o autor?'
@@ -153,7 +151,13 @@ $this->params['breadcrumbs'][] = $this->title;
 
 
         
-        <?php } ?>
+        <?php }else if(Yii::$app->user->getIdentificadorPessoa() == '2'){ ?>
+        <br>
+        	<?=
+    	Html::a('Retornar', ['/empresa/'], [
+    			'class' => 'btn btn-primary',
+  		]) ?>
+        <?php }?>
     </p>
     <!--?= DetailView::widget([
         'model' => $model,

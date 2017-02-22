@@ -33,7 +33,28 @@ $this->params['breadcrumbs'][] = $this->title;
         'columns' => [
 
             'nome',
-            'idDemonstracao0.nomeDemonstracao',
+        		[
+        			'attribute' => 	'idDemonstracao0.nomeDemonstracao',
+        			'header' => 'Demonstração'
+    			],
+            
+        		[
+        		'attribute' => 'obrigatorio',
+        		'hAlign' => 'center',
+        		'value' => function($model, $index, $dataColumn) {
+        		if($model->obrigatorio == '1'){
+        			return 'Sim';
+        		}else if($model->obrigatorio == '0'){
+        			return 'Não';
+        		}else{
+        			return 'Não Aplicado';
+        		}
+        		},
+        		'filter' => [
+        				'1' => 'Sim',
+        				'0' => 'Não'
+        		]
+        		],
 
             ['class' => 'kartik\grid\ActionColumn'],
         ],

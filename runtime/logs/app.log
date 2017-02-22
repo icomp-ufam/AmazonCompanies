@@ -1057,3 +1057,614 @@ $_SERVER = [
     'REQUEST_TIME_FLOAT' => 1487745072.038
     'REQUEST_TIME' => 1487745072
 ]
+2017-02-22 04:04:28 [::1][-][-][error][yii\base\ErrorException:8] exception 'yii\base\ErrorException' with message 'Undefined variable: investidor' in C:\xampp\htdocs\AmazonCompanies\views\empresa\view.php:466
+Stack trace:
+#0 C:\xampp\htdocs\AmazonCompanies\views\empresa\view.php(466): yii\base\ErrorHandler->handleError(8, 'Undefined varia...', 'C:\\xampp\\htdocs...', 466, Array)
+#1 C:\xampp\htdocs\AmazonCompanies\vendor\yiisoft\yii2\base\View.php(326): require('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\AmazonCompanies\vendor\yiisoft\yii2\base\View.php(248): yii\base\View->renderPhpFile('C:\\xampp\\htdocs...', Array)
+#3 C:\xampp\htdocs\AmazonCompanies\vendor\yiisoft\yii2\base\View.php(150): yii\base\View->renderFile('C:\\xampp\\htdocs...', Array, Object(app\controllers\EmpresaController))
+#4 C:\xampp\htdocs\AmazonCompanies\vendor\yiisoft\yii2\base\Controller.php(378): yii\base\View->render('view', Array, Object(app\controllers\EmpresaController))
+#5 C:\xampp\htdocs\AmazonCompanies\controllers\EmpresaController.php(352): yii\base\Controller->render('view', Array)
+#6 [internal function]: app\controllers\EmpresaController->actionView('5')
+#7 C:\xampp\htdocs\AmazonCompanies\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
+#8 C:\xampp\htdocs\AmazonCompanies\vendor\yiisoft\yii2\base\Controller.php(154): yii\base\InlineAction->runWithParams(Array)
+#9 C:\xampp\htdocs\AmazonCompanies\vendor\yiisoft\yii2\base\Module.php(454): yii\base\Controller->runAction('view', Array)
+#10 C:\xampp\htdocs\AmazonCompanies\vendor\yiisoft\yii2\web\Application.php(100): yii\base\Module->runAction('empresa/view', Array)
+#11 C:\xampp\htdocs\AmazonCompanies\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#12 C:\xampp\htdocs\AmazonCompanies\web\index.php(12): yii\base\Application->run()
+#13 {main}
+2017-02-22 04:04:27 [::1][-][-][info][application] $_GET = [
+    'r' => 'empresa/view'
+    'id' => '5'
+]
+
+$_COOKIE = [
+    'Phpstorm-7861e538' => '222ac354-423c-4837-9aa2-ecffa9f03124'
+    '_identity-frontend' => 'b61e35496551093beca05dd6ebce75a69085aa24004c094ec5af6ae54269338ea:2:{i:0;s:18:\"_identity-frontend\";i:1;s:46:\"[9,\"R-yyn16jzTqW_eHjK6qXgTvQ1kZh7PNS\",2592000]\";}'
+    '_csrf' => '604367eb82864d4d0a189228b86b7446117478b58503feedde709d3139dae23fa:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"xrFmSmuRSrkYRTxNTzzu1VYYvP9Ah-I3\";}'
+    'PHPSESSID' => '5c79vido9e4o70th4hmulfmdh0'
+    '_identity' => '1de54a1149b80de6528a96989c1654bdfc80c1563a5eee0bba83377ee513af81a:2:{i:0;s:9:\"_identity\";i:1;s:16:\"[1,null,2592000]\";}'
+]
+
+$_SERVER = [
+    'MIBDIRS' => 'C:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'C:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'
+    'HTTP_REFERER' => 'http://localhost/AmazonCompanies/web/index.php?r=empresa%2Findex'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'pt-BR,pt;q=0.8,en-US;q=0.6,en;q=0.4'
+    'HTTP_COOKIE' => 'Phpstorm-7861e538=222ac354-423c-4837-9aa2-ecffa9f03124; _identity-frontend=b61e35496551093beca05dd6ebce75a69085aa24004c094ec5af6ae54269338ea%3A2%3A%7Bi%3A0%3Bs%3A18%3A%22_identity-frontend%22%3Bi%3A1%3Bs%3A46%3A%22%5B9%2C%22R-yyn16jzTqW_eHjK6qXgTvQ1kZh7PNS%22%2C2592000%5D%22%3B%7D; _csrf=604367eb82864d4d0a189228b86b7446117478b58503feedde709d3139dae23fa%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22xrFmSmuRSrkYRTxNTzzu1VYYvP9Ah-I3%22%3B%7D; PHPSESSID=5c79vido9e4o70th4hmulfmdh0; _identity=1de54a1149b80de6528a96989c1654bdfc80c1563a5eee0bba83377ee513af81a%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_identity%22%3Bi%3A1%3Bs%3A16%3A%22%5B1%2Cnull%2C2592000%5D%22%3B%7D'
+    'HTTP_DNT' => '1'
+    'PATH' => 'C:\\Program Files (x86)\\Common Files\\Intel\\Shared Files\\cpp\\bin\\Intel64;C:\\app\\TrabalhoOracleBD\\product\\12.1.0\\dbhome_1\\bin;C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Program Files (x86)\\Intel\\iCLS Client\\;C:\\Program Files\\Intel\\iCLS Client\\;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\IPT;c:\\Program Files (x86)\\ATI Technologies\\ATI.ACE\\Core-Static;C:\\Program Files\\Intel\\WiFi\\bin\\;C:\\Program Files\\Common Files\\Intel\\WirelessCommon\\;C:\\Program Files\\Java\\jdk1.8.0_60\\bin;C:\\Program Files (x86)\\ATI Technologies\\ATI.ACE\\Core-Static\\;c:\\starcode\\apache-maven-3.3.3\\\\bin\\;C:\\Python27;C:\\Python27\\Scripts\\;C:\\instant_client_oracle;C:\\Program Files (x86)\\ATI Technologies\\ATI.ACE\\Core-Static;C:\\Program Files (x86)\\Skype\\Phone\\;C:\\Program Files (x86)\\Windows Live\\Shared;C:\\Program Files\\MySQL\\MySQL Server 5.5\\bin;C:\\xampp\\php;C:\\ProgramData\\ComposerSetup\\bin;C:\\Program Files\\Microsoft SQL Server\\130\\Tools\\Binn\\;C:\\Opencv-3.1.0\\opencv\\build\\x64\\vc14\\bin;C:\\Program Files\\CMake\\bin;C:\\Program Files\\nodejs\\;C:\\Users\\Larissa\\AppData\\Roaming\\Composer\\vendor\\bin;C:\\Users\\Larissa\\AppData\\Local\\Microsoft\\WindowsApps;C:\\Users\\Larissa\\AppData\\Roaming\\npm'
+    'SystemRoot' => 'C:\\WINDOWS'
+    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\WINDOWS'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.17 (Win32) OpenSSL/1.0.2d PHP/5.6.23 Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.17 (Win32) OpenSSL/1.0.2d PHP/5.6.23'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'C:/xampp/htdocs'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/xampp/htdocs'
+    'SERVER_ADMIN' => 'postmaster@localhost'
+    'SCRIPT_FILENAME' => 'C:/xampp/htdocs/AmazonCompanies/web/index.php'
+    'REMOTE_PORT' => '59706'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=empresa%2Fview&id=5'
+    'REQUEST_URI' => '/AmazonCompanies/web/index.php?r=empresa%2Fview&id=5'
+    'SCRIPT_NAME' => '/AmazonCompanies/web/index.php'
+    'PHP_SELF' => '/AmazonCompanies/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1487732667.142
+    'REQUEST_TIME' => 1487732667
+]
+2017-02-22 04:06:59 [::1][-][-][error][yii\base\ErrorException:8] exception 'yii\base\ErrorException' with message 'Undefined variable: investidor' in C:\xampp\htdocs\AmazonCompanies\views\empresa\view.php:466
+Stack trace:
+#0 C:\xampp\htdocs\AmazonCompanies\views\empresa\view.php(466): yii\base\ErrorHandler->handleError(8, 'Undefined varia...', 'C:\\xampp\\htdocs...', 466, Array)
+#1 C:\xampp\htdocs\AmazonCompanies\vendor\yiisoft\yii2\base\View.php(326): require('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\AmazonCompanies\vendor\yiisoft\yii2\base\View.php(248): yii\base\View->renderPhpFile('C:\\xampp\\htdocs...', Array)
+#3 C:\xampp\htdocs\AmazonCompanies\vendor\yiisoft\yii2\base\View.php(150): yii\base\View->renderFile('C:\\xampp\\htdocs...', Array, Object(app\controllers\EmpresaController))
+#4 C:\xampp\htdocs\AmazonCompanies\vendor\yiisoft\yii2\base\Controller.php(378): yii\base\View->render('view', Array, Object(app\controllers\EmpresaController))
+#5 C:\xampp\htdocs\AmazonCompanies\controllers\EmpresaController.php(308): yii\base\Controller->render('view', Array)
+#6 [internal function]: app\controllers\EmpresaController->actionView('5')
+#7 C:\xampp\htdocs\AmazonCompanies\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
+#8 C:\xampp\htdocs\AmazonCompanies\vendor\yiisoft\yii2\base\Controller.php(154): yii\base\InlineAction->runWithParams(Array)
+#9 C:\xampp\htdocs\AmazonCompanies\vendor\yiisoft\yii2\base\Module.php(454): yii\base\Controller->runAction('view', Array)
+#10 C:\xampp\htdocs\AmazonCompanies\vendor\yiisoft\yii2\web\Application.php(100): yii\base\Module->runAction('empresa/view', Array)
+#11 C:\xampp\htdocs\AmazonCompanies\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#12 C:\xampp\htdocs\AmazonCompanies\web\index.php(12): yii\base\Application->run()
+#13 {main}
+2017-02-22 04:06:58 [::1][-][-][info][application] $_GET = [
+    'r' => 'empresa/view'
+    'id' => '5'
+]
+
+$_COOKIE = [
+    'Phpstorm-7861e538' => '222ac354-423c-4837-9aa2-ecffa9f03124'
+    '_identity-frontend' => 'b61e35496551093beca05dd6ebce75a69085aa24004c094ec5af6ae54269338ea:2:{i:0;s:18:\"_identity-frontend\";i:1;s:46:\"[9,\"R-yyn16jzTqW_eHjK6qXgTvQ1kZh7PNS\",2592000]\";}'
+    '_csrf' => '604367eb82864d4d0a189228b86b7446117478b58503feedde709d3139dae23fa:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"xrFmSmuRSrkYRTxNTzzu1VYYvP9Ah-I3\";}'
+    'PHPSESSID' => '5c79vido9e4o70th4hmulfmdh0'
+    '_identity' => '1de54a1149b80de6528a96989c1654bdfc80c1563a5eee0bba83377ee513af81a:2:{i:0;s:9:\"_identity\";i:1;s:16:\"[1,null,2592000]\";}'
+]
+
+$_SERVER = [
+    'MIBDIRS' => 'C:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'C:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'
+    'HTTP_REFERER' => 'http://localhost/AmazonCompanies/web/index.php?r=empresa%2Findex'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'pt-BR,pt;q=0.8,en-US;q=0.6,en;q=0.4'
+    'HTTP_COOKIE' => 'Phpstorm-7861e538=222ac354-423c-4837-9aa2-ecffa9f03124; _identity-frontend=b61e35496551093beca05dd6ebce75a69085aa24004c094ec5af6ae54269338ea%3A2%3A%7Bi%3A0%3Bs%3A18%3A%22_identity-frontend%22%3Bi%3A1%3Bs%3A46%3A%22%5B9%2C%22R-yyn16jzTqW_eHjK6qXgTvQ1kZh7PNS%22%2C2592000%5D%22%3B%7D; _csrf=604367eb82864d4d0a189228b86b7446117478b58503feedde709d3139dae23fa%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22xrFmSmuRSrkYRTxNTzzu1VYYvP9Ah-I3%22%3B%7D; PHPSESSID=5c79vido9e4o70th4hmulfmdh0; _identity=1de54a1149b80de6528a96989c1654bdfc80c1563a5eee0bba83377ee513af81a%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_identity%22%3Bi%3A1%3Bs%3A16%3A%22%5B1%2Cnull%2C2592000%5D%22%3B%7D'
+    'HTTP_DNT' => '1'
+    'PATH' => 'C:\\Program Files (x86)\\Common Files\\Intel\\Shared Files\\cpp\\bin\\Intel64;C:\\app\\TrabalhoOracleBD\\product\\12.1.0\\dbhome_1\\bin;C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Program Files (x86)\\Intel\\iCLS Client\\;C:\\Program Files\\Intel\\iCLS Client\\;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\IPT;c:\\Program Files (x86)\\ATI Technologies\\ATI.ACE\\Core-Static;C:\\Program Files\\Intel\\WiFi\\bin\\;C:\\Program Files\\Common Files\\Intel\\WirelessCommon\\;C:\\Program Files\\Java\\jdk1.8.0_60\\bin;C:\\Program Files (x86)\\ATI Technologies\\ATI.ACE\\Core-Static\\;c:\\starcode\\apache-maven-3.3.3\\\\bin\\;C:\\Python27;C:\\Python27\\Scripts\\;C:\\instant_client_oracle;C:\\Program Files (x86)\\ATI Technologies\\ATI.ACE\\Core-Static;C:\\Program Files (x86)\\Skype\\Phone\\;C:\\Program Files (x86)\\Windows Live\\Shared;C:\\Program Files\\MySQL\\MySQL Server 5.5\\bin;C:\\xampp\\php;C:\\ProgramData\\ComposerSetup\\bin;C:\\Program Files\\Microsoft SQL Server\\130\\Tools\\Binn\\;C:\\Opencv-3.1.0\\opencv\\build\\x64\\vc14\\bin;C:\\Program Files\\CMake\\bin;C:\\Program Files\\nodejs\\;C:\\Users\\Larissa\\AppData\\Roaming\\Composer\\vendor\\bin;C:\\Users\\Larissa\\AppData\\Local\\Microsoft\\WindowsApps;C:\\Users\\Larissa\\AppData\\Roaming\\npm'
+    'SystemRoot' => 'C:\\WINDOWS'
+    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\WINDOWS'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.17 (Win32) OpenSSL/1.0.2d PHP/5.6.23 Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.17 (Win32) OpenSSL/1.0.2d PHP/5.6.23'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'C:/xampp/htdocs'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/xampp/htdocs'
+    'SERVER_ADMIN' => 'postmaster@localhost'
+    'SCRIPT_FILENAME' => 'C:/xampp/htdocs/AmazonCompanies/web/index.php'
+    'REMOTE_PORT' => '59732'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=empresa%2Fview&id=5'
+    'REQUEST_URI' => '/AmazonCompanies/web/index.php?r=empresa%2Fview&id=5'
+    'SCRIPT_NAME' => '/AmazonCompanies/web/index.php'
+    'PHP_SELF' => '/AmazonCompanies/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1487732818.593
+    'REQUEST_TIME' => 1487732818
+]
+2017-02-22 04:08:18 [::1][-][-][error][yii\base\ErrorException:8] exception 'yii\base\ErrorException' with message 'Undefined variable: investidor' in C:\xampp\htdocs\AmazonCompanies\views\empresa\view.php:466
+Stack trace:
+#0 C:\xampp\htdocs\AmazonCompanies\views\empresa\view.php(466): yii\base\ErrorHandler->handleError(8, 'Undefined varia...', 'C:\\xampp\\htdocs...', 466, Array)
+#1 C:\xampp\htdocs\AmazonCompanies\vendor\yiisoft\yii2\base\View.php(326): require('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\AmazonCompanies\vendor\yiisoft\yii2\base\View.php(248): yii\base\View->renderPhpFile('C:\\xampp\\htdocs...', Array)
+#3 C:\xampp\htdocs\AmazonCompanies\vendor\yiisoft\yii2\base\View.php(150): yii\base\View->renderFile('C:\\xampp\\htdocs...', Array, Object(app\controllers\EmpresaController))
+#4 C:\xampp\htdocs\AmazonCompanies\vendor\yiisoft\yii2\base\Controller.php(378): yii\base\View->render('view', Array, Object(app\controllers\EmpresaController))
+#5 C:\xampp\htdocs\AmazonCompanies\controllers\EmpresaController.php(308): yii\base\Controller->render('view', Array)
+#6 [internal function]: app\controllers\EmpresaController->actionView('5')
+#7 C:\xampp\htdocs\AmazonCompanies\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
+#8 C:\xampp\htdocs\AmazonCompanies\vendor\yiisoft\yii2\base\Controller.php(154): yii\base\InlineAction->runWithParams(Array)
+#9 C:\xampp\htdocs\AmazonCompanies\vendor\yiisoft\yii2\base\Module.php(454): yii\base\Controller->runAction('view', Array)
+#10 C:\xampp\htdocs\AmazonCompanies\vendor\yiisoft\yii2\web\Application.php(100): yii\base\Module->runAction('empresa/view', Array)
+#11 C:\xampp\htdocs\AmazonCompanies\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#12 C:\xampp\htdocs\AmazonCompanies\web\index.php(12): yii\base\Application->run()
+#13 {main}
+2017-02-22 04:08:16 [::1][-][-][info][application] $_GET = [
+    'r' => 'empresa/view'
+    'id' => '5'
+]
+
+$_COOKIE = [
+    'Phpstorm-7861e538' => '222ac354-423c-4837-9aa2-ecffa9f03124'
+    '_identity-frontend' => 'b61e35496551093beca05dd6ebce75a69085aa24004c094ec5af6ae54269338ea:2:{i:0;s:18:\"_identity-frontend\";i:1;s:46:\"[9,\"R-yyn16jzTqW_eHjK6qXgTvQ1kZh7PNS\",2592000]\";}'
+    '_csrf' => '604367eb82864d4d0a189228b86b7446117478b58503feedde709d3139dae23fa:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"xrFmSmuRSrkYRTxNTzzu1VYYvP9Ah-I3\";}'
+    'PHPSESSID' => '5c79vido9e4o70th4hmulfmdh0'
+    '_identity' => '1de54a1149b80de6528a96989c1654bdfc80c1563a5eee0bba83377ee513af81a:2:{i:0;s:9:\"_identity\";i:1;s:16:\"[1,null,2592000]\";}'
+]
+
+$_SERVER = [
+    'MIBDIRS' => 'C:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'C:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'
+    'HTTP_REFERER' => 'http://localhost/AmazonCompanies/web/index.php?r=empresa%2Findex'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'pt-BR,pt;q=0.8,en-US;q=0.6,en;q=0.4'
+    'HTTP_COOKIE' => 'Phpstorm-7861e538=222ac354-423c-4837-9aa2-ecffa9f03124; _identity-frontend=b61e35496551093beca05dd6ebce75a69085aa24004c094ec5af6ae54269338ea%3A2%3A%7Bi%3A0%3Bs%3A18%3A%22_identity-frontend%22%3Bi%3A1%3Bs%3A46%3A%22%5B9%2C%22R-yyn16jzTqW_eHjK6qXgTvQ1kZh7PNS%22%2C2592000%5D%22%3B%7D; _csrf=604367eb82864d4d0a189228b86b7446117478b58503feedde709d3139dae23fa%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22xrFmSmuRSrkYRTxNTzzu1VYYvP9Ah-I3%22%3B%7D; PHPSESSID=5c79vido9e4o70th4hmulfmdh0; _identity=1de54a1149b80de6528a96989c1654bdfc80c1563a5eee0bba83377ee513af81a%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_identity%22%3Bi%3A1%3Bs%3A16%3A%22%5B1%2Cnull%2C2592000%5D%22%3B%7D'
+    'HTTP_DNT' => '1'
+    'PATH' => 'C:\\Program Files (x86)\\Common Files\\Intel\\Shared Files\\cpp\\bin\\Intel64;C:\\app\\TrabalhoOracleBD\\product\\12.1.0\\dbhome_1\\bin;C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Program Files (x86)\\Intel\\iCLS Client\\;C:\\Program Files\\Intel\\iCLS Client\\;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\IPT;c:\\Program Files (x86)\\ATI Technologies\\ATI.ACE\\Core-Static;C:\\Program Files\\Intel\\WiFi\\bin\\;C:\\Program Files\\Common Files\\Intel\\WirelessCommon\\;C:\\Program Files\\Java\\jdk1.8.0_60\\bin;C:\\Program Files (x86)\\ATI Technologies\\ATI.ACE\\Core-Static\\;c:\\starcode\\apache-maven-3.3.3\\\\bin\\;C:\\Python27;C:\\Python27\\Scripts\\;C:\\instant_client_oracle;C:\\Program Files (x86)\\ATI Technologies\\ATI.ACE\\Core-Static;C:\\Program Files (x86)\\Skype\\Phone\\;C:\\Program Files (x86)\\Windows Live\\Shared;C:\\Program Files\\MySQL\\MySQL Server 5.5\\bin;C:\\xampp\\php;C:\\ProgramData\\ComposerSetup\\bin;C:\\Program Files\\Microsoft SQL Server\\130\\Tools\\Binn\\;C:\\Opencv-3.1.0\\opencv\\build\\x64\\vc14\\bin;C:\\Program Files\\CMake\\bin;C:\\Program Files\\nodejs\\;C:\\Users\\Larissa\\AppData\\Roaming\\Composer\\vendor\\bin;C:\\Users\\Larissa\\AppData\\Local\\Microsoft\\WindowsApps;C:\\Users\\Larissa\\AppData\\Roaming\\npm'
+    'SystemRoot' => 'C:\\WINDOWS'
+    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\WINDOWS'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.17 (Win32) OpenSSL/1.0.2d PHP/5.6.23 Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.17 (Win32) OpenSSL/1.0.2d PHP/5.6.23'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'C:/xampp/htdocs'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/xampp/htdocs'
+    'SERVER_ADMIN' => 'postmaster@localhost'
+    'SCRIPT_FILENAME' => 'C:/xampp/htdocs/AmazonCompanies/web/index.php'
+    'REMOTE_PORT' => '59748'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=empresa%2Fview&id=5'
+    'REQUEST_URI' => '/AmazonCompanies/web/index.php?r=empresa%2Fview&id=5'
+    'SCRIPT_NAME' => '/AmazonCompanies/web/index.php'
+    'PHP_SELF' => '/AmazonCompanies/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1487732896.938
+    'REQUEST_TIME' => 1487732896
+]
+2017-02-22 04:20:54 [::1][1][-][error][yii\i18n\PhpMessageSource::loadFallbackMessages] The message file for category 'app' does not exist: C:\xampp\htdocs\AmazonCompanies/messages/pt-Br/app.php Fallback file does not exist as well: C:\xampp\htdocs\AmazonCompanies/messages/pt/app.php
+    in C:\xampp\htdocs\AmazonCompanies\views\conta\index.php:10
+    in C:\xampp\htdocs\AmazonCompanies\controllers\ContaController.php:47
+2017-02-22 04:20:53 [::1][1][-][info][application] $_GET = [
+    'r' => 'conta/index'
+]
+
+$_COOKIE = [
+    'Phpstorm-7861e538' => '222ac354-423c-4837-9aa2-ecffa9f03124'
+    '_identity-frontend' => 'b61e35496551093beca05dd6ebce75a69085aa24004c094ec5af6ae54269338ea:2:{i:0;s:18:\"_identity-frontend\";i:1;s:46:\"[9,\"R-yyn16jzTqW_eHjK6qXgTvQ1kZh7PNS\",2592000]\";}'
+    '_csrf' => '604367eb82864d4d0a189228b86b7446117478b58503feedde709d3139dae23fa:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"xrFmSmuRSrkYRTxNTzzu1VYYvP9Ah-I3\";}'
+    'PHPSESSID' => '5c79vido9e4o70th4hmulfmdh0'
+    '_identity' => '1de54a1149b80de6528a96989c1654bdfc80c1563a5eee0bba83377ee513af81a:2:{i:0;s:9:\"_identity\";i:1;s:16:\"[1,null,2592000]\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__id' => 1
+    'email' => 'larissa@icomp.ufam.edu.br'
+    'nome' => 'Neves'
+]
+
+$_SERVER = [
+    'MIBDIRS' => 'C:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'C:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'
+    'HTTP_REFERER' => 'http://localhost/AmazonCompanies/web/index.php?r=empresa%2Fview&id=5'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'pt-BR,pt;q=0.8,en-US;q=0.6,en;q=0.4'
+    'HTTP_COOKIE' => 'Phpstorm-7861e538=222ac354-423c-4837-9aa2-ecffa9f03124; _identity-frontend=b61e35496551093beca05dd6ebce75a69085aa24004c094ec5af6ae54269338ea%3A2%3A%7Bi%3A0%3Bs%3A18%3A%22_identity-frontend%22%3Bi%3A1%3Bs%3A46%3A%22%5B9%2C%22R-yyn16jzTqW_eHjK6qXgTvQ1kZh7PNS%22%2C2592000%5D%22%3B%7D; _csrf=604367eb82864d4d0a189228b86b7446117478b58503feedde709d3139dae23fa%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22xrFmSmuRSrkYRTxNTzzu1VYYvP9Ah-I3%22%3B%7D; PHPSESSID=5c79vido9e4o70th4hmulfmdh0; _identity=1de54a1149b80de6528a96989c1654bdfc80c1563a5eee0bba83377ee513af81a%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_identity%22%3Bi%3A1%3Bs%3A16%3A%22%5B1%2Cnull%2C2592000%5D%22%3B%7D'
+    'HTTP_DNT' => '1'
+    'PATH' => 'C:\\Program Files (x86)\\Common Files\\Intel\\Shared Files\\cpp\\bin\\Intel64;C:\\app\\TrabalhoOracleBD\\product\\12.1.0\\dbhome_1\\bin;C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Program Files (x86)\\Intel\\iCLS Client\\;C:\\Program Files\\Intel\\iCLS Client\\;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\IPT;c:\\Program Files (x86)\\ATI Technologies\\ATI.ACE\\Core-Static;C:\\Program Files\\Intel\\WiFi\\bin\\;C:\\Program Files\\Common Files\\Intel\\WirelessCommon\\;C:\\Program Files\\Java\\jdk1.8.0_60\\bin;C:\\Program Files (x86)\\ATI Technologies\\ATI.ACE\\Core-Static\\;c:\\starcode\\apache-maven-3.3.3\\\\bin\\;C:\\Python27;C:\\Python27\\Scripts\\;C:\\instant_client_oracle;C:\\Program Files (x86)\\ATI Technologies\\ATI.ACE\\Core-Static;C:\\Program Files (x86)\\Skype\\Phone\\;C:\\Program Files (x86)\\Windows Live\\Shared;C:\\Program Files\\MySQL\\MySQL Server 5.5\\bin;C:\\xampp\\php;C:\\ProgramData\\ComposerSetup\\bin;C:\\Program Files\\Microsoft SQL Server\\130\\Tools\\Binn\\;C:\\Opencv-3.1.0\\opencv\\build\\x64\\vc14\\bin;C:\\Program Files\\CMake\\bin;C:\\Program Files\\nodejs\\;C:\\Users\\Larissa\\AppData\\Roaming\\Composer\\vendor\\bin;C:\\Users\\Larissa\\AppData\\Local\\Microsoft\\WindowsApps;C:\\Users\\Larissa\\AppData\\Roaming\\npm'
+    'SystemRoot' => 'C:\\WINDOWS'
+    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\WINDOWS'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.17 (Win32) OpenSSL/1.0.2d PHP/5.6.23 Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.17 (Win32) OpenSSL/1.0.2d PHP/5.6.23'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'C:/xampp/htdocs'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/xampp/htdocs'
+    'SERVER_ADMIN' => 'postmaster@localhost'
+    'SCRIPT_FILENAME' => 'C:/xampp/htdocs/AmazonCompanies/web/index.php'
+    'REMOTE_PORT' => '59898'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=conta%2Findex'
+    'REQUEST_URI' => '/AmazonCompanies/web/index.php?r=conta%2Findex'
+    'SCRIPT_NAME' => '/AmazonCompanies/web/index.php'
+    'PHP_SELF' => '/AmazonCompanies/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1487733653.236
+    'REQUEST_TIME' => 1487733653
+]
+2017-02-22 04:21:01 [::1][1][-][error][yii\i18n\PhpMessageSource::loadFallbackMessages] The message file for category 'app' does not exist: C:\xampp\htdocs\AmazonCompanies/messages/pt-Br/app.php Fallback file does not exist as well: C:\xampp\htdocs\AmazonCompanies/messages/pt/app.php
+    in C:\xampp\htdocs\AmazonCompanies\views\conta\create.php:9
+    in C:\xampp\htdocs\AmazonCompanies\controllers\ContaController.php:76
+2017-02-22 04:21:01 [::1][1][-][info][application] $_GET = [
+    'r' => 'conta/create'
+]
+
+$_COOKIE = [
+    'Phpstorm-7861e538' => '222ac354-423c-4837-9aa2-ecffa9f03124'
+    '_identity-frontend' => 'b61e35496551093beca05dd6ebce75a69085aa24004c094ec5af6ae54269338ea:2:{i:0;s:18:\"_identity-frontend\";i:1;s:46:\"[9,\"R-yyn16jzTqW_eHjK6qXgTvQ1kZh7PNS\",2592000]\";}'
+    '_csrf' => '604367eb82864d4d0a189228b86b7446117478b58503feedde709d3139dae23fa:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"xrFmSmuRSrkYRTxNTzzu1VYYvP9Ah-I3\";}'
+    'PHPSESSID' => '5c79vido9e4o70th4hmulfmdh0'
+    '_identity' => '1de54a1149b80de6528a96989c1654bdfc80c1563a5eee0bba83377ee513af81a:2:{i:0;s:9:\"_identity\";i:1;s:16:\"[1,null,2592000]\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__id' => 1
+    'email' => 'larissa@icomp.ufam.edu.br'
+    'nome' => 'Neves'
+]
+
+$_SERVER = [
+    'MIBDIRS' => 'C:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'C:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'
+    'HTTP_REFERER' => 'http://localhost/AmazonCompanies/web/index.php?r=conta%2Findex'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'pt-BR,pt;q=0.8,en-US;q=0.6,en;q=0.4'
+    'HTTP_COOKIE' => 'Phpstorm-7861e538=222ac354-423c-4837-9aa2-ecffa9f03124; _identity-frontend=b61e35496551093beca05dd6ebce75a69085aa24004c094ec5af6ae54269338ea%3A2%3A%7Bi%3A0%3Bs%3A18%3A%22_identity-frontend%22%3Bi%3A1%3Bs%3A46%3A%22%5B9%2C%22R-yyn16jzTqW_eHjK6qXgTvQ1kZh7PNS%22%2C2592000%5D%22%3B%7D; _csrf=604367eb82864d4d0a189228b86b7446117478b58503feedde709d3139dae23fa%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22xrFmSmuRSrkYRTxNTzzu1VYYvP9Ah-I3%22%3B%7D; PHPSESSID=5c79vido9e4o70th4hmulfmdh0; _identity=1de54a1149b80de6528a96989c1654bdfc80c1563a5eee0bba83377ee513af81a%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_identity%22%3Bi%3A1%3Bs%3A16%3A%22%5B1%2Cnull%2C2592000%5D%22%3B%7D'
+    'HTTP_DNT' => '1'
+    'PATH' => 'C:\\Program Files (x86)\\Common Files\\Intel\\Shared Files\\cpp\\bin\\Intel64;C:\\app\\TrabalhoOracleBD\\product\\12.1.0\\dbhome_1\\bin;C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Program Files (x86)\\Intel\\iCLS Client\\;C:\\Program Files\\Intel\\iCLS Client\\;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\IPT;c:\\Program Files (x86)\\ATI Technologies\\ATI.ACE\\Core-Static;C:\\Program Files\\Intel\\WiFi\\bin\\;C:\\Program Files\\Common Files\\Intel\\WirelessCommon\\;C:\\Program Files\\Java\\jdk1.8.0_60\\bin;C:\\Program Files (x86)\\ATI Technologies\\ATI.ACE\\Core-Static\\;c:\\starcode\\apache-maven-3.3.3\\\\bin\\;C:\\Python27;C:\\Python27\\Scripts\\;C:\\instant_client_oracle;C:\\Program Files (x86)\\ATI Technologies\\ATI.ACE\\Core-Static;C:\\Program Files (x86)\\Skype\\Phone\\;C:\\Program Files (x86)\\Windows Live\\Shared;C:\\Program Files\\MySQL\\MySQL Server 5.5\\bin;C:\\xampp\\php;C:\\ProgramData\\ComposerSetup\\bin;C:\\Program Files\\Microsoft SQL Server\\130\\Tools\\Binn\\;C:\\Opencv-3.1.0\\opencv\\build\\x64\\vc14\\bin;C:\\Program Files\\CMake\\bin;C:\\Program Files\\nodejs\\;C:\\Users\\Larissa\\AppData\\Roaming\\Composer\\vendor\\bin;C:\\Users\\Larissa\\AppData\\Local\\Microsoft\\WindowsApps;C:\\Users\\Larissa\\AppData\\Roaming\\npm'
+    'SystemRoot' => 'C:\\WINDOWS'
+    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\WINDOWS'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.17 (Win32) OpenSSL/1.0.2d PHP/5.6.23 Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.17 (Win32) OpenSSL/1.0.2d PHP/5.6.23'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'C:/xampp/htdocs'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/xampp/htdocs'
+    'SERVER_ADMIN' => 'postmaster@localhost'
+    'SCRIPT_FILENAME' => 'C:/xampp/htdocs/AmazonCompanies/web/index.php'
+    'REMOTE_PORT' => '59901'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=conta%2Fcreate'
+    'REQUEST_URI' => '/AmazonCompanies/web/index.php?r=conta%2Fcreate'
+    'SCRIPT_NAME' => '/AmazonCompanies/web/index.php'
+    'PHP_SELF' => '/AmazonCompanies/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1487733661.509
+    'REQUEST_TIME' => 1487733661
+]
+2017-02-22 04:24:20 [::1][-][-][error][yii\base\ErrorException:2] exception 'yii\base\ErrorException' with message 'move_uploaded_file(uploads/documentosTeste.xlsx): failed to open stream: Permission denied' in C:\xampp\htdocs\AmazonCompanies\vendor\yiisoft\yii2\web\UploadedFile.php:161
+Stack trace:
+#0 [internal function]: yii\base\ErrorHandler->handleError(2, 'move_uploaded_f...', 'C:\\xampp\\htdocs...', 161, Array)
+#1 C:\xampp\htdocs\AmazonCompanies\vendor\yiisoft\yii2\web\UploadedFile.php(161): move_uploaded_file('C:\\xampp\\tmp\\ph...', 'uploads/documen...')
+#2 C:\xampp\htdocs\AmazonCompanies\controllers\EmpresaController.php(216): yii\web\UploadedFile->saveAs('uploads/documen...')
+#3 [internal function]: app\controllers\EmpresaController->actionView('5')
+#4 C:\xampp\htdocs\AmazonCompanies\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
+#5 C:\xampp\htdocs\AmazonCompanies\vendor\yiisoft\yii2\base\Controller.php(154): yii\base\InlineAction->runWithParams(Array)
+#6 C:\xampp\htdocs\AmazonCompanies\vendor\yiisoft\yii2\base\Module.php(454): yii\base\Controller->runAction('view', Array)
+#7 C:\xampp\htdocs\AmazonCompanies\vendor\yiisoft\yii2\web\Application.php(100): yii\base\Module->runAction('empresa/view', Array)
+#8 C:\xampp\htdocs\AmazonCompanies\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#9 C:\xampp\htdocs\AmazonCompanies\web\index.php(12): yii\base\Application->run()
+#10 {main}
+2017-02-22 04:24:19 [::1][-][-][info][application] $_GET = [
+    'r' => 'empresa/view'
+    'id' => '5'
+]
+
+$_POST = [
+    '_csrf' => 'cnlYUldIRHAKCx4/BCUxIiELMwsFHDw.JgMiJ2YeHSkEKWETP2UNQw=='
+    'Empresa' => [
+        'upload_file' => ''
+    ]
+]
+
+$_FILES = [
+    'Empresa' => [
+        'name' => [
+            'upload_file' => 'documentosTeste.xlsx'
+        ]
+        'type' => [
+            'upload_file' => 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'
+        ]
+        'tmp_name' => [
+            'upload_file' => 'C:\\xampp\\tmp\\php3E99.tmp'
+        ]
+        'error' => [
+            'upload_file' => 0
+        ]
+        'size' => [
+            'upload_file' => 8933
+        ]
+    ]
+]
+
+$_COOKIE = [
+    'Phpstorm-7861e538' => '222ac354-423c-4837-9aa2-ecffa9f03124'
+    '_identity-frontend' => 'b61e35496551093beca05dd6ebce75a69085aa24004c094ec5af6ae54269338ea:2:{i:0;s:18:\"_identity-frontend\";i:1;s:46:\"[9,\"R-yyn16jzTqW_eHjK6qXgTvQ1kZh7PNS\",2592000]\";}'
+    '_csrf' => '604367eb82864d4d0a189228b86b7446117478b58503feedde709d3139dae23fa:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"xrFmSmuRSrkYRTxNTzzu1VYYvP9Ah-I3\";}'
+    'PHPSESSID' => '5c79vido9e4o70th4hmulfmdh0'
+    '_identity' => '1de54a1149b80de6528a96989c1654bdfc80c1563a5eee0bba83377ee513af81a:2:{i:0;s:9:\"_identity\";i:1;s:16:\"[1,null,2592000]\";}'
+]
+
+$_SERVER = [
+    'MIBDIRS' => 'C:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'C:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'CONTENT_LENGTH' => '9453'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_ORIGIN' => 'http://localhost'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36'
+    'CONTENT_TYPE' => 'multipart/form-data; boundary=----WebKitFormBoundaryHUGoTujUzQhFcTmS'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'
+    'HTTP_REFERER' => 'http://localhost/AmazonCompanies/web/index.php?r=empresa%2Fview&id=5'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'pt-BR,pt;q=0.8,en-US;q=0.6,en;q=0.4'
+    'HTTP_COOKIE' => 'Phpstorm-7861e538=222ac354-423c-4837-9aa2-ecffa9f03124; _identity-frontend=b61e35496551093beca05dd6ebce75a69085aa24004c094ec5af6ae54269338ea%3A2%3A%7Bi%3A0%3Bs%3A18%3A%22_identity-frontend%22%3Bi%3A1%3Bs%3A46%3A%22%5B9%2C%22R-yyn16jzTqW_eHjK6qXgTvQ1kZh7PNS%22%2C2592000%5D%22%3B%7D; _csrf=604367eb82864d4d0a189228b86b7446117478b58503feedde709d3139dae23fa%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22xrFmSmuRSrkYRTxNTzzu1VYYvP9Ah-I3%22%3B%7D; PHPSESSID=5c79vido9e4o70th4hmulfmdh0; _identity=1de54a1149b80de6528a96989c1654bdfc80c1563a5eee0bba83377ee513af81a%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_identity%22%3Bi%3A1%3Bs%3A16%3A%22%5B1%2Cnull%2C2592000%5D%22%3B%7D'
+    'HTTP_DNT' => '1'
+    'PATH' => 'C:\\Program Files (x86)\\Common Files\\Intel\\Shared Files\\cpp\\bin\\Intel64;C:\\app\\TrabalhoOracleBD\\product\\12.1.0\\dbhome_1\\bin;C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Program Files (x86)\\Intel\\iCLS Client\\;C:\\Program Files\\Intel\\iCLS Client\\;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\IPT;c:\\Program Files (x86)\\ATI Technologies\\ATI.ACE\\Core-Static;C:\\Program Files\\Intel\\WiFi\\bin\\;C:\\Program Files\\Common Files\\Intel\\WirelessCommon\\;C:\\Program Files\\Java\\jdk1.8.0_60\\bin;C:\\Program Files (x86)\\ATI Technologies\\ATI.ACE\\Core-Static\\;c:\\starcode\\apache-maven-3.3.3\\\\bin\\;C:\\Python27;C:\\Python27\\Scripts\\;C:\\instant_client_oracle;C:\\Program Files (x86)\\ATI Technologies\\ATI.ACE\\Core-Static;C:\\Program Files (x86)\\Skype\\Phone\\;C:\\Program Files (x86)\\Windows Live\\Shared;C:\\Program Files\\MySQL\\MySQL Server 5.5\\bin;C:\\xampp\\php;C:\\ProgramData\\ComposerSetup\\bin;C:\\Program Files\\Microsoft SQL Server\\130\\Tools\\Binn\\;C:\\Opencv-3.1.0\\opencv\\build\\x64\\vc14\\bin;C:\\Program Files\\CMake\\bin;C:\\Program Files\\nodejs\\;C:\\Users\\Larissa\\AppData\\Roaming\\Composer\\vendor\\bin;C:\\Users\\Larissa\\AppData\\Local\\Microsoft\\WindowsApps;C:\\Users\\Larissa\\AppData\\Roaming\\npm'
+    'SystemRoot' => 'C:\\WINDOWS'
+    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\WINDOWS'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.17 (Win32) OpenSSL/1.0.2d PHP/5.6.23 Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.17 (Win32) OpenSSL/1.0.2d PHP/5.6.23'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'C:/xampp/htdocs'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/xampp/htdocs'
+    'SERVER_ADMIN' => 'postmaster@localhost'
+    'SCRIPT_FILENAME' => 'C:/xampp/htdocs/AmazonCompanies/web/index.php'
+    'REMOTE_PORT' => '59911'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'POST'
+    'QUERY_STRING' => 'r=empresa%2Fview&id=5'
+    'REQUEST_URI' => '/AmazonCompanies/web/index.php?r=empresa%2Fview&id=5'
+    'SCRIPT_NAME' => '/AmazonCompanies/web/index.php'
+    'PHP_SELF' => '/AmazonCompanies/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1487733859.332
+    'REQUEST_TIME' => 1487733859
+]
+2017-02-22 04:34:08 [::1][-][-][error][yii\base\ErrorException:4] exception 'yii\base\ErrorException' with message 'syntax error, unexpected '<'' in C:\xampp\htdocs\AmazonCompanies\views\empresa\view.php:58
+Stack trace:
+#0 [internal function]: yii\base\ErrorHandler->handleFatalError()
+#1 {main}
+2017-02-22 04:34:07 [::1][-][-][info][application] $_GET = [
+    'r' => 'empresa/view'
+    'id' => '4'
+]
+
+$_COOKIE = [
+    'Phpstorm-7861e538' => '222ac354-423c-4837-9aa2-ecffa9f03124'
+    '_identity-frontend' => 'b61e35496551093beca05dd6ebce75a69085aa24004c094ec5af6ae54269338ea:2:{i:0;s:18:\"_identity-frontend\";i:1;s:46:\"[9,\"R-yyn16jzTqW_eHjK6qXgTvQ1kZh7PNS\",2592000]\";}'
+    '_csrf' => '604367eb82864d4d0a189228b86b7446117478b58503feedde709d3139dae23fa:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"xrFmSmuRSrkYRTxNTzzu1VYYvP9Ah-I3\";}'
+    'PHPSESSID' => '5c79vido9e4o70th4hmulfmdh0'
+    '_identity' => '1de54a1149b80de6528a96989c1654bdfc80c1563a5eee0bba83377ee513af81a:2:{i:0;s:9:\"_identity\";i:1;s:16:\"[1,null,2592000]\";}'
+]
+
+$_SERVER = [
+    'MIBDIRS' => 'C:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'C:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'
+    'HTTP_REFERER' => 'http://localhost/AmazonCompanies/web/index.php?r=empresa%2Findex'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'pt-BR,pt;q=0.8,en-US;q=0.6,en;q=0.4'
+    'HTTP_COOKIE' => 'Phpstorm-7861e538=222ac354-423c-4837-9aa2-ecffa9f03124; _identity-frontend=b61e35496551093beca05dd6ebce75a69085aa24004c094ec5af6ae54269338ea%3A2%3A%7Bi%3A0%3Bs%3A18%3A%22_identity-frontend%22%3Bi%3A1%3Bs%3A46%3A%22%5B9%2C%22R-yyn16jzTqW_eHjK6qXgTvQ1kZh7PNS%22%2C2592000%5D%22%3B%7D; _csrf=604367eb82864d4d0a189228b86b7446117478b58503feedde709d3139dae23fa%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22xrFmSmuRSrkYRTxNTzzu1VYYvP9Ah-I3%22%3B%7D; PHPSESSID=5c79vido9e4o70th4hmulfmdh0; _identity=1de54a1149b80de6528a96989c1654bdfc80c1563a5eee0bba83377ee513af81a%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_identity%22%3Bi%3A1%3Bs%3A16%3A%22%5B1%2Cnull%2C2592000%5D%22%3B%7D'
+    'HTTP_DNT' => '1'
+    'PATH' => 'C:\\Program Files (x86)\\Common Files\\Intel\\Shared Files\\cpp\\bin\\Intel64;C:\\app\\TrabalhoOracleBD\\product\\12.1.0\\dbhome_1\\bin;C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Program Files (x86)\\Intel\\iCLS Client\\;C:\\Program Files\\Intel\\iCLS Client\\;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\IPT;c:\\Program Files (x86)\\ATI Technologies\\ATI.ACE\\Core-Static;C:\\Program Files\\Intel\\WiFi\\bin\\;C:\\Program Files\\Common Files\\Intel\\WirelessCommon\\;C:\\Program Files\\Java\\jdk1.8.0_60\\bin;C:\\Program Files (x86)\\ATI Technologies\\ATI.ACE\\Core-Static\\;c:\\starcode\\apache-maven-3.3.3\\\\bin\\;C:\\Python27;C:\\Python27\\Scripts\\;C:\\instant_client_oracle;C:\\Program Files (x86)\\ATI Technologies\\ATI.ACE\\Core-Static;C:\\Program Files (x86)\\Skype\\Phone\\;C:\\Program Files (x86)\\Windows Live\\Shared;C:\\Program Files\\MySQL\\MySQL Server 5.5\\bin;C:\\xampp\\php;C:\\ProgramData\\ComposerSetup\\bin;C:\\Program Files\\Microsoft SQL Server\\130\\Tools\\Binn\\;C:\\Opencv-3.1.0\\opencv\\build\\x64\\vc14\\bin;C:\\Program Files\\CMake\\bin;C:\\Program Files\\nodejs\\;C:\\Users\\Larissa\\AppData\\Roaming\\Composer\\vendor\\bin;C:\\Users\\Larissa\\AppData\\Local\\Microsoft\\WindowsApps;C:\\Users\\Larissa\\AppData\\Roaming\\npm'
+    'SystemRoot' => 'C:\\WINDOWS'
+    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\WINDOWS'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.17 (Win32) OpenSSL/1.0.2d PHP/5.6.23 Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.17 (Win32) OpenSSL/1.0.2d PHP/5.6.23'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'C:/xampp/htdocs'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/xampp/htdocs'
+    'SERVER_ADMIN' => 'postmaster@localhost'
+    'SCRIPT_FILENAME' => 'C:/xampp/htdocs/AmazonCompanies/web/index.php'
+    'REMOTE_PORT' => '59997'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=empresa%2Fview&id=4'
+    'REQUEST_URI' => '/AmazonCompanies/web/index.php?r=empresa%2Fview&id=4'
+    'SCRIPT_NAME' => '/AmazonCompanies/web/index.php'
+    'PHP_SELF' => '/AmazonCompanies/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1487734447.12
+    'REQUEST_TIME' => 1487734447
+]
+2017-02-22 04:36:30 [::1][1][5c79vido9e4o70th4hmulfmdh0][error][yii\base\ErrorException:8] exception 'yii\base\ErrorException' with message 'Undefined variable: investidor' in C:\xampp\htdocs\AmazonCompanies\views\empresa\view.php:474
+Stack trace:
+#0 C:\xampp\htdocs\AmazonCompanies\views\empresa\view.php(474): yii\base\ErrorHandler->handleError(8, 'Undefined varia...', 'C:\\xampp\\htdocs...', 474, Array)
+#1 C:\xampp\htdocs\AmazonCompanies\vendor\yiisoft\yii2\base\View.php(326): require('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\AmazonCompanies\vendor\yiisoft\yii2\base\View.php(248): yii\base\View->renderPhpFile('C:\\xampp\\htdocs...', Array)
+#3 C:\xampp\htdocs\AmazonCompanies\vendor\yiisoft\yii2\base\View.php(150): yii\base\View->renderFile('C:\\xampp\\htdocs...', Array, Object(app\controllers\EmpresaController))
+#4 C:\xampp\htdocs\AmazonCompanies\vendor\yiisoft\yii2\base\Controller.php(378): yii\base\View->render('view', Array, Object(app\controllers\EmpresaController))
+#5 C:\xampp\htdocs\AmazonCompanies\controllers\EmpresaController.php(325): yii\base\Controller->render('view', Array)
+#6 [internal function]: app\controllers\EmpresaController->actionView('4')
+#7 C:\xampp\htdocs\AmazonCompanies\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
+#8 C:\xampp\htdocs\AmazonCompanies\vendor\yiisoft\yii2\base\Controller.php(154): yii\base\InlineAction->runWithParams(Array)
+#9 C:\xampp\htdocs\AmazonCompanies\vendor\yiisoft\yii2\base\Module.php(454): yii\base\Controller->runAction('view', Array)
+#10 C:\xampp\htdocs\AmazonCompanies\vendor\yiisoft\yii2\web\Application.php(100): yii\base\Module->runAction('empresa/view', Array)
+#11 C:\xampp\htdocs\AmazonCompanies\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#12 C:\xampp\htdocs\AmazonCompanies\web\index.php(12): yii\base\Application->run()
+#13 {main}
+2017-02-22 04:36:28 [::1][1][5c79vido9e4o70th4hmulfmdh0][info][application] $_GET = [
+    'r' => 'empresa/view'
+    'id' => '4'
+]
+
+$_COOKIE = [
+    '_identity-frontend' => 'b61e35496551093beca05dd6ebce75a69085aa24004c094ec5af6ae54269338ea:2:{i:0;s:18:\"_identity-frontend\";i:1;s:46:\"[9,\"R-yyn16jzTqW_eHjK6qXgTvQ1kZh7PNS\",2592000]\";}'
+    '_csrf' => '604367eb82864d4d0a189228b86b7446117478b58503feedde709d3139dae23fa:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"xrFmSmuRSrkYRTxNTzzu1VYYvP9Ah-I3\";}'
+    'PHPSESSID' => '5c79vido9e4o70th4hmulfmdh0'
+    '_identity' => '1de54a1149b80de6528a96989c1654bdfc80c1563a5eee0bba83377ee513af81a:2:{i:0;s:9:\"_identity\";i:1;s:16:\"[1,null,2592000]\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__id' => 1
+    'email' => 'larissa@icomp.ufam.edu.br'
+    'nome' => 'Neves'
+]
+
+$_SERVER = [
+    'MIBDIRS' => 'C:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'C:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'
+    'HTTP_REFERER' => 'http://localhost/AmazonCompanies/web/index.php?r=empresa%2Findex'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'pt-BR,pt;q=0.8,en-US;q=0.6,en;q=0.4'
+    'HTTP_COOKIE' => '_identity-frontend=b61e35496551093beca05dd6ebce75a69085aa24004c094ec5af6ae54269338ea%3A2%3A%7Bi%3A0%3Bs%3A18%3A%22_identity-frontend%22%3Bi%3A1%3Bs%3A46%3A%22%5B9%2C%22R-yyn16jzTqW_eHjK6qXgTvQ1kZh7PNS%22%2C2592000%5D%22%3B%7D; _csrf=604367eb82864d4d0a189228b86b7446117478b58503feedde709d3139dae23fa%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22xrFmSmuRSrkYRTxNTzzu1VYYvP9Ah-I3%22%3B%7D; PHPSESSID=5c79vido9e4o70th4hmulfmdh0; _identity=1de54a1149b80de6528a96989c1654bdfc80c1563a5eee0bba83377ee513af81a%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_identity%22%3Bi%3A1%3Bs%3A16%3A%22%5B1%2Cnull%2C2592000%5D%22%3B%7D'
+    'HTTP_DNT' => '1'
+    'PATH' => 'C:\\Program Files (x86)\\Common Files\\Intel\\Shared Files\\cpp\\bin\\Intel64;C:\\app\\TrabalhoOracleBD\\product\\12.1.0\\dbhome_1\\bin;C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Program Files (x86)\\Intel\\iCLS Client\\;C:\\Program Files\\Intel\\iCLS Client\\;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\IPT;c:\\Program Files (x86)\\ATI Technologies\\ATI.ACE\\Core-Static;C:\\Program Files\\Intel\\WiFi\\bin\\;C:\\Program Files\\Common Files\\Intel\\WirelessCommon\\;C:\\Program Files\\Java\\jdk1.8.0_60\\bin;C:\\Program Files (x86)\\ATI Technologies\\ATI.ACE\\Core-Static\\;c:\\starcode\\apache-maven-3.3.3\\\\bin\\;C:\\Python27;C:\\Python27\\Scripts\\;C:\\instant_client_oracle;C:\\Program Files (x86)\\ATI Technologies\\ATI.ACE\\Core-Static;C:\\Program Files (x86)\\Skype\\Phone\\;C:\\Program Files (x86)\\Windows Live\\Shared;C:\\Program Files\\MySQL\\MySQL Server 5.5\\bin;C:\\xampp\\php;C:\\ProgramData\\ComposerSetup\\bin;C:\\Program Files\\Microsoft SQL Server\\130\\Tools\\Binn\\;C:\\Opencv-3.1.0\\opencv\\build\\x64\\vc14\\bin;C:\\Program Files\\CMake\\bin;C:\\Program Files\\nodejs\\;C:\\Users\\Larissa\\AppData\\Roaming\\Composer\\vendor\\bin;C:\\Users\\Larissa\\AppData\\Local\\Microsoft\\WindowsApps;C:\\Users\\Larissa\\AppData\\Roaming\\npm'
+    'SystemRoot' => 'C:\\WINDOWS'
+    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\WINDOWS'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.17 (Win32) OpenSSL/1.0.2d PHP/5.6.23 Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.17 (Win32) OpenSSL/1.0.2d PHP/5.6.23'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'C:/xampp/htdocs'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/xampp/htdocs'
+    'SERVER_ADMIN' => 'postmaster@localhost'
+    'SCRIPT_FILENAME' => 'C:/xampp/htdocs/AmazonCompanies/web/index.php'
+    'REMOTE_PORT' => '60062'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=empresa%2Fview&id=4'
+    'REQUEST_URI' => '/AmazonCompanies/web/index.php?r=empresa%2Fview&id=4'
+    'SCRIPT_NAME' => '/AmazonCompanies/web/index.php'
+    'PHP_SELF' => '/AmazonCompanies/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1487734588.846
+    'REQUEST_TIME' => 1487734588
+]

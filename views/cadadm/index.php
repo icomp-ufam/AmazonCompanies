@@ -2,6 +2,7 @@
 
 use yii\helpers\Html;
 use kartik\grid\GridView;
+use yii\helpers\url;
 
 /* @var $this yii\web\View */
 /* @var $searchModel app\models\CadadmSearch */
@@ -45,6 +46,33 @@ $this->title = 'Lista de Usuário Cadastrados';
         			]
     		],
             'email:email',
+            [
+            'class' => 'kartik\grid\ActionColumn',
+            'header' => 'Notificar',
+            'template' => '{notificar}',
+            'buttons' => [
+            		'notificar' => function ($url, $model)	{
+            		if($model->identificadorPessoa == 2){
+            			return Html::a('<span class = "glyphicon glyphicon-exclamation-sign" style="color:orange;"</span>', $url, [
+            					'title' => 'Notificar aluno',
+            					'data' => [
+            							'confirm' => 'Deseja notificar aluno?'
+            					]
+            			]);
+            		}else{
+            			return Html::a('<span class = "glyphicon glyphicon-remove" style="color:gray;"</span>');
+            		}
+            		},
+            		],
+            
+            		'urlCreator' => function ($action, $model, $key, $index){
+            		if($action == 'notificar'){
+            			$url = Url::toRoute(['/notificacao/create3', 'Usuario_idUsuario' => $model->idUsuario, 'idAnalise' => NULL, 'status' => 3, 'tipo' => 2]);
+            			return $url;
+            		}
+            		}
+            
+            		],
         ],
     ]); ?>
 </div>

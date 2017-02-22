@@ -46,7 +46,7 @@ class NotificacaoSearch extends Notificacao
     		$query = Notificacao::find();
     	}else{ 
     		$id = Yii::$app->user->getId();
-    		$query = Notificacao::find()->where(['Usuario_idUsuario' => $id, 'status' => [0,1]]); // status 2 não é apresentado mais
+    		$query = Notificacao::find()->where(['Usuario_idUsuario' => $id, 'status' => [0,1,3]]); // status 2 não é apresentado mais
     	}
         // add conditions that should always apply here
 

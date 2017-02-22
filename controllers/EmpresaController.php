@@ -211,6 +211,7 @@ class EmpresaController extends Controller
      */
     public function actionView($id){
         $comentario = new Comentario();
+        $verificaPreenchimento = 1;
         $file = UploadedFile::getInstance($this->findModel($id), 'upload_file');
 
         if($this->findModel($id)->load(Yii::$app->request->post()) and $file != null){
@@ -239,10 +240,11 @@ class EmpresaController extends Controller
         	$model = new EmpresaConta();
         
         	$nome = $myarray[$i]['Nome'];
-        	$conta = Conta::find()->select("idConta")->where(['nome' => $nome])->one();
+        	$conta = Conta::find()->select("*")->where(['nome' => $nome])->one();
             Yii::trace("id conta");
-
         	Yii::trace($conta->idConta);
+                        Yii::trace("obrigatorio");
+
         
         	$valor = $myarray[$i]['Valor'];
         	$ano = $myarray[$i]['Ano'];
@@ -252,14 +254,25 @@ class EmpresaController extends Controller
         	$model->valor = $valor;
             $model->statusValidacao=0;
         	$model->idConta = $conta->idConta;
-                    
-            //Yii::trace(Yii::);
+            if($conta->obrigatorio==1){
+                if($valor!=null){
+                    Yii::trace($conta->obrigatorio);
+                    ($model->save());
+                }else{
+                    $verificaPreenchimento=2;
+                }
 
-        	Yii::trace("model antes");
-        	Yii::trace($model->save());
+            }else{
+                ($model->save());
+
+            }
         
         		 
         	 }
+        }
+
+        if($verificaPreenchimento==2){
+            //mostrar mensagem avisando que não foram cadastrados algumas informações para estava null
         }
         $contas = Conta::find()->select('*')->all();
         $i=0;
@@ -277,64 +290,23 @@ class EmpresaController extends Controller
         
         	$field[$i]['type'] = 'column';
         	$field[$i]['name'] = $anosEmpresa->ano;
-        	// $valoress = EmpresaConta::find()->select('valor')->where(['idConta' => $conta->idConta])->andWhere(['ano' =>$anosEmpresa->ano])->all();
-        	// if(count($valoress)>0){
-        	//     $j=0;
-        		//     foreach($valoress as $valores){
-        		//         $data[$j] =
-        			//     }
-        		// } else{
-        
-        		// }
-        		for ($j=0; $j <24 ; $j++) {
-        			$data[$j]= $j+1;
-        
+        	
+        	for ($j=0; $j <24 ; $j++) { // percorre cada uma das demonstrações, do ano atual do foreach
+        		$con = Conta::find()->select('idConta')->where(['nome' => $categorias[$j]])->one();
+        		$valore = EmpresaConta::find()->select('valor')->where(['idConta' => $con])->andWhere(['ano' =>$anosEmpresa->ano])->andWhere(['idEmpresa' => $id])->one();
+        		if($valore){
+        			$data[$j] = $valore->valor;
+        		}else{
+        			$data[$j]= 0;
         		}
-        		$field[$i]['data'] = $data;
-        		$i++;
-        
-        
-        		}
-        		// print_r(count($anosEmpresas));
-        
-        		// for ($i = 0; $i <= 2; $i++) {
-        		//     $field[$i]['type'] = 'column';
-        		//     $field[$i]['name'] = '201' . $i+4;
-        		//     for ($j=0; $j <24 ; $j++) {
-        		//          $data[$j]= $j+1;
-        
-        			//     }
-        			//                     $field[$i]['data'] = $data;
-        
-        
-        			// }
-        			//print_r(count($categorias));
-        			// echo '<br>';
-        			// for ($i=0; $i <= 5 ; $i++) {
-        			//     $categorias[$i]='Ativo Total'.$i;
-        				// }
-        				// print_r($categorias);
-        
-        				// $series = [
-        				// [
-        				//         'type' => 'column',
-        				//         'name' => '2014',
-        				//         'data'=> [3, 2]
-        				//     ],
-        
-        				// [
-        				//         'type' => 'column',
-        
-        				//         'name'=> '2016',
-        				//         'data'=> [2, 3]
-        				//     ],
-        
-        				// ];
-        
-        				// print_r($field);
-        				// echo '<br>';
-        				// print_r($series);
-        		//print_r($categorias);
+        	}
+        	
+        	$field[$i]['data'] = $data;
+        	$i++;
+        	
+        	
+        	}
+        		
       $model = $this->findModel($id);
 
         $comentario->Empresa_idEmpresa = $model->idEmpresa;
@@ -343,9 +315,13 @@ class EmpresaController extends Controller
         if ($comentario->load(Yii::$app->request->post()) && $comentario->save())  {
             return $this->redirect(['view', 'id' => $model->idEmpresa]);
         }
+        
+        //sessão de variáveis usadas nos foreach na view
+        $anos = EmpresaConta::find()->select('ano')->distinct()->orderBy(["ano"=> SORT_ASC])->all();
 
 
                  return $this->render('view', [
+                 	'anos' => $anos,
                     'model' => $this->findModel($id),
                     'comentario' => $comentario ,
                  	'field' => $field,

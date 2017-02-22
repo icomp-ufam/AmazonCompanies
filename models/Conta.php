@@ -50,7 +50,7 @@ class Conta extends \yii\db\ActiveRecord
             'nome' => 'Nome',
             'idDemonstracao' => 'Id Demonstracao',
             'chave' => 'Chave',
-            'obrigatorio' => 'Obrigatorio',
+            'obrigatorio' => 'Obrigatório',
         ];
     }
 
