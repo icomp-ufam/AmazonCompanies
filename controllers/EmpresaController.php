@@ -490,13 +490,14 @@ class EmpresaController extends Controller
 
     public function actionGenerate_pdf() {
         $data = str_replace(' ', '+', Yii::$app->request->post('bin_data'));
+        $name = Yii::$app->request->post('name');
         $data = base64_decode($data);
         
         $img_pre_path = 'temp/savechart/';
         $img_filename = 'chart-export-'.Yii::$app->security->generateRandomString().'.png';
 
         $pdf_pre_path = "export/empresa/";
-        $pdf_filename = "empresa-export-".Yii::$app->security->generateRandomString().'.pdf';
+        $pdf_filename = $name."-export-".Yii::$app->security->generateRandomString().'.pdf';
 
         $img_path = $img_pre_path.$img_filename;
         $pdf_path = $pdf_pre_path.$pdf_filename;
@@ -529,7 +530,13 @@ class EmpresaController extends Controller
             'destination' => Pdf::DEST_FILE,
             'filename' => $pdf_path,
             // your html content input
-            'content' => '<img src="'.$img_path.'">',  
+            'content' => 
+            '
+            <h2 style="text-align: center;">AmazonCompanies</h2>
+            <h4 style="text-align: center;">Dados da '.$name.'</h4>
+            <br>
+            <img src="'.$img_path.'">
+            ',  
             //'cssInline' => '', 
              // set mPDF properties on the fly
             'options' => ['title' => $pdf_filename],

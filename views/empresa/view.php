@@ -698,7 +698,7 @@ $_SESSION["nome"] =  "Neves";
             $.ajax({
               type: \"POST\",
               url: \"index.php?r=empresa/generate_pdf\",
-              data: {bin_data: img},
+              data: {bin_data: img, name: '".$this->title."'},
               
               success: function(data){
                 window.open(data, \"showPdf\");
