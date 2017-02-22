@@ -30,7 +30,7 @@ class Analise extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['status','texto', 'textoAnalisador'], 'string'],
+            [['status','texto'], 'string'],
             [['idEmpresa'], 'required'],
             [[ 'idEmpresa', 'ano', 'investidor', 'credor'], 'integer'],
             [['idEmpresa'], 'exist', 'skipOnError' => true, 'targetClass' => Empresa::className(), 'targetAttribute' => ['idEmpresa' => 'idEmpresa']],
@@ -46,7 +46,6 @@ class Analise extends \yii\db\ActiveRecord
         return [
             'idanalise' => 'Idanalise',
             'texto' => 'Texto',
-            'textoAnalisador' => 'Análise do responsável',
             'status' => 'Status',
             'ano' => 'Ano',
             'investidor' => 'Investidor',

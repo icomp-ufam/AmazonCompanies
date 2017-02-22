@@ -72,7 +72,7 @@ class Notificacao extends \yii\db\ActiveRecord
     }
     
     public function getNotification($id){
-    	$query = Notificacao::find()->where(['Usuario_idUsuario' =>$id, 'status' => [0,1]])->count();
+    	$query = Notificacao::find()->where(['Usuario_idUsuario' =>$id, 'status' => [0,1,3]])->count();
     	return $query;
     }
 }
