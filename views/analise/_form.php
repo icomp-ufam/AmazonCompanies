@@ -16,18 +16,26 @@ use yii\widgets\ActiveForm;
 
     <?php $form = ActiveForm::begin(); ?>
 
-    <?= $form->field($model, 'investidor')->dropdownList([
-                            'prompt' => 'Selecione...',
-                            2 => 'Comprar',
-                            3 => 'Vender', 
-                            4 => 'Neutro'
-                    ])->label('Tendencias para o investidor:')?>
+    <?= $form->field($model, 'investidor')->radioList(
+                        [
+                            2 => 'Comprar </br>' . Html::img('img/compra.jpg',  ['style'=>'width:100px']),
+                            3 => 'Vender </br>' . Html::img('img/venda.jpg',  ['style'=>'width:100px']), 
+                            4 => 'Neutro</br>' . Html::img('img/neutro.jpg',  ['style'=>'width:100px'])
+                        ],
+                        [
+                            'encode'=> false
+                        ])->label('<h3>Tendencias para o investidor:</h3>')
+                        
+                        ?>
 
-    <?= $form->field($model, 'credor')->dropdownList([
-                            'prompt' => 'Selecione...',
-                            2 => 'Emprestar',
-                            3 => 'Não emprestar'
-                    ])->label('Tendencias para o credor:')?>
+    <?= $form->field($model, 'credor')->radioList(
+                        [
+                            2 => 'Emprestar </br>' . Html::img('img/empresta.jpg',  ['style'=>'width:100px']),
+                            3 => 'Não emprestar</br>' . Html::img('img/nao1.png',  ['style'=>'width:100px'])
+                        ],
+                        [
+                            'encode'=> false
+                        ])->label('<h3>Tendencias para o credor:</h3>')?>
 
     <?= $form->field($model, 'texto')->textarea(['rows' => 6]) ?>
 

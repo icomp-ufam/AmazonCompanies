@@ -30,31 +30,36 @@ $this->params['breadcrumbs'][] = $this->title;
         </div>
 
         <div>
-             <?php if ($model->investidor == 2){
+            <?php if ($model->investidor == 2){
                                 $investidor = 'Comprar';
+                                $img = 'compra.jpg';
 
                             }
                             elseif ($model->investidor == 3) {
                                 $investidor = 'Vender';
+                                $img = 'venda.jpg';
                             }
                             elseif ($model->investidor == 4) {
                                 $investidor = 'Neutro';
+                                $img = 'neutro.jpg';
                             }
                             ?>
 
-                            <?php echo '<h5 class="bg-info col-md-3 col-md-offset-1 btn-lg text-center"> Tendencias para o investidor: </br> <strong>'. $investidor .'</strong>  </h5>' ?>
-
+                            <?php echo '<h5 class="bg-info col-md-3 col-md-offset-2 btn-lg text-center"> Tendências para o investidor: </br> <strong>'. $investidor .'</br></strong>'. Html::img( 'img/'.$img ,['style'=>'width:100px']);' </h5>' ?>
 
                             <?php if ($model->credor == 2){
                                 $credor = 'Emprestar';
+                                $img = 'empresta.jpg';
 
                             }
                             elseif ($model->credor == 3) {
                                 $credor = 'Não emprestar';
+                                $img = 'nao1.jpg';
+
                             }
                             ?>
 
-                            <?php echo '<h5 class="bg-success col-md-3 col-md-offset-1 btn-lg text-center"> Tendencias para o credor: </br> <strong> '. $credor .' </strong> </h5>' ?>
+                            <?php echo '<h5 class="bg-success col-md-3 col-md-offset-2 btn-lg text-center"> Tendências para o credor: </br> <strong> '. $credor .'</br></strong>'. Html::img( 'img/'.$img ,['style'=>'width:100px']);' </h5>' ?>
 
         </div>
 
