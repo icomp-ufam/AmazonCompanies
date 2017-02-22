@@ -10,11 +10,11 @@ use yii\helpers\BaseUrl;
     use yii\widgets\ActiveForm;
     use app\models\TipoIndice;
     use app\models\EmpresaConta;
-        use app\models\Conta;
-        use miloschuman\highcharts\Highcharts;
-        use hscstudio\chart\ChartNew;
-        use \Fintara\Tools\Calculator\Calculator;
-        use \Fintara\Tools\Calculator\DefaultLexer;
+    use app\models\Conta;
+    use miloschuman\highcharts\Highcharts;
+    use hscstudio\chart\ChartNew;
+    use \Fintara\Tools\Calculator\Calculator;
+    use \Fintara\Tools\Calculator\DefaultLexer;
 
     use app\models\Demonstracao;
 
@@ -56,6 +56,15 @@ use kartik\widgets\Select2;
     <p>
             <?= Html::a('<span></span> Gerar PDF', ['gerar_pdf'], ['class'=> 'btn btn-primary']) ?>
     </p>
+
+     <h3> DADOS DE CONTAS:
+    </h3>
+        <div>
+            <?= $this->render('_telaBotao', [
+                'model' => $model,
+                ]) ?>
+        </div>
+            
 </div>
 
 <div class="body-content">
@@ -266,7 +275,7 @@ use kartik\widgets\Select2;
                                                 foreach($indices as $indice){
                                                     $indiceIn = Indice::find()->select('*')->where(['idIndice' => $indice->idIndice])->all();
 
-                                                     $getChaveContas = preg_split('/[@]/',$indiceIn[0]->formula);
+                                                     $getChaveContas = preg_split('/[ ]/',$indiceIn[0]->formula);
                                                             
                                                             $montarFormulaAnterior = '';
                                                             $montarFormula='';

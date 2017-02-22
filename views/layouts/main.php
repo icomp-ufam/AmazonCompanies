@@ -70,6 +70,7 @@ AppAsset::register($this);
 <div class="wrap">
     <?php
     // contador de notificações
+    //Yii::$app->session->set('user.fingerprint', $fingerprint);
     $not_aluno = Notificacao::getNotification();
     $not_adm_analise =  Analise::getNotification();
     $not_adm_cadastro = Usuario::getNotification();

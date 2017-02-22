@@ -4,6 +4,9 @@ use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 use yii\helpers\ArrayHelper;
 use \app\models\Conta;
+use \app\models\Indice;
+use \app\models\TipoIndice;
+
 use kartik\widgets\Select2;
     use yii\helpers\Url;
 
@@ -11,16 +14,26 @@ use kartik\widgets\Select2;
 /* @var $this yii\web\View */
 /* @var $model app\models\Indice */
 /* @var $form yii\widgets\ActiveForm */
-
-
 ?>
 
 <div class="indice-form">
-<!-- 
+
+    <?php
+        $indices = TipoIndice::find()->select('*')->all();
+        $i=1;
+        foreach ($indices as $indice) {
+            $field[$i] = $indice->nome;
+            $i++;
+        }
+    ?>
+
     <?php $form = ActiveForm::begin(); ?>
 
     <?= $form->field($model, 'nomeIndice')->textInput(['maxlength' => true]) ?>
 
+    <?= $form->field($model, 'idTipo_Indice')->dropdownList($field)->label('Tipo do Índice:')?>
+
+    <?= $form->field($model, 'formula')->textInput(['maxlength' => true]) ?>
 
     <div class="form-group">
         <?= Html::submitButton($model->isNewRecord ? Yii::t('app', 'Cadastrar Índice') : Yii::t('app', 'Update'), ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
@@ -28,27 +41,12 @@ use kartik\widgets\Select2;
 
     <?php ActiveForm::end(); ?>
 
- -->
-
 </div>
 
 <script type="application/javascript">
-        //Criar controlador acesado vai requisição ajax."
-
         function getIdSelect($element){
             console.log('entrou');
             console.log($element);
-        // //     var newStateVal = $('#barra').val();
-        // //     console.log(newStateVal);
-        //              var newState = new Option($element, $element, true, true);
-        // 		console.log(newState);
-        //  $("#id_select").append(newState).trigger('change');
-
-        //     // $("#id_select").val(newState).trigger('change');
-        //     console.log($('#id_select').val());
-             //var teste = $("#id_select").select2('val','asp');
-            // console.log(teste);
-            // var id_select = $('#id_select').val();
             $.ajax({
                         url: '<?php echo Url::to(['indice/cadastrar_indice']);?>',
                         type:'POST',
@@ -59,12 +57,10 @@ use kartik\widgets\Select2;
                             console.log(data);
                         }
                     });
-
-
         }
 
  </script>
-<div>
+<!-- <div>
     <button id="barra" type="button" onclick="" class="btn btn-default">(</button>
 
     <button type="button" onclick="" class="btn btn-default">+</button>
@@ -79,9 +75,9 @@ use kartik\widgets\Select2;
 
     <button type="button" onclick="" class="btn btn-default">)</button>
 
-</div>
+</div> -->
 <br>
-<?php 
+<!-- <?php 
 $categorias['+'] = '+';
 $categorias['-'] = '-';
 $categorias['/'] = '/';
@@ -110,9 +106,10 @@ echo Select2::widget([
         'maximumInputLength' => 10
     ],
 ]);
-?>
+?> -->
 <br>
-<div>
+<!-- <div>
     <button type="button" onclick="getIdSelect($('#id_select').val())" class="btn btn-default">Create Indice</button>
 
 </div>
+ -->

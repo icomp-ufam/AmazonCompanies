@@ -29,7 +29,7 @@ class Indice extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['formula', 'idTipo_Indice'], 'required'],
+            [['formula', 'idTipo_Indice', 'nomeIndice'], 'required'],
             [['idTipo_Indice'], 'integer'],
             [['formula'], 'string', 'max' => 45],
             [['idTipo_Indice'], 'exist', 'skipOnError' => true, 'targetClass' => TipoIndice::className(), 'targetAttribute' => ['idTipo_Indice' => 'idTipo_indice']],
@@ -42,6 +42,7 @@ class Indice extends \yii\db\ActiveRecord
     public function attributeLabels()
     {
         return [
+            'nomeIndice' => 'Nome Indice',
             'idIndice' => 'Id Indice',
             'formula' => 'Fórmula',
             'idTipo_Indice' => 'Id Tipo  Indice',

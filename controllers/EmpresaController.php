@@ -208,15 +208,12 @@ class EmpresaController extends Controller
      * @return mixed
      */
     public function actionView($id){
-
         $comentario = new Comentario();
-
         $file = UploadedFile::getInstance($this->findModel($id), 'upload_file');
-        
+
         if($this->findModel($id)->load(Yii::$app->request->post()) and $file != null){
-        	$file->saveAs('uploads/'.$file->name);
+            $file->saveAs('uploads/'.$file->name);
         	//print_r($file->name);
-        
         
         	$objPHPExcel = new Excel();
         
@@ -229,27 +226,38 @@ class EmpresaController extends Controller
         	}
         	$cont=1;
         	$myarray = array_shift($objPHPExcel);
-        	 
-        	for ($i = 0; $i < count($myarray); $i++) {
-        		$model = new EmpresaConta();
+
+            Yii::trace("my array");
+            Yii::trace($myarray);
+            Yii::trace(count($myarray));
+
+        	//$idUsuario = Yii::$app->user->getId();
+            //Yii::trace($idUsuario);
+        	 for ($i = 0; $i < count($myarray); $i++) {
+        	$model = new EmpresaConta();
         
-        		$nome = $myarray[$i]['Nome'];
-        		$conta = Conta::find()->select("idConta")->where(['nome' => $nome])->one();
-        		print_r($conta->idConta);
+        	$nome = $myarray[$i]['Nome'];
+        	$conta = Conta::find()->select("idConta")->where(['nome' => $nome])->one();
+            Yii::trace("id conta");
+
+        	Yii::trace($conta->idConta);
         
-        		$valor = $myarray[$i]['Valor'];
-        		$ano = $myarray[$i]['Ano'];
-        		$model->idEmpresa = $id;
-        		$model->ano = $ano;
-        		$model->valor = $valor;
-        
-        		$model->idConta = $conta->idConta;
+        	$valor = $myarray[$i]['Valor'];
+        	$ano = $myarray[$i]['Ano'];
+        	$model->idEmpresa = $id;
+            $model->idUsuario = 6;
+        	$model->ano = $ano;
+        	$model->valor = $valor;
+            $model->statusValidacao=0;
+        	$model->idConta = $conta->idConta;
+                    
+            //Yii::trace(Yii::);
+
+        	Yii::trace("model antes");
+        	//Yii::trace($model->save());
         
         		 
-        		$model->save();
-        
-        		 
-        	}
+        	 }
         }
         $contas = Conta::find()->select('*')->all();
         $i=0;
@@ -345,6 +353,27 @@ class EmpresaController extends Controller
         
     }
 
+     public function actionUpdate($id) {
+        $model = $this->findModel($id);
+        $file = \yii\web\UploadedFile::getInstance($model, 'logotipo');
+        $fileArquivo = UploadedFile::getInstance($this->findModel($id), 'upload_file');
+        if($this->findModel($id)->load(Yii::$app->request->post()) and $file != null)
+
+        if ($this->findModel($id)->load(Yii::$app->request->post()) && $file != null) {
+
+            $model->logotipo = UploadedFile::getInstance($model, 'logotipo');
+            $file->saveAs('img/'.$file->name);
+
+            if($model->save(false)) {
+                return $this->redirect(['view', 'id' => $model->idEmpresa]);
+            }
+        } else {
+            return $this->render('update', [
+                'model' => $model,
+            ]);
+        }
+    }
+
     /**
      * Creates a new Empresa model.
      * If creation is successful, the browser will be redirected to the 'view' page.
@@ -374,26 +403,6 @@ class EmpresaController extends Controller
      * @param integer $id
      * @return mixed
      */
-
-    public function actionUpdate($id)
-    {
-        $model = $this->findModel($id);
-        $file = \yii\web\UploadedFile::getInstance($model, 'logotipo');
-
-        if ($model->load(Yii::$app->request->post()) && $file != null) {
-
-            $model->logotipo = UploadedFile::getInstance($model, 'logotipo');
-            $file->saveAs('img/'.$file->name);
-
-            if($model->save(false)) {
-                return $this->redirect(['view', 'id' => $model->idEmpresa]);
-            }
-        } else {
-            return $this->render('update', [
-                'model' => $model,
-            ]);
-        }
-    }
 
      public function actionLoad_documento($id){
 
