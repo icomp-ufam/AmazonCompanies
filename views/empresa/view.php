@@ -54,7 +54,7 @@ use yii\base\Widget;
     </p>
 
     <div class="row">
-            <?= Html::a('<span></span> Gerar PDF', ['gerar_pdf'], ['class'=> 'btn btn-primary']) ?>
+            <?= Html::button('Gerar PDF', ['id' => 'export_chart', 'class'=> 'btn btn-primary']) ?>
             
             <div class="dropdown col-sm-1">
     			<button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown" >Ano <span class="caret"></span></button>
