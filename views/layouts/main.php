@@ -1,8 +1,6 @@
 <?php
-
 /* @var $this \yii\web\View */
 /* @var $content string */
-
 use yii\helpers\Html;
 use yii\bootstrap\Nav;
 use yii\bootstrap\NavBar;
@@ -14,8 +12,6 @@ use app\models\Usuario;
 use app\models\Notificacao;
 use app\models\EmpresaConta;
 use app\models\Rodape;
-
-
 AppAsset::register($this);
 ?>
 <?php $this->beginPage() ?>
@@ -42,7 +38,6 @@ AppAsset::register($this);
         .nav .open > a
         {
             background:green;
-
         }
         .navbar .navbar-nav .navbar-right .brand, .navbar .nav > li > a:hover {
             background: #0d6aad;
@@ -62,7 +57,6 @@ AppAsset::register($this);
             background: linear-gradient(to right,  #001a35 , #0d6aad,  #001a35);
         }
         }
-
     </style>
 
 </head>
@@ -72,171 +66,157 @@ AppAsset::register($this);
 <div class="wrap">
     <?php
     // contador de notificações
-<<<<<<< HEAD
-    //Yii::$app->session->set('user.fingerprint', $fingerprint);
-    $not_aluno = Notificacao::getNotification();
-=======
     $not_aluno = Notificacao::getNotification(Yii::$app->user->getId());
     
     // notificações para adms
->>>>>>> 671651556a698e832616fb3f90bfe1a4a9789f4f
     $not_adm_analise =  Analise::getNotification();
     $not_adm_cadastro = Usuario::getNotification();
     $not_adm_alt_dados = EmpresaConta::getNotification();
-	$not_adm_total = $not_adm_alt_dados + $not_adm_analise + $not_adm_cadastro;
-	
+    $not_adm_total = $not_adm_alt_dados + $not_adm_analise + $not_adm_cadastro;
+    
     
     NavBar::begin([
         'brandLabel' => 'Amazon Companies',
         'brandUrl' => Yii::$app->homeUrl,
         'options' => [
             'class' => 'navbar-inverse navbar-fixed-top',
-			['class' =>'nav navbar-nav'],
-			
+            ['class' =>'nav navbar-nav'],
+            
         ],
     ]);
-
-	/*FooterBar::begin([
+    /*FooterBar::begin([
         'brandLabel' => 'Amazon Companies',
         'brandUrl' => Yii::$app->homeUrl,
         'options' => [
             'class' => 'navbar-inverse navbar-fixed-bottom',
         ],
     ]);
-	*/
+    */
     
     if(Yii::$app->user->getIdentificadorPessoa() == '1'){ //Administrador
-    	echo Nav::widget([
-    			'encodeLabels' => false,
-    			'options' => ['class' => 'navbar-nav navbar-right'],
-    			'items' => [
-    					['label' => 'Página Inicial', 'url' => ['/site/adm']],
-    					['label' => 'Empresas', 'url' => ['empresa/index']],
+        echo Nav::widget([
+                'encodeLabels' => false,
+                'options' => ['class' => 'navbar-nav navbar-right'],
+                'items' => [
+                        ['label' => 'Página Inicial', 'url' => ['/site/adm']],
+                        ['label' => 'Empresas', 'url' => ['empresa/index']],
                         ['label' => 'Cadastro',
                         'items' =>[
-
                                         ['label' => 'Contas', 'url' => ['conta/index']],
-
                                         ['label' => 'Demonstrações', 'url' => ['demonstracao/index']],
-
                                         ['label' => 'Índices', 'url' => ['indice/index']],
-
                             ['label' => 'Tipo de índices', 'url' => ['tipo-indice/index']],
-
-										['label' => 'Links', 'url' => ['rodape/index']],
+                                        ['label' => 'Links', 'url' => ['rodape/index']],
                                   ]
                         ],
-
-    					['label' => 'Usuários',
-    					'items' => [
-    					['label' => 'Cadastrar', 'url' => ['/cadadm/create']],
-    							//'<li class="divider"></li>',
-    							//'<li class="dropdown-header">Dropdown Header</li>',
-    							['label' => 'Listar', 'url' => ['/cadadm/']],
-    					]],
-    					['label' => 'Notificações '. Html::tag('span', $not_adm_total, ['class' => 'badge']), // configurar para que o o botão, ao ser clicado abra as notificações e ao passar o mouse acima, exiba o dropdown
-    					'items' => [
-    							['label' => Html::tag('span', $not_adm_analise, ['class' => 'badge']).' Análises', 'url' => ['/analise/index']],
-    							//'<li class="divider"></li>',
-    							//'<li class="dropdown-header">Dropdown Header</li>',
-    							['label' => Html::tag('span', $not_adm_alt_dados, ['class' => 'badge']).' Alteração de Dados', 'url' => ['/empresa-conta/index']],
-    							['label' => Html::tag('span', $not_adm_cadastro, ['class' => 'badge']).' Cadastro', 'url' => ['/usuario/']],
-    					]],
-    					['label' => 'Seu Perfil', 'url' => ['/usuario/update', 'id' => Yii::$app->user->getId()]], 
-    					Yii::$app->user->isGuest ? (
-    							['label' => 'Entrar', 'url' => ['/site/login']]
-    							) : (
-    									'<li>'
-    									. Html::beginForm(['/site/logout'], 'post')
-    									. Html::submitButton(																																																														 
-    											'Sair (' . Yii::$app->user->identity->nome . ')',
-    											['class' => 'btn btn-link logout']
-    											)
-    									. Html::endForm()
-    									. '</li>'
-    									)
-    			],
-    	]);
+                        ['label' => 'Usuários',
+                        'items' => [
+                        ['label' => 'Cadastrar', 'url' => ['/cadadm/create']],
+                                //'<li class="divider"></li>',
+                                //'<li class="dropdown-header">Dropdown Header</li>',
+                                ['label' => 'Listar', 'url' => ['/cadadm/']],
+                        ]],
+                        ['label' => 'Notificações '. Html::tag('span', $not_adm_total, ['class' => 'badge']), // configurar para que o o botão, ao ser clicado abra as notificações e ao passar o mouse acima, exiba o dropdown
+                        'items' => [
+                                ['label' => Html::tag('span', $not_adm_analise, ['class' => 'badge']).' Análises', 'url' => ['/analise/index']],
+                                //'<li class="divider"></li>',
+                                //'<li class="dropdown-header">Dropdown Header</li>',
+                                ['label' => Html::tag('span', $not_adm_alt_dados, ['class' => 'badge']).' Alteração de Dados', 'url' => ['/empresa-conta/index']],
+                                ['label' => Html::tag('span', $not_adm_cadastro, ['class' => 'badge']).' Cadastro', 'url' => ['/usuario/']],
+                        ]],
+                        ['label' => 'Seu Perfil', 'url' => ['/usuario/update', 'id' => Yii::$app->user->getId()]], 
+                        Yii::$app->user->isGuest ? (
+                                ['label' => 'Entrar', 'url' => ['/site/login']]
+                                ) : (
+                                        '<li>'
+                                        . Html::beginForm(['/site/logout'], 'post')
+                                        . Html::submitButton(                                                                                                                                                                                                                                                        
+                                                'Sair (' . Yii::$app->user->identity->nome . ')',
+                                                ['class' => 'btn btn-link logout']
+                                                )
+                                        . Html::endForm()
+                                        . '</li>'
+                                        )
+                ],
+        ]);
     }else if (Yii::$app->user->getIdentificadorPessoa() == '2'){ //Aluno
-    	echo Nav::widget([
-    	'encodeLabels' => false,
-    			'options' => ['class' => 'navbar-nav navbar-right'],
-    			'items' => [
-    					['label' => 'Página Inicial', 'url' => ['/site/aluno']],
-    					['label' => 'Empresas', 'url' => ['/empresa/index']],
-    					['label' => 'Notificações '. Html::tag('span', $not_aluno, ['class' => 'badge']), 'url' => ['/notificacao/']],
-    					['label' => 'Seu Perfil', 'url' => ['/usuario/update', 'id' => Yii::$app->user->getId()]],
-    					['label' => 'Contato', 'url' => ['/site/contact']],
-    					['label' => 'Sobre', 'url' => ['/site/about']],
-    					 
-    					Yii::$app->user->isGuest ? (
-    							['label' => 'Entrar', 'url' => ['/site/login']]
-    							) : (
-    									'<li>'
-    									. Html::beginForm(['/site/logout'], 'post')
-    									. Html::submitButton(
-    											'Sair (' . Yii::$app->user->identity->nome . ')',
-    											['class' => 'btn btn-link logout']
-    											)
-    									. Html::endForm()
-    									. '</li>'
-    									)
-    			],
-    	]);
+        echo Nav::widget([
+        'encodeLabels' => false,
+                'options' => ['class' => 'navbar-nav navbar-right'],
+                'items' => [
+                        ['label' => 'Página Inicial', 'url' => ['/site/aluno']],
+                        ['label' => 'Empresas', 'url' => ['/empresa/index']],
+                        ['label' => 'Notificações '. Html::tag('span', $not_aluno, ['class' => 'badge']), 'url' => ['/notificacao/']],
+                        ['label' => 'Seu Perfil', 'url' => ['/usuario/update', 'id' => Yii::$app->user->getId()]],
+                        ['label' => 'Contato', 'url' => ['/site/contact']],
+                        ['label' => 'Sobre', 'url' => ['/site/about']],
+                         
+                        Yii::$app->user->isGuest ? (
+                                ['label' => 'Entrar', 'url' => ['/site/login']]
+                                ) : (
+                                        '<li>'
+                                        . Html::beginForm(['/site/logout'], 'post')
+                                        . Html::submitButton(
+                                                'Sair (' . Yii::$app->user->identity->nome . ')',
+                                                ['class' => 'btn btn-link logout']
+                                                )
+                                        . Html::endForm()
+                                        . '</li>'
+                                        )
+                ],
+        ]);
     }else if (Yii::$app->user->getIdentificadorPessoa() == '3'){ //Empresa
-    	echo Nav::widget([
-    			'options' => ['class' => 'navbar-nav navbar-right'],
-    			'items' => [
-    					['label' => 'Página Inicial', 'url' => ['/site/empresa']],
-    					['label' => 'Empresas',
-    					'items' =>[
-
-    							['label' => 'Cadastrar Informações', 'url' => ['/site/cadinfoemp']],
-
-    							['label' => 'Listar Empresas Cadastradas', 'url' => ['empresa/index']],
-    					]],
-    					['label' => 'Seu Perfil', 'url' => ['/usuario/update', 'id' => Yii::$app->user->getId()]],
-    					['label' => 'Contato', 'url' => ['/site/contact']],
-    					['label' => 'Sobre', 'url' => ['/site/about']],
-    					
-    					
-    					Yii::$app->user->isGuest ? (
-    							['label' => 'Entrar', 'url' => ['/site/login']]
-    							) : (
-    									'<li>'
-    									. Html::beginForm(['/site/logout'], 'post')
-    									. Html::submitButton(
-    											'Sair (' . Yii::$app->user->identity->nome . ')',
-    											['class' => 'btn btn-link logout']
-    											)
-    									. Html::endForm()
-    									. '</li>'
-    									)
-    			],
-    	]);
+        echo Nav::widget([
+                'options' => ['class' => 'navbar-nav navbar-right'],
+                'items' => [
+                        ['label' => 'Página Inicial', 'url' => ['/site/empresa']],
+                        ['label' => 'Empresas',
+                        'items' =>[
+                                ['label' => 'Cadastrar Informações', 'url' => ['/site/cadinfoemp']],
+                                ['label' => 'Listar Empresas Cadastradas', 'url' => ['empresa/index']],
+                        ]],
+                        ['label' => 'Seu Perfil', 'url' => ['/usuario/update', 'id' => Yii::$app->user->getId()]],
+                        ['label' => 'Contato', 'url' => ['/site/contact']],
+                        ['label' => 'Sobre', 'url' => ['/site/about']],
+                        
+                        
+                        Yii::$app->user->isGuest ? (
+                                ['label' => 'Entrar', 'url' => ['/site/login']]
+                                ) : (
+                                        '<li>'
+                                        . Html::beginForm(['/site/logout'], 'post')
+                                        . Html::submitButton(
+                                                'Sair (' . Yii::$app->user->identity->nome . ')',
+                                                ['class' => 'btn btn-link logout']
+                                                )
+                                        . Html::endForm()
+                                        . '</li>'
+                                        )
+                ],
+        ]);
     }else{ // Visitante
-    	echo Nav::widget([
-        	'options' => ['class' => 'navbar-nav navbar-right'],
-        	'items' => [
-            	['label' => 'Página Inicial', 'url' => ['/site/index']],
-            	['label' => 'Empresas', 'url' => ['/empresa/index']],
-            	['label' => 'Contato', 'url' => ['/site/contact']],
-            	['label' => 'Sobre', 'url' => ['/site/about']],
-            	
-            	Yii::$app->user->isGuest ? (
-                	['label' => 'Entrar', 'url' => ['/site/login']]
-            	) : (
-                	'<li>'
-                	. Html::beginForm(['/site/logout'], 'post')
-                	. Html::submitButton(
-                    	'Sair (' . Yii::$app->user->identity->nome . ')',
-                    	['class' => 'btn btn-link logout']
-                	)
-                	. Html::endForm()
-                	. '</li>'
-            	)
-        	],
-    	]);
+        echo Nav::widget([
+            'options' => ['class' => 'navbar-nav navbar-right'],
+            'items' => [
+                ['label' => 'Página Inicial', 'url' => ['/site/index']],
+                ['label' => 'Empresas', 'url' => ['/empresa/index']],
+                ['label' => 'Contato', 'url' => ['/site/contact']],
+                ['label' => 'Sobre', 'url' => ['/site/about']],
+                
+                Yii::$app->user->isGuest ? (
+                    ['label' => 'Entrar', 'url' => ['/site/login']]
+                ) : (
+                    '<li>'
+                    . Html::beginForm(['/site/logout'], 'post')
+                    . Html::submitButton(
+                        'Sair (' . Yii::$app->user->identity->nome . ')',
+                        ['class' => 'btn btn-link logout']
+                    )
+                    . Html::endForm()
+                    . '</li>'
+                )
+            ],
+        ]);
     }
     
     NavBar::end();
@@ -244,7 +224,7 @@ AppAsset::register($this);
 
 
     <div class="container">
-    	
+        
         <?= Breadcrumbs::widget([
             'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
         ]) ?>
@@ -256,62 +236,40 @@ AppAsset::register($this);
 <?php $this->endBody() ?>
 </body>
 </html>
-	
+    
 <?php $this->endPage() ?>
 
  
-		
+        
 <div id="footerIn" style="" class="ui-state-focus" style="padding:5px; clear:both;" align="center">
-	<li class="list-group-item list-group-item-info">
+    <li class="list-group-item list-group-item-info">
         
         <a href="http://www.ufam.edu.br">
             <span style="float:none;">
                 <img style="height:70px; vertical-align:middle" class="iconDetails" src="\AmazonCompanies\web\img\ufam.png" alt=""/>
             </span>
         </a>
-		<br/>
-		<a href="http://www.fes.ufam.edu.br/">
+        <br/>
+        <a href="http://www.fes.ufam.edu.br/">
             <span style="float:none;">
                 
                 FES - Faculdade de Estudos Sociais
             </span>
         </a>
         <br/>
-		 <a href="http://www.ufam.edu.br">
+         <a href="http://www.ufam.edu.br">
             <span style="float:none;" >
                
                 Universidade Federal Do Amazonas
             </span>
         </a>
-		<br/>
+        <br/>
 
-		<?php
-			$rodape = Rodape::findOne(1);
-			
-			$link = $rodape->link;
-			echo "$link";
-		?>
-		<br/>
-
-		<?php
-			$rodape = Rodape::findOne(2);
-			
-			$link = $rodape->link;
-			echo "$link";
-		?>
-		<br/>
-
-		<?php
-			$rodape = Rodape::findOne(3);
-			
-			$link = $rodape->link;
-			echo "$link";
-		?>
-		<br/>
+        <!--  -->
 
         © Coordenação de Sistemas - UFAM </br>
-		
-	</li>
+        
+    </li>
 
 
 

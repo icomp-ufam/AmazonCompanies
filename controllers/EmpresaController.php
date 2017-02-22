@@ -255,7 +255,7 @@ class EmpresaController extends Controller
             //Yii::trace(Yii::);
 
         	Yii::trace("model antes");
-        	//Yii::trace($model->save());
+        	Yii::trace($model->save());
         
         		 
         	 }
