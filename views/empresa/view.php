@@ -53,13 +53,21 @@ use kartik\widgets\Select2;
             <?= Html::button('Gerar PDF', ['id'=> 'export_chart', 'class'=> 'btn btn-primary']) ?>
     </p>
 
-     <h3> DADOS DE CONTAS:
-    </h3>
+     
+        <?php
+    if(Yii::$app->user->getIdentificadorPessoa() == '1'){
+
+    ?>
+                 <h3> DADOS DE CONTAS:     </h3>
+
         <div>
             <?= $this->render('_telaBotao', [
                 'model' => $model,
                 ]) ?>
         </div>
+        <?php
+    }
+    ?>
             
 </div>
 
