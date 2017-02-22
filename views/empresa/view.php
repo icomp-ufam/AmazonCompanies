@@ -483,7 +483,7 @@ echo Highcharts::widget([
                             }
                             elseif ($analiseano->credor == 3) {
                                 $credor = 'Não emprestar';
-                                $img = 'nao1.jpg';
+                                $img = 'nao1.png';
 
                             }
                             ?>

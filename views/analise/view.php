@@ -54,7 +54,7 @@ $this->params['breadcrumbs'][] = $this->title;
                             }
                             elseif ($model->credor == 3) {
                                 $credor = 'Não emprestar';
-                                $img = 'nao1.jpg';
+                                $img = 'nao1.png';
 
                             }
                             ?>
@@ -70,8 +70,6 @@ $this->params['breadcrumbs'][] = $this->title;
 
              <p><br></p>
 
-            <h4><strong>Resultado da análise realizado pelo responsável</strong></h4>     
-            <?= $model->textoAnalisador ?>
         </div>
 
 
