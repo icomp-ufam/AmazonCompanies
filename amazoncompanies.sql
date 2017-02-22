@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Tempo de geração: 20/02/2017 às 02:06
+-- Tempo de geração: 22/02/2017 às 10:40
 -- Versão do servidor: 5.7.17-0ubuntu0.16.04.1
 -- Versão do PHP: 7.0.13-0ubuntu0.16.04.1
 
@@ -45,14 +45,16 @@ CREATE TABLE `analise` (
 --
 
 INSERT INTO `analise` (`idanalise`, `texto`, `status`, `ano`, `investidor`, `credor`, `idEmpresa`, `textoAnalisador`, `Usuario_idUsuario`) VALUES
-(2, 'Texto enviado para análise', 0, 2015, 0, 0, 2, 'Resultado da análise feita pelo responsável.', 2),
+(2, 'Texto enviado para análise', 0, 2015, 3, 3, 2, 'Resultado da análise feita pelo responsável.', 2),
 (3, 'Este é um sistema operacional que', 0, 2015, 2, 2, 5, 'ooooooooooooooooooooooooooooooooooooo', 1),
-(6, 'Mais um teste do testo enviado para análise, será que agora vai?<br>', 1, 2016, 2, 2, 4, 'Agora sim ficou muito bom. Parabéns!<br>', 6),
+(6, 'Mais um teste enviado para análise, será que agora vai?<br>', 1, 2016, 2, 2, 4, 'Agora sim ficou muito bom. Parabéns!<br>', 6),
 (7, 'achei legal<br>', 1, 2016, 0, 0, 6, 'bacana<br>', 3),
 (8, 'Analise teste com ano', 1, 2016, 0, 0, 5, '', 1),
-(9, 'teste', 1, 2016, 0, 0, 2, '', 1),
+(9, 'teste', 1, 2016, 2, 3, 2, '', 1),
 (10, '1', 1, 2016, 0, 0, 3, '', 1),
-(11, 'testando tendencias', 1, 2017, 2, 2, 5, '', 1);
+(12, 'Teste, teste dnovo<br>', 1, 2017, 2, 3, 5, '', 6),
+(13, 'tesgeufakjfaf<br>', 1, 2018, 2, 2, 5, '<br>', 6),
+(15, 'Legal<br>', 1, 2017, 3, 2, 4, NULL, 6);
 
 -- --------------------------------------------------------
 
@@ -101,7 +103,7 @@ INSERT INTO `conta` (`idConta`, `nome`, `idDemonstracao`, `chave`, `obrigatorio`
 (4, 'Ativos Totais', 1, '#AT', 1),
 (5, 'Ativo Circulante', 1, '#AC', 1),
 (6, 'Disponibilidades + Aplicações Fin Liq Im.', 1, '#DALI', 1),
-(7, 'Estoques ', 1, '#EST', 1),
+(7, 'Estoques', 1, '#EST', 1),
 (8, 'Ativo não Circulante', 1, '#ANC', 1),
 (9, 'Imobilizado', 1, '#IM', 1),
 (10, 'Passivo Circulante', 1, '#PC', 1),
@@ -211,9 +213,9 @@ INSERT INTO `empresa_conta` (`id`, `ano`, `valor`, `idEmpresa`, `idConta`, `idUs
 (2, 2014, 54102, 5, 4, 6, 1),
 (3, 2013, 422000, 4, 4, 6, 1),
 (4, 2016, 888, 5, 6, 3, 1),
-(5, 2015, 25, 5, 4, 3, 1),
-(6, 2015, 5, 5, 5, 3, 0),
-(7, 2014, 55, 5, 5, 4, 1);
+(5, 2015, 31500, 5, 4, 3, 1),
+(6, 2015, 12300, 5, 5, 3, 0),
+(7, 2014, 321022, 5, 5, 4, 1);
 
 -- --------------------------------------------------------
 
@@ -264,9 +266,40 @@ INSERT INTO `notificacao` (`idNotificacao`, `Usuario_idUsuario`, `status`, `cont
 (9, 1, 0, 'Achei bom', 1, 8),
 (12, 2, 0, 'não gostei', 1, 2),
 (14, 6, 2, 'asdadasdsa', 0, 6),
-(17, 6, 0, 'birl', 0, 6),
+(17, 6, 2, 'birl', 0, 6),
 (18, 6, 2, 'ainda não está bom', 0, 6),
-(19, 6, 2, 'Sua análise foi aceita!', 0, 6);
+(19, 6, 2, 'Sua análise foi aceita!', 0, 6),
+(20, 6, 2, 'Não gostei', 0, 12),
+(21, 6, 2, 'Sua análise foi aceita!', 0, 12),
+(22, 6, 2, 'nao gostei', 0, 13),
+(23, 6, 2, 'Sua análise foi aceita!', 0, 13),
+(24, 6, 2, 'Gostei bastante de sua análise, parabéns!', 0, 6),
+(25, 3, 2, 'Não gostei do que você fez', 2, NULL),
+(26, 3, 2, 'To te avisando hein', 2, NULL),
+(27, 6, 2, 'e aí cara, beleza?', 2, NULL),
+(28, 3, 2, 'Gostaria que analisasse a Empresa x, no ano x. Estou no aguardo.', 2, NULL),
+(29, 6, 2, 'Achei muito bom!', 0, 15),
+(30, 3, 2, 'Gostaria que resolvesse a questão 9', 2, NULL);
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura para tabela `rodape`
+--
+
+CREATE TABLE `rodape` (
+  `id` int(11) NOT NULL,
+  `link` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Fazendo dump de dados para tabela `rodape`
+--
+
+INSERT INTO `rodape` (`id`, `link`) VALUES
+(1, 'www.primeirolink.com'),
+(2, 'www.segundolink.com'),
+(3, 'www.terceirolink.com');
 
 -- --------------------------------------------------------
 
@@ -338,7 +371,7 @@ INSERT INTO `usuario` (`idUsuario`, `login`, `nome`, `senha`, `ativo`, `identifi
 (2, 'Tata14', 'Tatazinha', 'a384b6463fc216a5f8ecb6670f86456a', 0, 1, 'tla@icomp.ufam.edu.br'),
 (3, 'Gisa', 'Gisele', '25d55ad283aa400af464c76d713c07ad', 1, 2, 'gisa@icomp.ufam.edu.br'),
 (4, 'Motoca', 'Moto Honda da Amazônia LTDA', '3dcdda99b20ed51f83b25c6315c5a818', 1, 3, 'motohonda@gmail.com'),
-(5, 'icaro', 'Icaro Dolzane', 'a48e0f40dba24e3bcfe84aad2c272d8d', 2, 1, 'ifd@icomp.ufam.edu.br'),
+(5, 'icaro', 'Icaro Dolzane', 'a48e0f40dba24e3bcfe84aad2c272d8d', 1, 1, 'ifd@icomp.ufam.edu.br'),
 (6, 'Thitan', 'Thiego Barros', '25d55ad283aa400af464c76d713c07ad', 1, 2, 't@icomp.ufam.br'),
 (7, 'agus', 'Augusto Arruda', '41092952f6cfadc1a1ef40c405159ce3', 1, 2, 'augusto_rr_arruda@gmail.com'),
 (8, 'Brasitech', 'Brasitech Indústria de Produtos LTDA', '25d55ad283aa400af464c76d713c07ad', 1, 3, 'bra@gmail.com'),
@@ -354,6 +387,7 @@ INSERT INTO `usuario` (`idUsuario`, `login`, `nome`, `senha`, `ativo`, `identifi
 --
 ALTER TABLE `analise`
   ADD PRIMARY KEY (`idanalise`),
+  ADD UNIQUE KEY `un_empresa_ano` (`idEmpresa`,`ano`),
   ADD KEY `fk_idUsuario` (`Usuario_idUsuario`) USING BTREE,
   ADD KEY `fk_analise_1_idx` (`idEmpresa`);
 
@@ -419,6 +453,12 @@ ALTER TABLE `notificacao`
   ADD KEY `idAnalise` (`idAnalise`) USING BTREE;
 
 --
+-- Índices de tabela `rodape`
+--
+ALTER TABLE `rodape`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Índices de tabela `tipo_empresa`
 --
 ALTER TABLE `tipo_empresa`
@@ -445,7 +485,7 @@ ALTER TABLE `usuario`
 -- AUTO_INCREMENT de tabela `analise`
 --
 ALTER TABLE `analise`
-  MODIFY `idanalise` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `idanalise` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 --
 -- AUTO_INCREMENT de tabela `comentario`
 --
@@ -480,7 +520,7 @@ ALTER TABLE `indice`
 -- AUTO_INCREMENT de tabela `notificacao`
 --
 ALTER TABLE `notificacao`
-  MODIFY `idNotificacao` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+  MODIFY `idNotificacao` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
 --
 -- AUTO_INCREMENT de tabela `usuario`
 --
