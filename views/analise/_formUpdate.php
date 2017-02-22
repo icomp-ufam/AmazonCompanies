@@ -57,8 +57,6 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'idEmpresa')->hiddenInput()->label(false); ?>
 
-    <?= $form->field($model, 'textoAnalisador')->textarea(['rows' => 6]) ?>
-
     <div class="form-group">
         <?= Html::submitButton($model->isNewRecord ? 'Submeter' : 'Salvar', ['class' => $model->isNewRecord ? 'btn btn-primary' : 'btn btn-primary']) ?>
     </div>

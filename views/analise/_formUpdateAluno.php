@@ -58,8 +58,6 @@ use kartik\widgets\TouchSpin;
 
      <?= $form->field($model, 'idEmpresa')->hiddenInput()->label(false); ?>
 
-    <?= $form->field($model, 'textoAnalisador')->hiddenInput(['value'=>null])->label(false); ?>
-
     <?= $form->field($model, 'Usuario_idUsuario')->hiddenInput()->label(false); ?>
     
     <div class="form-group">
