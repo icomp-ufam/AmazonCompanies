@@ -136,7 +136,7 @@ use yii\base\Widget;
                                                  $tweets = [['nome'=>'Liquidez', 'id'=>100]];
  
                                                 foreach($anosEmpresas as $anosEmpresa){
-                                                    $valoress = EmpresaConta::find()->select('valor')->where(['idConta' => $conta->idConta])->andWhere(['ano' =>$anosEmpresa->ano])->all();
+                                                    $valoress = EmpresaConta::find()->select('valor')->where(['idConta' => $conta->idConta])->andWhere(['ano' =>$anosEmpresa->ano])->andWhere(['idEmpresa' => $model->idEmpresa])->all();
                                                     if(count($valoress)>0){
                                                         foreach($valoress as $valores){
 

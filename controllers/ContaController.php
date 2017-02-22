@@ -81,7 +81,7 @@ class ContaController extends Controller
 
         $contas = Conta::find()->all();
 
-        $titulosColunas = ['TIPO DE DEMONSTRACAO', 'NOME DA CONTA', 'ANO', 'VALOR'];
+        $titulosColunas = ['NOME', 'VALOR', 'ANO'];
 
         $filename = 'templateAmazonCompanies.xls';
 
@@ -103,7 +103,7 @@ class ContaController extends Controller
                             $demonstracao=Demonstracao::find()->select("nomeDemonstracao")->where(['idDemonstracao' => $conta->idDemonstracao])->one();
 
                             $html.='<tr>';
-                                $html.='<td><b>'.$demonstracao->nomeDemonstracao.'</b></td>';
+                               // $html.='<td><b>'.$demonstracao->nomeDemonstracao.'</b></td>';
                                 $html.='<td><b>'.$conta->nome.'</b></td>';
                                
                             $html.='</tr>';
