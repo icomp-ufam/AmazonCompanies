@@ -693,12 +693,15 @@ $_SESSION["nome"] =  "Neves";
             var img = canvas.toDataURL(\"image/png\"); //img is data:image/png;base64
             img = img.replace('data:image/png;base64,', '');
 
+            window.open(\"about:blank\", \"showPdf\");
+
             $.ajax({
               type: \"POST\",
-              url: \"lib/savechart/savechart.php\",
+              url: \"index.php?r=empresa/generate_pdf\",
               data: {bin_data: img},
+              
               success: function(data){
-                alert(data);
+                window.open(data, \"showPdf\");
               }
             });
         });
