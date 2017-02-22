@@ -53,21 +53,13 @@ use kartik\widgets\Select2;
             <?= Html::button('Gerar PDF', ['id'=> 'export_chart', 'class'=> 'btn btn-primary']) ?>
     </p>
 
-     
-        <?php
-    if(Yii::$app->user->getIdentificadorPessoa() == '1'){
-
-    ?>
-                 <h3> DADOS DE CONTAS:     </h3>
-
+     <h3> DADOS DE CONTAS:
+    </h3>
         <div>
             <?= $this->render('_telaBotao', [
                 'model' => $model,
                 ]) ?>
         </div>
-        <?php
-    }
-    ?>
             
 </div>
 
@@ -494,14 +486,61 @@ echo Highcharts::widget([
                                 } 
                             ?>   
                         </tr>
-                        
                     </tbody>
                 </table>
+                <div id = "comentario" class="row">
+                    </br>
+
+                    <legend>Deixe seu comentário</legend>
+
+                    <div id="fb-root"></div>
+                    <script>(function(d, s, id) {
+                      var js, fjs = d.getElementsByTagName(s)[0];
+                      if (d.getElementById(id)) return;
+                      js = d.createElement(s); js.id = id;
+                      js.src = "//connect.facebook.net/pt_BR/sdk.js#xfbml=1&version=v2.8&appId=1866615900285683";
+                      fjs.parentNode.insertBefore(js, fjs);
+                    }(document, 'script', 'facebook-jssdk'));</script>
+                    <div class="fb-comments" data-href="http://localhost/AmazonCompanies/web/index.php?r=empresa%2Fview&amp;id=1" data-width="100" data-numposts="5"></div>
+
+                    <br>
+                    <br>
+
+                    <!-- Posicione esta tag no cabeçalho ou imediatamente antes da tag de fechamento do corpo. -->
+                    <script src="https://apis.google.com/js/platform.js" async defer>
+                      {lang: 'pt-BR'}
+                    </script>
+
+                    <!-- Posicione esta tag onde você deseja que o botão +1 apareça. -->
+                    <div class="g-plusone" data-annotation="inline" data-width="300"></div>
+
+                     <div class="modal" id="cadCalIndice" role="dialog">
+                            <div class="modal-content">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <?= Html::a('&times;', ['view', 'id' => $model->idEmpresa], ['class' => 'btn close']) ?>
+                                        <h3 class="modal-title">Cálculo de Índices</h3>
+                                    </div>
+                                    <div class="modal-body">
+                                        <form class="form-inline" role="form">
+                                            <div class="wrapper">
+
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
             </div>
         </div>
+    </div>
         <?php
                         }   
                     ?>
+
+        <?php echo '<a href="index.php?r=analise%2Fcreate&idEmpresa=' . $model->idEmpresa . '"><button class="btn btn-default">Criar Análise</button> </a>';
+    ?>
                 
 
             <script type="application/javascript">
@@ -534,133 +573,7 @@ echo Highcharts::widget([
 
     </script>
 
-         <?php echo '<a href="index.php?r=analise%2Fcreate&idEmpresa=' . $model->idEmpresa . '"><button class="btn btn-default">Criar Análise</button> </a>';
-    ?>
-
-<div id = "comentario" class="row">
-</br>
-
-<legend>Deixe seu comentário</legend>
-
-<div class="comentario-form">
-
-<?php $_SESSION = Yii::$app->session; 
-$_SESSION->open();
-
-$_SESSION["email"] = "larissa@icomp.ufam.edu.br";
-$_SESSION["nome"] =  "Neves";
- ?>
-
-
-    <?php $form = ActiveForm::begin(); ?>
-
-    <?= $form->field($comentario, 'conteudo')->textarea(['rows' => 6]) ?>
-
-    <?= $form->field($comentario, 'nome')->hiddenInput(['value'=>$_SESSION["nome"]])->label(false); ?>
-
-    <?= $form->field($comentario, 'email')->hiddenInput(['value'=>$_SESSION["email"]])->label(false); ?>
-
-    <?= $form->field($comentario, 'data')->hiddenInput(['value'=>date('Y-m-d')])->label(false); ?>
-
-    <?= $form->field($comentario, 'hora')->hiddenInput(['value'=>time('HH:MM:SS')])->label(false); ?>
-
-    <?= $form->field($comentario, 'Comentario_idComentario')->hiddenInput(['value'=>null])->label(false); ?>
-
-    <div class="form-group">
-        <?= Html::submitButton('Enviar Comentário', ['class' =>  'btn btn-success' ]) ?>
-    </div>
-
-    <?php ActiveForm::end(); ?>
-
-</div>
-
-<?php
-          
-        $query = (new Query())->from('comentario')->where(['Empresa_idEmpresa'=> $model->idEmpresa]);
-        $comentarioProvider = new ActiveDataProvider([
-            'query' => $query,
-            'pagination' => [
-                'pageSize'  => 10,
-                'pageParam'=> '',
-            ],
-            'sort' => [
-                'sortParam' => '',
-            ],
-        ]);
-
-        $posts = $comentarioProvider->getModels();
-        $comentarioProvider->pagination->pageParam = 'comentario-page';
-        $comentarioProvider->sort->sortParam= 'comentario-sort';
-        $flag = false;
-
-            echo'<table class="table">';
-                echo '<thead>';
-                echo '<tr>';
-                echo '<th>Comentário</th>';
-                echo '<th>Usuário</th>';
-                echo '</tr>';
-                echo '</thead>';
-            foreach($posts as $post){
-                if (!empty($post) && (empty($post['Comentario_idComentario']))){
-                    $flag = true;
-                    echo '<tr>';
-                    echo '<td>';
-                    print_r($post['conteudo']);
-                    echo '</td>';
-                    echo '<td>';
-                    print_r($_SESSION["nome"]);
-                    echo '</td>';
-                    echo '<td border-color="#FFFFFF" bgcolor="#FFFFFF">';
-                    $coment = ($post['idComentario']);
-                    // if(Yii::$app->user->isGuest) {
-                    echo '<a href="index.php?r=comentario%2Fcreate&idEmpresa=' . $model->idEmpresa . ' &Comentario_idComentario=' . $coment . '"><button class="btn btn-default">Responder</button> </a>';
-                    echo '</td>';//}
-                    echo '<td >';
-                    if(Yii::$app->user->getIdentificadorPessoa() == '1'){
-                    
-                    echo '<a href="index.php?r=comentario%2Fview&idEmpresa=' . $model->idEmpresa . ' &id=' . $coment . '"><button class="btn btn-danger">Excluir comentário</button> </a>';}
-                    echo '</td>';
-                    echo '</tr>';
-                    
-                    foreach($posts as $post){
-                        if (!empty($post) && (($post['Comentario_idComentario']) == $coment)){
-                            echo '<tr>';
-                            echo '<td bgcolor="#E6E6FA">';
-                            print_r($post['conteudo']);
-                            echo '</td>';
-                            echo '<td bgcolor="#E6E6FA">';
-                            print_r($post['nome']);
-                            echo '</td>';
-                            echo '</tr>';
-
-                        }
-                    }
-                }
-            }
-
-        if($flag == false){
-         echo "<div class='text-info'>Essa empresa não possui comentários! Seja o primeiro a comentar </div><br>";
-        }   
-
-    ?>
-
- <div class="modal" id="cadCalIndice" role="dialog">
-        <div class="modal-content">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <?= Html::a('&times;', ['view', 'id' => $model->idEmpresa], ['class' => 'btn close']) ?>
-                    <h3 class="modal-title">Cálculo de Índices</h3>
-                </div>
-                <div class="modal-body">
-                    <form class="form-inline" role="form">
-                        <div class="wrapper">
-
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
+         
 
 <!--
     Savechart (JS part) - Saves a graphic of Highcharts in a .png file on the server
