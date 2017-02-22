@@ -7,7 +7,7 @@ use kartik\grid\GridView;
 /* @var $searchModel app\models\AnaliseSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = 'Analises';
+$this->title = 'Análises';
 $this->params['breadcrumbs'][] = $this->title;
 $testProvider = $dataProvider;
 ?>
@@ -23,53 +23,25 @@ $testProvider = $dataProvider;
         'dataProvider' => $dataProvider,
         'filterModel' => $searchModel,
         'columns' => [
-            //'idanalise',
-//            ['attribute'=>'texto',
-//            'value'=>'texto',
-//            'format'=>'html'],
-            
-
-            ['attribute'=> 'idEmpresa',
-             'value'=> 'idEmpresa0.nome',
-            ],
-            
-            ['attribute'=> 'Usuario_idUsuario',
-             'value'=> 'usuarioIdUsuario.nome',
-            ],
-
-   
-        		['attribute'=>'texto',
+        ['attribute'=> 'idEmpresa',
+        'value'=> 'idEmpresa0.nome',
+        'filter' => false
+        ],
+        
+        ['attribute'=> 'Usuario_idUsuario',
+        		'value'=> 'usuarioIdUsuario.nome',
+        ],
+        
+         
+        ['attribute'=>'texto',
         		'value'=>'texto',
         		'format'=>'html'],
-            //'textoAnalisador',
-
-            ['attribute'=>'textoAnalisador',
-            'value'=>'textoAnalisador',
-            'format'=>'html'],
+        		'ano',
         		[
-        		'attribute' => 'status',
-        		'hAlign' => 'center',
-        		'value' => function($model, $index, $dataColumn) {
-        			if($model->status == 2){
-        				return 'Não Analisada';
-        			}else if ($model->status == 1){
-        				return 'Aceita';
-        			}else{
-        				return 'Rejeitada';
-        			}
-        		},
-        		'filter' => [
-        				'0' => 'Rejeitada',
-        				'1' => 'Aceita',
-        				'2' => 'Não Analisada',
+        				'class' => 'kartik\grid\ActionColumn',
+        				'header' => 'Visualizar Análise',
+        				'template'=> '{view}'
         		]
-        		],
-            [
-            	'class' => 'kartik\grid\ActionColumn',
-            	'header' => 'Visualizar Análise',
-                'template'=> '{view}'	
-                
-    		]
 
 
         ],
