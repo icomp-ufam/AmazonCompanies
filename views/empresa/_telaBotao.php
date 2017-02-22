@@ -20,7 +20,7 @@ use kartik\widgets\FileInput;
     ?>
 
     
-    <?= $form->field($model, 'upload_file')->fileInput(['maxlength' => true])?>
+    <?= $form->field($model, 'upload_file')->fileInput(['maxlength' => true])->label('Inserir Dados:')?>
     <?php
         //echo FileInput::widget([
           //  'name' => 'logotipo',

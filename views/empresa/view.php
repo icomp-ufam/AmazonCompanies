@@ -68,15 +68,14 @@ use yii\base\Widget;
     		</div>
     
     </div>
-
-     <h3> DADOS DE CONTAS:
-    </h3>
+<?php if(Yii::$app->user->getIdentificadorPessoa() == '2' || Yii::$app->user->getIdentificadorPessoa() == '1'){ ?>
+     <br>
         <div>
             <?= $this->render('_telaBotao', [
                 'model' => $model,
                 ]) ?>
         </div>
-            
+            <?php }?>
 </div>
 
 <div class="body-content">
@@ -112,7 +111,7 @@ use yii\base\Widget;
                             <th><input type="checkbox" id="check_all" /></th>
                             <th>Nome Conta: <?=$demonstracao->idDemonstracao?></th>
                             <?php
-                                            $anosEmpresas = EmpresaConta::find()->select('ano')->distinct()->orderBy(["ano"=> SORT_ASC])->all();
+                                            $anosEmpresas = EmpresaConta::find()->select('ano')->distinct()->orderBy(["ano"=> SORT_ASC])->where(['idEmpresa' => $model->idEmpresa])->all();
                                                  $tweets = [['nome'=>'Liquidez', 'id'=>100]];
  
                                                 foreach($anosEmpresas as $anosEmpresa){  
@@ -133,7 +132,7 @@ use yii\base\Widget;
                             <td><?=$conta->nome?></td>
                         
                                <?php
-                                            $anosEmpresas = EmpresaConta::find()->select('ano')->distinct()->orderBy(["ano"=> SORT_ASC])->all();
+                                            $anosEmpresas = EmpresaConta::find()->select('ano')->distinct()->orderBy(["ano"=> SORT_ASC])->where(['idEmpresa' => $model->idEmpresa])->all();
                                                  $tweets = [['nome'=>'Liquidez', 'id'=>100]];
  
                                                 foreach($anosEmpresas as $anosEmpresa){
@@ -174,7 +173,7 @@ use yii\base\Widget;
                             <th><input type="checkbox" id="check_all" /></th>
                             <th>Nome Conta:</th>
                             <?php
-                                            $anosEmpresas = EmpresaConta::find()->select('ano')->distinct()->orderBy(["ano"=> SORT_ASC])->all();
+                                            $anosEmpresas = EmpresaConta::find()->select('ano')->distinct()->orderBy(["ano"=> SORT_ASC])->where(['idEmpresa' => $model->idEmpresa])->all();
                                                  $tweets = [['nome'=>'Liquidez', 'id'=>100]];
  
                                                 foreach($anosEmpresas as $anosEmpresa){  
@@ -195,10 +194,10 @@ use yii\base\Widget;
                             <td><?=$conta->nome?></td>
                         
                                <?php
-                                            $anosEmpresas = EmpresaConta::find()->select('ano')->distinct()->orderBy(["ano"=> SORT_ASC])->all();
+                                            $anosEmpresas = EmpresaConta::find()->select('ano')->distinct()->orderBy(["ano"=> SORT_ASC])->where(['idEmpresa' => $model->idEmpresa])->all();
  
                                                 foreach($anosEmpresas as $anosEmpresa){
-                                                    $valoress = EmpresaConta::find()->select('valor')->where(['idConta' => $conta->idConta])->andWhere(['ano' =>$anosEmpresa->ano])->all();
+                                                    $valoress = EmpresaConta::find()->select('valor')->where(['idConta' => $conta->idConta])->andWhere(['ano' =>$anosEmpresa->ano])->andWhere(['idEmpresa' => $model->idEmpresa])->all();
                                                     if(count($valoress)>0){
                                                         foreach($valoress as $valores){
 
@@ -266,7 +265,7 @@ use yii\base\Widget;
                                             <th>Fórmula:</th>
 
                                             <?php
-                                            $anosEmpresas = EmpresaConta::find()->select('ano')->distinct()->orderBy(["ano"=> SORT_ASC])->all();
+                                            $anosEmpresas = EmpresaConta::find()->select('ano')->distinct()->orderBy(["ano"=> SORT_ASC])->where(['idEmpresa' => $model->idEmpresa])->all();
                                                  $tweets = [['nome'=>'Liquidez', 'id'=>100]];
  
                                                 foreach($anosEmpresas as $anosEmpresa){  
@@ -308,7 +307,7 @@ use yii\base\Widget;
                                             <td><?=$montarFormula?></td>
                                             
                                             <?php  
-                                                $anosEmpresas = EmpresaConta::find()->select('ano')->distinct()->orderBy(["ano"=> SORT_ASC])->all();
+                                                $anosEmpresas = EmpresaConta::find()->select('ano')->distinct()->orderBy(["ano"=> SORT_ASC])->where(['idEmpresa' => $model->idEmpresa])->all();
                                                                         foreach($anosEmpresas as $anosEmpresa) {
                                                                                     $concatenar='';
                                                                                     $anterior='';         
@@ -326,7 +325,7 @@ use yii\base\Widget;
                                                                                 }else{ 
                                                                                     $conta = Conta::find()->select("*")->where(['chave' => $getChaveContas[$i]])->one();
                                                                                     $idConta = $conta['idConta'];
-                                                                                    $empresaConta = EmpresaConta::find()->select("*")->where(['idConta' => $idConta])->andWhere(['ano' =>$anosEmpresa->ano])->andWhere(['idEmpresa' =>$model->idEmpresa])->one();
+                                                                                    $empresaConta = EmpresaConta::find()->select("*")->where(['idConta' => $idConta])->andWhere(['ano' =>$anosEmpresa->ano])->one();
                                                                                     if($empresaConta==null){
                                                                                         $anterior = $concatenar;
                                                                                         $concatenar = $anterior.'xxxx';
