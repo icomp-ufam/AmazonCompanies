@@ -42,6 +42,7 @@ class TipoIndice extends \yii\db\ActiveRecord
         return [
             'idTipo_indice' => 'Id tipo índice',
             'nome' => 'Nome',
+            'descricao' => 'Descrição',
         ];
     }
 
