@@ -268,31 +268,31 @@ AppAsset::register($this);
         <!--  -->
 
         © Coordenação de Sistemas - UFAM </br>
-        
+        <?php
+        $rodape = Rodape::findOne(1);
+
+        $link = $rodape->link;
+        echo "$link";
+        ?>
+        <br/>
+
+        <?php
+        $rodape = Rodape::findOne(2);
+
+        $link = $rodape->link;
+        echo "$link";
+        ?>
+        <br/>
+
+        <?php
+        $rodape = Rodape::findOne(3);
+
+        $link = $rodape->link;
+        echo "$link";
+        ?>
+        <br/>
+
     </li>
 
-	<?php
-			$rodape = Rodape::findOne(1);
-			
-			$link = $rodape->link;
-			echo "$link";
-		?>
-		<br/>
-
-		<?php
-			$rodape = Rodape::findOne(2);
-			
-			$link = $rodape->link;
-			echo "$link";
-		?>
-		<br/>
-
-		<?php
-			$rodape = Rodape::findOne(3);
-			
-			$link = $rodape->link;
-			echo "$link";
-		?>
-		<br/>
 
 </div>

@@ -36,7 +36,7 @@ class cadadm extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['login', 'nome', 'senha', 'ativo', 'identificadorPessoa', 'email'], 'required'],
+            [['login', 'nome', 'senha', 'ativo', 'identificadorPessoa', 'email',], 'required'],
             [['ativo', 'identificadorPessoa'], 'integer'],
             [['login', 'nome', 'email'], 'string','max' => 45],
         	[['senha'], 'string', 'min' => 8, 'max' => 45],

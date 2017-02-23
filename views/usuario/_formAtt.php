@@ -24,6 +24,9 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'email')->textInput(['maxlength' => true])->label('E-mail') ?>
 
+    <?= $form->field($model, 'matricula')->textInput(['maxlength' => true])->hint('Ex: 21201234')->label("Matrícula") ?>
+
+
     <div class = "form-group">
        
        <?= Html::submitButton('Enviar Dados', [

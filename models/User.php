@@ -13,6 +13,7 @@ class User extends \yii\base\Object implements \yii\web\IdentityInterface
 	public $ativo;
 	public $identificadorPessoa;
 	public $login;
+	public $matricula;
 	
 	
     /**
@@ -132,4 +133,9 @@ class User extends \yii\base\Object implements \yii\web\IdentityInterface
     public function getLogin(){
     	return $this->login;
     }
+    // obtém o matricula do usuario
+    public function getMatricula(){
+        return $this->matricula;
+    }
+
 }

@@ -38,7 +38,7 @@ class Usuario extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['login', 'nome', 'senha', 'repetir_senha', 'ativo', 'identificadorPessoa', 'email'], 'required'],
+            [['login', 'nome', 'senha', 'repetir_senha', 'ativo', 'identificadorPessoa', 'email',], 'required'],
             [['ativo', 'identificadorPessoa'], 'integer'],
             [['login', 'nome', 'senha', 'repetir_senha', 'email'], 'string', 'max' => 45],
         	[['senha', 'repetir_senha'], 'string', 'min' => 8 ],
@@ -61,6 +61,7 @@ class Usuario extends \yii\db\ActiveRecord
             'ativo' => 'Ativo',
             'identificadorPessoa' => 'Tipo',
             'email' => 'Email',
+            'matricula' => 'Matrícula',
         ];
     }
 

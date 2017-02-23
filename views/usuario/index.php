@@ -24,6 +24,7 @@ $this->title = 'Validar Usuários';
         'columns' => [
             'login',
         	'nome',
+            'matricula',
         	[
         		'attribute' => 'identificadorPessoa',
         		'hAlign' => 'center',

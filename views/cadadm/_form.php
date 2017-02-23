@@ -32,7 +32,9 @@ use yii\widgets\ActiveForm;
 					<?= $form->field($model, 'ativo')->hiddenInput(['value'=>'1'])->label(false) ?>
 					
     				<?= $form->field($model, 'email')->textInput(['maxlength' => true])->hint('Ex: gii@icomp.ufam.edu.br')->label('E-mail') ?>
-					
+
+                     <?= $form->field($model, 'matricula')->textInput(['maxlength' => true])->hint('Ex: 21201234')->label("Matrícula") ?>
+
         <div class = "form-group">
         <?php if (Yii::$app->session->hasFlash('success')): ?>
   				<div class="alert alert-success alert-dismissable">

@@ -19,7 +19,7 @@ class UsuarioSearch extends Usuario
     {
         return [
             [['idUsuario', 'ativo', 'identificadorPessoa'], 'integer'],
-            [['login', 'nome', 'senha', 'email'], 'safe'],
+            [['login', 'nome', 'senha', 'email', 'matricula'], 'safe'],
         ];
     }
 
