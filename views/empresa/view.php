@@ -402,9 +402,8 @@ use yii\base\Widget;
         </div>
     </div>
 
-<div id="analise" class="row">
 
-    <legend>Gráfico</legend> 
+    <br>
     <div id="grafico" style="width: auto; height: auto; margin: 0 auto"></div>
 
 <?php 
@@ -417,18 +416,30 @@ echo Highcharts::widget([
         'themes/grid-light',
     ),
     */
-    'id' => 'demonstration',
-    'options' => array(
-        'title' => array(
-            'text' => 'Demonstração',
-        ),
-        'xAxis' => array(
-            'categories' => $categorias,
-        ),
-        
+    //'id' => 'demonstration',
+	'options' => [
+		'chart' => [
+			'renderTo' =>'grafico',
+			'height' => $contador*20 + 800 // tamanho da tabela será dinâmica, quanto mais linhas, maior fica
+		],
+		'title' => [
+			'text' => 'Gráfico'
+		],
+		'xAxis' => [
+			'categories' => $categorias		
+		],
+		'plotOptions' => [
+			'bar' => [
+				'dataLabels' => [
+					'enabled' => true		
+				]		
+			]	
+		],
+		'credits' => [
+				'enabled' => false	
+		],
         'series' => $field
-
-    )
+	],
 ]);
 
  ?> 
@@ -452,7 +463,7 @@ echo Highcharts::widget([
                         }   
                     ?>
     </ul>
-</div> </div>
+</div>
     <div class="tab-content">
         <?php
                         $analisesanos = Analise::find()->select('*')->where(['idEmpresa' => $model->idEmpresa])->all();
