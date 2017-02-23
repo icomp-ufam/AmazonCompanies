@@ -37,8 +37,10 @@ use yii\base\Widget;
      * */
 
     $this->title = $model->nome;
-    $this->params['breadcrumbs'][] = ['label' => 'Empresas', 'url' => ['index']];
-    $this->params['breadcrumbs'][] = $this->title;
+    if(!Yii::$app->user->getIsGuest()){
+    	$this->params['breadcrumbs'][] = ['label' => 'Empresas', 'url' => ['index']];
+    	$this->params['breadcrumbs'][] = $this->title;
+    }
     $this->defaultExtension = $model->logotipo
 ?>
 

@@ -16,6 +16,8 @@ $this->params['breadcrumbs'][] = $this->title;
 
 
     <?= $this->render('_form', [
+    	'ContaSearchModel' => $ContaSearchModel,
+    	'ContaDataProvider' => $ContaDataProvider,
         'model' => $model,
         'conta' => $conta,
     ]) ?>

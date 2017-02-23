@@ -6,6 +6,7 @@ use yii\helpers\ArrayHelper;
 use \app\models\Conta;
 use \app\models\Indice;
 use \app\models\TipoIndice;
+use \kartik\grid\GridView;
 
 use kartik\widgets\Select2;
     use yii\helpers\Url;
@@ -34,13 +35,17 @@ use kartik\widgets\Select2;
     <?= $form->field($model, 'idTipo_Indice')->dropdownList($field)->label('Tipo do Índice:')?>
 
     <?= $form->field($model, 'formula')->textInput(['maxlength' => true]) ?>
-
+	<td>
     <div class="form-group">
-        <?= Html::submitButton($model->isNewRecord ? Yii::t('app', 'Cadastrar Índice') : Yii::t('app', 'Update'), ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
-    </div>
+        
+        <?= Html::submitButton($model->isNewRecord ? Yii::t('app', 'Cadastrar Índice') : Yii::t('app', 'Atualizar'), ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
+    	
+    	<input value= "Visualizar Contas" class="btn btn-primary" type="button" onclick="if (document.getElementById('conta') .style.display=='none') {document.getElementById('conta').style.display=''; this.innerText = ''; this.value = 'Esconder Contas'; } else { document.getElementById('conta') .style.display='none'; this.innerText = ''; this.value = 'Visualizar Contas'; }"/>
+	
 
     <?php ActiveForm::end(); ?>
-
+    	</div>
+	</td>			
 </div>
 
 <script type="application/javascript">
@@ -113,3 +118,21 @@ echo Select2::widget([
 
 </div>
  -->
+ 
+ <div class="conta-index" id="conta"  style="display:none">
+
+    <?= GridView::widget([
+        'dataProvider' => $ContaDataProvider,
+        'filterModel' => $ContaSearchModel,
+        'columns' => [
+
+            'nome',
+        		[
+        			'attribute' => 	'idDemonstracao0.nomeDemonstracao',
+        			'header' => 'Demonstração'
+    			],
+        		'chave'
+           
+        ],
+    ]); ?>
+</div>
