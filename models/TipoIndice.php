@@ -28,7 +28,7 @@ class TipoIndice extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['idTipo_indice', 'nome'], 'required'],
+            [['idTipo_indice', 'nome', 'descricao'], 'required'],
             [['idTipo_indice'], 'integer'],
             [['nome'], 'string', 'max' => 45],
         ];

@@ -38,6 +38,7 @@ $this->params['breadcrumbs'][] = $this->title;
                 },
             ],
             'idTipoIndice.nome',
+            'idTipoIndice.descricao',
             ['class' => 'kartik\grid\ActionColumn'],
 
         ]
