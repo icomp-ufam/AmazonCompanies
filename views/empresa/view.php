@@ -475,12 +475,12 @@ echo Highcharts::widget([
 
                             <?php if ($analiseano->investidor == 2){
                                 $investidor = 'Comprar';
-                                $img = 'compra.jpg';
+                                $img = 'positivo.jpg';
 
                             }
                             elseif ($analiseano->investidor == 3) {
                                 $investidor = 'Vender';
-                                $img = 'venda.jpg';
+                                $img = 'negativo.jpg';
                             }
                             elseif ($analiseano->investidor == 4) {
                                 $investidor = 'Neutro';
@@ -488,21 +488,21 @@ echo Highcharts::widget([
                             }
                             ?>
 
-                            <?php echo '<h5 class="bg-info col-md-3 col-md-offset-2 btn-lg text-center"> Tendências para o investidor: </br> <strong>'. $investidor .'</br></strong>'. Html::img( 'img/'.$img ,['style'=>'width:100px']);' </h5>' ?>
+                            <?php echo '<h5 class="bg-info col-md-3 col-md-offset-2 btn-lg text-center"> Recomendação ao investidor: </br> <strong>'. $investidor .'</br></strong>'. Html::img( 'img/'.$img ,['style'=>'width:100px']);' </h5>' ?>
 
                             <?php if ($analiseano->credor == 2){
                                 $credor = 'Emprestar';
-                                $img = 'empresta.jpg';
+                                $img = 'positivo.jpg';
 
                             }
                             elseif ($analiseano->credor == 3) {
                                 $credor = 'Não emprestar';
-                                $img = 'nao1.png';
+                                $img = 'negativo.jpg';
 
                             }
                             ?>
 
-                            <?php echo '<h5 class="bg-success col-md-3 col-md-offset-2 btn-lg text-center"> Tendências para o credor: </br> <strong> '. $credor .'</br></strong>'. Html::img( 'img/'.$img ,['style'=>'width:100px']);' </h5>' ?>
+                            <?php echo '<h5 class="bg-success col-md-3 col-md-offset-2 btn-lg text-center"> Recomendação ao credor: </br> <strong> '. $credor .'</br></strong>'. Html::img( 'img/'.$img ,['style'=>'width:100px']);' </h5>' ?>
                                <?php
                                              
                                 } 

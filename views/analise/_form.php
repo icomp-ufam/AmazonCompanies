@@ -19,23 +19,23 @@ use kartik\widgets\TouchSpin;
 
     <?= $form->field($model, 'investidor')->radioList(
         [
-            2 => 'Comprar </br>' . Html::img('img/compra.jpg',  ['style'=>'width:100px']),
-            3 => 'Vender </br>' . Html::img('img/venda.jpg',  ['style'=>'width:100px']), 
-            4 => 'Neutro</br>' . Html::img('img/neutro.jpg',  ['style'=>'width:100px'])
+            2 => 'Comprar </br>' . Html::img('img/positivo.jpg',  ['style'=>'width:100px']),
+            3 => 'Vender </br>' . Html::img('img/negativo.jpg',  ['style'=>'width:100px']), 
+            4 => 'Neutro</br>' . Html::img('img/neutro.png',  ['style'=>'width:100px'])
         ],
         [
             'encode'=> false
-        ])->label('<h3>Tendências para o investidor:</h3>')
+        ])->label('<h3>Recomendação ao investidor:</h3>')
     ?>
 
     <?= $form->field($model, 'credor')->radioList(
         [
-            2 => 'Emprestar </br>' . Html::img('img/empresta.jpg',  ['style'=>'width:100px']),
-            3 => 'Não emprestar</br>' . Html::img('img/nao1.png',  ['style'=>'width:100px'])
+            2 => 'Emprestar </br>' . Html::img('img/positivo.jpg',  ['style'=>'width:100px']),
+            3 => 'Não emprestar</br>' . Html::img('img/negativo.jpg',  ['style'=>'width:100px'])
         ],
         [
             'encode'=> false
-        ])->label('<h3>Tendências para o credor:</h3>')
+        ])->label('<h3>Recomendação ao credor:</h3>')
     ?>
     <?= $form->field($model, 'ano')->widget(TouchSpin::classname(), 
         [
