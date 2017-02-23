@@ -6,6 +6,7 @@ use Yii;
 use app\models\Indice;
 use app\models\IndiceSearch;
 use app\models\Conta;
+use app\models\ContaSearch;
 use app\models\EmpresaConta;
 
 use yii\web\Controller;
@@ -77,6 +78,9 @@ class IndiceController extends Controller
         // print_r('idSelect');
         // echo '<br>';
         // print_r($indiceP);
+    	$ContaSearchModel = new ContaSearch();
+    	$ContaDataProvider = $ContaSearchModel->search(Yii::$app->request->queryParams);
+    	
         $conta = Conta::find()->select("*")->all();
         $model = new Indice();
 
@@ -84,6 +88,8 @@ class IndiceController extends Controller
             return $this->redirect(['view', 'id' => $model->idIndice]);
         } else {
             return $this->render('create', [
+            	'ContaDataProvider' => $ContaDataProvider,
+            	'ContaSearchModel' => $ContaSearchModel,
                 'model' => $model,
                 'conta' => $conta,
             ]);
