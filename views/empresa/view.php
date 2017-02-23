@@ -37,8 +37,10 @@ use yii\base\Widget;
      * */
 
     $this->title = $model->nome;
-    $this->params['breadcrumbs'][] = ['label' => 'Empresas', 'url' => ['index']];
-    $this->params['breadcrumbs'][] = $this->title;
+    if(!Yii::$app->user->getIsGuest()){
+    	$this->params['breadcrumbs'][] = ['label' => 'Empresas', 'url' => ['index']];
+    	$this->params['breadcrumbs'][] = $this->title;
+    }
     $this->defaultExtension = $model->logotipo
 ?>
 
@@ -400,9 +402,8 @@ use yii\base\Widget;
         </div>
     </div>
 
-<div id="analise" class="row">
 
-    <legend>Gráfico</legend> 
+    <br>
     <div id="grafico" style="width: auto; height: auto; margin: 0 auto"></div>
 
 <?php 
@@ -415,18 +416,30 @@ echo Highcharts::widget([
         'themes/grid-light',
     ),
     */
-    'id' => 'demonstration',
-    'options' => array(
-        'title' => array(
-            'text' => 'Demonstração',
-        ),
-        'xAxis' => array(
-            'categories' => $categorias,
-        ),
-        
+    //'id' => 'demonstration',
+	'options' => [
+		'chart' => [
+			'renderTo' =>'grafico',
+			'height' => $contador*20 + 800 // tamanho da tabela será dinâmica, quanto mais linhas, maior fica
+		],
+		'title' => [
+			'text' => 'Gráfico'
+		],
+		'xAxis' => [
+			'categories' => $categorias		
+		],
+		'plotOptions' => [
+			'bar' => [
+				'dataLabels' => [
+					'enabled' => true		
+				]		
+			]	
+		],
+		'credits' => [
+				'enabled' => false	
+		],
         'series' => $field
-
-    )
+	],
 ]);
 
  ?> 
@@ -440,7 +453,7 @@ echo Highcharts::widget([
  <div class="body-content">
     <ul class="nav nav-tabs">
     <?php
-                         $analises = Analise::find()->select('ano')->where(['idEmpresa' => $model->idEmpresa])->orderBy('ano')->all();
+                        $analises = Analise::find()->select('ano')->where(['idEmpresa' => $model->idEmpresa])->andWhere(['status' => 1])->orderBy('ano')->all();
 
                         foreach($analises as $analise){
                          
@@ -450,7 +463,7 @@ echo Highcharts::widget([
                         }   
                     ?>
     </ul>
-</div> </div>
+</div>
     <div class="tab-content">
         <?php
                         $analisesanos = Analise::find()->select('*')->where(['idEmpresa' => $model->idEmpresa])->all();
@@ -475,12 +488,12 @@ echo Highcharts::widget([
 
                             <?php if ($analiseano->investidor == 2){
                                 $investidor = 'Comprar';
-                                $img = 'compra.jpg';
+                                $img = 'positivo.jpg';
 
                             }
                             elseif ($analiseano->investidor == 3) {
                                 $investidor = 'Vender';
-                                $img = 'venda.jpg';
+                                $img = 'negativo.jpg';
                             }
                             elseif ($analiseano->investidor == 4) {
                                 $investidor = 'Neutro';
@@ -488,21 +501,21 @@ echo Highcharts::widget([
                             }
                             ?>
 
-                            <?php echo '<h5 class="bg-info col-md-3 col-md-offset-2 btn-lg text-center"> Tendências para o investidor: </br> <strong>'. $investidor .'</br></strong>'. Html::img( 'img/'.$img ,['style'=>'width:100px']);' </h5>' ?>
+                            <?php echo '<h5 class="bg-info col-md-3 col-md-offset-2 btn-lg text-center"> Recomendação ao investidor: </br> <strong>'. $investidor .'</br></strong>'. Html::img( 'img/'.$img ,['style'=>'width:100px']);' </h5>' ?>
 
                             <?php if ($analiseano->credor == 2){
                                 $credor = 'Emprestar';
-                                $img = 'empresta.jpg';
+                                $img = 'positivo.jpg';
 
                             }
                             elseif ($analiseano->credor == 3) {
                                 $credor = 'Não emprestar';
-                                $img = 'nao1.png';
+                                $img = 'negativo.jpg';
 
                             }
                             ?>
 
-                            <?php echo '<h5 class="bg-success col-md-3 col-md-offset-2 btn-lg text-center"> Tendências para o credor: </br> <strong> '. $credor .'</br></strong>'. Html::img( 'img/'.$img ,['style'=>'width:100px']);' </h5>' ?>
+                            <?php echo '<h5 class="bg-success col-md-3 col-md-offset-2 btn-lg text-center"> Recomendação ao credor: </br> <strong> '. $credor .'</br></strong>'. Html::img( 'img/'.$img ,['style'=>'width:100px']);' </h5>' ?>
                                <?php
                                              
                                 } 

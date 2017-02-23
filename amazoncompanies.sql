@@ -326,24 +326,25 @@ INSERT INTO `tipo_empresa` (`Nome`, `id`) VALUES
 -- Estrutura para tabela `tipo_indice`
 --
 
-CREATE TABLE `tipo_indice` (
+CREATE TABLE IF NOT EXISTS `tipo_indice` (
   `idTipo_indice` int(11) NOT NULL,
-  `nome` varchar(45) NOT NULL
+  `nome` varchar(45) NOT NULL,
+  `descricao` text
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Fazendo dump de dados para tabela `tipo_indice`
+-- Extraindo dados da tabela `tipo_indice`
 --
 
-INSERT INTO `tipo_indice` (`idTipo_indice`, `nome`) VALUES
-(1, 'Liquidez'),
-(2, 'Endividamento'),
-(3, 'Lucratividade'),
-(4, 'Rentabilidade'),
-(5, 'Giros e Prazos'),
-(6, 'Giros Assaf Neto'),
-(7, 'Giros Viaconti'),
-(8, 'Teste Listagem');
+INSERT INTO `tipo_indice` (`idTipo_indice`, `nome`, `descricao`) VALUES
+(1, 'Liquidez', 'Texto exemplo Liquidez'),
+(2, 'Endividamento', 'Texto Exemplo Endividamento'),
+(3, 'Lucratividade', 'Texto Exemplo Lucratividade'),
+(4, 'Rentabilidade', 'Texto Exemplo Rentabilidade'),
+(5, 'Giros e Prazos', 'Texto Exemplo Giros e Prazos'),
+(6, 'Giros Assaf Neto', 'Texto Exemplo Giros Assaf Neto'),
+(7, 'Giros Viaconti', 'Texto Exemplo Giros Viaconti'),
+(8, 'Teste Listagem', 'Texto Exemplo Teste Listagem');
 
 -- --------------------------------------------------------
 

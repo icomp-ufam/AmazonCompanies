@@ -87,7 +87,7 @@ class EmpresaController extends Controller
     
     	foreach($anosEmpresas as $anosEmpresa){
     
-    		$field[$i]['type'] = 'column';
+    		$field[$i]['type'] = 'bar';
     		$field[$i]['name'] = $anosEmpresa->ano;
     		// $valoress = EmpresaConta::find()->select('valor')->where(['idConta' => $conta->idConta])->andWhere(['ano' =>$anosEmpresa->ano])->all();
     		// if(count($valoress)>0){
@@ -129,12 +129,12 @@ class EmpresaController extends Controller
     							//                 'series' => $field
     							//                 // array(
     							//                 //     array(
-    							//                 //         'type' => 'column',
+    							//                 //         'type' => 'bar',
     							//                 //         'name' => '2014',
     							//                 //         'data' => array(3, 2),
     							//                 //     ),
     							//                 //     array(
-    							//                 //         'type' => 'column',
+    							//                 //         'type' => 'bar',
     							//                 //         'name' => '2016',
     							//                 //         'data' => array(2, 3),
     							//                 //     ),
@@ -283,12 +283,12 @@ class EmpresaController extends Controller
         
         }
          
-        $anosEmpresas = EmpresaConta::find()->select('ano')->distinct()->orderBy(["ano"=> SORT_ASC])->all();
+        $anosEmpresas = EmpresaConta::find()->select('ano')->distinct()->orderBy(["ano"=> SORT_ASC])->where(['idEmpresa' => $id])->all();
         $i=0;
-        
+        $contador = 0;
         foreach($anosEmpresas as $anosEmpresa){
         
-        	$field[$i]['type'] = 'column';
+        	$field[$i]['type'] = 'bar';
         	$field[$i]['name'] = $anosEmpresa->ano;
         	
         	for ($j=0; $j <24 ; $j++) { // percorre cada uma das demonstrações, do ano atual do foreach
@@ -296,6 +296,7 @@ class EmpresaController extends Controller
         		$valore = EmpresaConta::find()->select('valor')->where(['idConta' => $con])->andWhere(['ano' =>$anosEmpresa->ano])->andWhere(['idEmpresa' => $id])->one();
         		if($valore){
         			$data[$j] = $valore->valor;
+        			$contador++;
         		}else{
         			$data[$j]= 0;
         		}
@@ -317,7 +318,7 @@ class EmpresaController extends Controller
         }
         
         //sessão de variáveis usadas nos foreach na view
-        $anos = EmpresaConta::find()->select('ano')->distinct()->orderBy(["ano"=> SORT_ASC])->all();
+        $anos = EmpresaConta::find()->select('ano')->distinct()->orderBy(["ano"=> SORT_ASC])->where(['idEmpresa' => $id])->all();
 
 
                  return $this->render('view', [
@@ -325,7 +326,8 @@ class EmpresaController extends Controller
                     'model' => $this->findModel($id),
                     'comentario' => $comentario ,
                  	'field' => $field,
-                 	'categorias' => $categorias
+                 	'categorias' => $categorias,
+                 	'contador' => $contador // para tamanho do gráfico
                     ]);
 
         

@@ -35,7 +35,7 @@ if (Yii::$app->user->getIsGuest()){
 <div class="site-index" >
     </br></br></br></br></br></br>
     <p style="text-align: center; font-size: large;">Não se esqueça de <strong>sempre</strong> ver sua barra de notificações a fim de acompanhar eventos importantes!</p>
-    <p style="text-align: center; font-size: large;">Para criar uma empresa ou ver as que já existem, vá para a aba <strong>Empresas</strong> e procure por uma empresa.</p>
+    <p style="text-align: center; font-size: large;">Para visualizar uma empresa, vá para a aba <strong>Empresas</strong></p>
 
 
 
