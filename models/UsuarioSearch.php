@@ -41,15 +41,12 @@ class UsuarioSearch extends Usuario
      */
     public function search($params)
     {
-        $query = Usuario::find();
+        $query = Usuario::find()->orderBy(['ativo' => SORT_DESC]);
 
         // add conditions that should always apply here
 
         $dataProvider = new ActiveDataProvider([
-            'query' => $query,
-        		'pagination' => [
-        				'pagesize' => 10
-        		]
+            'query' => $query
         ]);
 
         $this->load($params);
