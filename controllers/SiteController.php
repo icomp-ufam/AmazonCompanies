@@ -142,41 +142,11 @@ class SiteController extends Controller
         return $this->render('about');
     }
     
-    // renderizando páginas em html (prototipo)
+    // renderizando páginas
     
     public function actionAdm()
     {
     	return $this->render('adm');
-    }
-    
-    public function actionListempvis()
-    {
-    	return $this->render('listempvis');
-    }
-    
-    public function actionAltcademp()
-    {
-    	return $this->render('altcademp');
-    }
-    
-    public function actionCaddadosemp()
-    {
-    	return $this->render('caddadosemp');
-    }
-	
-    public function actionCadinfoemp()
-    {
-    	return $this->render('cadinfoemp');
-    }
-    
-    public function actionValidaltdados()
-    {
-    	return $this->render('validaltdados');
-    }
-    
-    public function actionRecnotaluno()
-    {
-    	return $this->render('recnotaluno');
     }
     
     public function actionAluno()
