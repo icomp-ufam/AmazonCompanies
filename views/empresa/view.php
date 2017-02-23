@@ -48,7 +48,7 @@ use yii\base\Widget;
     <p>
         <h1>
             <?= Html::a(Html::img('img/'.$this->defaultExtension,  ['style'=>'width:50px']) ) ?>
-            <?= Html::encode('Dados da '.$this->title) ?>
+            <?= Html::encode(''.$this->title) ?>
             
         </h1>
 
