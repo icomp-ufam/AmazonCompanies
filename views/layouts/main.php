@@ -265,6 +265,31 @@ AppAsset::register($this);
         </a>
         <br/>
 
+        <?php
+			$rodape = Rodape::findOne(1);
+			
+			$link = $rodape->link;
+			echo "$link";
+		?>
+		<br/>
+
+		<?php
+			$rodape = Rodape::findOne(2);
+			
+			$link = $rodape->link;
+			echo "$link";
+		?>
+		<br/>
+
+		<?php
+			$rodape = Rodape::findOne(3);
+			
+			$link = $rodape->link;
+			echo "$link";
+		?>
+		<br/>
+
+
         <!--  -->
 
         © Coordenação de Sistemas - UFAM </br>
