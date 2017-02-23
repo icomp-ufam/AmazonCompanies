@@ -440,7 +440,7 @@ echo Highcharts::widget([
  <div class="body-content">
     <ul class="nav nav-tabs">
     <?php
-                         $analises = Analise::find()->select('ano')->where(['idEmpresa' => $model->idEmpresa])->orderBy('ano')->all();
+                        $analises = Analise::find()->select('ano')->where(['idEmpresa' => $model->idEmpresa])->andWhere(['status' => 1])->orderBy('ano')->all();
 
                         foreach($analises as $analise){
                          
