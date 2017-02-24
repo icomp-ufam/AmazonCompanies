@@ -293,7 +293,7 @@ class EmpresaController extends Controller
         	$field[$i]['type'] = 'bar';
         	$field[$i]['name'] = $anosEmpresa->ano;
         	
-        	for ($j=0; $j <24 ; $j++) { // percorre cada uma das demonstrações, do ano atual do foreach
+        	for ($j=0; $j <count($contas) ; $j++) {
         		$con = Conta::find()->select('idConta')->where(['nome' => $categorias[$j]])->one();
         		$valore = EmpresaConta::find()->select('valor')->where(['idConta' => $con])->andWhere(['ano' =>$anosEmpresa->ano])->andWhere(['idEmpresa' => $id])->one();
         		if($valore){
