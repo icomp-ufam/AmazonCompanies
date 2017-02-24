@@ -33,7 +33,7 @@ class Conta extends \yii\db\ActiveRecord
     {
         return [
             [['nome', 'idDemonstracao', 'chave'], 'required'],
-            [['idDemonstracao', 'obrigatorio', 'ordem'], 'integer'],
+            [['idDemonstracao', 'obrigatorio', 'ordem','pai','formato'], 'integer'],
             [['nome'], 'string', 'max' => 255],
             [['chave'], 'string', 'max' => 30],
             [['idDemonstracao'], 'exist', 'skipOnError' => true, 'targetClass' => Demonstracao::className(), 'targetAttribute' => ['idDemonstracao' => 'idDemonstracao']],
@@ -52,6 +52,8 @@ class Conta extends \yii\db\ActiveRecord
             'chave' => 'Chave',
             'obrigatorio' => 'Obrigatório',
             'ordem' => 'Ordem',
+            'pai' => 'Pai',
+            'formato'=>'Formato',
         ];
     }
 

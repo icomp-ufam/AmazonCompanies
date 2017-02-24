@@ -3,9 +3,9 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: 24-Fev-2017 às 15:29
+-- Generation Time: 24-Fev-2017 às 20:23
 -- Versão do servidor: 10.1.19-MariaDB
--- PHP Version: 5.6.24
+-- PHP Version: 5.6.28
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -89,39 +89,42 @@ CREATE TABLE `conta` (
   `nome` varchar(255) NOT NULL,
   `idDemonstracao` int(11) NOT NULL,
   `chave` varchar(30) NOT NULL,
-  `obrigatorio` int(11) DEFAULT NULL,
-  `ordem` int(11) NOT NULL
+  `obrigatorio` int(11) NOT NULL,
+  `ordem` int(11) NOT NULL,
+  `formato` int(1) NOT NULL,
+  `pai` int(20) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Extraindo dados da tabela `conta`
 --
 
-INSERT INTO `conta` (`idConta`, `nome`, `idDemonstracao`, `chave`, `obrigatorio`, `ordem`) VALUES
-(4, 'Ativos Totais', 1, '#AT', 1, 1),
-(5, 'Ativo Circulante', 1, '#AC', 1, 2),
-(6, 'Disponibilidades + Aplicações Fin Liq Im.', 1, '#DALI', 1, 3),
-(7, 'Estoques', 1, '#EST', 1, 4),
-(8, 'Ativo não Circulante', 1, '#ANC', 1, 5),
-(9, 'Imobilizado', 1, '#IM', 1, 6),
-(10, 'Passivo Circulante', 1, '#PC', 1, 7),
-(11, 'Passivo Não Circulante', 3, '#PNC', 0, 8),
-(12, 'Passivo Não Circulante Oneroso', 1, '#PNCO', 0, 9),
-(13, 'Passivo Exigível', 1, '#PE', 1, 10),
-(14, 'Patrimônio Líquido', 1, '#PL', 0, 11),
-(15, 'Ativos Totais Médios', 1, '#ATM', 0, 12),
-(16, 'Investimentos (Oneroso + PL)', 3, '#IOPL', 0, 13),
-(17, 'Investimentos Médios', 3, '#IM', 0, 14),
-(18, 'Patrimônio Líquido Médios', 1, '#PLM', 0, 15),
-(19, 'Fornecedores Médio', 1, '#FM', 0, 16),
-(20, 'Estoque Médio', 1, '#EM', 0, 17),
-(21, 'Clientes Médio', 2, '#CM', 0, 18),
-(22, 'CMV', 2, '#CMV', 0, 19),
-(23, 'Compras', 1, '#COMP', 0, 20),
-(24, 'Vendas Líquidas', 2, '#VL', 0, 21),
-(25, 'Lucro Bruto', 2, '#LB', 0, 22),
-(26, 'Lucro Operacional', 2, '#LO', 0, 23),
-(27, 'Lucro Líquido', 2, '#LL', 0, 24);
+INSERT INTO `conta` (`idConta`, `nome`, `idDemonstracao`, `chave`, `obrigatorio`, `ordem`, `formato`, `pai`) VALUES
+(4, 'Ativos Totais', 1, '#AT', 1, 2, 1, NULL),
+(5, 'Ativo Circulante', 1, '#AC', 1, 7, 4, NULL),
+(6, 'Disponibilidades + Aplicações Fin Liq Im.', 1, '#DALI', 1, 3, 1, NULL),
+(7, 'Estoques', 1, '#EST', 1, 4, 1, NULL),
+(8, 'Ativo não Circulante', 1, '#ANC', 1, 5, 1, NULL),
+(9, 'Imobilizado', 1, '#IM', 1, 6, 1, NULL),
+(10, 'Passivo Circulante', 1, '#PC', 1, 1, 2, NULL),
+(11, 'Passivo Não Circulante', 3, '#PNC', 0, 8, 2, NULL),
+(12, 'Passivo Não Circulante Oneroso', 1, '#PNCO', 0, 9, 3, NULL),
+(13, 'Passivo Exigível', 1, '#PE', 1, 10, 3, NULL),
+(14, 'Patrimônio Líquido', 1, '#PL', 0, 11, 2, NULL),
+(15, 'Ativos Totais Médios', 1, '#ATM', 0, 12, 4, NULL),
+(16, 'Investimentos (Oneroso + PL)', 3, '#IOPL', 0, 13, 3, NULL),
+(17, 'Investimentos Médios', 3, '#IM', 0, 14, 1, NULL),
+(18, 'Patrimônio Líquido Médios', 1, '#PLM', 0, 15, 1, NULL),
+(19, 'Fornecedores Médio', 1, '#FM', 0, 16, 1, NULL),
+(20, 'Estoque Médio', 1, '#EM', 0, 17, 2, NULL),
+(21, 'Clientes Médio', 2, '#CM', 0, 18, 2, NULL),
+(22, 'CMV', 2, '#CMV', 0, 19, 2, NULL),
+(23, 'Compras', 1, '#COMP', 0, 20, 2, NULL),
+(24, 'Vendas Líquidas', 2, '#VL', 0, 21, 3, NULL),
+(25, 'Lucro Bruto', 2, '#LB', 0, 22, 3, NULL),
+(26, 'Lucro Operacional', 2, '#LO', 0, 23, 3, NULL),
+(27, 'Lucro Líquido', 2, '#LL', 0, 24, 1, 4),
+(28, 'ContaTeste', 1, '#ctst', 0, 25, 2, 5);
 
 -- --------------------------------------------------------
 
@@ -203,18 +206,6 @@ CREATE TABLE `empresa_conta` (
   `statusValidacao` tinyint(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
---
--- Extraindo dados da tabela `empresa_conta`
---
-
-INSERT INTO `empresa_conta` (`id`, `ano`, `valor`, `idEmpresa`, `idConta`, `idUsuario`, `statusValidacao`) VALUES
-(2, 2014, 54102, 5, 4, 6, 1),
-(3, 2013, 422000, 4, 4, 6, 1),
-(4, 2016, 888, 5, 6, 3, 1),
-(5, 2015, 31500, 5, 4, 3, 1),
-(6, 2015, 12300, 5, 5, 3, 0),
-(7, 2014, 321022, 5, 5, 4, 1);
-
 -- --------------------------------------------------------
 
 --
@@ -225,17 +216,16 @@ CREATE TABLE `indice` (
   `idIndice` int(11) NOT NULL,
   `formula` varchar(45) NOT NULL,
   `idTipo_Indice` int(11) NOT NULL,
-  `nomeIndice` varchar(100) DEFAULT NULL
+  `nomeIndice` varchar(100) DEFAULT NULL,
+  `formato` int(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Extraindo dados da tabela `indice`
 --
 
-INSERT INTO `indice` (`idIndice`, `formula`, `idTipo_Indice`, `nomeIndice`) VALUES
-(1, '(@#AT@+@#AC@)@*@(@#AT@-@#AC@)', 1, 'Liquidez Primária'),
-(2, '#DALI@+@#EST', 2, 'Endividamento Secundário'),
-(3, '(@#AC@+@#AT@)@*@(@#AC@-@#AT@)', 1, 'Liquidez Teste Indice');
+INSERT INTO `indice` (`idIndice`, `formula`, `idTipo_Indice`, `nomeIndice`, `formato`) VALUES
+(4, '#AT / #PC', 1, 'Liquidez geral', 0);
 
 -- --------------------------------------------------------
 
@@ -510,12 +500,12 @@ ALTER TABLE `empresa`
 -- AUTO_INCREMENT for table `empresa_conta`
 --
 ALTER TABLE `empresa_conta`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=155;
 --
 -- AUTO_INCREMENT for table `indice`
 --
 ALTER TABLE `indice`
-  MODIFY `idIndice` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `idIndice` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 --
 -- AUTO_INCREMENT for table `notificacao`
 --

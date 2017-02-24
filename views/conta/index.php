@@ -56,6 +56,25 @@ $this->params['breadcrumbs'][] = $this->title;
         				'0' => 'Não'
         		]
         		],
+            ['attribute'=>'formato',
+                'value'=> function($model, $index, $dataColumn){
+                    if($model->formato=='1'){
+                        return 'R$';
+                    }
+                    elseif ($model->formato=='2'){
+                        return 'USD';
+                    }
+                    elseif ($model->formato=='3'){
+                        return '%';
+                    }
+                    else {
+                        return 'Absoluto';
+                    }
+                }
+
+
+            ],
+            'pai',
 
             ['class' => 'kartik\grid\ActionColumn'],
         ],
