@@ -124,8 +124,9 @@ use yii\base\Widget;
                                                  $tweets = [['nome'=>'Liquidez', 'id'=>100]];
                                                  $anterior = -1;
                                                  $percentual = 0;
+                                                 $tipo = $conta->formato;
                                                 foreach($anosEmpresas as $anosEmpresa){
-                                                   $valoress = EmpresaConta::find()->select('valor')->where(['idConta' => $conta->idConta])->andWhere(['ano' =>$anosEmpresa->ano])->andWhere(['idEmpresa' => $model->idEmpresa])->all();
+                                                    $valoress = EmpresaConta::find()->select('valor')->where(['idConta' => $conta->idConta])->andWhere(['ano' =>$anosEmpresa->ano])->andWhere(['idEmpresa' => $model->idEmpresa])->all();
                                                    if(count($valoress)>0){
                                                         $textoAnterior = null;
                                                         $percentual = 0;
@@ -135,10 +136,26 @@ use yii\base\Widget;
                                                                 if($percentual < 100) $textoAnterior = "(" . Html::img( 'img/neg.jpg' ,['style'=>'width:10px']) . " <span style='color:red;'>" .$percentual."%</span>)";  
                                                                 else $textoAnterior = $textoAnterior = "(" . Html::img( 'img/pos.jpg' ,['style'=>'width:10px']) . " <span style='color:green;'>" .$percentual."%</span>)";
                                                             }?>             
-                                                            <td>R$ <?=number_format($valores->valor, 0,',','.')?> <?php echo $textoAnterior;?></td> 
                                                             <?php
+
+                                                            switch ($tipo) {
+                                                                    case 1:
+                                                                        echo "<td>R$ ". $valores->valor. " " . $textoAnterior . "</td>";
+                                                                        break;
+                                                                    case 2:
+                                                                        echo "<td>US$ ". $valores->valor. " " . $textoAnterior . "</td>";
+                                                                        break;
+                                                                    case 3:
+                                                                        echo "<td>". $valores->valor. "% " . $textoAnterior . "</td>";
+                                                                        break;
+                                                                    case 3:
+                                                                        echo "<td>". $valores->valor. " " . $textoAnterior . "</td>";
+                                                                        break;
+                                                                }
+
                                                             $anterior = $valores->valor;
                                                         }
+
                                                    } else{ ?>             
                                                    <td>-----</td> 
                                                    <?php
