@@ -286,6 +286,8 @@ class EmpresaController extends Controller
         $anosEmpresas = EmpresaConta::find()->select('ano')->distinct()->orderBy(["ano"=> SORT_ASC])->where(['idEmpresa' => $id])->all();
         $i=0;
         $contador = 0;
+        
+        if($anosEmpresas){
         foreach($anosEmpresas as $anosEmpresa){
         
         	$field[$i]['type'] = 'bar';
@@ -304,9 +306,12 @@ class EmpresaController extends Controller
         	
         	$field[$i]['data'] = $data;
         	$i++;
-        	
-        	
         	}
+        }else{ // caso não tenha nenhum dado
+        	$field[0]['type'] = 'bar';
+        	$field[0]['name'] = 'Sem Dados Cadastrados';
+        	$field[0]['data'] = 0;
+        }
         		
       $model = $this->findModel($id);
 
