@@ -97,7 +97,7 @@ use yii\base\Widget;
                     <thead>
                         <tr>
                             <th><input type="checkbox" id="check_all" /></th>
-                            <th>Nome Conta: <?=$demonstracao->idDemonstracao?></th>
+                            <th>Nome Conta: </th>
                             <?php
                                             $anosEmpresas = EmpresaConta::find()->select('ano')->distinct()->orderBy(["ano"=> SORT_ASC])->where(['idEmpresa' => $model->idEmpresa])->all();
                                                  $tweets = [['nome'=>'Liquidez', 'id'=>100]];
@@ -135,7 +135,7 @@ use yii\base\Widget;
                                                                 if($percentual < 100) $textoAnterior = "(" . Html::img( 'img/neg.jpg' ,['style'=>'width:10px']) . " <span style='color:red;'>" .$percentual."%</span>)";  
                                                                 else $textoAnterior = $textoAnterior = "(" . Html::img( 'img/pos.jpg' ,['style'=>'width:10px']) . " <span style='color:green;'>" .$percentual."%</span>)";
                                                             }?>             
-                                                            <td>R$ <?=$valores->valor?> <?php echo $textoAnterior;?></td> 
+                                                            <td>R$ <?=number_format($valores->valor, 0,',','.')?> <?php echo $textoAnterior;?></td> 
                                                             <?php
                                                             $anterior = $valores->valor;
                                                         }
@@ -428,14 +428,15 @@ echo Highcharts::widget([
         'series' => $field
 	],
 ]);
-
- ?> 
+ ?>
+ <h3>Análises</h3>
+  
  <?php if(Yii::$app->user->getIdentificadorPessoa() == '2' || Yii::$app->user->getIdentificadorPessoa() == '1'){
         					echo '<a href="index.php?r=analise%2Fcreate&idEmpresa=' . $model->idEmpresa . '"><button class="btn btn-primary">Criar Análise</button> </a>';
 						}
         	?>
-        	<br>
-        	<br>
+        	
+        	
  
  <div class="body-content">
     <ul class="nav nav-tabs">
