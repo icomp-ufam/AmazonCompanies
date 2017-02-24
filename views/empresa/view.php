@@ -128,36 +128,37 @@ use yii\base\Widget;
                     <?php
                     $contas = Conta::find()->select('*')->where(['idDemonstracao' => $demonstracao->idDemonstracao])->all();                                              
                             foreach($contas as $conta){
-                                            ?>
-                        <tr>
-                            <td><input type="checkbox"/></td>
-                            <td><?=$conta->nome?></td>
-                        
-                               <?php
+                                    ?>
+                                    <tr>
+                                        <td><input type="checkbox"/></td>
+                                        <td><?=$conta->nome?></td>
+                                    
+                                           <?php
                                             $anosEmpresas = EmpresaConta::find()->select('ano')->distinct()->orderBy(["ano"=> SORT_ASC])->where(['idEmpresa' => $model->idEmpresa])->all();
                                                  $tweets = [['nome'=>'Liquidez', 'id'=>100]];
- 
+                                                 $anterior = -1;
+                                                 $percentual = 0;
                                                 foreach($anosEmpresas as $anosEmpresa){
-                                                    $valoress = EmpresaConta::find()->select('valor')->where(['idConta' => $conta->idConta])->andWhere(['ano' =>$anosEmpresa->ano])->andWhere(['idEmpresa' => $model->idEmpresa])->all();
-                                                    if(count($valoress)>0){
+                                                   $valoress = EmpresaConta::find()->select('valor')->where(['idConta' => $conta->idConta])->andWhere(['ano' =>$anosEmpresa->ano])->andWhere(['idEmpresa' => $model->idEmpresa])->all();
+                                                   if(count($valoress)>0){
+                                                        $textoAnterior = null;
+                                                        $percentual = 0;
                                                         foreach($valoress as $valores){
-
-                                             ?>             
-                                                    <td>R$ <?=$valores->valor?></td> 
-                                                    <?php
+                                                            if($anterior > -1){
+                                                                $percentual = number_format(100 * (1 - ($valores->valor / $anterior)), 2);
+                                                                if($percentual < 100) $textoAnterior = "(" . Html::img( 'img/neg.jpg' ,['style'=>'width:10px']) . " <span style='color:red;'>" .$percentual."%</span>)";  
+                                                                else $textoAnterior = $textoAnterior = "(" . Html::img( 'img/pos.jpg' ,['style'=>'width:10px']) . " <span style='color:green;'>" .$percentual."%</span>)";
+                                                            }?>             
+                                                            <td>R$ <?=$valores->valor?> <?php echo $textoAnterior;?></td> 
+                                                            <?php
+                                                            $anterior = $valores->valor;
                                                         }
-                                                    } else{
-                                                    ?>             
-                                                    <td>-----</td> 
-                                                    <?php
-
-
-
-
-                                                    }  
-                                                } 
-                                    } 
-                                             ?>   
+                                                   } else{ ?>             
+                                                   <td>-----</td> 
+                                                   <?php
+                                                }  
+                                            }  
+                            }?>
                         </tr>
                         
                     </tbody>
