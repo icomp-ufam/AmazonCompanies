@@ -35,6 +35,8 @@ use kartik\widgets\Select2;
     <?= $form->field($model, 'idTipo_Indice')->dropdownList($field)->label('Tipo do Índice:')?>
 
     <?= $form->field($model, 'formula')->textInput(['maxlength' => true]) ?>
+
+    <?= $form->field($model, 'formato')->dropDownList(['prompt' => 'Selecione...',1 => 'R$', 2 => 'USD', 3=> '%', 4=>'Absoluto'])->label('Formato')?>
 	<td>
     <div class="form-group">
         

@@ -32,7 +32,7 @@ class Conta extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['nome', 'idDemonstracao', 'chave'], 'required'],
+            [['nome', 'idDemonstracao', 'chave','formato'], 'required'],
             [['idDemonstracao', 'obrigatorio', 'ordem','pai','formato'], 'integer'],
             [['nome'], 'string', 'max' => 255],
             [['chave'], 'string', 'max' => 30],

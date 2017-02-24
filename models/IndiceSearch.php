@@ -18,7 +18,7 @@ class IndiceSearch extends Indice
     public function rules()
     {
         return [
-            [['idIndice', 'idTipo_Indice'], 'integer'],
+            [['idIndice', 'idTipo_Indice','formato'], 'integer'],
             [['formula'], 'safe'],
         ];
     }
@@ -61,6 +61,7 @@ class IndiceSearch extends Indice
         $query->andFilterWhere([
             'idIndice' => $this->idIndice,
             'idTipo_Indice' => $this->idTipo_Indice,
+            'formato'=>$this->formato,
         ]);
 
         $query->andFilterWhere(['like', 'formula', $this->formula]);
