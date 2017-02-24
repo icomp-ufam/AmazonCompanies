@@ -3,9 +3,9 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: 24-Fev-2017 às 00:20
+-- Generation Time: 24-Fev-2017 às 15:29
 -- Versão do servidor: 10.1.19-MariaDB
--- PHP Version: 5.6.28
+-- PHP Version: 5.6.24
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -89,38 +89,39 @@ CREATE TABLE `conta` (
   `nome` varchar(255) NOT NULL,
   `idDemonstracao` int(11) NOT NULL,
   `chave` varchar(30) NOT NULL,
-  `obrigatorio` int(11) DEFAULT NULL
+  `obrigatorio` int(11) DEFAULT NULL,
+  `ordem` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Extraindo dados da tabela `conta`
 --
 
-INSERT INTO `conta` (`idConta`, `nome`, `idDemonstracao`, `chave`, `obrigatorio`) VALUES
-(4, 'Ativos Totais', 1, '#AT', 1),
-(5, 'Ativo Circulante', 1, '#AC', 1),
-(6, 'Disponibilidades + Aplicações Fin Liq Im.', 1, '#DALI', 1),
-(7, 'Estoques', 1, '#EST', 1),
-(8, 'Ativo não Circulante', 1, '#ANC', 1),
-(9, 'Imobilizado', 1, '#IM', 1),
-(10, 'Passivo Circulante', 1, '#PC', 1),
-(11, 'Passivo Não Circulante', 3, '#PNC', 0),
-(12, 'Passivo Não Circulante Oneroso', 1, '#PNCO', 0),
-(13, 'Passivo Exigível', 1, '#PE', 1),
-(14, 'Patrimônio Líquido', 1, '#PL', NULL),
-(15, 'Ativos Totais Médios', 1, '#ATM', NULL),
-(16, 'Investimentos (Oneroso + PL)', 3, '#IOPL', NULL),
-(17, 'Investimentos Médios', 3, '#IM', NULL),
-(18, 'Patrimônio Líquido Médios', 1, '#PLM', NULL),
-(19, 'Fornecedores Médio', 1, '#FM', NULL),
-(20, 'Estoque Médio', 1, '#EM', NULL),
-(21, 'Clientes Médio', 2, '#CM', NULL),
-(22, 'CMV', 2, '#CMV', NULL),
-(23, 'Compras', 1, '#COMP', NULL),
-(24, 'Vendas Líquidas', 2, '#VL', NULL),
-(25, 'Lucro Bruto', 2, '#LB', NULL),
-(26, 'Lucro Operacional', 2, '#LO', NULL),
-(27, 'Lucro Líquido', 2, '#LL', NULL);
+INSERT INTO `conta` (`idConta`, `nome`, `idDemonstracao`, `chave`, `obrigatorio`, `ordem`) VALUES
+(4, 'Ativos Totais', 1, '#AT', 1, 1),
+(5, 'Ativo Circulante', 1, '#AC', 1, 2),
+(6, 'Disponibilidades + Aplicações Fin Liq Im.', 1, '#DALI', 1, 3),
+(7, 'Estoques', 1, '#EST', 1, 4),
+(8, 'Ativo não Circulante', 1, '#ANC', 1, 5),
+(9, 'Imobilizado', 1, '#IM', 1, 6),
+(10, 'Passivo Circulante', 1, '#PC', 1, 7),
+(11, 'Passivo Não Circulante', 3, '#PNC', 0, 8),
+(12, 'Passivo Não Circulante Oneroso', 1, '#PNCO', 0, 9),
+(13, 'Passivo Exigível', 1, '#PE', 1, 10),
+(14, 'Patrimônio Líquido', 1, '#PL', 0, 11),
+(15, 'Ativos Totais Médios', 1, '#ATM', 0, 12),
+(16, 'Investimentos (Oneroso + PL)', 3, '#IOPL', 0, 13),
+(17, 'Investimentos Médios', 3, '#IM', 0, 14),
+(18, 'Patrimônio Líquido Médios', 1, '#PLM', 0, 15),
+(19, 'Fornecedores Médio', 1, '#FM', 0, 16),
+(20, 'Estoque Médio', 1, '#EM', 0, 17),
+(21, 'Clientes Médio', 2, '#CM', 0, 18),
+(22, 'CMV', 2, '#CMV', 0, 19),
+(23, 'Compras', 1, '#COMP', 0, 20),
+(24, 'Vendas Líquidas', 2, '#VL', 0, 21),
+(25, 'Lucro Bruto', 2, '#LB', 0, 22),
+(26, 'Lucro Operacional', 2, '#LO', 0, 23),
+(27, 'Lucro Líquido', 2, '#LL', 0, 24);
 
 -- --------------------------------------------------------
 
@@ -494,7 +495,7 @@ ALTER TABLE `comentario`
 -- AUTO_INCREMENT for table `conta`
 --
 ALTER TABLE `conta`
-  MODIFY `idConta` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
+  MODIFY `idConta` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
 --
 -- AUTO_INCREMENT for table `demonstracao`
 --

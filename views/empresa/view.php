@@ -126,7 +126,7 @@ use yii\base\Widget;
                     </thead>
                     <tbody>
                     <?php
-                    $contas = Conta::find()->select('*')->where(['idDemonstracao' => $demonstracao->idDemonstracao])->all();                                              
+                    $contas = Conta::find()->select('*')->where(['idDemonstracao' => $demonstracao->idDemonstracao])->orderBy(["ordem"=> SORT_ASC])->all();                                              
                             foreach($contas as $conta){
                                     ?>
                                     <tr>
