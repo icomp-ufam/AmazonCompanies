@@ -42,6 +42,7 @@ class Usuario extends \yii\db\ActiveRecord
             [['ativo', 'identificadorPessoa'], 'integer'],
             [['login', 'nome', 'senha', 'repetir_senha', 'email'], 'string', 'max' => 45],
         	[['senha', 'repetir_senha'], 'string', 'min' => 8 ],
+        	[['matricula'], 'string', 'min' => 8, 'max' => 8],
             [['login', 'email'], 'unique'],
         	[['email'], 'email'],
         	['repetir_senha', 'compare', 'compareAttribute'=>'senha', 'message'=>"Senha inserida não é igual a anterior" ],

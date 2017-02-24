@@ -40,6 +40,7 @@ class cadadm extends \yii\db\ActiveRecord
             [['ativo', 'identificadorPessoa'], 'integer'],
             [['login', 'nome', 'email'], 'string','max' => 45],
         	[['senha'], 'string', 'min' => 8, 'max' => 45],
+        	[['matricula'], 'string', 'min' => 8, 'max' => 8],
             [['login', 'email'], 'unique'],
         	[['email'], 'email']
         ];
@@ -58,6 +59,7 @@ class cadadm extends \yii\db\ActiveRecord
             'ativo' => 'Status',
             'identificadorPessoa' => 'Tipo',
             'email' => 'Email',
+        	'matricula' => 'Matrícula'
         ];
     }
 

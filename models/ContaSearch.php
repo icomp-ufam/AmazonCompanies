@@ -41,7 +41,7 @@ class ContaSearch extends Conta
      */
     public function search($params)
     {
-        $query = Conta::find();
+        $query = Conta::find()->orderBy('ordem');
 
         // add conditions that should always apply here
 

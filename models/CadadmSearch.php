@@ -20,6 +20,7 @@ class CadadmSearch extends cadadm
         return [
             [['idUsuario', 'ativo', 'identificadorPessoa'], 'integer'],
             [['login', 'nome', 'senha', 'email'], 'safe'],
+        	[['matricula'], 'string'],
         ];
     }
 
@@ -67,7 +68,8 @@ class CadadmSearch extends cadadm
         $query->andFilterWhere(['like', 'login', $this->login])
             ->andFilterWhere(['like', 'nome', $this->nome])
             ->andFilterWhere(['like', 'senha', $this->senha])
-            ->andFilterWhere(['like', 'email', $this->email]);
+            ->andFilterWhere(['like', 'email', $this->email])
+            ->andFilterWhere(['like', 'matricula', $this->matricula]);
 
         return $dataProvider;
     }

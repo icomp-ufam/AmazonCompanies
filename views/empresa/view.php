@@ -54,22 +54,8 @@ use yii\base\Widget;
 
         
     </p>
-
-    <div class="row">
-            <?= Html::button('Gerar PDF', ['id' => 'export_chart', 'class'=> 'btn btn-primary']) ?>
-            
-            <div class="dropdown col-sm-1">
-    			<button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown" >Ano <span class="caret"></span></button>
-    			<ul class="dropdown-menu col-sm-1">
-    				<?php
-                        foreach($anos as $ano):           
-                    ?>
-    				<li><a href="#id<?= $ano->ano ?>"><?= $ano->ano ?></a></li> <!--  PRODUZIR FUNÇÃO PARA REALIZAR AS MUDANÇAS NA TABELA -->
-    			<?php endforeach; ?>
-    			</ul>
-    		</div>
+	
     
-    </div>
 <?php if(Yii::$app->user->getIdentificadorPessoa() == '2' || Yii::$app->user->getIdentificadorPessoa() == '1'){ ?>
      <br>
         <div>
@@ -409,14 +395,14 @@ use yii\base\Widget;
 
 <?php 
 echo Highcharts::widget([
-   /*
-   'scripts' => array(
+   
+   'scripts' => [
         'modules/exporting',
         
         //Warning! The use of this component (themes/grid-light) will cause the export to stop working correctly!
-        'themes/grid-light',
-    ),
-    */
+       // 'themes/grid-light',
+    ],
+    
     //'id' => 'demonstration',
 	'options' => [
 		'chart' => [

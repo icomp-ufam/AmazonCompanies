@@ -23,6 +23,7 @@ $this->title = 'Lista de Usuário Cadastrados';
         'columns' => [
             'nome',
         	'login',
+        	'matricula',
         	 [
         	 		'attribute' => 'ativo',
             		'class' => 'kartik\grid\BooleanColumn'
