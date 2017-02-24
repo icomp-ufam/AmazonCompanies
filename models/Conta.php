@@ -37,6 +37,8 @@ class Conta extends \yii\db\ActiveRecord
             [['nome'], 'string', 'max' => 255],
             [['chave'], 'string', 'max' => 30],
             [['idDemonstracao'], 'exist', 'skipOnError' => true, 'targetClass' => Demonstracao::className(), 'targetAttribute' => ['idDemonstracao' => 'idDemonstracao']],
+            //['idDemonstracao', 'compare', 'compareAttribute'=> $this::find()->select(['idDemonstracao'])->where(['idConta'=='pai']), 'message'=>"pai de demonstração diferente" ],
+            //['idDemonstracao', 'compare', 'compareAttribute'=> $this::find()->select(['idDemonstracao'])->where(['idConta'==[$this::find()->select('idConta'=='pai')]]), 'message'=>"pai de demonstração diferente" ],
         ];
     }
 
@@ -72,4 +74,9 @@ class Conta extends \yii\db\ActiveRecord
     {
         return $this->hasMany(EmpresaConta::className(), ['idConta' => 'idConta']);
     }
+    public function validarDemo(){
+
+        
+    }
+
 }

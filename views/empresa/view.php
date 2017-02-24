@@ -82,8 +82,16 @@ use yii\base\Widget;
 
         
         <li><a data-toggle="tab" href="#demoIndice">ÍNDICE</a></li>
-        <li><a data-toggle="tab" href="#demoContasObrigatorias">OBRIGATÓRIAS</a></li>
 
+        <?php
+        if(!Yii::$app->user->getIsGuest()) {
+
+
+            ?>
+            <li><a data-toggle="tab" href="#demoContasObrigatorias">OBRIGATÓRIAS</a></li>
+            <?php
+        }
+        ?>
     </ul>
 
     <div class="tab-content">
@@ -116,9 +124,10 @@ use yii\base\Widget;
                             foreach($contas as $conta){
                                     ?>
                                     <tr>
+
                                         <td><input type="checkbox"/></td>
                                         <td><?=$conta->nome?></td>
-                                    
+
                                            <?php
                                             $anosEmpresas = EmpresaConta::find()->select('ano')->distinct()->orderBy(["ano"=> SORT_ASC])->where(['idEmpresa' => $model->idEmpresa])->all();
                                                  $tweets = [['nome'=>'Liquidez', 'id'=>100]];
@@ -176,6 +185,7 @@ use yii\base\Widget;
                 <table class="table table-hover">
                     <thead>
                         <tr>
+
                             <th><input type="checkbox" id="check_all" /></th>
                             <th>Nome Conta:</th>
                             <?php
@@ -185,6 +195,7 @@ use yii\base\Widget;
                                                 foreach($anosEmpresas as $anosEmpresa){  
                                              ?>
                             <th><?=$anosEmpresa->ano?></th>
+
                             <?php
                                                 }   
                                              ?>
