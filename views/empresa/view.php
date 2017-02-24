@@ -38,8 +38,8 @@ use yii\base\Widget;
 
     $this->title = $model->nome;
     if(!Yii::$app->user->getIsGuest()){
-    	$this->params['breadcrumbs'][] = ['label' => 'Empresas', 'url' => ['index']];
-    	$this->params['breadcrumbs'][] = $this->title;
+        $this->params['breadcrumbs'][] = ['label' => 'Empresas', 'url' => ['index']];
+        $this->params['breadcrumbs'][] = $this->title;
     }
     $this->defaultExtension = $model->logotipo
 ?>
@@ -54,7 +54,7 @@ use yii\base\Widget;
 
         
     </p>
-	
+    
     
 <?php if(Yii::$app->user->getIdentificadorPessoa() == '2' || Yii::$app->user->getIdentificadorPessoa() == '1'){ ?>
      <br>
@@ -104,7 +104,8 @@ use yii\base\Widget;
  
                                                 foreach($anosEmpresas as $anosEmpresa){  
                                              ?>
-                            <th><?=$anosEmpresa->ano?></th>
+                            <th align='center'><?=$anosEmpresa->ano?></th>
+                            <th align='center'>AV (<?=$anosEmpresa->ano?>)</th>
                             <?php
                                                 }   
                                              ?>
@@ -112,7 +113,8 @@ use yii\base\Widget;
                     </thead>
                     <tbody>
                     <?php
-                    $contas = Conta::find()->select('*')->where(['idDemonstracao' => $demonstracao->idDemonstracao])->orderBy(["ordem"=> SORT_ASC])->all();                                              
+                    $contas = Conta::find()->select('*')->where(['idDemonstracao' => $demonstracao->idDemonstracao])->orderBy(["ordem"=> SORT_ASC])->all();
+                            $pais = array();                          
                             foreach($contas as $conta){
                                     ?>
                                     <tr>
@@ -125,7 +127,9 @@ use yii\base\Widget;
                                                  $anterior = -1;
                                                  $percentual = 0;
                                                  $tipo = $conta->formato;
+                                                 
                                                 foreach($anosEmpresas as $anosEmpresa){
+                                                    
                                                     $valoress = EmpresaConta::find()->select('valor')->where(['idConta' => $conta->idConta])->andWhere(['ano' =>$anosEmpresa->ano])->andWhere(['idEmpresa' => $model->idEmpresa])->all();
                                                    if(count($valoress)>0){
                                                         $textoAnterior = null;
@@ -133,31 +137,47 @@ use yii\base\Widget;
                                                         foreach($valoress as $valores){
                                                             if($anterior > -1){
                                                                 $percentual = number_format(100 * (1 - ($valores->valor / $anterior)), 2);
+
                                                                 if($percentual < 100) $textoAnterior = "(" . Html::img( 'img/neg.jpg' ,['style'=>'width:10px']) . " <span style='color:red;'>" .$percentual."%</span>)";  
                                                                 else $textoAnterior = $textoAnterior = "(" . Html::img( 'img/pos.jpg' ,['style'=>'width:10px']) . " <span style='color:green;'>" .$percentual."%</span>)";
-                                                            }?>             
+
+                                                            }
+
+                                                            ?>             
                                                             <?php
 
                                                             switch ($tipo) {
                                                                     case 1:
-                                                                        echo "<td>R$ ". $valores->valor. " " . $textoAnterior . "</td>";
+                                                                        echo "<td align='right'>R$ ". number_format($valores->valor, 0, ',','.'). " " . $textoAnterior . "</td>";
                                                                         break;
                                                                     case 2:
-                                                                        echo "<td>US$ ". $valores->valor. " " . $textoAnterior . "</td>";
+                                                                        echo "<td align='right'>US$ ". number_format($valores->valor, 0, ',','.'). " " . $textoAnterior . "</td>";
                                                                         break;
                                                                     case 3:
-                                                                        echo "<td>". $valores->valor. "% " . $textoAnterior . "</td>";
+                                                                        echo "<td align='right'>". number_format(100* $valores->valor, 0, ',','.'). "% " . $textoAnterior . "</td>";
                                                                         break;
-                                                                    case 3:
-                                                                        echo "<td>". $valores->valor. " " . $textoAnterior . "</td>";
+                                                                    case 4:
+                                                                        echo "<td align='right'>". number_format($valores->valor, 0, ',','.'). " " . $textoAnterior . "</td>";
                                                                         break;
                                                                 }
 
+                                                                    if ($conta->pai == null){
+                                                                        $pais[$conta->idConta][$anosEmpresa->ano] = $valores->valor;
+                                                                        echo "<td align='right'>100%</td>";
+                                                                    }
+                                                                    else{
+
+                                                                        if(array_key_exists($anosEmpresa->ano, $pais[$conta->pai])) 
+                                                                           echo "<td align='right'>".number_format(100*$valores->valor / $pais[$conta->pai][$anosEmpresa->ano],0,',','.')."%</td>";
+                                                                       else echo "<td align='right'>0%</td>";
+                                                                        
+                                                                    }
                                                             $anterior = $valores->valor;
                                                         }
 
                                                    } else{ ?>             
-                                                   <td>-----</td> 
+                                                   <td align='right'>-----</td>
+                                                   <td align='right'>-----</td>   
                                                    <?php
                                                 }  
                                             }  
@@ -421,39 +441,39 @@ echo Highcharts::widget([
     ],
     
     //'id' => 'demonstration',
-	'options' => [
-		'chart' => [
-			'renderTo' =>'grafico',
-			'height' => $contador*20 + 800 // tamanho da tabela será dinâmica, quanto mais linhas, maior fica
-		],
-		'title' => [
-			'text' => 'Gráfico'
-		],
-		'xAxis' => [
-			'categories' => $categorias		
-		],
-		'plotOptions' => [
-			'bar' => [
-				'dataLabels' => [
-					'enabled' => true		
-				]		
-			]	
-		],
-		'credits' => [
-				'enabled' => false	
-		],
+    'options' => [
+        'chart' => [
+            'renderTo' =>'grafico',
+            'height' => $contador*20 + 800 // tamanho da tabela será dinâmica, quanto mais linhas, maior fica
+        ],
+        'title' => [
+            'text' => 'Gráfico'
+        ],
+        'xAxis' => [
+            'categories' => $categorias     
+        ],
+        'plotOptions' => [
+            'bar' => [
+                'dataLabels' => [
+                    'enabled' => true       
+                ]       
+            ]   
+        ],
+        'credits' => [
+                'enabled' => false  
+        ],
         'series' => $field
-	],
+    ],
 ]);
  ?>
  <h3>Análises</h3>
   
  <?php if(Yii::$app->user->getIdentificadorPessoa() == '2' || Yii::$app->user->getIdentificadorPessoa() == '1'){
-        					echo '<a href="index.php?r=analise%2Fcreate&idEmpresa=' . $model->idEmpresa . '"><button class="btn btn-primary">Criar Análise</button> </a>';
-						}
-        	?>
-        	
-        	
+                            echo '<a href="index.php?r=analise%2Fcreate&idEmpresa=' . $model->idEmpresa . '"><button class="btn btn-primary">Criar Análise</button> </a>';
+                        }
+            ?>
+            
+            
  
  <div class="body-content">
     <ul class="nav nav-tabs">
@@ -578,7 +598,7 @@ echo Highcharts::widget([
         <?php
                         }   
                     ?>
-	
+    
                 
 
             <script type="application/javascript">
