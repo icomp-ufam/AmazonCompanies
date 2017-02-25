@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: 24-Fev-2017 às 20:23
+-- Generation Time: 25-Fev-2017 às 01:28
 -- Versão do servidor: 10.1.19-MariaDB
 -- PHP Version: 5.6.28
 
@@ -19,6 +19,8 @@ SET time_zone = "+00:00";
 --
 -- Database: `amazoncompanies`
 --
+CREATE DATABASE IF NOT EXISTS `amazoncompanies` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
+USE `amazoncompanies`;
 
 -- --------------------------------------------------------
 
@@ -37,22 +39,6 @@ CREATE TABLE `analise` (
   `Usuario_idUsuario` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
---
--- Extraindo dados da tabela `analise`
---
-
-INSERT INTO `analise` (`idanalise`, `texto`, `status`, `ano`, `investidor`, `credor`, `idEmpresa`, `Usuario_idUsuario`) VALUES
-(2, 'Texto enviado para análise', 0, 2015, 3, 3, 2, 2),
-(3, 'Este é um sistema operacional que', 0, 2015, 2, 2, 5, 1),
-(6, 'Mais um teste enviado para análise, será que agora vai?<br>', 1, 2016, 2, 2, 4, 6),
-(7, 'achei legal<br>', 1, 2016, 3, 3, 6, 3),
-(8, 'Analise teste com ano', 1, 2016, 3, 3, 5, 1),
-(9, 'teste', 1, 2016, 2, 3, 2, 1),
-(10, '1', 1, 2016, 3, 3, 3, 1),
-(12, 'Teste, teste dnovo<br>', 1, 2017, 2, 3, 5, 6),
-(13, 'tesgeufakjfaf<br>', 1, 2018, 2, 2, 5, 6),
-(15, 'Legal<br>', 1, 2017, 3, 2, 4, 6);
-
 -- --------------------------------------------------------
 
 --
@@ -69,14 +55,6 @@ CREATE TABLE `comentario` (
   `hora` time NOT NULL,
   `Comentario_idComentario` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- Extraindo dados da tabela `comentario`
---
-
-INSERT INTO `comentario` (`idComentario`, `conteudo`, `Empresa_idEmpresa`, `nome`, `email`, `data`, `hora`, `Comentario_idComentario`) VALUES
-(1, 'olar', 3, 'Neves', 'larissa@icomp.ufam.edu.br', '2017-02-06', '838:59:59', NULL),
-(2, 'olar\r\n', 3, 'Larissa', 'llen@icomp.ufam.edu.br', '2017-02-06', '00:00:00', 1);
 
 -- --------------------------------------------------------
 
@@ -95,37 +73,6 @@ CREATE TABLE `conta` (
   `pai` int(20) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
---
--- Extraindo dados da tabela `conta`
---
-
-INSERT INTO `conta` (`idConta`, `nome`, `idDemonstracao`, `chave`, `obrigatorio`, `ordem`, `formato`, `pai`) VALUES
-(4, 'Ativos Totais', 1, '#AT', 1, 2, 1, NULL),
-(5, 'Ativo Circulante', 1, '#AC', 1, 7, 4, NULL),
-(6, 'Disponibilidades + Aplicações Fin Liq Im.', 1, '#DALI', 1, 3, 1, NULL),
-(7, 'Estoques', 1, '#EST', 1, 4, 1, NULL),
-(8, 'Ativo não Circulante', 1, '#ANC', 1, 5, 1, NULL),
-(9, 'Imobilizado', 1, '#IM', 1, 6, 1, NULL),
-(10, 'Passivo Circulante', 1, '#PC', 1, 1, 2, NULL),
-(11, 'Passivo Não Circulante', 3, '#PNC', 0, 8, 2, NULL),
-(12, 'Passivo Não Circulante Oneroso', 1, '#PNCO', 0, 9, 3, NULL),
-(13, 'Passivo Exigível', 1, '#PE', 1, 10, 3, NULL),
-(14, 'Patrimônio Líquido', 1, '#PL', 0, 11, 2, NULL),
-(15, 'Ativos Totais Médios', 1, '#ATM', 0, 12, 4, NULL),
-(16, 'Investimentos (Oneroso + PL)', 3, '#IOPL', 0, 13, 3, NULL),
-(17, 'Investimentos Médios', 3, '#IM', 0, 14, 1, NULL),
-(18, 'Patrimônio Líquido Médios', 1, '#PLM', 0, 15, 1, NULL),
-(19, 'Fornecedores Médio', 1, '#FM', 0, 16, 1, NULL),
-(20, 'Estoque Médio', 1, '#EM', 0, 17, 2, NULL),
-(21, 'Clientes Médio', 2, '#CM', 0, 18, 2, NULL),
-(22, 'CMV', 2, '#CMV', 0, 19, 2, NULL),
-(23, 'Compras', 1, '#COMP', 0, 20, 2, NULL),
-(24, 'Vendas Líquidas', 2, '#VL', 0, 21, 3, NULL),
-(25, 'Lucro Bruto', 2, '#LB', 0, 22, 3, NULL),
-(26, 'Lucro Operacional', 2, '#LO', 0, 23, 3, NULL),
-(27, 'Lucro Líquido', 2, '#LL', 0, 24, 1, 4),
-(28, 'ContaTeste', 1, '#ctst', 0, 25, 2, 5);
-
 -- --------------------------------------------------------
 
 --
@@ -136,15 +83,6 @@ CREATE TABLE `demonstracao` (
   `idDemonstracao` int(11) NOT NULL,
   `nomeDemonstracao` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- Extraindo dados da tabela `demonstracao`
---
-
-INSERT INTO `demonstracao` (`idDemonstracao`, `nomeDemonstracao`) VALUES
-(1, 'BALANÇO PATRIMONIAL\r\n'),
-(2, 'DEMONSTRAÇÃO DO RESULTADO DO EXERCÍCIO'),
-(3, 'DEMONSTRAÇÃO DOS FLUXOS DE CAIXA');
 
 -- --------------------------------------------------------
 
@@ -160,18 +98,6 @@ CREATE TABLE `empresa` (
   `tipo` varchar(100) CHARACTER SET latin1 NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
---
--- Extraindo dados da tabela `empresa`
---
-
-INSERT INTO `empresa` (`idEmpresa`, `nome`, `fonte`, `logotipo`, `tipo`) VALUES
-(1, 'Moto Honda da Amazônia LTDA', 'www.motohonda.com.br', NULL, 'Nacional'),
-(2, 'Teewa', 'www.teewa.com.br', NULL, 'Local'),
-(3, 'Microsoft S.A', 'www.microsoft.com', 'documentosTeste.xlsx', 'Estrangeira'),
-(4, 'Pastelaria do Arruda EPP', 'www.queso.blogspot.com.br', 'beneficio-morango.jpg', 'Local'),
-(5, 'TeamSleep', 'teamsleep.com.br', '9428da2563387bf08c4b2ba32af5db03169fa0d5.jpeg', 'Local'),
-(6, 'SauronGames', 'www.senhordosaneis.com', NULL, 'Estrangeira');
-
 -- --------------------------------------------------------
 
 --
@@ -182,13 +108,6 @@ CREATE TABLE `empresahasusuario` (
   `Empresa_idEmpresa` int(11) NOT NULL,
   `Usuario_idUsuario` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- Extraindo dados da tabela `empresahasusuario`
---
-
-INSERT INTO `empresahasusuario` (`Empresa_idEmpresa`, `Usuario_idUsuario`) VALUES
-(1, 4);
 
 -- --------------------------------------------------------
 
@@ -220,13 +139,6 @@ CREATE TABLE `indice` (
   `formato` int(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
---
--- Extraindo dados da tabela `indice`
---
-
-INSERT INTO `indice` (`idIndice`, `formula`, `idTipo_Indice`, `nomeIndice`, `formato`) VALUES
-(4, '#AT / #PC', 1, 'Liquidez geral', 0);
-
 -- --------------------------------------------------------
 
 --
@@ -242,33 +154,6 @@ CREATE TABLE `notificacao` (
   `idAnalise` int(10) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
---
--- Extraindo dados da tabela `notificacao`
---
-
-INSERT INTO `notificacao` (`idNotificacao`, `Usuario_idUsuario`, `status`, `conteudo`, `tipo`, `idAnalise`) VALUES
-(1, 1, 0, 'Todo dia é dia de trabalhar!', 0, NULL),
-(2, 2, 0, 'Você foi uma menina má!', 2, NULL),
-(3, 3, 1, 'Já falei para não me chamar de chefinho!', 1, NULL),
-(8, 1, 0, 'Não gostei de sua analise', 1, 9),
-(9, 1, 0, 'Achei bom', 1, 8),
-(12, 2, 0, 'não gostei', 1, 2),
-(14, 6, 2, 'asdadasdsa', 0, 6),
-(17, 6, 2, 'birl', 0, 6),
-(18, 6, 2, 'ainda não está bom', 0, 6),
-(19, 6, 2, 'Sua análise foi aceita!', 0, 6),
-(20, 6, 2, 'Não gostei', 0, 12),
-(21, 6, 2, 'Sua análise foi aceita!', 0, 12),
-(22, 6, 2, 'nao gostei', 0, 13),
-(23, 6, 2, 'Sua análise foi aceita!', 0, 13),
-(24, 6, 2, 'Gostei bastante de sua análise, parabéns!', 0, 6),
-(25, 3, 2, 'Não gostei do que você fez', 2, NULL),
-(26, 3, 2, 'To te avisando hein', 2, NULL),
-(27, 6, 2, 'e aí cara, beleza?', 2, NULL),
-(28, 3, 2, 'Gostaria que analisasse a Empresa x, no ano x. Estou no aguardo.', 2, NULL),
-(29, 6, 2, 'Achei muito bom!', 0, 15),
-(30, 3, 2, 'Gostaria que resolvesse a questão 9', 2, NULL);
-
 -- --------------------------------------------------------
 
 --
@@ -279,15 +164,6 @@ CREATE TABLE `rodape` (
   `id` int(11) NOT NULL,
   `link` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- Extraindo dados da tabela `rodape`
---
-
-INSERT INTO `rodape` (`id`, `link`) VALUES
-(1, 'www.primeirolink.com'),
-(2, 'www.segundolink.com'),
-(3, 'www.terceirolink.com');
 
 -- --------------------------------------------------------
 
@@ -300,15 +176,6 @@ CREATE TABLE `tipo_empresa` (
   `id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
---
--- Extraindo dados da tabela `tipo_empresa`
---
-
-INSERT INTO `tipo_empresa` (`Nome`, `id`) VALUES
-('Estrangeira', 1),
-('Local', 2),
-('Nacional', 3);
-
 -- --------------------------------------------------------
 
 --
@@ -320,20 +187,6 @@ CREATE TABLE `tipo_indice` (
   `nome` varchar(45) NOT NULL,
   `descricao` text
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- Extraindo dados da tabela `tipo_indice`
---
-
-INSERT INTO `tipo_indice` (`idTipo_indice`, `nome`, `descricao`) VALUES
-(1, 'Liquidez', 'Texto exemplo Liquidez'),
-(2, 'Endividamento', 'Texto Exemplo Endividamento'),
-(3, 'Lucratividade', 'Texto Exemplo Lucratividade'),
-(4, 'Rentabilidade', 'Texto Exemplo Rentabilidade'),
-(5, 'Giros e Prazos', 'Texto Exemplo Giros e Prazos'),
-(6, 'Giros Assaf Neto', 'Texto Exemplo Giros Assaf Neto'),
-(7, 'Giros Viaconti', 'Texto Exemplo Giros Viaconti'),
-(8, 'Teste Listagem', 'Texto Exemplo Teste Listagem');
 
 -- --------------------------------------------------------
 
@@ -357,16 +210,7 @@ CREATE TABLE `usuario` (
 --
 
 INSERT INTO `usuario` (`idUsuario`, `login`, `nome`, `senha`, `ativo`, `identificadorPessoa`, `email`, `matricula`) VALUES
-(1, 'LG', 'Luiz Gustavo', '25d55ad283aa400af464c76d713c07ad', 1, 1, 'lgpa@icomp.ufam.edu.br', NULL),
-(2, 'Tata14', 'Tatazinha', 'a384b6463fc216a5f8ecb6670f86456a', 0, 1, 'tla@icomp.ufam.edu.br', NULL),
-(3, 'Gisa', 'Gisele', '25d55ad283aa400af464c76d713c07ad', 1, 2, 'gisa@icomp.ufam.edu.br', NULL),
-(4, 'Motoca', 'Moto Honda da Amazônia LTDA', '3dcdda99b20ed51f83b25c6315c5a818', 1, 3, 'motohonda@gmail.com', NULL),
-(5, 'icaro', 'Icaro Dolzane', 'a48e0f40dba24e3bcfe84aad2c272d8d', 1, 1, 'ifd@icomp.ufam.edu.br', NULL),
-(6, 'Thitan', 'Thiego Barros', '25d55ad283aa400af464c76d713c07ad', 1, 2, 't@icomp.ufam.br', NULL),
-(7, 'agus', 'Augusto Arruda', '41092952f6cfadc1a1ef40c405159ce3', 1, 2, 'augusto_rr_arruda@gmail.com', NULL),
-(8, 'Brasitech', 'Brasitech Indústria de Produtos LTDA', '25d55ad283aa400af464c76d713c07ad', 1, 3, 'bra@gmail.com', NULL),
-(9, 'Daniel_aluno', 'Daniel_aluno', '25d55ad283aa400af464c76d713c07ad', 1, 2, 'Daniel_aluno@gmail.com', NULL),
-(10, 'teste2', 'tdasdadas', '25d55ad283aa400af464c76d713c07ad', 1, 2, 'cacs@icomp.ufam.edu.br', NULL);
+(1, 'admin', 'André', '25d55ad283aa400af464c76d713c07ad', 1, 1, 'andre@icomp.ufam.edu.br', NULL);
 
 --
 -- Indexes for dumped tables
@@ -485,7 +329,7 @@ ALTER TABLE `comentario`
 -- AUTO_INCREMENT for table `conta`
 --
 ALTER TABLE `conta`
-  MODIFY `idConta` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
+  MODIFY `idConta` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=39;
 --
 -- AUTO_INCREMENT for table `demonstracao`
 --
@@ -500,7 +344,7 @@ ALTER TABLE `empresa`
 -- AUTO_INCREMENT for table `empresa_conta`
 --
 ALTER TABLE `empresa_conta`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=155;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=209;
 --
 -- AUTO_INCREMENT for table `indice`
 --
