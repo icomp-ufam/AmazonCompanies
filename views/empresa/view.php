@@ -170,7 +170,7 @@ use yii\base\Widget;
                                                                         break;
                                                                 }
 
-                                                                    if ($conta->pai == null){
+                                                                    if ($conta->pai == 0){
                                                                         $pais[$conta->idConta][$anosEmpresa->ano] = $valores->valor;
                                                                         echo "<td align='right'>100%</td>";
                                                                     }

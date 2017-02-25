@@ -249,7 +249,7 @@ class EmpresaController extends Controller
         	$valor = $myarray[$i]['Valor'];
         	$ano = $myarray[$i]['Ano'];
         	$model->idEmpresa = $id;
-            $model->idUsuario = 6;
+            $model->idUsuario = 1;
         	$model->ano = $ano;
         	$model->valor = $valor;
             $model->statusValidacao=0;
