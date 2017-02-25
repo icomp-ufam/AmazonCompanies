@@ -9,7 +9,11 @@ use app\controllers\SiteController;
   $this->title = 'Amazon Companies';
   if (Yii::$app->user->getIsGuest()){
   		$id = Empresa::find()->select('idEmpresa, rand() as rand')->orderBy('rand')->limit(1)->one();
-    	return Yii::$app->response->redirect(['empresa/view', 'id' => $id->idEmpresa]);
+		if($id)
+			return Yii::$app->response->redirect(['empresa/view', 'id' => $id->idEmpresa]);
+		else{
+			echo "<h1 align='center'>Não existem empresas cadastradas no momento.<br><br>Entre em contato com o administrador do sistema para maiores informações.</h1>";
+		}
   } else{
     $username = Yii::$app->user->identity->nome;
     echo '<h1>Bem Vindo, ' . $username . '!</h1>';
