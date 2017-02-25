@@ -246,7 +246,7 @@ AppAsset::register($this);
         
         <a href="http://www.ufam.edu.br">
             <span style="float:none;">
-                <img style="height:70px; vertical-align:middle" class="iconDetails" src="\AmazonCompanies\web\img\ufam.png" alt=""/>
+                <img style="height:90px; vertical-align:middle" class="iconDetails" src="img/ufam.jpg" alt=""/>
             </span>
         </a>
         <br/>
@@ -270,7 +270,7 @@ AppAsset::register($this);
         © Coordenação de Sistemas - UFAM </br>
         <?php
         $rodape = Rodape::findOne(1);
-
+		
         $link = $rodape->link;
         echo "$link";
         ?>
