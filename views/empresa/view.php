@@ -441,7 +441,8 @@ use yii\base\Widget;
     <br>
     <div id="grafico" style="width: auto; height: auto; margin: 0 auto"></div>
 
-<?php 
+<?php
+if($categorias != 0){
 echo Highcharts::widget([
    
    'scripts' => [
@@ -476,6 +477,7 @@ echo Highcharts::widget([
         'series' => $field
     ],
 ]);
+}
  ?>
  <h3>Análises</h3>
   

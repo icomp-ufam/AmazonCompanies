@@ -21,7 +21,6 @@ use kartik\widgets\FileInput;
 
     <?= $form->field($model, 'nome')->textInput(['maxlength' => true]) ?>
 
-
     <?= $form->field($model, 'fonte')->textInput(['maxlength' => true]) ?>
 
     <?= $form->field($model, 'tipo')->dropDownList($tipoEmpresa) ?>

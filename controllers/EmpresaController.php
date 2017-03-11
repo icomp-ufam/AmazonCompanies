@@ -89,15 +89,7 @@ class EmpresaController extends Controller
     
     		$field[$i]['type'] = 'bar';
     		$field[$i]['name'] = $anosEmpresa->ano;
-    		// $valoress = EmpresaConta::find()->select('valor')->where(['idConta' => $conta->idConta])->andWhere(['ano' =>$anosEmpresa->ano])->all();
-    		// if(count($valoress)>0){
-    		//     $j=0;
-    			//     foreach($valoress as $valores){
-    			//         $data[$j] =
-    				//     }
-    			// } else{
-    
-    			// }
+
     			for ($j=0; $j <24 ; $j++) {
     				$data[$j]= $j+1;
     
@@ -107,102 +99,6 @@ class EmpresaController extends Controller
     
     
     			}
-    
-    			// print_r($field);
-    			// echo '<br>';
-    			// print_r($categorias);
-    
-    
-    			// echo Highcharts::widget([
-    			//     'scripts' => array(
-    			//                 'modules/exporting',
-    					//                 'themes/grid-light',
-    					//             ),
-    					//             'options' => array(
-    					//                 'title' => array(
-    							//                     'text' => 'Demonstração',
-    							//                 ),
-    							//                 'xAxis' => array(
-    							//                     'categories' => $categorias,
-    									//                 ),
-    
-    							//                 'series' => $field
-    							//                 // array(
-    							//                 //     array(
-    							//                 //         'type' => 'bar',
-    							//                 //         'name' => '2014',
-    							//                 //         'data' => array(3, 2),
-    							//                 //     ),
-    							//                 //     array(
-    							//                 //         'type' => 'bar',
-    							//                 //         'name' => '2016',
-    							//                 //         'data' => array(2, 3),
-    							//                 //     ),
-    
-    							//                 // ),
-    							//             )
-    							//         ]);
-    
-    			// return $this->render('index', [
-    					//                     'model' => $model,
-    					//                     'field' => $field,
-    					//                     'categorias' => $categorias
-    					//                     ]);
-    					 
-    
-    
-    
-    
-    					// print_r('entrou get descricao');
-    					// $empresaP = $_POST['empresa'];
-    					// $empresas = explode('#', $empresaP);
-    					// $tabela = "<table class='table'>
-    					//                <tr> ";
-    					// foreach ($empresas as $empresa){
-    					// //Pegando o nome da empresa
-    						//     $conectEmpresa = \Yii::$app->db;
-    						//     $queryEmpresa = 'SELECT nome FROM empresa WHERE idEmpresa = '.$empresa;
-    						//     $nomeEmpresa = $conectEmpresa->createCommand($queryEmpresa)->queryScalar();
-    						//     $tabela .= "<th> $nomeEmpresa </th> ";
-    						// }
-    						// $tabela.="</tr> ";
-    						// //Pegando o nome da demonstração
-    						// $tabela.="<tr> ";
-    						// foreach ($empresas as $empresa) {
-    			//     $tabela.= "<td>";
-    			//     $connection = \Yii::$app->db;
-    			//     $query = 'SELECT tipoDemonstracao.nome, demonstracao.idDemonstracao
-    			//           FROM demonstracao INNER JOIN tipoDemonstracao
-    			//           ON demonstracao.idtipoDemonstracao = tipoDemonstracao.idtipoDemonstracao
-    			//           WHERE demonstracao.Empresa_idEmpresa = ' . $empresa;
-    			//     $demonstracoes = $connection->createCommand($query)->queryAll();
-    			//     if(count($demonstracoes) > 0) {
-    			//         foreach ($demonstracoes as $result):
-    			//             $tabela .= "<b> {$result['nome']}</b> </br>  ";
-    			//             $connection2 = \Yii::$app->db;
-    			//             $queryConta = "SELECT nome, valor FROM conta WHERE idDemonstracao = {$result['idDemonstracao']}";
-    			//             $contas = $connection2->createCommand($queryConta)->queryAll();
-    			//             if(count($contas)>0){
-    			//                 foreach ($contas as $ct){
-    			//                     $tabela .= "{$ct['nome']}: {$ct['valor']} <br>";
-    				//                 }
-    				//             }else $tabela.= "Não há dados <br>";
-    				//         endforeach;
-    				//     }else $tabela.= "Empresa sem demonstrações <br> ";
-    				//     $tabela.="</td>";
-    				// }
-    			// $tabela.="</tr>
-    			//     </table>";
-    
-    			// //echo count($resultado);
-    			// return $tabela;
-    			// //SELECT nome, valor FROM conta WHERE idDemonstracao in
-    			// // (SELECT idDemonstracao FROM demonstracao
-    			// // INNER JOIN tipoDemonstracao ON demonstracao.idtipoDemonstracao = tipoDemonstracao.idtipoDemonstracao
-    			// // WHERE demonstracao.Empresa_idEmpresa = 1)
-    			// //SELECT tipoDemonstracao.nome FROM tipoDemonstracao ]
-    			// //JOIN demonstracao ON tipoDemonstracao.idtipoDemonstracao= demonstracao.idtipoDemonstracao 
-    			// //WHERE demonstracao.Empresa_idEmpresa = 1;*/
     }
     /**
      * Displays a single Empresa model.
@@ -270,10 +166,11 @@ class EmpresaController extends Controller
         		 
         	 }
         }
-
+        
         if($verificaPreenchimento==2){
             //mostrar mensagem avisando que não foram cadastrados algumas informações para estava null
         }
+        $categorias=0;
         $contas = Conta::find()->select('*')->all();
         $i=0;
         foreach($contas as $conta){
@@ -325,16 +222,16 @@ class EmpresaController extends Controller
         //sessão de variáveis usadas nos foreach na view
         $anos = EmpresaConta::find()->select('ano')->distinct()->orderBy(["ano"=> SORT_ASC])->where(['idEmpresa' => $id])->all();
 
-
+		
                  return $this->render('view', [
                  	'anos' => $anos,
                     'model' => $this->findModel($id),
-                    'comentario' => $comentario ,
+                 	'comentario' => $comentario,
                  	'field' => $field,
                  	'categorias' => $categorias,
                  	'contador' => $contador // para tamanho do gráfico
                     ]);
-
+		
         
     }
 
@@ -342,7 +239,6 @@ class EmpresaController extends Controller
         $model = $this->findModel($id);
         $file = \yii\web\UploadedFile::getInstance($model, 'logotipo');
         $fileArquivo = UploadedFile::getInstance($this->findModel($id), 'upload_file');
-        if($this->findModel($id)->load(Yii::$app->request->post()) and $file != null)
 
         if ($this->findModel($id)->load(Yii::$app->request->post()) && $file != null) {
 

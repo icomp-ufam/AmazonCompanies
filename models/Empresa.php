@@ -40,7 +40,8 @@ class Empresa extends \yii\db\ActiveRecord
     {
         return [
             [['nome', 'fonte', 'tipo'], 'required'],
-            [['tipo'], 'string'],
+        	[['tipo'], 'string', 'max' => 100],
+        	[['tipo'], 'exist', 'skipOnError' => true, 'targetClass' => TipoEmpresa::className(), 'targetAttribute' => ['tipo' => 'Nome']],
             [['nome', 'fonte'], 'string', 'max' => 45],
             [['logotipo'], 'string', 'max' => 200],
             [['upload_file'], 'file', 'skipOnEmpty' => true, 'extensions' => 'doc, xlsx, xls'],
@@ -53,11 +54,11 @@ class Empresa extends \yii\db\ActiveRecord
     public function attributeLabels()
     {
         return [
-            'idEmpresa' => 'Id Empresa',
-            'nome' => 'Nome',
-            'fonte' => 'Fonte',
-            'logotipo' => 'Logotipo',
-            'tipo' => 'Tipo de Empresa',
+            'idEmpresa' => Yii::t('app', 'Id Empresa'),
+		    'nome' => Yii::t('app', 'Nome'),
+		    'fonte' => Yii::t('app', 'Fonte'),
+		    'logotipo' => Yii::t('app', 'Logotipo'),
+		    'tipo' => Yii::t('app', 'Tipo de Empresa'),
         ];
     }
 
@@ -80,9 +81,9 @@ class Empresa extends \yii\db\ActiveRecord
     /**
      * @return \yii\db\ActiveQuery
      */
-    public function getDemonstracaos()
+    public function getTipo0()
     {
-        return $this->hasMany(Demonstracao::className(), ['Empresa_idEmpresa' => 'idEmpresa']);
+        return $this->hasOne(TipoEmpresa::className(), ['Nome' => 'tipo']);
     }
 
     /**
@@ -91,6 +92,11 @@ class Empresa extends \yii\db\ActiveRecord
     public function getEmpresaHasUsuarios()
     {
         return $this->hasMany(EmpresaHasUsuario::className(), ['Empresa_idEmpresa' => 'idEmpresa']);
+    }
+    
+    public function getEmpresaContas()
+    {
+    	return $this->hasMany(EmpresaConta::className(), ['idEmpresa' => 'idEmpresa']);
     }
 
     /**

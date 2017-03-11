@@ -9,6 +9,7 @@ use Yii;
  *
  * @property integer $idTipo_indice
  * @property string $nome
+ * @property string $descricao
  *
  * @property Indice[] $indices
  */
@@ -28,8 +29,8 @@ class TipoIndice extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['idTipo_indice', 'nome', 'descricao'], 'required'],
-            [['idTipo_indice'], 'integer'],
+            [['nome'], 'required'],
+            [['descricao'], 'string'],
             [['nome'], 'string', 'max' => 45],
         ];
     }
@@ -40,9 +41,9 @@ class TipoIndice extends \yii\db\ActiveRecord
     public function attributeLabels()
     {
         return [
-            'idTipo_indice' => 'Id tipo índice',
-            'nome' => 'Nome',
-            'descricao' => 'Descrição',
+            'idTipo_indice' => Yii::t('app', 'Id Tipo Indice'),
+            'nome' => Yii::t('app', 'Nome'),
+            'descricao' => Yii::t('app', 'Descricao'),
         ];
     }
 
