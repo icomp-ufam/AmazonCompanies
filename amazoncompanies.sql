@@ -210,7 +210,7 @@ CREATE TABLE `usuario` (
 --
 
 INSERT INTO `usuario` (`idUsuario`, `login`, `nome`, `senha`, `ativo`, `identificadorPessoa`, `email`, `matricula`) VALUES
-(1, 'admin', 'André', '25d55ad283aa400af464c76d713c07ad', 1, 1, 'andre@icomp.ufam.edu.br', NULL);
+(1, 'admin', 'André', '25d55ad283aa400af464c76d713c07ad', 1, 1, 'andrecosta@ufam.edu.br', NULL);
 
 --
 -- Indexes for dumped tables
