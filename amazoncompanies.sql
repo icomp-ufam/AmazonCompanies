@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.5.1
+-- version 4.5.4.1deb2ubuntu2
 -- http://www.phpmyadmin.net
 --
--- Host: 127.0.0.1
--- Generation Time: 25-Fev-2017 às 01:28
--- Versão do servidor: 10.1.19-MariaDB
--- PHP Version: 5.6.28
+-- Host: localhost
+-- Generation Time: Mar 11, 2017 at 05:46 PM
+-- Server version: 5.7.17-0ubuntu0.16.04.1
+-- PHP Version: 7.0.15-0ubuntu0.16.04.4
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -25,7 +25,7 @@ USE `amazoncompanies`;
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `analise`
+-- Table structure for table `analise`
 --
 
 CREATE TABLE `analise` (
@@ -42,7 +42,7 @@ CREATE TABLE `analise` (
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `comentario`
+-- Table structure for table `comentario`
 --
 
 CREATE TABLE `comentario` (
@@ -59,7 +59,7 @@ CREATE TABLE `comentario` (
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `conta`
+-- Table structure for table `conta`
 --
 
 CREATE TABLE `conta` (
@@ -76,7 +76,7 @@ CREATE TABLE `conta` (
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `demonstracao`
+-- Table structure for table `demonstracao`
 --
 
 CREATE TABLE `demonstracao` (
@@ -87,7 +87,7 @@ CREATE TABLE `demonstracao` (
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `empresa`
+-- Table structure for table `empresa`
 --
 
 CREATE TABLE `empresa` (
@@ -101,7 +101,7 @@ CREATE TABLE `empresa` (
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `empresahasusuario`
+-- Table structure for table `empresahasusuario`
 --
 
 CREATE TABLE `empresahasusuario` (
@@ -112,7 +112,7 @@ CREATE TABLE `empresahasusuario` (
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `empresa_conta`
+-- Table structure for table `empresa_conta`
 --
 
 CREATE TABLE `empresa_conta` (
@@ -128,7 +128,7 @@ CREATE TABLE `empresa_conta` (
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `indice`
+-- Table structure for table `indice`
 --
 
 CREATE TABLE `indice` (
@@ -142,7 +142,7 @@ CREATE TABLE `indice` (
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `notificacao`
+-- Table structure for table `notificacao`
 --
 
 CREATE TABLE `notificacao` (
@@ -157,7 +157,7 @@ CREATE TABLE `notificacao` (
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `rodape`
+-- Table structure for table `rodape`
 --
 
 CREATE TABLE `rodape` (
@@ -168,7 +168,7 @@ CREATE TABLE `rodape` (
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `tipo_empresa`
+-- Table structure for table `tipo_empresa`
 --
 
 CREATE TABLE `tipo_empresa` (
@@ -179,7 +179,7 @@ CREATE TABLE `tipo_empresa` (
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `tipo_indice`
+-- Table structure for table `tipo_indice`
 --
 
 CREATE TABLE `tipo_indice` (
@@ -191,7 +191,7 @@ CREATE TABLE `tipo_indice` (
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `usuario`
+-- Table structure for table `usuario`
 --
 
 CREATE TABLE `usuario` (
@@ -206,7 +206,7 @@ CREATE TABLE `usuario` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Extraindo dados da tabela `usuario`
+-- Dumping data for table `usuario`
 --
 
 INSERT INTO `usuario` (`idUsuario`, `login`, `nome`, `senha`, `ativo`, `identificadorPessoa`, `email`, `matricula`) VALUES
@@ -319,86 +319,91 @@ ALTER TABLE `usuario`
 -- AUTO_INCREMENT for table `analise`
 --
 ALTER TABLE `analise`
-  MODIFY `idanalise` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `idanalise` int(11) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT for table `comentario`
 --
 ALTER TABLE `comentario`
-  MODIFY `idComentario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `idComentario` int(11) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT for table `conta`
 --
 ALTER TABLE `conta`
-  MODIFY `idConta` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=39;
+  MODIFY `idConta` int(20) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT for table `demonstracao`
 --
 ALTER TABLE `demonstracao`
-  MODIFY `idDemonstracao` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `idDemonstracao` int(11) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT for table `empresa`
 --
 ALTER TABLE `empresa`
-  MODIFY `idEmpresa` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `idEmpresa` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 --
 -- AUTO_INCREMENT for table `empresa_conta`
 --
 ALTER TABLE `empresa_conta`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=209;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT for table `indice`
 --
 ALTER TABLE `indice`
-  MODIFY `idIndice` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `idIndice` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 --
 -- AUTO_INCREMENT for table `notificacao`
 --
 ALTER TABLE `notificacao`
-  MODIFY `idNotificacao` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
+  MODIFY `idNotificacao` int(11) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT for table `tipo_indice`
+--
+ALTER TABLE `tipo_indice`
+  MODIFY `idTipo_indice` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 --
 -- AUTO_INCREMENT for table `usuario`
 --
 ALTER TABLE `usuario`
-  MODIFY `idUsuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `idUsuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 --
 -- Constraints for dumped tables
 --
 
 --
--- Limitadores para a tabela `analise`
+-- Constraints for table `analise`
 --
 ALTER TABLE `analise`
   ADD CONSTRAINT `fk_analise_1` FOREIGN KEY (`idEmpresa`) REFERENCES `empresa` (`idEmpresa`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   ADD CONSTRAINT `fk_idUsuario1` FOREIGN KEY (`Usuario_idUsuario`) REFERENCES `usuario` (`idUsuario`);
 
 --
--- Limitadores para a tabela `comentario`
+-- Constraints for table `comentario`
 --
 ALTER TABLE `comentario`
   ADD CONSTRAINT `comentario_ibfk_1` FOREIGN KEY (`Comentario_idComentario`) REFERENCES `comentario` (`idComentario`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   ADD CONSTRAINT `comentario_ibfk_2` FOREIGN KEY (`Empresa_idEmpresa`) REFERENCES `empresa` (`idEmpresa`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
--- Limitadores para a tabela `conta`
+-- Constraints for table `conta`
 --
 ALTER TABLE `conta`
   ADD CONSTRAINT `fkDemonstracao` FOREIGN KEY (`idDemonstracao`) REFERENCES `demonstracao` (`idDemonstracao`);
 
 --
--- Limitadores para a tabela `empresa`
+-- Constraints for table `empresa`
 --
 ALTER TABLE `empresa`
   ADD CONSTRAINT `fkTipo` FOREIGN KEY (`tipo`) REFERENCES `tipo_empresa` (`Nome`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
--- Limitadores para a tabela `empresahasusuario`
+-- Constraints for table `empresahasusuario`
 --
 ALTER TABLE `empresahasusuario`
   ADD CONSTRAINT `fk_Empresa_has_Usuario_Empresa1` FOREIGN KEY (`Empresa_idEmpresa`) REFERENCES `empresa` (`idEmpresa`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   ADD CONSTRAINT `fk_Empresa_has_Usuario_Usuario1` FOREIGN KEY (`Usuario_idUsuario`) REFERENCES `usuario` (`idUsuario`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
--- Limitadores para a tabela `empresa_conta`
+-- Constraints for table `empresa_conta`
 --
 ALTER TABLE `empresa_conta`
   ADD CONSTRAINT `fkIdConta` FOREIGN KEY (`idConta`) REFERENCES `conta` (`idConta`) ON DELETE NO ACTION ON UPDATE NO ACTION,
@@ -406,13 +411,13 @@ ALTER TABLE `empresa_conta`
   ADD CONSTRAINT `fkIdUsuario` FOREIGN KEY (`idUsuario`) REFERENCES `usuario` (`idUsuario`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
--- Limitadores para a tabela `indice`
+-- Constraints for table `indice`
 --
 ALTER TABLE `indice`
-  ADD CONSTRAINT `fk_Indice_Tipo_Indice1` FOREIGN KEY (`idTipo_Indice`) REFERENCES `tipo_indice` (`idTipo_indice`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+  ADD CONSTRAINT `fk_idTipoIndice` FOREIGN KEY (`idTipo_Indice`) REFERENCES `tipo_indice` (`idTipo_indice`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Limitadores para a tabela `notificacao`
+-- Constraints for table `notificacao`
 --
 ALTER TABLE `notificacao`
   ADD CONSTRAINT `fk_Notificacao_Usuario` FOREIGN KEY (`Usuario_idUsuario`) REFERENCES `usuario` (`idUsuario`) ON DELETE NO ACTION ON UPDATE NO ACTION,
